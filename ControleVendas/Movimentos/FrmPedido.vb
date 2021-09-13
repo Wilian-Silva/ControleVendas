@@ -436,6 +436,8 @@ Public Class FrmPedido
     End Sub
     Private Sub BtndAdicionarItem_Click(sender As Object, e As EventArgs) Handles BtnOk.Click
 
+        If editarpedido = "Editar" Then Exit Sub
+
         Limpar_cores()
         TxtFornecedor.BackColor = Color.White
         TxtPedido.BackColor = Color.White
@@ -695,12 +697,22 @@ Public Class FrmPedido
 
                     '............................................................................
                     'ATUALIZAR TOTAL PEDIDO
-                    Dim cmd1 As MySqlCommand
-                    Dim sql1 As String
-                    sql1 = "UPDATE pedido_cabecalho SET total= '" & total & "' WHERE id =  '" & TxtIdRegistro.Text & "' "
-                    cmd1 = New MySqlCommand(sql1, con)
-                    cmd1.ExecuteNonQuery()
+                    If DataGrid.Rows.Count > 1 Then
+                        Dim cmd1 As MySqlCommand
+                        Dim sql1 As String
+                        sql1 = "UPDATE pedido_cabecalho SET total= '" & total & "' WHERE id =  '" & TxtIdRegistro.Text & "' "
+                        cmd1 = New MySqlCommand(sql1, con)
+                        cmd1.ExecuteNonQuery()
 
+                    Else
+
+                        Dim cmd3 As MySqlCommand
+                        Dim sql3 As String
+                        sql3 = "DELETE FROM pedido_cabecalho WHERE id =  '" & TxtIdRegistro.Text & "' "
+                        cmd3 = New MySqlCommand(sql3, con)
+                        cmd3.ExecuteNonQuery()
+
+                    End If
 
                     MsgBox("Item excluído com sucesso!!", MsgBoxStyle.Information, "Excluir")
 
