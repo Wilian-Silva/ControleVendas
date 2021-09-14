@@ -41,6 +41,8 @@ Partial Class FrmDuplicatas
         Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.TxtIdREg = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -216,6 +218,8 @@ Partial Class FrmDuplicatas
         '
         Me.Panel1.BackColor = System.Drawing.Color.Gainsboro
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel1.Controls.Add(Me.Label8)
+        Me.Panel1.Controls.Add(Me.TxtIdREg)
         Me.Panel1.Controls.Add(Me.Label7)
         Me.Panel1.Controls.Add(Me.TxtParcela)
         Me.Panel1.Controls.Add(Me.TxtNotaFiscal)
@@ -247,6 +251,28 @@ Partial Class FrmDuplicatas
         Me.GroupBox1.TabIndex = 171
         Me.GroupBox1.TabStop = False
         '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.BackColor = System.Drawing.Color.Transparent
+        Me.Label8.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(202, 13)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(53, 16)
+        Me.Label8.TabIndex = 162
+        Me.Label8.Text = "Id. Reg."
+        '
+        'TxtIdREg
+        '
+        Me.TxtIdREg.Enabled = False
+        Me.TxtIdREg.Location = New System.Drawing.Point(259, 11)
+        Me.TxtIdREg.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtIdREg.Name = "TxtIdREg"
+        Me.TxtIdREg.Size = New System.Drawing.Size(45, 20)
+        Me.TxtIdREg.TabIndex = 163
+        Me.TxtIdREg.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
         'FrmDuplicatas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -259,7 +285,6 @@ Partial Class FrmDuplicatas
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "FrmDuplicatas"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Duplicatas"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
@@ -286,4 +311,6 @@ Partial Class FrmDuplicatas
     Friend WithEvents BtnCancelar As Button
     Friend WithEvents Panel1 As Panel
     Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents TxtIdREg As TextBox
 End Class

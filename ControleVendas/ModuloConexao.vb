@@ -20,10 +20,7 @@ Module ModuloConexao
     'DECLAÇÃO DE VARIAVEIS GLOBAIS
 
     Public Table1Duplicatas As New DataTable("MyTable")
-    'Public dtDuplicatas As New DataTable
-
     Public parcela As Integer
-
     Public nomeFuncionario As String
     Public especialidade As String
     Public codCliente As String
@@ -51,10 +48,12 @@ Module ModuloConexao
     Public editarFornecedor As String
     Public novoFonecedor As String
     Public pesquisarFornecedor As String
+    Public editarDuplicata As String
+    Public registarDocumento As String
 
 
     Public Sub LimparVariaveisGlobais()
-
+        registarDocumento = ""
         parcela = ""
         nomeFuncionario = ""
         especialidade = ""

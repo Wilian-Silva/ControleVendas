@@ -24,12 +24,12 @@ Partial Class FrmEntrada
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmEntrada))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.BtnNovo = New System.Windows.Forms.Button()
         Me.BtnSair = New System.Windows.Forms.Button()
@@ -49,6 +49,12 @@ Partial Class FrmEntrada
         Me.TxtNotaFiscal = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.TxtIdRegistro = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.TxtDescPed = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.TxtCodPedido = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.TxtTotalNota = New System.Windows.Forms.TextBox()
         Me.TxtNomeFornecedor = New System.Windows.Forms.TextBox()
@@ -57,18 +63,17 @@ Partial Class FrmEntrada
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DataEmissao = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.TxtIdRegistro = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.DataGrid = New System.Windows.Forms.DataGridView()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.TabPageDuplicatas = New System.Windows.Forms.TabPage()
-        Me.DataGridDuplicatas = New System.Windows.Forms.DataGridView()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.TxtTotalDuplicatas = New System.Windows.Forms.TextBox()
+        Me.DataGridDuplicatas = New System.Windows.Forms.DataGridView()
+        Me.LblSaldo = New System.Windows.Forms.Label()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
-        Me.GroupBox4.SuspendLayout()
         CType(Me.DataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -165,6 +170,7 @@ Partial Class FrmEntrada
         'BtnEliminar
         '
         Me.BtnEliminar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnEliminar.Enabled = False
         Me.BtnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.BtnEliminar.Location = New System.Drawing.Point(206, 216)
         Me.BtnEliminar.Name = "BtnEliminar"
@@ -189,6 +195,7 @@ Partial Class FrmEntrada
         'BtnEditar
         '
         Me.BtnEditar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnEditar.Enabled = False
         Me.BtnEditar.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.BtnEditar.Location = New System.Drawing.Point(107, 216)
         Me.BtnEditar.Name = "BtnEditar"
@@ -271,10 +278,10 @@ Partial Class FrmEntrada
         'TxtNotaFiscal
         '
         Me.TxtNotaFiscal.Enabled = False
-        Me.TxtNotaFiscal.Location = New System.Drawing.Point(111, 50)
+        Me.TxtNotaFiscal.Location = New System.Drawing.Point(85, 52)
         Me.TxtNotaFiscal.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtNotaFiscal.Name = "TxtNotaFiscal"
-        Me.TxtNotaFiscal.Size = New System.Drawing.Size(83, 20)
+        Me.TxtNotaFiscal.Size = New System.Drawing.Size(70, 20)
         Me.TxtNotaFiscal.TabIndex = 97
         '
         'Label2
@@ -282,7 +289,7 @@ Partial Class FrmEntrada
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(33, 52)
+        Me.Label2.Location = New System.Drawing.Point(7, 54)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(75, 16)
@@ -292,6 +299,12 @@ Partial Class FrmEntrada
         'GroupBox3
         '
         Me.GroupBox3.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox3.Controls.Add(Me.TxtIdRegistro)
+        Me.GroupBox3.Controls.Add(Me.Label4)
+        Me.GroupBox3.Controls.Add(Me.TxtDescPed)
+        Me.GroupBox3.Controls.Add(Me.Label9)
+        Me.GroupBox3.Controls.Add(Me.TxtCodPedido)
+        Me.GroupBox3.Controls.Add(Me.Label8)
         Me.GroupBox3.Controls.Add(Me.Label7)
         Me.GroupBox3.Controls.Add(Me.TxtTotalNota)
         Me.GroupBox3.Controls.Add(Me.TxtNomeFornecedor)
@@ -307,91 +320,10 @@ Partial Class FrmEntrada
         Me.GroupBox3.TabIndex = 126
         Me.GroupBox3.TabStop = False
         '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.BackColor = System.Drawing.Color.Transparent
-        Me.Label7.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(415, 54)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(76, 16)
-        Me.Label7.TabIndex = 143
-        Me.Label7.Text = "Valor Total:"
-        '
-        'TxtTotalNota
-        '
-        Me.TxtTotalNota.Location = New System.Drawing.Point(493, 52)
-        Me.TxtTotalNota.Margin = New System.Windows.Forms.Padding(4)
-        Me.TxtTotalNota.Name = "TxtTotalNota"
-        Me.TxtTotalNota.Size = New System.Drawing.Size(83, 20)
-        Me.TxtTotalNota.TabIndex = 142
-        '
-        'TxtNomeFornecedor
-        '
-        Me.TxtNomeFornecedor.Enabled = False
-        Me.TxtNomeFornecedor.Location = New System.Drawing.Point(145, 19)
-        Me.TxtNomeFornecedor.Margin = New System.Windows.Forms.Padding(4)
-        Me.TxtNomeFornecedor.Name = "TxtNomeFornecedor"
-        Me.TxtNomeFornecedor.Size = New System.Drawing.Size(341, 20)
-        Me.TxtNomeFornecedor.TabIndex = 130
-        '
-        'TxtFornecedor
-        '
-        Me.TxtFornecedor.Enabled = False
-        Me.TxtFornecedor.Location = New System.Drawing.Point(111, 19)
-        Me.TxtFornecedor.Margin = New System.Windows.Forms.Padding(4)
-        Me.TxtFornecedor.Name = "TxtFornecedor"
-        Me.TxtFornecedor.Size = New System.Drawing.Size(32, 20)
-        Me.TxtFornecedor.TabIndex = 129
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(30, 20)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(78, 16)
-        Me.Label3.TabIndex = 127
-        Me.Label3.Text = "Fornecedor:"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(207, 53)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(84, 16)
-        Me.Label1.TabIndex = 125
-        Me.Label1.Text = "Data Emisão:"
-        '
-        'DataEmissao
-        '
-        Me.DataEmissao.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DataEmissao.Location = New System.Drawing.Point(295, 52)
-        Me.DataEmissao.Name = "DataEmissao"
-        Me.DataEmissao.Size = New System.Drawing.Size(97, 20)
-        Me.DataEmissao.TabIndex = 124
-        '
-        'GroupBox4
-        '
-        Me.GroupBox4.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox4.Controls.Add(Me.TxtIdRegistro)
-        Me.GroupBox4.Controls.Add(Me.Label4)
-        Me.GroupBox4.Location = New System.Drawing.Point(27, 8)
-        Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(108, 50)
-        Me.GroupBox4.TabIndex = 139
-        Me.GroupBox4.TabStop = False
-        '
         'TxtIdRegistro
         '
         Me.TxtIdRegistro.Enabled = False
-        Me.TxtIdRegistro.Location = New System.Drawing.Point(61, 16)
+        Me.TxtIdRegistro.Location = New System.Drawing.Point(222, 52)
         Me.TxtIdRegistro.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtIdRegistro.Name = "TxtIdRegistro"
         Me.TxtIdRegistro.Size = New System.Drawing.Size(37, 20)
@@ -403,12 +335,135 @@ Partial Class FrmEntrada
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(9, 18)
+        Me.Label4.Location = New System.Drawing.Point(171, 54)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(49, 16)
         Me.Label4.TabIndex = 128
         Me.Label4.Text = "Id Reg."
+        '
+        'TxtDescPed
+        '
+        Me.TxtDescPed.Enabled = False
+        Me.TxtDescPed.Location = New System.Drawing.Point(506, 17)
+        Me.TxtDescPed.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtDescPed.Name = "TxtDescPed"
+        Me.TxtDescPed.Size = New System.Drawing.Size(118, 20)
+        Me.TxtDescPed.TabIndex = 147
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.BackColor = System.Drawing.Color.Transparent
+        Me.Label9.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(463, 19)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(39, 16)
+        Me.Label9.TabIndex = 146
+        Me.Label9.Text = "Desc."
+        '
+        'TxtCodPedido
+        '
+        Me.TxtCodPedido.Enabled = False
+        Me.TxtCodPedido.Location = New System.Drawing.Point(404, 18)
+        Me.TxtCodPedido.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtCodPedido.Name = "TxtCodPedido"
+        Me.TxtCodPedido.Size = New System.Drawing.Size(45, 20)
+        Me.TxtCodPedido.TabIndex = 145
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.BackColor = System.Drawing.Color.Transparent
+        Me.Label8.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(351, 20)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(51, 16)
+        Me.Label8.TabIndex = 144
+        Me.Label8.Text = "Pedido:"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.Transparent
+        Me.Label7.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(463, 55)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(76, 16)
+        Me.Label7.TabIndex = 143
+        Me.Label7.Text = "Valor Total:"
+        '
+        'TxtTotalNota
+        '
+        Me.TxtTotalNota.Enabled = False
+        Me.TxtTotalNota.Location = New System.Drawing.Point(541, 53)
+        Me.TxtTotalNota.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtTotalNota.Name = "TxtTotalNota"
+        Me.TxtTotalNota.Size = New System.Drawing.Size(83, 20)
+        Me.TxtTotalNota.TabIndex = 142
+        '
+        'TxtNomeFornecedor
+        '
+        Me.TxtNomeFornecedor.Enabled = False
+        Me.TxtNomeFornecedor.Location = New System.Drawing.Point(119, 18)
+        Me.TxtNomeFornecedor.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtNomeFornecedor.Name = "TxtNomeFornecedor"
+        Me.TxtNomeFornecedor.Size = New System.Drawing.Size(217, 20)
+        Me.TxtNomeFornecedor.TabIndex = 130
+        '
+        'TxtFornecedor
+        '
+        Me.TxtFornecedor.Enabled = False
+        Me.TxtFornecedor.Location = New System.Drawing.Point(85, 18)
+        Me.TxtFornecedor.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtFornecedor.Name = "TxtFornecedor"
+        Me.TxtFornecedor.Size = New System.Drawing.Size(32, 20)
+        Me.TxtFornecedor.TabIndex = 129
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(4, 19)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(78, 16)
+        Me.Label3.TabIndex = 127
+        Me.Label3.Text = "Fornecedor:"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(282, 55)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(54, 16)
+        Me.Label1.TabIndex = 125
+        Me.Label1.Text = "Emisão:"
+        '
+        'DataEmissao
+        '
+        Me.DataEmissao.Enabled = False
+        Me.DataEmissao.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DataEmissao.Location = New System.Drawing.Point(339, 54)
+        Me.DataEmissao.Name = "DataEmissao"
+        Me.DataEmissao.Size = New System.Drawing.Size(97, 20)
+        Me.DataEmissao.TabIndex = 124
+        '
+        'GroupBox4
+        '
+        Me.GroupBox4.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox4.Location = New System.Drawing.Point(27, 8)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(108, 50)
+        Me.GroupBox4.TabIndex = 139
+        Me.GroupBox4.TabStop = False
         '
         'DataGrid
         '
@@ -418,23 +473,23 @@ Partial Class FrmEntrada
         Me.DataGrid.AllowUserToResizeRows = False
         Me.DataGrid.BackgroundColor = System.Drawing.Color.White
         Me.DataGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDark
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.LightGray
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.ControlDark
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGrid.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGrid.DefaultCellStyle = DataGridViewCellStyle8
         Me.DataGrid.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGrid.EnableHeadersVisualStyles = False
         Me.DataGrid.Location = New System.Drawing.Point(3, 3)
@@ -442,9 +497,9 @@ Partial Class FrmEntrada
         Me.DataGrid.Name = "DataGrid"
         Me.DataGrid.ReadOnly = True
         Me.DataGrid.RowHeadersVisible = False
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ControlLightLight
-        DataGridViewCellStyle3.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
-        Me.DataGrid.RowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.ControlLightLight
+        DataGridViewCellStyle9.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.DataGrid.RowsDefaultCellStyle = DataGridViewCellStyle9
         Me.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGrid.Size = New System.Drawing.Size(626, 245)
         Me.DataGrid.TabIndex = 154
@@ -474,6 +529,7 @@ Partial Class FrmEntrada
         '
         Me.TabPageDuplicatas.BackColor = System.Drawing.Color.WhiteSmoke
         Me.TabPageDuplicatas.Controls.Add(Me.Label6)
+        Me.TabPageDuplicatas.Controls.Add(Me.TxtTotalDuplicatas)
         Me.TabPageDuplicatas.Controls.Add(Me.BtnEditar)
         Me.TabPageDuplicatas.Controls.Add(Me.DataGridDuplicatas)
         Me.TabPageDuplicatas.Controls.Add(Me.BtnIncluir)
@@ -485,6 +541,27 @@ Partial Class FrmEntrada
         Me.TabPageDuplicatas.TabIndex = 1
         Me.TabPageDuplicatas.Text = "Duplicatas"
         '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
+        Me.Label6.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(433, 224)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(104, 16)
+        Me.Label6.TabIndex = 168
+        Me.Label6.Text = "Total Duplicatas:"
+        '
+        'TxtTotalDuplicatas
+        '
+        Me.TxtTotalDuplicatas.Enabled = False
+        Me.TxtTotalDuplicatas.Location = New System.Drawing.Point(540, 222)
+        Me.TxtTotalDuplicatas.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtTotalDuplicatas.Name = "TxtTotalDuplicatas"
+        Me.TxtTotalDuplicatas.Size = New System.Drawing.Size(83, 20)
+        Me.TxtTotalDuplicatas.TabIndex = 167
+        '
         'DataGridDuplicatas
         '
         Me.DataGridDuplicatas.AllowUserToAddRows = False
@@ -494,46 +571,45 @@ Partial Class FrmEntrada
         Me.DataGridDuplicatas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader
         Me.DataGridDuplicatas.BackgroundColor = System.Drawing.Color.White
         Me.DataGridDuplicatas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.LightGray
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ControlDark
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridDuplicatas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle10.BackColor = System.Drawing.Color.LightGray
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.ControlDark
+        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridDuplicatas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle10
         Me.DataGridDuplicatas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridDuplicatas.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridDuplicatas.DefaultCellStyle = DataGridViewCellStyle11
         Me.DataGridDuplicatas.EnableHeadersVisualStyles = False
         Me.DataGridDuplicatas.Location = New System.Drawing.Point(8, 6)
         Me.DataGridDuplicatas.MultiSelect = False
         Me.DataGridDuplicatas.Name = "DataGridDuplicatas"
         Me.DataGridDuplicatas.ReadOnly = True
         Me.DataGridDuplicatas.RowHeadersVisible = False
-        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.ControlLightLight
-        DataGridViewCellStyle6.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
-        Me.DataGridDuplicatas.RowsDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.ControlLightLight
+        DataGridViewCellStyle12.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.DataGridDuplicatas.RowsDefaultCellStyle = DataGridViewCellStyle12
         Me.DataGridDuplicatas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridDuplicatas.Size = New System.Drawing.Size(615, 210)
         Me.DataGridDuplicatas.TabIndex = 165
         '
-        'Label6
+        'LblSaldo
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.ForeColor = System.Drawing.Color.Firebrick
-        Me.Label6.Location = New System.Drawing.Point(331, 225)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(289, 13)
-        Me.Label6.TabIndex = 167
-        Me.Label6.Text = "Valor total da duplicata diferente do valor total da nota fiscal"
-        Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.LblSaldo.AutoSize = True
+        Me.LblSaldo.ForeColor = System.Drawing.Color.Brown
+        Me.LblSaldo.Location = New System.Drawing.Point(342, 436)
+        Me.LblSaldo.Name = "LblSaldo"
+        Me.LblSaldo.Size = New System.Drawing.Size(16, 13)
+        Me.LblSaldo.TabIndex = 156
+        Me.LblSaldo.Text = " - "
         '
         'FrmEntrada
         '
@@ -541,6 +617,7 @@ Partial Class FrmEntrada
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(690, 454)
+        Me.Controls.Add(Me.LblSaldo)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.GroupBox1)
@@ -557,8 +634,6 @@ Partial Class FrmEntrada
         Me.GroupBox1.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
-        Me.GroupBox4.ResumeLayout(False)
-        Me.GroupBox4.PerformLayout()
         CType(Me.DataGrid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
@@ -566,6 +641,7 @@ Partial Class FrmEntrada
         Me.TabPageDuplicatas.PerformLayout()
         CType(Me.DataGridDuplicatas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents GroupBox2 As GroupBox
@@ -603,4 +679,10 @@ Partial Class FrmEntrada
     Friend WithEvents Label7 As Label
     Friend WithEvents TxtTotalNota As TextBox
     Friend WithEvents Label6 As Label
+    Friend WithEvents TxtTotalDuplicatas As TextBox
+    Friend WithEvents LblSaldo As Label
+    Friend WithEvents TxtCodPedido As TextBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents TxtDescPed As TextBox
+    Friend WithEvents Label9 As Label
 End Class
