@@ -1,11 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class FrmEntrada
-    Private Sub FrmEntrada_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
-        TxtPesquisar.Text = numeroPedido
-        TxtIdPedido.Text = IdPedido
-        TxtStatusPedido.Text = StatusPedido
-    End Sub
+
 
     Private Sub BtnPesqPedido_Click(sender As Object, e As EventArgs) Handles BtnPesqPedido.Click
         Dim form = New FrmPedidoCabecalho
@@ -88,7 +84,7 @@ Public Class FrmEntrada
         For i = 0 To DataGrid.Rows.Count - 1
             total = total + DataGrid.Rows(i).Cells(9).Value
         Next
-        TxtTotalPedido.Text = total
+        TxtTotalNota.Text = total
         'TxtTotalPedido.Text = Convert.ToDouble(TxtTotalPedido.Text).ToString("C")
     End Sub
 
@@ -100,7 +96,7 @@ Public Class FrmEntrada
     Private Sub BtnSalvar_Click(sender As Object, e As EventArgs) Handles BtnSalvar.Click
 
         TxtNotaFiscal.BackColor = Color.White
-        CbFornecedor.BackColor = Color.White
+        TxtFornecedor.BackColor = Color.White
         TxtPesquisar.BackColor = Color.White
 
         If DataGrid.RowCount < 1 Then
@@ -108,7 +104,7 @@ Public Class FrmEntrada
             Exit Sub
         End If
 
-        If TxtNotaFiscal.Text <> "" And CbFornecedor.Text <> "" And TxtPesquisar.Text <> "" Then
+        If TxtNotaFiscal.Text <> "" And TxtFornecedor.Text <> "" And TxtPesquisar.Text <> "" Then
 
 
             Try
@@ -118,13 +114,13 @@ Public Class FrmEntrada
                 Dim cmd As MySqlCommand
                 Dim sqls As String
                 Dim data1 As String
-                Dim data2 As String
+
                 Dim data3 As String
                 data1 = DataEmissao.Value.ToString("yyyy-MM-dd")
-                data2 = DataVecimento.Value.ToString("yyyy-MM-dd")
+
                 data3 = Now().ToString("yyyy-MM-dd")
 
-                sqls = "INSERT INTO entrada (id, nota, fornecedor, id_pedido, data_registro, emissao, vencimento, valor, saldo ) VALUES ('" & TxtIdRegistro.Text & "','" & TxtNotaFiscal.Text & "', '" & CbFornecedor.Text & "', '" & TxtIdPedido.Text & "','" & data3 & "', '" & data1 & "', '" & data2 & "', '" & TxtTotalPedido.Text.Replace(",", ".") & "', '" & TxtTotalPedido.Text.Replace(",", ".") & "')"
+                sqls = "INSERT INTO entrada (id, nota, fornecedor, id_pedido, data_registro, emissao, vencimento, valor, saldo ) VALUES ('" & TxtIdRegistro.Text & "','" & TxtNotaFiscal.Text & "', '" & TxtFornecedor.Text & "', '" & TxtIdPedido.Text & "','" & data3 & "', '" & data1 & "', '" & TxtTotalNota.Text.Replace(",", ".") & "', '" & TxtTotalNota.Text.Replace(",", ".") & "')"
                 cmd = New MySqlCommand(sqls, con)
                 cmd.ExecuteNonQuery()
 
@@ -145,7 +141,7 @@ Public Class FrmEntrada
         Else
 
             TxtNotaFiscal.BackColor = Color.Salmon
-            CbFornecedor.BackColor = Color.Salmon
+            TxtFornecedor.BackColor = Color.Salmon
             TxtPesquisar.BackColor = Color.Salmon
 
             MsgBox("Campos vazios ou inválidos!!", MsgBoxStyle.Information, "Campos obrigatórios")
@@ -157,13 +153,13 @@ Public Class FrmEntrada
         DataGrid.DataSource = Nothing
         TxtNotaFiscal.Text = ""
         TxtPesquisar.Text = ""
-        CbFornecedor.Text = ""
+        TxtFornecedor.Text = ""
         TxtIdRegistro.Text = ""
         TxtIdPedido.Text = ""
         IdPedido = ""
         numeroPedido = ""
         StatusPedido = ""
-        TxtTotalPedido.Text = ""
+        TxtTotalNota.Text = ""
 
         codCliente = ""
         codCliente = ""
@@ -178,8 +174,8 @@ Public Class FrmEntrada
         BtnPesqPedido.Enabled = True
         BtnPesquisar.Enabled = True
         TxtNotaFiscal.Enabled = True
-        CbFornecedor.Enabled = True
         BtnSalvar.Enabled = True
+
 
     End Sub
 
@@ -188,7 +184,6 @@ Public Class FrmEntrada
         BtnPesqPedido.Enabled = False
         BtnPesquisar.Enabled = False
         TxtNotaFiscal.Enabled = False
-        CbFornecedor.Enabled = False
         BtnSalvar.Enabled = False
     End Sub
     Sub SalvarEstoque()
@@ -204,7 +199,7 @@ Public Class FrmEntrada
 
             data1 = Now().ToString("yyyy-MM-dd")
             IdNota = TxtIdRegistro.Text
-            fornec = CbFornecedor.Text
+            fornec = TxtFornecedor.Text
             Dim tipomvto As String
             tipomvto = "Entrada"
             For i = 0 To DataGrid.RowCount - 1
@@ -277,6 +272,18 @@ Public Class FrmEntrada
     End Sub
 
     Private Sub FrmEntrada_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
-        LimparCampos()
+
+    End Sub
+
+    Private Sub BtnIncluir_Click(sender As Object, e As EventArgs) Handles BtnIncluir.Click
+
+        Dim form = New FrmDuplicatas()
+
+        form.TxtNotaFiscal.Text = TxtNotaFiscal.Text
+        form.DataEmissao.Value = DataEmissao.Value
+        form.TxtTotalDuplicata.Text = TxtTotalNota.Text
+
+
+        form.ShowDialog()
     End Sub
 End Class

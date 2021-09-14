@@ -3,7 +3,7 @@
 Public Class FrmPedido
 
     Dim Table1 As New DataTable("MyTable")
-    Dim dt As New DataTable
+    ' Dim dt As New DataTable
     Dim proximo As Integer
     Dim anterior As Integer
     Dim maximo As Integer
@@ -495,8 +495,6 @@ Public Class FrmPedido
                 DataGrid.Columns(11).DefaultCellStyle.Format = "c"
 
                 TotalDatagrid()
-
-
 
                 TxtPedido.Enabled = False
                 BtnPesqFornecedor.Enabled = False

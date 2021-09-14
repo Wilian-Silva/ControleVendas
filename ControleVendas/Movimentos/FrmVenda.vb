@@ -176,5 +176,7 @@ Public Class FrmVenda
         editarVenda = ""
     End Sub
 
+    Private Sub FrmVenda_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    End Sub
 End Class
