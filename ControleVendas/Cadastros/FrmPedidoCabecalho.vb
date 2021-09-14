@@ -131,21 +131,6 @@ Public Class FrmPedidoCabecalho
     End Sub
 
 
-
-    Private Sub DataGrid_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGrid.CellDoubleClick
-        If e.RowIndex > -1 Then
-
-            On Error Resume Next
-
-            IdPedido = DataGrid.CurrentRow.Cells(0).Value
-            numeroPedido = DataGrid.CurrentRow.Cells(1).Value
-            nomeFornecedor = DataGrid.CurrentRow.Cells(2).Value
-            StatusPedido = DataGrid.CurrentRow.Cells(5).Value
-            Me.Close()
-        End If
-
-    End Sub
-
     Private Sub BtnSair_Click(sender As Object, e As EventArgs) Handles BtnSair.Click
         Me.Close()
     End Sub
@@ -158,11 +143,8 @@ Public Class FrmPedidoCabecalho
 
         End If
 
-        If statusBtn = "Visible" Then
-            GboxExcluir.Visible = True
-        End If
-
         ListarTudo()
+
         FormatarGrid()
     End Sub
 
@@ -238,7 +220,7 @@ Public Class FrmPedidoCabecalho
     End Sub
 
     Private Sub FrmPedidoCabecalho_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
-        statusBtn = ""
+
 
     End Sub
 
@@ -259,7 +241,10 @@ Public Class FrmPedidoCabecalho
         If DataGrid.RowCount > 0 Then
 
             numeroPedido = DataGrid.CurrentRow.Cells(0).Value
-
+            nomePedido = DataGrid.CurrentRow.Cells(1).Value
+            StatusPedido = DataGrid.CurrentRow.Cells(2).Value
+            codFornecedor = DataGrid.CurrentRow.Cells(3).Value
+            nomeFornecedor = DataGrid.CurrentRow.Cells(4).Value
             Me.Close()
         Else
             MsgBox("Selecione um registro!!", MsgBoxStyle.Information, "Registro não selecionado")

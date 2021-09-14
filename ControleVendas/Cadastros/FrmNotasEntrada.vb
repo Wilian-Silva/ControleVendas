@@ -130,22 +130,6 @@ Public Class FrmNotasEntrada
         FormatarGrid()
     End Sub
 
-
-
-    Private Sub DataGrid_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGrid.CellDoubleClick
-
-        If e.RowIndex > -1 Then
-
-            If statusBtn = "" Then
-                On Error Resume Next
-                numeroNota = DataGrid.CurrentRow.Cells(1).Value
-                idNota = DataGrid.CurrentRow.Cells(0).Value
-                Me.Close()
-            End If
-        End If
-
-    End Sub
-
     Private Sub BtnSair_Click(sender As Object, e As EventArgs) Handles BtnSair.Click
 
         Me.Close()

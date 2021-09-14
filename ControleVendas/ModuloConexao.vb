@@ -21,23 +21,35 @@ Module ModuloConexao
 
     Public Table1Duplicatas As New DataTable("MyTable")
     Public parcela As Integer
+
     Public nomeFuncionario As String
     Public especialidade As String
+
     Public codCliente As String
     Public nomeCliente As String
+
     Public codFornecedor As String
     Public nomeFornecedor As String
+
     Public nomeProduto As String
     Public codProduto As String
+
     Public numeroPedido As String
+    Public nomePedido As String
+
+
+
+    Public IdPedido As String
+    Public StatusPedido As String
+
+
     Public numeroNota As String
     Public valorUnit As String
     Public idNota As String
     Public statusBtn As String
     Public editarVenda As String
     Public index As Integer
-    Public IdPedido As String
-    Public StatusPedido As String
+
     Public novavenda As String
     Public custoUntario As String
     Public pesquisarCliente As String
@@ -53,7 +65,7 @@ Module ModuloConexao
 
 
     Public Sub LimparVariaveisGlobais()
-
+        nomePedido = ""
         parcela = ""
         nomeFuncionario = ""
         especialidade = ""

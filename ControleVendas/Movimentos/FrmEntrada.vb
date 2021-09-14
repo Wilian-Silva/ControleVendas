@@ -2,8 +2,12 @@
 
 Public Class FrmEntrada
 
-
+    Private Sub FrmEntrada_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ListarUltimaNota()
+    End Sub
     Private Sub BtnPesqPedido_Click(sender As Object, e As EventArgs) Handles BtnPesqPedido.Click
+
+        pedidoPesquisar = "True"
         Dim form = New FrmPedidoCabecalho
         form.ShowDialog()
 
@@ -29,6 +33,7 @@ Public Class FrmEntrada
         TxtNotaFiscal.Enabled = True
         BtnPesqPedido.Enabled = True
         DataEmissao.Enabled = True
+        BtnPesquisar.Enabled = True
 
     End Sub
 
@@ -36,6 +41,7 @@ Public Class FrmEntrada
         TxtNotaFiscal.Enabled = False
         BtnPesqPedido.Enabled = False
         DataEmissao.Enabled = False
+        BtnPesquisar.Enabled = False
 
     End Sub
     Sub BuscarPedido()
@@ -82,14 +88,17 @@ Public Class FrmEntrada
 
     End Sub
     Sub ListarUltimaNota()
-
+        'Stop
         Try
             Abrir()
             Dim cmd As MySqlCommand
             Dim reader As MySqlDataReader
             Dim sql As String
 
-            sql = "SELECT * FROM entrada WHERE id=(SELECT MAX(id) FROM entrada) "
+
+            'sql = "SELECT * FROM entrada WHERE id=(SELECT MAX(id) FROM entrada) "
+
+            sql = "SELECT e.id, e.nota, e.cod_fornecedor, e.fornecedor, e.id_pedido, e.descricao, p.status, e.emissao, e.valor FROM entrada AS e INNER JOIN pedido_cabecalho AS p ON e.id_pedido = p.id "
             cmd = New MySqlCommand(sql, con)
             reader = cmd.ExecuteReader
             If reader.Read = True Then
@@ -100,6 +109,7 @@ Public Class FrmEntrada
                 TxtNomeFornecedor.Text = reader(3)
                 TxtCodPedido.Text = reader(4)
                 TxtDescPed.Text = reader(5)
+                TxtStatusPedido.Text = reader(6)
                 DataEmissao.Value = reader(7)
                 TxtTotalNota.Text = reader(8)
 
@@ -127,8 +137,6 @@ Public Class FrmEntrada
         End Try
 
     End Sub
-
-
     Sub FormatarGridDuplicatas()
 
         DataGridDuplicatas.Columns(7).Visible = False
@@ -417,28 +425,19 @@ Public Class FrmEntrada
         form.ShowDialog()
     End Sub
 
-    Private Sub FrmEntrada_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ListarUltimaNota()
-    End Sub
+
 
     Private Sub FrmEntrada_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
 
-
-
-        If DataGridDuplicatas.Rows.Count >= 1 Then
-
-
-            'Dim soma As Double
-
-            'soma = TxtTotalNota.Text - CDbl(TxtTotalDuplicatas.Text)
-            'If soma >= 1 Then
-
-            '    LblSaldo.Text = "Valor total de duplicatas está diferente do valor total do documento!"
-
-            'End If
-
-            TotalDatagridDuplicatas()
+        If pedidoPesquisar = "True" Then
+            TxtCodPedido.Text = numeroPedido
+            TxtDescPed.Text = nomePedido
+            TxtStatusPedido.Text = StatusPedido
+            pedidoPesquisar = ""
+            nomePedido = ""
+            StatusPedido = ""
         End If
+
     End Sub
 
     Private Sub BtnEditar_Click(sender As Object, e As EventArgs) Handles BtnEditar.Click
@@ -494,5 +493,22 @@ Public Class FrmEntrada
 
     End Sub
 
+    Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
 
+        LimparCampos()
+        BloquearCampos()
+        ListarUltimaNota()
+        Limpar_cores()
+
+    End Sub
+
+    Private Sub Limpar_cores()
+
+    End Sub
+
+    Private Sub BtnLimpar_Click(sender As Object, e As EventArgs) Handles BtnLimpar.Click
+        If MsgBox("Deseja limpar registros?", vbYesNo, "Limpar registros") = vbYes Then
+            LimparCampos()
+        End If
+    End Sub
 End Class

@@ -310,7 +310,7 @@ Public Class FrmPedido
                     statusPedido = "Aberto"
 
                     data = DataPed.Value.ToString("yyyy-MM-dd")
-                    sql = "INSERT INTO pedido_cabecalho (id, pedido, fornecedor, data, total, status) VALUES ('" & TxtIdRegistro.Text & "','" & TxtPedido.Text & "','" & TxtFornecedor.Text & "', '" & data & "', '" & TxtTotalPedido.Text.Replace(",", ".") & "', '" & statusPedido & "')"
+                    sql = "INSERT INTO pedido_cabecalho (id, pedido, cod_fornecedor, fornecedor, data, total, status) VALUES ('" & TxtIdRegistro.Text & "','" & TxtPedido.Text & "','" & TxtCodFornecedor.Text & "','" & TxtFornecedor.Text & "', '" & data & "', '" & TxtTotalPedido.Text.Replace(",", ".") & "', '" & statusPedido & "')"
                     cmdp = New MySqlCommand(sql, con)
                     cmdp.ExecuteNonQuery()
 

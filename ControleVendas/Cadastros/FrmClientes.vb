@@ -329,19 +329,6 @@ Public Class FrmClientes
         BuscarNome()
     End Sub
 
-    Private Sub DataGrid_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGrid.CellDoubleClick
-        If e.RowIndex > -1 Then
-
-            On Error Resume Next
-            nomeCliente = DataGrid.CurrentRow.Cells(1).Value
-            codCliente = DataGrid.CurrentRow.Cells(0).Value
-            Me.Close()
-        End If
-
-    End Sub
-
-
-
     Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
         LimparCampos()
         DesabilitarCampos()
