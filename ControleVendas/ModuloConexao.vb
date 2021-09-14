@@ -36,6 +36,7 @@ Module ModuloConexao
 
     Public numeroPedido As String
     Public nomePedido As String
+    Public totalPedido As String
 
 
 
@@ -65,8 +66,9 @@ Module ModuloConexao
 
 
     Public Sub LimparVariaveisGlobais()
+        totalPedido = ""
         nomePedido = ""
-        parcela = ""
+
         nomeFuncionario = ""
         especialidade = ""
         codCliente = ""

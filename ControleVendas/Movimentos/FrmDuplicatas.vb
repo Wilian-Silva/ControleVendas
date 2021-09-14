@@ -29,7 +29,6 @@ Public Class FrmDuplicatas
 
     Private Sub BtnOk_Click(sender As Object, e As EventArgs) Handles BtnOk.Click
 
-
         If editarDuplicata = "Inserir" Then
 
             'SALVAR ALTERAÇÃO DIRETAMENTE NO BANCO DE DADOS

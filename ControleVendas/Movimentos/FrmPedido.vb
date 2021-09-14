@@ -638,7 +638,14 @@ Public Class FrmPedido
 
         If pedidoPesquisar = "True" Then
             TxtNumPedido.Text = numeroPedido
+
             pedidoPesquisar = ""
+            pedidoPesquisar = ""
+            nomePedido = ""
+            StatusPedido = ""
+            totalPedido = ""
+            codFornecedor = ""
+            nomeFornecedor = ""
         End If
 
         If pesquisarFornecedor = "True" Then

@@ -59,8 +59,6 @@ Public Class FrmEntrada
 
                 FormatarGrid()
 
-                TotalDatagrid()
-
             End If
 
         Catch ex As Exception
@@ -433,9 +431,19 @@ Public Class FrmEntrada
             TxtCodPedido.Text = numeroPedido
             TxtDescPed.Text = nomePedido
             TxtStatusPedido.Text = StatusPedido
+            TxtTotalNota.Text = totalPedido
+
+            TxtFornecedor.Text = codFornecedor
+            TxtNomeFornecedor.Text = nomeFornecedor
+
+
+
             pedidoPesquisar = ""
             nomePedido = ""
             StatusPedido = ""
+            totalPedido = ""
+            codFornecedor = ""
+            nomeFornecedor = ""
         End If
 
     End Sub
