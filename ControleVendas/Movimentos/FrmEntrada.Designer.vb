@@ -24,35 +24,24 @@ Partial Class FrmEntrada
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmEntrada))
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.BtnNovo = New System.Windows.Forms.Button()
-        Me.BtnSair = New System.Windows.Forms.Button()
-        Me.BtnSalvar = New System.Windows.Forms.Button()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.BtnPesquisar = New System.Windows.Forms.Button()
-        Me.BtnPesqPedido = New System.Windows.Forms.Button()
         Me.BtnEliminar = New System.Windows.Forms.Button()
         Me.BtnIncluir = New System.Windows.Forms.Button()
         Me.BtnEditar = New System.Windows.Forms.Button()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.TxtStatusPedido = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.TxtIdPedido = New System.Windows.Forms.TextBox()
-        Me.TxtPesquisar = New System.Windows.Forms.TextBox()
-        Me.Label10 = New System.Windows.Forms.Label()
         Me.TxtNotaFiscal = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.TxtIdRegistro = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TxtDescPed = New System.Windows.Forms.TextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
         Me.TxtCodPedido = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -62,7 +51,6 @@ Partial Class FrmEntrada
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DataEmissao = New System.Windows.Forms.DateTimePicker()
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.DataGrid = New System.Windows.Forms.DataGridView()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
@@ -71,73 +59,29 @@ Partial Class FrmEntrada
         Me.TxtTotalDuplicatas = New System.Windows.Forms.TextBox()
         Me.DataGridDuplicatas = New System.Windows.Forms.DataGridView()
         Me.LblSaldo = New System.Windows.Forms.Label()
-        Me.GroupBox2.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
+        Me.BtnPesqPedido = New System.Windows.Forms.Button()
+        Me.GboxPesProd = New System.Windows.Forms.GroupBox()
+        Me.BtnProximo = New System.Windows.Forms.Button()
+        Me.BtnAnterior = New System.Windows.Forms.Button()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.TxtPesquisar = New System.Windows.Forms.TextBox()
+        Me.GBoxFornecedor = New System.Windows.Forms.GroupBox()
+        Me.BtnCancelar = New System.Windows.Forms.Button()
+        Me.BtnSalvar = New System.Windows.Forms.Button()
+        Me.BtnNovo = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.BtnSair = New System.Windows.Forms.Button()
+        Me.BtnLimpar = New System.Windows.Forms.Button()
+        Me.BtnExcluir = New System.Windows.Forms.Button()
         Me.GroupBox3.SuspendLayout()
         CType(Me.DataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPageDuplicatas.SuspendLayout()
         CType(Me.DataGridDuplicatas, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GboxPesProd.SuspendLayout()
+        Me.GBoxFornecedor.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'GroupBox2
-        '
-        Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox2.Controls.Add(Me.BtnNovo)
-        Me.GroupBox2.Controls.Add(Me.BtnSair)
-        Me.GroupBox2.Controls.Add(Me.BtnSalvar)
-        Me.GroupBox2.Location = New System.Drawing.Point(533, 9)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(131, 50)
-        Me.GroupBox2.TabIndex = 124
-        Me.GroupBox2.TabStop = False
-        '
-        'BtnNovo
-        '
-        Me.BtnNovo.AccessibleDescription = ""
-        Me.BtnNovo.AccessibleName = ""
-        Me.BtnNovo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnNovo.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnNovo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke
-        Me.BtnNovo.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnNovo.Image = CType(resources.GetObject("BtnNovo.Image"), System.Drawing.Image)
-        Me.BtnNovo.Location = New System.Drawing.Point(5, 11)
-        Me.BtnNovo.Name = "BtnNovo"
-        Me.BtnNovo.Size = New System.Drawing.Size(35, 35)
-        Me.BtnNovo.TabIndex = 58
-        Me.ToolTip.SetToolTip(Me.BtnNovo, "Incluir novo registro")
-        Me.BtnNovo.UseVisualStyleBackColor = True
-        '
-        'BtnSair
-        '
-        Me.BtnSair.AccessibleDescription = ""
-        Me.BtnSair.AccessibleName = "Adicionar"
-        Me.BtnSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnSair.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke
-        Me.BtnSair.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnSair.Image = CType(resources.GetObject("BtnSair.Image"), System.Drawing.Image)
-        Me.BtnSair.Location = New System.Drawing.Point(83, 11)
-        Me.BtnSair.Name = "BtnSair"
-        Me.BtnSair.Size = New System.Drawing.Size(35, 35)
-        Me.BtnSair.TabIndex = 57
-        Me.ToolTip.SetToolTip(Me.BtnSair, "Sair")
-        Me.BtnSair.UseVisualStyleBackColor = True
-        '
-        'BtnSalvar
-        '
-        Me.BtnSalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnSalvar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnSalvar.Enabled = False
-        Me.BtnSalvar.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnSalvar.Image = CType(resources.GetObject("BtnSalvar.Image"), System.Drawing.Image)
-        Me.BtnSalvar.Location = New System.Drawing.Point(43, 11)
-        Me.BtnSalvar.Name = "BtnSalvar"
-        Me.BtnSalvar.Size = New System.Drawing.Size(35, 35)
-        Me.BtnSalvar.TabIndex = 54
-        Me.ToolTip.SetToolTip(Me.BtnSalvar, "Salvar registro")
-        Me.BtnSalvar.UseVisualStyleBackColor = True
         '
         'BtnPesquisar
         '
@@ -146,26 +90,17 @@ Partial Class FrmEntrada
         Me.BtnPesquisar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BtnPesquisar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnPesquisar.Enabled = False
+        Me.BtnPesquisar.FlatAppearance.BorderSize = 0
         Me.BtnPesquisar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke
+        Me.BtnPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnPesquisar.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnPesquisar.Image = CType(resources.GetObject("BtnPesquisar.Image"), System.Drawing.Image)
-        Me.BtnPesquisar.Location = New System.Drawing.Point(234, 17)
+        Me.BtnPesquisar.Location = New System.Drawing.Point(286, 15)
         Me.BtnPesquisar.Name = "BtnPesquisar"
-        Me.BtnPesquisar.Size = New System.Drawing.Size(22, 22)
+        Me.BtnPesquisar.Size = New System.Drawing.Size(25, 25)
         Me.BtnPesquisar.TabIndex = 139
         Me.ToolTip.SetToolTip(Me.BtnPesquisar, "Carregar dados do pedido")
         Me.BtnPesquisar.UseVisualStyleBackColor = True
-        '
-        'BtnPesqPedido
-        '
-        Me.BtnPesqPedido.Enabled = False
-        Me.BtnPesqPedido.Image = CType(resources.GetObject("BtnPesqPedido.Image"), System.Drawing.Image)
-        Me.BtnPesqPedido.Location = New System.Drawing.Point(210, 17)
-        Me.BtnPesqPedido.Name = "BtnPesqPedido"
-        Me.BtnPesqPedido.Size = New System.Drawing.Size(22, 22)
-        Me.BtnPesqPedido.TabIndex = 136
-        Me.ToolTip.SetToolTip(Me.BtnPesqPedido, "Consultar Pedido")
-        Me.BtnPesqPedido.UseVisualStyleBackColor = True
         '
         'BtnEliminar
         '
@@ -205,80 +140,20 @@ Partial Class FrmEntrada
         Me.ToolTip.SetToolTip(Me.BtnEditar, "Editar registro")
         Me.BtnEditar.UseVisualStyleBackColor = True
         '
-        'GroupBox1
-        '
-        Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox1.Controls.Add(Me.TxtStatusPedido)
-        Me.GroupBox1.Controls.Add(Me.Label5)
-        Me.GroupBox1.Controls.Add(Me.TxtIdPedido)
-        Me.GroupBox1.Controls.Add(Me.BtnPesquisar)
-        Me.GroupBox1.Controls.Add(Me.TxtPesquisar)
-        Me.GroupBox1.Controls.Add(Me.BtnPesqPedido)
-        Me.GroupBox1.Controls.Add(Me.Label10)
-        Me.GroupBox1.Location = New System.Drawing.Point(140, 9)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(385, 50)
-        Me.GroupBox1.TabIndex = 137
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Pesquisar"
-        '
         'TxtStatusPedido
         '
         Me.TxtStatusPedido.Enabled = False
-        Me.TxtStatusPedido.Location = New System.Drawing.Point(315, 18)
+        Me.TxtStatusPedido.Location = New System.Drawing.Point(203, 17)
         Me.TxtStatusPedido.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtStatusPedido.Name = "TxtStatusPedido"
-        Me.TxtStatusPedido.Size = New System.Drawing.Size(57, 20)
+        Me.TxtStatusPedido.Size = New System.Drawing.Size(51, 20)
         Me.TxtStatusPedido.TabIndex = 142
         Me.TxtStatusPedido.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(268, 20)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(49, 16)
-        Me.Label5.TabIndex = 141
-        Me.Label5.Text = "Status:"
-        '
-        'TxtIdPedido
-        '
-        Me.TxtIdPedido.Enabled = False
-        Me.TxtIdPedido.Location = New System.Drawing.Point(81, 18)
-        Me.TxtIdPedido.Margin = New System.Windows.Forms.Padding(4)
-        Me.TxtIdPedido.Name = "TxtIdPedido"
-        Me.TxtIdPedido.Size = New System.Drawing.Size(29, 20)
-        Me.TxtIdPedido.TabIndex = 140
-        Me.TxtIdPedido.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TxtPesquisar
-        '
-        Me.TxtPesquisar.Enabled = False
-        Me.TxtPesquisar.Location = New System.Drawing.Point(111, 18)
-        Me.TxtPesquisar.Margin = New System.Windows.Forms.Padding(4)
-        Me.TxtPesquisar.Name = "TxtPesquisar"
-        Me.TxtPesquisar.Size = New System.Drawing.Size(97, 20)
-        Me.TxtPesquisar.TabIndex = 111
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.BackColor = System.Drawing.Color.Transparent
-        Me.Label10.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(9, 20)
-        Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(67, 16)
-        Me.Label10.TabIndex = 112
-        Me.Label10.Text = "Id/Pedido:"
         '
         'TxtNotaFiscal
         '
         Me.TxtNotaFiscal.Enabled = False
-        Me.TxtNotaFiscal.Location = New System.Drawing.Point(85, 52)
+        Me.TxtNotaFiscal.Location = New System.Drawing.Point(399, 16)
         Me.TxtNotaFiscal.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtNotaFiscal.Name = "TxtNotaFiscal"
         Me.TxtNotaFiscal.Size = New System.Drawing.Size(70, 20)
@@ -289,7 +164,7 @@ Partial Class FrmEntrada
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(7, 54)
+        Me.Label2.Location = New System.Drawing.Point(323, 18)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(75, 16)
@@ -299,18 +174,20 @@ Partial Class FrmEntrada
         'GroupBox3
         '
         Me.GroupBox3.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox3.Controls.Add(Me.TxtStatusPedido)
+        Me.GroupBox3.Controls.Add(Me.BtnPesqPedido)
         Me.GroupBox3.Controls.Add(Me.TxtIdRegistro)
         Me.GroupBox3.Controls.Add(Me.Label4)
+        Me.GroupBox3.Controls.Add(Me.BtnPesquisar)
         Me.GroupBox3.Controls.Add(Me.TxtDescPed)
-        Me.GroupBox3.Controls.Add(Me.Label9)
-        Me.GroupBox3.Controls.Add(Me.TxtCodPedido)
-        Me.GroupBox3.Controls.Add(Me.Label8)
         Me.GroupBox3.Controls.Add(Me.Label7)
         Me.GroupBox3.Controls.Add(Me.TxtTotalNota)
         Me.GroupBox3.Controls.Add(Me.TxtNomeFornecedor)
         Me.GroupBox3.Controls.Add(Me.TxtFornecedor)
+        Me.GroupBox3.Controls.Add(Me.TxtCodPedido)
         Me.GroupBox3.Controls.Add(Me.Label3)
         Me.GroupBox3.Controls.Add(Me.Label1)
+        Me.GroupBox3.Controls.Add(Me.Label8)
         Me.GroupBox3.Controls.Add(Me.DataEmissao)
         Me.GroupBox3.Controls.Add(Me.Label2)
         Me.GroupBox3.Controls.Add(Me.TxtNotaFiscal)
@@ -323,7 +200,7 @@ Partial Class FrmEntrada
         'TxtIdRegistro
         '
         Me.TxtIdRegistro.Enabled = False
-        Me.TxtIdRegistro.Location = New System.Drawing.Point(222, 52)
+        Me.TxtIdRegistro.Location = New System.Drawing.Point(587, 55)
         Me.TxtIdRegistro.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtIdRegistro.Name = "TxtIdRegistro"
         Me.TxtIdRegistro.Size = New System.Drawing.Size(37, 20)
@@ -335,7 +212,7 @@ Partial Class FrmEntrada
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(171, 54)
+        Me.Label4.Location = New System.Drawing.Point(536, 57)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(49, 16)
@@ -345,31 +222,19 @@ Partial Class FrmEntrada
         'TxtDescPed
         '
         Me.TxtDescPed.Enabled = False
-        Me.TxtDescPed.Location = New System.Drawing.Point(506, 17)
+        Me.TxtDescPed.Location = New System.Drawing.Point(94, 17)
         Me.TxtDescPed.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtDescPed.Name = "TxtDescPed"
-        Me.TxtDescPed.Size = New System.Drawing.Size(118, 20)
+        Me.TxtDescPed.Size = New System.Drawing.Size(108, 20)
         Me.TxtDescPed.TabIndex = 147
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.BackColor = System.Drawing.Color.Transparent
-        Me.Label9.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(463, 19)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(39, 16)
-        Me.Label9.TabIndex = 146
-        Me.Label9.Text = "Desc."
         '
         'TxtCodPedido
         '
         Me.TxtCodPedido.Enabled = False
-        Me.TxtCodPedido.Location = New System.Drawing.Point(404, 18)
+        Me.TxtCodPedido.Location = New System.Drawing.Point(60, 17)
         Me.TxtCodPedido.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtCodPedido.Name = "TxtCodPedido"
-        Me.TxtCodPedido.Size = New System.Drawing.Size(45, 20)
+        Me.TxtCodPedido.Size = New System.Drawing.Size(32, 20)
         Me.TxtCodPedido.TabIndex = 145
         '
         'Label8
@@ -377,7 +242,7 @@ Partial Class FrmEntrada
         Me.Label8.AutoSize = True
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(351, 20)
+        Me.Label8.Location = New System.Drawing.Point(6, 18)
         Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(51, 16)
@@ -389,7 +254,7 @@ Partial Class FrmEntrada
         Me.Label7.AutoSize = True
         Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(463, 55)
+        Me.Label7.Location = New System.Drawing.Point(338, 57)
         Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(76, 16)
@@ -399,7 +264,7 @@ Partial Class FrmEntrada
         'TxtTotalNota
         '
         Me.TxtTotalNota.Enabled = False
-        Me.TxtTotalNota.Location = New System.Drawing.Point(541, 53)
+        Me.TxtTotalNota.Location = New System.Drawing.Point(415, 55)
         Me.TxtTotalNota.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtTotalNota.Name = "TxtTotalNota"
         Me.TxtTotalNota.Size = New System.Drawing.Size(83, 20)
@@ -408,7 +273,7 @@ Partial Class FrmEntrada
         'TxtNomeFornecedor
         '
         Me.TxtNomeFornecedor.Enabled = False
-        Me.TxtNomeFornecedor.Location = New System.Drawing.Point(119, 18)
+        Me.TxtNomeFornecedor.Location = New System.Drawing.Point(94, 56)
         Me.TxtNomeFornecedor.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtNomeFornecedor.Name = "TxtNomeFornecedor"
         Me.TxtNomeFornecedor.Size = New System.Drawing.Size(217, 20)
@@ -417,7 +282,7 @@ Partial Class FrmEntrada
         'TxtFornecedor
         '
         Me.TxtFornecedor.Enabled = False
-        Me.TxtFornecedor.Location = New System.Drawing.Point(85, 18)
+        Me.TxtFornecedor.Location = New System.Drawing.Point(60, 56)
         Me.TxtFornecedor.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtFornecedor.Name = "TxtFornecedor"
         Me.TxtFornecedor.Size = New System.Drawing.Size(32, 20)
@@ -428,19 +293,19 @@ Partial Class FrmEntrada
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(4, 19)
+        Me.Label3.Location = New System.Drawing.Point(5, 57)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(78, 16)
+        Me.Label3.Size = New System.Drawing.Size(51, 16)
         Me.Label3.TabIndex = 127
-        Me.Label3.Text = "Fornecedor:"
+        Me.Label3.Text = "Fornec."
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(282, 55)
+        Me.Label1.Location = New System.Drawing.Point(477, 18)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(54, 16)
@@ -451,19 +316,10 @@ Partial Class FrmEntrada
         '
         Me.DataEmissao.Enabled = False
         Me.DataEmissao.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DataEmissao.Location = New System.Drawing.Point(339, 54)
+        Me.DataEmissao.Location = New System.Drawing.Point(534, 16)
         Me.DataEmissao.Name = "DataEmissao"
         Me.DataEmissao.Size = New System.Drawing.Size(97, 20)
         Me.DataEmissao.TabIndex = 124
-        '
-        'GroupBox4
-        '
-        Me.GroupBox4.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox4.Location = New System.Drawing.Point(27, 8)
-        Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(108, 50)
-        Me.GroupBox4.TabIndex = 139
-        Me.GroupBox4.TabStop = False
         '
         'DataGrid
         '
@@ -473,23 +329,23 @@ Partial Class FrmEntrada
         Me.DataGrid.AllowUserToResizeRows = False
         Me.DataGrid.BackgroundColor = System.Drawing.Color.White
         Me.DataGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.LightGray
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.ControlDark
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDark
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGrid.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGrid.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGrid.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGrid.EnableHeadersVisualStyles = False
         Me.DataGrid.Location = New System.Drawing.Point(3, 3)
@@ -497,9 +353,9 @@ Partial Class FrmEntrada
         Me.DataGrid.Name = "DataGrid"
         Me.DataGrid.ReadOnly = True
         Me.DataGrid.RowHeadersVisible = False
-        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.ControlLightLight
-        DataGridViewCellStyle9.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
-        Me.DataGrid.RowsDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ControlLightLight
+        DataGridViewCellStyle3.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.DataGrid.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGrid.Size = New System.Drawing.Size(626, 245)
         Me.DataGrid.TabIndex = 154
@@ -571,32 +427,32 @@ Partial Class FrmEntrada
         Me.DataGridDuplicatas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader
         Me.DataGridDuplicatas.BackgroundColor = System.Drawing.Color.White
         Me.DataGridDuplicatas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle10.BackColor = System.Drawing.Color.LightGray
-        DataGridViewCellStyle10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.ControlDark
-        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridDuplicatas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.LightGray
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ControlDark
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridDuplicatas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.DataGridDuplicatas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark
-        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridDuplicatas.DefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridDuplicatas.DefaultCellStyle = DataGridViewCellStyle5
         Me.DataGridDuplicatas.EnableHeadersVisualStyles = False
         Me.DataGridDuplicatas.Location = New System.Drawing.Point(8, 6)
         Me.DataGridDuplicatas.MultiSelect = False
         Me.DataGridDuplicatas.Name = "DataGridDuplicatas"
         Me.DataGridDuplicatas.ReadOnly = True
         Me.DataGridDuplicatas.RowHeadersVisible = False
-        DataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.ControlLightLight
-        DataGridViewCellStyle12.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
-        Me.DataGridDuplicatas.RowsDefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.ControlLightLight
+        DataGridViewCellStyle6.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.DataGridDuplicatas.RowsDefaultCellStyle = DataGridViewCellStyle6
         Me.DataGridDuplicatas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridDuplicatas.Size = New System.Drawing.Size(615, 210)
         Me.DataGridDuplicatas.TabIndex = 165
@@ -611,27 +467,266 @@ Partial Class FrmEntrada
         Me.LblSaldo.TabIndex = 156
         Me.LblSaldo.Text = " - "
         '
+        'BtnPesqPedido
+        '
+        Me.BtnPesqPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.BtnPesqPedido.Enabled = False
+        Me.BtnPesqPedido.FlatAppearance.BorderSize = 0
+        Me.BtnPesqPedido.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BtnPesqPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnPesqPedido.ForeColor = System.Drawing.Color.Transparent
+        Me.BtnPesqPedido.Image = CType(resources.GetObject("BtnPesqPedido.Image"), System.Drawing.Image)
+        Me.BtnPesqPedido.Location = New System.Drawing.Point(262, 16)
+        Me.BtnPesqPedido.Name = "BtnPesqPedido"
+        Me.BtnPesqPedido.Size = New System.Drawing.Size(22, 22)
+        Me.BtnPesqPedido.TabIndex = 157
+        Me.ToolTip.SetToolTip(Me.BtnPesqPedido, "Consultar Fornecedor")
+        Me.BtnPesqPedido.UseVisualStyleBackColor = True
+        '
+        'GboxPesProd
+        '
+        Me.GboxPesProd.BackColor = System.Drawing.Color.Transparent
+        Me.GboxPesProd.Controls.Add(Me.BtnProximo)
+        Me.GboxPesProd.Controls.Add(Me.BtnAnterior)
+        Me.GboxPesProd.Controls.Add(Me.Label5)
+        Me.GboxPesProd.Controls.Add(Me.TxtPesquisar)
+        Me.GboxPesProd.Location = New System.Drawing.Point(27, 5)
+        Me.GboxPesProd.Name = "GboxPesProd"
+        Me.GboxPesProd.Size = New System.Drawing.Size(235, 50)
+        Me.GboxPesProd.TabIndex = 157
+        Me.GboxPesProd.TabStop = False
+        '
+        'BtnProximo
+        '
+        Me.BtnProximo.AccessibleDescription = ""
+        Me.BtnProximo.AccessibleName = "Adicionar"
+        Me.BtnProximo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.BtnProximo.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnProximo.FlatAppearance.BorderSize = 0
+        Me.BtnProximo.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BtnProximo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnProximo.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnProximo.Image = CType(resources.GetObject("BtnProximo.Image"), System.Drawing.Image)
+        Me.BtnProximo.Location = New System.Drawing.Point(193, 15)
+        Me.BtnProximo.Name = "BtnProximo"
+        Me.BtnProximo.Size = New System.Drawing.Size(25, 25)
+        Me.BtnProximo.TabIndex = 156
+        Me.ToolTip.SetToolTip(Me.BtnProximo, "Próximo")
+        Me.BtnProximo.UseVisualStyleBackColor = True
+        '
+        'BtnAnterior
+        '
+        Me.BtnAnterior.AccessibleDescription = ""
+        Me.BtnAnterior.AccessibleName = "Adicionar"
+        Me.BtnAnterior.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.BtnAnterior.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnAnterior.FlatAppearance.BorderSize = 0
+        Me.BtnAnterior.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BtnAnterior.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnAnterior.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnAnterior.Image = CType(resources.GetObject("BtnAnterior.Image"), System.Drawing.Image)
+        Me.BtnAnterior.Location = New System.Drawing.Point(164, 15)
+        Me.BtnAnterior.Name = "BtnAnterior"
+        Me.BtnAnterior.Size = New System.Drawing.Size(25, 25)
+        Me.BtnAnterior.TabIndex = 155
+        Me.ToolTip.SetToolTip(Me.BtnAnterior, "Anterior")
+        Me.BtnAnterior.UseVisualStyleBackColor = True
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
+        Me.Label5.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(18, 19)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(65, 16)
+        Me.Label5.TabIndex = 153
+        Me.Label5.Text = "Pesq. NFe"
+        '
+        'TxtPesquisar
+        '
+        Me.TxtPesquisar.BackColor = System.Drawing.Color.White
+        Me.TxtPesquisar.Location = New System.Drawing.Point(87, 18)
+        Me.TxtPesquisar.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtPesquisar.Name = "TxtPesquisar"
+        Me.TxtPesquisar.Size = New System.Drawing.Size(71, 20)
+        Me.TxtPesquisar.TabIndex = 152
+        Me.ToolTip.SetToolTip(Me.TxtPesquisar, "Pesquisar nome fantasia")
+        '
+        'GBoxFornecedor
+        '
+        Me.GBoxFornecedor.BackColor = System.Drawing.Color.Transparent
+        Me.GBoxFornecedor.Controls.Add(Me.BtnCancelar)
+        Me.GBoxFornecedor.Controls.Add(Me.BtnSalvar)
+        Me.GBoxFornecedor.Controls.Add(Me.BtnNovo)
+        Me.GBoxFornecedor.Controls.Add(Me.Button3)
+        Me.GBoxFornecedor.Controls.Add(Me.BtnSair)
+        Me.GBoxFornecedor.Controls.Add(Me.BtnLimpar)
+        Me.GBoxFornecedor.Controls.Add(Me.BtnExcluir)
+        Me.GBoxFornecedor.Location = New System.Drawing.Point(368, 7)
+        Me.GBoxFornecedor.Name = "GBoxFornecedor"
+        Me.GBoxFornecedor.Size = New System.Drawing.Size(296, 50)
+        Me.GBoxFornecedor.TabIndex = 158
+        Me.GBoxFornecedor.TabStop = False
+        '
+        'BtnCancelar
+        '
+        Me.BtnCancelar.AccessibleDescription = ""
+        Me.BtnCancelar.AccessibleName = "Adicionar"
+        Me.BtnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnCancelar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnCancelar.FlatAppearance.BorderSize = 0
+        Me.BtnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnCancelar.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnCancelar.ForeColor = System.Drawing.Color.Transparent
+        Me.BtnCancelar.Image = CType(resources.GetObject("BtnCancelar.Image"), System.Drawing.Image)
+        Me.BtnCancelar.Location = New System.Drawing.Point(134, 10)
+        Me.BtnCancelar.Name = "BtnCancelar"
+        Me.BtnCancelar.Size = New System.Drawing.Size(35, 35)
+        Me.BtnCancelar.TabIndex = 162
+        Me.BtnCancelar.TabStop = False
+        Me.ToolTip.SetToolTip(Me.BtnCancelar, "Cancelar")
+        Me.BtnCancelar.UseVisualStyleBackColor = False
+        '
+        'BtnSalvar
+        '
+        Me.BtnSalvar.AccessibleDescription = ""
+        Me.BtnSalvar.AccessibleName = "Adicionar"
+        Me.BtnSalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnSalvar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnSalvar.FlatAppearance.BorderSize = 0
+        Me.BtnSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BtnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnSalvar.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnSalvar.ForeColor = System.Drawing.Color.Transparent
+        Me.BtnSalvar.Image = CType(resources.GetObject("BtnSalvar.Image"), System.Drawing.Image)
+        Me.BtnSalvar.Location = New System.Drawing.Point(176, 10)
+        Me.BtnSalvar.Name = "BtnSalvar"
+        Me.BtnSalvar.Size = New System.Drawing.Size(35, 35)
+        Me.BtnSalvar.TabIndex = 158
+        Me.BtnSalvar.TabStop = False
+        Me.ToolTip.SetToolTip(Me.BtnSalvar, "Salvar resgistro")
+        Me.BtnSalvar.UseVisualStyleBackColor = False
+        '
+        'BtnNovo
+        '
+        Me.BtnNovo.AccessibleDescription = ""
+        Me.BtnNovo.AccessibleName = "Adicionar"
+        Me.BtnNovo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnNovo.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnNovo.FlatAppearance.BorderSize = 0
+        Me.BtnNovo.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BtnNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnNovo.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnNovo.ForeColor = System.Drawing.Color.Transparent
+        Me.BtnNovo.Image = CType(resources.GetObject("BtnNovo.Image"), System.Drawing.Image)
+        Me.BtnNovo.Location = New System.Drawing.Point(6, 10)
+        Me.BtnNovo.Name = "BtnNovo"
+        Me.BtnNovo.Size = New System.Drawing.Size(35, 35)
+        Me.BtnNovo.TabIndex = 157
+        Me.BtnNovo.TabStop = False
+        Me.ToolTip.SetToolTip(Me.BtnNovo, "Adicionar novo registro")
+        Me.BtnNovo.UseVisualStyleBackColor = False
+        '
+        'Button3
+        '
+        Me.Button3.AccessibleDescription = ""
+        Me.Button3.AccessibleName = "Adicionar"
+        Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button3.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button3.FlatAppearance.BorderSize = 0
+        Me.Button3.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button3.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.ForeColor = System.Drawing.Color.Transparent
+        Me.Button3.Image = CType(resources.GetObject("Button3.Image"), System.Drawing.Image)
+        Me.Button3.Location = New System.Drawing.Point(47, 10)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(35, 35)
+        Me.Button3.TabIndex = 156
+        Me.Button3.TabStop = False
+        Me.ToolTip.SetToolTip(Me.Button3, "Editar registro")
+        Me.Button3.UseVisualStyleBackColor = False
+        '
+        'BtnSair
+        '
+        Me.BtnSair.AccessibleDescription = ""
+        Me.BtnSair.AccessibleName = "Adicionar"
+        Me.BtnSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnSair.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnSair.FlatAppearance.BorderSize = 0
+        Me.BtnSair.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BtnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnSair.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnSair.ForeColor = System.Drawing.Color.Transparent
+        Me.BtnSair.Image = CType(resources.GetObject("BtnSair.Image"), System.Drawing.Image)
+        Me.BtnSair.Location = New System.Drawing.Point(251, 10)
+        Me.BtnSair.Name = "BtnSair"
+        Me.BtnSair.Size = New System.Drawing.Size(35, 35)
+        Me.BtnSair.TabIndex = 161
+        Me.BtnSair.TabStop = False
+        Me.ToolTip.SetToolTip(Me.BtnSair, "Sair")
+        Me.BtnSair.UseVisualStyleBackColor = False
+        '
+        'BtnLimpar
+        '
+        Me.BtnLimpar.AccessibleDescription = ""
+        Me.BtnLimpar.AccessibleName = "Adicionar"
+        Me.BtnLimpar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnLimpar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnLimpar.FlatAppearance.BorderSize = 0
+        Me.BtnLimpar.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BtnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnLimpar.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnLimpar.ForeColor = System.Drawing.Color.Transparent
+        Me.BtnLimpar.Image = CType(resources.GetObject("BtnLimpar.Image"), System.Drawing.Image)
+        Me.BtnLimpar.Location = New System.Drawing.Point(91, 10)
+        Me.BtnLimpar.Name = "BtnLimpar"
+        Me.BtnLimpar.Size = New System.Drawing.Size(35, 35)
+        Me.BtnLimpar.TabIndex = 159
+        Me.BtnLimpar.TabStop = False
+        Me.ToolTip.SetToolTip(Me.BtnLimpar, "Limpar dados")
+        Me.BtnLimpar.UseVisualStyleBackColor = False
+        '
+        'BtnExcluir
+        '
+        Me.BtnExcluir.AccessibleDescription = ""
+        Me.BtnExcluir.AccessibleName = "Adicionar"
+        Me.BtnExcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnExcluir.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnExcluir.FlatAppearance.BorderSize = 0
+        Me.BtnExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BtnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnExcluir.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnExcluir.ForeColor = System.Drawing.Color.Transparent
+        Me.BtnExcluir.Image = CType(resources.GetObject("BtnExcluir.Image"), System.Drawing.Image)
+        Me.BtnExcluir.Location = New System.Drawing.Point(216, 10)
+        Me.BtnExcluir.Name = "BtnExcluir"
+        Me.BtnExcluir.Size = New System.Drawing.Size(35, 35)
+        Me.BtnExcluir.TabIndex = 160
+        Me.BtnExcluir.TabStop = False
+        Me.ToolTip.SetToolTip(Me.BtnExcluir, "Excluir registro")
+        Me.BtnExcluir.UseVisualStyleBackColor = False
+        '
         'FrmEntrada
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(690, 454)
+        Me.ClientSize = New System.Drawing.Size(693, 457)
+        Me.Controls.Add(Me.GBoxFornecedor)
+        Me.Controls.Add(Me.GboxPesProd)
         Me.Controls.Add(Me.LblSaldo)
         Me.Controls.Add(Me.TabControl1)
-        Me.Controls.Add(Me.GroupBox4)
-        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.GroupBox3)
-        Me.Controls.Add(Me.GroupBox2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "FrmEntrada"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Entrada de Nota Fiscal"
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         CType(Me.DataGrid, System.ComponentModel.ISupportInitialize).EndInit()
@@ -640,32 +735,24 @@ Partial Class FrmEntrada
         Me.TabPageDuplicatas.ResumeLayout(False)
         Me.TabPageDuplicatas.PerformLayout()
         CType(Me.DataGridDuplicatas, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GboxPesProd.ResumeLayout(False)
+        Me.GboxPesProd.PerformLayout()
+        Me.GBoxFornecedor.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents BtnSair As Button
-    Friend WithEvents BtnSalvar As Button
     Friend WithEvents ToolTip As ToolTip
-    Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents BtnPesquisar As Button
-    Friend WithEvents TxtPesquisar As TextBox
-    Friend WithEvents BtnPesqPedido As Button
-    Friend WithEvents Label10 As Label
     Friend WithEvents TxtNotaFiscal As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents Label1 As Label
     Friend WithEvents DataEmissao As DateTimePicker
     Friend WithEvents Label3 As Label
-    Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents TxtIdRegistro As TextBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents BtnNovo As Button
-    Friend WithEvents TxtIdPedido As TextBox
     Friend WithEvents TxtStatusPedido As TextBox
-    Friend WithEvents Label5 As Label
     Friend WithEvents DataGrid As DataGridView
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TabPage1 As TabPage
@@ -684,5 +771,18 @@ Partial Class FrmEntrada
     Friend WithEvents TxtCodPedido As TextBox
     Friend WithEvents Label8 As Label
     Friend WithEvents TxtDescPed As TextBox
-    Friend WithEvents Label9 As Label
+    Friend WithEvents BtnPesqPedido As Button
+    Friend WithEvents GboxPesProd As GroupBox
+    Friend WithEvents BtnProximo As Button
+    Friend WithEvents BtnAnterior As Button
+    Friend WithEvents Label5 As Label
+    Friend WithEvents TxtPesquisar As TextBox
+    Friend WithEvents GBoxFornecedor As GroupBox
+    Friend WithEvents BtnCancelar As Button
+    Friend WithEvents BtnSalvar As Button
+    Friend WithEvents BtnNovo As Button
+    Friend WithEvents Button3 As Button
+    Friend WithEvents BtnSair As Button
+    Friend WithEvents BtnLimpar As Button
+    Friend WithEvents BtnExcluir As Button
 End Class

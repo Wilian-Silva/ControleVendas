@@ -49,11 +49,11 @@ Module ModuloConexao
     Public novoFonecedor As String
     Public pesquisarFornecedor As String
     Public editarDuplicata As String
-    Public registarDocumento As String
+
 
 
     Public Sub LimparVariaveisGlobais()
-        registarDocumento = ""
+
         parcela = ""
         nomeFuncionario = ""
         especialidade = ""

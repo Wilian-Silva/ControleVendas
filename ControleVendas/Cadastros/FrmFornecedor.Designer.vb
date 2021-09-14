@@ -71,7 +71,7 @@ Partial Class FrmFornecedor
         'TxtPesquisar
         '
         Me.TxtPesquisar.BackColor = System.Drawing.Color.White
-        Me.TxtPesquisar.Location = New System.Drawing.Point(87, 19)
+        Me.TxtPesquisar.Location = New System.Drawing.Point(87, 18)
         Me.TxtPesquisar.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtPesquisar.Name = "TxtPesquisar"
         Me.TxtPesquisar.Size = New System.Drawing.Size(71, 20)
@@ -81,12 +81,12 @@ Partial Class FrmFornecedor
         'GboxPesProd
         '
         Me.GboxPesProd.BackColor = System.Drawing.Color.Transparent
-        Me.GboxPesProd.Controls.Add(Me.BtnProximo)
         Me.GboxPesProd.Controls.Add(Me.BtnAnterior)
         Me.GboxPesProd.Controls.Add(Me.Label6)
         Me.GboxPesProd.Controls.Add(Me.TxtPesquisar)
         Me.GboxPesProd.Controls.Add(Me.BtnCacelarConsulta)
         Me.GboxPesProd.Controls.Add(Me.BtnSelecionarItem)
+        Me.GboxPesProd.Controls.Add(Me.BtnProximo)
         Me.GboxPesProd.Location = New System.Drawing.Point(28, 16)
         Me.GboxPesProd.Name = "GboxPesProd"
         Me.GboxPesProd.Size = New System.Drawing.Size(304, 50)
@@ -104,7 +104,7 @@ Partial Class FrmFornecedor
         Me.BtnProximo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnProximo.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnProximo.Image = CType(resources.GetObject("BtnProximo.Image"), System.Drawing.Image)
-        Me.BtnProximo.Location = New System.Drawing.Point(193, 17)
+        Me.BtnProximo.Location = New System.Drawing.Point(191, 15)
         Me.BtnProximo.Name = "BtnProximo"
         Me.BtnProximo.Size = New System.Drawing.Size(25, 25)
         Me.BtnProximo.TabIndex = 156
@@ -122,7 +122,7 @@ Partial Class FrmFornecedor
         Me.BtnAnterior.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnAnterior.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnAnterior.Image = CType(resources.GetObject("BtnAnterior.Image"), System.Drawing.Image)
-        Me.BtnAnterior.Location = New System.Drawing.Point(164, 17)
+        Me.BtnAnterior.Location = New System.Drawing.Point(164, 15)
         Me.BtnAnterior.Name = "BtnAnterior"
         Me.BtnAnterior.Size = New System.Drawing.Size(25, 25)
         Me.BtnAnterior.TabIndex = 155
@@ -134,7 +134,7 @@ Partial Class FrmFornecedor
         Me.Label6.AutoSize = True
         Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(4, 20)
+        Me.Label6.Location = New System.Drawing.Point(4, 19)
         Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(81, 16)
@@ -153,7 +153,7 @@ Partial Class FrmFornecedor
         Me.BtnCacelarConsulta.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnCacelarConsulta.ForeColor = System.Drawing.Color.Transparent
         Me.BtnCacelarConsulta.Image = CType(resources.GetObject("BtnCacelarConsulta.Image"), System.Drawing.Image)
-        Me.BtnCacelarConsulta.Location = New System.Drawing.Point(263, 11)
+        Me.BtnCacelarConsulta.Location = New System.Drawing.Point(263, 10)
         Me.BtnCacelarConsulta.Name = "BtnCacelarConsulta"
         Me.BtnCacelarConsulta.Size = New System.Drawing.Size(35, 35)
         Me.BtnCacelarConsulta.TabIndex = 151
@@ -174,7 +174,7 @@ Partial Class FrmFornecedor
         Me.BtnSelecionarItem.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSelecionarItem.ForeColor = System.Drawing.Color.Transparent
         Me.BtnSelecionarItem.Image = CType(resources.GetObject("BtnSelecionarItem.Image"), System.Drawing.Image)
-        Me.BtnSelecionarItem.Location = New System.Drawing.Point(225, 10)
+        Me.BtnSelecionarItem.Location = New System.Drawing.Point(225, 9)
         Me.BtnSelecionarItem.Name = "BtnSelecionarItem"
         Me.BtnSelecionarItem.Size = New System.Drawing.Size(35, 35)
         Me.BtnSelecionarItem.TabIndex = 150

@@ -8,21 +8,51 @@ Public Class FrmEntrada
         form.ShowDialog()
 
     End Sub
+    Sub LimparCampos()
 
-    Sub BuscarNome()
+        DataGrid.DataSource = Nothing
+        DataGridDuplicatas.DataSource = Nothing
+
+        TxtCodPedido.Text = ""
+        TxtDescPed.Text = ""
+        TxtNotaFiscal.Text = ""
+        DataEmissao.Value = Now()
+        TxtFornecedor.Text = ""
+        TxtNomeFornecedor.Text = ""
+        TxtTotalNota.Text = ""
+        TxtIdRegistro.Text = ""
+        TxtStatusPedido.Text = ""
+
+    End Sub
+    Sub HabilitarCampos()
+
+        TxtNotaFiscal.Enabled = True
+        BtnPesqPedido.Enabled = True
+        DataEmissao.Enabled = True
+
+    End Sub
+
+    Sub BloquearCampos()
+        TxtNotaFiscal.Enabled = False
+        BtnPesqPedido.Enabled = False
+        DataEmissao.Enabled = False
+
+    End Sub
+    Sub BuscarPedido()
         'BUSCAR INFORMAÇÕES DA TABELA E MOSTRAR NO DATAGRID
         Try
-            If TxtPesquisar.Text <> "" Then
+            If TxtCodPedido.Text <> "" Then
                 Abrir()
                 Dim sql As String
                 Dim dt As New DataTable
                 Dim da As MySqlDataAdapter
-                sql = "SELECT * FROM pedidos WHERE pedido = '" & TxtPesquisar.Text & "' "
+                sql = "SELECT  item, cod_produto, produto, quantidade, valor_unitario, valor_total FROM pedidos WHERE pedido = '" & TxtCodPedido.Text & "' "
                 da = New MySqlDataAdapter(sql, con)
                 da.Fill(dt)
                 DataGrid.DataSource = dt
 
                 FormatarGrid()
+
                 TotalDatagrid()
 
             End If
@@ -39,7 +69,7 @@ Public Class FrmEntrada
             Dim sql As String
             Dim dt As New DataTable
             Dim da As MySqlDataAdapter
-            sql = "SELECT * FROM duplicatas WHERE documento = '" & TxtNotaFiscal.Text & "' "
+            sql = "SELECT * FROM duplicatas WHERE id_entrada = '" & TxtIdRegistro.Text & "' "
             da = New MySqlDataAdapter(sql, con)
             da.Fill(dt)
             DataGridDuplicatas.DataSource = dt
@@ -83,11 +113,15 @@ Public Class FrmEntrada
             Dim sql1 As String
             Dim dt As New DataTable
             Dim da As MySqlDataAdapter
-            sql1 = "SELECT item, cod_produto, produto, quantidade, valor_unitario, valor_total  FROM estoque WHERE id_nota = '" & TxtIdRegistro.Text & "' "
+            sql1 = "SELECT item, cod_produto, produto, quantidade, valor_unitario, valor_total  FROM estoque WHERE id_entrada = '" & TxtIdRegistro.Text & "' order by item asc "
             da = New MySqlDataAdapter(sql1, con)
             da.Fill(dt)
             DataGrid.DataSource = dt
+
             FormatarGrid()
+
+            ListarDuplicatas()
+
         Catch ex As Exception
             MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
         End Try
@@ -96,6 +130,9 @@ Public Class FrmEntrada
 
 
     Sub FormatarGridDuplicatas()
+
+        DataGridDuplicatas.Columns(7).Visible = False
+
         DataGridDuplicatas.Columns(0).HeaderText = "Id. Reg."
         DataGridDuplicatas.Columns(1).HeaderText = "Parcela"
         DataGridDuplicatas.Columns(2).HeaderText = "Documento"
@@ -103,12 +140,18 @@ Public Class FrmEntrada
         DataGridDuplicatas.Columns(4).HeaderText = "Data Vencimento"
         DataGridDuplicatas.Columns(5).HeaderText = "Valor Parcela"
         DataGridDuplicatas.Columns(6).HeaderText = "Observação"
+
     End Sub
     Private Sub BtnPesquisar_Click(sender As Object, e As EventArgs) Handles BtnPesquisar.Click
+
         If TxtStatusPedido.Text <> "Fechado" Then
-            BuscarNome()
+
+            BuscarPedido()
+
         Else
+
             MsgBox("Pedido fechado, não pode ser utilizado!!", MsgBoxStyle.Information, "Pedido Fechado")
+
         End If
 
     End Sub
@@ -127,9 +170,6 @@ Public Class FrmEntrada
         DataGrid.Columns(1).Width = 60
         DataGrid.Columns(2).Width = 250
         DataGrid.Columns(3).Width = 60
-        'DataGrid.Columns(5).Width = 80
-        'DataGrid.Columns(6).Width = 170
-        'DataGrid.Columns(7).Width = 49
 
         DataGrid.Columns(0).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid.Columns(1).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
@@ -138,7 +178,6 @@ Public Class FrmEntrada
         DataGrid.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid.Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-
 
         DataGrid.Columns(4).DefaultCellStyle.Format = "c"
         DataGrid.Columns(5).DefaultCellStyle.Format = "c"
@@ -174,7 +213,7 @@ Public Class FrmEntrada
     Private Sub BtnSalvar_Click(sender As Object, e As EventArgs) Handles BtnSalvar.Click
         TxtNotaFiscal.BackColor = Color.White
         TxtFornecedor.BackColor = Color.White
-        TxtPesquisar.BackColor = Color.White
+        TxtDescPed.BackColor = Color.White
 
 
         If DataGrid.RowCount < 1 Then
@@ -182,7 +221,7 @@ Public Class FrmEntrada
             Exit Sub
         End If
 
-        If TxtNotaFiscal.Text <> "" And TxtFornecedor.Text <> "" And TxtPesquisar.Text <> "" Then
+        If TxtNotaFiscal.Text <> "" And TxtFornecedor.Text <> "" And TxtCodPedido.Text <> "" Then
 
             '............................................................................................
             'VALIDAR TOTAL DUPLICATAS E TOTAL NOTA
@@ -207,7 +246,7 @@ Public Class FrmEntrada
 
                 data3 = Now().ToString("yyyy-MM-dd")
 
-                sqls = "INSERT INTO entrada (id, nota, fornecedor, id_pedido, data_registro, emissao, vencimento, valor, saldo ) VALUES ('" & TxtIdRegistro.Text & "','" & TxtNotaFiscal.Text & "', '" & TxtFornecedor.Text & "', '" & TxtIdPedido.Text & "','" & data3 & "', '" & data1 & "', '" & TxtTotalNota.Text.Replace(",", ".") & "', '" & TxtTotalNota.Text.Replace(",", ".") & "')"
+                sqls = "INSERT INTO entrada (id, nota, fornecedor, id_pedido, data_registro, emissao, vencimento, valor, saldo ) VALUES ('" & TxtIdRegistro.Text & "','" & TxtNotaFiscal.Text & "', '" & TxtFornecedor.Text & "', '" & TxtCodPedido.Text & "','" & data3 & "', '" & data1 & "', '" & TxtTotalNota.Text.Replace(",", ".") & "', '" & TxtTotalNota.Text.Replace(",", ".") & "')"
                 cmd = New MySqlCommand(sqls, con)
                 cmd.ExecuteNonQuery()
 
@@ -232,7 +271,7 @@ Public Class FrmEntrada
 
             TxtNotaFiscal.BackColor = Color.Salmon
             TxtFornecedor.BackColor = Color.Salmon
-            TxtPesquisar.BackColor = Color.Salmon
+            TxtDescPed.BackColor = Color.Salmon
 
             MsgBox("Campos vazios ou inválidos!!", MsgBoxStyle.Information, "Campos obrigatórios")
 
@@ -247,7 +286,7 @@ Public Class FrmEntrada
 
                 Dim cmd As MySqlCommand
                 Dim sqls As String
-                sqls = "INSERT INTO duplicatas (parcela, documento, data_emissao, data_vencimento, valor_parcela, observacao) VALUES (@parcela, @documento, @data_emissao, @data_vencimento, @valor_parcela, @observacao )"
+                sqls = "INSERT INTO duplicatas (parcela, documento, data_emissao, data_vencimento, valor_parcela, observacao, id_entrada) VALUES (@parcela, @documento, @data_emissao, @data_vencimento, @valor_parcela, @observacao )"
                 cmd = New MySqlCommand(sqls, con)
                 With cmd
                     .Parameters.AddWithValue("@parcela", CInt(DataGridDuplicatas.Rows(i).Cells(1).Value.ToString))
@@ -266,44 +305,7 @@ Public Class FrmEntrada
         End Try
 
     End Sub
-    Sub LimparCampos()
 
-        DataGrid.DataSource = Nothing
-        TxtNotaFiscal.Text = ""
-        TxtPesquisar.Text = ""
-        TxtFornecedor.Text = ""
-        TxtIdRegistro.Text = ""
-        TxtIdPedido.Text = ""
-        IdPedido = ""
-        numeroPedido = ""
-        StatusPedido = ""
-        TxtTotalNota.Text = ""
-
-        codCliente = ""
-        codCliente = ""
-        nomeCliente = ""
-        codProduto = ""
-        nomeProduto = ""
-        valorUnit = ""
-
-    End Sub
-    Sub HabilitarCampos()
-        TxtPesquisar.Enabled = True
-        BtnPesqPedido.Enabled = True
-        BtnPesquisar.Enabled = True
-        TxtNotaFiscal.Enabled = True
-        BtnSalvar.Enabled = True
-        BtnEditar.Enabled = True
-
-    End Sub
-
-    Sub BloquearCampos()
-        TxtPesquisar.Enabled = False
-        BtnPesqPedido.Enabled = False
-        BtnPesquisar.Enabled = False
-        TxtNotaFiscal.Enabled = False
-        BtnSalvar.Enabled = False
-    End Sub
     Sub SalvarEstoque()
         Try
             Abrir()
@@ -371,9 +373,10 @@ Public Class FrmEntrada
 
     Private Sub BtnNovo_Click(sender As Object, e As EventArgs) Handles BtnNovo.Click
 
-        registarDocumento = "True"
+        LimparCampos()
 
         HabilitarCampos()
+
         GerarIdRegistro()
 
     End Sub
@@ -385,7 +388,7 @@ Public Class FrmEntrada
         Dim statusPedido As String
         statusPedido = "Fechado"
 
-        sqls = "UPDATE pedido_cabecalho SET status = '" & statusPedido & "' WHERE id = '" & TxtIdPedido.Text & "'"
+        sqls = "UPDATE pedido_cabecalho SET status = '" & statusPedido & "' WHERE id = '" & TxtCodPedido.Text & "'"
         cmd = New MySqlCommand(sqls, con)
         cmd.ExecuteNonQuery()
 
@@ -465,15 +468,12 @@ Public Class FrmEntrada
 
         If MsgBox("Deseja eliminar parcela ?", vbYesNo, "Eliminar duplicatas") = vbYes Then
 
-            If registarDocumento = "True" Then
 
-                DeltarParcelaBanco()
+            DeltarParcelaBanco()
 
-            Else
 
                 DataGridDuplicatas.Rows.Remove(DataGridDuplicatas.CurrentRow)
 
-            End If
         End If
 
     End Sub
