@@ -388,6 +388,7 @@ Public Class FrmClientes
                     maximo = ultima("id")
                     ultima.Close()
                 End If
+                ultima.Close()
 
             Catch ex As Exception
                 MsgBox("Erro ao Salvar!! " + ex.Message)

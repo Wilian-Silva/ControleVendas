@@ -43,6 +43,7 @@ Partial Class FrmDuplicatas
         Me.Label8 = New System.Windows.Forms.Label()
         Me.TxtIdREg = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.BtnSalvar = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -195,11 +196,13 @@ Partial Class FrmDuplicatas
         'BtnOk
         '
         Me.BtnOk.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnOk.Enabled = False
         Me.BtnOk.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.BtnOk.Location = New System.Drawing.Point(10, 14)
         Me.BtnOk.Name = "BtnOk"
         Me.BtnOk.Size = New System.Drawing.Size(70, 30)
         Me.BtnOk.TabIndex = 168
+        Me.BtnOk.TabStop = False
         Me.BtnOk.Text = "OK"
         Me.BtnOk.UseVisualStyleBackColor = True
         '
@@ -264,6 +267,7 @@ Partial Class FrmDuplicatas
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.GroupBox1.Controls.Add(Me.BtnSalvar)
         Me.GroupBox1.Controls.Add(Me.BtnOk)
         Me.GroupBox1.Controls.Add(Me.BtnCancelar)
         Me.GroupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -272,6 +276,17 @@ Partial Class FrmDuplicatas
         Me.GroupBox1.Size = New System.Drawing.Size(469, 52)
         Me.GroupBox1.TabIndex = 171
         Me.GroupBox1.TabStop = False
+        '
+        'BtnSalvar
+        '
+        Me.BtnSalvar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnSalvar.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.BtnSalvar.Location = New System.Drawing.Point(152, 14)
+        Me.BtnSalvar.Name = "BtnSalvar"
+        Me.BtnSalvar.Size = New System.Drawing.Size(70, 30)
+        Me.BtnSalvar.TabIndex = 169
+        Me.BtnSalvar.Text = "Salvar"
+        Me.BtnSalvar.UseVisualStyleBackColor = True
         '
         'FrmDuplicatas
         '
@@ -314,4 +329,5 @@ Partial Class FrmDuplicatas
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Label8 As Label
     Friend WithEvents TxtIdREg As TextBox
+    Friend WithEvents BtnSalvar As Button
 End Class

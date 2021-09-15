@@ -22,54 +22,22 @@ Public Class FrmDuplicatas
     End Sub
 
     Private Sub FrmDuplicatas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If editarDuplicata = "True" Then Exit Sub
-        TxtParcela.Text = parcela + 1
-        parcela = TxtParcela.Text
+        If editarDuplicata = "True" Then
+            BtnSalvar.Enabled = True
+            BtnOk.Enabled = False
+            Exit Sub
+        End If
+
+        If novaEntrada = "True" Then
+            BtnOk.Enabled = True
+            BtnSalvar.Enabled = False
+            TxtParcela.Text = parcela + 1
+            parcela = TxtParcela.Text
+        End If
+
     End Sub
 
     Private Sub BtnOk_Click(sender As Object, e As EventArgs) Handles BtnOk.Click
-
-        If editarDuplicata = "Inserir" Then
-
-            'SALVAR ALTERAÇÃO DIRETAMENTE NO BANCO DE DADOS
-
-            Dim cmd As MySqlCommand
-            Dim sqls As String
-            Dim emissao As String
-            Dim vencimento As String
-
-            emissao = DataEmissao.Value.ToString("yyyy-MM-dd")
-            vencimento = DataVencimento.Value.ToString("yyyy-MM-dd")
-
-            sqls = "INSERT INTO duplicatas (parcela, documento, data_emissao, data_vencimento, valor_parcela, observacao) VALUES ('" & TxtParcela.Text & "','" & TxtNotaFiscal.Text & "',  '" & emissao & "','" & vencimento & "', '" & TxtTotalDuplicata.Text.Replace(",", ".") & "', '" & TxtObs.Text & "')"
-            cmd = New MySqlCommand(sqls, con)
-            cmd.ExecuteNonQuery()
-
-            Me.Close()
-
-            Exit Sub
-        End If
-
-
-        If editarDuplicata = "True" Then
-
-            'SALVAR UPDATE DIRETAMENTE NO BANCO DE DADOS
-            Dim cmd1 As MySqlCommand
-            Dim sqls1 As String
-            Dim vencimento As String
-
-            vencimento = DataVencimento.Value.ToString("yyyy-MM-dd")
-
-            sqls1 = "UPDATE duplicatas SET data_vencimento = '" & vencimento & "', valor_parcela = '" & TxtTotalDuplicata.Text.Replace(",", ".") & "', observacao = '" & TxtObs.Text & "' WHERE id = '" & TxtIdREg.Text & "'"
-            cmd1 = New MySqlCommand(sqls1, con)
-            cmd1.ExecuteNonQuery()
-
-            TxtParcela.Enabled = True
-            Me.Close()
-            Exit Sub
-
-        End If
-
 
         TxtParcela.BackColor = Color.White
         TxtTotalDuplicata.BackColor = Color.White
@@ -77,9 +45,9 @@ Public Class FrmDuplicatas
 
         If TxtParcela.Text <> "" And TxtTotalDuplicata.Text <> "" And TxtNotaFiscal.Text <> "" Then
 
-            If FrmEntrada.DataGridDuplicatas.Rows.Count < 1 Then
-
-                Table1Duplicatas.Columns.Add("Id. Reg.")
+            'If FrmEntrada.DataGridDuplicatas.Rows.Count < 1 Then
+            If Table1Duplicatas.Rows.Count < 1 Then
+                Table1Duplicatas.Columns.Add("Id. Dup.")
                 Table1Duplicatas.Columns.Add("Parcela")
                 Table1Duplicatas.Columns.Add("Documento")
                 Table1Duplicatas.Columns.Add("Data Emissão")
@@ -87,22 +55,16 @@ Public Class FrmDuplicatas
                 Table1Duplicatas.Columns.Add("Valor Parcela")
                 Table1Duplicatas.Columns.Add("Observação")
 
-                Dim bs As New BindingSource()
+                'Dim bs As New BindingSource()
                 bs.DataSource = Table1Duplicatas
 
-                FrmEntrada.DataGridDuplicatas.DataSource = bs
+                'FrmEntrada.DataGridDuplicatas.DataSource = bs
 
-                Table1Duplicatas.Rows.Add(TxtIdREg.Text, TxtParcela.Text, TxtNotaFiscal.Text, DataEmissao.Value.ToShortDateString, DataVencimento.Value.ToShortDateString, TxtTotalDuplicata.Text, TxtObs.Text)
+                Table1Duplicatas.Rows.Add("", TxtParcela.Text, TxtNotaFiscal.Text, DataEmissao.Value.ToShortDateString, DataVencimento.Value.ToShortDateString, TxtTotalDuplicata.Text, TxtObs.Text)
                 Me.Close()
 
-                Call FrmEntrada.TotalDatagridDuplicatas()
-                Call FrmEntrada.TotalNfe_TotalDuplicatas()
-
             Else
-                Table1Duplicatas.Rows.Add(TxtIdREg.Text, TxtParcela.Text, TxtNotaFiscal.Text, DataEmissao.Value.ToShortDateString, DataVencimento.Value.ToShortDateString, TxtTotalDuplicata.Text, TxtObs.Text)
-
-                Call FrmEntrada.TotalDatagridDuplicatas()
-                Call FrmEntrada.TotalNfe_TotalDuplicatas()
+                Table1Duplicatas.Rows.Add("", TxtParcela.Text, TxtNotaFiscal.Text, DataEmissao.Value.ToShortDateString, DataVencimento.Value.ToShortDateString, TxtTotalDuplicata.Text, TxtObs.Text)
 
                 Me.Close()
             End If
@@ -111,10 +73,65 @@ Public Class FrmDuplicatas
             TxtParcela.BackColor = Color.Salmon
             TxtNotaFiscal.BackColor = Color.Salmon
             TxtTotalDuplicata.BackColor = Color.Salmon
-                MsgBox("Campos em branco ou vazios", MsgBoxStyle.Information, "Adicionar duplicatas")
+            MsgBox("Campos em branco ou vazios", MsgBoxStyle.Information, "Adicionar duplicatas")
+        End If
+
+    End Sub
+
+    Private Sub BtnSalvar_Click(sender As Object, e As EventArgs) Handles BtnSalvar.Click
+
+        TxtParcela.BackColor = Color.White
+        TxtTotalDuplicata.BackColor = Color.White
+        TxtNotaFiscal.BackColor = Color.White
+
+        If TxtParcela.Text <> "" And TxtTotalDuplicata.Text <> "" And TxtNotaFiscal.Text <> "" Then
+            If MsgBox("Deseja salvar alterações ?", vbYesNo, "Editar duplicatas") = vbYes Then
+
+                If editarDuplicata = "True" Then
+
+                    'SALVAR UPDATE DIRETAMENTE NO BANCO DE DADOS
+                    Dim cmd1 As MySqlCommand
+                    Dim sqls1 As String
+                    Dim vencimento1 As String
+
+                    vencimento1 = DataVencimento.Value.ToString("yyyy-MM-dd")
+
+                    sqls1 = "UPDATE duplicatas SET data_vencimento = '" & vencimento1 & "', valor_parcela = '" & TxtTotalDuplicata.Text.Replace(",", ".") & "', observacao = '" & TxtObs.Text & "' WHERE id = '" & TxtIdREg.Text & "'"
+                    cmd1 = New MySqlCommand(sqls1, con)
+                    cmd1.ExecuteNonQuery()
+
+                    Me.Close()
+                    Exit Sub
+
+                Else
+
+                    Dim cmd As MySqlCommand
+                    Dim sqls As String
+                    Dim emissao As String
+                    Dim vencimento As String
+
+                    emissao = DataEmissao.Value.ToString("yyyy-MM-dd")
+                    vencimento = DataVencimento.Value.ToString("yyyy-MM-dd")
+
+                    sqls = "INSERT INTO duplicatas (parcela, documento, data_emissao, data_vencimento, valor_parcela, observacao, id_entrada) VALUES ('" & TxtParcela.Text & "','" & TxtNotaFiscal.Text & "',  '" & emissao & "','" & vencimento & "', '" & TxtTotalDuplicata.Text.Replace(",", ".") & "', '" & TxtObs.Text & "' ,'" & TxtIdREg.Text & "')"
+                    cmd = New MySqlCommand(sqls, con)
+                    cmd.ExecuteNonQuery()
+
+                    Me.Close()
+
+                    Exit Sub
+
+                End If
+
+
             End If
 
+        Else
 
-
+            TxtParcela.BackColor = Color.Salmon
+            TxtNotaFiscal.BackColor = Color.Salmon
+            TxtTotalDuplicata.BackColor = Color.Salmon
+            MsgBox("Campos em branco ou vazios", MsgBoxStyle.Information, "Adicionar duplicatas")
+        End If
     End Sub
 End Class

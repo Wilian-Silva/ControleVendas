@@ -121,35 +121,6 @@
     <value>20, 20</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="BtnPesquisar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-</value>
-  </data>
   <data name="BtnPesqPedido.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6

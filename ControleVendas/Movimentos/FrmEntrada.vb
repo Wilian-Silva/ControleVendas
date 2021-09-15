@@ -29,14 +29,14 @@ Public Class FrmEntrada
         TxtIdRegistro.Text = ""
         TxtPesquisar.Text = ""
         TxtTotalDuplicatas.Text = ""
-
+        novaEntrada = ""
+        editarDuplicata = ""
     End Sub
     Sub HabilitarCampos()
 
         TxtNotaFiscal.Enabled = True
         BtnPesqPedido.Enabled = True
         DataEmissao.Enabled = True
-        BtnPesquisar.Enabled = True
 
     End Sub
 
@@ -44,7 +44,9 @@ Public Class FrmEntrada
         TxtNotaFiscal.Enabled = False
         BtnPesqPedido.Enabled = False
         DataEmissao.Enabled = False
-        BtnPesquisar.Enabled = False
+
+        BtnEditar.Enabled = True
+        BtnAtualizar.Enabled = True
 
     End Sub
     Sub BuscarPedido()
@@ -69,7 +71,8 @@ Public Class FrmEntrada
         End Try
 
     End Sub
-    Sub ListarDuplicatas()
+    Public Sub ListarDuplicatas()
+
         'BUSCAR INFORMAÇÕES DA TABELA E MOSTRAR NO DATAGRID
         Try
             Abrir()
@@ -138,11 +141,11 @@ Public Class FrmEntrada
         End Try
 
     End Sub
-    Sub FormatarGridDuplicatas()
+    Public Sub FormatarGridDuplicatas()
 
         DataGridDuplicatas.Columns(7).Visible = False
 
-        DataGridDuplicatas.Columns(0).HeaderText = "Id. Reg."
+        DataGridDuplicatas.Columns(0).HeaderText = "Id. Dup."
         DataGridDuplicatas.Columns(1).HeaderText = "Parcela"
         DataGridDuplicatas.Columns(2).HeaderText = "Documento"
         DataGridDuplicatas.Columns(3).HeaderText = "Data Emissão"
@@ -157,7 +160,7 @@ Public Class FrmEntrada
         TotalNfe_TotalDuplicatas()
 
     End Sub
-    Sub TotalNfe_TotalDuplicatas()
+    Public Sub TotalNfe_TotalDuplicatas()
         Dim Nfe As String
         Dim Dup As String
         Nfe = TxtTotalNota.Text
@@ -168,11 +171,7 @@ Public Class FrmEntrada
         End If
 
     End Sub
-    Private Sub BtnPesquisar_Click(sender As Object, e As EventArgs) Handles BtnPesquisar.Click
 
-        BuscarPedido()
-
-    End Sub
 
     Private Sub FormatarGrid()
         ' DataGrid.Columns(0).Visible = False
@@ -203,7 +202,7 @@ Public Class FrmEntrada
     End Sub
 
 
-    Private Sub TotalDatagrid()
+    Public Sub TotalDatagrid()
 
         'CALCULANDO SOMA TOTAL
         On Error Resume Next
@@ -214,7 +213,7 @@ Public Class FrmEntrada
         TxtTotalNota.Text = total
         'TxtTotalPedido.Text = Convert.ToDouble(TxtTotalPedido.Text).ToString("C")
     End Sub
-    Sub TotalDatagridDuplicatas()
+    Public Sub TotalDatagridDuplicatas()
 
         'CALCULANDO SOMA TOTAL
         On Error Resume Next
@@ -292,6 +291,8 @@ Public Class FrmEntrada
                     BloquearCampos()
 
                     MsgBox("Cadastro salvo com Sucesso!!", MsgBoxStyle.Information, "Salvar")
+
+                    ListarUltimaNota()
 
                 End If
             Catch ex As Exception
@@ -413,6 +414,10 @@ Public Class FrmEntrada
 
         GerarIdRegistro()
 
+        novaEntrada = "True"
+        BtnEditar.Enabled = False
+        BtnAtualizar.Enabled = False
+
     End Sub
     Sub SalvarStatusPedido()
         Abrir()
@@ -458,13 +463,20 @@ Public Class FrmEntrada
             nomeFornecedor = ""
         End If
 
+        If novaEntrada = "True" Then
+            DataGridDuplicatas.DataSource = bs
+            TotalDatagridDuplicatas()
+            TotalNfe_TotalDuplicatas()
+        End If
+
     End Sub
 
     Private Sub BtnEditar_Click(sender As Object, e As EventArgs) Handles BtnEditar.Click
-
+        ' Stop
         If MsgBox("Deseja editar parcela ?", vbYesNo, "Editar duplicatas") = vbYes Then
 
             editarDuplicata = "True"
+
             Dim form = New FrmDuplicatas()
 
             form.TxtIdREg.Text = DataGridDuplicatas.CurrentRow.Cells(0).Value.ToString()
@@ -487,29 +499,49 @@ Public Class FrmEntrada
 
         If MsgBox("Deseja eliminar parcela ?", vbYesNo, "Eliminar duplicatas") = vbYes Then
 
-
             DeltarParcelaBanco()
-
-
-                DataGridDuplicatas.Rows.Remove(DataGridDuplicatas.CurrentRow)
+            ListarDuplicatas()
+            TotalDatagridDuplicatas()
+            TotalNfe_TotalDuplicatas()
 
         End If
 
     End Sub
     Sub DeltarParcelaBanco()
 
+
         Abrir()
-        'PROGRAMANDO EXCLUSÃO DE REGISTRO NO BANCO
-        Dim cmd As MySqlCommand
+
+        'VERIFICAR ULTIMO ID NO BANCO 
+        Dim cmdp As MySqlCommand
         Dim sql As String
-        Dim idReg As Integer
-        idReg = DataGridDuplicatas.CurrentRow.Cells(0).Value.ToString()
+        Dim reader As MySqlDataReader
+        Dim idReg As String
 
-        sql = "DELETE FROM duplicatas where id = '" & idReg & "' "
-        cmd = New MySqlCommand(sql, con)
-        cmd.ExecuteNonQuery()
+        idReg = DataGridDuplicatas.CurrentRow.Cells(0).Value.ToString
 
-        MsgBox("Registro excluído com Sucesso!!", MsgBoxStyle.Information, "Exlusão")
+        sql = "SELECT * FROM duplicatas WHERE id = '" & idReg & "' "
+        cmdp = New MySqlCommand(sql, con)
+        reader = cmdp.ExecuteReader
+
+        If reader.Read = True Then
+            reader.Close()
+
+            Dim cmd As MySqlCommand
+            Dim sql1 As String
+            sql1 = "DELETE FROM duplicatas where id = '" & idReg & "' "
+            cmd = New MySqlCommand(sql1, con)
+            cmd.ExecuteNonQuery()
+
+            MsgBox("Registro excluído com Sucesso!!", MsgBoxStyle.Information, "Exlusão")
+
+        Else
+            reader.Close()
+
+
+            DataGridDuplicatas.Rows.Remove(DataGridDuplicatas.CurrentRow)
+        End If
+
 
     End Sub
 
@@ -554,6 +586,7 @@ Public Class FrmEntrada
                     maximo = ultima("id")
                     ultima.Close()
                 End If
+                ultima.Close()
 
             Catch ex As Exception
                 MsgBox("Erro ao Salvar!! " + ex.Message)
@@ -839,5 +872,18 @@ Line1:
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         SalvarDuplicata()
+    End Sub
+
+    Private Sub TxtCodPedido_TextChanged(sender As Object, e As EventArgs) Handles TxtCodPedido.TextChanged
+        If novaEntrada = "True" Then
+            BuscarPedido()
+        End If
+
+    End Sub
+
+    Private Sub BtnAtualizar_Click(sender As Object, e As EventArgs) Handles BtnAtualizar.Click
+        ListarDuplicatas()
+        TotalDatagridDuplicatas()
+        TotalNfe_TotalDuplicatas()
     End Sub
 End Class

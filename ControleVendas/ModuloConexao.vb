@@ -18,6 +18,7 @@ Module ModuloConexao
     End Sub
 
     'DECLAÇÃO DE VARIAVEIS GLOBAIS
+    Public bs As New BindingSource()
 
     Public Table1Duplicatas As New DataTable("MyTable")
     Public parcela As Integer
@@ -38,7 +39,7 @@ Module ModuloConexao
     Public nomePedido As String
     Public totalPedido As String
 
-
+    Public novaEntrada As String
 
     Public IdPedido As String
     Public StatusPedido As String

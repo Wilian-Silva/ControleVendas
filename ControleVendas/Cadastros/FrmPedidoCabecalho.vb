@@ -111,21 +111,25 @@ Public Class FrmPedidoCabecalho
         'DataGrid.Columns(0).Visible = False
 
         DataGrid.Columns(0).HeaderText = "Nº Pedido"
-        DataGrid.Columns(1).HeaderText = "Desc. Pedido"
-        DataGrid.Columns(2).HeaderText = "Cód. Fornecedor"
+        DataGrid.Columns(1).HeaderText = "Desc.Pedido"
+        DataGrid.Columns(2).HeaderText = "Cód. Fornec."
         DataGrid.Columns(3).HeaderText = "Fornecedor"
         DataGrid.Columns(4).HeaderText = "Data Pedido"
         DataGrid.Columns(5).HeaderText = "Valor Total"
         DataGrid.Columns(6).HeaderText = "Status Pedido"
 
-        DataGrid.Columns(0).Width = 75
-        DataGrid.Columns(2).Width = 75
-        DataGrid.Columns(1).Width = 110
+        DataGrid.Columns(0).Width = 50
+        DataGrid.Columns(2).Width = 50
+        DataGrid.Columns(1).Width = 115
         DataGrid.Columns(3).Width = 140
+        DataGrid.Columns(4).Width = 90
         DataGrid.Columns(5).Width = 100
+        DataGrid.Columns(6).Width = 80
 
         DataGrid.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid.Columns(2).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGrid.Columns(4).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGrid.Columns(6).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid.Columns(6).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid.Columns(0).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
