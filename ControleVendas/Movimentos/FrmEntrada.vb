@@ -1,7 +1,9 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class FrmEntrada
-
+    Dim proximo As Integer
+    Dim anterior As Integer
+    Dim maximo As Integer
     Private Sub FrmEntrada_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ListarUltimaNota()
     End Sub
@@ -25,7 +27,8 @@ Public Class FrmEntrada
         TxtNomeFornecedor.Text = ""
         TxtTotalNota.Text = ""
         TxtIdRegistro.Text = ""
-        TxtStatusPedido.Text = ""
+        TxtPesquisar.Text = ""
+        TxtTotalDuplicatas.Text = ""
 
     End Sub
     Sub HabilitarCampos()
@@ -94,9 +97,9 @@ Public Class FrmEntrada
             Dim sql As String
 
 
-            'sql = "SELECT * FROM entrada WHERE id=(SELECT MAX(id) FROM entrada) "
+            sql = "SELECT * FROM entrada WHERE id=(SELECT MAX(id) FROM entrada) "
 
-            sql = "SELECT e.id, e.nota, e.cod_fornecedor, e.fornecedor, e.id_pedido, e.descricao, p.status, e.emissao, e.valor FROM entrada AS e INNER JOIN pedido_cabecalho AS p ON e.id_pedido = p.id "
+            'sql = "SELECT e.id, e.nota, e.cod_fornecedor, e.fornecedor, e.id_pedido, e.descricao, p.status, e.emissao, e.valor FROM entrada AS e INNER JOIN pedido_cabecalho AS p ON e.id_pedido = p.id "
             cmd = New MySqlCommand(sql, con)
             reader = cmd.ExecuteReader
             If reader.Read = True Then
@@ -107,7 +110,7 @@ Public Class FrmEntrada
                 TxtNomeFornecedor.Text = reader(3)
                 TxtCodPedido.Text = reader(4)
                 TxtDescPed.Text = reader(5)
-                TxtStatusPedido.Text = reader(6)
+                'TxtStatusPedido.Text = reader(6)
                 DataEmissao.Value = reader(7)
                 TxtTotalNota.Text = reader(8)
 
@@ -147,18 +150,27 @@ Public Class FrmEntrada
         DataGridDuplicatas.Columns(5).HeaderText = "Valor Parcela"
         DataGridDuplicatas.Columns(6).HeaderText = "Observação"
 
+        DataGridDuplicatas.Columns(5).DefaultCellStyle.Format = "c"
+
+        TotalDatagridDuplicatas()
+
+        TotalNfe_TotalDuplicatas()
+
+    End Sub
+    Sub TotalNfe_TotalDuplicatas()
+        Dim Nfe As String
+        Dim Dup As String
+        Nfe = TxtTotalNota.Text
+        Dup = TxtTotalDuplicatas.Text
+        LblSaldo.Text = ""
+        If Nfe <> Dup Then
+            LblSaldo.Text = "Valor total da NFe difente do valor total das duplicatas!"
+        End If
+
     End Sub
     Private Sub BtnPesquisar_Click(sender As Object, e As EventArgs) Handles BtnPesquisar.Click
 
-        If TxtStatusPedido.Text <> "Fechado" Then
-
-            BuscarPedido()
-
-        Else
-
-            MsgBox("Pedido fechado, não pode ser utilizado!!", MsgBoxStyle.Information, "Pedido Fechado")
-
-        End If
+        BuscarPedido()
 
     End Sub
 
@@ -189,6 +201,8 @@ Public Class FrmEntrada
         DataGrid.Columns(5).DefaultCellStyle.Format = "c"
 
     End Sub
+
+
     Private Sub TotalDatagrid()
 
         'CALCULANDO SOMA TOTAL
@@ -200,7 +214,7 @@ Public Class FrmEntrada
         TxtTotalNota.Text = total
         'TxtTotalPedido.Text = Convert.ToDouble(TxtTotalPedido.Text).ToString("C")
     End Sub
-    Private Sub TotalDatagridDuplicatas()
+    Sub TotalDatagridDuplicatas()
 
         'CALCULANDO SOMA TOTAL
         On Error Resume Next
@@ -217,10 +231,28 @@ Public Class FrmEntrada
     End Sub
 
     Private Sub BtnSalvar_Click(sender As Object, e As EventArgs) Handles BtnSalvar.Click
+
+        Abrir()
+        'VERIFICAR SE O REGISTRO JÁ EXISTE
+        Dim cmdUSU As MySqlCommand
+        Dim readerUSU As MySqlDataReader
+        Dim sqlUSU As String
+
+        sqlUSU = "SELECT * FROM entrada WHERE id = '" & TxtIdRegistro.Text & "' "
+        cmdUSU = New MySqlCommand(sqlUSU, con)
+        readerUSU = cmdUSU.ExecuteReader
+        If readerUSU.Read = True Then
+            readerUSU.Close()
+            MsgBox("Registro já está cadastrado!!", MsgBoxStyle.Information, "Entrada NFe")
+
+            Exit Sub
+        End If
+        readerUSU.Close()
+        '.............................................................................................
+
         TxtNotaFiscal.BackColor = Color.White
         TxtFornecedor.BackColor = Color.White
         TxtDescPed.BackColor = Color.White
-
 
         If DataGrid.RowCount < 1 Then
             MsgBox("Adicione registros para salvar!!", MsgBoxStyle.Information, "Salvar")
@@ -229,47 +261,39 @@ Public Class FrmEntrada
 
         If TxtNotaFiscal.Text <> "" And TxtFornecedor.Text <> "" And TxtCodPedido.Text <> "" Then
 
-            '............................................................................................
-            'VALIDAR TOTAL DUPLICATAS E TOTAL NOTA
-            Dim soma As Double
-            soma = TxtTotalNota.Text - TxtTotalDuplicatas.Text
-            If soma >= 1 Then
-                MsgBox("Total de duplicatas diferente do valor total da nota fiscal")
-                Exit Sub
-            End If
-            '............................................................................................
 
             Try
-                Abrir()
 
-                'PROGRAMANDO INSERÇÃO DE REGISTRO NO BANCO
-                Dim cmd As MySqlCommand
-                Dim sqls As String
-                Dim data1 As String
+                If MsgBox("Deseja salvar esse registro?", vbYesNo, "NFe Entrada") = vbYes Then
+                    Abrir()
 
-                Dim data3 As String
-                data1 = DataEmissao.Value.ToString("yyyy-MM-dd")
+                    'PROGRAMANDO INSERÇÃO DE REGISTRO NO BANCO
+                    Dim cmd As MySqlCommand
+                    Dim sqls As String
+                    Dim data1 As String
 
-                data3 = Now().ToString("yyyy-MM-dd")
+                    Dim data3 As String
+                    data1 = DataEmissao.Value.ToString("yyyy-MM-dd")
 
-                sqls = "INSERT INTO entrada (id, nota, fornecedor, id_pedido, data_registro, emissao, vencimento, valor, saldo ) VALUES ('" & TxtIdRegistro.Text & "','" & TxtNotaFiscal.Text & "', '" & TxtFornecedor.Text & "', '" & TxtCodPedido.Text & "','" & data3 & "', '" & data1 & "', '" & TxtTotalNota.Text.Replace(",", ".") & "', '" & TxtTotalNota.Text.Replace(",", ".") & "')"
-                cmd = New MySqlCommand(sqls, con)
-                cmd.ExecuteNonQuery()
+                    data3 = Now().ToString("yyyy-MM-dd")
 
-                SalvarEstoque()
+                    sqls = "INSERT INTO entrada ( id, nota, cod_fornecedor, fornecedor, id_pedido, descricao, data_registro, emissao, valor ) VALUES ('" & TxtIdRegistro.Text & "','" & TxtNotaFiscal.Text & "', '" & TxtFornecedor.Text & "', '" & TxtNomeFornecedor.Text & "', '" & TxtCodPedido.Text & "','" & TxtDescPed.Text & "' ,'" & data3 & "', '" & data1 & "', '" & TxtTotalNota.Text.Replace(",", ".") & "')"
+                    cmd = New MySqlCommand(sqls, con)
+                    cmd.ExecuteNonQuery()
 
-                SalvarStatusPedido()
+                    SalvarEstoque()
 
-                SalvarDuplicata()
+                    SalvarStatusPedido()
 
-                LimparCampos()
+                    SalvarDuplicata()
 
-                BloquearCampos()
+                    LimparCampos()
 
+                    BloquearCampos()
 
-                MsgBox("Cadastro salvo com Sucesso!!", MsgBoxStyle.Information, "Salvar")
+                    MsgBox("Cadastro salvo com Sucesso!!", MsgBoxStyle.Information, "Salvar")
 
-
+                End If
             Catch ex As Exception
                 MsgBox("Erro ao Salvar!!" + ex.Message)
             End Try
@@ -292,11 +316,12 @@ Public Class FrmEntrada
 
                 Dim cmd As MySqlCommand
                 Dim sqls As String
-                sqls = "INSERT INTO duplicatas (parcela, documento, data_emissao, data_vencimento, valor_parcela, observacao, id_entrada) VALUES (@parcela, @documento, @data_emissao, @data_vencimento, @valor_parcela, @observacao )"
+                sqls = "INSERT INTO duplicatas (parcela, documento, data_emissao, data_vencimento, valor_parcela, observacao, id_entrada) VALUES (@parcela, @documento, @data_emissao, @data_vencimento, @valor_parcela, @observacao, @id_entrada )"
                 cmd = New MySqlCommand(sqls, con)
                 With cmd
+                    .Parameters.AddWithValue("@id_entrada", CInt(DataGridDuplicatas.Rows(i).Cells(0).Value.ToString))
                     .Parameters.AddWithValue("@parcela", CInt(DataGridDuplicatas.Rows(i).Cells(1).Value.ToString))
-                    .Parameters.AddWithValue("@documento", CInt(DataGridDuplicatas.Rows(i).Cells(2).Value.ToString))
+                    .Parameters.AddWithValue("@documento", DataGridDuplicatas.Rows(i).Cells(2).Value.ToString)
                     .Parameters.AddWithValue("@data_emissao", CDate(DataGridDuplicatas.Rows(i).Cells(3).Value.ToString))
                     .Parameters.AddWithValue("@data_vencimento", CDate(DataGridDuplicatas.Rows(i).Cells(4).Value.ToString))
                     .Parameters.AddWithValue("@valor_parcela", CDbl(DataGridDuplicatas.Rows(i).Cells(5).Value.ToString))
@@ -321,24 +346,27 @@ Public Class FrmEntrada
             Dim data1 As String
             Dim IdNota As Integer
             Dim fornec As String
-
+            Dim idPed As Integer
 
             data1 = Now().ToString("yyyy-MM-dd")
             IdNota = TxtIdRegistro.Text
             fornec = TxtFornecedor.Text
+            idPed = TxtCodPedido.Text
+
             Dim tipomvto As String
             tipomvto = "Entrada"
             For i = 0 To DataGrid.RowCount - 1
 
-                sql1 = "INSERT INTO estoque (data_registro, tipo, id_nota, cod_produto, produto, quantidade, valor_unitario, valor_total ) VALUES ('" & data1 & "', '" & tipomvto & "', '" & IdNota & "', @cod_produto, @produto, @quantidade, @valor_unitario, @valor_total)"
+                sql1 = "INSERT INTO estoque (data_registro, tipo, id_entrada, cod_produto, produto, quantidade, valor_unitario, valor_total, id_pedido, item ) VALUES ('" & data1 & "', '" & tipomvto & "', '" & IdNota & "', @cod_produto, @produto, @quantidade, @valor_unitario, @valor_total,'" & idPed & "', @item )"
                 cmd1 = New MySqlCommand(sql1, con)
                 With cmd1
 
-                    .Parameters.AddWithValue("@cod_produto", CInt(DataGrid.Rows(i).Cells(2).Value.ToString))
-                    .Parameters.AddWithValue("@produto", DataGrid.Rows(i).Cells(6).Value.ToString)
-                    .Parameters.AddWithValue("@quantidade", CInt(DataGrid.Rows(i).Cells(7).Value.ToString))
-                    .Parameters.AddWithValue("@valor_unitario", CDbl(DataGrid.Rows(i).Cells(8).Value.ToString))
-                    .Parameters.AddWithValue("@valor_total", CDbl(DataGrid.Rows(i).Cells(9).Value.ToString))
+                    .Parameters.AddWithValue("@cod_produto", CInt(DataGrid.Rows(i).Cells(1).Value.ToString))
+                    .Parameters.AddWithValue("@produto", DataGrid.Rows(i).Cells(2).Value.ToString)
+                    .Parameters.AddWithValue("@quantidade", CInt(DataGrid.Rows(i).Cells(3).Value.ToString))
+                    .Parameters.AddWithValue("@valor_unitario", CDbl(DataGrid.Rows(i).Cells(4).Value.ToString))
+                    .Parameters.AddWithValue("@valor_total", CDbl(DataGrid.Rows(i).Cells(5).Value.ToString))
+                    .Parameters.AddWithValue("@item", CInt(DataGrid.Rows(i).Cells(0).Value.ToString))
                     cmd1.ExecuteNonQuery()
                 End With
 
@@ -407,40 +435,24 @@ Public Class FrmEntrada
     Private Sub BtnIncluir_Click(sender As Object, e As EventArgs) Handles BtnIncluir.Click
 
         Dim form = New FrmDuplicatas()
-
-
-        If DataGridDuplicatas.Rows.Count < 1 Then
-
-            form.TxtTotalDuplicata.Text = TxtTotalNota.Text
-            form.TxtNotaFiscal.Text = TxtNotaFiscal.Text
-            form.DataEmissao.Value = DataEmissao.Value
-        Else
-            form.TxtTotalDuplicata.Text = TxtTotalNota.Text - TxtTotalDuplicatas.Text
-            form.TxtNotaFiscal.Text = TxtNotaFiscal.Text
-            form.DataEmissao.Value = DataEmissao.Value
-        End If
-
+        form.TxtNotaFiscal.Text = TxtNotaFiscal.Text
+        form.DataEmissao.Value = DataEmissao.Value
+        form.TxtIdREg.Text = TxtIdRegistro.Text
         form.ShowDialog()
+
     End Sub
-
-
 
     Private Sub FrmEntrada_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
 
         If pedidoPesquisar = "True" Then
             TxtCodPedido.Text = numeroPedido
             TxtDescPed.Text = nomePedido
-            TxtStatusPedido.Text = StatusPedido
             TxtTotalNota.Text = totalPedido
-
             TxtFornecedor.Text = codFornecedor
             TxtNomeFornecedor.Text = nomeFornecedor
 
-
-
             pedidoPesquisar = ""
             nomePedido = ""
-            StatusPedido = ""
             totalPedido = ""
             codFornecedor = ""
             nomeFornecedor = ""
@@ -518,5 +530,314 @@ Public Class FrmEntrada
         If MsgBox("Deseja limpar registros?", vbYesNo, "Limpar registros") = vbYes Then
             LimparCampos()
         End If
+    End Sub
+    Private Sub BtnProximo_Click(sender As Object, e As EventArgs) Handles BtnProximo.Click
+        ListarProximoPedido()
+    End Sub
+    Sub ListarProximoPedido()
+
+        Try
+
+            Try
+                Abrir()
+
+                'VERIFICAR ULTIMO ID NO BANCO 
+                Dim cmdp As MySqlCommand
+                Dim sql As String
+                Dim ultima As MySqlDataReader
+
+                sql = "SELECT id FROM entrada WHERE id=(SELECT MAX(id) FROM entrada) "
+                cmdp = New MySqlCommand(sql, con)
+                ultima = cmdp.ExecuteReader()
+
+                If (ultima.Read()) Then
+                    maximo = ultima("id")
+                    ultima.Close()
+                End If
+
+            Catch ex As Exception
+                MsgBox("Erro ao Salvar!! " + ex.Message)
+            End Try
+            '.........................................................................................................
+
+            If TxtIdRegistro.Text <> "" Then
+                proximo = TxtIdRegistro.Text + 1
+            Else
+                proximo = 1
+            End If
+
+            Dim cmd As MySqlCommand
+            Dim reader As MySqlDataReader
+            Dim sqlp As String
+
+Line1:
+            If proximo > maximo Then
+                Exit Sub
+            End If
+
+            sqlp = "SELECT * FROM entrada WHERE id = '" & proximo & "' "
+            cmd = New MySqlCommand(sqlp, con)
+            reader = cmd.ExecuteReader
+
+            If reader.Read = True Then
+                reader.Close()
+
+                ProximoRegistro()
+
+                Exit Sub
+            Else
+                reader.Close()
+                proximo = proximo + 1
+                GoTo Line1
+            End If
+            reader.Close()
+
+        Catch ex As Exception
+            MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
+        End Try
+
+
+    End Sub
+
+    Sub ProximoRegistro()
+
+        Try
+            Abrir()
+            Dim cmd As MySqlCommand
+            Dim reader As MySqlDataReader
+            Dim sql As String
+
+            sql = "SELECT * FROM entrada where id = '" & proximo & "' "
+
+            cmd = New MySqlCommand(sql, con)
+            reader = cmd.ExecuteReader
+            If reader.Read = True Then
+
+                TxtIdRegistro.Text = reader(0)
+                TxtNotaFiscal.Text = reader(1)
+                TxtFornecedor.Text = reader(2)
+                TxtNomeFornecedor.Text = reader(3)
+                TxtCodPedido.Text = reader(4)
+                TxtDescPed.Text = reader(5)
+                'TxtStatusPedido.Text = reader(6)
+                DataEmissao.Value = reader(7)
+                TxtTotalNota.Text = reader(8)
+
+                reader.Close()
+
+            End If
+            reader.Close()
+
+            '..................................................................................
+            'LISTAR ITEN DA NOTA FISCAL
+            Dim sql1 As String
+            Dim dt As New DataTable
+            Dim da As MySqlDataAdapter
+            sql1 = "SELECT item, cod_produto, produto, quantidade, valor_unitario, valor_total  FROM estoque WHERE id_entrada = '" & proximo & "' order by item asc "
+            da = New MySqlDataAdapter(sql1, con)
+            da.Fill(dt)
+            DataGrid.DataSource = dt
+
+            FormatarGrid()
+            '.................................................................................
+            'LISTAR DUPLICATAS
+            Try
+                Dim sqldp As String
+                Dim dtdp As New DataTable
+                Dim dadp As MySqlDataAdapter
+                sqldp = "SELECT * FROM duplicatas WHERE id_entrada = '" & proximo & "' "
+                dadp = New MySqlDataAdapter(sqldp, con)
+                dadp.Fill(dtdp)
+                DataGridDuplicatas.DataSource = dtdp
+
+                FormatarGridDuplicatas()
+
+            Catch ex As Exception
+                MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
+            End Try
+            '....................................................................................
+
+        Catch ex As Exception
+            MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
+        End Try
+
+
+    End Sub
+
+    Private Sub BtnAnterior_Click(sender As Object, e As EventArgs) Handles BtnAnterior.Click
+        ListarPedidoAnterior()
+    End Sub
+    Sub ListarPedidoAnterior()
+
+        Try
+            If TxtIdRegistro.Text <> "" Then
+                anterior = TxtIdRegistro.Text - 1
+            Else
+                anterior = 1
+            End If
+            Dim cmd As MySqlCommand
+            Dim reader As MySqlDataReader
+            Dim sqlp As String
+Line1:
+            If anterior = 0 Then
+                Exit Sub
+            End If
+
+            sqlp = "SELECT * FROM entrada WHERE id = '" & anterior & "' "
+            cmd = New MySqlCommand(sqlp, con)
+            reader = cmd.ExecuteReader
+
+            If reader.Read = True Then
+                reader.Close()
+
+                RegistroAnterior()
+
+                Exit Sub
+            Else
+                reader.Close()
+                anterior = anterior - 1
+                GoTo Line1
+            End If
+            reader.Close()
+
+
+        Catch ex As Exception
+            MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
+        End Try
+
+
+
+    End Sub
+
+    Sub RegistroAnterior()
+
+        Try
+            Abrir()
+            Dim cmd As MySqlCommand
+            Dim reader As MySqlDataReader
+            Dim sql As String
+
+            sql = "SELECT * FROM entrada where id = '" & anterior & "' "
+
+            cmd = New MySqlCommand(sql, con)
+            reader = cmd.ExecuteReader
+            If reader.Read = True Then
+
+                TxtIdRegistro.Text = reader(0)
+                TxtNotaFiscal.Text = reader(1)
+                TxtFornecedor.Text = reader(2)
+                TxtNomeFornecedor.Text = reader(3)
+                TxtCodPedido.Text = reader(4)
+                TxtDescPed.Text = reader(5)
+                'TxtStatusPedido.Text = reader(6)
+                DataEmissao.Value = reader(7)
+                TxtTotalNota.Text = reader(8)
+
+                reader.Close()
+
+            End If
+            reader.Close()
+
+            '..................................................................................
+            'LISTAR ITEN DA NOTA FISCAL
+            Dim sql1 As String
+            Dim dt As New DataTable
+            Dim da As MySqlDataAdapter
+            sql1 = "SELECT item, cod_produto, produto, quantidade, valor_unitario, valor_total  FROM estoque WHERE id_entrada = '" & anterior & "' order by item asc "
+            da = New MySqlDataAdapter(sql1, con)
+            da.Fill(dt)
+            DataGrid.DataSource = dt
+
+            FormatarGrid()
+            '.................................................................................
+            'LISTAR DUPLICATAS
+            Try
+                Dim sqldp As String
+                Dim dtdp As New DataTable
+                Dim dadp As MySqlDataAdapter
+                sqldp = "SELECT * FROM duplicatas WHERE id_entrada = '" & anterior & "' "
+                dadp = New MySqlDataAdapter(sqldp, con)
+                dadp.Fill(dtdp)
+                DataGridDuplicatas.DataSource = dtdp
+
+                FormatarGridDuplicatas()
+
+            Catch ex As Exception
+                MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
+            End Try
+            '....................................................................................
+
+        Catch ex As Exception
+            MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
+        End Try
+    End Sub
+
+    Private Sub TxtPesquisar_TextChanged(sender As Object, e As EventArgs) Handles TxtPesquisar.TextChanged
+
+        Dim IdRegistroNFe As Integer
+        Try
+            Abrir()
+            Dim cmd As MySqlCommand
+            Dim reader As MySqlDataReader
+            Dim sql As String
+
+            sql = "SELECT * FROM entrada where nota LIKE '" & TxtPesquisar.Text & "%' "
+
+            cmd = New MySqlCommand(sql, con)
+            reader = cmd.ExecuteReader
+            If reader.Read = True Then
+
+                TxtIdRegistro.Text = reader(0)
+                TxtNotaFiscal.Text = reader(1)
+                TxtFornecedor.Text = reader(2)
+                TxtNomeFornecedor.Text = reader(3)
+                TxtCodPedido.Text = reader(4)
+                TxtDescPed.Text = reader(5)
+                'TxtStatusPedido.Text = reader(6)
+                DataEmissao.Value = reader(7)
+                TxtTotalNota.Text = reader(8)
+
+                IdRegistroNFe = reader(0)
+                reader.Close()
+
+            End If
+            reader.Close()
+
+            '..................................................................................
+            'LISTAR ITEN DA NOTA FISCAL
+            Dim sql1 As String
+            Dim dt As New DataTable
+            Dim da As MySqlDataAdapter
+            sql1 = "SELECT item, cod_produto, produto, quantidade, valor_unitario, valor_total  FROM estoque WHERE id_entrada = '" & IdRegistroNFe & "' order by item asc "
+            da = New MySqlDataAdapter(sql1, con)
+            da.Fill(dt)
+            DataGrid.DataSource = dt
+
+            FormatarGrid()
+            '.................................................................................
+            'LISTAR DUPLICATAS
+            Try
+                Dim sqldp As String
+                Dim dtdp As New DataTable
+                Dim dadp As MySqlDataAdapter
+                sqldp = "SELECT * FROM duplicatas WHERE id_entrada = '" & IdRegistroNFe & "' "
+                dadp = New MySqlDataAdapter(sqldp, con)
+                dadp.Fill(dtdp)
+                DataGridDuplicatas.DataSource = dtdp
+
+                FormatarGridDuplicatas()
+
+            Catch ex As Exception
+                MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
+            End Try
+            '....................................................................................
+
+        Catch ex As Exception
+            MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
+        End Try
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        SalvarDuplicata()
     End Sub
 End Class

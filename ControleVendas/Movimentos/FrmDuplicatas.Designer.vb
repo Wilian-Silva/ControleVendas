@@ -40,9 +40,9 @@ Partial Class FrmDuplicatas
         Me.BtnOk = New System.Windows.Forms.Button()
         Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.TxtIdREg = New System.Windows.Forms.TextBox()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -239,18 +239,6 @@ Partial Class FrmDuplicatas
         Me.Panel1.Size = New System.Drawing.Size(469, 233)
         Me.Panel1.TabIndex = 170
         '
-        'GroupBox1
-        '
-        Me.GroupBox1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.GroupBox1.Controls.Add(Me.BtnOk)
-        Me.GroupBox1.Controls.Add(Me.BtnCancelar)
-        Me.GroupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 246)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(469, 52)
-        Me.GroupBox1.TabIndex = 171
-        Me.GroupBox1.TabStop = False
-        '
         'Label8
         '
         Me.Label8.AutoSize = True
@@ -273,6 +261,18 @@ Partial Class FrmDuplicatas
         Me.TxtIdREg.TabIndex = 163
         Me.TxtIdREg.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.GroupBox1.Controls.Add(Me.BtnOk)
+        Me.GroupBox1.Controls.Add(Me.BtnCancelar)
+        Me.GroupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 246)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(469, 52)
+        Me.GroupBox1.TabIndex = 171
+        Me.GroupBox1.TabStop = False
+        '
         'FrmDuplicatas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -285,6 +285,7 @@ Partial Class FrmDuplicatas
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "FrmDuplicatas"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Duplicatas"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()

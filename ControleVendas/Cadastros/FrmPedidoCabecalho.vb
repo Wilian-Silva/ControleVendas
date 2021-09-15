@@ -242,17 +242,20 @@ Public Class FrmPedidoCabecalho
 
     Private Sub BtnSelecionarItem_Click(sender As Object, e As EventArgs) Handles BtnSelecionarItem.Click
         If DataGrid.RowCount > 0 Then
+            If DataGrid.CurrentRow.Cells(6).Value = "Fechado" Then
+                MsgBox("Pedido fechado, não pode ser utilizado!!", MsgBoxStyle.Information, "Pedido Fechado")
+                Exit Sub
+            End If
 
             numeroPedido = DataGrid.CurrentRow.Cells(0).Value
             nomePedido = DataGrid.CurrentRow.Cells(1).Value
             codFornecedor = DataGrid.CurrentRow.Cells(2).Value
             nomeFornecedor = DataGrid.CurrentRow.Cells(3).Value
-            StatusPedido = DataGrid.CurrentRow.Cells(6).Value
             totalPedido = DataGrid.CurrentRow.Cells(5).Value
 
             Me.Close()
-        Else
-            MsgBox("Selecione um registro!!", MsgBoxStyle.Information, "Registro não selecionado")
+            Else
+                MsgBox("Selecione um registro!!", MsgBoxStyle.Information, "Registro não selecionado")
         End If
     End Sub
 

@@ -71,43 +71,46 @@ Public Class FrmDuplicatas
         End If
 
 
-
-
         TxtParcela.BackColor = Color.White
         TxtTotalDuplicata.BackColor = Color.White
+        TxtNotaFiscal.BackColor = Color.White
 
-        If TxtParcela.Text <> "" And TxtTotalDuplicata.Text <> "" Then
+        If TxtParcela.Text <> "" And TxtTotalDuplicata.Text <> "" And TxtNotaFiscal.Text <> "" Then
 
-                If FrmEntrada.DataGridDuplicatas.Rows.Count < 1 Then
+            If FrmEntrada.DataGridDuplicatas.Rows.Count < 1 Then
 
-                    Table1Duplicatas.Columns.Add("Id. Reg.")
-                    Table1Duplicatas.Columns.Add("Parcela")
-                    Table1Duplicatas.Columns.Add("Documento")
-                    Table1Duplicatas.Columns.Add("Data Emissão")
-                    Table1Duplicatas.Columns.Add("Data Vencimento")
-                    Table1Duplicatas.Columns.Add("Valor Parcela")
-                    Table1Duplicatas.Columns.Add("Observação")
+                Table1Duplicatas.Columns.Add("Id. Reg.")
+                Table1Duplicatas.Columns.Add("Parcela")
+                Table1Duplicatas.Columns.Add("Documento")
+                Table1Duplicatas.Columns.Add("Data Emissão")
+                Table1Duplicatas.Columns.Add("Data Vencimento")
+                Table1Duplicatas.Columns.Add("Valor Parcela")
+                Table1Duplicatas.Columns.Add("Observação")
 
-                    Dim bs As New BindingSource()
-                    bs.DataSource = Table1Duplicatas
+                Dim bs As New BindingSource()
+                bs.DataSource = Table1Duplicatas
 
-                    FrmEntrada.DataGridDuplicatas.DataSource = bs
+                FrmEntrada.DataGridDuplicatas.DataSource = bs
 
-                    Table1Duplicatas.Rows.Add("", TxtParcela.Text, TxtNotaFiscal.Text, DataEmissao.Value.ToShortDateString, DataVencimento.Value.ToShortDateString, TxtTotalDuplicata.Text, TxtObs.Text)
-                    Me.Close()
+                Table1Duplicatas.Rows.Add(TxtIdREg.Text, TxtParcela.Text, TxtNotaFiscal.Text, DataEmissao.Value.ToShortDateString, DataVencimento.Value.ToShortDateString, TxtTotalDuplicata.Text, TxtObs.Text)
+                Me.Close()
 
-                FrmEntrada.BtnEditar.Enabled = False
-                FrmEntrada.BtnEliminar.Enabled = True
-                FrmEntrada.BtnEditar.Enabled = True
+                Call FrmEntrada.TotalDatagridDuplicatas()
+                Call FrmEntrada.TotalNfe_TotalDuplicatas()
 
             Else
-                    Table1Duplicatas.Rows.Add("", TxtParcela.Text, TxtNotaFiscal.Text, DataEmissao.Value.ToShortDateString, DataVencimento.Value.ToShortDateString, TxtTotalDuplicata.Text, TxtObs.Text)
-                    Me.Close()
-                End If
-            Else
+                Table1Duplicatas.Rows.Add(TxtIdREg.Text, TxtParcela.Text, TxtNotaFiscal.Text, DataEmissao.Value.ToShortDateString, DataVencimento.Value.ToShortDateString, TxtTotalDuplicata.Text, TxtObs.Text)
 
-                TxtParcela.BackColor = Color.Salmon
-                TxtTotalDuplicata.BackColor = Color.Salmon
+                Call FrmEntrada.TotalDatagridDuplicatas()
+                Call FrmEntrada.TotalNfe_TotalDuplicatas()
+
+                Me.Close()
+            End If
+        Else
+
+            TxtParcela.BackColor = Color.Salmon
+            TxtNotaFiscal.BackColor = Color.Salmon
+            TxtTotalDuplicata.BackColor = Color.Salmon
                 MsgBox("Campos em branco ou vazios", MsgBoxStyle.Information, "Adicionar duplicatas")
             End If
 

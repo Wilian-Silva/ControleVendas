@@ -45,7 +45,6 @@ Partial Class FrmEntrada
         Me.BtnSair = New System.Windows.Forms.Button()
         Me.BtnLimpar = New System.Windows.Forms.Button()
         Me.BtnExcluir = New System.Windows.Forms.Button()
-        Me.TxtStatusPedido = New System.Windows.Forms.TextBox()
         Me.TxtNotaFiscal = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
@@ -72,6 +71,7 @@ Partial Class FrmEntrada
         Me.GboxPesProd = New System.Windows.Forms.GroupBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.GBoxFornecedor = New System.Windows.Forms.GroupBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox3.SuspendLayout()
         CType(Me.DataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
@@ -94,7 +94,7 @@ Partial Class FrmEntrada
         Me.BtnPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnPesquisar.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnPesquisar.Image = CType(resources.GetObject("BtnPesquisar.Image"), System.Drawing.Image)
-        Me.BtnPesquisar.Location = New System.Drawing.Point(285, 15)
+        Me.BtnPesquisar.Location = New System.Drawing.Point(399, 15)
         Me.BtnPesquisar.Name = "BtnPesquisar"
         Me.BtnPesquisar.Size = New System.Drawing.Size(25, 25)
         Me.BtnPesquisar.TabIndex = 139
@@ -146,7 +146,7 @@ Partial Class FrmEntrada
         Me.BtnPesqPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnPesqPedido.ForeColor = System.Drawing.Color.Transparent
         Me.BtnPesqPedido.Image = CType(resources.GetObject("BtnPesqPedido.Image"), System.Drawing.Image)
-        Me.BtnPesqPedido.Location = New System.Drawing.Point(260, 16)
+        Me.BtnPesqPedido.Location = New System.Drawing.Point(374, 16)
         Me.BtnPesqPedido.Name = "BtnPesqPedido"
         Me.BtnPesqPedido.Size = New System.Drawing.Size(22, 22)
         Me.BtnPesqPedido.TabIndex = 157
@@ -319,23 +319,13 @@ Partial Class FrmEntrada
         Me.ToolTip.SetToolTip(Me.BtnExcluir, "Excluir registro")
         Me.BtnExcluir.UseVisualStyleBackColor = False
         '
-        'TxtStatusPedido
-        '
-        Me.TxtStatusPedido.Enabled = False
-        Me.TxtStatusPedido.Location = New System.Drawing.Point(203, 17)
-        Me.TxtStatusPedido.Margin = New System.Windows.Forms.Padding(4)
-        Me.TxtStatusPedido.Name = "TxtStatusPedido"
-        Me.TxtStatusPedido.Size = New System.Drawing.Size(51, 20)
-        Me.TxtStatusPedido.TabIndex = 142
-        Me.TxtStatusPedido.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
         'TxtNotaFiscal
         '
         Me.TxtNotaFiscal.Enabled = False
-        Me.TxtNotaFiscal.Location = New System.Drawing.Point(386, 16)
+        Me.TxtNotaFiscal.Location = New System.Drawing.Point(532, 17)
         Me.TxtNotaFiscal.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtNotaFiscal.Name = "TxtNotaFiscal"
-        Me.TxtNotaFiscal.Size = New System.Drawing.Size(70, 20)
+        Me.TxtNotaFiscal.Size = New System.Drawing.Size(83, 20)
         Me.TxtNotaFiscal.TabIndex = 97
         '
         'Label2
@@ -343,7 +333,7 @@ Partial Class FrmEntrada
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(333, 18)
+        Me.Label2.Location = New System.Drawing.Point(479, 19)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(50, 16)
@@ -353,10 +343,9 @@ Partial Class FrmEntrada
         'GroupBox3
         '
         Me.GroupBox3.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox3.Controls.Add(Me.TxtStatusPedido)
-        Me.GroupBox3.Controls.Add(Me.BtnPesqPedido)
         Me.GroupBox3.Controls.Add(Me.TxtIdRegistro)
         Me.GroupBox3.Controls.Add(Me.Label4)
+        Me.GroupBox3.Controls.Add(Me.BtnPesqPedido)
         Me.GroupBox3.Controls.Add(Me.BtnPesquisar)
         Me.GroupBox3.Controls.Add(Me.TxtDescPed)
         Me.GroupBox3.Controls.Add(Me.Label7)
@@ -379,7 +368,7 @@ Partial Class FrmEntrada
         'TxtIdRegistro
         '
         Me.TxtIdRegistro.Enabled = False
-        Me.TxtIdRegistro.Location = New System.Drawing.Point(582, 55)
+        Me.TxtIdRegistro.Location = New System.Drawing.Point(96, 17)
         Me.TxtIdRegistro.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtIdRegistro.Name = "TxtIdRegistro"
         Me.TxtIdRegistro.Size = New System.Drawing.Size(37, 20)
@@ -391,17 +380,17 @@ Partial Class FrmEntrada
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(531, 57)
+        Me.Label4.Location = New System.Drawing.Point(20, 19)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(49, 16)
+        Me.Label4.Size = New System.Drawing.Size(75, 16)
         Me.Label4.TabIndex = 128
-        Me.Label4.Text = "Id Reg."
+        Me.Label4.Text = "Id Registro:"
         '
         'TxtDescPed
         '
         Me.TxtDescPed.Enabled = False
-        Me.TxtDescPed.Location = New System.Drawing.Point(94, 17)
+        Me.TxtDescPed.Location = New System.Drawing.Point(262, 17)
         Me.TxtDescPed.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtDescPed.Name = "TxtDescPed"
         Me.TxtDescPed.Size = New System.Drawing.Size(108, 20)
@@ -412,17 +401,17 @@ Partial Class FrmEntrada
         Me.Label7.AutoSize = True
         Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(338, 57)
+        Me.Label7.Location = New System.Drawing.Point(488, 60)
         Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(76, 16)
+        Me.Label7.Size = New System.Drawing.Size(42, 16)
         Me.Label7.TabIndex = 143
-        Me.Label7.Text = "Valor Total:"
+        Me.Label7.Text = "Total:"
         '
         'TxtTotalNota
         '
         Me.TxtTotalNota.Enabled = False
-        Me.TxtTotalNota.Location = New System.Drawing.Point(415, 55)
+        Me.TxtTotalNota.Location = New System.Drawing.Point(532, 58)
         Me.TxtTotalNota.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtTotalNota.Name = "TxtTotalNota"
         Me.TxtTotalNota.Size = New System.Drawing.Size(83, 20)
@@ -431,16 +420,16 @@ Partial Class FrmEntrada
         'TxtNomeFornecedor
         '
         Me.TxtNomeFornecedor.Enabled = False
-        Me.TxtNomeFornecedor.Location = New System.Drawing.Point(94, 56)
+        Me.TxtNomeFornecedor.Location = New System.Drawing.Point(309, 56)
         Me.TxtNomeFornecedor.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtNomeFornecedor.Name = "TxtNomeFornecedor"
-        Me.TxtNomeFornecedor.Size = New System.Drawing.Size(217, 20)
+        Me.TxtNomeFornecedor.Size = New System.Drawing.Size(166, 20)
         Me.TxtNomeFornecedor.TabIndex = 130
         '
         'TxtFornecedor
         '
         Me.TxtFornecedor.Enabled = False
-        Me.TxtFornecedor.Location = New System.Drawing.Point(60, 56)
+        Me.TxtFornecedor.Location = New System.Drawing.Point(275, 56)
         Me.TxtFornecedor.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtFornecedor.Name = "TxtFornecedor"
         Me.TxtFornecedor.Size = New System.Drawing.Size(32, 20)
@@ -450,7 +439,7 @@ Partial Class FrmEntrada
         'TxtCodPedido
         '
         Me.TxtCodPedido.Enabled = False
-        Me.TxtCodPedido.Location = New System.Drawing.Point(60, 17)
+        Me.TxtCodPedido.Location = New System.Drawing.Point(228, 17)
         Me.TxtCodPedido.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtCodPedido.Name = "TxtCodPedido"
         Me.TxtCodPedido.Size = New System.Drawing.Size(32, 20)
@@ -462,7 +451,7 @@ Partial Class FrmEntrada
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(5, 57)
+        Me.Label3.Location = New System.Drawing.Point(220, 57)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(51, 16)
@@ -474,19 +463,19 @@ Partial Class FrmEntrada
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(468, 18)
+        Me.Label1.Location = New System.Drawing.Point(13, 58)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(54, 16)
+        Me.Label1.Size = New System.Drawing.Size(80, 16)
         Me.Label1.TabIndex = 125
-        Me.Label1.Text = "Emisão:"
+        Me.Label1.Text = "Emisão NFe:"
         '
         'Label8
         '
         Me.Label8.AutoSize = True
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(6, 18)
+        Me.Label8.Location = New System.Drawing.Point(174, 18)
         Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(51, 16)
@@ -497,7 +486,7 @@ Partial Class FrmEntrada
         '
         Me.DataEmissao.Enabled = False
         Me.DataEmissao.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DataEmissao.Location = New System.Drawing.Point(522, 16)
+        Me.DataEmissao.Location = New System.Drawing.Point(97, 56)
         Me.DataEmissao.Name = "DataEmissao"
         Me.DataEmissao.Size = New System.Drawing.Size(97, 20)
         Me.DataEmissao.TabIndex = 124
@@ -642,11 +631,11 @@ Partial Class FrmEntrada
         '
         Me.LblSaldo.AutoSize = True
         Me.LblSaldo.ForeColor = System.Drawing.Color.Brown
-        Me.LblSaldo.Location = New System.Drawing.Point(342, 436)
+        Me.LblSaldo.Location = New System.Drawing.Point(399, 436)
         Me.LblSaldo.Name = "LblSaldo"
-        Me.LblSaldo.Size = New System.Drawing.Size(16, 13)
+        Me.LblSaldo.Size = New System.Drawing.Size(13, 13)
         Me.LblSaldo.TabIndex = 156
-        Me.LblSaldo.Text = " - "
+        Me.LblSaldo.Text = " -"
         '
         'GboxPesProd
         '
@@ -655,7 +644,7 @@ Partial Class FrmEntrada
         Me.GboxPesProd.Controls.Add(Me.BtnAnterior)
         Me.GboxPesProd.Controls.Add(Me.Label5)
         Me.GboxPesProd.Controls.Add(Me.TxtPesquisar)
-        Me.GboxPesProd.Location = New System.Drawing.Point(27, 5)
+        Me.GboxPesProd.Location = New System.Drawing.Point(27, 4)
         Me.GboxPesProd.Name = "GboxPesProd"
         Me.GboxPesProd.Size = New System.Drawing.Size(235, 50)
         Me.GboxPesProd.TabIndex = 157
@@ -688,12 +677,33 @@ Partial Class FrmEntrada
         Me.GBoxFornecedor.TabIndex = 158
         Me.GBoxFornecedor.TabStop = False
         '
+        'Button1
+        '
+        Me.Button1.AccessibleDescription = ""
+        Me.Button1.AccessibleName = "Adicionar"
+        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.Transparent
+        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
+        Me.Button1.Location = New System.Drawing.Point(322, 12)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(35, 35)
+        Me.Button1.TabIndex = 159
+        Me.Button1.TabStop = False
+        Me.ToolTip.SetToolTip(Me.Button1, "Salvar resgistro")
+        Me.Button1.UseVisualStyleBackColor = False
+        '
         'FrmEntrada
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(693, 457)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.GBoxFornecedor)
         Me.Controls.Add(Me.GboxPesProd)
         Me.Controls.Add(Me.LblSaldo)
@@ -730,7 +740,6 @@ Partial Class FrmEntrada
     Friend WithEvents Label3 As Label
     Friend WithEvents TxtIdRegistro As TextBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents TxtStatusPedido As TextBox
     Friend WithEvents DataGrid As DataGridView
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TabPage1 As TabPage
@@ -762,4 +771,5 @@ Partial Class FrmEntrada
     Friend WithEvents BtnSair As Button
     Friend WithEvents BtnLimpar As Button
     Friend WithEvents BtnExcluir As Button
+    Friend WithEvents Button1 As Button
 End Class
