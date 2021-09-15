@@ -5,7 +5,12 @@ Public Class FrmPagarTitulo
     Dim anterior As Integer
     Dim maximo As Integer
     Private Sub BtnBaixarTitulo_Click(sender As Object, e As EventArgs) Handles BtnBaixarTitulo.Click
-        Dim form = New FrmVlrPgto
+
+        Dim form = New FrmVlrPgto()
+
+        form.TxtValorOriginal.Text = TxtSaldoTitulo.Text
+
+
         form.ShowDialog()
     End Sub
 

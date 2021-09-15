@@ -26,18 +26,18 @@ Partial Class FrmVlrPgto
         Me.Label13 = New System.Windows.Forms.Label()
         Me.DataPgto = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.TxtSaldoTitulo = New System.Windows.Forms.TextBox()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.TxtValorPago = New System.Windows.Forms.TextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.TxtValorOriginal = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.TxtTotalPago = New System.Windows.Forms.TextBox()
+        Me.TxtSaldoTitulo = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.TxtDescontos = New System.Windows.Forms.TextBox()
+        Me.TxtValorPago = New System.Windows.Forms.TextBox()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.TxtMultasJuros = New System.Windows.Forms.TextBox()
+        Me.TxtValorOriginal = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.BtnOk = New System.Windows.Forms.Button()
         Me.BtnCancelar = New System.Windows.Forms.Button()
@@ -72,83 +72,21 @@ Partial Class FrmVlrPgto
         Me.GroupBox2.Controls.Add(Me.Label3)
         Me.GroupBox2.Controls.Add(Me.Label12)
         Me.GroupBox2.Controls.Add(Me.DataPgto)
-        Me.GroupBox2.Controls.Add(Me.TextBox1)
+        Me.GroupBox2.Controls.Add(Me.TxtTotalPago)
         Me.GroupBox2.Controls.Add(Me.TxtSaldoTitulo)
         Me.GroupBox2.Controls.Add(Me.Label14)
         Me.GroupBox2.Controls.Add(Me.Label11)
-        Me.GroupBox2.Controls.Add(Me.TextBox2)
+        Me.GroupBox2.Controls.Add(Me.TxtDescontos)
         Me.GroupBox2.Controls.Add(Me.TxtValorPago)
         Me.GroupBox2.Controls.Add(Me.Label15)
         Me.GroupBox2.Controls.Add(Me.Label9)
-        Me.GroupBox2.Controls.Add(Me.TextBox4)
+        Me.GroupBox2.Controls.Add(Me.TxtMultasJuros)
         Me.GroupBox2.Controls.Add(Me.TxtValorOriginal)
         Me.GroupBox2.Location = New System.Drawing.Point(19, 11)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(262, 253)
         Me.GroupBox2.TabIndex = 143
         Me.GroupBox2.TabStop = False
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.BackColor = System.Drawing.Color.Transparent
-        Me.Label12.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(37, 111)
-        Me.Label12.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(79, 16)
-        Me.Label12.TabIndex = 149
-        Me.Label12.Text = "Valor Saldo:"
-        '
-        'TxtSaldoTitulo
-        '
-        Me.TxtSaldoTitulo.Enabled = False
-        Me.TxtSaldoTitulo.Location = New System.Drawing.Point(120, 110)
-        Me.TxtSaldoTitulo.Margin = New System.Windows.Forms.Padding(4)
-        Me.TxtSaldoTitulo.Name = "TxtSaldoTitulo"
-        Me.TxtSaldoTitulo.Size = New System.Drawing.Size(100, 20)
-        Me.TxtSaldoTitulo.TabIndex = 4
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.BackColor = System.Drawing.Color.Transparent
-        Me.Label11.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(42, 82)
-        Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(75, 16)
-        Me.Label11.TabIndex = 147
-        Me.Label11.Text = "Valor Pago:"
-        '
-        'TxtValorPago
-        '
-        Me.TxtValorPago.Location = New System.Drawing.Point(120, 80)
-        Me.TxtValorPago.Margin = New System.Windows.Forms.Padding(4)
-        Me.TxtValorPago.Name = "TxtValorPago"
-        Me.TxtValorPago.Size = New System.Drawing.Size(100, 20)
-        Me.TxtValorPago.TabIndex = 3
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.BackColor = System.Drawing.Color.Transparent
-        Me.Label9.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(29, 51)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(88, 16)
-        Me.Label9.TabIndex = 145
-        Me.Label9.Text = "Valor Orginal:"
-        '
-        'TxtValorOriginal
-        '
-        Me.TxtValorOriginal.Enabled = False
-        Me.TxtValorOriginal.Location = New System.Drawing.Point(120, 50)
-        Me.TxtValorOriginal.Margin = New System.Windows.Forms.Padding(4)
-        Me.TxtValorOriginal.Name = "TxtValorOriginal"
-        Me.TxtValorOriginal.Size = New System.Drawing.Size(100, 20)
-        Me.TxtValorOriginal.TabIndex = 2
         '
         'Label3
         '
@@ -162,14 +100,35 @@ Partial Class FrmVlrPgto
         Me.Label3.TabIndex = 149
         Me.Label3.Text = "Total Pago:"
         '
-        'TextBox1
+        'Label12
         '
-        Me.TextBox1.Enabled = False
-        Me.TextBox1.Location = New System.Drawing.Point(120, 200)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(4)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox1.TabIndex = 7
+        Me.Label12.AutoSize = True
+        Me.Label12.BackColor = System.Drawing.Color.Transparent
+        Me.Label12.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Location = New System.Drawing.Point(37, 111)
+        Me.Label12.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(79, 16)
+        Me.Label12.TabIndex = 149
+        Me.Label12.Text = "Valor Saldo:"
+        '
+        'TxtTotalPago
+        '
+        Me.TxtTotalPago.Enabled = False
+        Me.TxtTotalPago.Location = New System.Drawing.Point(120, 200)
+        Me.TxtTotalPago.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtTotalPago.Name = "TxtTotalPago"
+        Me.TxtTotalPago.Size = New System.Drawing.Size(100, 20)
+        Me.TxtTotalPago.TabIndex = 7
+        '
+        'TxtSaldoTitulo
+        '
+        Me.TxtSaldoTitulo.Enabled = False
+        Me.TxtSaldoTitulo.Location = New System.Drawing.Point(120, 110)
+        Me.TxtSaldoTitulo.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtSaldoTitulo.Name = "TxtSaldoTitulo"
+        Me.TxtSaldoTitulo.Size = New System.Drawing.Size(100, 20)
+        Me.TxtSaldoTitulo.TabIndex = 4
         '
         'Label14
         '
@@ -183,13 +142,33 @@ Partial Class FrmVlrPgto
         Me.Label14.TabIndex = 147
         Me.Label14.Text = "Descontos:"
         '
-        'TextBox2
+        'Label11
         '
-        Me.TextBox2.Location = New System.Drawing.Point(120, 170)
-        Me.TextBox2.Margin = New System.Windows.Forms.Padding(4)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox2.TabIndex = 6
+        Me.Label11.AutoSize = True
+        Me.Label11.BackColor = System.Drawing.Color.Transparent
+        Me.Label11.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(42, 82)
+        Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(75, 16)
+        Me.Label11.TabIndex = 147
+        Me.Label11.Text = "Valor Pago:"
+        '
+        'TxtDescontos
+        '
+        Me.TxtDescontos.Location = New System.Drawing.Point(120, 170)
+        Me.TxtDescontos.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtDescontos.Name = "TxtDescontos"
+        Me.TxtDescontos.Size = New System.Drawing.Size(100, 20)
+        Me.TxtDescontos.TabIndex = 6
+        '
+        'TxtValorPago
+        '
+        Me.TxtValorPago.Location = New System.Drawing.Point(120, 80)
+        Me.TxtValorPago.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtValorPago.Name = "TxtValorPago"
+        Me.TxtValorPago.Size = New System.Drawing.Size(100, 20)
+        Me.TxtValorPago.TabIndex = 3
         '
         'Label15
         '
@@ -203,13 +182,34 @@ Partial Class FrmVlrPgto
         Me.Label15.TabIndex = 145
         Me.Label15.Text = "Multas/Juros"
         '
-        'TextBox4
+        'Label9
         '
-        Me.TextBox4.Location = New System.Drawing.Point(120, 140)
-        Me.TextBox4.Margin = New System.Windows.Forms.Padding(4)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox4.TabIndex = 5
+        Me.Label9.AutoSize = True
+        Me.Label9.BackColor = System.Drawing.Color.Transparent
+        Me.Label9.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(29, 51)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(88, 16)
+        Me.Label9.TabIndex = 145
+        Me.Label9.Text = "Valor Orginal:"
+        '
+        'TxtMultasJuros
+        '
+        Me.TxtMultasJuros.Location = New System.Drawing.Point(120, 140)
+        Me.TxtMultasJuros.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtMultasJuros.Name = "TxtMultasJuros"
+        Me.TxtMultasJuros.Size = New System.Drawing.Size(100, 20)
+        Me.TxtMultasJuros.TabIndex = 5
+        '
+        'TxtValorOriginal
+        '
+        Me.TxtValorOriginal.Enabled = False
+        Me.TxtValorOriginal.Location = New System.Drawing.Point(120, 50)
+        Me.TxtValorOriginal.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtValorOriginal.Name = "TxtValorOriginal"
+        Me.TxtValorOriginal.Size = New System.Drawing.Size(100, 20)
+        Me.TxtValorOriginal.TabIndex = 2
         '
         'GroupBox1
         '
@@ -275,11 +275,11 @@ Partial Class FrmVlrPgto
     Friend WithEvents Label9 As Label
     Friend WithEvents TxtValorOriginal As TextBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TxtTotalPago As TextBox
     Friend WithEvents Label14 As Label
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents TxtDescontos As TextBox
     Friend WithEvents Label15 As Label
-    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents TxtMultasJuros As TextBox
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents BtnOk As Button
     Friend WithEvents BtnCancelar As Button
