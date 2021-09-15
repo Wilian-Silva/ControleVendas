@@ -39,9 +39,9 @@ Partial Class FrmPagarTitulo
         Me.TxtCodPedido = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.DataPagamento = New System.Windows.Forms.DateTimePicker()
+        Me.DataVencimento = New System.Windows.Forms.DateTimePicker()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.DataPagamento = New System.Windows.Forms.DateTimePicker()
         Me.TxtParcela = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
@@ -53,16 +53,16 @@ Partial Class FrmPagarTitulo
         Me.TxtSaldoTitulo = New System.Windows.Forms.TextBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TxtTotalPago = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TxtDescontos = New System.Windows.Forms.TextBox()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.TxtJurosMultas = New System.Windows.Forms.TextBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.Label16 = New System.Windows.Forms.Label()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.TxtStatusTitulo = New System.Windows.Forms.TextBox()
         Me.Label17 = New System.Windows.Forms.Label()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.TxtDiasAtraso = New System.Windows.Forms.TextBox()
         Me.GBoxFornecedor = New System.Windows.Forms.GroupBox()
         Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.BtnSalvar = New System.Windows.Forms.Button()
@@ -74,7 +74,7 @@ Partial Class FrmPagarTitulo
         Me.BtnAnterior = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TxtPesquisar = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.TxtRegPagamento = New System.Windows.Forms.TextBox()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.GroupBox3.SuspendLayout()
@@ -153,12 +153,12 @@ Partial Class FrmPagarTitulo
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(180, 18)
+        Me.Label3.Location = New System.Drawing.Point(159, 18)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(51, 16)
+        Me.Label3.Size = New System.Drawing.Size(73, 16)
         Me.Label3.TabIndex = 127
-        Me.Label3.Text = "Fornec."
+        Me.Label3.Text = "Fornecedor"
         '
         'Label2
         '
@@ -180,14 +180,15 @@ Partial Class FrmPagarTitulo
         Me.TxtNotaFiscal.Name = "TxtNotaFiscal"
         Me.TxtNotaFiscal.Size = New System.Drawing.Size(67, 20)
         Me.TxtNotaFiscal.TabIndex = 97
+        Me.TxtNotaFiscal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox1.Controls.Add(Me.Label5)
-        Me.GroupBox1.Controls.Add(Me.DateTimePicker1)
-        Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.DataPagamento)
+        Me.GroupBox1.Controls.Add(Me.Label1)
+        Me.GroupBox1.Controls.Add(Me.DataVencimento)
         Me.GroupBox1.Controls.Add(Me.Label10)
         Me.GroupBox1.Controls.Add(Me.DataEmissao)
         Me.GroupBox1.Location = New System.Drawing.Point(16, 274)
@@ -261,35 +262,35 @@ Partial Class FrmPagarTitulo
         Me.Label1.TabIndex = 145
         Me.Label1.Text = "Vencimento:"
         '
-        'DataPagamento
+        'DataVencimento
         '
-        Me.DataPagamento.Enabled = False
-        Me.DataPagamento.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DataPagamento.Location = New System.Drawing.Point(100, 53)
-        Me.DataPagamento.Name = "DataPagamento"
-        Me.DataPagamento.Size = New System.Drawing.Size(97, 20)
-        Me.DataPagamento.TabIndex = 144
+        Me.DataVencimento.Enabled = False
+        Me.DataVencimento.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DataVencimento.Location = New System.Drawing.Point(100, 53)
+        Me.DataVencimento.Name = "DataVencimento"
+        Me.DataVencimento.Size = New System.Drawing.Size(97, 20)
+        Me.DataVencimento.TabIndex = 144
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(19, 87)
+        Me.Label5.Location = New System.Drawing.Point(12, 87)
         Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(77, 16)
+        Me.Label5.Size = New System.Drawing.Size(85, 16)
         Me.Label5.TabIndex = 147
-        Me.Label5.Text = "Pagamento:"
+        Me.Label5.Text = "Último Pagto:"
         '
-        'DateTimePicker1
+        'DataPagamento
         '
-        Me.DateTimePicker1.Enabled = False
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker1.Location = New System.Drawing.Point(100, 86)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(97, 20)
-        Me.DateTimePicker1.TabIndex = 146
+        Me.DataPagamento.Enabled = False
+        Me.DataPagamento.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DataPagamento.Location = New System.Drawing.Point(100, 86)
+        Me.DataPagamento.Name = "DataPagamento"
+        Me.DataPagamento.Size = New System.Drawing.Size(97, 20)
+        Me.DataPagamento.TabIndex = 146
         '
         'TxtParcela
         '
@@ -396,11 +397,11 @@ Partial Class FrmPagarTitulo
         '
         Me.GroupBox4.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox4.Controls.Add(Me.Label13)
-        Me.GroupBox4.Controls.Add(Me.TextBox1)
+        Me.GroupBox4.Controls.Add(Me.TxtTotalPago)
         Me.GroupBox4.Controls.Add(Me.Label14)
-        Me.GroupBox4.Controls.Add(Me.TextBox2)
+        Me.GroupBox4.Controls.Add(Me.TxtDescontos)
         Me.GroupBox4.Controls.Add(Me.Label15)
-        Me.GroupBox4.Controls.Add(Me.TextBox4)
+        Me.GroupBox4.Controls.Add(Me.TxtJurosMultas)
         Me.GroupBox4.Location = New System.Drawing.Point(275, 149)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(237, 123)
@@ -420,14 +421,14 @@ Partial Class FrmPagarTitulo
         Me.Label13.TabIndex = 149
         Me.Label13.Text = "Total Pago:"
         '
-        'TextBox1
+        'TxtTotalPago
         '
-        Me.TextBox1.Enabled = False
-        Me.TextBox1.Location = New System.Drawing.Point(108, 84)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(4)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(97, 20)
-        Me.TextBox1.TabIndex = 148
+        Me.TxtTotalPago.Enabled = False
+        Me.TxtTotalPago.Location = New System.Drawing.Point(108, 84)
+        Me.TxtTotalPago.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtTotalPago.Name = "TxtTotalPago"
+        Me.TxtTotalPago.Size = New System.Drawing.Size(97, 20)
+        Me.TxtTotalPago.TabIndex = 148
         '
         'Label14
         '
@@ -441,14 +442,14 @@ Partial Class FrmPagarTitulo
         Me.Label14.TabIndex = 147
         Me.Label14.Text = "Descontos:"
         '
-        'TextBox2
+        'TxtDescontos
         '
-        Me.TextBox2.Enabled = False
-        Me.TextBox2.Location = New System.Drawing.Point(108, 53)
-        Me.TextBox2.Margin = New System.Windows.Forms.Padding(4)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(97, 20)
-        Me.TextBox2.TabIndex = 146
+        Me.TxtDescontos.Enabled = False
+        Me.TxtDescontos.Location = New System.Drawing.Point(108, 53)
+        Me.TxtDescontos.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtDescontos.Name = "TxtDescontos"
+        Me.TxtDescontos.Size = New System.Drawing.Size(97, 20)
+        Me.TxtDescontos.TabIndex = 146
         '
         'Label15
         '
@@ -462,24 +463,24 @@ Partial Class FrmPagarTitulo
         Me.Label15.TabIndex = 145
         Me.Label15.Text = "Multas/Juros"
         '
-        'TextBox4
+        'TxtJurosMultas
         '
-        Me.TextBox4.Enabled = False
-        Me.TextBox4.Location = New System.Drawing.Point(108, 24)
-        Me.TextBox4.Margin = New System.Windows.Forms.Padding(4)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(97, 20)
-        Me.TextBox4.TabIndex = 144
+        Me.TxtJurosMultas.Enabled = False
+        Me.TxtJurosMultas.Location = New System.Drawing.Point(108, 24)
+        Me.TxtJurosMultas.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtJurosMultas.Name = "TxtJurosMultas"
+        Me.TxtJurosMultas.Size = New System.Drawing.Size(97, 20)
+        Me.TxtJurosMultas.TabIndex = 144
         '
         'GroupBox5
         '
         Me.GroupBox5.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox5.Controls.Add(Me.TextBox3)
+        Me.GroupBox5.Controls.Add(Me.TxtRegPagamento)
         Me.GroupBox5.Controls.Add(Me.Label18)
         Me.GroupBox5.Controls.Add(Me.Label16)
-        Me.GroupBox5.Controls.Add(Me.TextBox5)
+        Me.GroupBox5.Controls.Add(Me.TxtStatusTitulo)
         Me.GroupBox5.Controls.Add(Me.Label17)
-        Me.GroupBox5.Controls.Add(Me.TextBox6)
+        Me.GroupBox5.Controls.Add(Me.TxtDiasAtraso)
         Me.GroupBox5.Location = New System.Drawing.Point(275, 275)
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Size = New System.Drawing.Size(237, 123)
@@ -498,14 +499,14 @@ Partial Class FrmPagarTitulo
         Me.Label16.TabIndex = 147
         Me.Label16.Text = "Situação:"
         '
-        'TextBox5
+        'TxtStatusTitulo
         '
-        Me.TextBox5.Enabled = False
-        Me.TextBox5.Location = New System.Drawing.Point(108, 53)
-        Me.TextBox5.Margin = New System.Windows.Forms.Padding(4)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(97, 20)
-        Me.TextBox5.TabIndex = 146
+        Me.TxtStatusTitulo.Enabled = False
+        Me.TxtStatusTitulo.Location = New System.Drawing.Point(108, 53)
+        Me.TxtStatusTitulo.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtStatusTitulo.Name = "TxtStatusTitulo"
+        Me.TxtStatusTitulo.Size = New System.Drawing.Size(97, 20)
+        Me.TxtStatusTitulo.TabIndex = 146
         '
         'Label17
         '
@@ -519,14 +520,14 @@ Partial Class FrmPagarTitulo
         Me.Label17.TabIndex = 145
         Me.Label17.Text = "Dias Atraso:"
         '
-        'TextBox6
+        'TxtDiasAtraso
         '
-        Me.TextBox6.Enabled = False
-        Me.TextBox6.Location = New System.Drawing.Point(108, 24)
-        Me.TextBox6.Margin = New System.Windows.Forms.Padding(4)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(43, 20)
-        Me.TextBox6.TabIndex = 144
+        Me.TxtDiasAtraso.Enabled = False
+        Me.TxtDiasAtraso.Location = New System.Drawing.Point(108, 24)
+        Me.TxtDiasAtraso.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtDiasAtraso.Name = "TxtDiasAtraso"
+        Me.TxtDiasAtraso.Size = New System.Drawing.Size(43, 20)
+        Me.TxtDiasAtraso.TabIndex = 144
         '
         'GBoxFornecedor
         '
@@ -712,15 +713,15 @@ Partial Class FrmPagarTitulo
         Me.TxtPesquisar.Size = New System.Drawing.Size(71, 20)
         Me.TxtPesquisar.TabIndex = 152
         '
-        'TextBox3
+        'TxtRegPagamento
         '
-        Me.TextBox3.Enabled = False
-        Me.TextBox3.Location = New System.Drawing.Point(108, 85)
-        Me.TextBox3.Margin = New System.Windows.Forms.Padding(4)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(44, 20)
-        Me.TextBox3.TabIndex = 149
-        Me.TextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TxtRegPagamento.Enabled = False
+        Me.TxtRegPagamento.Location = New System.Drawing.Point(108, 85)
+        Me.TxtRegPagamento.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtRegPagamento.Name = "TxtRegPagamento"
+        Me.TxtRegPagamento.Size = New System.Drawing.Size(44, 20)
+        Me.TxtRegPagamento.TabIndex = 149
+        Me.TxtRegPagamento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label18
         '
@@ -785,11 +786,11 @@ Partial Class FrmPagarTitulo
     Friend WithEvents TxtCodPedido As TextBox
     Friend WithEvents Label8 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents DataPagamento As DateTimePicker
+    Friend WithEvents DataVencimento As DateTimePicker
     Friend WithEvents TxtParcela As TextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents DataPagamento As DateTimePicker
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents Label12 As Label
     Friend WithEvents TxtSaldoTitulo As TextBox
@@ -799,16 +800,16 @@ Partial Class FrmPagarTitulo
     Friend WithEvents TxtValorOriginal As TextBox
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents Label13 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TxtTotalPago As TextBox
     Friend WithEvents Label14 As Label
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents TxtDescontos As TextBox
     Friend WithEvents Label15 As Label
-    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents TxtJurosMultas As TextBox
     Friend WithEvents GroupBox5 As GroupBox
     Friend WithEvents Label16 As Label
-    Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents TxtStatusTitulo As TextBox
     Friend WithEvents Label17 As Label
-    Friend WithEvents TextBox6 As TextBox
+    Friend WithEvents TxtDiasAtraso As TextBox
     Friend WithEvents GBoxFornecedor As GroupBox
     Friend WithEvents BtnCancelar As Button
     Friend WithEvents BtnSalvar As Button
@@ -820,7 +821,7 @@ Partial Class FrmPagarTitulo
     Friend WithEvents BtnAnterior As Button
     Friend WithEvents Label6 As Label
     Friend WithEvents TxtPesquisar As TextBox
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents TxtRegPagamento As TextBox
     Friend WithEvents Label18 As Label
     Friend WithEvents ToolTip As ToolTip
 End Class
