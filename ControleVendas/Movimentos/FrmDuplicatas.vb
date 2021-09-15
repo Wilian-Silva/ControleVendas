@@ -79,7 +79,7 @@ Public Class FrmDuplicatas
     End Sub
 
     Private Sub BtnSalvar_Click(sender As Object, e As EventArgs) Handles BtnSalvar.Click
-
+        'Stop
         TxtParcela.BackColor = Color.White
         TxtTotalDuplicata.BackColor = Color.White
         TxtNotaFiscal.BackColor = Color.White
@@ -100,6 +100,8 @@ Public Class FrmDuplicatas
                     cmd1 = New MySqlCommand(sqls1, con)
                     cmd1.ExecuteNonQuery()
 
+
+                    editarDuplicata = ""
                     Me.Close()
                     Exit Sub
 

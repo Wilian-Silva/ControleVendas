@@ -44,6 +44,7 @@ Module ModuloConexao
     Public IdPedido As String
     Public StatusPedido As String
 
+    Public IncluirPedido As String
 
     Public numeroNota As String
     Public valorUnit As String

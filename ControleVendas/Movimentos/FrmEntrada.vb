@@ -25,10 +25,10 @@ Public Class FrmEntrada
         DataEmissao.Value = Now()
         TxtFornecedor.Text = ""
         TxtNomeFornecedor.Text = ""
-        TxtTotalNota.Text = ""
+        TxtTotalNota.Text = 0
         TxtIdRegistro.Text = ""
         TxtPesquisar.Text = ""
-        TxtTotalDuplicatas.Text = ""
+        TxtTotalDuplicatas.Text = 0
         novaEntrada = ""
         editarDuplicata = ""
     End Sub
@@ -144,6 +144,7 @@ Public Class FrmEntrada
     Public Sub FormatarGridDuplicatas()
 
         DataGridDuplicatas.Columns(7).Visible = False
+        DataGridDuplicatas.Columns(8).Visible = False
 
         DataGridDuplicatas.Columns(0).HeaderText = "Id. Dup."
         DataGridDuplicatas.Columns(1).HeaderText = "Parcela"
@@ -222,9 +223,9 @@ Public Class FrmEntrada
         'TxtTotalPedido.Text = Convert.ToDouble(TxtTotalPedido.Text).ToString("C")
     End Sub
     Private Sub BtnSair_Click(sender As Object, e As EventArgs) Handles BtnSair.Click
+
         LimparCampos()
         BloquearCampos()
-        ListarUltimaNota()
         Limpar_cores()
         Me.Close()
     End Sub
@@ -331,7 +332,7 @@ Public Class FrmEntrada
 
                 Dim cmd As MySqlCommand
                 Dim sqls As String
-                sqls = "INSERT INTO duplicatas (parcela, documento, data_emissao, data_vencimento, valor_parcela, observacao, id_entrada) VALUES (@parcela, @documento, @data_emissao, @data_vencimento, @valor_parcela, @observacao, '" & TxtIdRegistro.Text & "' )"
+                sqls = "INSERT INTO duplicatas (parcela, documento, data_emissao, data_vencimento, valor_parcela, observacao, id_entrada, cod_fornecedor) VALUES (@parcela, @documento, @data_emissao, @data_vencimento, @valor_parcela, @observacao, '" & TxtIdRegistro.Text & "','" & TxtFornecedor.Text & "' )"
                 cmd = New MySqlCommand(sqls, con)
                 With cmd
 

@@ -26,6 +26,7 @@ Public Class FrmPedido
         TxtFornecedor.ReadOnly = True
         TxtProduto.Enabled = True
         TxtFornecedor.Enabled = True
+        BtnEditar.Enabled = False
     End Sub
 
     Private Sub HabilitarCamposEdicao()
@@ -33,6 +34,7 @@ Public Class FrmPedido
         TxtQuantidade.Enabled = True
         TxtValorUnit.Enabled = True
         BtnPesqProduto.Enabled = True
+
 
     End Sub
 
@@ -45,7 +47,7 @@ Public Class FrmPedido
         BtnPesqFornecedor.Enabled = False
         BtnPesqProduto.Enabled = False
         TxtProduto.Enabled = False
-
+        BtnEditar.Enabled = True
     End Sub
     Private Sub LimparCampos()
 
@@ -62,6 +64,8 @@ Public Class FrmPedido
         TxtValorTotal.Text = ""
         TxtTotalPedido.Text = ""
         DataGrid.DataSource = Nothing
+        IncluirPedido = ""
+        editarpedido = ""
 
     End Sub
 
@@ -78,7 +82,7 @@ Public Class FrmPedido
         TxtQuantidade.Text = ""
         TxtValorUnit.Text = ""
         TxtValorTotal.Text = ""
-
+        editarpedido = ""
 
     End Sub
     Sub Editar_Cores()
@@ -114,7 +118,7 @@ Public Class FrmPedido
         DataGrid.Columns(0).Width = 1
         DataGrid.Columns(1).Width = 50
         DataGrid.Columns(2).Width = 40
-        DataGrid.Columns(3).Width = 80
+        DataGrid.Columns(3).Width = 120
         DataGrid.Columns(4).Width = 90
         DataGrid.Columns(5).Width = 50
         DataGrid.Columns(6).Width = 120
@@ -182,14 +186,16 @@ Public Class FrmPedido
 
 
     Private Sub BtnNovo_Click(sender As Object, e As EventArgs) Handles BtnNovo.Click
+        If MsgBox("Deseja incluir novo pedido?", vbYesNo, " Novo Pedido") = vbYes Then
 
-        HabilitarCampos()
-        LimparCampos()
-        GerarIdRegistro()
+            HabilitarCampos()
+            LimparCampos()
+            GerarIdRegistro()
 
-        TxtPedido.Focus()
-        TxtItem.Text = 1
-
+            TxtPedido.Focus()
+            TxtItem.Text = 1
+            IncluirPedido = "True"
+        End If
     End Sub
 
     Sub GerarIdRegistro()
@@ -313,6 +319,8 @@ Public Class FrmPedido
                     sql = "INSERT INTO pedido_cabecalho (id, pedido, cod_fornecedor, fornecedor, data, total, status) VALUES ('" & TxtIdRegistro.Text & "','" & TxtPedido.Text & "','" & TxtCodFornecedor.Text & "','" & TxtFornecedor.Text & "', '" & data & "', '" & TxtTotalPedido.Text.Replace(",", ".") & "', '" & statusPedido & "')"
                     cmdp = New MySqlCommand(sql, con)
                     cmdp.ExecuteNonQuery()
+
+                    LimparCampos()
 
                     ListarTudoUltimoPedido()
 
@@ -617,16 +625,23 @@ Public Class FrmPedido
     End Sub
 
     Private Sub BtnCacelar_Click(sender As Object, e As EventArgs) Handles BtnCacelar.Click
-
+        LimparCampos()
         DesabilitarCampos()
         ListarTudoUltimoPedido()
         Limpar_cores()
     End Sub
 
-    Private Sub DataGrid_CellClick(sender As Object, e As DataGridViewCellEventArgs)
+    Private Sub DataGrid_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGrid.CellClick
 
         If e.RowIndex > -1 Then
-            DadosCabecalho()
+
+            If IncluirPedido = "True" Then
+                Exit Sub
+
+            Else
+                DadosCabecalho()
+            End If
+
         End If
     End Sub
 
@@ -672,67 +687,74 @@ Public Class FrmPedido
 
     Private Sub BtnExcluirItemPedido_Click(sender As Object, e As EventArgs) Handles BtnExcluirItemPedido.Click
 
-
-        If TxtIdRegistro.Text <> 0 And TxtItem.Text <> 0 Then
-
-            If MsgBox("Deseja excluir o item " + TxtItem.Text + " do pedido" + TxtIdRegistro.Text + "?", vbYesNo, "Pedido") = vbYes Then
-
-                Try
-                    Abrir()
-                    'PROGRAMANDO EXCLUSÃO DE REGISTRO NO BANCO
-                    Dim cmd As MySqlCommand
-                    Dim sql As String
-
-                    sql = "DELETE FROM pedidos where pedido = '" & TxtIdRegistro.Text & "' AND item = '" & TxtItem.Text & "' "
-                    cmd = New MySqlCommand(sql, con)
-                    cmd.ExecuteNonQuery()
-
-                    '.....................................................................................
-                    'CONSULTAR TOTAL NA TABELA PEDIDOS
-                    Dim dg As New DataGridView
-                    Dim da As MySqlDataAdapter
-                    Dim sql2 As String
-                    Dim dt As New DataTable
-                    Dim total As String
-
-                    sql2 = "SELECT SUM(valor_total) as TOTAL FROM pedidos WHERE pedido =  '" & TxtIdRegistro.Text & "' "
-                    da = New MySqlDataAdapter(sql2, con)
-                    da.Fill(dt)
-                    total = dt.Rows(0)("TOTAL").ToString()
-
-                    '............................................................................
-                    'ATUALIZAR TOTAL PEDIDO
-                    If DataGrid.Rows.Count > 1 Then
-                        Dim cmd1 As MySqlCommand
-                        Dim sql1 As String
-                        sql1 = "UPDATE pedido_cabecalho SET total= '" & total & "' WHERE id =  '" & TxtIdRegistro.Text & "' "
-                        cmd1 = New MySqlCommand(sql1, con)
-                        cmd1.ExecuteNonQuery()
-
-                    Else
-
-                        Dim cmd3 As MySqlCommand
-                        Dim sql3 As String
-                        sql3 = "DELETE FROM pedido_cabecalho WHERE id =  '" & TxtIdRegistro.Text & "' "
-                        cmd3 = New MySqlCommand(sql3, con)
-                        cmd3.ExecuteNonQuery()
-
-                    End If
-
-                    MsgBox("Item excluído com sucesso!!", MsgBoxStyle.Information, "Excluir")
-
-                    ListarTudoUltimoPedido()
-
-                Catch ex As Exception
-                    MsgBox("Erro ao excluir!!" + ex.Message)
-                End Try
-
-
-            End If
+        If IncluirPedido = "True" Then
+            DataGrid.Rows.Remove(DataGrid.CurrentRow)
         Else
 
-            MsgBox("Selecione um item para excluir!!", MsgBoxStyle.Information, "Excluir")
+            If TxtIdRegistro.Text <> 0 And TxtItem.Text <> 0 Then
+
+                If MsgBox("Deseja excluir o item " + TxtItem.Text + " do pedido" + TxtIdRegistro.Text + "?", vbYesNo, "Pedido") = vbYes Then
+
+                    Try
+                        Abrir()
+                        'PROGRAMANDO EXCLUSÃO DE REGISTRO NO BANCO
+                        Dim cmd As MySqlCommand
+                        Dim sql As String
+
+                        sql = "DELETE FROM pedidos where pedido = '" & TxtIdRegistro.Text & "' AND item = '" & TxtItem.Text & "' "
+                        cmd = New MySqlCommand(sql, con)
+                        cmd.ExecuteNonQuery()
+
+                        '.....................................................................................
+                        'CONSULTAR TOTAL NA TABELA PEDIDOS
+                        Dim dg As New DataGridView
+                        Dim da As MySqlDataAdapter
+                        Dim sql2 As String
+                        Dim dt As New DataTable
+                        Dim total As String
+
+                        sql2 = "SELECT SUM(valor_total) as TOTAL FROM pedidos WHERE pedido =  '" & TxtIdRegistro.Text & "' "
+                        da = New MySqlDataAdapter(sql2, con)
+                        da.Fill(dt)
+                        total = dt.Rows(0)("TOTAL").ToString()
+
+                        '............................................................................
+                        'ATUALIZAR TOTAL PEDIDO
+                        If DataGrid.Rows.Count > 1 Then
+                            Dim cmd1 As MySqlCommand
+                            Dim sql1 As String
+                            sql1 = "UPDATE pedido_cabecalho SET total= '" & total & "' WHERE id =  '" & TxtIdRegistro.Text & "' "
+                            cmd1 = New MySqlCommand(sql1, con)
+                            cmd1.ExecuteNonQuery()
+
+                        Else
+
+                            Dim cmd3 As MySqlCommand
+                            Dim sql3 As String
+                            sql3 = "DELETE FROM pedido_cabecalho WHERE id =  '" & TxtIdRegistro.Text & "' "
+                            cmd3 = New MySqlCommand(sql3, con)
+                            cmd3.ExecuteNonQuery()
+
+                        End If
+
+                        MsgBox("Item excluído com sucesso!!", MsgBoxStyle.Information, "Excluir")
+
+                        ListarTudoUltimoPedido()
+
+                    Catch ex As Exception
+                        MsgBox("Erro ao excluir!!" + ex.Message)
+                    End Try
+
+
+                End If
+            Else
+
+                MsgBox("Selecione um item para excluir!!", MsgBoxStyle.Information, "Excluir")
+            End If
+
         End If
+
+
 
     End Sub
 
@@ -740,14 +762,7 @@ Public Class FrmPedido
         PesquisarPedido()
     End Sub
 
-    Private Sub DataGrid_CellClick_1(sender As Object, e As DataGridViewCellEventArgs) Handles DataGrid.CellClick
 
-        If e.RowIndex > -1 Then
-
-            DadosCabecalho()
-
-        End If
-    End Sub
 
     Sub ListarProximoPedido()
 
@@ -767,6 +782,8 @@ Public Class FrmPedido
 
                 If (ultima.Read()) Then
                     maximo = ultima("id")
+                    ultima.Close()
+                Else
                     ultima.Close()
                 End If
 
@@ -904,4 +921,6 @@ Line1:
             MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
         End Try
     End Sub
+
+
 End Class
