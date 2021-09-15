@@ -163,37 +163,37 @@ Partial Class FrmTelaInicial
         'CboxCons1_01
         '
         Me.CboxCons1_01.Name = "CboxCons1_01"
-        Me.CboxCons1_01.Size = New System.Drawing.Size(174, 22)
+        Me.CboxCons1_01.Size = New System.Drawing.Size(180, 22)
         Me.CboxCons1_01.Text = "Notas de Entrada"
         '
         'CboxCons1_02
         '
         Me.CboxCons1_02.Name = "CboxCons1_02"
-        Me.CboxCons1_02.Size = New System.Drawing.Size(174, 22)
+        Me.CboxCons1_02.Size = New System.Drawing.Size(180, 22)
         Me.CboxCons1_02.Text = "Pagamentos"
         '
         'CboxCons1_03
         '
         Me.CboxCons1_03.Name = "CboxCons1_03"
-        Me.CboxCons1_03.Size = New System.Drawing.Size(174, 22)
+        Me.CboxCons1_03.Size = New System.Drawing.Size(180, 22)
         Me.CboxCons1_03.Text = "Recebimentos"
         '
         'CboxCons1_04
         '
         Me.CboxCons1_04.Name = "CboxCons1_04"
-        Me.CboxCons1_04.Size = New System.Drawing.Size(174, 22)
+        Me.CboxCons1_04.Size = New System.Drawing.Size(180, 22)
         Me.CboxCons1_04.Text = "Pedido de Compra"
         '
         'CboxCons1_05
         '
         Me.CboxCons1_05.Name = "CboxCons1_05"
-        Me.CboxCons1_05.Size = New System.Drawing.Size(174, 22)
+        Me.CboxCons1_05.Size = New System.Drawing.Size(180, 22)
         Me.CboxCons1_05.Text = "Vendas Registradas"
         '
         'CboxCons1_06
         '
         Me.CboxCons1_06.Name = "CboxCons1_06"
-        Me.CboxCons1_06.Size = New System.Drawing.Size(174, 22)
+        Me.CboxCons1_06.Size = New System.Drawing.Size(180, 22)
         Me.CboxCons1_06.Text = "Saldo Estoque"
         '
         'MovimentaçõesToolStripMenuItem
@@ -207,37 +207,37 @@ Partial Class FrmTelaInicial
         'CboxMvto1_01
         '
         Me.CboxMvto1_01.Name = "CboxMvto1_01"
-        Me.CboxMvto1_01.Size = New System.Drawing.Size(225, 22)
+        Me.CboxMvto1_01.Size = New System.Drawing.Size(205, 22)
         Me.CboxMvto1_01.Text = "Criar Pedido de Compra"
         '
         'CboxMvto1_02
         '
         Me.CboxMvto1_02.Name = "CboxMvto1_02"
-        Me.CboxMvto1_02.Size = New System.Drawing.Size(225, 22)
+        Me.CboxMvto1_02.Size = New System.Drawing.Size(205, 22)
         Me.CboxMvto1_02.Text = "Entrada Nota Fiscal"
         '
         'CboxMvto1_03
         '
         Me.CboxMvto1_03.Name = "CboxMvto1_03"
-        Me.CboxMvto1_03.Size = New System.Drawing.Size(225, 22)
+        Me.CboxMvto1_03.Size = New System.Drawing.Size(205, 22)
         Me.CboxMvto1_03.Text = "Venda de Produtos"
         '
         'CboxMvto1_04
         '
         Me.CboxMvto1_04.Name = "CboxMvto1_04"
-        Me.CboxMvto1_04.Size = New System.Drawing.Size(225, 22)
+        Me.CboxMvto1_04.Size = New System.Drawing.Size(205, 22)
         Me.CboxMvto1_04.Text = "Recebimento de Clientes"
         '
         'CboxMvto1_05
         '
         Me.CboxMvto1_05.Name = "CboxMvto1_05"
-        Me.CboxMvto1_05.Size = New System.Drawing.Size(225, 22)
-        Me.CboxMvto1_05.Text = "Pagamento de Fornecedores"
+        Me.CboxMvto1_05.Size = New System.Drawing.Size(205, 22)
+        Me.CboxMvto1_05.Text = "Pagar Fornecedor"
         '
         'CboxMvto1_06
         '
         Me.CboxMvto1_06.Name = "CboxMvto1_06"
-        Me.CboxMvto1_06.Size = New System.Drawing.Size(225, 22)
+        Me.CboxMvto1_06.Size = New System.Drawing.Size(205, 22)
         Me.CboxMvto1_06.Text = "Criar Pedido de Venda"
         '
         'ExclusõesToolStripMenuItem

@@ -98,7 +98,7 @@ Public Class FrmPagamento
             data2 = DataVencimento.Value.ToString("yyyy-MM-dd")
             data3 = DataPgto.Value.ToString("yyyy-MM-dd")
 
-            sqls = "INSERT INTO mvto_pagamentos (nota, fornecedor, pedido, data_registro, emissao, vencimento, valor, id_nota, data_pagamento, principal, juros_multa, descontos, total_pago, saldo_nota  ) VALUES ('" & TxtNota.Text & "', '" & TxtFornecedor.Text & "', '" & TxtPedido.Text & "', '" & data0 & "', '" & data1 & "', '" & data2 & "', '" & TxtValorNota.Text.Replace(",", ".") & "', '" & TxtIdNota.Text & "', '" & data3 & "', '" & TxtPrincipal.Text.Replace(",", ".") & "', '" & TxtJuros.Text.Replace(",", ".") & "', '" & TxtDesconto.Text.Replace(",", ".") & "', '" & TxtTotalPago.Text.Replace(",", ".") & "', '" & TxtSaldoNota.Text.Replace(",", ".") & "')"
+            sqls = "INSERT INTO mvto_pagamentos (nota, fornecedor, pedido, data_registro, emissao, vencimento, valor, id_entrada, data_pagamento, principal, juros_multa, descontos, total_pago, saldo_nota  ) VALUES ('" & TxtNota.Text & "', '" & TxtFornecedor.Text & "', '" & TxtPedido.Text & "', '" & data0 & "', '" & data1 & "', '" & data2 & "', '" & TxtValorNota.Text.Replace(",", ".") & "', '" & TxtIdNota.Text & "', '" & data3 & "', '" & TxtPrincipal.Text.Replace(",", ".") & "', '" & TxtJuros.Text.Replace(",", ".") & "', '" & TxtDesconto.Text.Replace(",", ".") & "', '" & TxtTotalPago.Text.Replace(",", ".") & "', '" & TxtSaldoNota.Text.Replace(",", ".") & "')"
             cmd = New MySqlCommand(sqls, con)
             cmd.ExecuteNonQuery()
 

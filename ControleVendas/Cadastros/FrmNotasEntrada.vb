@@ -67,14 +67,13 @@ Public Class FrmNotasEntrada
             Dim dt As New DataTable
             Dim da As MySqlDataAdapter
 
-            sql = "SELECT * FROM entrada order by id desc"
+            sql = "SELECT d.id_entrada,  d.documento, d.data_emissao, f.nome_fantasia, d.parcela, d.data_vencimento, d.valor_parcela, d.saldo_duplicata, e.id_pedido, e.descricao, d.observacao FROM duplicatas as d INNER JOIN fornecedor as f ON d.cod_fornecedor = f.id INNER JOIN entrada as e ON d.id_entrada = e.id  order by d.documento desc"
             da = New MySqlDataAdapter(sql, con)
             da.Fill(dt)
             DataGrid.DataSource = dt
 
-            If DataGrid.Rows.Count > 0 Then
-                FormatarGrid()
-            End If
+            FormatarGrid()
+
 
         Catch ex As Exception
             MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
@@ -85,38 +84,49 @@ Public Class FrmNotasEntrada
     Private Sub FormatarGrid()
         'DataGrid.Columns(0).Visible = False
 
-        DataGrid.Columns(0).HeaderText = "Id Reg."
+        DataGrid.Columns(0).HeaderText = "Reg. Entrada"
         DataGrid.Columns(1).HeaderText = "Nota Fiscal"
-        DataGrid.Columns(2).HeaderText = "Fornecedor"
-        DataGrid.Columns(3).HeaderText = "Pedido"
-        DataGrid.Columns(4).HeaderText = "Data Registro"
-        DataGrid.Columns(5).HeaderText = "Data Emissão"
-        DataGrid.Columns(6).HeaderText = "Vencimento"
-        DataGrid.Columns(7).HeaderText = "Valor Total"
-        DataGrid.Columns(8).HeaderText = "Saldo Titulo"
+        DataGrid.Columns(2).HeaderText = "Data Emissão"
+        DataGrid.Columns(3).HeaderText = "Fornecedor"
+        DataGrid.Columns(4).HeaderText = "Parcela"
+        DataGrid.Columns(5).HeaderText = "Vencimento"
+        DataGrid.Columns(6).HeaderText = "Valor Nota"
+        DataGrid.Columns(7).HeaderText = "Saldo"
+        DataGrid.Columns(8).HeaderText = "Pedido"
+        DataGrid.Columns(9).HeaderText = "Descrição"
+        DataGrid.Columns(10).HeaderText = "Observação"
 
-        DataGrid.Columns(0).Width = 70
-        DataGrid.Columns(1).Width = 80
-        DataGrid.Columns(2).Width = 80
-        DataGrid.Columns(3).Width = 80
-        DataGrid.Columns(4).Width = 100
-        DataGrid.Columns(5).Width = 100
-        DataGrid.Columns(6).Width = 80
+
+        DataGrid.Columns(0).Width = 50
+        DataGrid.Columns(1).Width = 60
+        DataGrid.Columns(2).Width = 90
+        DataGrid.Columns(3).Width = 150
+        DataGrid.Columns(4).Width = 50
+        DataGrid.Columns(5).Width = 90
+        DataGrid.Columns(8).Width = 50
+        DataGrid.Columns(9).Width = 150
+        DataGrid.Columns(10).Width = 150
 
         DataGrid.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-        DataGrid.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-        DataGrid.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-        DataGrid.Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-        DataGrid.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-        DataGrid.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-
-        DataGrid.Columns(6).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
-        DataGrid.Columns(3).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid.Columns(0).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+
+        DataGrid.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid.Columns(1).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
 
+        DataGrid.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGrid.Columns(2).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+
+        DataGrid.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGrid.Columns(4).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+
+        DataGrid.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGrid.Columns(5).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+
+        DataGrid.Columns(8).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGrid.Columns(8).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+
+        DataGrid.Columns(6).DefaultCellStyle.Format = "c"
         DataGrid.Columns(7).DefaultCellStyle.Format = "c"
-        DataGrid.Columns(8).DefaultCellStyle.Format = "c"
 
     End Sub
 

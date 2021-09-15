@@ -33,19 +33,19 @@ Partial Class FrmNotasEntrada
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.TxtPesquisar = New System.Windows.Forms.TextBox()
+        Me.BtnListarTudo = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.BtnSair = New System.Windows.Forms.Button()
+        Me.BtnExcluir = New System.Windows.Forms.Button()
         Me.TxtId = New System.Windows.Forms.TextBox()
         Me.LblId = New System.Windows.Forms.Label()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.TxtIdPedido = New System.Windows.Forms.TextBox()
         Me.LblIdPedido = New System.Windows.Forms.Label()
         Me.DataGrid = New System.Windows.Forms.DataGridView()
-        Me.BtnSair = New System.Windows.Forms.Button()
-        Me.BtnExcluir = New System.Windows.Forms.Button()
-        Me.BtnListarTudo = New System.Windows.Forms.Button()
-        Me.TxtPesquisar = New System.Windows.Forms.TextBox()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -117,6 +117,36 @@ Partial Class FrmNotasEntrada
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Pesquisar"
         '
+        'TxtPesquisar
+        '
+        Me.TxtPesquisar.BackColor = System.Drawing.Color.White
+        Me.TxtPesquisar.Location = New System.Drawing.Point(16, 19)
+        Me.TxtPesquisar.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtPesquisar.Name = "TxtPesquisar"
+        Me.TxtPesquisar.Size = New System.Drawing.Size(90, 20)
+        Me.TxtPesquisar.TabIndex = 157
+        Me.ToolTip.SetToolTip(Me.TxtPesquisar, "Pesquisar por nota fiscal")
+        '
+        'BtnListarTudo
+        '
+        Me.BtnListarTudo.AccessibleDescription = ""
+        Me.BtnListarTudo.AccessibleName = "Adicionar"
+        Me.BtnListarTudo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnListarTudo.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnListarTudo.FlatAppearance.BorderSize = 0
+        Me.BtnListarTudo.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BtnListarTudo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnListarTudo.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnListarTudo.ForeColor = System.Drawing.Color.Transparent
+        Me.BtnListarTudo.Image = CType(resources.GetObject("BtnListarTudo.Image"), System.Drawing.Image)
+        Me.BtnListarTudo.Location = New System.Drawing.Point(121, 10)
+        Me.BtnListarTudo.Name = "BtnListarTudo"
+        Me.BtnListarTudo.Size = New System.Drawing.Size(35, 35)
+        Me.BtnListarTudo.TabIndex = 156
+        Me.BtnListarTudo.TabStop = False
+        Me.ToolTip.SetToolTip(Me.BtnListarTudo, "Listar tudo")
+        Me.BtnListarTudo.UseVisualStyleBackColor = True
+        '
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
@@ -142,6 +172,44 @@ Partial Class FrmNotasEntrada
         Me.GroupBox3.Size = New System.Drawing.Size(72, 50)
         Me.GroupBox3.TabIndex = 144
         Me.GroupBox3.TabStop = False
+        '
+        'BtnSair
+        '
+        Me.BtnSair.AccessibleDescription = ""
+        Me.BtnSair.AccessibleName = "Adicionar"
+        Me.BtnSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnSair.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnSair.FlatAppearance.BorderSize = 0
+        Me.BtnSair.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BtnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnSair.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnSair.ForeColor = System.Drawing.Color.Transparent
+        Me.BtnSair.Image = CType(resources.GetObject("BtnSair.Image"), System.Drawing.Image)
+        Me.BtnSair.Location = New System.Drawing.Point(30, 9)
+        Me.BtnSair.Name = "BtnSair"
+        Me.BtnSair.Size = New System.Drawing.Size(35, 35)
+        Me.BtnSair.TabIndex = 165
+        Me.BtnSair.TabStop = False
+        Me.BtnSair.UseVisualStyleBackColor = True
+        '
+        'BtnExcluir
+        '
+        Me.BtnExcluir.AccessibleDescription = ""
+        Me.BtnExcluir.AccessibleName = "Adicionar"
+        Me.BtnExcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnExcluir.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnExcluir.FlatAppearance.BorderSize = 0
+        Me.BtnExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BtnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnExcluir.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnExcluir.ForeColor = System.Drawing.Color.Transparent
+        Me.BtnExcluir.Image = CType(resources.GetObject("BtnExcluir.Image"), System.Drawing.Image)
+        Me.BtnExcluir.Location = New System.Drawing.Point(0, 9)
+        Me.BtnExcluir.Name = "BtnExcluir"
+        Me.BtnExcluir.Size = New System.Drawing.Size(35, 35)
+        Me.BtnExcluir.TabIndex = 164
+        Me.BtnExcluir.TabStop = False
+        Me.BtnExcluir.UseVisualStyleBackColor = True
         '
         'TxtId
         '
@@ -231,86 +299,18 @@ Partial Class FrmNotasEntrada
         Me.DataGrid.ReadOnly = True
         Me.DataGrid.RowHeadersVisible = False
         DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.ControlLightLight
-        DataGridViewCellStyle6.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        DataGridViewCellStyle6.Padding = New System.Windows.Forms.Padding(3, 0, 0, 0)
         Me.DataGrid.RowsDefaultCellStyle = DataGridViewCellStyle6
         Me.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGrid.Size = New System.Drawing.Size(794, 338)
+        Me.DataGrid.Size = New System.Drawing.Size(649, 284)
         Me.DataGrid.TabIndex = 148
-        '
-        'BtnSair
-        '
-        Me.BtnSair.AccessibleDescription = ""
-        Me.BtnSair.AccessibleName = "Adicionar"
-        Me.BtnSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnSair.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnSair.FlatAppearance.BorderSize = 0
-        Me.BtnSair.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.BtnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnSair.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnSair.ForeColor = System.Drawing.Color.Transparent
-        Me.BtnSair.Image = CType(resources.GetObject("BtnSair.Image"), System.Drawing.Image)
-        Me.BtnSair.Location = New System.Drawing.Point(30, 9)
-        Me.BtnSair.Name = "BtnSair"
-        Me.BtnSair.Size = New System.Drawing.Size(35, 35)
-        Me.BtnSair.TabIndex = 165
-        Me.BtnSair.TabStop = False
-        Me.BtnSair.UseVisualStyleBackColor = True
-        '
-        'BtnExcluir
-        '
-        Me.BtnExcluir.AccessibleDescription = ""
-        Me.BtnExcluir.AccessibleName = "Adicionar"
-        Me.BtnExcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnExcluir.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnExcluir.FlatAppearance.BorderSize = 0
-        Me.BtnExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.BtnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnExcluir.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnExcluir.ForeColor = System.Drawing.Color.Transparent
-        Me.BtnExcluir.Image = CType(resources.GetObject("BtnExcluir.Image"), System.Drawing.Image)
-        Me.BtnExcluir.Location = New System.Drawing.Point(0, 9)
-        Me.BtnExcluir.Name = "BtnExcluir"
-        Me.BtnExcluir.Size = New System.Drawing.Size(35, 35)
-        Me.BtnExcluir.TabIndex = 164
-        Me.BtnExcluir.TabStop = False
-        Me.BtnExcluir.UseVisualStyleBackColor = True
-        '
-        'BtnListarTudo
-        '
-        Me.BtnListarTudo.AccessibleDescription = ""
-        Me.BtnListarTudo.AccessibleName = "Adicionar"
-        Me.BtnListarTudo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnListarTudo.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnListarTudo.FlatAppearance.BorderSize = 0
-        Me.BtnListarTudo.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.BtnListarTudo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnListarTudo.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnListarTudo.ForeColor = System.Drawing.Color.Transparent
-        Me.BtnListarTudo.Image = CType(resources.GetObject("BtnListarTudo.Image"), System.Drawing.Image)
-        Me.BtnListarTudo.Location = New System.Drawing.Point(121, 10)
-        Me.BtnListarTudo.Name = "BtnListarTudo"
-        Me.BtnListarTudo.Size = New System.Drawing.Size(35, 35)
-        Me.BtnListarTudo.TabIndex = 156
-        Me.BtnListarTudo.TabStop = False
-        Me.ToolTip.SetToolTip(Me.BtnListarTudo, "Listar tudo")
-        Me.BtnListarTudo.UseVisualStyleBackColor = True
-        '
-        'TxtPesquisar
-        '
-        Me.TxtPesquisar.BackColor = System.Drawing.Color.White
-        Me.TxtPesquisar.Location = New System.Drawing.Point(16, 19)
-        Me.TxtPesquisar.Margin = New System.Windows.Forms.Padding(4)
-        Me.TxtPesquisar.Name = "TxtPesquisar"
-        Me.TxtPesquisar.Size = New System.Drawing.Size(90, 20)
-        Me.TxtPesquisar.TabIndex = 157
-        Me.ToolTip.SetToolTip(Me.TxtPesquisar, "Pesquisar por nota fiscal")
         '
         'FrmNotasEntrada
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(834, 431)
+        Me.ClientSize = New System.Drawing.Size(829, 382)
         Me.Controls.Add(Me.DataGrid)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.GroupBox3)

@@ -270,6 +270,12 @@
     <Compile Include="Movimentos\FrmPagamento.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Movimentos\FrmPagarTitulo.Designer.vb">
+      <DependentUpon>FrmPagarTitulo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentos\FrmPagarTitulo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Movimentos\FrmRecebimento.Designer.vb">
       <DependentUpon>FrmRecebimento.vb</DependentUpon>
     </Compile>
@@ -292,6 +298,12 @@
       <DependentUpon>FrmVenda.vb</DependentUpon>
     </Compile>
     <Compile Include="Movimentos\FrmVenda.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentos\FrmVlrPgto.Designer.vb">
+      <DependentUpon>FrmVlrPgto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentos\FrmVlrPgto.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -416,6 +428,9 @@
     <EmbeddedResource Include="Movimentos\FrmPagamento.resx">
       <DependentUpon>FrmPagamento.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Movimentos\FrmPagarTitulo.resx">
+      <DependentUpon>FrmPagarTitulo.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Movimentos\FrmRecebimento.resx">
       <DependentUpon>FrmRecebimento.vb</DependentUpon>
     </EmbeddedResource>
@@ -427,6 +442,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Movimentos\FrmVenda.resx">
       <DependentUpon>FrmVenda.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentos\FrmVlrPgto.resx">
+      <DependentUpon>FrmVlrPgto.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

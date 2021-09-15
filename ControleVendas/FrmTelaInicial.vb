@@ -259,7 +259,7 @@ Public Class FrmTelaInicial
     End Sub
 
     Private Sub PagamentosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CboxMvto1_05.Click
-        Dim form = New FrmPagamento
+        Dim form = New FrmPagarTitulo
         form.ShowDialog()
 
     End Sub

@@ -145,6 +145,7 @@ Public Class FrmEntrada
 
         DataGridDuplicatas.Columns(7).Visible = False
         DataGridDuplicatas.Columns(8).Visible = False
+        DataGridDuplicatas.Columns(9).Visible = False
 
         DataGridDuplicatas.Columns(0).HeaderText = "Id. Dup."
         DataGridDuplicatas.Columns(1).HeaderText = "Parcela"
@@ -332,7 +333,7 @@ Public Class FrmEntrada
 
                 Dim cmd As MySqlCommand
                 Dim sqls As String
-                sqls = "INSERT INTO duplicatas (parcela, documento, data_emissao, data_vencimento, valor_parcela, observacao, id_entrada, cod_fornecedor) VALUES (@parcela, @documento, @data_emissao, @data_vencimento, @valor_parcela, @observacao, '" & TxtIdRegistro.Text & "','" & TxtFornecedor.Text & "' )"
+                sqls = "INSERT INTO duplicatas (parcela, documento, data_emissao, data_vencimento, valor_parcela, observacao, id_entrada, cod_fornecedor, saldo_duplicata) VALUES (@parcela, @documento, @data_emissao, @data_vencimento, @valor_parcela, @observacao, '" & TxtIdRegistro.Text & "','" & TxtFornecedor.Text & "', @saldo_duplicata )"
                 cmd = New MySqlCommand(sqls, con)
                 With cmd
 
@@ -342,6 +343,8 @@ Public Class FrmEntrada
                     .Parameters.AddWithValue("@data_vencimento", CDate(DataGridDuplicatas.Rows(i).Cells(4).Value.ToString))
                     .Parameters.AddWithValue("@valor_parcela", CDbl(DataGridDuplicatas.Rows(i).Cells(5).Value.ToString))
                     .Parameters.AddWithValue("@observacao", DataGridDuplicatas.Rows(i).Cells(6).Value.ToString)
+                    .Parameters.AddWithValue("@saldo_duplicata", CDbl(DataGridDuplicatas.Rows(i).Cells(5).Value.ToString))
+
 
                     cmd.ExecuteNonQuery()
                 End With
