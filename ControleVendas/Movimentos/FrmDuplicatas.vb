@@ -46,7 +46,7 @@ Public Class FrmDuplicatas
         If TxtParcela.Text <> "" And TxtTotalDuplicata.Text <> "" And TxtNotaFiscal.Text <> "" Then
 
             'If FrmEntrada.DataGridDuplicatas.Rows.Count < 1 Then
-            If Table1Duplicatas.Rows.Count < 1 Then
+            If Table1Duplicatas.Columns.Count < 1 Then
                 Table1Duplicatas.Columns.Add("Id. Dup.")
                 Table1Duplicatas.Columns.Add("Parcela")
                 Table1Duplicatas.Columns.Add("Documento")

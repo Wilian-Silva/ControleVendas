@@ -161,13 +161,10 @@ Public Class FrmEntrada
 
     End Sub
     Public Sub TotalNfe_TotalDuplicatas()
-        Dim Nfe As String
-        Dim Dup As String
-        Nfe = TxtTotalNota.Text
-        Dup = TxtTotalDuplicatas.Text
+
         LblSaldo.Text = ""
-        If Nfe <> Dup Then
-            LblSaldo.Text = "Valor total da NFe difente do valor total das duplicatas!"
+        If TxtTotalNota.Text - TxtTotalDuplicatas.Text > 0 Or TxtTotalNota.Text - TxtTotalDuplicatas.Text < 0 Then
+            LblSaldo.Text = "Valor total das duplicatas diferente do valor total da Nota!"
         End If
 
     End Sub
@@ -225,7 +222,10 @@ Public Class FrmEntrada
         'TxtTotalPedido.Text = Convert.ToDouble(TxtTotalPedido.Text).ToString("C")
     End Sub
     Private Sub BtnSair_Click(sender As Object, e As EventArgs) Handles BtnSair.Click
-
+        LimparCampos()
+        BloquearCampos()
+        ListarUltimaNota()
+        Limpar_cores()
         Me.Close()
     End Sub
 
@@ -240,6 +240,7 @@ Public Class FrmEntrada
         sqlUSU = "SELECT * FROM entrada WHERE id = '" & TxtIdRegistro.Text & "' "
         cmdUSU = New MySqlCommand(sqlUSU, con)
         readerUSU = cmdUSU.ExecuteReader
+
         If readerUSU.Read = True Then
             readerUSU.Close()
             MsgBox("Registro já está cadastrado!!", MsgBoxStyle.Information, "Entrada NFe")
@@ -250,7 +251,7 @@ Public Class FrmEntrada
         '.............................................................................................
 
         TxtNotaFiscal.BackColor = Color.White
-        TxtFornecedor.BackColor = Color.White
+        TxtNomeFornecedor.BackColor = Color.White
         TxtDescPed.BackColor = Color.White
 
         If DataGrid.RowCount < 1 Then
@@ -260,55 +261,68 @@ Public Class FrmEntrada
 
         If TxtNotaFiscal.Text <> "" And TxtFornecedor.Text <> "" And TxtCodPedido.Text <> "" Then
 
+            If TxtTotalNota.Text - TxtTotalDuplicatas.Text > 0 Or TxtTotalNota.Text - TxtTotalDuplicatas.Text < 0 Then
 
-            Try
-
-                If MsgBox("Deseja salvar esse registro?", vbYesNo, "NFe Entrada") = vbYes Then
-                    Abrir()
-
-                    'PROGRAMANDO INSERÇÃO DE REGISTRO NO BANCO
-                    Dim cmd As MySqlCommand
-                    Dim sqls As String
-                    Dim data1 As String
-
-                    Dim data3 As String
-                    data1 = DataEmissao.Value.ToString("yyyy-MM-dd")
-
-                    data3 = Now().ToString("yyyy-MM-dd")
-
-                    sqls = "INSERT INTO entrada ( id, nota, cod_fornecedor, fornecedor, id_pedido, descricao, data_registro, emissao, valor ) VALUES ('" & TxtIdRegistro.Text & "','" & TxtNotaFiscal.Text & "', '" & TxtFornecedor.Text & "', '" & TxtNomeFornecedor.Text & "', '" & TxtCodPedido.Text & "','" & TxtDescPed.Text & "' ,'" & data3 & "', '" & data1 & "', '" & TxtTotalNota.Text.Replace(",", ".") & "')"
-                    cmd = New MySqlCommand(sqls, con)
-                    cmd.ExecuteNonQuery()
-
-                    SalvarEstoque()
-
-                    SalvarStatusPedido()
-
-                    SalvarDuplicata()
-
-                    LimparCampos()
-
-                    BloquearCampos()
-
-                    MsgBox("Cadastro salvo com Sucesso!!", MsgBoxStyle.Information, "Salvar")
-
-                    ListarUltimaNota()
-
+                If MsgBox("Total de duplicatas diferente do total da nota fiscal, deja salvar mesmo assim ?", vbYesNo, "Total duplicatas") = vbYes Then
+                    SalvarEntradaNota()
                 End If
-            Catch ex As Exception
-                MsgBox("Erro ao Salvar!!" + ex.Message)
-            End Try
+
+            Else
+
+                If MsgBox("Deseja salvar esse registro ?", vbYesNo, "Registro Entrada") = vbYes Then
+                    SalvarEntradaNota()
+                End If
+
+            End If
+
         Else
 
             TxtNotaFiscal.BackColor = Color.Salmon
-            TxtFornecedor.BackColor = Color.Salmon
+            TxtNomeFornecedor.BackColor = Color.Salmon
             TxtDescPed.BackColor = Color.Salmon
 
             MsgBox("Campos vazios ou inválidos!!", MsgBoxStyle.Information, "Campos obrigatórios")
 
         End If
     End Sub
+    Sub SalvarEntradaNota()
+        Try
 
+            Abrir()
+
+                'PROGRAMANDO INSERÇÃO DE REGISTRO NO BANCO
+                Dim cmd As MySqlCommand
+                Dim sqls As String
+                Dim data1 As String
+
+                Dim data3 As String
+                data1 = DataEmissao.Value.ToString("yyyy-MM-dd")
+
+                data3 = Now().ToString("yyyy-MM-dd")
+
+                sqls = "INSERT INTO entrada ( id, nota, cod_fornecedor, fornecedor, id_pedido, descricao, data_registro, emissao, valor ) VALUES ('" & TxtIdRegistro.Text & "','" & TxtNotaFiscal.Text & "', '" & TxtFornecedor.Text & "', '" & TxtNomeFornecedor.Text & "', '" & TxtCodPedido.Text & "','" & TxtDescPed.Text & "' ,'" & data3 & "', '" & data1 & "', '" & TxtTotalNota.Text.Replace(",", ".") & "')"
+                cmd = New MySqlCommand(sqls, con)
+                cmd.ExecuteNonQuery()
+
+                SalvarEstoque()
+
+                SalvarStatusPedido()
+
+                SalvarDuplicata()
+
+                LimparCampos()
+
+                BloquearCampos()
+
+                MsgBox("Cadastro salvo com Sucesso!!", MsgBoxStyle.Information, "Salvar")
+
+                ListarUltimaNota()
+
+
+        Catch ex As Exception
+            MsgBox("Erro ao Salvar!!" + ex.Message)
+        End Try
+    End Sub
     Sub SalvarDuplicata()
 
         Try
@@ -317,16 +331,17 @@ Public Class FrmEntrada
 
                 Dim cmd As MySqlCommand
                 Dim sqls As String
-                sqls = "INSERT INTO duplicatas (parcela, documento, data_emissao, data_vencimento, valor_parcela, observacao, id_entrada) VALUES (@parcela, @documento, @data_emissao, @data_vencimento, @valor_parcela, @observacao, @id_entrada )"
+                sqls = "INSERT INTO duplicatas (parcela, documento, data_emissao, data_vencimento, valor_parcela, observacao, id_entrada) VALUES (@parcela, @documento, @data_emissao, @data_vencimento, @valor_parcela, @observacao, '" & TxtIdRegistro.Text & "' )"
                 cmd = New MySqlCommand(sqls, con)
                 With cmd
-                    .Parameters.AddWithValue("@id_entrada", CInt(DataGridDuplicatas.Rows(i).Cells(0).Value.ToString))
+
                     .Parameters.AddWithValue("@parcela", CInt(DataGridDuplicatas.Rows(i).Cells(1).Value.ToString))
                     .Parameters.AddWithValue("@documento", DataGridDuplicatas.Rows(i).Cells(2).Value.ToString)
                     .Parameters.AddWithValue("@data_emissao", CDate(DataGridDuplicatas.Rows(i).Cells(3).Value.ToString))
                     .Parameters.AddWithValue("@data_vencimento", CDate(DataGridDuplicatas.Rows(i).Cells(4).Value.ToString))
                     .Parameters.AddWithValue("@valor_parcela", CDbl(DataGridDuplicatas.Rows(i).Cells(5).Value.ToString))
                     .Parameters.AddWithValue("@observacao", DataGridDuplicatas.Rows(i).Cells(6).Value.ToString)
+
                     cmd.ExecuteNonQuery()
                 End With
 
@@ -394,12 +409,12 @@ Public Class FrmEntrada
 
             If (ultima.Read()) Then
                 TxtIdRegistro.Text = ultima("id") + 1
+                ultima.Close()
             Else
+                ultima.Close()
                 TxtIdRegistro.Text = 1
 
             End If
-
-            ultima.Close()
 
         Catch ex As Exception
             MsgBox("Erro ao Salvar!! " + ex.Message)
@@ -443,6 +458,7 @@ Public Class FrmEntrada
         form.TxtNotaFiscal.Text = TxtNotaFiscal.Text
         form.DataEmissao.Value = DataEmissao.Value
         form.TxtIdREg.Text = TxtIdRegistro.Text
+        form.TxtTotalDuplicata.Text = TxtTotalNota.Text - TxtTotalDuplicatas.Text
         form.ShowDialog()
 
     End Sub
@@ -508,40 +524,42 @@ Public Class FrmEntrada
 
     End Sub
     Sub DeltarParcelaBanco()
+        Try
+
+            Abrir()
+
+            'VERIFICAR ULTIMO ID NO BANCO 
+            Dim cmdp As MySqlCommand
+            Dim sql As String
+            Dim reader As MySqlDataReader
+            Dim idReg As String
+
+            idReg = DataGridDuplicatas.CurrentRow.Cells(0).Value.ToString
+
+            sql = "SELECT * FROM duplicatas WHERE id = '" & idReg & "' "
+            cmdp = New MySqlCommand(sql, con)
+            reader = cmdp.ExecuteReader
+
+            If reader.Read = True Then
+                reader.Close()
+
+                Dim cmd As MySqlCommand
+                Dim sql1 As String
+                sql1 = "DELETE FROM duplicatas where id = '" & idReg & "' "
+                cmd = New MySqlCommand(sql1, con)
+                cmd.ExecuteNonQuery()
+
+                MsgBox("Registro excluído com Sucesso!!", MsgBoxStyle.Information, "Exlusão")
+
+            Else
+                reader.Close()
 
 
-        Abrir()
-
-        'VERIFICAR ULTIMO ID NO BANCO 
-        Dim cmdp As MySqlCommand
-        Dim sql As String
-        Dim reader As MySqlDataReader
-        Dim idReg As String
-
-        idReg = DataGridDuplicatas.CurrentRow.Cells(0).Value.ToString
-
-        sql = "SELECT * FROM duplicatas WHERE id = '" & idReg & "' "
-        cmdp = New MySqlCommand(sql, con)
-        reader = cmdp.ExecuteReader
-
-        If reader.Read = True Then
-            reader.Close()
-
-            Dim cmd As MySqlCommand
-            Dim sql1 As String
-            sql1 = "DELETE FROM duplicatas where id = '" & idReg & "' "
-            cmd = New MySqlCommand(sql1, con)
-            cmd.ExecuteNonQuery()
-
-            MsgBox("Registro excluído com Sucesso!!", MsgBoxStyle.Information, "Exlusão")
-
-        Else
-            reader.Close()
-
-
-            DataGridDuplicatas.Rows.Remove(DataGridDuplicatas.CurrentRow)
-        End If
-
+                DataGridDuplicatas.Rows.Remove(DataGridDuplicatas.CurrentRow)
+            End If
+        Catch ex As Exception
+            MsgBox("Erro ao Salvar!! " + ex.Message)
+        End Try
 
     End Sub
 
@@ -585,8 +603,10 @@ Public Class FrmEntrada
                 If (ultima.Read()) Then
                     maximo = ultima("id")
                     ultima.Close()
+                Else
+                    ultima.Close()
                 End If
-                ultima.Close()
+
 
             Catch ex As Exception
                 MsgBox("Erro ao Salvar!! " + ex.Message)
@@ -657,9 +677,10 @@ Line1:
                 TxtTotalNota.Text = reader(8)
 
                 reader.Close()
-
+            Else
+                reader.Close()
             End If
-            reader.Close()
+
 
             '..................................................................................
             'LISTAR ITEN DA NOTA FISCAL
@@ -832,7 +853,8 @@ Line1:
 
                 IdRegistroNFe = reader(0)
                 reader.Close()
-
+            Else
+                reader.Close()
             End If
             reader.Close()
 
@@ -870,9 +892,6 @@ Line1:
         End Try
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        SalvarDuplicata()
-    End Sub
 
     Private Sub TxtCodPedido_TextChanged(sender As Object, e As EventArgs) Handles TxtCodPedido.TextChanged
         If novaEntrada = "True" Then
@@ -885,5 +904,92 @@ Line1:
         ListarDuplicatas()
         TotalDatagridDuplicatas()
         TotalNfe_TotalDuplicatas()
+    End Sub
+
+    Private Sub BtnExcluir_Click(sender As Object, e As EventArgs) Handles BtnExcluir.Click
+        If MsgBox("Deseja exluir o registro da nota fiscal " + TxtNotaFiscal.Text + " ?", vbYesNo, "Exclusão") = vbYes Then
+
+            Exluir_Entrada()
+
+            Exluir_Estoque()
+
+            Exluir_Duplicatas()
+
+            Atualizar_PedidoStatus()
+
+            MsgBox("Registro excluído com Sucesso!!", MsgBoxStyle.Information, "Exlusão")
+
+            ListarUltimaNota()
+
+        End If
+    End Sub
+
+    Private Sub Exluir_Entrada()
+
+        Try
+            Abrir()
+
+            Dim cmd As MySqlCommand
+            Dim sql As String
+
+            sql = "DELETE FROM entrada where id = '" & TxtIdRegistro.Text & "' "
+            cmd = New MySqlCommand(sql, con)
+            cmd.ExecuteNonQuery()
+
+        Catch ex As Exception
+            MsgBox("Erro ao Salvar!! " + ex.Message)
+        End Try
+
+    End Sub
+    Private Sub Exluir_Estoque()
+
+        Try
+            Abrir()
+
+            Dim cmd As MySqlCommand
+            Dim sql As String
+
+            sql = "DELETE FROM estoque where id_entrada = '" & TxtIdRegistro.Text & "' "
+            cmd = New MySqlCommand(sql, con)
+            cmd.ExecuteNonQuery()
+
+        Catch ex As Exception
+            MsgBox("Erro ao Salvar!! " + ex.Message)
+        End Try
+
+    End Sub
+    Private Sub Exluir_Duplicatas()
+        Try
+            Abrir()
+
+            Dim cmd As MySqlCommand
+            Dim sql As String
+
+            sql = "DELETE FROM duplicatas where id_entrada = '" & TxtIdRegistro.Text & "' "
+            cmd = New MySqlCommand(sql, con)
+            cmd.ExecuteNonQuery()
+
+        Catch ex As Exception
+            MsgBox("Erro ao Salvar!! " + ex.Message)
+        End Try
+
+    End Sub
+    Private Sub Atualizar_PedidoStatus()
+
+        Try
+            Abrir()
+
+            Dim cmd As MySqlCommand
+            Dim sql As String
+            Dim status As String
+            status = "Aberto"
+
+            sql = "UPDATE pedido_cabecalho SET status = '" & status & "' WHERE id = '" & TxtCodPedido.Text & "'"
+            cmd = New MySqlCommand(sql, con)
+            cmd.ExecuteNonQuery()
+
+        Catch ex As Exception
+            MsgBox("Erro ao Salvar!! " + ex.Message)
+        End Try
     End Sub
 End Class
