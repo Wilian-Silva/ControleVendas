@@ -97,7 +97,7 @@ Public Class FrmPagarTitulo
             Dim cmd3 As MySqlCommand
             Dim reader3 As MySqlDataReader
             Dim sql3 As String
-            sql3 = "SELECT id, SUM(valor_pago) , SUM(juros_multa) , SUM(descontos), SUM(total_pago), data_pagamento, MAX(status_nota), id_entrada FROM mvto_pagamentos WHERE id_duplicata= '" & idDuplicata & "' "
+            sql3 = "SELECT MAX(id), SUM(valor_pago) , SUM(juros_multa) , SUM(descontos), SUM(total_pago), data_pagamento, MAX(status_nota), id_entrada FROM mvto_pagamentos WHERE id_duplicata= '" & idDuplicata & "' "
             cmd3 = New MySqlCommand(sql3, con)
             reader3 = cmd3.ExecuteReader
             If reader3.Read = True Then
@@ -236,7 +236,7 @@ Line1:
             Dim cmd3 As MySqlCommand
             Dim reader3 As MySqlDataReader
             Dim sql3 As String
-            sql3 = "SELECT id, SUM(valor_pago) , SUM(juros_multa) , SUM(descontos), SUM(total_pago), data_pagamento, MAX(status_nota), id_entrada FROM mvto_pagamentos WHERE id_duplicata= '" & idDuplicata & "' "
+            sql3 = "SELECT MAX(id), SUM(valor_pago) , SUM(juros_multa) , SUM(descontos), SUM(total_pago), data_pagamento, MAX(status_nota), id_entrada FROM mvto_pagamentos WHERE id_duplicata= '" & idDuplicata & "' "
             cmd3 = New MySqlCommand(sql3, con)
             reader3 = cmd3.ExecuteReader
             If reader3.Read = True Then
@@ -395,7 +395,7 @@ Line1:
             Dim cmd3 As MySqlCommand
             Dim reader3 As MySqlDataReader
             Dim sql3 As String
-            sql3 = "SELECT id, SUM(valor_pago) , SUM(juros_multa) , SUM(descontos), SUM(total_pago), data_pagamento, MAX(status_nota), id_entrada FROM mvto_pagamentos WHERE id_duplicata= '" & idDuplicata & "' "
+            sql3 = "SELECT MAX(id), SUM(valor_pago) , SUM(juros_multa) , SUM(descontos), SUM(total_pago), data_pagamento, MAX(status_nota), id_entrada FROM mvto_pagamentos WHERE id_duplicata= '" & idDuplicata & "' "
             cmd3 = New MySqlCommand(sql3, con)
             reader3 = cmd3.ExecuteReader
             If reader3.Read = True Then
@@ -440,7 +440,7 @@ Line1:
             Dim reader3 As MySqlDataReader
             Dim sql3 As String
 
-            sql3 = "SELECT id, SUM(valor_pago) , SUM(juros_multa) , SUM(descontos), SUM(total_pago), data_pagamento, MAX(status_nota) , id_entrada FROM mvto_pagamentos WHERE id_duplicata= '" & TxtIdRegistro.Text & "'  "
+            sql3 = "SELECT MAX(id), SUM(valor_pago) , SUM(juros_multa) , SUM(descontos), SUM(total_pago), data_pagamento, MAX(status_nota) , id_entrada FROM mvto_pagamentos WHERE id_duplicata= '" & TxtIdRegistro.Text & "'  "
 
             cmd3 = New MySqlCommand(sql3, con)
             reader3 = cmd3.ExecuteReader
@@ -491,5 +491,11 @@ Line1:
         Catch ex As Exception
             MsgBox("Erro ao carregar dados!! ---- " + ex.Message)
         End Try
+    End Sub
+
+    Private Sub BtnPesquisar_Click(sender As Object, e As EventArgs) Handles BtnPesquisar.Click
+
+        Dim form = New FrmNotasEntrada
+        form.ShowDialog()
     End Sub
 End Class

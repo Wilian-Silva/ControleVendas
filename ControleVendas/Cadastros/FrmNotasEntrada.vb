@@ -71,7 +71,6 @@ Public Class FrmNotasEntrada
             da = New MySqlDataAdapter(sql, con)
             da.Fill(dt)
             DataGrid.DataSource = dt
-
             FormatarGrid()
 
 
@@ -79,6 +78,47 @@ Public Class FrmNotasEntrada
             MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
         End Try
 
+    End Sub
+
+
+    Sub FiltroDataGrid()
+
+
+        'BUSCAR INFORMAÇÕES DA TABELA E MOSTRAR NO DATAGRID
+        Try
+            Abrir()
+
+            Dim sql As String
+            Dim dt As New DataTable
+            Dim da As MySqlDataAdapter
+
+            sql = "SELECT d.id_entrada,  d.documento, d.data_emissao, f.nome_fantasia, d.parcela, d.data_vencimento, d.valor_parcela, d.saldo_duplicata, e.id_pedido, e.descricao, d.observacao FROM duplicatas as d INNER JOIN fornecedor as f ON d.cod_fornecedor = f.id INNER JOIN entrada as e ON d.id_entrada = e.id  order by d.documento desc"
+            da = New MySqlDataAdapter(sql, con)
+            da.Fill(dt)
+            DataGrid.DataSource = dt
+            FormatarGrid()
+
+            If RbPedido.Checked = True Then
+
+                dt.DefaultView.RowFilter = "descricao LIKE " & "'%" & TxtPesquisa.Text & "%'"
+                DataGrid.DataSource = dt
+            End If
+
+            If RbFornecedor.Checked = True Then
+                dt.DefaultView.RowFilter = "nome_fantasia LIKE " & "'%" & TxtPesquisa.Text & "%'"
+                DataGrid.DataSource = dt
+            End If
+
+            If RbNota.Checked = True Then
+                'dt.DefaultView.RowFilter = "documento =" & TxtPesquisa.Text
+                dt.DefaultView.RowFilter = "documento LIKE " & "'%" & TxtPesquisa.Text & "%'"
+                DataGrid.DataSource = dt
+            End If
+
+
+        Catch ex As Exception
+            MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
+        End Try
 
     End Sub
     Private Sub FormatarGrid()
@@ -257,5 +297,9 @@ Public Class FrmNotasEntrada
 
     Private Sub TxtPesquisar_TextChanged(sender As Object, e As EventArgs) Handles TxtPesquisar.TextChanged
         ListarPorNota()
+    End Sub
+
+    Private Sub TxtPesquisa_TextChanged(sender As Object, e As EventArgs) Handles TxtPesquisa.TextChanged
+        FiltroDataGrid()
     End Sub
 End Class

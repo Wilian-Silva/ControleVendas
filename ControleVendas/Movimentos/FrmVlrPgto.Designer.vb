@@ -327,7 +327,7 @@ Partial Class FrmVlrPgto
         'TxtRegPagamento
         '
         Me.TxtRegPagamento.Enabled = False
-        Me.TxtRegPagamento.Location = New System.Drawing.Point(101, 53)
+        Me.TxtRegPagamento.Location = New System.Drawing.Point(120, 64)
         Me.TxtRegPagamento.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtRegPagamento.Name = "TxtRegPagamento"
         Me.TxtRegPagamento.Size = New System.Drawing.Size(44, 20)
@@ -339,12 +339,12 @@ Partial Class FrmVlrPgto
         Me.Label18.AutoSize = True
         Me.Label18.BackColor = System.Drawing.Color.Transparent
         Me.Label18.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.Location = New System.Drawing.Point(26, 55)
+        Me.Label18.Location = New System.Drawing.Point(2, 65)
         Me.Label18.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(77, 16)
+        Me.Label18.Size = New System.Drawing.Size(117, 16)
         Me.Label18.TabIndex = 157
-        Me.Label18.Text = "Refer. Pgto:"
+        Me.Label18.Text = "Refer. Último Pgto:"
         '
         'Label5
         '
@@ -530,7 +530,7 @@ Partial Class FrmVlrPgto
         Me.Label17.AutoSize = True
         Me.Label17.BackColor = System.Drawing.Color.Transparent
         Me.Label17.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(7, 25)
+        Me.Label17.Location = New System.Drawing.Point(26, 32)
         Me.Label17.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(92, 16)
@@ -540,7 +540,7 @@ Partial Class FrmVlrPgto
         'TxtRefEntrada
         '
         Me.TxtRefEntrada.Enabled = False
-        Me.TxtRefEntrada.Location = New System.Drawing.Point(101, 23)
+        Me.TxtRefEntrada.Location = New System.Drawing.Point(121, 31)
         Me.TxtRefEntrada.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtRefEntrada.Name = "TxtRefEntrada"
         Me.TxtRefEntrada.Size = New System.Drawing.Size(43, 20)
@@ -568,7 +568,7 @@ Partial Class FrmVlrPgto
         Me.Label16.AutoSize = True
         Me.Label16.BackColor = System.Drawing.Color.Transparent
         Me.Label16.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(36, 85)
+        Me.Label16.Location = New System.Drawing.Point(53, 104)
         Me.Label16.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(62, 16)
@@ -578,10 +578,10 @@ Partial Class FrmVlrPgto
         'TxtStatusTitulo
         '
         Me.TxtStatusTitulo.Enabled = False
-        Me.TxtStatusTitulo.Location = New System.Drawing.Point(101, 83)
+        Me.TxtStatusTitulo.Location = New System.Drawing.Point(120, 100)
         Me.TxtStatusTitulo.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtStatusTitulo.Name = "TxtStatusTitulo"
-        Me.TxtStatusTitulo.Size = New System.Drawing.Size(91, 20)
+        Me.TxtStatusTitulo.Size = New System.Drawing.Size(82, 20)
         Me.TxtStatusTitulo.TabIndex = 176
         '
         'FrmVlrPgto
