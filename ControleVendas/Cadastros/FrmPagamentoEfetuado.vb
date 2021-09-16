@@ -91,6 +91,7 @@ Public Class FrmPagamentoEfetuado
         DataGrid.Columns(4).Visible = False
         DataGrid.Columns(5).Visible = False
         DataGrid.Columns(8).Visible = False
+        DataGrid.Columns(9).Visible = False
 
         DataGrid.Columns(0).HeaderText = "Id. Reg."
         DataGrid.Columns(1).HeaderText = "Nota Fiscal"

@@ -463,6 +463,7 @@ Public Class FrmEntrada
         form.DataEmissao.Value = DataEmissao.Value
         form.TxtIdREg.Text = TxtIdRegistro.Text
         form.TxtTotalDuplicata.Text = TxtTotalNota.Text - TxtTotalDuplicatas.Text
+        form.TxtIdFornecedor.Text = TxtFornecedor.Text
         form.ShowDialog()
 
     End Sub
@@ -506,6 +507,7 @@ Public Class FrmEntrada
             form.DataVencimento.Value = DataGridDuplicatas.CurrentRow.Cells(4).Value.ToString()
             form.TxtTotalDuplicata.Text = DataGridDuplicatas.CurrentRow.Cells(5).Value.ToString()
             form.TxtObs.Text = DataGridDuplicatas.CurrentRow.Cells(6).Value.ToString()
+            form.TxtIdFornecedor.Text = TxtFornecedor.Text
 
             form.TxtParcela.Enabled = False
 

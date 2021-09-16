@@ -44,6 +44,8 @@ Partial Class FrmDuplicatas
         Me.TxtIdREg = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.BtnSalvar = New System.Windows.Forms.Button()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.TxtIdFornecedor = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -221,6 +223,8 @@ Partial Class FrmDuplicatas
         '
         Me.Panel1.BackColor = System.Drawing.Color.Gainsboro
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel1.Controls.Add(Me.Label9)
+        Me.Panel1.Controls.Add(Me.TxtIdFornecedor)
         Me.Panel1.Controls.Add(Me.Label8)
         Me.Panel1.Controls.Add(Me.TxtIdREg)
         Me.Panel1.Controls.Add(Me.Label7)
@@ -288,6 +292,28 @@ Partial Class FrmDuplicatas
         Me.BtnSalvar.Text = "Salvar"
         Me.BtnSalvar.UseVisualStyleBackColor = True
         '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.BackColor = System.Drawing.Color.Transparent
+        Me.Label9.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(287, 42)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(81, 16)
+        Me.Label9.TabIndex = 164
+        Me.Label9.Text = "Cód. Fornec."
+        '
+        'TxtIdFornecedor
+        '
+        Me.TxtIdFornecedor.Enabled = False
+        Me.TxtIdFornecedor.Location = New System.Drawing.Point(372, 39)
+        Me.TxtIdFornecedor.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtIdFornecedor.Name = "TxtIdFornecedor"
+        Me.TxtIdFornecedor.Size = New System.Drawing.Size(45, 20)
+        Me.TxtIdFornecedor.TabIndex = 165
+        Me.TxtIdFornecedor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
         'FrmDuplicatas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -330,4 +356,6 @@ Partial Class FrmDuplicatas
     Friend WithEvents Label8 As Label
     Friend WithEvents TxtIdREg As TextBox
     Friend WithEvents BtnSalvar As Button
+    Friend WithEvents Label9 As Label
+    Friend WithEvents TxtIdFornecedor As TextBox
 End Class

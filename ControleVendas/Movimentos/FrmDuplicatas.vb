@@ -96,7 +96,7 @@ Public Class FrmDuplicatas
 
                     vencimento1 = DataVencimento.Value.ToString("yyyy-MM-dd")
 
-                    sqls1 = "UPDATE duplicatas SET data_vencimento = '" & vencimento1 & "', valor_parcela = '" & TxtTotalDuplicata.Text.Replace(",", ".") & "', observacao = '" & TxtObs.Text & "' WHERE id = '" & TxtIdREg.Text & "'"
+                    sqls1 = "UPDATE duplicatas SET data_vencimento = '" & vencimento1 & "', valor_parcela = '" & TxtTotalDuplicata.Text.Replace(",", ".") & "', observacao = '" & TxtObs.Text & "' , saldo_duplicata = '" & TxtTotalDuplicata.Text.Replace(",", ".") & "' WHERE id = '" & TxtIdREg.Text & "'"
                     cmd1 = New MySqlCommand(sqls1, con)
                     cmd1.ExecuteNonQuery()
 
@@ -115,7 +115,7 @@ Public Class FrmDuplicatas
                     emissao = DataEmissao.Value.ToString("yyyy-MM-dd")
                     vencimento = DataVencimento.Value.ToString("yyyy-MM-dd")
 
-                    sqls = "INSERT INTO duplicatas (parcela, documento, data_emissao, data_vencimento, valor_parcela, observacao, id_entrada) VALUES ('" & TxtParcela.Text & "','" & TxtNotaFiscal.Text & "',  '" & emissao & "','" & vencimento & "', '" & TxtTotalDuplicata.Text.Replace(",", ".") & "', '" & TxtObs.Text & "' ,'" & TxtIdREg.Text & "')"
+                    sqls = "INSERT INTO duplicatas (parcela, documento, data_emissao, data_vencimento, valor_parcela, observacao, id_entrada, cod_fornecedor, saldo_duplicata) VALUES ('" & TxtParcela.Text & "','" & TxtNotaFiscal.Text & "',  '" & emissao & "','" & vencimento & "', '" & TxtTotalDuplicata.Text.Replace(",", ".") & "', '" & TxtObs.Text & "' ,'" & TxtIdREg.Text & "', '" & TxtIdFornecedor.Text & "', '" & TxtTotalDuplicata.Text.Replace(",", ".") & "')"
                     cmd = New MySqlCommand(sqls, con)
                     cmd.ExecuteNonQuery()
 
