@@ -608,7 +608,7 @@ Partial Class FrmPagarTitulo
         Me.BtnBaixarTitulo.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnBaixarTitulo.ForeColor = System.Drawing.Color.Transparent
         Me.BtnBaixarTitulo.Image = CType(resources.GetObject("BtnBaixarTitulo.Image"), System.Drawing.Image)
-        Me.BtnBaixarTitulo.Location = New System.Drawing.Point(90, 11)
+        Me.BtnBaixarTitulo.Location = New System.Drawing.Point(90, 10)
         Me.BtnBaixarTitulo.Name = "BtnBaixarTitulo"
         Me.BtnBaixarTitulo.Size = New System.Drawing.Size(35, 35)
         Me.BtnBaixarTitulo.TabIndex = 157

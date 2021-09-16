@@ -97,7 +97,7 @@ Public Class FrmPagarTitulo
             Dim cmd3 As MySqlCommand
             Dim reader3 As MySqlDataReader
             Dim sql3 As String
-            sql3 = "SELECT * FROM mvto_pagamentos WHERE id_duplicata= '" & idDuplicata & "' "
+            sql3 = "SELECT id, SUM(valor_pago) , SUM(juros_multa) , SUM(descontos), SUM(total_pago), data_pagamento, MAX(status_nota), id_entrada FROM mvto_pagamentos WHERE id_duplicata= '" & idDuplicata & "' "
             cmd3 = New MySqlCommand(sql3, con)
             reader3 = cmd3.ExecuteReader
             If reader3.Read = True Then
@@ -107,14 +107,14 @@ Public Class FrmPagarTitulo
                 TxtRegPagamento.Visible = True
                 LblRegPgto.Visible = True
 
-                TxtValorPago.Text = reader3(10)
-                DataPagamento.Text = reader3(17)
-                TxtJurosMultas.Text = reader3(12)
-                TxtDescontos.Text = reader3(13)
-                TxtTotalPago.Text = reader3(14)
                 TxtRegPagamento.Text = reader3(0)
-                TxtStatusTitulo.Text = reader3(18)
-                TxtRefEntrada.Text = reader3(19)
+                TxtValorPago.Text = reader3(1)
+                TxtJurosMultas.Text = reader3(2)
+                TxtDescontos.Text = reader3(3)
+                TxtTotalPago.Text = reader3(4)
+                DataPagamento.Text = reader3(5)
+                TxtStatusTitulo.Text = reader3(6)
+                TxtRefEntrada.Text = reader3(7)
 
                 reader3.Close()
             Else
@@ -236,7 +236,7 @@ Line1:
             Dim cmd3 As MySqlCommand
             Dim reader3 As MySqlDataReader
             Dim sql3 As String
-            sql3 = "SELECT * FROM mvto_pagamentos WHERE id_duplicata= '" & idDuplicata & "' "
+            sql3 = "SELECT id, SUM(valor_pago) , SUM(juros_multa) , SUM(descontos), SUM(total_pago), data_pagamento, MAX(status_nota), id_entrada FROM mvto_pagamentos WHERE id_duplicata= '" & idDuplicata & "' "
             cmd3 = New MySqlCommand(sql3, con)
             reader3 = cmd3.ExecuteReader
             If reader3.Read = True Then
@@ -245,14 +245,14 @@ Line1:
                 TxtRegPagamento.Visible = True
                 LblRegPgto.Visible = True
 
-                TxtValorPago.Text = reader3(10)
-                DataPagamento.Text = reader3(17)
-                TxtJurosMultas.Text = reader3(12)
-                TxtDescontos.Text = reader3(13)
-                TxtTotalPago.Text = reader3(14)
                 TxtRegPagamento.Text = reader3(0)
-                TxtStatusTitulo.Text = reader3(18)
-                TxtRefEntrada.Text = reader3(19)
+                TxtValorPago.Text = reader3(1)
+                TxtJurosMultas.Text = reader3(2)
+                TxtDescontos.Text = reader3(3)
+                TxtTotalPago.Text = reader3(4)
+                DataPagamento.Text = reader3(5)
+                TxtStatusTitulo.Text = reader3(6)
+                TxtRefEntrada.Text = reader3(7)
 
 
                 reader3.Close()
@@ -395,7 +395,7 @@ Line1:
             Dim cmd3 As MySqlCommand
             Dim reader3 As MySqlDataReader
             Dim sql3 As String
-            sql3 = "SELECT * FROM mvto_pagamentos WHERE id_duplicata= '" & idDuplicata & "' "
+            sql3 = "SELECT id, SUM(valor_pago) , SUM(juros_multa) , SUM(descontos), SUM(total_pago), data_pagamento, MAX(status_nota), id_entrada FROM mvto_pagamentos WHERE id_duplicata= '" & idDuplicata & "' "
             cmd3 = New MySqlCommand(sql3, con)
             reader3 = cmd3.ExecuteReader
             If reader3.Read = True Then
@@ -405,14 +405,14 @@ Line1:
                 TxtRegPagamento.Visible = True
                 LblRegPgto.Visible = True
 
-                TxtValorPago.Text = reader3(10)
-                DataPagamento.Text = reader3(17)
-                TxtJurosMultas.Text = reader3(12)
-                TxtDescontos.Text = reader3(13)
-                TxtTotalPago.Text = reader3(14)
                 TxtRegPagamento.Text = reader3(0)
-                TxtStatusTitulo.Text = reader3(18)
-                TxtRefEntrada.Text = reader3(19)
+                TxtValorPago.Text = reader3(1)
+                TxtJurosMultas.Text = reader3(2)
+                TxtDescontos.Text = reader3(3)
+                TxtTotalPago.Text = reader3(4)
+                DataPagamento.Text = reader3(5)
+                TxtStatusTitulo.Text = reader3(6)
+                TxtRefEntrada.Text = reader3(7)
 
 
                 reader3.Close()
@@ -435,10 +435,13 @@ Line1:
 
     Private Sub BtnCarregar_Click(sender As Object, e As EventArgs) Handles BtnCarregar.Click
         Try
+            'Stop
             Dim cmd3 As MySqlCommand
             Dim reader3 As MySqlDataReader
             Dim sql3 As String
-            sql3 = "SELECT * FROM mvto_pagamentos WHERE id_duplicata= '" & TxtIdRegistro.Text & "' "
+
+            sql3 = "SELECT id, SUM(valor_pago) , SUM(juros_multa) , SUM(descontos), SUM(total_pago), data_pagamento, MAX(status_nota) , id_entrada FROM mvto_pagamentos WHERE id_duplicata= '" & TxtIdRegistro.Text & "'  "
+
             cmd3 = New MySqlCommand(sql3, con)
             reader3 = cmd3.ExecuteReader
             If reader3.Read = True Then
@@ -448,14 +451,15 @@ Line1:
                 TxtRegPagamento.Visible = True
                 LblRegPgto.Visible = True
 
-                TxtValorPago.Text = reader3(10)
-                DataPagamento.Text = reader3(17)
-                TxtJurosMultas.Text = reader3(12)
-                TxtDescontos.Text = reader3(13)
-                TxtTotalPago.Text = reader3(14)
+
                 TxtRegPagamento.Text = reader3(0)
-                TxtStatusTitulo.Text = reader3(18)
-                TxtRefEntrada.Text = reader3(19)
+                TxtValorPago.Text = reader3(1)
+                TxtJurosMultas.Text = reader3(2)
+                TxtDescontos.Text = reader3(3)
+                TxtTotalPago.Text = reader3(4)
+                DataPagamento.Text = reader3(5)
+                TxtStatusTitulo.Text = reader3(6)
+                TxtRefEntrada.Text = reader3(7)
 
                 reader3.Close()
             Else
