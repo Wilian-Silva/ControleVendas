@@ -6,12 +6,27 @@ Public Class FrmPagarTitulo
     Dim maximo As Integer
     Private Sub BtnBaixarTitulo_Click(sender As Object, e As EventArgs) Handles BtnBaixarTitulo.Click
 
-        Dim form = New FrmVlrPgto()
+        If MsgBox("Deseja baixar do título " & TxtNotaFiscal.Text & " Parcela " & TxtParcela.Text & "?", vbYesNo, "Pagamento") = vbYes Then
 
-        form.TxtValorOriginal.Text = TxtSaldoTitulo.Text
+            Dim form = New FrmVlrPgto()
+
+            form.TxtIdRegistro.Text = TxtIdRegistro.Text
+            form.TxtNotaFiscal.Text = TxtNotaFiscal.Text
+            form.TxtParcela.Text = TxtParcela.Text
+            form.TxtCodFornecedor.Text = TxtCodFornecedor.Text
+            form.TxtNomeFornecedor.Text = TxtNomeFornecedor.Text
+            form.TxtCodPedido.Text = TxtCodPedido.Text
+            form.TxtDescPed.Text = TxtDescPed.Text
+            form.DataEmissao.Text = DataEmissao.Text
+            form.DataVencimento.Text = DataVencimento.Text
+            form.TxtValorOriginal.Text = TxtValorOriginal.Text
+            form.TxtSaldoAberto.Text = TxtSaldoTitulo.Text
+            form.TxtRegPagamento.Text = TxtRegPagamento.Text
 
 
-        form.ShowDialog()
+            form.ShowDialog()
+        End If
+
     End Sub
 
     Private Sub BtnSair_Click(sender As Object, e As EventArgs) Handles BtnSair.Click

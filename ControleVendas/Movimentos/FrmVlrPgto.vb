@@ -1,4 +1,6 @@
-﻿Public Class FrmVlrPgto
+﻿Imports MySql.Data.MySqlClient
+
+Public Class FrmVlrPgto
     Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
         Me.Close()
     End Sub
@@ -20,7 +22,7 @@
         Dim dbl4 As Double = 0
         Dim dbl5 As Double = 0
         Dim dbl6 As Double = 0
-        Double.TryParse(TxtSaldoTitulo.Text, dbl4)
+        Double.TryParse(TxtValorPago.Text, dbl4)
         Double.TryParse(TxtMultasJuros.Text, dbl5)
         Double.TryParse(TxtDescontos.Text, dbl6)
 
@@ -33,6 +35,14 @@
 
     Private Sub TxtDescontos_TextChanged(sender As Object, e As EventArgs) Handles TxtDescontos.TextChanged
         SomarValores()
+    End Sub
+
+    Private Sub BtnOk_Click(sender As Object, e As EventArgs) Handles BtnOk.Click
+
+        If MsgBox("Deseja salvar a baixa do título " & TxtNotaFiscal.Text & " Parcela " & TxtParcela.Text & "?", vbYesNo, "Salvar Baixa") = vbYes Then
+
+            Me.Close()
+        End If
     End Sub
 End Class
 
