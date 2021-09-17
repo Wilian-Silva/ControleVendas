@@ -118,9 +118,10 @@ Public Class FrmEntrada
                 TxtTotalNota.Text = reader(8)
 
                 reader.Close()
-
+            Else
+                reader.Close()
             End If
-            reader.Close()
+
 
             '..................................................................................
             'LISTAR ITEN DA NOTA FISCAL
@@ -248,8 +249,10 @@ Public Class FrmEntrada
             MsgBox("Registro já está cadastrado!!", MsgBoxStyle.Information, "Entrada NFe")
 
             Exit Sub
+        Else
+            readerUSU.Close()
         End If
-        readerUSU.Close()
+
         '.............................................................................................
 
         TxtNotaFiscal.BackColor = Color.White
@@ -649,7 +652,7 @@ Line1:
                 proximo = proximo + 1
                 GoTo Line1
             End If
-            reader.Close()
+
 
         Catch ex As Exception
             MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
@@ -740,6 +743,7 @@ Line1:
             Dim sqlp As String
 Line1:
             If anterior = 0 Then
+
                 Exit Sub
             End If
 
@@ -758,8 +762,6 @@ Line1:
                 anterior = anterior - 1
                 GoTo Line1
             End If
-            reader.Close()
-
 
         Catch ex As Exception
             MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
@@ -794,9 +796,10 @@ Line1:
                 TxtTotalNota.Text = reader(8)
 
                 reader.Close()
+            Else
+                reader.Close()
 
             End If
-            reader.Close()
 
             '..................................................................................
             'LISTAR ITEN DA NOTA FISCAL
@@ -856,13 +859,13 @@ Line1:
                 'TxtStatusPedido.Text = reader(6)
                 DataEmissao.Value = reader(7)
                 TxtTotalNota.Text = reader(8)
-
                 IdRegistroNFe = reader(0)
+
                 reader.Close()
             Else
                 reader.Close()
             End If
-            reader.Close()
+
 
             '..................................................................................
             'LISTAR ITEN DA NOTA FISCAL

@@ -2,75 +2,19 @@
 
 Public Class FrmNotasEntrada
 
-    Sub Listar()
-
-        'BUSCAR INFORMAÇÕES DA TABELA E MOSTRAR NO DATAGRID
-        Try
-            Abrir()
-
-            Dim sql As String
-            Dim dt As New DataTable
-            Dim da As MySqlDataAdapter
-
-            Dim data1 As String
-            Dim data2 As String
-            data1 = DataInicial.Value.ToString("yyyy-MM-dd")
-            data2 = DataFinal.Value.ToString("yyyy-MM-dd")
-
-            sql = "SELECT * FROM entrada WHERE data_registro >= '" & data1 & "' AND data_registro <= '" & data2 & "'order by id desc"
-            da = New MySqlDataAdapter(sql, con)
-            da.Fill(dt)
-            DataGrid.DataSource = dt
-
-            If DataGrid.Rows.Count > 0 Then
-                FormatarGrid()
-            End If
-
-        Catch ex As Exception
-            MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
-        End Try
-
-
-    End Sub
-    Sub ListarPorNota()
-
-        'BUSCAR INFORMAÇÕES DA TABELA E MOSTRAR NO DATAGRID
-        Try
-            Abrir()
-
-            Dim sql As String
-            Dim dt As New DataTable
-            Dim da As MySqlDataAdapter
-
-            sql = "SELECT * FROM entrada WHERE nota LIKE '" & TxtPesquisar.Text & "%' order by data_registro desc"
-            da = New MySqlDataAdapter(sql, con)
-            da.Fill(dt)
-            DataGrid.DataSource = dt
-
-            If DataGrid.Rows.Count > 0 Then
-                FormatarGrid()
-            End If
-
-        Catch ex As Exception
-            MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
-        End Try
-
-
-    End Sub
     Sub ListarTudo()
-
-        'BUSCAR INFORMAÇÕES DA TABELA E MOSTRAR NO DATAGRID
         Try
-            Abrir()
+            'Abrir()
 
             Dim sql As String
             Dim dt As New DataTable
             Dim da As MySqlDataAdapter
 
-            sql = "SELECT d.id_entrada,  d.documento, d.data_emissao, f.nome_fantasia, d.parcela, d.data_vencimento, d.valor_parcela, d.saldo_duplicata, e.id_pedido, e.descricao, d.observacao FROM duplicatas as d INNER JOIN fornecedor as f ON d.cod_fornecedor = f.id INNER JOIN entrada as e ON d.id_entrada = e.id  order by d.documento desc"
+            sql = "SELECT d.id_entrada,  d.documento, d.data_emissao, f.nome_fantasia, d.parcela, d.data_vencimento, d.valor_parcela, d.saldo_duplicata, e.id_pedido, e.descricao, d.observacao, d.id FROM duplicatas as d INNER JOIN fornecedor as f ON d.cod_fornecedor = f.id INNER JOIN entrada as e ON d.id_entrada = e.id  order by d.documento desc"
             da = New MySqlDataAdapter(sql, con)
             da.Fill(dt)
             DataGrid.DataSource = dt
+
             FormatarGrid()
 
 
@@ -78,24 +22,25 @@ Public Class FrmNotasEntrada
             MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
         End Try
 
-    End Sub
 
+    End Sub
 
     Sub FiltroDataGrid()
 
 
         'BUSCAR INFORMAÇÕES DA TABELA E MOSTRAR NO DATAGRID
         Try
-            Abrir()
+            'Abrir()
 
             Dim sql As String
             Dim dt As New DataTable
             Dim da As MySqlDataAdapter
 
-            sql = "SELECT d.id_entrada,  d.documento, d.data_emissao, f.nome_fantasia, d.parcela, d.data_vencimento, d.valor_parcela, d.saldo_duplicata, e.id_pedido, e.descricao, d.observacao FROM duplicatas as d INNER JOIN fornecedor as f ON d.cod_fornecedor = f.id INNER JOIN entrada as e ON d.id_entrada = e.id  order by d.documento desc"
+            sql = "SELECT d.id_entrada,  d.documento, d.data_emissao, f.nome_fantasia, d.parcela, d.data_vencimento, d.valor_parcela, d.saldo_duplicata, e.id_pedido, e.descricao, d.observacao, d.id FROM duplicatas as d INNER JOIN fornecedor as f ON d.cod_fornecedor = f.id INNER JOIN entrada as e ON d.id_entrada = e.id  order by d.documento desc"
             da = New MySqlDataAdapter(sql, con)
             da.Fill(dt)
             DataGrid.DataSource = dt
+
             FormatarGrid()
 
             If RbPedido.Checked = True Then
@@ -122,7 +67,7 @@ Public Class FrmNotasEntrada
 
     End Sub
     Private Sub FormatarGrid()
-        'DataGrid.Columns(0).Visible = False
+        ' DataGrid.Columns(11).Visible = False
 
         DataGrid.Columns(0).HeaderText = "Reg. Entrada"
         DataGrid.Columns(1).HeaderText = "Nota Fiscal"
@@ -130,11 +75,12 @@ Public Class FrmNotasEntrada
         DataGrid.Columns(3).HeaderText = "Fornecedor"
         DataGrid.Columns(4).HeaderText = "Parcela"
         DataGrid.Columns(5).HeaderText = "Vencimento"
-        DataGrid.Columns(6).HeaderText = "Valor Nota"
+        DataGrid.Columns(6).HeaderText = "Valor Parcela"
         DataGrid.Columns(7).HeaderText = "Saldo"
         DataGrid.Columns(8).HeaderText = "Pedido"
         DataGrid.Columns(9).HeaderText = "Descrição"
         DataGrid.Columns(10).HeaderText = "Observação"
+        DataGrid.Columns(11).HeaderText = "Reg. Duplicata"
 
 
         DataGrid.Columns(0).Width = 50
@@ -146,6 +92,10 @@ Public Class FrmNotasEntrada
         DataGrid.Columns(8).Width = 50
         DataGrid.Columns(9).Width = 150
         DataGrid.Columns(10).Width = 150
+        DataGrid.Columns(11).Width = 50
+
+        DataGrid.Columns(11).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGrid.Columns(11).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
 
         DataGrid.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid.Columns(0).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
@@ -170,30 +120,20 @@ Public Class FrmNotasEntrada
 
     End Sub
 
-    Private Sub BtnPesquisar_Click(sender As Object, e As EventArgs) Handles BtnPesquisar.Click
-        Listar()
-        FormatarGrid()
-    End Sub
-
-    Private Sub BtnListarTudo_Click(sender As Object, e As EventArgs) Handles BtnListarTudo.Click
-        ListarTudo()
-        FormatarGrid()
-    End Sub
-
     Private Sub BtnSair_Click(sender As Object, e As EventArgs) Handles BtnSair.Click
 
         Me.Close()
     End Sub
 
     Private Sub FrmNotasEntrada_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If statusBtn = "Visible" Then
-            BtnExcluir.Visible = True
-            TxtId.Visible = True
-            LblId.Visible = True
-            TxtIdPedido.Visible = True
-            LblIdPedido.Visible = True
-        End If
 
+        If statusBtn = "Visible" Then
+            GboxExluir.Visible = True
+        End If
+        If pesquisarDuplicata = "True" Then
+            GboxPesquisar.Visible = True
+        End If
+        ListarTudo()
     End Sub
 
     Private Sub BtnExcluir_Click(sender As Object, e As EventArgs) Handles BtnExcluir.Click
@@ -263,12 +203,6 @@ Public Class FrmNotasEntrada
 
     End Sub
 
-    Private Sub FrmNotasEntrada_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
-        BtnExcluir.Visible = False
-        TxtId.Visible = False
-        LblId.Visible = False
-        statusBtn = ""
-    End Sub
     Sub ExcluirRegistroEstoque()
 
         'PROMAGAMANDO EXCLUSÃO NO ESTOQUE
@@ -294,12 +228,26 @@ Public Class FrmNotasEntrada
         cmd.ExecuteNonQuery()
 
     End Sub
-
-    Private Sub TxtPesquisar_TextChanged(sender As Object, e As EventArgs) Handles TxtPesquisar.TextChanged
-        ListarPorNota()
-    End Sub
-
     Private Sub TxtPesquisa_TextChanged(sender As Object, e As EventArgs) Handles TxtPesquisa.TextChanged
         FiltroDataGrid()
     End Sub
+
+    Private Sub BtnCacelarConsulta_Click(sender As Object, e As EventArgs) Handles BtnCacelarConsulta.Click
+        pesquisarDuplicata = ""
+        Me.Close()
+    End Sub
+
+    Private Sub BtnSelecionarItem_Click(sender As Object, e As EventArgs) Handles BtnSelecionarItem.Click
+        'Stop
+        If DataGrid.RowCount > 0 Then
+
+            IdDuplicata = DataGrid.CurrentRow.Cells(11).Value
+
+            Me.Close()
+        Else
+            MsgBox("Selecione um registro!!", MsgBoxStyle.Information, "Registro não selecionado")
+        End If
+    End Sub
+
+
 End Class

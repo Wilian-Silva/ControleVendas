@@ -69,11 +69,12 @@ Partial Class FrmPagarTitulo
         Me.BtnBaixarTitulo = New System.Windows.Forms.Button()
         Me.BtnSair = New System.Windows.Forms.Button()
         Me.GboxPesProd = New System.Windows.Forms.GroupBox()
+        Me.TxtIdPesquisar = New System.Windows.Forms.TextBox()
+        Me.BtnPesquisar = New System.Windows.Forms.Button()
         Me.BtnProximo = New System.Windows.Forms.Button()
+        Me.BtnCarregar = New System.Windows.Forms.Button()
         Me.BtnAnterior = New System.Windows.Forms.Button()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
-        Me.BtnCarregar = New System.Windows.Forms.Button()
-        Me.BtnPesquisar = New System.Windows.Forms.Button()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -600,6 +601,7 @@ Partial Class FrmPagarTitulo
         'GboxPesProd
         '
         Me.GboxPesProd.BackColor = System.Drawing.Color.Transparent
+        Me.GboxPesProd.Controls.Add(Me.TxtIdPesquisar)
         Me.GboxPesProd.Controls.Add(Me.BtnPesquisar)
         Me.GboxPesProd.Controls.Add(Me.BtnProximo)
         Me.GboxPesProd.Controls.Add(Me.BtnCarregar)
@@ -612,61 +614,14 @@ Partial Class FrmPagarTitulo
         Me.GboxPesProd.TabIndex = 159
         Me.GboxPesProd.TabStop = False
         '
-        'BtnProximo
+        'TxtIdPesquisar
         '
-        Me.BtnProximo.AccessibleDescription = ""
-        Me.BtnProximo.AccessibleName = "Adicionar"
-        Me.BtnProximo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.BtnProximo.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnProximo.FlatAppearance.BorderSize = 0
-        Me.BtnProximo.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.BtnProximo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnProximo.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnProximo.Image = CType(resources.GetObject("BtnProximo.Image"), System.Drawing.Image)
-        Me.BtnProximo.Location = New System.Drawing.Point(48, 10)
-        Me.BtnProximo.Name = "BtnProximo"
-        Me.BtnProximo.Size = New System.Drawing.Size(35, 35)
-        Me.BtnProximo.TabIndex = 156
-        Me.ToolTip.SetToolTip(Me.BtnProximo, "Próximo")
-        Me.BtnProximo.UseVisualStyleBackColor = True
-        '
-        'BtnAnterior
-        '
-        Me.BtnAnterior.AccessibleDescription = ""
-        Me.BtnAnterior.AccessibleName = "Adicionar"
-        Me.BtnAnterior.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.BtnAnterior.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnAnterior.FlatAppearance.BorderSize = 0
-        Me.BtnAnterior.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.BtnAnterior.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnAnterior.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnAnterior.Image = CType(resources.GetObject("BtnAnterior.Image"), System.Drawing.Image)
-        Me.BtnAnterior.Location = New System.Drawing.Point(11, 10)
-        Me.BtnAnterior.Name = "BtnAnterior"
-        Me.BtnAnterior.Size = New System.Drawing.Size(35, 35)
-        Me.BtnAnterior.TabIndex = 155
-        Me.ToolTip.SetToolTip(Me.BtnAnterior, "Anterior")
-        Me.BtnAnterior.UseVisualStyleBackColor = True
-        '
-        'BtnCarregar
-        '
-        Me.BtnCarregar.AccessibleDescription = ""
-        Me.BtnCarregar.AccessibleName = "Adicionar"
-        Me.BtnCarregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.BtnCarregar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnCarregar.FlatAppearance.BorderSize = 0
-        Me.BtnCarregar.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.BtnCarregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnCarregar.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnCarregar.ForeColor = System.Drawing.Color.Transparent
-        Me.BtnCarregar.Image = CType(resources.GetObject("BtnCarregar.Image"), System.Drawing.Image)
-        Me.BtnCarregar.Location = New System.Drawing.Point(319, 10)
-        Me.BtnCarregar.Name = "BtnCarregar"
-        Me.BtnCarregar.Size = New System.Drawing.Size(35, 35)
-        Me.BtnCarregar.TabIndex = 162
-        Me.BtnCarregar.TabStop = False
-        Me.ToolTip.SetToolTip(Me.BtnCarregar, "Atualizar")
-        Me.BtnCarregar.UseVisualStyleBackColor = True
+        Me.TxtIdPesquisar.Location = New System.Drawing.Point(144, 20)
+        Me.TxtIdPesquisar.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtIdPesquisar.Name = "TxtIdPesquisar"
+        Me.TxtIdPesquisar.Size = New System.Drawing.Size(28, 20)
+        Me.TxtIdPesquisar.TabIndex = 163
+        Me.TxtIdPesquisar.Visible = False
         '
         'BtnPesquisar
         '
@@ -687,6 +642,62 @@ Partial Class FrmPagarTitulo
         Me.BtnPesquisar.TabStop = False
         Me.ToolTip.SetToolTip(Me.BtnPesquisar, "Pesquisar")
         Me.BtnPesquisar.UseVisualStyleBackColor = False
+        '
+        'BtnProximo
+        '
+        Me.BtnProximo.AccessibleDescription = ""
+        Me.BtnProximo.AccessibleName = "Adicionar"
+        Me.BtnProximo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.BtnProximo.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnProximo.FlatAppearance.BorderSize = 0
+        Me.BtnProximo.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BtnProximo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnProximo.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnProximo.Image = CType(resources.GetObject("BtnProximo.Image"), System.Drawing.Image)
+        Me.BtnProximo.Location = New System.Drawing.Point(48, 10)
+        Me.BtnProximo.Name = "BtnProximo"
+        Me.BtnProximo.Size = New System.Drawing.Size(35, 35)
+        Me.BtnProximo.TabIndex = 156
+        Me.ToolTip.SetToolTip(Me.BtnProximo, "Próximo")
+        Me.BtnProximo.UseVisualStyleBackColor = True
+        '
+        'BtnCarregar
+        '
+        Me.BtnCarregar.AccessibleDescription = ""
+        Me.BtnCarregar.AccessibleName = "Adicionar"
+        Me.BtnCarregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.BtnCarregar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnCarregar.FlatAppearance.BorderSize = 0
+        Me.BtnCarregar.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BtnCarregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnCarregar.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnCarregar.ForeColor = System.Drawing.Color.Transparent
+        Me.BtnCarregar.Image = CType(resources.GetObject("BtnCarregar.Image"), System.Drawing.Image)
+        Me.BtnCarregar.Location = New System.Drawing.Point(238, 10)
+        Me.BtnCarregar.Name = "BtnCarregar"
+        Me.BtnCarregar.Size = New System.Drawing.Size(35, 35)
+        Me.BtnCarregar.TabIndex = 162
+        Me.BtnCarregar.TabStop = False
+        Me.ToolTip.SetToolTip(Me.BtnCarregar, "Atualizar")
+        Me.BtnCarregar.UseVisualStyleBackColor = True
+        '
+        'BtnAnterior
+        '
+        Me.BtnAnterior.AccessibleDescription = ""
+        Me.BtnAnterior.AccessibleName = "Adicionar"
+        Me.BtnAnterior.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.BtnAnterior.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnAnterior.FlatAppearance.BorderSize = 0
+        Me.BtnAnterior.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BtnAnterior.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnAnterior.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnAnterior.Image = CType(resources.GetObject("BtnAnterior.Image"), System.Drawing.Image)
+        Me.BtnAnterior.Location = New System.Drawing.Point(11, 10)
+        Me.BtnAnterior.Name = "BtnAnterior"
+        Me.BtnAnterior.Size = New System.Drawing.Size(35, 35)
+        Me.BtnAnterior.TabIndex = 155
+        Me.ToolTip.SetToolTip(Me.BtnAnterior, "Anterior")
+        Me.BtnAnterior.UseVisualStyleBackColor = True
         '
         'FrmPagarTitulo
         '
@@ -717,6 +728,7 @@ Partial Class FrmPagarTitulo
         Me.GroupBox5.ResumeLayout(False)
         Me.GroupBox5.PerformLayout()
         Me.GboxPesProd.ResumeLayout(False)
+        Me.GboxPesProd.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -771,4 +783,5 @@ Partial Class FrmPagarTitulo
     Friend WithEvents TxtTotalTitulo As TextBox
     Friend WithEvents BtnCarregar As Button
     Friend WithEvents BtnPesquisar As Button
+    Friend WithEvents TxtIdPesquisar As TextBox
 End Class

@@ -27,21 +27,15 @@ Partial Class FrmNotasEntrada
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.DataFinal = New System.Windows.Forms.DateTimePicker()
-        Me.BtnPesquisar = New System.Windows.Forms.Button()
-        Me.DataInicial = New System.Windows.Forms.DateTimePicker()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.TxtPesquisar = New System.Windows.Forms.TextBox()
-        Me.BtnListarTudo = New System.Windows.Forms.Button()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.GboxPesquisar = New System.Windows.Forms.GroupBox()
+        Me.BtnCacelarConsulta = New System.Windows.Forms.Button()
+        Me.BtnSelecionarItem = New System.Windows.Forms.Button()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.BtnSair = New System.Windows.Forms.Button()
         Me.BtnExcluir = New System.Windows.Forms.Button()
         Me.TxtId = New System.Windows.Forms.TextBox()
         Me.LblId = New System.Windows.Forms.Label()
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.GboxExluir = New System.Windows.Forms.GroupBox()
         Me.TxtIdPedido = New System.Windows.Forms.TextBox()
         Me.LblIdPedido = New System.Windows.Forms.Label()
         Me.DataGrid = New System.Windows.Forms.DataGridView()
@@ -50,119 +44,63 @@ Partial Class FrmNotasEntrada
         Me.RbNota = New System.Windows.Forms.RadioButton()
         Me.RbFornecedor = New System.Windows.Forms.RadioButton()
         Me.RbPedido = New System.Windows.Forms.RadioButton()
-        Me.GroupBox2.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
-        Me.GroupBox4.SuspendLayout()
+        Me.GboxPesquisar.SuspendLayout()
+        Me.GboxExluir.SuspendLayout()
         CType(Me.DataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GboxPesProd.SuspendLayout()
         Me.SuspendLayout()
         '
-        'DataFinal
+        'GboxPesquisar
         '
-        Me.DataFinal.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DataFinal.Location = New System.Drawing.Point(82, 21)
-        Me.DataFinal.Name = "DataFinal"
-        Me.DataFinal.Size = New System.Drawing.Size(95, 20)
-        Me.DataFinal.TabIndex = 135
+        Me.GboxPesquisar.BackColor = System.Drawing.Color.Transparent
+        Me.GboxPesquisar.Controls.Add(Me.BtnCacelarConsulta)
+        Me.GboxPesquisar.Controls.Add(Me.BtnSelecionarItem)
+        Me.GboxPesquisar.Location = New System.Drawing.Point(332, 9)
+        Me.GboxPesquisar.Name = "GboxPesquisar"
+        Me.GboxPesquisar.Size = New System.Drawing.Size(79, 50)
+        Me.GboxPesquisar.TabIndex = 142
+        Me.GboxPesquisar.TabStop = False
+        Me.GboxPesquisar.Visible = False
         '
-        'BtnPesquisar
+        'BtnCacelarConsulta
         '
-        Me.BtnPesquisar.AccessibleDescription = ""
-        Me.BtnPesquisar.AccessibleName = "Adicionar"
-        Me.BtnPesquisar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnPesquisar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnPesquisar.FlatAppearance.BorderSize = 0
-        Me.BtnPesquisar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke
-        Me.BtnPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnPesquisar.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnPesquisar.Image = CType(resources.GetObject("BtnPesquisar.Image"), System.Drawing.Image)
-        Me.BtnPesquisar.Location = New System.Drawing.Point(183, 17)
-        Me.BtnPesquisar.Name = "BtnPesquisar"
-        Me.BtnPesquisar.Size = New System.Drawing.Size(25, 25)
-        Me.BtnPesquisar.TabIndex = 138
-        Me.ToolTip.SetToolTip(Me.BtnPesquisar, "Filtrar por data")
-        Me.BtnPesquisar.UseVisualStyleBackColor = True
+        Me.BtnCacelarConsulta.AccessibleDescription = ""
+        Me.BtnCacelarConsulta.AccessibleName = "Adicionar"
+        Me.BtnCacelarConsulta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnCacelarConsulta.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnCacelarConsulta.FlatAppearance.BorderSize = 0
+        Me.BtnCacelarConsulta.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BtnCacelarConsulta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnCacelarConsulta.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnCacelarConsulta.ForeColor = System.Drawing.Color.Transparent
+        Me.BtnCacelarConsulta.Image = CType(resources.GetObject("BtnCacelarConsulta.Image"), System.Drawing.Image)
+        Me.BtnCacelarConsulta.Location = New System.Drawing.Point(40, 9)
+        Me.BtnCacelarConsulta.Name = "BtnCacelarConsulta"
+        Me.BtnCacelarConsulta.Size = New System.Drawing.Size(35, 35)
+        Me.BtnCacelarConsulta.TabIndex = 153
+        Me.BtnCacelarConsulta.TabStop = False
+        Me.ToolTip.SetToolTip(Me.BtnCacelarConsulta, "Cancelar")
+        Me.BtnCacelarConsulta.UseVisualStyleBackColor = True
         '
-        'DataInicial
+        'BtnSelecionarItem
         '
-        Me.DataInicial.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DataInicial.Location = New System.Drawing.Point(371, 17)
-        Me.DataInicial.Name = "DataInicial"
-        Me.DataInicial.Size = New System.Drawing.Size(95, 20)
-        Me.DataInicial.TabIndex = 133
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(23, 24)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(58, 13)
-        Me.Label2.TabIndex = 136
-        Me.Label2.Text = "Data Final:"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(306, 20)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(61, 13)
-        Me.Label1.TabIndex = 134
-        Me.Label1.Text = "Data Venc."
-        '
-        'GroupBox2
-        '
-        Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox2.Controls.Add(Me.TxtPesquisar)
-        Me.GroupBox2.Controls.Add(Me.BtnListarTudo)
-        Me.GroupBox2.Location = New System.Drawing.Point(24, 10)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(165, 50)
-        Me.GroupBox2.TabIndex = 143
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Pesquisar"
-        '
-        'TxtPesquisar
-        '
-        Me.TxtPesquisar.BackColor = System.Drawing.Color.White
-        Me.TxtPesquisar.Location = New System.Drawing.Point(16, 19)
-        Me.TxtPesquisar.Margin = New System.Windows.Forms.Padding(4)
-        Me.TxtPesquisar.Name = "TxtPesquisar"
-        Me.TxtPesquisar.Size = New System.Drawing.Size(90, 20)
-        Me.TxtPesquisar.TabIndex = 157
-        Me.ToolTip.SetToolTip(Me.TxtPesquisar, "Pesquisar por nota fiscal")
-        '
-        'BtnListarTudo
-        '
-        Me.BtnListarTudo.AccessibleDescription = ""
-        Me.BtnListarTudo.AccessibleName = "Adicionar"
-        Me.BtnListarTudo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnListarTudo.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnListarTudo.FlatAppearance.BorderSize = 0
-        Me.BtnListarTudo.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.BtnListarTudo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnListarTudo.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnListarTudo.ForeColor = System.Drawing.Color.Transparent
-        Me.BtnListarTudo.Image = CType(resources.GetObject("BtnListarTudo.Image"), System.Drawing.Image)
-        Me.BtnListarTudo.Location = New System.Drawing.Point(121, 10)
-        Me.BtnListarTudo.Name = "BtnListarTudo"
-        Me.BtnListarTudo.Size = New System.Drawing.Size(35, 35)
-        Me.BtnListarTudo.TabIndex = 156
-        Me.BtnListarTudo.TabStop = False
-        Me.ToolTip.SetToolTip(Me.BtnListarTudo, "Listar tudo")
-        Me.BtnListarTudo.UseVisualStyleBackColor = True
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox1.Controls.Add(Me.DataFinal)
-        Me.GroupBox1.Controls.Add(Me.BtnPesquisar)
-        Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Location = New System.Drawing.Point(195, 12)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(242, 50)
-        Me.GroupBox1.TabIndex = 142
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Filtrar por data registro"
+        Me.BtnSelecionarItem.AccessibleDescription = ""
+        Me.BtnSelecionarItem.AccessibleName = "Adicionar"
+        Me.BtnSelecionarItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnSelecionarItem.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnSelecionarItem.FlatAppearance.BorderSize = 0
+        Me.BtnSelecionarItem.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BtnSelecionarItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnSelecionarItem.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnSelecionarItem.ForeColor = System.Drawing.Color.Transparent
+        Me.BtnSelecionarItem.Image = CType(resources.GetObject("BtnSelecionarItem.Image"), System.Drawing.Image)
+        Me.BtnSelecionarItem.Location = New System.Drawing.Point(4, 8)
+        Me.BtnSelecionarItem.Name = "BtnSelecionarItem"
+        Me.BtnSelecionarItem.Size = New System.Drawing.Size(35, 35)
+        Me.BtnSelecionarItem.TabIndex = 152
+        Me.BtnSelecionarItem.TabStop = False
+        Me.ToolTip.SetToolTip(Me.BtnSelecionarItem, "Selecionar ")
+        Me.BtnSelecionarItem.UseVisualStyleBackColor = True
         '
         'BtnSair
         '
@@ -176,7 +114,7 @@ Partial Class FrmNotasEntrada
         Me.BtnSair.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSair.ForeColor = System.Drawing.Color.Transparent
         Me.BtnSair.Image = CType(resources.GetObject("BtnSair.Image"), System.Drawing.Image)
-        Me.BtnSair.Location = New System.Drawing.Point(530, 11)
+        Me.BtnSair.Location = New System.Drawing.Point(565, 17)
         Me.BtnSair.Name = "BtnSair"
         Me.BtnSair.Size = New System.Drawing.Size(35, 35)
         Me.BtnSair.TabIndex = 165
@@ -195,7 +133,7 @@ Partial Class FrmNotasEntrada
         Me.BtnExcluir.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnExcluir.ForeColor = System.Drawing.Color.Transparent
         Me.BtnExcluir.Image = CType(resources.GetObject("BtnExcluir.Image"), System.Drawing.Image)
-        Me.BtnExcluir.Location = New System.Drawing.Point(490, 11)
+        Me.BtnExcluir.Location = New System.Drawing.Point(102, 11)
         Me.BtnExcluir.Name = "BtnExcluir"
         Me.BtnExcluir.Size = New System.Drawing.Size(35, 35)
         Me.BtnExcluir.TabIndex = 164
@@ -211,7 +149,6 @@ Partial Class FrmNotasEntrada
         Me.TxtId.Size = New System.Drawing.Size(34, 20)
         Me.TxtId.TabIndex = 145
         Me.TxtId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TxtId.Visible = False
         '
         'LblId
         '
@@ -222,42 +159,41 @@ Partial Class FrmNotasEntrada
         Me.LblId.Size = New System.Drawing.Size(45, 13)
         Me.LblId.TabIndex = 146
         Me.LblId.Text = "Id. Reg."
-        Me.LblId.Visible = False
         '
-        'GroupBox4
+        'GboxExluir
         '
-        Me.GroupBox4.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox4.Controls.Add(Me.TxtIdPedido)
-        Me.GroupBox4.Controls.Add(Me.LblIdPedido)
-        Me.GroupBox4.Controls.Add(Me.TxtId)
-        Me.GroupBox4.Controls.Add(Me.LblId)
-        Me.GroupBox4.Location = New System.Drawing.Point(469, 12)
-        Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(132, 50)
-        Me.GroupBox4.TabIndex = 147
-        Me.GroupBox4.TabStop = False
+        Me.GboxExluir.BackColor = System.Drawing.Color.Transparent
+        Me.GboxExluir.Controls.Add(Me.TxtIdPedido)
+        Me.GboxExluir.Controls.Add(Me.BtnExcluir)
+        Me.GboxExluir.Controls.Add(Me.LblIdPedido)
+        Me.GboxExluir.Controls.Add(Me.TxtId)
+        Me.GboxExluir.Controls.Add(Me.LblId)
+        Me.GboxExluir.Location = New System.Drawing.Point(415, 9)
+        Me.GboxExluir.Name = "GboxExluir"
+        Me.GboxExluir.Size = New System.Drawing.Size(143, 50)
+        Me.GboxExluir.TabIndex = 147
+        Me.GboxExluir.TabStop = False
+        Me.GboxExluir.Visible = False
         '
         'TxtIdPedido
         '
         Me.TxtIdPedido.Enabled = False
-        Me.TxtIdPedido.Location = New System.Drawing.Point(80, 22)
+        Me.TxtIdPedido.Location = New System.Drawing.Point(57, 22)
         Me.TxtIdPedido.Multiline = True
         Me.TxtIdPedido.Name = "TxtIdPedido"
         Me.TxtIdPedido.Size = New System.Drawing.Size(34, 20)
         Me.TxtIdPedido.TabIndex = 147
         Me.TxtIdPedido.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TxtIdPedido.Visible = False
         '
         'LblIdPedido
         '
         Me.LblIdPedido.AutoSize = True
         Me.LblIdPedido.BackColor = System.Drawing.Color.Transparent
-        Me.LblIdPedido.Location = New System.Drawing.Point(71, 8)
+        Me.LblIdPedido.Location = New System.Drawing.Point(48, 8)
         Me.LblIdPedido.Name = "LblIdPedido"
         Me.LblIdPedido.Size = New System.Drawing.Size(55, 13)
         Me.LblIdPedido.TabIndex = 148
         Me.LblIdPedido.Text = "Id. Pedido"
-        Me.LblIdPedido.Visible = False
         '
         'DataGrid
         '
@@ -284,7 +220,7 @@ Partial Class FrmNotasEntrada
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DataGrid.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGrid.EnableHeadersVisualStyles = False
-        Me.DataGrid.Location = New System.Drawing.Point(24, 137)
+        Me.DataGrid.Location = New System.Drawing.Point(23, 68)
         Me.DataGrid.MultiSelect = False
         Me.DataGrid.Name = "DataGrid"
         Me.DataGrid.ReadOnly = True
@@ -293,23 +229,19 @@ Partial Class FrmNotasEntrada
         DataGridViewCellStyle3.Padding = New System.Windows.Forms.Padding(3, 0, 0, 0)
         Me.DataGrid.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGrid.Size = New System.Drawing.Size(577, 200)
+        Me.DataGrid.Size = New System.Drawing.Size(577, 229)
         Me.DataGrid.TabIndex = 148
         '
         'GboxPesProd
         '
         Me.GboxPesProd.BackColor = System.Drawing.Color.Transparent
-        Me.GboxPesProd.Controls.Add(Me.BtnSair)
-        Me.GboxPesProd.Controls.Add(Me.BtnExcluir)
-        Me.GboxPesProd.Controls.Add(Me.DataInicial)
         Me.GboxPesProd.Controls.Add(Me.TxtPesquisa)
-        Me.GboxPesProd.Controls.Add(Me.Label1)
         Me.GboxPesProd.Controls.Add(Me.RbNota)
         Me.GboxPesProd.Controls.Add(Me.RbFornecedor)
         Me.GboxPesProd.Controls.Add(Me.RbPedido)
-        Me.GboxPesProd.Location = New System.Drawing.Point(24, 81)
+        Me.GboxPesProd.Location = New System.Drawing.Point(23, 9)
         Me.GboxPesProd.Name = "GboxPesProd"
-        Me.GboxPesProd.Size = New System.Drawing.Size(577, 50)
+        Me.GboxPesProd.Size = New System.Drawing.Size(303, 50)
         Me.GboxPesProd.TabIndex = 160
         Me.GboxPesProd.TabStop = False
         Me.GboxPesProd.Text = "Pesquisar"
@@ -359,51 +291,42 @@ Partial Class FrmNotasEntrada
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(630, 359)
+        Me.ClientSize = New System.Drawing.Size(626, 318)
+        Me.Controls.Add(Me.BtnSair)
         Me.Controls.Add(Me.GboxPesProd)
         Me.Controls.Add(Me.DataGrid)
-        Me.Controls.Add(Me.GroupBox4)
-        Me.Controls.Add(Me.GroupBox2)
-        Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.GboxExluir)
+        Me.Controls.Add(Me.GboxPesquisar)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "FrmNotasEntrada"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Notas de Entrada"
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
-        Me.GroupBox4.ResumeLayout(False)
-        Me.GroupBox4.PerformLayout()
+        Me.GboxPesquisar.ResumeLayout(False)
+        Me.GboxExluir.ResumeLayout(False)
+        Me.GboxExluir.PerformLayout()
         CType(Me.DataGrid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GboxPesProd.ResumeLayout(False)
         Me.GboxPesProd.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents DataFinal As DateTimePicker
-    Friend WithEvents BtnPesquisar As Button
-    Friend WithEvents DataInicial As DateTimePicker
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label1 As Label
-    Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents ToolTip As ToolTip
-    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents GboxPesquisar As GroupBox
     Friend WithEvents TxtId As TextBox
     Friend WithEvents LblId As Label
-    Friend WithEvents GroupBox4 As GroupBox
+    Friend WithEvents GboxExluir As GroupBox
     Friend WithEvents TxtIdPedido As TextBox
     Friend WithEvents LblIdPedido As Label
     Friend WithEvents DataGrid As DataGridView
     Friend WithEvents BtnSair As Button
     Friend WithEvents BtnExcluir As Button
-    Friend WithEvents BtnListarTudo As Button
-    Friend WithEvents TxtPesquisar As TextBox
     Friend WithEvents GboxPesProd As GroupBox
     Friend WithEvents TxtPesquisa As TextBox
     Friend WithEvents RbNota As RadioButton
     Friend WithEvents RbFornecedor As RadioButton
     Friend WithEvents RbPedido As RadioButton
+    Friend WithEvents BtnCacelarConsulta As Button
+    Friend WithEvents BtnSelecionarItem As Button
 End Class

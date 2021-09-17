@@ -53,6 +53,9 @@ Module ModuloConexao
     Public editarVenda As String
     Public index As Integer
 
+    Public pesquisarDuplicata As String
+    Public IdDuplicata As String
+
     Public novavenda As String
     Public custoUntario As String
     Public pesquisarCliente As String
@@ -70,7 +73,8 @@ Module ModuloConexao
     Public Sub LimparVariaveisGlobais()
         totalPedido = ""
         nomePedido = ""
-
+        pesquisarDuplicata = ""
+        IdDuplicata = ""
         nomeFuncionario = ""
         especialidade = ""
         codCliente = ""

@@ -134,6 +134,99 @@ Public Class FrmPagarTitulo
 
     End Sub
 
+    Private Sub CarregarDadosPesquisaDuplicata()
+        Dim idEntrada As Integer
+        Dim idDuplicata As Integer
+
+
+        Try
+            Abrir()
+
+            'BUSCANDO DADOS NA TBL DUPLICATAS
+            Dim cmd As MySqlCommand
+            Dim reader As MySqlDataReader
+            Dim sql As String
+            sql = "SELECT * FROM duplicatas WHERE id='" & TxtIdPesquisar.Text & "'"
+            cmd = New MySqlCommand(sql, con)
+            reader = cmd.ExecuteReader
+            If reader.Read = True Then
+                TxtIdRegistro.Text = reader(0)
+                TxtCodFornecedor.Text = reader(8)
+                TxtNotaFiscal.Text = reader(2)
+                TxtParcela.Text = reader(1)
+                TxtValorParcela.Text = reader(5)
+                TxtSaldoTitulo.Text = reader(9)
+                DataEmissao.Text = reader(3)
+                DataVencimento.Text = reader(4)
+                TxtRefEntrada.Text = reader(7)
+                idEntrada = reader(7)
+                idDuplicata = reader(0)
+                reader.Close()
+            Else
+                reader.Close()
+            End If
+            '.....................................................................................
+            'BUSCANDO DADOS NA TBL ENTRADA
+            Dim cmd2 As MySqlCommand
+            Dim reader2 As MySqlDataReader
+            Dim sql2 As String
+            sql2 = "SELECT * FROM entrada WHERE id= '" & idEntrada & "' "
+            cmd2 = New MySqlCommand(sql2, con)
+            reader2 = cmd2.ExecuteReader
+            If reader2.Read = True Then
+
+                TxtNomeFornecedor.Text = reader2(3)
+                TxtCodPedido.Text = reader2(4)
+                TxtDescPed.Text = reader2(5)
+                TxtTotalTitulo.Text = reader2(8)
+                reader2.Close()
+            Else
+                reader2.Close()
+            End If
+
+            'Stop
+            '....................................................................................
+            'BUSCANDO DADOS NA TBL MVTO_PAGAMENTOS
+            Dim cmd3 As MySqlCommand
+            Dim reader3 As MySqlDataReader
+            Dim sql3 As String
+            sql3 = "SELECT MAX(id), SUM(valor_pago) , SUM(juros_multa) , SUM(descontos), SUM(total_pago), data_pagamento, MAX(status_nota), id_entrada FROM mvto_pagamentos WHERE id_duplicata= '" & idDuplicata & "' "
+            cmd3 = New MySqlCommand(sql3, con)
+            reader3 = cmd3.ExecuteReader
+            If reader3.Read = True Then
+
+                DataPagamento.Visible = True
+                LblDataPagamento.Visible = True
+                TxtRegPagamento.Visible = True
+                LblRegPgto.Visible = True
+
+                TxtRegPagamento.Text = reader3(0)
+                TxtValorPago.Text = reader3(1)
+                TxtJurosMultas.Text = reader3(2)
+                TxtDescontos.Text = reader3(3)
+                TxtTotalPago.Text = reader3(4)
+                DataPagamento.Text = reader3(5)
+                TxtStatusTitulo.Text = reader3(6)
+                TxtRefEntrada.Text = reader3(7)
+
+                reader3.Close()
+            Else
+                reader3.Close()
+                TxtValorPago.Text = 0
+                TxtJurosMultas.Text = 0
+                TxtDescontos.Text = 0
+                TxtTotalPago.Text = 0
+                TxtStatusTitulo.Text = "Aberto"
+
+            End If
+
+            TxtIdPesquisar.Text = ""
+
+
+        Catch ex As Exception
+            MsgBox("Erro ao carregar dados!! ---- " + ex.Message)
+        End Try
+    End Sub
     Private Sub BtnAnterior_Click(sender As Object, e As EventArgs) Handles BtnAnterior.Click
         ListarPedidoAnterior()
     End Sub
@@ -495,7 +588,31 @@ Line1:
 
     Private Sub BtnPesquisar_Click(sender As Object, e As EventArgs) Handles BtnPesquisar.Click
 
+        pesquisarDuplicata = "True"
+
         Dim form = New FrmNotasEntrada
         form.ShowDialog()
     End Sub
+
+    Private Sub FrmPagarTitulo_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
+        If pesquisarDuplicata = "True" Then
+
+            TxtIdPesquisar.Text = IdDuplicata
+
+            If TxtIdPesquisar.Text <> "' then" Then
+
+                CarregarDadosPesquisaDuplicata()
+            Else
+
+                Exit Sub
+            End If
+        End If
+
+    End Sub
+
+    Private Sub FrmPagarTitulo_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        pesquisarDuplicata = ""
+    End Sub
+
+
 End Class
