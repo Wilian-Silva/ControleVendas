@@ -6,9 +6,11 @@ Module ModuloConexao
     'Public con As New MySqlConnection("server=mysql746.umbler.com; userid=xufu; password=EZBjW9LtUscBmb; database=controle_vendas; port=41890;")
 
     Sub Abrir()
+
         If con.State = 0 Then
             con.Open()
         End If
+
     End Sub
 
     Sub Fechar()
@@ -22,6 +24,8 @@ Module ModuloConexao
 
     Public Table1Duplicatas As New DataTable("MyTable")
     Public parcela As Integer
+
+    Public IdDuplicata2 As Integer
 
     Public nomeFuncionario As String
     Public especialidade As String

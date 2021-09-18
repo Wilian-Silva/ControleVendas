@@ -253,7 +253,7 @@ Public Class FrmTelaInicial
         LblVencidos.Text = Format(valor2, "R$ 00.00")
     End Sub
     Private Sub BtnContasPagar_Click(sender As Object, e As EventArgs) Handles BtnContasPagar.Click
-        Dim form = New FrmPagamento
+        Dim form = New FrmPagarTitulo
         form.ShowDialog()
 
     End Sub

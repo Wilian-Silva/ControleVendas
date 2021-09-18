@@ -70,11 +70,11 @@ Partial Class FrmPagarTitulo
         Me.BtnSair = New System.Windows.Forms.Button()
         Me.GboxPesProd = New System.Windows.Forms.GroupBox()
         Me.TxtIdPesquisar = New System.Windows.Forms.TextBox()
-        Me.BtnPesquisar = New System.Windows.Forms.Button()
         Me.BtnProximo = New System.Windows.Forms.Button()
         Me.BtnCarregar = New System.Windows.Forms.Button()
         Me.BtnAnterior = New System.Windows.Forms.Button()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.BtnPesquisar = New System.Windows.Forms.Button()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -601,8 +601,8 @@ Partial Class FrmPagarTitulo
         'GboxPesProd
         '
         Me.GboxPesProd.BackColor = System.Drawing.Color.Transparent
-        Me.GboxPesProd.Controls.Add(Me.TxtIdPesquisar)
         Me.GboxPesProd.Controls.Add(Me.BtnPesquisar)
+        Me.GboxPesProd.Controls.Add(Me.TxtIdPesquisar)
         Me.GboxPesProd.Controls.Add(Me.BtnProximo)
         Me.GboxPesProd.Controls.Add(Me.BtnCarregar)
         Me.GboxPesProd.Controls.Add(Me.BtnAnterior)
@@ -622,26 +622,6 @@ Partial Class FrmPagarTitulo
         Me.TxtIdPesquisar.Size = New System.Drawing.Size(28, 20)
         Me.TxtIdPesquisar.TabIndex = 163
         Me.TxtIdPesquisar.Visible = False
-        '
-        'BtnPesquisar
-        '
-        Me.BtnPesquisar.AccessibleDescription = ""
-        Me.BtnPesquisar.AccessibleName = "Adicionar"
-        Me.BtnPesquisar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnPesquisar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnPesquisar.FlatAppearance.BorderSize = 0
-        Me.BtnPesquisar.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.BtnPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnPesquisar.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnPesquisar.ForeColor = System.Drawing.Color.Transparent
-        Me.BtnPesquisar.Image = CType(resources.GetObject("BtnPesquisar.Image"), System.Drawing.Image)
-        Me.BtnPesquisar.Location = New System.Drawing.Point(96, 11)
-        Me.BtnPesquisar.Name = "BtnPesquisar"
-        Me.BtnPesquisar.Size = New System.Drawing.Size(35, 35)
-        Me.BtnPesquisar.TabIndex = 158
-        Me.BtnPesquisar.TabStop = False
-        Me.ToolTip.SetToolTip(Me.BtnPesquisar, "Pesquisar")
-        Me.BtnPesquisar.UseVisualStyleBackColor = False
         '
         'BtnProximo
         '
@@ -698,6 +678,21 @@ Partial Class FrmPagarTitulo
         Me.BtnAnterior.TabIndex = 155
         Me.ToolTip.SetToolTip(Me.BtnAnterior, "Anterior")
         Me.BtnAnterior.UseVisualStyleBackColor = True
+        '
+        'BtnPesquisar
+        '
+        Me.BtnPesquisar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.BtnPesquisar.FlatAppearance.BorderSize = 0
+        Me.BtnPesquisar.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BtnPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnPesquisar.ForeColor = System.Drawing.Color.Transparent
+        Me.BtnPesquisar.Image = CType(resources.GetObject("BtnPesquisar.Image"), System.Drawing.Image)
+        Me.BtnPesquisar.Location = New System.Drawing.Point(89, 16)
+        Me.BtnPesquisar.Name = "BtnPesquisar"
+        Me.BtnPesquisar.Size = New System.Drawing.Size(25, 25)
+        Me.BtnPesquisar.TabIndex = 164
+        Me.ToolTip.SetToolTip(Me.BtnPesquisar, "Consultar Pedido")
+        Me.BtnPesquisar.UseVisualStyleBackColor = True
         '
         'FrmPagarTitulo
         '
@@ -782,6 +777,6 @@ Partial Class FrmPagarTitulo
     Friend WithEvents Label19 As Label
     Friend WithEvents TxtTotalTitulo As TextBox
     Friend WithEvents BtnCarregar As Button
-    Friend WithEvents BtnPesquisar As Button
     Friend WithEvents TxtIdPesquisar As TextBox
+    Friend WithEvents BtnPesquisar As Button
 End Class

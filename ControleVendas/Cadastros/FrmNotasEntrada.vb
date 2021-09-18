@@ -242,6 +242,7 @@ Public Class FrmNotasEntrada
         If DataGrid.RowCount > 0 Then
 
             IdDuplicata = DataGrid.CurrentRow.Cells(11).Value
+            IdDuplicata2 = DataGrid.CurrentRow.Cells(0).Value
 
             Me.Close()
         Else

@@ -264,12 +264,6 @@
     <Compile Include="Movimentos\FrmNovaVenda.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Movimentos\FrmPagamento.Designer.vb">
-      <DependentUpon>FrmPagamento.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Movimentos\FrmPagamento.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Movimentos\FrmPagarTitulo.Designer.vb">
       <DependentUpon>FrmPagarTitulo.vb</DependentUpon>
     </Compile>
@@ -424,9 +418,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Movimentos\FrmNovaVenda.resx">
       <DependentUpon>FrmNovaVenda.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Movimentos\FrmPagamento.resx">
-      <DependentUpon>FrmPagamento.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Movimentos\FrmPagarTitulo.resx">
       <DependentUpon>FrmPagarTitulo.vb</DependentUpon>

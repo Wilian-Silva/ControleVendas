@@ -91,6 +91,58 @@ Public Class FrmEntrada
         End Try
 
     End Sub
+    Sub ListarDocumento()
+
+        Try
+
+            Abrir()
+            Dim cmd As MySqlCommand
+            Dim reader As MySqlDataReader
+            Dim sql As String
+
+
+            sql = "SELECT * FROM entrada WHERE id= '" & TxtPesquisar.Text & "' "
+
+            cmd = New MySqlCommand(sql, con)
+            reader = cmd.ExecuteReader
+            If reader.Read = True Then
+
+                TxtIdRegistro.Text = reader("id")
+                TxtNotaFiscal.Text = reader("nota")
+                TxtFornecedor.Text = reader("cod_fornecedor")
+                TxtNomeFornecedor.Text = reader("fornecedor")
+                TxtCodPedido.Text = reader("id_pedido")
+                TxtDescPed.Text = reader("descricao")
+                DataEmissao.Value = reader("emissao")
+                TxtTotalNota.Text = reader("valor")
+
+                reader.Close()
+            Else
+                reader.Close()
+            End If
+
+
+            '..................................................................................
+            'LISTAR ITEN DA NOTA FISCAL
+            Dim sql1 As String
+            Dim dt As New DataTable
+            Dim da As MySqlDataAdapter
+            sql1 = "SELECT item, cod_produto, produto, quantidade, valor_unitario, valor_total  FROM estoque WHERE id_entrada = '" & TxtPesquisar.Text & "' order by item asc "
+            da = New MySqlDataAdapter(sql1, con)
+            da.Fill(dt)
+            DataGrid.DataSource = dt
+
+            FormatarGrid()
+
+            ListarDuplicatas()
+
+
+            IdDuplicata2 = Nothing
+        Catch ex As Exception
+            MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
+        End Try
+
+    End Sub
     Sub ListarUltimaNota()
         'Stop
         Try
@@ -107,15 +159,14 @@ Public Class FrmEntrada
             reader = cmd.ExecuteReader
             If reader.Read = True Then
 
-                TxtIdRegistro.Text = reader(0)
-                TxtNotaFiscal.Text = reader(1)
-                TxtFornecedor.Text = reader(2)
-                TxtNomeFornecedor.Text = reader(3)
-                TxtCodPedido.Text = reader(4)
-                TxtDescPed.Text = reader(5)
-                'TxtStatusPedido.Text = reader(6)
-                DataEmissao.Value = reader(7)
-                TxtTotalNota.Text = reader(8)
+                TxtIdRegistro.Text = reader("id")
+                TxtNotaFiscal.Text = reader("nota")
+                TxtFornecedor.Text = reader("cod_fornecedor")
+                TxtNomeFornecedor.Text = reader("fornecedor")
+                TxtCodPedido.Text = reader("id_pedido")
+                TxtDescPed.Text = reader("descricao")
+                DataEmissao.Value = reader("emissao")
+                TxtTotalNota.Text = reader("valor")
 
                 reader.Close()
             Else
@@ -164,9 +215,16 @@ Public Class FrmEntrada
 
     End Sub
     Public Sub TotalNfe_TotalDuplicatas()
+        Dim soma As Double
+        Dim dbl1 As Double = 0
+        Dim dbl2 As Double = 0
+        Double.TryParse(TxtTotalNota.Text, dbl1)
+        Double.TryParse(TxtTotalDuplicatas.Text, dbl2)
+
+        soma = (dbl1 - dbl2).ToString("n")
 
         LblSaldo.Text = ""
-        If TxtTotalNota.Text - TxtTotalDuplicatas.Text > 0 Or TxtTotalNota.Text - TxtTotalDuplicatas.Text < 0 Then
+        If soma > 0 Or soma < 0 Then
             LblSaldo.Text = "Valor total das duplicatas diferente do valor total da Nota!"
         End If
 
@@ -493,6 +551,12 @@ Public Class FrmEntrada
             TotalNfe_TotalDuplicatas()
         End If
 
+        If pesquisarDuplicata = "True" Then
+            TxtPesquisar.Text = IdDuplicata2
+
+            pesquisarDuplicata = ""
+        End If
+
     End Sub
 
     Private Sub BtnEditar_Click(sender As Object, e As EventArgs) Handles BtnEditar.Click
@@ -675,15 +739,14 @@ Line1:
             reader = cmd.ExecuteReader
             If reader.Read = True Then
 
-                TxtIdRegistro.Text = reader(0)
-                TxtNotaFiscal.Text = reader(1)
-                TxtFornecedor.Text = reader(2)
-                TxtNomeFornecedor.Text = reader(3)
-                TxtCodPedido.Text = reader(4)
-                TxtDescPed.Text = reader(5)
-                'TxtStatusPedido.Text = reader(6)
-                DataEmissao.Value = reader(7)
-                TxtTotalNota.Text = reader(8)
+                TxtIdRegistro.Text = reader("id")
+                TxtNotaFiscal.Text = reader("nota")
+                TxtFornecedor.Text = reader("cod_fornecedor")
+                TxtNomeFornecedor.Text = reader("fornecedor")
+                TxtCodPedido.Text = reader("id_pedido")
+                TxtDescPed.Text = reader("descricao")
+                DataEmissao.Value = reader("emissao")
+                TxtTotalNota.Text = reader("valor")
 
                 reader.Close()
             Else
@@ -785,15 +848,14 @@ Line1:
             reader = cmd.ExecuteReader
             If reader.Read = True Then
 
-                TxtIdRegistro.Text = reader(0)
-                TxtNotaFiscal.Text = reader(1)
-                TxtFornecedor.Text = reader(2)
-                TxtNomeFornecedor.Text = reader(3)
-                TxtCodPedido.Text = reader(4)
-                TxtDescPed.Text = reader(5)
-                'TxtStatusPedido.Text = reader(6)
-                DataEmissao.Value = reader(7)
-                TxtTotalNota.Text = reader(8)
+                TxtIdRegistro.Text = reader("id")
+                TxtNotaFiscal.Text = reader("nota")
+                TxtFornecedor.Text = reader("cod_fornecedor")
+                TxtNomeFornecedor.Text = reader("fornecedor")
+                TxtCodPedido.Text = reader("id_pedido")
+                TxtDescPed.Text = reader("descricao")
+                DataEmissao.Value = reader("emissao")
+                TxtTotalNota.Text = reader("valor")
 
                 reader.Close()
             Else
@@ -836,69 +898,7 @@ Line1:
     End Sub
 
     Private Sub TxtPesquisar_TextChanged(sender As Object, e As EventArgs) Handles TxtPesquisar.TextChanged
-
-        Dim IdRegistroNFe As Integer
-        Try
-            Abrir()
-            Dim cmd As MySqlCommand
-            Dim reader As MySqlDataReader
-            Dim sql As String
-
-            sql = "SELECT * FROM entrada where nota LIKE '" & TxtPesquisar.Text & "%' "
-
-            cmd = New MySqlCommand(sql, con)
-            reader = cmd.ExecuteReader
-            If reader.Read = True Then
-
-                TxtIdRegistro.Text = reader(0)
-                TxtNotaFiscal.Text = reader(1)
-                TxtFornecedor.Text = reader(2)
-                TxtNomeFornecedor.Text = reader(3)
-                TxtCodPedido.Text = reader(4)
-                TxtDescPed.Text = reader(5)
-                'TxtStatusPedido.Text = reader(6)
-                DataEmissao.Value = reader(7)
-                TxtTotalNota.Text = reader(8)
-                IdRegistroNFe = reader(0)
-
-                reader.Close()
-            Else
-                reader.Close()
-            End If
-
-
-            '..................................................................................
-            'LISTAR ITEN DA NOTA FISCAL
-            Dim sql1 As String
-            Dim dt As New DataTable
-            Dim da As MySqlDataAdapter
-            sql1 = "SELECT item, cod_produto, produto, quantidade, valor_unitario, valor_total  FROM estoque WHERE id_entrada = '" & IdRegistroNFe & "' order by item asc "
-            da = New MySqlDataAdapter(sql1, con)
-            da.Fill(dt)
-            DataGrid.DataSource = dt
-
-            FormatarGrid()
-            '.................................................................................
-            'LISTAR DUPLICATAS
-            Try
-                Dim sqldp As String
-                Dim dtdp As New DataTable
-                Dim dadp As MySqlDataAdapter
-                sqldp = "SELECT * FROM duplicatas WHERE id_entrada = '" & IdRegistroNFe & "' "
-                dadp = New MySqlDataAdapter(sqldp, con)
-                dadp.Fill(dtdp)
-                DataGridDuplicatas.DataSource = dtdp
-
-                FormatarGridDuplicatas()
-
-            Catch ex As Exception
-                MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
-            End Try
-            '....................................................................................
-
-        Catch ex As Exception
-            MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
-        End Try
+        ListarDocumento()
     End Sub
 
 
@@ -1000,5 +1000,13 @@ Line1:
         Catch ex As Exception
             MsgBox("Erro ao Salvar!! " + ex.Message)
         End Try
+    End Sub
+
+    Private Sub BtnPesquisarNota_Click(sender As Object, e As EventArgs) Handles BtnPesquisarNota.Click
+
+        pesquisarDuplicata = "True"
+
+        Dim form = New FrmNotasEntrada
+        form.ShowDialog()
     End Sub
 End Class

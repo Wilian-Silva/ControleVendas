@@ -6,7 +6,12 @@ Public Class FrmPagarTitulo
     Dim maximo As Integer
 
     Private Sub BtnBaixarTitulo_Click(sender As Object, e As EventArgs) Handles BtnBaixarTitulo.Click
+        If TxtStatusTitulo.Text = "Pgto. Total" Then
 
+            MsgBox("Título totalmente baixado!!", MsgBoxStyle.Information, "Baixar Título")
+
+            Exit Sub
+        End If
         If MsgBox("Deseja baixar do título " & TxtNotaFiscal.Text & " Parcela " & TxtParcela.Text & "?", vbYesNo, "Pagamento") = vbYes Then
 
             Dim form = New FrmVlrPgto()
@@ -44,6 +49,7 @@ Public Class FrmPagarTitulo
     End Sub
 
     Private Sub CarregarDadosTitulo()
+        'Stop
         Dim idEntrada As Integer
         Dim idDuplicata As Integer
         Try
@@ -57,17 +63,17 @@ Public Class FrmPagarTitulo
             cmd = New MySqlCommand(sql, con)
             reader = cmd.ExecuteReader
             If reader.Read = True Then
-                TxtIdRegistro.Text = reader(0)
-                TxtCodFornecedor.Text = reader(8)
-                TxtNotaFiscal.Text = reader(2)
-                TxtParcela.Text = reader(1)
-                TxtValorParcela.Text = reader(5)
-                TxtSaldoTitulo.Text = reader(9)
-                DataEmissao.Text = reader(3)
-                DataVencimento.Text = reader(4)
-                TxtRefEntrada.Text = reader(7)
-                idEntrada = reader(7)
-                idDuplicata = reader(0)
+                TxtIdRegistro.Text = reader("id")
+                TxtCodFornecedor.Text = reader("cod_fornecedor")
+                TxtNotaFiscal.Text = reader("documento")
+                TxtParcela.Text = reader("parcela")
+                TxtValorParcela.Text = reader("valor_parcela")
+                TxtSaldoTitulo.Text = reader("saldo_duplicata")
+                DataEmissao.Text = reader("data_emissao")
+                DataVencimento.Text = reader("data_vencimento")
+                TxtRefEntrada.Text = reader("id_entrada")
+                idEntrada = reader("id_entrada")
+                idDuplicata = reader("id")
                 reader.Close()
             Else
                 reader.Close()
@@ -82,10 +88,10 @@ Public Class FrmPagarTitulo
             reader2 = cmd2.ExecuteReader
             If reader2.Read = True Then
 
-                TxtNomeFornecedor.Text = reader2(3)
-                TxtCodPedido.Text = reader2(4)
-                TxtDescPed.Text = reader2(5)
-                TxtTotalTitulo.Text = reader2(8)
+                TxtNomeFornecedor.Text = reader2("fornecedor")
+                TxtCodPedido.Text = reader2("id_pedido")
+                TxtDescPed.Text = reader2("descricao")
+                TxtTotalTitulo.Text = reader2("valor")
                 reader2.Close()
             Else
                 reader2.Close()
@@ -97,7 +103,7 @@ Public Class FrmPagarTitulo
             Dim cmd3 As MySqlCommand
             Dim reader3 As MySqlDataReader
             Dim sql3 As String
-            sql3 = "SELECT MAX(id), SUM(valor_pago) , SUM(juros_multa) , SUM(descontos), SUM(total_pago), data_pagamento, MAX(status_nota), id_entrada FROM mvto_pagamentos WHERE id_duplicata= '" & idDuplicata & "' "
+            sql3 = "SELECT MAX(id) as id, SUM(valor_pago) as valor_pago , SUM(juros_multa) as juros_multa , SUM(descontos) as descontos, SUM(total_pago) as total_pago, data_pagamento, MAX(status_nota) as status_nota, id_entrada FROM mvto_pagamentos WHERE id_duplicata= '" & idDuplicata & "' "
             cmd3 = New MySqlCommand(sql3, con)
             reader3 = cmd3.ExecuteReader
             If reader3.Read = True Then
@@ -107,14 +113,14 @@ Public Class FrmPagarTitulo
                 TxtRegPagamento.Visible = True
                 LblRegPgto.Visible = True
 
-                TxtRegPagamento.Text = reader3(0)
-                TxtValorPago.Text = reader3(1)
-                TxtJurosMultas.Text = reader3(2)
-                TxtDescontos.Text = reader3(3)
-                TxtTotalPago.Text = reader3(4)
-                DataPagamento.Text = reader3(5)
-                TxtStatusTitulo.Text = reader3(6)
-                TxtRefEntrada.Text = reader3(7)
+                TxtRegPagamento.Text = reader3("id")
+                TxtValorPago.Text = reader3("valor_pago")
+                TxtJurosMultas.Text = reader3("juros_multa")
+                TxtDescontos.Text = reader3("descontos")
+                TxtTotalPago.Text = reader3("total_pago")
+                DataPagamento.Text = reader3("data_pagamento")
+                TxtStatusTitulo.Text = reader3("status_nota")
+                TxtRefEntrada.Text = reader3("id_entrada")
 
                 reader3.Close()
             Else
@@ -150,17 +156,17 @@ Public Class FrmPagarTitulo
             cmd = New MySqlCommand(sql, con)
             reader = cmd.ExecuteReader
             If reader.Read = True Then
-                TxtIdRegistro.Text = reader(0)
-                TxtCodFornecedor.Text = reader(8)
-                TxtNotaFiscal.Text = reader(2)
-                TxtParcela.Text = reader(1)
-                TxtValorParcela.Text = reader(5)
-                TxtSaldoTitulo.Text = reader(9)
-                DataEmissao.Text = reader(3)
-                DataVencimento.Text = reader(4)
-                TxtRefEntrada.Text = reader(7)
-                idEntrada = reader(7)
-                idDuplicata = reader(0)
+                TxtIdRegistro.Text = reader("id")
+                TxtCodFornecedor.Text = reader("cod_fornecedor")
+                TxtNotaFiscal.Text = reader("documento")
+                TxtParcela.Text = reader("parcela")
+                TxtValorParcela.Text = reader("valor_parcela")
+                TxtSaldoTitulo.Text = reader("saldo_duplicata")
+                DataEmissao.Text = reader("data_emissao")
+                DataVencimento.Text = reader("data_vencimento")
+                TxtRefEntrada.Text = reader("id_entrada")
+                idEntrada = reader("id_entrada")
+                idDuplicata = reader("id")
                 reader.Close()
             Else
                 reader.Close()
@@ -175,10 +181,10 @@ Public Class FrmPagarTitulo
             reader2 = cmd2.ExecuteReader
             If reader2.Read = True Then
 
-                TxtNomeFornecedor.Text = reader2(3)
-                TxtCodPedido.Text = reader2(4)
-                TxtDescPed.Text = reader2(5)
-                TxtTotalTitulo.Text = reader2(8)
+                TxtNomeFornecedor.Text = reader2("fornecedor")
+                TxtCodPedido.Text = reader2("id_pedido")
+                TxtDescPed.Text = reader2("descricao")
+                TxtTotalTitulo.Text = reader2("valor")
                 reader2.Close()
             Else
                 reader2.Close()
@@ -190,7 +196,7 @@ Public Class FrmPagarTitulo
             Dim cmd3 As MySqlCommand
             Dim reader3 As MySqlDataReader
             Dim sql3 As String
-            sql3 = "SELECT MAX(id), SUM(valor_pago) , SUM(juros_multa) , SUM(descontos), SUM(total_pago), data_pagamento, MAX(status_nota), id_entrada FROM mvto_pagamentos WHERE id_duplicata= '" & idDuplicata & "' "
+            sql3 = "SELECT MAX(id) as id, SUM(valor_pago) as valor_pago, SUM(juros_multa) as juros_multa , SUM(descontos) as descontos, SUM(total_pago) as total_pago, data_pagamento, MAX(status_nota) as status_nota, id_entrada FROM mvto_pagamentos WHERE id_duplicata= '" & idDuplicata & "' "
             cmd3 = New MySqlCommand(sql3, con)
             reader3 = cmd3.ExecuteReader
             If reader3.Read = True Then
@@ -200,14 +206,16 @@ Public Class FrmPagarTitulo
                 TxtRegPagamento.Visible = True
                 LblRegPgto.Visible = True
 
-                TxtRegPagamento.Text = reader3(0)
-                TxtValorPago.Text = reader3(1)
-                TxtJurosMultas.Text = reader3(2)
-                TxtDescontos.Text = reader3(3)
-                TxtTotalPago.Text = reader3(4)
-                DataPagamento.Text = reader3(5)
-                TxtStatusTitulo.Text = reader3(6)
-                TxtRefEntrada.Text = reader3(7)
+
+                TxtRegPagamento.Text = reader3("id")
+                TxtValorPago.Text = reader3("valor_pago")
+                TxtJurosMultas.Text = reader3("juros_multa")
+                TxtDescontos.Text = reader3("descontos")
+                TxtTotalPago.Text = reader3("total_pago")
+                DataPagamento.Text = reader3("data_pagamento")
+                TxtStatusTitulo.Text = reader3("status_nota")
+                TxtRefEntrada.Text = reader3("id_entrada")
+
 
                 reader3.Close()
             Else
@@ -262,7 +270,7 @@ Line1:
                 anterior = anterior - 1
                 GoTo Line1
             End If
-            reader.Close()
+
 
 
         Catch ex As Exception
@@ -287,17 +295,17 @@ Line1:
             cmd = New MySqlCommand(sql, con)
             reader = cmd.ExecuteReader
             If reader.Read = True Then
-                TxtIdRegistro.Text = reader(0)
-                TxtCodFornecedor.Text = reader(8)
-                TxtNotaFiscal.Text = reader(2)
-                TxtParcela.Text = reader(1)
-                TxtValorParcela.Text = reader(5)
-                TxtSaldoTitulo.Text = reader(9)
-                DataEmissao.Text = reader(3)
-                DataVencimento.Text = reader(4)
-                TxtRefEntrada.Text = reader(7)
-                idEntrada = reader(7)
-                idDuplicata = reader(0)
+                TxtIdRegistro.Text = reader("id")
+                TxtCodFornecedor.Text = reader("cod_fornecedor")
+                TxtNotaFiscal.Text = reader("documento")
+                TxtParcela.Text = reader("parcela")
+                TxtValorParcela.Text = reader("valor_parcela")
+                TxtSaldoTitulo.Text = reader("saldo_duplicata")
+                DataEmissao.Text = reader("data_emissao")
+                DataVencimento.Text = reader("data_vencimento")
+                TxtRefEntrada.Text = reader("id_entrada")
+                idEntrada = reader("id_entrada")
+                idDuplicata = reader("id")
 
                 reader.Close()
             Else
@@ -313,10 +321,10 @@ Line1:
             reader2 = cmd2.ExecuteReader
             If reader2.Read = True Then
 
-                TxtNomeFornecedor.Text = reader2(3)
-                TxtCodPedido.Text = reader2(4)
-                TxtDescPed.Text = reader2(5)
-                TxtTotalTitulo.Text = reader2(8)
+                TxtNomeFornecedor.Text = reader2("fornecedor")
+                TxtCodPedido.Text = reader2("id_pedido")
+                TxtDescPed.Text = reader2("descricao")
+                TxtTotalTitulo.Text = reader2("valor")
 
                 reader2.Close()
             Else
@@ -329,7 +337,7 @@ Line1:
             Dim cmd3 As MySqlCommand
             Dim reader3 As MySqlDataReader
             Dim sql3 As String
-            sql3 = "SELECT MAX(id), SUM(valor_pago) , SUM(juros_multa) , SUM(descontos), SUM(total_pago), data_pagamento, MAX(status_nota), id_entrada FROM mvto_pagamentos WHERE id_duplicata= '" & idDuplicata & "' "
+            sql3 = "SELECT MAX(id) as id, SUM(valor_pago) as valor_pago , SUM(juros_multa) as juros_multa, SUM(descontos) as descontos, SUM(total_pago) as total_pago, data_pagamento, MAX(status_nota) as status_nota, id_entrada FROM mvto_pagamentos WHERE id_duplicata= '" & idDuplicata & "' "
             cmd3 = New MySqlCommand(sql3, con)
             reader3 = cmd3.ExecuteReader
             If reader3.Read = True Then
@@ -338,14 +346,16 @@ Line1:
                 TxtRegPagamento.Visible = True
                 LblRegPgto.Visible = True
 
-                TxtRegPagamento.Text = reader3(0)
-                TxtValorPago.Text = reader3(1)
-                TxtJurosMultas.Text = reader3(2)
-                TxtDescontos.Text = reader3(3)
-                TxtTotalPago.Text = reader3(4)
-                DataPagamento.Text = reader3(5)
-                TxtStatusTitulo.Text = reader3(6)
-                TxtRefEntrada.Text = reader3(7)
+
+                TxtRegPagamento.Text = reader3("id")
+                TxtValorPago.Text = reader3("valor_pago")
+                TxtJurosMultas.Text = reader3("juros_multa")
+                TxtDescontos.Text = reader3("descontos")
+                TxtTotalPago.Text = reader3("total_pago")
+                DataPagamento.Text = reader3("data_pagamento")
+                TxtStatusTitulo.Text = reader3("status_nota")
+                TxtRefEntrada.Text = reader3("id_entrada")
+
 
 
                 reader3.Close()
@@ -427,7 +437,7 @@ Line1:
                 proximo = proximo + 1
                 GoTo Line1
             End If
-            reader.Close()
+
 
         Catch ex As Exception
             MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
@@ -448,17 +458,17 @@ Line1:
             cmd = New MySqlCommand(sql, con)
             reader = cmd.ExecuteReader
             If reader.Read = True Then
-                TxtIdRegistro.Text = reader(0)
-                TxtCodFornecedor.Text = reader(8)
-                TxtNotaFiscal.Text = reader(2)
-                TxtParcela.Text = reader(1)
-                TxtValorParcela.Text = reader(5)
-                TxtSaldoTitulo.Text = reader(9)
-                DataEmissao.Text = reader(3)
-                DataVencimento.Text = reader(4)
-                TxtRefEntrada.Text = reader(7)
-                idEntrada = reader(7)
-                idDuplicata = reader(0)
+                TxtIdRegistro.Text = reader("id")
+                TxtCodFornecedor.Text = reader("cod_fornecedor")
+                TxtNotaFiscal.Text = reader("documento")
+                TxtParcela.Text = reader("parcela")
+                TxtValorParcela.Text = reader("valor_parcela")
+                TxtSaldoTitulo.Text = reader("saldo_duplicata")
+                DataEmissao.Text = reader("data_emissao")
+                DataVencimento.Text = reader("data_vencimento")
+                TxtRefEntrada.Text = reader("id_entrada")
+                idEntrada = reader("id_entrada")
+                idDuplicata = reader("id")
                 reader.Close()
             Else
                 reader.Close()
@@ -473,10 +483,10 @@ Line1:
             reader2 = cmd2.ExecuteReader
             If reader2.Read = True Then
 
-                TxtNomeFornecedor.Text = reader2(3)
-                TxtCodPedido.Text = reader2(4)
-                TxtDescPed.Text = reader2(5)
-                TxtTotalTitulo.Text = reader2(8)
+                TxtNomeFornecedor.Text = reader2("fornecedor")
+                TxtCodPedido.Text = reader2("id_pedido")
+                TxtDescPed.Text = reader2("descricao")
+                TxtTotalTitulo.Text = reader2("valor")
                 reader2.Close()
             Else
                 reader2.Close()
@@ -488,7 +498,7 @@ Line1:
             Dim cmd3 As MySqlCommand
             Dim reader3 As MySqlDataReader
             Dim sql3 As String
-            sql3 = "SELECT MAX(id), SUM(valor_pago) , SUM(juros_multa) , SUM(descontos), SUM(total_pago), data_pagamento, MAX(status_nota), id_entrada FROM mvto_pagamentos WHERE id_duplicata= '" & idDuplicata & "' "
+            sql3 = "SELECT MAX(id)as id, SUM(valor_pago) as valor_pago, SUM(juros_multa) as juros_multa, SUM(descontos) as descontos, SUM(total_pago) as total_pago, data_pagamento, MAX(status_nota) as status_nota, id_entrada FROM mvto_pagamentos WHERE id_duplicata= '" & idDuplicata & "' "
             cmd3 = New MySqlCommand(sql3, con)
             reader3 = cmd3.ExecuteReader
             If reader3.Read = True Then
@@ -498,14 +508,15 @@ Line1:
                 TxtRegPagamento.Visible = True
                 LblRegPgto.Visible = True
 
-                TxtRegPagamento.Text = reader3(0)
-                TxtValorPago.Text = reader3(1)
-                TxtJurosMultas.Text = reader3(2)
-                TxtDescontos.Text = reader3(3)
-                TxtTotalPago.Text = reader3(4)
-                DataPagamento.Text = reader3(5)
-                TxtStatusTitulo.Text = reader3(6)
-                TxtRefEntrada.Text = reader3(7)
+                TxtRegPagamento.Text = reader3("id")
+                TxtValorPago.Text = reader3("valor_pago")
+                TxtJurosMultas.Text = reader3("juros_multa")
+                TxtDescontos.Text = reader3("descontos")
+                TxtTotalPago.Text = reader3("total_pago")
+                DataPagamento.Text = reader3("data_pagamento")
+                TxtStatusTitulo.Text = reader3("status_nota")
+                TxtRefEntrada.Text = reader3("id_entrada")
+
 
 
                 reader3.Close()
@@ -519,8 +530,9 @@ Line1:
 
             End If
 
-
+            reader3.Close()
         Catch ex As Exception
+
             MsgBox("Erro ao carregar dados!! ---- " + ex.Message)
         End Try
 
@@ -533,7 +545,7 @@ Line1:
             Dim reader3 As MySqlDataReader
             Dim sql3 As String
 
-            sql3 = "SELECT MAX(id), SUM(valor_pago) , SUM(juros_multa) , SUM(descontos), SUM(total_pago), data_pagamento, MAX(status_nota) , id_entrada FROM mvto_pagamentos WHERE id_duplicata= '" & TxtIdRegistro.Text & "'  "
+            sql3 = "SELECT MAX(id) as id , SUM(valor_pago) as valor_pago, SUM(juros_multa) as juros_multa , SUM(descontos)as descontos , SUM(total_pago) as total_pago, data_pagamento, MAX(status_nota) as status_nota, id_entrada FROM mvto_pagamentos WHERE id_duplicata= '" & TxtIdRegistro.Text & "'  "
 
             cmd3 = New MySqlCommand(sql3, con)
             reader3 = cmd3.ExecuteReader
@@ -545,14 +557,15 @@ Line1:
                 LblRegPgto.Visible = True
 
 
-                TxtRegPagamento.Text = reader3(0)
-                TxtValorPago.Text = reader3(1)
-                TxtJurosMultas.Text = reader3(2)
-                TxtDescontos.Text = reader3(3)
-                TxtTotalPago.Text = reader3(4)
-                DataPagamento.Text = reader3(5)
-                TxtStatusTitulo.Text = reader3(6)
-                TxtRefEntrada.Text = reader3(7)
+                TxtRegPagamento.Text = reader3("id")
+                TxtValorPago.Text = reader3("valor_pago")
+                TxtJurosMultas.Text = reader3("juros_multa")
+                TxtDescontos.Text = reader3("descontos")
+                TxtTotalPago.Text = reader3("total_pago")
+                DataPagamento.Text = reader3("data_pagamento")
+                TxtStatusTitulo.Text = reader3("status_nota")
+                TxtRefEntrada.Text = reader3("id_entrada")
+
 
                 reader3.Close()
             Else

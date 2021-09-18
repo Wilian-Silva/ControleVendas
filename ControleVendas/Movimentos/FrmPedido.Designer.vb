@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FrmPedido
     Inherits System.Windows.Forms.Form
 
     'Descartar substituições de formulário para limpar a lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class FrmPedido
     'OBSERVAÇÃO: o procedimento a seguir é exigido pelo Windows Form Designer
     'Pode ser modificado usando o Windows Form Designer.  
     'Não o modifique usando o editor de códigos.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmPedido))
@@ -73,6 +73,9 @@ Partial Class FrmPedido
         Me.PedidosTableAdapter = New ControleVendas.Controle_vendasDataSet3TableAdapters.pedidosTableAdapter()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.DataGrid = New System.Windows.Forms.DataGridView()
+        Me.TxtStatusPedido = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.BtnIncluir = New System.Windows.Forms.Button()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.Controle_vendasDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -84,6 +87,8 @@ Partial Class FrmPedido
         'GroupBox3
         '
         Me.GroupBox3.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox3.Controls.Add(Me.TxtStatusPedido)
+        Me.GroupBox3.Controls.Add(Me.Label6)
         Me.GroupBox3.Controls.Add(Me.TxtTotalPedido)
         Me.GroupBox3.Controls.Add(Me.Label9)
         Me.GroupBox3.Controls.Add(Me.TxtCodFornecedor)
@@ -110,7 +115,7 @@ Partial Class FrmPedido
         Me.GroupBox3.Controls.Add(Me.Label4)
         Me.GroupBox3.Location = New System.Drawing.Point(19, 57)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(650, 132)
+        Me.GroupBox3.Size = New System.Drawing.Size(683, 132)
         Me.GroupBox3.TabIndex = 134
         Me.GroupBox3.TabStop = False
         '
@@ -118,10 +123,10 @@ Partial Class FrmPedido
         '
         Me.TxtTotalPedido.BackColor = System.Drawing.Color.White
         Me.TxtTotalPedido.Enabled = False
-        Me.TxtTotalPedido.Location = New System.Drawing.Point(536, 95)
+        Me.TxtTotalPedido.Location = New System.Drawing.Point(468, 95)
         Me.TxtTotalPedido.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtTotalPedido.Name = "TxtTotalPedido"
-        Me.TxtTotalPedido.Size = New System.Drawing.Size(100, 20)
+        Me.TxtTotalPedido.Size = New System.Drawing.Size(84, 20)
         Me.TxtTotalPedido.TabIndex = 142
         '
         'Label9
@@ -129,7 +134,7 @@ Partial Class FrmPedido
         Me.Label9.AutoSize = True
         Me.Label9.BackColor = System.Drawing.Color.Transparent
         Me.Label9.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(452, 97)
+        Me.Label9.Location = New System.Drawing.Point(384, 97)
         Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(84, 16)
@@ -249,7 +254,7 @@ Partial Class FrmPedido
         Me.BtnPesqProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnPesqProduto.ForeColor = System.Drawing.Color.Transparent
         Me.BtnPesqProduto.Image = CType(resources.GetObject("BtnPesqProduto.Image"), System.Drawing.Image)
-        Me.BtnPesqProduto.Location = New System.Drawing.Point(617, 54)
+        Me.BtnPesqProduto.Location = New System.Drawing.Point(644, 54)
         Me.BtnPesqProduto.Name = "BtnPesqProduto"
         Me.BtnPesqProduto.Size = New System.Drawing.Size(22, 22)
         Me.BtnPesqProduto.TabIndex = 136
@@ -275,7 +280,7 @@ Partial Class FrmPedido
         Me.TxtPedido.Location = New System.Drawing.Point(310, 18)
         Me.TxtPedido.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtPedido.Name = "TxtPedido"
-        Me.TxtPedido.Size = New System.Drawing.Size(125, 20)
+        Me.TxtPedido.Size = New System.Drawing.Size(155, 20)
         Me.TxtPedido.TabIndex = 2
         '
         'Label12
@@ -283,7 +288,7 @@ Partial Class FrmPedido
         Me.Label12.AutoSize = True
         Me.Label12.BackColor = System.Drawing.Color.Transparent
         Me.Label12.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(442, 20)
+        Me.Label12.Location = New System.Drawing.Point(473, 20)
         Me.Label12.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(90, 16)
@@ -294,7 +299,7 @@ Partial Class FrmPedido
         '
         Me.DataPed.Enabled = False
         Me.DataPed.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DataPed.Location = New System.Drawing.Point(534, 18)
+        Me.DataPed.Location = New System.Drawing.Point(565, 18)
         Me.DataPed.Name = "DataPed"
         Me.DataPed.Size = New System.Drawing.Size(103, 20)
         Me.DataPed.TabIndex = 1
@@ -306,7 +311,7 @@ Partial Class FrmPedido
         Me.TxtProduto.Location = New System.Drawing.Point(430, 55)
         Me.TxtProduto.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtProduto.Name = "TxtProduto"
-        Me.TxtProduto.Size = New System.Drawing.Size(184, 20)
+        Me.TxtProduto.Size = New System.Drawing.Size(207, 20)
         Me.TxtProduto.TabIndex = 3
         '
         'Label1
@@ -325,10 +330,10 @@ Partial Class FrmPedido
         '
         Me.TxtValorTotal.BackColor = System.Drawing.Color.White
         Me.TxtValorTotal.Enabled = False
-        Me.TxtValorTotal.Location = New System.Drawing.Point(346, 95)
+        Me.TxtValorTotal.Location = New System.Drawing.Point(297, 95)
         Me.TxtValorTotal.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtValorTotal.Name = "TxtValorTotal"
-        Me.TxtValorTotal.Size = New System.Drawing.Size(100, 20)
+        Me.TxtValorTotal.Size = New System.Drawing.Size(83, 20)
         Me.TxtValorTotal.TabIndex = 8
         '
         'Label3
@@ -336,7 +341,7 @@ Partial Class FrmPedido
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(47, 97)
+        Me.Label3.Location = New System.Drawing.Point(6, 97)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(32, 16)
@@ -348,7 +353,7 @@ Partial Class FrmPedido
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(267, 97)
+        Me.Label5.Location = New System.Drawing.Point(217, 97)
         Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(76, 16)
@@ -359,7 +364,7 @@ Partial Class FrmPedido
         '
         Me.TxtQuantidade.BackColor = System.Drawing.Color.White
         Me.TxtQuantidade.Enabled = False
-        Me.TxtQuantidade.Location = New System.Drawing.Point(82, 95)
+        Me.TxtQuantidade.Location = New System.Drawing.Point(41, 95)
         Me.TxtQuantidade.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtQuantidade.Name = "TxtQuantidade"
         Me.TxtQuantidade.Size = New System.Drawing.Size(42, 20)
@@ -370,7 +375,7 @@ Partial Class FrmPedido
         '
         Me.TxtValorUnit.BackColor = System.Drawing.Color.White
         Me.TxtValorUnit.Enabled = False
-        Me.TxtValorUnit.Location = New System.Drawing.Point(193, 95)
+        Me.TxtValorUnit.Location = New System.Drawing.Point(152, 95)
         Me.TxtValorUnit.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtValorUnit.Name = "TxtValorUnit"
         Me.TxtValorUnit.Size = New System.Drawing.Size(59, 20)
@@ -381,7 +386,7 @@ Partial Class FrmPedido
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(133, 97)
+        Me.Label4.Location = New System.Drawing.Point(92, 97)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(58, 16)
@@ -408,7 +413,7 @@ Partial Class FrmPedido
         Me.GroupBox2.Controls.Add(Me.BtnSalvar)
         Me.GroupBox2.Controls.Add(Me.BtnSair)
         Me.GroupBox2.Controls.Add(Me.BtnExcluir)
-        Me.GroupBox2.Location = New System.Drawing.Point(450, 7)
+        Me.GroupBox2.Location = New System.Drawing.Point(483, 7)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(219, 50)
         Me.GroupBox2.TabIndex = 132
@@ -531,7 +536,7 @@ Partial Class FrmPedido
         Me.BtnNovo.Name = "BtnNovo"
         Me.BtnNovo.Size = New System.Drawing.Size(100, 30)
         Me.BtnNovo.TabIndex = 156
-        Me.BtnNovo.Text = "Incluir"
+        Me.BtnNovo.Text = "Novo"
         Me.ToolTip.SetToolTip(Me.BtnNovo, "Incluir novo pedido")
         Me.BtnNovo.UseVisualStyleBackColor = True
         '
@@ -685,15 +690,51 @@ Partial Class FrmPedido
         DataGridViewCellStyle3.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
         Me.DataGrid.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGrid.Size = New System.Drawing.Size(650, 190)
+        Me.DataGrid.Size = New System.Drawing.Size(683, 190)
         Me.DataGrid.TabIndex = 166
+        '
+        'TxtStatusPedido
+        '
+        Me.TxtStatusPedido.BackColor = System.Drawing.Color.White
+        Me.TxtStatusPedido.Enabled = False
+        Me.TxtStatusPedido.Location = New System.Drawing.Point(611, 96)
+        Me.TxtStatusPedido.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtStatusPedido.Name = "TxtStatusPedido"
+        Me.TxtStatusPedido.Size = New System.Drawing.Size(55, 20)
+        Me.TxtStatusPedido.TabIndex = 144
+        Me.TxtStatusPedido.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
+        Me.Label6.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(560, 98)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(49, 16)
+        Me.Label6.TabIndex = 145
+        Me.Label6.Text = "Status:"
+        '
+        'BtnIncluir
+        '
+        Me.BtnIncluir.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnIncluir.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.BtnIncluir.Location = New System.Drawing.Point(415, 393)
+        Me.BtnIncluir.Name = "BtnIncluir"
+        Me.BtnIncluir.Size = New System.Drawing.Size(100, 30)
+        Me.BtnIncluir.TabIndex = 167
+        Me.BtnIncluir.Text = "Incluir"
+        Me.ToolTip.SetToolTip(Me.BtnIncluir, "Eliminar item do pedido")
+        Me.BtnIncluir.UseVisualStyleBackColor = True
         '
         'FrmPedido
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(690, 449)
+        Me.ClientSize = New System.Drawing.Size(725, 451)
+        Me.Controls.Add(Me.BtnIncluir)
         Me.Controls.Add(Me.DataGrid)
         Me.Controls.Add(Me.BtnOk)
         Me.Controls.Add(Me.BtnExcluirItemPedido)
@@ -766,4 +807,7 @@ Partial Class FrmPedido
     Friend WithEvents BtnOk As Button
     Friend WithEvents DataGrid As DataGridView
     Friend WithEvents BtnPesqPedido As Button
+    Friend WithEvents TxtStatusPedido As TextBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents BtnIncluir As Button
 End Class

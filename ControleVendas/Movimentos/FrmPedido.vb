@@ -66,7 +66,7 @@ Public Class FrmPedido
         DataGrid.DataSource = Nothing
         IncluirPedido = ""
         editarpedido = ""
-
+        TxtStatusPedido.Text = ""
     End Sub
 
     Private Sub LimparCampossemdg()
@@ -114,6 +114,7 @@ Public Class FrmPedido
         DataGrid.Columns(9).HeaderText = "Qtd."
         DataGrid.Columns(10).HeaderText = "Vlr. Unit."
         DataGrid.Columns(11).HeaderText = "Valor Total"
+        DataGrid.Columns(12).HeaderText = "Status"
 
         DataGrid.Columns(0).Width = 1
         DataGrid.Columns(1).Width = 50
@@ -125,6 +126,7 @@ Public Class FrmPedido
         DataGrid.Columns(7).Width = 50
         DataGrid.Columns(8).Width = 170
         DataGrid.Columns(9).Width = 40
+        DataGrid.Columns(12).Width = 60
 
         DataGrid.Columns(4).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid.Columns(5).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
@@ -157,15 +159,41 @@ Public Class FrmPedido
         TxtQuantidade.Text = DataGrid.CurrentRow.Cells(9).Value
         TxtValorUnit.Text = DataGrid.CurrentRow.Cells(10).Value
         TxtValorTotal.Text = DataGrid.CurrentRow.Cells(11).Value
-
+        TxtStatusPedido.Text = DataGrid.CurrentRow.Cells(12).Value
     End Sub
     Sub ListarTudoUltimoPedido()
+        ' Stop
+        Try
+            Abrir()
+
+            'VERIFICAR ULTIMO ID NO BANCO 
+            Dim cmdp As MySqlCommand
+            Dim sql1 As String
+            Dim ultima As MySqlDataReader
+
+            sql1 = "SELECT pedido FROM pedidos WHERE pedido=(SELECT MAX(pedido) FROM pedidos) "
+            cmdp = New MySqlCommand(sql1, con)
+            ultima = cmdp.ExecuteReader()
+
+            If (ultima.Read()) Then
+                maximo = ultima("pedido")
+                ultima.Close()
+            Else
+                ultima.Close()
+            End If
+
+        Catch ex As Exception
+            MsgBox("Erro ao Salvar!! " + ex.Message)
+        End Try
+
+
+
         Try
             Abrir()
             Dim sql As String
             Dim dt As New DataTable
             Dim da As MySqlDataAdapter
-            sql = "SELECT * FROM pedidos WHERE pedido=(SELECT MAX(pedido) FROM pedidos) order by item asc "
+            sql = "SELECT p.id, p.pedido, p.item, p.descricao, p.data_emissao, p.cod_fornecedor, p.fornecedor, p.cod_produto, p.produto, p.quantidade, p.valor_unitario, p.valor_total, c.status FROM pedidos as p INNER JOIN pedido_cabecalho as c ON p.pedido = c.id WHERE p.pedido= '" & maximo & "' order by p.item asc "
             da = New MySqlDataAdapter(sql, con)
             da.Fill(dt)
             DataGrid.DataSource = dt
@@ -181,6 +209,8 @@ Public Class FrmPedido
         Catch ex As Exception
             MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
         End Try
+
+
 
     End Sub
 
@@ -271,8 +301,10 @@ Public Class FrmPedido
                 readerped.Close()
                 MsgBox("Este pedido " + TxtIdRegistro.Text + " já está cadastrado!!", MsgBoxStyle.Information, "Pedido Já Cadastrado")
                 Exit Sub
+            Else
+                readerped.Close()
             End If
-            readerped.Close()
+
 
             Try
                 'PROGRAMANDO INSERÇÃO DE REGISTRO NO BANCO
@@ -376,7 +408,10 @@ Public Class FrmPedido
 
     End Sub
     Private Sub BtnExluir_Click(sender As Object, e As EventArgs) Handles BtnExcluir.Click
-
+        If TxtStatusPedido.Text = "Fechado" Then
+            MsgBox("Pedido fechado, não pode ser exluído!!", MsgBoxStyle.Information, "Excluir Pedido")
+            Exit Sub
+        End If
 
         If TxtIdRegistro.Text <> 0 Then
 
@@ -557,7 +592,10 @@ Public Class FrmPedido
     End Sub
 
     Private Sub BtnEditar_Click(sender As Object, e As EventArgs) Handles BtnEditar.Click
-
+        If TxtStatusPedido.Text = "Fechado" Then
+            MsgBox("Pedido fechado, não pode ser editado!!", MsgBoxStyle.Information, "Editar Pedido")
+            Exit Sub
+        End If
 
         If TxtItem.Text <> "" Then
 
@@ -686,7 +724,10 @@ Public Class FrmPedido
 
 
     Private Sub BtnExcluirItemPedido_Click(sender As Object, e As EventArgs) Handles BtnExcluirItemPedido.Click
-
+        If TxtStatusPedido.Text = "Fechado" Then
+            MsgBox("Pedido fechado, não pode ser exluído!!", MsgBoxStyle.Information, "Excluir Pedido")
+            Exit Sub
+        End If
         If IncluirPedido = "True" Then
             DataGrid.Rows.Remove(DataGrid.CurrentRow)
         Else
@@ -822,7 +863,7 @@ Line1:
                 proximo = proximo + 1
                 GoTo Line1
             End If
-            reader.Close()
+
 
         Catch ex As Exception
             MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
@@ -837,7 +878,7 @@ Line1:
             Dim sql As String
             Dim dt As New DataTable
             Dim da As MySqlDataAdapter
-            sql = "SELECT * FROM pedidos WHERE pedido = '" & proximo & "' order by item asc "
+            sql = "SELECT p.id, p.pedido, p.item, p.descricao, p.data_emissao, p.cod_fornecedor, p.fornecedor, p.cod_produto, p.produto, p.quantidade, p.valor_unitario, p.valor_total, c.status FROM pedidos as p INNER JOIN pedido_cabecalho as c ON p.pedido = c.id WHERE p.pedido= '" & proximo & "' order by p.item asc "
             da = New MySqlDataAdapter(sql, con)
             da.Fill(dt)
             DataGrid.DataSource = dt
@@ -886,7 +927,7 @@ Line1:
                 anterior = anterior - 1
                 GoTo Line1
             End If
-            reader.Close()
+
 
 
         Catch ex As Exception
@@ -904,7 +945,7 @@ Line1:
             Dim sql As String
             Dim dt As New DataTable
             Dim da As MySqlDataAdapter
-            sql = "SELECT * FROM pedidos WHERE pedido = '" & anterior & "' order by item asc "
+            sql = "SELECT p.id, p.pedido, p.item, p.descricao, p.data_emissao, p.cod_fornecedor, p.fornecedor, p.cod_produto, p.produto, p.quantidade, p.valor_unitario, p.valor_total, c.status FROM pedidos as p INNER JOIN pedido_cabecalho as c ON p.pedido = c.id WHERE p.pedido= '" & anterior & "' order by p.item asc "
             da = New MySqlDataAdapter(sql, con)
             da.Fill(dt)
             DataGrid.DataSource = dt
@@ -922,5 +963,29 @@ Line1:
         End Try
     End Sub
 
+    Private Sub BtnIncluir_Click(sender As Object, e As EventArgs) Handles BtnIncluir.Click
 
+        Try
+            Abrir()
+            Dim cmdp As MySqlCommand
+            Dim sql As String
+            Dim ultima As MySqlDataReader
+            Dim linhaPed As Integer
+
+            sql = "SELECT MAX(item) AS Item FROM pedidos WHERE pedido = '" & TxtIdRegistro.Text & "' "
+
+            cmdp = New MySqlCommand(sql, con)
+            ultima = cmdp.ExecuteReader()
+
+            If (ultima.Read()) Then
+                linhaPed = ultima("item")
+                ultima.Close()
+            Else
+                ultima.Close()
+            End If
+
+        Catch ex As Exception
+            MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
+        End Try
+    End Sub
 End Class

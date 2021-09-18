@@ -252,8 +252,10 @@ Public Class FrmFornecedor
                             MsgBox("Este CFP/CNPJ " + TxtCPF.Text + "/" + TxtCNPJ.Text + " já está cadastrado!!", MsgBoxStyle.Information, "CFP/CNPJ Já Cadastrado")
                             TxtNome.Focus()
                             Exit Sub
+                        Else
+                            readerUSU.Close()
                         End If
-                        readerUSU.Close()
+
 
 
 
@@ -474,8 +476,10 @@ Public Class FrmFornecedor
                 If (ultima.Read()) Then
                     maximo = ultima("id")
                     ultima.Close()
+                Else
+                    ultima.Close()
                 End If
-                ultima.Close()
+
 
             Catch ex As Exception
                 MsgBox("Erro ao Salvar!! " + ex.Message)
@@ -513,7 +517,7 @@ Line1:
                 proximo = proximo + 1
                 GoTo Line1
             End If
-            reader.Close()
+
 
         Catch ex As Exception
             MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
@@ -575,7 +579,7 @@ Line1:
                 anterior = anterior - 1
                 GoTo Line1
             End If
-            reader.Close()
+
 
 
         Catch ex As Exception
