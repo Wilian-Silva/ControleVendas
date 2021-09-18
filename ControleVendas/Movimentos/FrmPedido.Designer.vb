@@ -24,9 +24,9 @@ Partial Class FrmPedido
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmPedido))
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.TxtStatusPedido = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -54,7 +54,6 @@ Partial Class FrmPedido
         Me.TxtQuantidade = New System.Windows.Forms.TextBox()
         Me.TxtValorUnit = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.BtnCacelar = New System.Windows.Forms.Button()
         Me.BtnLimpar = New System.Windows.Forms.Button()
         Me.BtnSalvar = New System.Windows.Forms.Button()
@@ -75,8 +74,8 @@ Partial Class FrmPedido
         Me.PedidosTableAdapter = New ControleVendas.Controle_vendasDataSet3TableAdapters.pedidosTableAdapter()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.DataGrid = New System.Windows.Forms.DataGridView()
+        Me.BtnCarregar = New System.Windows.Forms.Button()
         Me.GroupBox3.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
         CType(Me.Controle_vendasDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PedidosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -415,20 +414,6 @@ Partial Class FrmPedido
         Me.Label4.TabIndex = 74
         Me.Label4.Text = "Vlr. Unit."
         '
-        'GroupBox2
-        '
-        Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox2.Controls.Add(Me.BtnCacelar)
-        Me.GroupBox2.Controls.Add(Me.BtnLimpar)
-        Me.GroupBox2.Controls.Add(Me.BtnSalvar)
-        Me.GroupBox2.Controls.Add(Me.BtnSair)
-        Me.GroupBox2.Controls.Add(Me.BtnExcluir)
-        Me.GroupBox2.Location = New System.Drawing.Point(483, 7)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(219, 50)
-        Me.GroupBox2.TabIndex = 132
-        Me.GroupBox2.TabStop = False
-        '
         'BtnCacelar
         '
         Me.BtnCacelar.AccessibleDescription = ""
@@ -441,7 +426,7 @@ Partial Class FrmPedido
         Me.BtnCacelar.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnCacelar.ForeColor = System.Drawing.Color.Transparent
         Me.BtnCacelar.Image = CType(resources.GetObject("BtnCacelar.Image"), System.Drawing.Image)
-        Me.BtnCacelar.Location = New System.Drawing.Point(52, 9)
+        Me.BtnCacelar.Location = New System.Drawing.Point(519, 9)
         Me.BtnCacelar.Name = "BtnCacelar"
         Me.BtnCacelar.Size = New System.Drawing.Size(35, 35)
         Me.BtnCacelar.TabIndex = 169
@@ -461,7 +446,7 @@ Partial Class FrmPedido
         Me.BtnLimpar.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnLimpar.ForeColor = System.Drawing.Color.Transparent
         Me.BtnLimpar.Image = CType(resources.GetObject("BtnLimpar.Image"), System.Drawing.Image)
-        Me.BtnLimpar.Location = New System.Drawing.Point(8, 9)
+        Me.BtnLimpar.Location = New System.Drawing.Point(475, 9)
         Me.BtnLimpar.Name = "BtnLimpar"
         Me.BtnLimpar.Size = New System.Drawing.Size(35, 35)
         Me.BtnLimpar.TabIndex = 168
@@ -481,7 +466,7 @@ Partial Class FrmPedido
         Me.BtnSalvar.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSalvar.ForeColor = System.Drawing.Color.Transparent
         Me.BtnSalvar.Image = CType(resources.GetObject("BtnSalvar.Image"), System.Drawing.Image)
-        Me.BtnSalvar.Location = New System.Drawing.Point(94, 10)
+        Me.BtnSalvar.Location = New System.Drawing.Point(561, 10)
         Me.BtnSalvar.Name = "BtnSalvar"
         Me.BtnSalvar.Size = New System.Drawing.Size(35, 35)
         Me.BtnSalvar.TabIndex = 166
@@ -501,7 +486,7 @@ Partial Class FrmPedido
         Me.BtnSair.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSair.ForeColor = System.Drawing.Color.Transparent
         Me.BtnSair.Image = CType(resources.GetObject("BtnSair.Image"), System.Drawing.Image)
-        Me.BtnSair.Location = New System.Drawing.Point(175, 9)
+        Me.BtnSair.Location = New System.Drawing.Point(642, 9)
         Me.BtnSair.Name = "BtnSair"
         Me.BtnSair.Size = New System.Drawing.Size(35, 35)
         Me.BtnSair.TabIndex = 165
@@ -521,7 +506,7 @@ Partial Class FrmPedido
         Me.BtnExcluir.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnExcluir.ForeColor = System.Drawing.Color.Transparent
         Me.BtnExcluir.Image = CType(resources.GetObject("BtnExcluir.Image"), System.Drawing.Image)
-        Me.BtnExcluir.Location = New System.Drawing.Point(137, 8)
+        Me.BtnExcluir.Location = New System.Drawing.Point(604, 8)
         Me.BtnExcluir.Name = "BtnExcluir"
         Me.BtnExcluir.Size = New System.Drawing.Size(35, 35)
         Me.BtnExcluir.TabIndex = 164
@@ -532,7 +517,7 @@ Partial Class FrmPedido
         'TxtNumPedido
         '
         Me.TxtNumPedido.Enabled = False
-        Me.TxtNumPedido.Location = New System.Drawing.Point(124, 20)
+        Me.TxtNumPedido.Location = New System.Drawing.Point(220, 18)
         Me.TxtNumPedido.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtNumPedido.Name = "TxtNumPedido"
         Me.TxtNumPedido.Size = New System.Drawing.Size(29, 20)
@@ -648,7 +633,7 @@ Partial Class FrmPedido
         Me.BtnIncluir.Size = New System.Drawing.Size(100, 30)
         Me.BtnIncluir.TabIndex = 167
         Me.BtnIncluir.Text = "Incluir"
-        Me.ToolTip.SetToolTip(Me.BtnIncluir, "Eliminar item do pedido")
+        Me.ToolTip.SetToolTip(Me.BtnIncluir, "Inlcuir item do pedido")
         Me.BtnIncluir.UseVisualStyleBackColor = True
         '
         'Controle_vendasDataSet
@@ -668,13 +653,19 @@ Partial Class FrmPedido
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox1.Controls.Add(Me.BtnCacelar)
+        Me.GroupBox1.Controls.Add(Me.BtnCarregar)
+        Me.GroupBox1.Controls.Add(Me.BtnLimpar)
         Me.GroupBox1.Controls.Add(Me.BtnProximo)
+        Me.GroupBox1.Controls.Add(Me.BtnSalvar)
+        Me.GroupBox1.Controls.Add(Me.BtnSair)
         Me.GroupBox1.Controls.Add(Me.BtnAnterior)
+        Me.GroupBox1.Controls.Add(Me.BtnExcluir)
         Me.GroupBox1.Controls.Add(Me.BtnPesqPedido)
         Me.GroupBox1.Controls.Add(Me.TxtNumPedido)
         Me.GroupBox1.Location = New System.Drawing.Point(19, 7)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(167, 50)
+        Me.GroupBox1.Size = New System.Drawing.Size(683, 50)
         Me.GroupBox1.TabIndex = 136
         Me.GroupBox1.TabStop = False
         '
@@ -685,35 +676,55 @@ Partial Class FrmPedido
         Me.DataGrid.AllowUserToResizeColumns = False
         Me.DataGrid.AllowUserToResizeRows = False
         Me.DataGrid.BackgroundColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.LightGray
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ControlDark
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.LightGray
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.ControlDark
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGrid.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGrid.DefaultCellStyle = DataGridViewCellStyle8
         Me.DataGrid.EnableHeadersVisualStyles = False
         Me.DataGrid.Location = New System.Drawing.Point(19, 203)
         Me.DataGrid.MultiSelect = False
         Me.DataGrid.Name = "DataGrid"
         Me.DataGrid.ReadOnly = True
         Me.DataGrid.RowHeadersVisible = False
-        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.ControlLightLight
-        DataGridViewCellStyle6.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.DataGrid.RowsDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.ControlLightLight
+        DataGridViewCellStyle9.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.DataGrid.RowsDefaultCellStyle = DataGridViewCellStyle9
         Me.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGrid.Size = New System.Drawing.Size(683, 190)
         Me.DataGrid.TabIndex = 166
+        '
+        'BtnCarregar
+        '
+        Me.BtnCarregar.AccessibleDescription = ""
+        Me.BtnCarregar.AccessibleName = "Adicionar"
+        Me.BtnCarregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.BtnCarregar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnCarregar.FlatAppearance.BorderSize = 0
+        Me.BtnCarregar.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BtnCarregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnCarregar.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnCarregar.ForeColor = System.Drawing.Color.Transparent
+        Me.BtnCarregar.Image = CType(resources.GetObject("BtnCarregar.Image"), System.Drawing.Image)
+        Me.BtnCarregar.Location = New System.Drawing.Point(123, 11)
+        Me.BtnCarregar.Name = "BtnCarregar"
+        Me.BtnCarregar.Size = New System.Drawing.Size(35, 35)
+        Me.BtnCarregar.TabIndex = 163
+        Me.BtnCarregar.TabStop = False
+        Me.ToolTip.SetToolTip(Me.BtnCarregar, "Atualizar")
+        Me.BtnCarregar.UseVisualStyleBackColor = True
         '
         'FrmPedido
         '
@@ -729,7 +740,6 @@ Partial Class FrmPedido
         Me.Controls.Add(Me.BtnNovo)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.GroupBox3)
-        Me.Controls.Add(Me.GroupBox2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
@@ -738,7 +748,6 @@ Partial Class FrmPedido
         Me.Text = "Incluir Pedido de Compra"
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
-        Me.GroupBox2.ResumeLayout(False)
         CType(Me.Controle_vendasDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PedidosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
@@ -763,7 +772,6 @@ Partial Class FrmPedido
     Friend WithEvents TxtQuantidade As TextBox
     Friend WithEvents TxtValorUnit As TextBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents ToolTip As ToolTip
     Friend WithEvents BtnPesqProduto As Button
     Friend WithEvents Controle_vendasDataSet As Controle_vendasDataSet3
@@ -796,4 +804,5 @@ Partial Class FrmPedido
     Friend WithEvents TxtStatusPedido As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents BtnIncluir As Button
+    Friend WithEvents BtnCarregar As Button
 End Class

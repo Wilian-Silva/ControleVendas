@@ -131,7 +131,7 @@ Public Class FrmPedido
         DataGrid.Columns(5).Width = 50
         DataGrid.Columns(6).Width = 120
         DataGrid.Columns(7).Width = 50
-        DataGrid.Columns(8).Width = 170
+        DataGrid.Columns(8).Width = 200
         DataGrid.Columns(9).Width = 40
         DataGrid.Columns(12).Width = 60
 
@@ -475,13 +475,27 @@ Public Class FrmPedido
     Private Sub TxtQuantidade_TextChanged(sender As Object, e As EventArgs) Handles TxtQuantidade.TextChanged
 
         On Error Resume Next
-        TxtValorTotal.Text = TxtValorUnit.Text * TxtQuantidade.Text
+        Dim dbl1 As Double = 0
+        Dim dbl2 As Double = 0
+        Double.TryParse(TxtValorUnit.Text, dbl1)
+        Double.TryParse(TxtQuantidade.Text, dbl2)
+
+        TxtValorTotal.Text = (dbl1 * dbl2).ToString("n")
+
+        'TxtValorTotal.Text = TxtValorUnit.Text * TxtQuantidade.Text
         'TxtValorTotal.Text = Convert.ToDouble(TxtValorTotal.Text).ToString("C")
 
     End Sub
     Private Sub TxtValorUnit_TextChanged(sender As Object, e As EventArgs) Handles TxtValorUnit.TextChanged
         On Error Resume Next
-        TxtValorTotal.Text = TxtValorUnit.Text * TxtQuantidade.Text
+        Dim dbl1 As Double = 0
+        Dim dbl2 As Double = 0
+        Double.TryParse(TxtValorUnit.Text, dbl1)
+        Double.TryParse(TxtQuantidade.Text, dbl2)
+
+        TxtValorTotal.Text = (dbl1 * dbl2).ToString("n")
+
+        'TxtValorTotal.Text = TxtValorUnit.Text * TxtQuantidade.Text
         'TxtValorTotal.Text = Convert.ToDouble(TxtValorTotal.Text).ToString("C")
     End Sub
     Private Sub BtndAdicionarItem_Click(sender As Object, e As EventArgs) Handles BtnOk.Click
@@ -948,6 +962,7 @@ Line1:
 
     Sub RegistroAnterior()
 
+
         Try
             Abrir()
             Dim sql As String
@@ -972,13 +987,20 @@ Line1:
     End Sub
 
     Private Sub BtnIncluir_Click(sender As Object, e As EventArgs) Handles BtnIncluir.Click
+        Dim linhaPed As Integer
+
+        If TxtStatusPedido.Text = "Fechado" Then
+            MsgBox("Pedido fechado, não pode ser alterado!!", MsgBoxStyle.Information, "Pedido Fechado")
+
+            Exit Sub
+        End If
 
         Try
             Abrir()
             Dim cmdp As MySqlCommand
             Dim sql As String
             Dim ultima As MySqlDataReader
-            Dim linhaPed As Integer
+
 
             sql = "SELECT MAX(item) AS Item FROM pedidos WHERE pedido = '" & TxtIdRegistro.Text & "' "
 
@@ -995,7 +1017,51 @@ Line1:
         Catch ex As Exception
             MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
         End Try
+
+
+        Dim form = New FrmAddItemPedido
+
+        form.TxtItem.Text = linhaPed + 1
+        form.TxtIdRegistro.Text = TxtIdRegistro.Text
+        form.TxtPedido.Text = TxtPedido.Text
+        form.TxtCodFornecedor.Text = TxtCodFornecedor.Text
+        form.TxtFornecedor.Text = TxtFornecedor.Text
+        form.DataPed.Value = DataPed.Value
+        form.TxtStatusPedido.Text = TxtStatusPedido.Text
+
+        form.ShowDialog()
+
     End Sub
 
+    Private Sub BtnCarregar_Click(sender As Object, e As EventArgs) Handles BtnCarregar.Click
+        AtualizarForm()
+    End Sub
+    Sub AtualizarForm()
 
+        Try
+
+            Abrir()
+            Dim sql As String
+            Dim dt As New DataTable
+            Dim da As MySqlDataAdapter
+            sql = "SELECT p.id, p.pedido, p.item, p.descricao, p.data_emissao, p.cod_fornecedor, p.fornecedor, p.cod_produto, p.produto, p.quantidade, p.valor_unitario, p.valor_total, c.status FROM pedidos as p INNER JOIN pedido_cabecalho as c ON p.pedido = c.id WHERE p.pedido= '" & TxtIdRegistro.Text & "' order by p.item asc "
+            da = New MySqlDataAdapter(sql, con)
+            da.Fill(dt)
+            DataGrid.DataSource = dt
+
+            FormatarGrid()
+
+            If DataGrid.Rows.Count > 0 Then
+                DadosCabecalho()
+            End If
+
+            TotalDatagrid()
+
+        Catch ex As Exception
+            MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
+        End Try
+
+
+
+    End Sub
 End Class

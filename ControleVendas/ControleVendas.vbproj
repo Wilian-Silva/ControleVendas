@@ -252,6 +252,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ModuloConexao.vb" />
+    <Compile Include="Movimentos\FrmAddItemPedido.Designer.vb">
+      <DependentUpon>FrmAddItemPedido.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentos\FrmAddItemPedido.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Movimentos\FrmDuplicatas.Designer.vb">
       <DependentUpon>FrmDuplicatas.vb</DependentUpon>
     </Compile>
@@ -412,6 +418,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTelaInicial.resx">
       <DependentUpon>FrmTelaInicial.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentos\FrmAddItemPedido.resx">
+      <DependentUpon>FrmAddItemPedido.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Movimentos\FrmDuplicatas.resx">
       <DependentUpon>FrmDuplicatas.vb</DependentUpon>
