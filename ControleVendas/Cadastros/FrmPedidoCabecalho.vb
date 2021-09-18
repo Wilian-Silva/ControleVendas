@@ -2,87 +2,6 @@
 
 Public Class FrmPedidoCabecalho
 
-
-    Sub Listar()
-
-        'BUSCAR INFORMAÇÕES DA TABELA E MOSTRAR NO DATAGRID
-        Try
-            Abrir()
-
-            Dim sql As String
-            Dim dt As New DataTable
-            Dim da As MySqlDataAdapter
-
-            Dim data1 As String
-
-            data1 = DataInicial.Value.ToString("yyyy-MM-dd")
-
-
-            sql = "SELECT * FROM pedido_cabecalho WHERE data = '" & data1 & "' order by id desc"
-            da = New MySqlDataAdapter(sql, con)
-            da.Fill(dt)
-            DataGrid.DataSource = dt
-
-
-            FormatarGrid()
-
-        Catch ex As Exception
-            MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
-        End Try
-
-
-    End Sub
-    Sub ListarPorFornecedor()
-
-        'BUSCAR INFORMAÇÕES DA TABELA E MOSTRAR NO DATAGRID
-        Try
-            Abrir()
-
-            Dim sql As String
-            Dim dt As New DataTable
-            Dim da As MySqlDataAdapter
-
-            sql = "SELECT * FROM pedido_cabecalho WHERE fornecedor LIKE '" & TxtPesquisar.Text & "%' order by id desc"
-            da = New MySqlDataAdapter(sql, con)
-            da.Fill(dt)
-            DataGrid.DataSource = dt
-
-
-            FormatarGrid()
-
-
-        Catch ex As Exception
-            MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
-        End Try
-
-
-    End Sub
-
-    Sub ListarPorPedido()
-
-        'BUSCAR INFORMAÇÕES DA TABELA E MOSTRAR NO DATAGRID
-        Try
-            Abrir()
-
-            Dim sql As String
-            Dim dt As New DataTable
-            Dim da As MySqlDataAdapter
-
-            sql = "SELECT * FROM pedido_cabecalho WHERE pedido LIKE '" & TxtPesqPedido.Text & "%' order by id desc"
-            da = New MySqlDataAdapter(sql, con)
-            da.Fill(dt)
-            DataGrid.DataSource = dt
-
-
-            FormatarGrid()
-
-
-        Catch ex As Exception
-            MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
-        End Try
-
-
-    End Sub
     Sub ListarTudo()
 
         'BUSCAR INFORMAÇÕES DA TABELA E MOSTRAR NO DATAGRID
@@ -99,7 +18,6 @@ Public Class FrmPedidoCabecalho
             DataGrid.DataSource = dt
 
             FormatarGrid()
-
 
         Catch ex As Exception
             MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
@@ -145,6 +63,12 @@ Public Class FrmPedidoCabecalho
     Private Sub FrmPedidoCabecalho_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         If pedidoPesquisar = "True" Then
+
+            GboxPesPed.Visible = True
+
+        End If
+
+        If utilizarPedido = "True" Then
 
             GboxPesPed.Visible = True
 
@@ -226,31 +150,17 @@ Public Class FrmPedidoCabecalho
 
     End Sub
 
-    Private Sub FrmPedidoCabecalho_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
-
-
-    End Sub
-
-    Private Sub DataInicial_ValueChanged(sender As Object, e As EventArgs) Handles DataInicial.ValueChanged
-        Listar()
-        FormatarGrid()
-    End Sub
-
-    Private Sub TxtPesquisar_TextChanged(sender As Object, e As EventArgs) Handles TxtPesquisar.TextChanged
-        ListarPorFornecedor()
-    End Sub
-
-    Private Sub TxtPesqPedido_TextChanged(sender As Object, e As EventArgs) Handles TxtPesqPedido.TextChanged
-        ListarPorPedido()
-    End Sub
-
     Private Sub BtnSelecionarItem_Click(sender As Object, e As EventArgs) Handles BtnSelecionarItem.Click
 
-        If DataGrid.CurrentRow.Cells(6).Value = "Fechado" Then
+        If utilizarPedido = "True" Then
+            If DataGrid.CurrentRow.Cells(6).Value = "Fechado" Then
 
-            MsgBox("Pedido fechado, não pode ser utilizado!!", MsgBoxStyle.Information, "Pedido fechado")
-            Exit Sub
+                MsgBox("Pedido fechado, não pode ser utilizado!!", MsgBoxStyle.Information, "Pedido fechado")
+                Exit Sub
+            End If
         End If
+
+
         If DataGrid.RowCount > 0 Then
 
             numeroPedido = DataGrid.CurrentRow.Cells(0).Value
@@ -270,5 +180,46 @@ Public Class FrmPedidoCabecalho
         Me.Close()
     End Sub
 
+    Private Sub TxtPesquisa_TextChanged(sender As Object, e As EventArgs) Handles TxtPesquisa.TextChanged
+        FiltroDataGrid()
+    End Sub
+    Sub FiltroDataGrid()
 
+        Try
+            Abrir()
+
+            Dim sql As String
+            Dim dt As New DataTable
+            Dim da As MySqlDataAdapter
+
+            sql = "SELECT * FROM pedido_cabecalho order by id desc"
+            da = New MySqlDataAdapter(sql, con)
+            da.Fill(dt)
+            DataGrid.DataSource = dt
+
+            FormatarGrid()
+
+            If RbPedido.Checked = True Then
+
+                dt.DefaultView.RowFilter = "pedido LIKE " & "'%" & TxtPesquisa.Text & "%'"
+                DataGrid.DataSource = dt
+            End If
+
+            If RbFornecedor.Checked = True Then
+                dt.DefaultView.RowFilter = "fornecedor LIKE " & "'%" & TxtPesquisa.Text & "%'"
+                DataGrid.DataSource = dt
+            End If
+
+            If RbStatus.Checked = True Then
+                'dt.DefaultView.RowFilter = "documento =" & TxtPesquisa.Text
+                dt.DefaultView.RowFilter = "status LIKE " & "'%" & TxtPesquisa.Text & "%'"
+                DataGrid.DataSource = dt
+            End If
+
+
+        Catch ex As Exception
+            MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
+        End Try
+
+    End Sub
 End Class

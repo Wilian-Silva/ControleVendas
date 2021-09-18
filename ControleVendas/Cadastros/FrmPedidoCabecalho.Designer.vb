@@ -27,13 +27,6 @@ Partial Class FrmPedidoCabecalho
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.DataInicial = New System.Windows.Forms.DateTimePicker()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.TxtPesqPedido = New System.Windows.Forms.TextBox()
-        Me.TxtPesquisar = New System.Windows.Forms.TextBox()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.BtnCacelarConsulta = New System.Windows.Forms.Button()
         Me.BtnSelecionarItem = New System.Windows.Forms.Button()
@@ -44,82 +37,16 @@ Partial Class FrmPedidoCabecalho
         Me.DataGrid = New System.Windows.Forms.DataGridView()
         Me.GboxPesPed = New System.Windows.Forms.GroupBox()
         Me.GboxExcluir = New System.Windows.Forms.GroupBox()
-        Me.GroupBox1.SuspendLayout()
+        Me.GboxPesProd = New System.Windows.Forms.GroupBox()
+        Me.TxtPesquisa = New System.Windows.Forms.TextBox()
+        Me.RbStatus = New System.Windows.Forms.RadioButton()
+        Me.RbFornecedor = New System.Windows.Forms.RadioButton()
+        Me.RbPedido = New System.Windows.Forms.RadioButton()
         CType(Me.DataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GboxPesPed.SuspendLayout()
         Me.GboxExcluir.SuspendLayout()
+        Me.GboxPesProd.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'DataInicial
-        '
-        Me.DataInicial.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DataInicial.Location = New System.Drawing.Point(23, 27)
-        Me.DataInicial.Name = "DataInicial"
-        Me.DataInicial.Size = New System.Drawing.Size(95, 20)
-        Me.DataInicial.TabIndex = 133
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(34, 13)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(66, 13)
-        Me.Label1.TabIndex = 134
-        Me.Label1.Text = "Data Pedido"
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Controls.Add(Me.TxtPesqPedido)
-        Me.GroupBox1.Controls.Add(Me.TxtPesquisar)
-        Me.GroupBox1.Controls.Add(Me.DataInicial)
-        Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Location = New System.Drawing.Point(20, 10)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(371, 55)
-        Me.GroupBox1.TabIndex = 139
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Filtro"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(269, 13)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(71, 13)
-        Me.Label3.TabIndex = 162
-        Me.Label3.Text = "Desc. Pedido"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(156, 14)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(61, 13)
-        Me.Label2.TabIndex = 161
-        Me.Label2.Text = "Fornecedor"
-        '
-        'TxtPesqPedido
-        '
-        Me.TxtPesqPedido.BackColor = System.Drawing.Color.White
-        Me.TxtPesqPedido.Location = New System.Drawing.Point(258, 27)
-        Me.TxtPesqPedido.Margin = New System.Windows.Forms.Padding(4)
-        Me.TxtPesqPedido.Name = "TxtPesqPedido"
-        Me.TxtPesqPedido.Size = New System.Drawing.Size(90, 20)
-        Me.TxtPesqPedido.TabIndex = 160
-        Me.ToolTip.SetToolTip(Me.TxtPesqPedido, "Pesquisar por pedido")
-        '
-        'TxtPesquisar
-        '
-        Me.TxtPesquisar.BackColor = System.Drawing.Color.White
-        Me.TxtPesquisar.Location = New System.Drawing.Point(145, 27)
-        Me.TxtPesquisar.Margin = New System.Windows.Forms.Padding(4)
-        Me.TxtPesquisar.Name = "TxtPesquisar"
-        Me.TxtPesquisar.Size = New System.Drawing.Size(90, 20)
-        Me.TxtPesquisar.TabIndex = 159
-        Me.ToolTip.SetToolTip(Me.TxtPesquisar, "Pesquisar por fornecedor")
         '
         'BtnCacelarConsulta
         '
@@ -133,7 +60,7 @@ Partial Class FrmPedidoCabecalho
         Me.BtnCacelarConsulta.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnCacelarConsulta.ForeColor = System.Drawing.Color.Transparent
         Me.BtnCacelarConsulta.Image = CType(resources.GetObject("BtnCacelarConsulta.Image"), System.Drawing.Image)
-        Me.BtnCacelarConsulta.Location = New System.Drawing.Point(53, 12)
+        Me.BtnCacelarConsulta.Location = New System.Drawing.Point(56, 9)
         Me.BtnCacelarConsulta.Name = "BtnCacelarConsulta"
         Me.BtnCacelarConsulta.Size = New System.Drawing.Size(35, 35)
         Me.BtnCacelarConsulta.TabIndex = 151
@@ -153,7 +80,7 @@ Partial Class FrmPedidoCabecalho
         Me.BtnSelecionarItem.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSelecionarItem.ForeColor = System.Drawing.Color.Transparent
         Me.BtnSelecionarItem.Image = CType(resources.GetObject("BtnSelecionarItem.Image"), System.Drawing.Image)
-        Me.BtnSelecionarItem.Location = New System.Drawing.Point(10, 11)
+        Me.BtnSelecionarItem.Location = New System.Drawing.Point(13, 8)
         Me.BtnSelecionarItem.Name = "BtnSelecionarItem"
         Me.BtnSelecionarItem.Size = New System.Drawing.Size(35, 35)
         Me.BtnSelecionarItem.TabIndex = 150
@@ -173,7 +100,7 @@ Partial Class FrmPedidoCabecalho
         Me.BtnSair.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSair.ForeColor = System.Drawing.Color.Transparent
         Me.BtnSair.Image = CType(resources.GetObject("BtnSair.Image"), System.Drawing.Image)
-        Me.BtnSair.Location = New System.Drawing.Point(614, 21)
+        Me.BtnSair.Location = New System.Drawing.Point(615, 17)
         Me.BtnSair.Name = "BtnSair"
         Me.BtnSair.Size = New System.Drawing.Size(35, 35)
         Me.BtnSair.TabIndex = 167
@@ -192,7 +119,7 @@ Partial Class FrmPedidoCabecalho
         Me.BtnExcluir.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnExcluir.ForeColor = System.Drawing.Color.Transparent
         Me.BtnExcluir.Image = CType(resources.GetObject("BtnExcluir.Image"), System.Drawing.Image)
-        Me.BtnExcluir.Location = New System.Drawing.Point(62, 14)
+        Me.BtnExcluir.Location = New System.Drawing.Point(57, 10)
         Me.BtnExcluir.Name = "BtnExcluir"
         Me.BtnExcluir.Size = New System.Drawing.Size(35, 35)
         Me.BtnExcluir.TabIndex = 166
@@ -202,10 +129,9 @@ Partial Class FrmPedidoCabecalho
         'TxtIdPedido
         '
         Me.TxtIdPedido.Enabled = False
-        Me.TxtIdPedido.Location = New System.Drawing.Point(6, 25)
-        Me.TxtIdPedido.Multiline = True
+        Me.TxtIdPedido.Location = New System.Drawing.Point(13, 23)
         Me.TxtIdPedido.Name = "TxtIdPedido"
-        Me.TxtIdPedido.Size = New System.Drawing.Size(52, 20)
+        Me.TxtIdPedido.Size = New System.Drawing.Size(36, 20)
         Me.TxtIdPedido.TabIndex = 147
         Me.TxtIdPedido.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -213,7 +139,7 @@ Partial Class FrmPedidoCabecalho
         '
         Me.LblIdPedido.AutoSize = True
         Me.LblIdPedido.BackColor = System.Drawing.Color.Transparent
-        Me.LblIdPedido.Location = New System.Drawing.Point(10, 12)
+        Me.LblIdPedido.Location = New System.Drawing.Point(10, 11)
         Me.LblIdPedido.Name = "LblIdPedido"
         Me.LblIdPedido.Size = New System.Drawing.Size(44, 13)
         Me.LblIdPedido.TabIndex = 148
@@ -244,7 +170,7 @@ Partial Class FrmPedidoCabecalho
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DataGrid.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGrid.EnableHeadersVisualStyles = False
-        Me.DataGrid.Location = New System.Drawing.Point(20, 76)
+        Me.DataGrid.Location = New System.Drawing.Point(20, 69)
         Me.DataGrid.MultiSelect = False
         Me.DataGrid.Name = "DataGrid"
         Me.DataGrid.ReadOnly = True
@@ -253,7 +179,7 @@ Partial Class FrmPedidoCabecalho
         DataGridViewCellStyle3.Padding = New System.Windows.Forms.Padding(3, 0, 0, 0)
         Me.DataGrid.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGrid.Size = New System.Drawing.Size(629, 253)
+        Me.DataGrid.Size = New System.Drawing.Size(630, 229)
         Me.DataGrid.TabIndex = 149
         '
         'GboxPesPed
@@ -262,9 +188,9 @@ Partial Class FrmPedidoCabecalho
         Me.GboxPesPed.Controls.Add(Me.BtnCacelarConsulta)
         Me.GboxPesPed.Controls.Add(Me.BtnSelecionarItem)
         Me.GboxPesPed.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.GboxPesPed.Location = New System.Drawing.Point(395, 10)
+        Me.GboxPesPed.Location = New System.Drawing.Point(396, 6)
         Me.GboxPesPed.Name = "GboxPesPed"
-        Me.GboxPesPed.Size = New System.Drawing.Size(98, 55)
+        Me.GboxPesPed.Size = New System.Drawing.Size(105, 50)
         Me.GboxPesPed.TabIndex = 151
         Me.GboxPesPed.TabStop = False
         Me.GboxPesPed.Visible = False
@@ -275,54 +201,106 @@ Partial Class FrmPedidoCabecalho
         Me.GboxExcluir.Controls.Add(Me.BtnExcluir)
         Me.GboxExcluir.Controls.Add(Me.TxtIdPedido)
         Me.GboxExcluir.Controls.Add(Me.LblIdPedido)
-        Me.GboxExcluir.Location = New System.Drawing.Point(498, 10)
+        Me.GboxExcluir.Location = New System.Drawing.Point(507, 6)
         Me.GboxExcluir.Name = "GboxExcluir"
-        Me.GboxExcluir.Size = New System.Drawing.Size(108, 55)
+        Me.GboxExcluir.Size = New System.Drawing.Size(102, 50)
         Me.GboxExcluir.TabIndex = 167
         Me.GboxExcluir.TabStop = False
         Me.GboxExcluir.Visible = False
+        '
+        'GboxPesProd
+        '
+        Me.GboxPesProd.BackColor = System.Drawing.Color.Transparent
+        Me.GboxPesProd.Controls.Add(Me.TxtPesquisa)
+        Me.GboxPesProd.Controls.Add(Me.RbStatus)
+        Me.GboxPesProd.Controls.Add(Me.RbFornecedor)
+        Me.GboxPesProd.Controls.Add(Me.RbPedido)
+        Me.GboxPesProd.Location = New System.Drawing.Point(20, 6)
+        Me.GboxPesProd.Name = "GboxPesProd"
+        Me.GboxPesProd.Size = New System.Drawing.Size(370, 50)
+        Me.GboxPesProd.TabIndex = 168
+        Me.GboxPesProd.TabStop = False
+        Me.GboxPesProd.Text = "Pesquisar"
+        '
+        'TxtPesquisa
+        '
+        Me.TxtPesquisa.Location = New System.Drawing.Point(269, 18)
+        Me.TxtPesquisa.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtPesquisa.Name = "TxtPesquisa"
+        Me.TxtPesquisa.Size = New System.Drawing.Size(87, 20)
+        Me.TxtPesquisa.TabIndex = 160
+        '
+        'RbStatus
+        '
+        Me.RbStatus.AutoSize = True
+        Me.RbStatus.Location = New System.Drawing.Point(199, 20)
+        Me.RbStatus.Name = "RbStatus"
+        Me.RbStatus.Size = New System.Drawing.Size(55, 17)
+        Me.RbStatus.TabIndex = 159
+        Me.RbStatus.Text = "Status"
+        Me.RbStatus.UseVisualStyleBackColor = True
+        '
+        'RbFornecedor
+        '
+        Me.RbFornecedor.AutoSize = True
+        Me.RbFornecedor.Location = New System.Drawing.Point(107, 20)
+        Me.RbFornecedor.Name = "RbFornecedor"
+        Me.RbFornecedor.Size = New System.Drawing.Size(79, 17)
+        Me.RbFornecedor.TabIndex = 158
+        Me.RbFornecedor.Text = "Fornecedor"
+        Me.RbFornecedor.UseVisualStyleBackColor = True
+        '
+        'RbPedido
+        '
+        Me.RbPedido.AutoSize = True
+        Me.RbPedido.Checked = True
+        Me.RbPedido.Location = New System.Drawing.Point(7, 20)
+        Me.RbPedido.Name = "RbPedido"
+        Me.RbPedido.Size = New System.Drawing.Size(89, 17)
+        Me.RbPedido.TabIndex = 157
+        Me.RbPedido.TabStop = True
+        Me.RbPedido.Text = "Desc. Pedido"
+        Me.RbPedido.UseVisualStyleBackColor = True
         '
         'FrmPedidoCabecalho
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(671, 346)
+        Me.ClientSize = New System.Drawing.Size(667, 325)
+        Me.Controls.Add(Me.GboxPesProd)
         Me.Controls.Add(Me.BtnSair)
         Me.Controls.Add(Me.GboxExcluir)
         Me.Controls.Add(Me.GboxPesPed)
         Me.Controls.Add(Me.DataGrid)
-        Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "FrmPedidoCabecalho"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Pedidos de Compra"
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
         CType(Me.DataGrid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GboxPesPed.ResumeLayout(False)
         Me.GboxExcluir.ResumeLayout(False)
         Me.GboxExcluir.PerformLayout()
+        Me.GboxPesProd.ResumeLayout(False)
+        Me.GboxPesProd.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents DataInicial As DateTimePicker
-    Friend WithEvents Label1 As Label
-    Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents ToolTip As ToolTip
     Friend WithEvents TxtIdPedido As TextBox
     Friend WithEvents LblIdPedido As Label
     Friend WithEvents DataGrid As DataGridView
     Friend WithEvents BtnSair As Button
     Friend WithEvents BtnExcluir As Button
-    Friend WithEvents TxtPesqPedido As TextBox
-    Friend WithEvents TxtPesquisar As TextBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label2 As Label
     Friend WithEvents GboxPesPed As GroupBox
     Friend WithEvents BtnCacelarConsulta As Button
     Friend WithEvents BtnSelecionarItem As Button
     Friend WithEvents GboxExcluir As GroupBox
+    Friend WithEvents GboxPesProd As GroupBox
+    Friend WithEvents TxtPesquisa As TextBox
+    Friend WithEvents RbFornecedor As RadioButton
+    Friend WithEvents RbPedido As RadioButton
+    Friend WithEvents RbStatus As RadioButton
 End Class

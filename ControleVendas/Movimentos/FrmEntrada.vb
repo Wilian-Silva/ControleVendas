@@ -9,7 +9,8 @@ Public Class FrmEntrada
     End Sub
     Private Sub BtnPesqPedido_Click(sender As Object, e As EventArgs) Handles BtnPesqPedido.Click
 
-        pedidoPesquisar = "True"
+        utilizarPedido = "True"
+
         Dim form = New FrmPedidoCabecalho
         form.ShowDialog()
 
@@ -531,18 +532,19 @@ Public Class FrmEntrada
 
     Private Sub FrmEntrada_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
 
-        If pedidoPesquisar = "True" Then
+        If utilizarPedido = "True" Then
             TxtCodPedido.Text = numeroPedido
             TxtDescPed.Text = nomePedido
             TxtTotalNota.Text = totalPedido
             TxtFornecedor.Text = codFornecedor
             TxtNomeFornecedor.Text = nomeFornecedor
 
-            pedidoPesquisar = ""
+            utilizarPedido = ""
             nomePedido = ""
             totalPedido = ""
             codFornecedor = ""
             nomeFornecedor = ""
+
         End If
 
         If novaEntrada = "True" Then

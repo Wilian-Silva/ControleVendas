@@ -24,12 +24,12 @@ Partial Class FrmEntrada
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmEntrada))
-        Dim DataGridViewCellStyle49 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle50 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle51 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle52 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle53 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle54 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.BtnEliminar = New System.Windows.Forms.Button()
         Me.BtnIncluir = New System.Windows.Forms.Button()
@@ -45,6 +45,7 @@ Partial Class FrmEntrada
         Me.BtnLimpar = New System.Windows.Forms.Button()
         Me.BtnExcluir = New System.Windows.Forms.Button()
         Me.BtnAtualizar = New System.Windows.Forms.Button()
+        Me.BtnPesquisarNota = New System.Windows.Forms.Button()
         Me.TxtNotaFiscal = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
@@ -70,7 +71,6 @@ Partial Class FrmEntrada
         Me.LblSaldo = New System.Windows.Forms.Label()
         Me.GboxPesProd = New System.Windows.Forms.GroupBox()
         Me.GBoxFornecedor = New System.Windows.Forms.GroupBox()
-        Me.BtnPesquisarNota = New System.Windows.Forms.Button()
         Me.GroupBox3.SuspendLayout()
         CType(Me.DataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
@@ -144,7 +144,7 @@ Partial Class FrmEntrada
         Me.BtnProximo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnProximo.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnProximo.Image = CType(resources.GetObject("BtnProximo.Image"), System.Drawing.Image)
-        Me.BtnProximo.Location = New System.Drawing.Point(125, 16)
+        Me.BtnProximo.Location = New System.Drawing.Point(85, 16)
         Me.BtnProximo.Name = "BtnProximo"
         Me.BtnProximo.Size = New System.Drawing.Size(25, 25)
         Me.BtnProximo.TabIndex = 156
@@ -162,7 +162,7 @@ Partial Class FrmEntrada
         Me.BtnAnterior.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnAnterior.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnAnterior.Image = CType(resources.GetObject("BtnAnterior.Image"), System.Drawing.Image)
-        Me.BtnAnterior.Location = New System.Drawing.Point(92, 16)
+        Me.BtnAnterior.Location = New System.Drawing.Point(52, 16)
         Me.BtnAnterior.Name = "BtnAnterior"
         Me.BtnAnterior.Size = New System.Drawing.Size(25, 25)
         Me.BtnAnterior.TabIndex = 155
@@ -172,7 +172,7 @@ Partial Class FrmEntrada
         'TxtPesquisar
         '
         Me.TxtPesquisar.BackColor = System.Drawing.Color.White
-        Me.TxtPesquisar.Location = New System.Drawing.Point(44, 19)
+        Me.TxtPesquisar.Location = New System.Drawing.Point(117, 20)
         Me.TxtPesquisar.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtPesquisar.Name = "TxtPesquisar"
         Me.TxtPesquisar.Size = New System.Drawing.Size(27, 20)
@@ -311,6 +311,21 @@ Partial Class FrmEntrada
         Me.BtnAtualizar.Text = "Atualizar"
         Me.ToolTip.SetToolTip(Me.BtnAtualizar, "Atualizar DataGrid")
         Me.BtnAtualizar.UseVisualStyleBackColor = True
+        '
+        'BtnPesquisarNota
+        '
+        Me.BtnPesquisarNota.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.BtnPesquisarNota.FlatAppearance.BorderSize = 0
+        Me.BtnPesquisarNota.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BtnPesquisarNota.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnPesquisarNota.ForeColor = System.Drawing.Color.Transparent
+        Me.BtnPesquisarNota.Image = CType(resources.GetObject("BtnPesquisarNota.Image"), System.Drawing.Image)
+        Me.BtnPesquisarNota.Location = New System.Drawing.Point(12, 16)
+        Me.BtnPesquisarNota.Name = "BtnPesquisarNota"
+        Me.BtnPesquisarNota.Size = New System.Drawing.Size(25, 25)
+        Me.BtnPesquisarNota.TabIndex = 158
+        Me.ToolTip.SetToolTip(Me.BtnPesquisarNota, "Perquisar nota fiscal")
+        Me.BtnPesquisarNota.UseVisualStyleBackColor = True
         '
         'TxtNotaFiscal
         '
@@ -492,23 +507,23 @@ Partial Class FrmEntrada
         Me.DataGrid.AllowUserToResizeRows = False
         Me.DataGrid.BackgroundColor = System.Drawing.Color.White
         Me.DataGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        DataGridViewCellStyle49.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle49.BackColor = System.Drawing.Color.LightGray
-        DataGridViewCellStyle49.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle49.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle49.SelectionBackColor = System.Drawing.SystemColors.ControlDark
-        DataGridViewCellStyle49.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle49.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle49
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDark
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle50.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle50.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle50.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle50.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle50.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark
-        DataGridViewCellStyle50.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle50.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGrid.DefaultCellStyle = DataGridViewCellStyle50
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGrid.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGrid.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGrid.EnableHeadersVisualStyles = False
         Me.DataGrid.Location = New System.Drawing.Point(3, 3)
@@ -516,9 +531,9 @@ Partial Class FrmEntrada
         Me.DataGrid.Name = "DataGrid"
         Me.DataGrid.ReadOnly = True
         Me.DataGrid.RowHeadersVisible = False
-        DataGridViewCellStyle51.BackColor = System.Drawing.SystemColors.ControlLightLight
-        DataGridViewCellStyle51.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
-        Me.DataGrid.RowsDefaultCellStyle = DataGridViewCellStyle51
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ControlLightLight
+        DataGridViewCellStyle3.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.DataGrid.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGrid.Size = New System.Drawing.Size(626, 245)
         Me.DataGrid.TabIndex = 154
@@ -592,32 +607,32 @@ Partial Class FrmEntrada
         Me.DataGridDuplicatas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader
         Me.DataGridDuplicatas.BackgroundColor = System.Drawing.Color.White
         Me.DataGridDuplicatas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        DataGridViewCellStyle52.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle52.BackColor = System.Drawing.Color.LightGray
-        DataGridViewCellStyle52.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle52.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle52.SelectionBackColor = System.Drawing.SystemColors.ControlDark
-        DataGridViewCellStyle52.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle52.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridDuplicatas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle52
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.LightGray
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ControlDark
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridDuplicatas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.DataGridDuplicatas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle53.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle53.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle53.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle53.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle53.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark
-        DataGridViewCellStyle53.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle53.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridDuplicatas.DefaultCellStyle = DataGridViewCellStyle53
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridDuplicatas.DefaultCellStyle = DataGridViewCellStyle5
         Me.DataGridDuplicatas.EnableHeadersVisualStyles = False
         Me.DataGridDuplicatas.Location = New System.Drawing.Point(8, 6)
         Me.DataGridDuplicatas.MultiSelect = False
         Me.DataGridDuplicatas.Name = "DataGridDuplicatas"
         Me.DataGridDuplicatas.ReadOnly = True
         Me.DataGridDuplicatas.RowHeadersVisible = False
-        DataGridViewCellStyle54.BackColor = System.Drawing.SystemColors.ControlLightLight
-        DataGridViewCellStyle54.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
-        Me.DataGridDuplicatas.RowsDefaultCellStyle = DataGridViewCellStyle54
+        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.ControlLightLight
+        DataGridViewCellStyle6.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.DataGridDuplicatas.RowsDefaultCellStyle = DataGridViewCellStyle6
         Me.DataGridDuplicatas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridDuplicatas.Size = New System.Drawing.Size(615, 210)
         Me.DataGridDuplicatas.TabIndex = 165
@@ -642,7 +657,7 @@ Partial Class FrmEntrada
         Me.GboxPesProd.Controls.Add(Me.TxtPesquisar)
         Me.GboxPesProd.Location = New System.Drawing.Point(27, 4)
         Me.GboxPesProd.Name = "GboxPesProd"
-        Me.GboxPesProd.Size = New System.Drawing.Size(194, 50)
+        Me.GboxPesProd.Size = New System.Drawing.Size(164, 50)
         Me.GboxPesProd.TabIndex = 157
         Me.GboxPesProd.TabStop = False
         '
@@ -660,21 +675,6 @@ Partial Class FrmEntrada
         Me.GBoxFornecedor.Size = New System.Drawing.Size(257, 50)
         Me.GBoxFornecedor.TabIndex = 158
         Me.GBoxFornecedor.TabStop = False
-        '
-        'BtnPesquisarNota
-        '
-        Me.BtnPesquisarNota.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.BtnPesquisarNota.FlatAppearance.BorderSize = 0
-        Me.BtnPesquisarNota.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.BtnPesquisarNota.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnPesquisarNota.ForeColor = System.Drawing.Color.Transparent
-        Me.BtnPesquisarNota.Image = CType(resources.GetObject("BtnPesquisarNota.Image"), System.Drawing.Image)
-        Me.BtnPesquisarNota.Location = New System.Drawing.Point(12, 16)
-        Me.BtnPesquisarNota.Name = "BtnPesquisarNota"
-        Me.BtnPesquisarNota.Size = New System.Drawing.Size(25, 25)
-        Me.BtnPesquisarNota.TabIndex = 158
-        Me.ToolTip.SetToolTip(Me.BtnPesquisarNota, "Consultar Pedido")
-        Me.BtnPesquisarNota.UseVisualStyleBackColor = True
         '
         'FrmEntrada
         '

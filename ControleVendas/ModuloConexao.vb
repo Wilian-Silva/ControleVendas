@@ -26,6 +26,7 @@ Module ModuloConexao
     Public parcela As Integer
 
     Public IdDuplicata2 As Integer
+    Public utilizarPedido As String
 
     Public nomeFuncionario As String
     Public especialidade As String
@@ -75,6 +76,7 @@ Module ModuloConexao
 
 
     Public Sub LimparVariaveisGlobais()
+        utilizarPedido = ""
         totalPedido = ""
         nomePedido = ""
         pesquisarDuplicata = ""

@@ -27,6 +27,8 @@ Public Class FrmPedido
         TxtProduto.Enabled = True
         TxtFornecedor.Enabled = True
         BtnEditar.Enabled = False
+
+        BtnIncluir.Enabled = False
     End Sub
 
     Private Sub HabilitarCamposEdicao()
@@ -48,6 +50,9 @@ Public Class FrmPedido
         BtnPesqProduto.Enabled = False
         TxtProduto.Enabled = False
         BtnEditar.Enabled = True
+        TxtProduto.ReadOnly = True
+        TxtFornecedor.ReadOnly = True
+        BtnIncluir.Enabled = True
     End Sub
     Private Sub LimparCampos()
 
@@ -94,6 +99,8 @@ Public Class FrmPedido
     End Sub
     Sub Limpar_cores()
 
+        TxtPedido.BackColor = Color.White
+        TxtFornecedor.BackColor = Color.White
         TxtProduto.BackColor = Color.White
         TxtQuantidade.BackColor = Color.White
         TxtValorUnit.BackColor = Color.White
@@ -480,89 +487,90 @@ Public Class FrmPedido
     Private Sub BtndAdicionarItem_Click(sender As Object, e As EventArgs) Handles BtnOk.Click
 
         If editarpedido = "Editar" Then Exit Sub
+        If IncluirPedido = "True" Then
 
-        Limpar_cores()
-        TxtFornecedor.BackColor = Color.White
-        TxtPedido.BackColor = Color.White
+            Limpar_cores()
+            TxtFornecedor.BackColor = Color.White
+            TxtPedido.BackColor = Color.White
 
-        If TxtCodFornecedor.Text <> "" And TxtCodProduto.Text <> "" And TxtQuantidade.Text <> "" And TxtValorUnit.Text <> "" And TxtPedido.Text <> "" Then
-            If DataGrid.RowCount < 1 Then
+            If TxtCodFornecedor.Text <> "" And TxtCodProduto.Text <> "" And TxtQuantidade.Text <> "" And TxtValorUnit.Text <> "" And TxtPedido.Text <> "" Then
+                If DataGrid.RowCount < 1 Then
 
-                Table1.Columns.Add("Id Reg.")
-                Table1.Columns.Add("Pedido")
-                Table1.Columns.Add("Item")
-                Table1.Columns.Add("Desc.")
-                Table1.Columns.Add("Data")
-                Table1.Columns.Add("Cód. Fornec.")
-                Table1.Columns.Add("Fornecedor")
-                Table1.Columns.Add("Cód. Produto")
-                Table1.Columns.Add("Produto")
-                Table1.Columns.Add("Qtd.")
-                Table1.Columns.Add("Vlr. Unit.")
-                Table1.Columns.Add("Valor Total")
+                    Table1.Columns.Add("Id Reg.")
+                    Table1.Columns.Add("Pedido")
+                    Table1.Columns.Add("Item")
+                    Table1.Columns.Add("Desc.")
+                    Table1.Columns.Add("Data")
+                    Table1.Columns.Add("Cód. Fornec.")
+                    Table1.Columns.Add("Fornecedor")
+                    Table1.Columns.Add("Cód. Produto")
+                    Table1.Columns.Add("Produto")
+                    Table1.Columns.Add("Qtd.")
+                    Table1.Columns.Add("Vlr. Unit.")
+                    Table1.Columns.Add("Valor Total")
 
-                Dim bs As New BindingSource()
-                bs.DataSource = Table1
-                DataGrid.DataSource = bs
+                    Dim bs As New BindingSource()
+                    bs.DataSource = Table1
+                    DataGrid.DataSource = bs
 
-                Table1.Rows.Add(TxtItem.Text, TxtIdRegistro.Text, TxtItem.Text, TxtPedido.Text, DataPed.Value.ToShortDateString, TxtCodFornecedor.Text, TxtFornecedor.Text, TxtCodProduto.Text, TxtProduto.Text, TxtQuantidade.Text, TxtValorUnit.Text, TxtValorTotal.Text)
+                    Table1.Rows.Add(TxtItem.Text, TxtIdRegistro.Text, TxtItem.Text, TxtPedido.Text, DataPed.Value.ToShortDateString, TxtCodFornecedor.Text, TxtFornecedor.Text, TxtCodProduto.Text, TxtProduto.Text, TxtQuantidade.Text, TxtValorUnit.Text, TxtValorTotal.Text)
 
-                TxtItem.Text = TxtItem.Text + 1
+                    TxtItem.Text = TxtItem.Text + 1
 
-                ''FORMATAR DATAGRI
-                DataGrid.Columns(0).Width = 1
-                DataGrid.Columns(1).Width = 50
-                DataGrid.Columns(2).Width = 40
-                DataGrid.Columns(3).Width = 80
-                DataGrid.Columns(4).Width = 90
-                DataGrid.Columns(5).Width = 50
-                DataGrid.Columns(6).Width = 120
-                DataGrid.Columns(7).Width = 50
-                DataGrid.Columns(8).Width = 170
-                DataGrid.Columns(9).Width = 40
+                    ''FORMATAR DATAGRI
+                    DataGrid.Columns(0).Width = 1
+                    DataGrid.Columns(1).Width = 50
+                    DataGrid.Columns(2).Width = 40
+                    DataGrid.Columns(3).Width = 80
+                    DataGrid.Columns(4).Width = 90
+                    DataGrid.Columns(5).Width = 50
+                    DataGrid.Columns(6).Width = 120
+                    DataGrid.Columns(7).Width = 50
+                    DataGrid.Columns(8).Width = 170
+                    DataGrid.Columns(9).Width = 40
 
-                DataGrid.Columns(4).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
-                DataGrid.Columns(5).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
-                DataGrid.Columns(7).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
-                DataGrid.Columns(2).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
-                DataGrid.Columns(1).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
-                DataGrid.Columns(0).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+                    DataGrid.Columns(4).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+                    DataGrid.Columns(5).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+                    DataGrid.Columns(7).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+                    DataGrid.Columns(2).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+                    DataGrid.Columns(1).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+                    DataGrid.Columns(0).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
 
-                DataGrid.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-                DataGrid.Columns(7).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-                DataGrid.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-                DataGrid.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-                DataGrid.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                    DataGrid.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                    DataGrid.Columns(7).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                    DataGrid.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                    DataGrid.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                    DataGrid.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
 
-                DataGrid.Columns(10).DefaultCellStyle.Format = "c"
-                DataGrid.Columns(11).DefaultCellStyle.Format = "c"
+                    DataGrid.Columns(10).DefaultCellStyle.Format = "c"
+                    DataGrid.Columns(11).DefaultCellStyle.Format = "c"
 
-                TotalDatagrid()
+                    TotalDatagrid()
 
-                TxtPedido.Enabled = False
-                BtnPesqFornecedor.Enabled = False
-                TxtFornecedor.Enabled = False
+                    TxtPedido.Enabled = False
+                    BtnPesqFornecedor.Enabled = False
+                    TxtFornecedor.Enabled = False
 
-                LimparCamposAddItemPedido()
+                    LimparCamposAddItemPedido()
 
+
+                Else
+
+                    Table1.Rows.Add(TxtItem.Text, TxtIdRegistro.Text, TxtItem.Text, TxtPedido.Text, DataPed.Value.ToShortDateString, TxtCodFornecedor.Text, TxtFornecedor.Text, TxtCodProduto.Text, TxtProduto.Text, TxtQuantidade.Text, TxtValorUnit.Text, TxtValorTotal.Text)
+
+                    TxtItem.Text = TxtItem.Text + 1
+
+                    TotalDatagrid()
+                    LimparCamposAddItemPedido()
+                End If
 
             Else
-
-                Table1.Rows.Add(TxtItem.Text, TxtIdRegistro.Text, TxtItem.Text, TxtPedido.Text, DataPed.Value.ToShortDateString, TxtCodFornecedor.Text, TxtFornecedor.Text, TxtCodProduto.Text, TxtProduto.Text, TxtQuantidade.Text, TxtValorUnit.Text, TxtValorTotal.Text)
-
-                TxtItem.Text = TxtItem.Text + 1
-
-                TotalDatagrid()
-                LimparCamposAddItemPedido()
+                Editar_Cores()
+                TxtFornecedor.BackColor = Color.Salmon
+                TxtPedido.BackColor = Color.Salmon
+                MsgBox("Campos em branco ou vazios", MsgBoxStyle.Information, "Adicionar item")
             End If
-
-        Else
-            Editar_Cores()
-            TxtFornecedor.BackColor = Color.Salmon
-            TxtPedido.BackColor = Color.Salmon
-            MsgBox("Campos em branco ou vazios", MsgBoxStyle.Information, "Adicionar item")
         End If
-
     End Sub
     Sub LimparCamposAddItemPedido()
         TxtCodProduto.Text = ""
@@ -636,30 +644,30 @@ Public Class FrmPedido
 
     Sub PesquisarPedido()
 
-        'CONSULTAR DE PEDIDO JA FOI USADO PARA ENTRADA DA NOTA FISCAL
-        If TxtNumPedido.Text <> "" Then
-            Try
-                Abrir()
-                Dim sql As String
-                Dim dt As New DataTable
-                Dim da As MySqlDataAdapter
-                sql = "SELECT * FROM pedidos WHERE pedido = '" & TxtNumPedido.Text & "' order by item asc "
-                da = New MySqlDataAdapter(sql, con)
-                da.Fill(dt)
-                DataGrid.DataSource = dt
 
-                FormatarGrid()
+        Try
+            Abrir()
+            Dim sql As String
+            Dim dt As New DataTable
+            Dim da As MySqlDataAdapter
+            sql = "SELECT p.id, p.pedido, p.item, p.descricao, p.data_emissao, p.cod_fornecedor, p.fornecedor, p.cod_produto, p.produto, p.quantidade, p.valor_unitario, p.valor_total, c.status FROM pedidos as p INNER JOIN pedido_cabecalho as c ON p.pedido = c.id WHERE p.pedido= '" & TxtNumPedido.Text & "' order by p.item asc "
+            da = New MySqlDataAdapter(sql, con)
+            da.Fill(dt)
+            DataGrid.DataSource = dt
 
-                If DataGrid.Rows.Count > 0 Then
-                    DadosCabecalho()
-                End If
+            FormatarGrid()
 
-                TotalDatagrid()
+            If DataGrid.Rows.Count > 0 Then
+                DadosCabecalho()
+            End If
 
-            Catch ex As Exception
-                MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
-            End Try
-        End If
+            TotalDatagrid()
+
+        Catch ex As Exception
+            MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
+        End Try
+
+
     End Sub
 
     Private Sub BtnCacelar_Click(sender As Object, e As EventArgs) Handles BtnCacelar.Click
@@ -988,4 +996,6 @@ Line1:
             MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
         End Try
     End Sub
+
+
 End Class
