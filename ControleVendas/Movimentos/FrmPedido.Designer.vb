@@ -24,9 +24,9 @@ Partial Class FrmPedido
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmPedido))
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.TxtStatusPedido = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -69,12 +69,12 @@ Partial Class FrmPedido
         Me.BtnOk = New System.Windows.Forms.Button()
         Me.BtnPesqPedido = New System.Windows.Forms.Button()
         Me.BtnIncluir = New System.Windows.Forms.Button()
+        Me.BtnCarregar = New System.Windows.Forms.Button()
         Me.Controle_vendasDataSet = New ControleVendas.Controle_vendasDataSet3()
         Me.PedidosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PedidosTableAdapter = New ControleVendas.Controle_vendasDataSet3TableAdapters.pedidosTableAdapter()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.DataGrid = New System.Windows.Forms.DataGridView()
-        Me.BtnCarregar = New System.Windows.Forms.Button()
         Me.GroupBox3.SuspendLayout()
         CType(Me.Controle_vendasDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PedidosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -636,6 +636,26 @@ Partial Class FrmPedido
         Me.ToolTip.SetToolTip(Me.BtnIncluir, "Inlcuir item do pedido")
         Me.BtnIncluir.UseVisualStyleBackColor = True
         '
+        'BtnCarregar
+        '
+        Me.BtnCarregar.AccessibleDescription = ""
+        Me.BtnCarregar.AccessibleName = "Adicionar"
+        Me.BtnCarregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.BtnCarregar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnCarregar.FlatAppearance.BorderSize = 0
+        Me.BtnCarregar.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BtnCarregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnCarregar.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnCarregar.ForeColor = System.Drawing.Color.Transparent
+        Me.BtnCarregar.Image = CType(resources.GetObject("BtnCarregar.Image"), System.Drawing.Image)
+        Me.BtnCarregar.Location = New System.Drawing.Point(123, 8)
+        Me.BtnCarregar.Name = "BtnCarregar"
+        Me.BtnCarregar.Size = New System.Drawing.Size(35, 35)
+        Me.BtnCarregar.TabIndex = 163
+        Me.BtnCarregar.TabStop = False
+        Me.ToolTip.SetToolTip(Me.BtnCarregar, "Atualizar")
+        Me.BtnCarregar.UseVisualStyleBackColor = True
+        '
         'Controle_vendasDataSet
         '
         Me.Controle_vendasDataSet.DataSetName = "controle_vendasDataSet"
@@ -676,55 +696,35 @@ Partial Class FrmPedido
         Me.DataGrid.AllowUserToResizeColumns = False
         Me.DataGrid.AllowUserToResizeRows = False
         Me.DataGrid.BackgroundColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.LightGray
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.ControlDark
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDark
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGrid.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGrid.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGrid.EnableHeadersVisualStyles = False
         Me.DataGrid.Location = New System.Drawing.Point(19, 203)
         Me.DataGrid.MultiSelect = False
         Me.DataGrid.Name = "DataGrid"
         Me.DataGrid.ReadOnly = True
         Me.DataGrid.RowHeadersVisible = False
-        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.ControlLightLight
-        DataGridViewCellStyle9.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.DataGrid.RowsDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ControlLightLight
+        DataGridViewCellStyle3.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.DataGrid.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGrid.Size = New System.Drawing.Size(683, 190)
         Me.DataGrid.TabIndex = 166
-        '
-        'BtnCarregar
-        '
-        Me.BtnCarregar.AccessibleDescription = ""
-        Me.BtnCarregar.AccessibleName = "Adicionar"
-        Me.BtnCarregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.BtnCarregar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnCarregar.FlatAppearance.BorderSize = 0
-        Me.BtnCarregar.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.BtnCarregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnCarregar.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnCarregar.ForeColor = System.Drawing.Color.Transparent
-        Me.BtnCarregar.Image = CType(resources.GetObject("BtnCarregar.Image"), System.Drawing.Image)
-        Me.BtnCarregar.Location = New System.Drawing.Point(123, 11)
-        Me.BtnCarregar.Name = "BtnCarregar"
-        Me.BtnCarregar.Size = New System.Drawing.Size(35, 35)
-        Me.BtnCarregar.TabIndex = 163
-        Me.BtnCarregar.TabStop = False
-        Me.ToolTip.SetToolTip(Me.BtnCarregar, "Atualizar")
-        Me.BtnCarregar.UseVisualStyleBackColor = True
         '
         'FrmPedido
         '

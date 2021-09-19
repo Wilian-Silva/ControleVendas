@@ -264,37 +264,12 @@ Public Class FrmPedido
     End Sub
     Private Sub BtnSalvar_Click(sender As Object, e As EventArgs) Handles BtnSalvar.Click
 
+        If DataGrid.RowCount < 1 Then
+            MsgBox("Adicione registro para salvar!!", MsgBoxStyle.Information, "Salvar")
+            Exit Sub
+        End If
 
-        If editarpedido = "Editar" And TxtIdRegistro.Text <> "" And TxtItem.Text <> "" Then
-
-            If MsgBox("Deseja salvar essa edição no pedido?", vbYesNo + vbQuestion) = vbYes Then
-
-                SalvarEdicaoPedido()
-
-                LimparCampos()
-
-                ListarTudoUltimoPedido()
-
-                DesabilitarCampos()
-
-                Limpar_cores()
-
-                DadosCabecalho()
-
-                MsgBox("Cadastro editado com Sucesso!!", MsgBoxStyle.Information, "Editar")
-            Else
-                Exit Sub
-            End If
-
-        Else
-
-
-            If DataGrid.RowCount < 1 Then
-                MsgBox("Adicione registro para salvar!!", MsgBoxStyle.Information, "Salvar")
-                Exit Sub
-            End If
-
-            Abrir()
+        Abrir()
 
             'VERIFICAR SE O PEDIDO JÁ EXISTE
             Dim cmdped As MySqlCommand
@@ -376,44 +351,8 @@ Public Class FrmPedido
                 MsgBox("Erro ao Salvar!!" + ex.Message)
             End Try
 
-        End If
     End Sub
-    Sub SalvarEdicaoPedido()
-        Try
-            Abrir()
-            Dim cmd As MySqlCommand
-            Dim sql As String
-            sql = "UPDATE pedidos SET cod_produto = '" & TxtCodProduto.Text & "', produto = '" & TxtProduto.Text & "', quantidade = '" & TxtQuantidade.Text & "', valor_unitario = '" & TxtValorUnit.Text.Replace(",", ".") & "', valor_total= '" & TxtValorTotal.Text.Replace(",", ".") & "' WHERE pedido =  '" & TxtIdRegistro.Text & "' AND item =  '" & TxtItem.Text & "'"
-            cmd = New MySqlCommand(sql, con)
-            cmd.ExecuteNonQuery()
 
-            '.....................................................................................
-            'CONSULTAR TOTAL NA TABELA PEDIDOS
-            Dim dg As New DataGridView
-            Dim da As MySqlDataAdapter
-            Dim sql2 As String
-            Dim dt As New DataTable
-            Dim total As String
-
-            sql2 = "SELECT SUM(valor_total) as TOTAL FROM pedidos WHERE pedido =  '" & TxtIdRegistro.Text & "' "
-            da = New MySqlDataAdapter(sql2, con)
-            da.Fill(dt)
-            total = dt.Rows(0)("TOTAL").ToString()
-
-            '............................................................................
-            'ATUALIZAR TOTAL PEDIDO
-            Dim cmd1 As MySqlCommand
-            Dim sql1 As String
-            sql1 = "UPDATE pedido_cabecalho SET total= '" & total & "' WHERE id =  '" & TxtIdRegistro.Text & "' "
-            cmd1 = New MySqlCommand(sql1, con)
-            cmd1.ExecuteNonQuery()
-
-
-        Catch ex As Exception
-            MsgBox("Erro ao editar!!" + ex.Message)
-        End Try
-
-    End Sub
     Private Sub BtnExluir_Click(sender As Object, e As EventArgs) Handles BtnExcluir.Click
         If TxtStatusPedido.Text = "Fechado" Then
             MsgBox("Pedido fechado, não pode ser exluído!!", MsgBoxStyle.Information, "Excluir Pedido")
@@ -623,17 +562,32 @@ Public Class FrmPedido
 
             If MsgBox("Deseja editar o item " & TxtItem.Text & " do pedido " & TxtIdRegistro.Text & "?", vbYesNo, "Editar") = vbYes Then
 
-                HabilitarCamposEdicao()
+                Dim form = New FrmAddItemPedido
 
-                Editar_Cores()
+                form.TxtItem.Text = TxtItem.Text
+                form.TxtIdRegistro.Text = TxtIdRegistro.Text
+                form.TxtPedido.Text = TxtPedido.Text
+                form.TxtCodFornecedor.Text = TxtCodFornecedor.Text
+                form.TxtFornecedor.Text = TxtFornecedor.Text
+                form.DataPed.Value = DataPed.Value
+                form.TxtStatusPedido.Text = TxtStatusPedido.Text
+                form.TxtCodFornecedor.Text = TxtCodFornecedor.Text
+                form.TxtFornecedor.Text = TxtFornecedor.Text
+                form.TxtQuantidade.Text = TxtQuantidade.Text
+                form.TxtValorUnit.Text = TxtValorUnit.Text
+                form.TxtCodProduto.Text = TxtCodProduto.Text
+                form.TxtProduto.Text = TxtProduto.Text
 
                 editarpedido = "Editar"
+
+                form.ShowDialog()
+
 
             End If
         Else
 
             MsgBox("Selecione um registro para editar!!", MsgBoxStyle.Information, "Editar")
-            TxtPedido.Focus()
+
         End If
 
 

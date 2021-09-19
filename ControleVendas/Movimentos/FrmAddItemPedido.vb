@@ -46,51 +46,98 @@ Public Class FrmAddItemPedido
 
         If TxtQuantidade.Text <> "" And TxtValorUnit.Text <> "" Then
 
+            If editarpedido = "Editar" Then
+                If MsgBox("Deseja salvar alterações no o item " + TxtItem.Text + " no pedido" + TxtIdRegistro.Text + "?", vbYesNo, "Pedido") = vbYes Then
+                    Try
+                        Abrir()
+                        Dim cmd As MySqlCommand
+                        Dim sql As String
+                        sql = "UPDATE pedidos SET cod_produto = '" & TxtCodProduto.Text & "', produto = '" & TxtProduto.Text & "', quantidade = '" & TxtQuantidade.Text & "', valor_unitario = '" & TxtValorUnit.Text.Replace(",", ".") & "', valor_total= '" & TxtValorTotal.Text.Replace(",", ".") & "' WHERE pedido =  '" & TxtIdRegistro.Text & "' AND item =  '" & TxtItem.Text & "'"
+                        cmd = New MySqlCommand(sql, con)
+                        cmd.ExecuteNonQuery()
 
-            If MsgBox("Deseja incluir o item " + TxtItem.Text + " no pedido" + TxtIdRegistro.Text + "?", vbYesNo, "Pedido") = vbYes Then
+                        '.....................................................................................
+                        'CONSULTAR TOTAL NA TABELA PEDIDOS
+                        Dim dg As New DataGridView
+                        Dim da As MySqlDataAdapter
+                        Dim sql2 As String
+                        Dim dt As New DataTable
+                        Dim total As String
 
-                Try
-                    Abrir()
-                    Dim cmd As MySqlCommand
-                    Dim sql As String
-                    Dim data1 As String
-                    data1 = DataPed.Value.ToString("yyyy-MM-dd")
+                        sql2 = "SELECT SUM(valor_total) as TOTAL FROM pedidos WHERE pedido =  '" & TxtIdRegistro.Text & "' "
+                        da = New MySqlDataAdapter(sql2, con)
+                        da.Fill(dt)
+                        total = dt.Rows(0)("TOTAL").ToString()
 
-                    sql = "INSERT INTO pedidos (pedido, item, descricao, data_emissao, cod_fornecedor, fornecedor, cod_produto, produto, quantidade, valor_unitario, valor_total) " _
-                        & " VALUES ('" & TxtIdRegistro.Text & "', '" & TxtItem.Text & "', '" & TxtPedido.Text & "','" & data1 & "','" & TxtCodFornecedor.Text & "','" & TxtFornecedor.Text & "','" & TxtCodProduto.Text & "','" & TxtProduto.Text & "','" & TxtQuantidade.Text & "','" & TxtValorUnit.Text.Replace(",", ".") & "' ,'" & TxtValorTotal.Text.Replace(",", ".") & "')"
-                    cmd = New MySqlCommand(sql, con)
-                    cmd.ExecuteNonQuery()
+                        '............................................................................
+                        'ATUALIZAR TOTAL PEDIDO
+                        Dim cmd1 As MySqlCommand
+                        Dim sql1 As String
+                        sql1 = "UPDATE pedido_cabecalho SET total= '" & total & "' WHERE id =  '" & TxtIdRegistro.Text & "' "
+                        cmd1 = New MySqlCommand(sql1, con)
+                        cmd1.ExecuteNonQuery()
 
-                    '.....................................................................................
-                    'CONSULTAR TOTAL NA TABELA PEDIDOS
-                    Dim dg As New DataGridView
-                    Dim da As MySqlDataAdapter
-                    Dim sql2 As String
-                    Dim dt As New DataTable
-                    Dim total As String
 
-                    sql2 = "SELECT SUM(valor_total) as TOTAL FROM pedidos WHERE pedido =  '" & TxtIdRegistro.Text & "' "
-                    da = New MySqlDataAdapter(sql2, con)
-                    da.Fill(dt)
-                    total = dt.Rows(0)("TOTAL").ToString()
+                        MsgBox("Registro editado com Sucesso!!", MsgBoxStyle.Information, "Editar Pedido")
 
-                    '............................................................................
-                    'ATUALIZAR TOTAL PEDIDO
-                    Dim cmd1 As MySqlCommand
-                    Dim sql1 As String
-                    sql1 = "UPDATE pedido_cabecalho SET total= '" & total & "' WHERE id =  '" & TxtIdRegistro.Text & "' "
-                    cmd1 = New MySqlCommand(sql1, con)
-                    cmd1.ExecuteNonQuery()
+                        editarpedido = ""
+                        Me.Close()
 
-                    MsgBox("Registro salvo com Sucesso!!", MsgBoxStyle.Information, "Salvar Pagamento")
 
-                    Me.Close()
+                    Catch ex As Exception
+                        MsgBox("Erro ao editar!!" + ex.Message)
+                    End Try
+                End If
+            Else
 
-                Catch ex As Exception
-                    MsgBox("Erro ao editar!!" + ex.Message)
-                End Try
+                    If MsgBox("Deseja incluir o item " + TxtItem.Text + " no pedido" + TxtIdRegistro.Text + "?", vbYesNo, "Pedido") = vbYes Then
+
+                    Try
+                        Abrir()
+                        Dim cmd As MySqlCommand
+                        Dim sql As String
+                        Dim data1 As String
+                        data1 = DataPed.Value.ToString("yyyy-MM-dd")
+
+                        sql = "INSERT INTO pedidos (pedido, item, descricao, data_emissao, cod_fornecedor, fornecedor, cod_produto, produto, quantidade, valor_unitario, valor_total) " _
+                            & " VALUES ('" & TxtIdRegistro.Text & "', '" & TxtItem.Text & "', '" & TxtPedido.Text & "','" & data1 & "','" & TxtCodFornecedor.Text & "','" & TxtFornecedor.Text & "','" & TxtCodProduto.Text & "','" & TxtProduto.Text & "','" & TxtQuantidade.Text & "','" & TxtValorUnit.Text.Replace(",", ".") & "' ,'" & TxtValorTotal.Text.Replace(",", ".") & "')"
+                        cmd = New MySqlCommand(sql, con)
+                        cmd.ExecuteNonQuery()
+
+                        '.....................................................................................
+                        'CONSULTAR TOTAL NA TABELA PEDIDOS
+                        Dim dg As New DataGridView
+                        Dim da As MySqlDataAdapter
+                        Dim sql2 As String
+                        Dim dt As New DataTable
+                        Dim total As String
+
+                        sql2 = "SELECT SUM(valor_total) as TOTAL FROM pedidos WHERE pedido =  '" & TxtIdRegistro.Text & "' "
+                        da = New MySqlDataAdapter(sql2, con)
+                        da.Fill(dt)
+                        total = dt.Rows(0)("TOTAL").ToString()
+
+                        '............................................................................
+                        'ATUALIZAR TOTAL PEDIDO
+                        Dim cmd1 As MySqlCommand
+                        Dim sql1 As String
+                        sql1 = "UPDATE pedido_cabecalho SET total= '" & total & "' WHERE id =  '" & TxtIdRegistro.Text & "' "
+                        cmd1 = New MySqlCommand(sql1, con)
+                        cmd1.ExecuteNonQuery()
+
+                        MsgBox("Registro salvo com Sucesso!!", MsgBoxStyle.Information, "Salvar Pedido")
+
+                        Me.Close()
+
+                    Catch ex As Exception
+                        MsgBox("Erro ao editar!!" + ex.Message)
+                    End Try
+
+                End If
 
             End If
+
+
         Else
 
             TxtQuantidade.BackColor = Color.Salmon
