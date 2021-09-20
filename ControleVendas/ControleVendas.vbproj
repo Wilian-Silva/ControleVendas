@@ -582,7 +582,9 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="movimento-natura-icone-natura-favicon.ico" />
     <Content Include="SqlServerTypes\Loader.cs" />

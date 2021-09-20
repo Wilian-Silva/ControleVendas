@@ -267,7 +267,7 @@ Public Class FrmEntrada
         On Error Resume Next
         Dim total As Decimal = 0
         For i = 0 To DataGrid.Rows.Count - 1
-            total = total + DataGrid.Rows(i).Cells(9).Value
+            total += DataGrid.Rows(i).Cells(9).Value
         Next
         TxtTotalNota.Text = total
         'TxtTotalPedido.Text = Convert.ToDouble(TxtTotalPedido.Text).ToString("C")
@@ -278,7 +278,7 @@ Public Class FrmEntrada
         On Error Resume Next
         Dim total As Decimal = 0
         For i = 0 To DataGridDuplicatas.Rows.Count - 1
-            total = total + DataGridDuplicatas.Rows(i).Cells(5).Value
+            total += DataGridDuplicatas.Rows(i).Cells(5).Value
         Next
         TxtTotalDuplicatas.Text = total
         'TxtTotalPedido.Text = Convert.ToDouble(TxtTotalPedido.Text).ToString("C")
@@ -715,7 +715,7 @@ Line1:
                 Exit Sub
             Else
                 reader.Close()
-                proximo = proximo + 1
+                proximo += 1
                 GoTo Line1
             End If
 
@@ -824,7 +824,7 @@ Line1:
                 Exit Sub
             Else
                 reader.Close()
-                anterior = anterior - 1
+                anterior -= 1
                 GoTo Line1
             End If
 
@@ -918,6 +918,27 @@ Line1:
     End Sub
 
     Private Sub BtnExcluir_Click(sender As Object, e As EventArgs) Handles BtnExcluir.Click
+
+        'VALIDAR SE JA TEM BAIXA PARA A NOTA
+        Abrir()
+        Dim cmd As MySqlCommand
+        Dim reader As MySqlDataReader
+        Dim sql As String
+
+
+        sql = "SELECT id_entrada from mvto_pagamentos where id_entrada= '" & TxtIdRegistro.Text & "' "
+        cmd = New MySqlCommand(sql, con)
+        reader = cmd.ExecuteReader
+        If reader.Read = True Then
+            reader.Close()
+
+            MsgBox("Nota fiscal já possui baixa registrada, não pode ser excluída!!", MsgBoxStyle.Information, "Exlusão")
+            Exit Sub
+        Else
+            reader.Close()
+        End If
+
+
         If MsgBox("Deseja exluir o registro da nota fiscal " + TxtNotaFiscal.Text + " ?", vbYesNo, "Exclusão") = vbYes Then
 
             Exluir_Entrada()

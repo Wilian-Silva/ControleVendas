@@ -240,13 +240,13 @@ Public Class FrmTelaInicial
         Dim valor As Decimal
         Dim valor2 As Decimal
         For Each linha In DataGrid_AVencer.Rows
-            valor = valor + linha.Cells(4).Value
+            valor += linha.Cells(4).Value
         Next
         LblAVencer.Text = valor
         LblAVencer.Text = Format(valor, "R$ 00.00")
         ' MsgBox(valor)
         For Each linha2 In DataGrid_Vencidos.Rows
-            valor2 = valor2 + linha2.Cells(4).Value
+            valor2 += linha2.Cells(4).Value
         Next
 
         LblVencidos.Text = valor2

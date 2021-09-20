@@ -121,7 +121,7 @@ Public Class FrmNotasEntrada
     End Sub
 
     Private Sub BtnSair_Click(sender As Object, e As EventArgs) Handles BtnSair.Click
-
+        pesquisarDuplicata = ""
         Me.Close()
     End Sub
 

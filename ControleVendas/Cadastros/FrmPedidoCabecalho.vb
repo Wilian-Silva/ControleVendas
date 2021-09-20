@@ -57,7 +57,9 @@ Public Class FrmPedidoCabecalho
 
 
     Private Sub BtnSair_Click(sender As Object, e As EventArgs) Handles BtnSair.Click
+        pedidoPesquisar = ""
         Me.Close()
+
     End Sub
 
     Private Sub FrmPedidoCabecalho_Load(sender As Object, e As EventArgs) Handles MyBase.Load

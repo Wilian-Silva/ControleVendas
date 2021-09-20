@@ -33,6 +33,8 @@ Public Class FrmPagarTitulo
             form.TxtRegPagamento.Text = TxtRegPagamento.Text
             form.TxtStatusTitulo.Text = TxtStatusTitulo.Text
 
+            form.TxtValorPago.Text = TxtSaldoTitulo.Text
+
 
             form.ShowDialog()
         End If
@@ -97,16 +99,20 @@ Public Class FrmPagarTitulo
                 reader2.Close()
             End If
 
-            'Stop
+            ' Stop
             '....................................................................................
             'BUSCANDO DADOS NA TBL MVTO_PAGAMENTOS
             Dim cmd3 As MySqlCommand
             Dim reader3 As MySqlDataReader
             Dim sql3 As String
-            sql3 = "SELECT MAX(id) as id, SUM(valor_pago) as valor_pago , SUM(juros_multa) as juros_multa , SUM(descontos) as descontos, SUM(total_pago) as total_pago, data_pagamento, MAX(status_nota) as status_nota, id_entrada FROM mvto_pagamentos WHERE id_duplicata= '" & idDuplicata & "' "
+            'sql3 = "SELECT sum(id) FROM mvto_pagamentos where id_duplicata =  '" & idDuplicata & "' "
+            sql3 = "Select MAX(id) As id , SUM(valor_pago) As valor_pago , SUM(juros_multa) As juros_multa , SUM(descontos) As descontos, SUM(total_pago) As total_pago, data_pagamento, MAX(status_nota) As status_nota, id_entrada FROM mvto_pagamentos WHERE id_duplicata = '" & idDuplicata & "' "
             cmd3 = New MySqlCommand(sql3, con)
             reader3 = cmd3.ExecuteReader
-            If reader3.Read = True Then
+
+            reader3.Read()
+
+            If Not IsDBNull(reader3("id")) Then
 
                 DataPagamento.Visible = True
                 LblDataPagamento.Visible = True
@@ -124,15 +130,15 @@ Public Class FrmPagarTitulo
 
                 reader3.Close()
             Else
+
+
                 reader3.Close()
                 TxtValorPago.Text = 0
                 TxtJurosMultas.Text = 0
                 TxtDescontos.Text = 0
                 TxtTotalPago.Text = 0
                 TxtStatusTitulo.Text = "Aberto"
-
             End If
-
 
         Catch ex As Exception
             MsgBox("Erro ao carregar dados!! ---- " + ex.Message)
@@ -199,13 +205,14 @@ Public Class FrmPagarTitulo
             sql3 = "SELECT MAX(id) as id, SUM(valor_pago) as valor_pago, SUM(juros_multa) as juros_multa , SUM(descontos) as descontos, SUM(total_pago) as total_pago, data_pagamento, MAX(status_nota) as status_nota, id_entrada FROM mvto_pagamentos WHERE id_duplicata= '" & idDuplicata & "' "
             cmd3 = New MySqlCommand(sql3, con)
             reader3 = cmd3.ExecuteReader
-            If reader3.Read = True Then
+            reader3.Read()
+
+            If Not IsDBNull(reader3("id")) Then
 
                 DataPagamento.Visible = True
                 LblDataPagamento.Visible = True
                 TxtRegPagamento.Visible = True
                 LblRegPgto.Visible = True
-
 
                 TxtRegPagamento.Text = reader3("id")
                 TxtValorPago.Text = reader3("valor_pago")
@@ -216,16 +223,16 @@ Public Class FrmPagarTitulo
                 TxtStatusTitulo.Text = reader3("status_nota")
                 TxtRefEntrada.Text = reader3("id_entrada")
 
-
                 reader3.Close()
             Else
+
+
                 reader3.Close()
                 TxtValorPago.Text = 0
                 TxtJurosMultas.Text = 0
                 TxtDescontos.Text = 0
                 TxtTotalPago.Text = 0
                 TxtStatusTitulo.Text = "Aberto"
-
             End If
 
             TxtIdPesquisar.Text = ""
@@ -267,7 +274,7 @@ Line1:
                 Exit Sub
             Else
                 reader.Close()
-                anterior = anterior - 1
+                anterior -= 1
                 GoTo Line1
             End If
 
@@ -340,12 +347,14 @@ Line1:
             sql3 = "SELECT MAX(id) as id, SUM(valor_pago) as valor_pago , SUM(juros_multa) as juros_multa, SUM(descontos) as descontos, SUM(total_pago) as total_pago, data_pagamento, MAX(status_nota) as status_nota, id_entrada FROM mvto_pagamentos WHERE id_duplicata= '" & idDuplicata & "' "
             cmd3 = New MySqlCommand(sql3, con)
             reader3 = cmd3.ExecuteReader
-            If reader3.Read = True Then
+            reader3.Read()
+
+            If Not IsDBNull(reader3("id")) Then
+
                 DataPagamento.Visible = True
                 LblDataPagamento.Visible = True
                 TxtRegPagamento.Visible = True
                 LblRegPgto.Visible = True
-
 
                 TxtRegPagamento.Text = reader3("id")
                 TxtValorPago.Text = reader3("valor_pago")
@@ -356,17 +365,16 @@ Line1:
                 TxtStatusTitulo.Text = reader3("status_nota")
                 TxtRefEntrada.Text = reader3("id_entrada")
 
-
-
                 reader3.Close()
             Else
+
+
                 reader3.Close()
                 TxtValorPago.Text = 0
                 TxtJurosMultas.Text = 0
                 TxtDescontos.Text = 0
                 TxtTotalPago.Text = 0
                 TxtStatusTitulo.Text = "Aberto"
-
             End If
 
 
@@ -434,7 +442,7 @@ Line1:
                 Exit Sub
             Else
                 reader.Close()
-                proximo = proximo + 1
+                proximo += 1
                 GoTo Line1
             End If
 
@@ -501,7 +509,10 @@ Line1:
             sql3 = "SELECT MAX(id)as id, SUM(valor_pago) as valor_pago, SUM(juros_multa) as juros_multa, SUM(descontos) as descontos, SUM(total_pago) as total_pago, data_pagamento, MAX(status_nota) as status_nota, id_entrada FROM mvto_pagamentos WHERE id_duplicata= '" & idDuplicata & "' "
             cmd3 = New MySqlCommand(sql3, con)
             reader3 = cmd3.ExecuteReader
-            If reader3.Read = True Then
+
+            reader3.Read()
+
+            If Not IsDBNull(reader3("id")) Then
 
                 DataPagamento.Visible = True
                 LblDataPagamento.Visible = True
@@ -517,20 +528,18 @@ Line1:
                 TxtStatusTitulo.Text = reader3("status_nota")
                 TxtRefEntrada.Text = reader3("id_entrada")
 
-
-
                 reader3.Close()
             Else
+
+
                 reader3.Close()
                 TxtValorPago.Text = 0
                 TxtJurosMultas.Text = 0
                 TxtDescontos.Text = 0
                 TxtTotalPago.Text = 0
                 TxtStatusTitulo.Text = "Aberto"
-
             End If
 
-            reader3.Close()
         Catch ex As Exception
 
             MsgBox("Erro ao carregar dados!! ---- " + ex.Message)
@@ -549,13 +558,15 @@ Line1:
 
             cmd3 = New MySqlCommand(sql3, con)
             reader3 = cmd3.ExecuteReader
-            If reader3.Read = True Then
+
+            reader3.Read()
+
+            If Not IsDBNull(reader3("id")) Then
 
                 DataPagamento.Visible = True
                 LblDataPagamento.Visible = True
                 TxtRegPagamento.Visible = True
                 LblRegPgto.Visible = True
-
 
                 TxtRegPagamento.Text = reader3("id")
                 TxtValorPago.Text = reader3("valor_pago")
@@ -566,16 +577,16 @@ Line1:
                 TxtStatusTitulo.Text = reader3("status_nota")
                 TxtRefEntrada.Text = reader3("id_entrada")
 
-
                 reader3.Close()
             Else
+
+
                 reader3.Close()
                 TxtValorPago.Text = 0
                 TxtJurosMultas.Text = 0
                 TxtDescontos.Text = 0
                 TxtTotalPago.Text = 0
                 TxtStatusTitulo.Text = "Aberto"
-
             End If
 
             'BUSCANDO DADOS NA TBL DUPLICATAS
