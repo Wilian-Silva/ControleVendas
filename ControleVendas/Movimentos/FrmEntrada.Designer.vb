@@ -126,7 +126,7 @@ Partial Class FrmEntrada
         Me.BtnPesqPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnPesqPedido.ForeColor = System.Drawing.Color.Transparent
         Me.BtnPesqPedido.Image = CType(resources.GetObject("BtnPesqPedido.Image"), System.Drawing.Image)
-        Me.BtnPesqPedido.Location = New System.Drawing.Point(377, 16)
+        Me.BtnPesqPedido.Location = New System.Drawing.Point(423, 16)
         Me.BtnPesqPedido.Name = "BtnPesqPedido"
         Me.BtnPesqPedido.Size = New System.Drawing.Size(22, 22)
         Me.BtnPesqPedido.TabIndex = 157
@@ -330,7 +330,7 @@ Partial Class FrmEntrada
         'TxtNotaFiscal
         '
         Me.TxtNotaFiscal.Enabled = False
-        Me.TxtNotaFiscal.Location = New System.Drawing.Point(532, 17)
+        Me.TxtNotaFiscal.Location = New System.Drawing.Point(97, 16)
         Me.TxtNotaFiscal.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtNotaFiscal.Name = "TxtNotaFiscal"
         Me.TxtNotaFiscal.Size = New System.Drawing.Size(83, 20)
@@ -341,7 +341,7 @@ Partial Class FrmEntrada
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(479, 19)
+        Me.Label2.Location = New System.Drawing.Point(44, 18)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(50, 16)
@@ -352,8 +352,8 @@ Partial Class FrmEntrada
         '
         Me.GroupBox3.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox3.Controls.Add(Me.TxtIdRegistro)
-        Me.GroupBox3.Controls.Add(Me.Label4)
         Me.GroupBox3.Controls.Add(Me.BtnPesqPedido)
+        Me.GroupBox3.Controls.Add(Me.Label4)
         Me.GroupBox3.Controls.Add(Me.TxtDescPed)
         Me.GroupBox3.Controls.Add(Me.Label7)
         Me.GroupBox3.Controls.Add(Me.TxtTotalNota)
@@ -375,7 +375,7 @@ Partial Class FrmEntrada
         'TxtIdRegistro
         '
         Me.TxtIdRegistro.Enabled = False
-        Me.TxtIdRegistro.Location = New System.Drawing.Point(96, 17)
+        Me.TxtIdRegistro.Location = New System.Drawing.Point(578, 17)
         Me.TxtIdRegistro.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtIdRegistro.Name = "TxtIdRegistro"
         Me.TxtIdRegistro.Size = New System.Drawing.Size(37, 20)
@@ -387,7 +387,7 @@ Partial Class FrmEntrada
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(20, 19)
+        Me.Label4.Location = New System.Drawing.Point(502, 19)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(75, 16)
@@ -397,7 +397,7 @@ Partial Class FrmEntrada
         'TxtDescPed
         '
         Me.TxtDescPed.Enabled = False
-        Me.TxtDescPed.Location = New System.Drawing.Point(262, 17)
+        Me.TxtDescPed.Location = New System.Drawing.Point(308, 17)
         Me.TxtDescPed.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtDescPed.Name = "TxtDescPed"
         Me.TxtDescPed.Size = New System.Drawing.Size(108, 20)
@@ -447,7 +447,7 @@ Partial Class FrmEntrada
         'TxtCodPedido
         '
         Me.TxtCodPedido.Enabled = False
-        Me.TxtCodPedido.Location = New System.Drawing.Point(228, 17)
+        Me.TxtCodPedido.Location = New System.Drawing.Point(274, 17)
         Me.TxtCodPedido.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtCodPedido.Name = "TxtCodPedido"
         Me.TxtCodPedido.Size = New System.Drawing.Size(32, 20)
@@ -483,7 +483,7 @@ Partial Class FrmEntrada
         Me.Label8.AutoSize = True
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(174, 18)
+        Me.Label8.Location = New System.Drawing.Point(220, 18)
         Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(51, 16)

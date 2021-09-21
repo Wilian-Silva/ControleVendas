@@ -67,7 +67,7 @@ Public Class FrmNotasEntrada
 
     End Sub
     Private Sub FormatarGrid()
-        ' DataGrid.Columns(11).Visible = False
+        DataGrid.Columns(11).Visible = False
 
         DataGrid.Columns(0).HeaderText = "Reg. Entrada"
         DataGrid.Columns(1).HeaderText = "Nota Fiscal"
@@ -80,7 +80,7 @@ Public Class FrmNotasEntrada
         DataGrid.Columns(8).HeaderText = "Pedido"
         DataGrid.Columns(9).HeaderText = "Descrição"
         DataGrid.Columns(10).HeaderText = "Observação"
-        DataGrid.Columns(11).HeaderText = "Reg. Duplicata"
+        ' DataGrid.Columns(11).HeaderText = "Reg. Duplicata"
 
 
         DataGrid.Columns(0).Width = 50
@@ -92,10 +92,10 @@ Public Class FrmNotasEntrada
         DataGrid.Columns(8).Width = 50
         DataGrid.Columns(9).Width = 150
         DataGrid.Columns(10).Width = 150
-        DataGrid.Columns(11).Width = 50
+        'DataGrid.Columns(11).Width = 50
 
-        DataGrid.Columns(11).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-        DataGrid.Columns(11).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+        'DataGrid.Columns(11).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        ' DataGrid.Columns(11).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
 
         DataGrid.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid.Columns(0).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
@@ -128,7 +128,7 @@ Public Class FrmNotasEntrada
     Private Sub FrmNotasEntrada_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         If statusBtn = "Visible" Then
-            GboxExluir.Visible = True
+            BtnExcluir.Enabled = True
         End If
         If pesquisarDuplicata = "True" Then
             GboxPesquisar.Visible = True
@@ -145,7 +145,7 @@ Public Class FrmNotasEntrada
             Dim reader As MySqlDataReader
             Dim sql1 As String
 
-            sql1 = "SELECT * FROM mvto_pagamentos where id_nota = '" & TxtId.Text & "' "
+            sql1 = "SELECT * FROM mvto_pagamentos where id_entrada = '" & TxtId.Text & "' "
             cmd1 = New MySqlCommand(sql1, con)
             reader = cmd1.ExecuteReader
 
@@ -172,9 +172,11 @@ Public Class FrmNotasEntrada
                     cmd = New MySqlCommand(sql, con)
                     cmd.ExecuteNonQuery()
 
-                    ExcluirRegistroEstoque()
+                    Excluir_Estoque()
 
-                    AtualizarPedido_ExclusaoNota()
+                    Exluir_Duplicatas()
+
+                    Atualizar_PedidoStatus()
 
                     MsgBox("Registro excluído com Sucesso!!", MsgBoxStyle.Information, "Exlusão")
 
@@ -187,7 +189,7 @@ Public Class FrmNotasEntrada
 
             End If
         Else
-            MsgBox("Selecione um registro para excluir!!", MsgBoxStyle.Information, "Id Registro Vazio")
+            MsgBox("Selecione um registro para excluir!!", MsgBoxStyle.Information, "Registro Vazio")
         End If
 
     End Sub
@@ -197,24 +199,41 @@ Public Class FrmNotasEntrada
             On Error Resume Next
 
             TxtId.Text = DataGrid.CurrentRow.Cells(0).Value
-            TxtIdPedido.Text = DataGrid.CurrentRow.Cells(3).Value
+            TxtNota.Text = DataGrid.CurrentRow.Cells(1).Value
+            TxtFornecedor.Text = DataGrid.CurrentRow.Cells(3).Value
+            TxtIdPedido.Text = DataGrid.CurrentRow.Cells(8).Value
 
         End If
 
     End Sub
+    Private Sub Exluir_Duplicatas()
+        Try
+            Abrir()
 
-    Sub ExcluirRegistroEstoque()
+            Dim cmd As MySqlCommand
+            Dim sql As String
+
+            sql = "DELETE FROM duplicatas where id_entrada = '" & TxtId.Text & "' "
+            cmd = New MySqlCommand(sql, con)
+            cmd.ExecuteNonQuery()
+
+        Catch ex As Exception
+            MsgBox("Erro ao Salvar!! " + ex.Message)
+        End Try
+
+    End Sub
+    Sub Excluir_Estoque()
 
         'PROMAGAMANDO EXCLUSÃO NO ESTOQUE
         Abrir()
         Dim cmd As MySqlCommand
         Dim sql As String
 
-        sql = "DELETE FROM estoque where id_nota = '" & TxtId.Text & "' "
+        sql = "DELETE FROM estoque where id_entrada = '" & TxtId.Text & "' "
         cmd = New MySqlCommand(sql, con)
         cmd.ExecuteNonQuery()
     End Sub
-    Sub AtualizarPedido_ExclusaoNota()
+    Sub Atualizar_PedidoStatus()
 
         'PROMAGAMANDO ATUALIZAÇÃO STATUS DO PEDIDO
         Abrir()

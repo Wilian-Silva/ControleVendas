@@ -241,9 +241,7 @@ Public Class FrmPagamentoEfetuado
     End Sub
 
     Private Sub FrmPagamentoEfetuado_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
-        BtnExcluir.Visible = False
-        TxtIdReg.Visible = False
-        LblId.Visible = False
+
         statusBtn = ""
     End Sub
 

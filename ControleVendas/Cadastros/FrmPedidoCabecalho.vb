@@ -76,6 +76,12 @@ Public Class FrmPedidoCabecalho
 
         End If
 
+        If statusBtn = "Visible" Then
+
+            BtnExcluir.Enabled = True
+
+        End If
+
         ListarTudo()
 
         FormatarGrid()
@@ -85,6 +91,9 @@ Public Class FrmPedidoCabecalho
         If e.RowIndex > -1 Then
 
             TxtIdPedido.Text = DataGrid.CurrentRow.Cells(0).Value
+            TxtDescPedido.Text = DataGrid.CurrentRow.Cells(1).Value
+            TxtFornecedor.Text = DataGrid.CurrentRow.Cells(3).Value
+            TxtStatus.Text = DataGrid.CurrentRow.Cells(6).Value
         End If
     End Sub
 
@@ -94,60 +103,43 @@ Public Class FrmPedidoCabecalho
             MsgBox("Selecione um registro para excluir!", MsgBoxStyle.Information, "Excluir")
             Exit Sub
         End If
-        'CONSULTAR DE PEDIDO JA FOI USADO PARA ENTRADA DA NOTA FISCAL
-        Abrir()
-            Dim cmd2 As MySqlCommand
-            Dim reader As MySqlDataReader
-            Dim sql2 As String
-            Dim idped As Integer
-            idped = TxtIdPedido.Text
+        If TxtStatus.Text = "Fechado" Then
+            MsgBox("Pedido já utilizado, não pode ser excluído!!", MsgBoxStyle.Information, "Pedido Fechado")
+            Exit Sub
+        End If
 
-            sql2 = "SELECT * FROM entrada WHERE id_pedido = '" & idped & "' "
-            cmd2 = New MySqlCommand(sql2, con)
-            reader = cmd2.ExecuteReader
 
-            If reader.Read = True Then
+        'PROGRAMANDO EXCLUSÃO DE REGISTRO NO BANCO
+        If MsgBox("Deseja excluir pedido de compra?", vbYesNo, "Excluir Pedido") = vbYes Then
 
-                If reader(3) = idped Then
+            Try
+                Abrir()
 
-                    MsgBox("Pedido já utilizado, não pode ser excluído!!", MsgBoxStyle.Information, "Pedido Fechado")
+                'EXCLUIR NA TEBELA CABEÇALHO
+                Dim cmd As MySqlCommand
+                Dim sql As String
+                sql = "DELETE FROM pedido_cabecalho where id = '" & TxtIdPedido.Text & "' "
+                cmd = New MySqlCommand(sql, con)
+                cmd.ExecuteNonQuery()
 
-                    reader.Close()
-                    Exit Sub
+                'EXCLUIR NA TABELA PEDIDOS
+                Dim cmd1 As MySqlCommand
+                Dim sql1 As String
+                sql1 = "DELETE FROM pedidos where pedido = '" & TxtIdPedido.Text & "' "
+                cmd1 = New MySqlCommand(sql1, con)
+                cmd1.ExecuteNonQuery()
 
-                End If
-            Else
-                reader.Close()
+                MsgBox("Registro excluído com Sucesso!!", MsgBoxStyle.Information, "Exlusão")
 
-            End If
+                TxtIdPedido.Text = ""
+                TxtDescPedido.Text = ""
+                TxtFornecedor.Text = ""
+                TxtStatus.Text = ""
 
-            'PROGRAMANDO EXCLUSÃO DE REGISTRO NO BANCO
-            If MsgBox("Deseja excluir registro?", vbYesNo, "Exclusão") = vbYes Then
-
-                Try
-                    Abrir()
-
-                    'EXCLUIR NA TEBELA CABEÇALHO
-                    Dim cmd As MySqlCommand
-                    Dim sql As String
-                    sql = "DELETE FROM pedido_cabecalho where id = '" & TxtIdPedido.Text & "' "
-                    cmd = New MySqlCommand(sql, con)
-                    cmd.ExecuteNonQuery()
-
-                    'EXCLUIR NA TABELA PEDIDOS
-                    Dim cmd1 As MySqlCommand
-                    Dim sql1 As String
-                    sql1 = "DELETE FROM pedidos where id = '" & TxtIdPedido.Text & "' "
-                    cmd1 = New MySqlCommand(sql1, con)
-                    cmd1.ExecuteNonQuery()
-
-                    MsgBox("Registro excluído com Sucesso!!", MsgBoxStyle.Information, "Exlusão")
-                    TxtIdPedido.Text = ""
-
-                Catch ex As Exception
-                    MsgBox("Erro ao excluir!!" + ex.Message)
-                End Try
-            End If
+            Catch ex As Exception
+                MsgBox("Erro ao excluir!!" + ex.Message)
+            End Try
+        End If
 
 
     End Sub
@@ -223,5 +215,9 @@ Public Class FrmPedidoCabecalho
             MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
         End Try
 
+    End Sub
+
+    Private Sub FrmPedidoCabecalho_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        statusBtn = ""
     End Sub
 End Class
