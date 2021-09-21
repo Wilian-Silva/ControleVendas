@@ -42,12 +42,13 @@ Partial Class FrmVlrPgto
         Me.BtnOk = New System.Windows.Forms.Button()
         Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.TxtParcela = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TxtSaldoAbertoParcela = New System.Windows.Forms.TextBox()
-        Me.TxtRegPagamento = New System.Windows.Forms.TextBox()
-        Me.Label18 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.DataVencimento = New System.Windows.Forms.DateTimePicker()
+        Me.TxtValorParcela = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.DataEmissao = New System.Windows.Forms.DateTimePicker()
         Me.TxtDescPed = New System.Windows.Forms.TextBox()
@@ -60,9 +61,8 @@ Partial Class FrmVlrPgto
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TxtNotaFiscal = New System.Windows.Forms.TextBox()
-        Me.TxtParcela = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.TxtValorParcela = New System.Windows.Forms.TextBox()
+        Me.TxtRegPagamento = New System.Windows.Forms.TextBox()
+        Me.Label18 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.TxtRefEntrada = New System.Windows.Forms.TextBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
@@ -303,6 +303,16 @@ Partial Class FrmVlrPgto
         Me.GroupBox3.TabIndex = 173
         Me.GroupBox3.TabStop = False
         '
+        'TxtParcela
+        '
+        Me.TxtParcela.Enabled = False
+        Me.TxtParcela.Location = New System.Drawing.Point(85, 130)
+        Me.TxtParcela.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtParcela.Name = "TxtParcela"
+        Me.TxtParcela.Size = New System.Drawing.Size(43, 20)
+        Me.TxtParcela.TabIndex = 163
+        Me.TxtParcela.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
         'Label6
         '
         Me.Label6.AutoSize = True
@@ -324,27 +334,17 @@ Partial Class FrmVlrPgto
         Me.TxtSaldoAbertoParcela.Size = New System.Drawing.Size(97, 20)
         Me.TxtSaldoAbertoParcela.TabIndex = 159
         '
-        'TxtRegPagamento
+        'Label7
         '
-        Me.TxtRegPagamento.Enabled = False
-        Me.TxtRegPagamento.Location = New System.Drawing.Point(120, 64)
-        Me.TxtRegPagamento.Margin = New System.Windows.Forms.Padding(4)
-        Me.TxtRegPagamento.Name = "TxtRegPagamento"
-        Me.TxtRegPagamento.Size = New System.Drawing.Size(44, 20)
-        Me.TxtRegPagamento.TabIndex = 158
-        Me.TxtRegPagamento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Label18
-        '
-        Me.Label18.AutoSize = True
-        Me.Label18.BackColor = System.Drawing.Color.Transparent
-        Me.Label18.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.Location = New System.Drawing.Point(2, 65)
-        Me.Label18.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(117, 16)
-        Me.Label18.TabIndex = 157
-        Me.Label18.Text = "Refer. Último Pgto:"
+        Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.Transparent
+        Me.Label7.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(3, 132)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(77, 16)
+        Me.Label7.TabIndex = 162
+        Me.Label7.Text = "Parc./Valor:"
         '
         'Label5
         '
@@ -366,6 +366,15 @@ Partial Class FrmVlrPgto
         Me.DataVencimento.Name = "DataVencimento"
         Me.DataVencimento.Size = New System.Drawing.Size(97, 20)
         Me.DataVencimento.TabIndex = 155
+        '
+        'TxtValorParcela
+        '
+        Me.TxtValorParcela.Enabled = False
+        Me.TxtValorParcela.Location = New System.Drawing.Point(130, 130)
+        Me.TxtValorParcela.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtValorParcela.Name = "TxtValorParcela"
+        Me.TxtValorParcela.Size = New System.Drawing.Size(80, 20)
+        Me.TxtValorParcela.TabIndex = 161
         '
         'Label10
         '
@@ -391,10 +400,10 @@ Partial Class FrmVlrPgto
         'TxtDescPed
         '
         Me.TxtDescPed.Enabled = False
-        Me.TxtDescPed.Location = New System.Drawing.Point(132, 71)
+        Me.TxtDescPed.Location = New System.Drawing.Point(131, 71)
         Me.TxtDescPed.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtDescPed.Name = "TxtDescPed"
-        Me.TxtDescPed.Size = New System.Drawing.Size(114, 20)
+        Me.TxtDescPed.Size = New System.Drawing.Size(174, 20)
         Me.TxtDescPed.TabIndex = 150
         '
         'TxtCodPedido
@@ -494,36 +503,27 @@ Partial Class FrmVlrPgto
         Me.TxtNotaFiscal.TabIndex = 97
         Me.TxtNotaFiscal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'TxtParcela
+        'TxtRegPagamento
         '
-        Me.TxtParcela.Enabled = False
-        Me.TxtParcela.Location = New System.Drawing.Point(85, 130)
-        Me.TxtParcela.Margin = New System.Windows.Forms.Padding(4)
-        Me.TxtParcela.Name = "TxtParcela"
-        Me.TxtParcela.Size = New System.Drawing.Size(43, 20)
-        Me.TxtParcela.TabIndex = 163
-        Me.TxtParcela.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TxtRegPagamento.Enabled = False
+        Me.TxtRegPagamento.Location = New System.Drawing.Point(120, 64)
+        Me.TxtRegPagamento.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtRegPagamento.Name = "TxtRegPagamento"
+        Me.TxtRegPagamento.Size = New System.Drawing.Size(44, 20)
+        Me.TxtRegPagamento.TabIndex = 158
+        Me.TxtRegPagamento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Label7
+        'Label18
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.BackColor = System.Drawing.Color.Transparent
-        Me.Label7.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(3, 132)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(77, 16)
-        Me.Label7.TabIndex = 162
-        Me.Label7.Text = "Parc./Valor:"
-        '
-        'TxtValorParcela
-        '
-        Me.TxtValorParcela.Enabled = False
-        Me.TxtValorParcela.Location = New System.Drawing.Point(131, 130)
-        Me.TxtValorParcela.Margin = New System.Windows.Forms.Padding(4)
-        Me.TxtValorParcela.Name = "TxtValorParcela"
-        Me.TxtValorParcela.Size = New System.Drawing.Size(80, 20)
-        Me.TxtValorParcela.TabIndex = 161
+        Me.Label18.AutoSize = True
+        Me.Label18.BackColor = System.Drawing.Color.Transparent
+        Me.Label18.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label18.Location = New System.Drawing.Point(2, 65)
+        Me.Label18.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(117, 16)
+        Me.Label18.TabIndex = 157
+        Me.Label18.Text = "Refer. Último Pgto:"
         '
         'Label17
         '

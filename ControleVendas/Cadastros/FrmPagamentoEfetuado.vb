@@ -65,7 +65,7 @@ Public Class FrmPagamentoEfetuado
         'DataGrid.Columns(0).Visible = False
         DataGrid.Columns(1).Visible = False
         DataGrid.Columns(19).Visible = False
-        'DataGrid.Columns(5).Visible = False
+        DataGrid.Columns(18).Visible = False
         'DataGrid.Columns(8).Visible = False
         'DataGrid.Columns(9).Visible = False
 
@@ -87,7 +87,7 @@ Public Class FrmPagamentoEfetuado
         DataGrid.Columns(15).HeaderText = "Data Emissão"
         DataGrid.Columns(16).HeaderText = "Data Vencimento"
         DataGrid.Columns(17).HeaderText = "Data Pagamento"
-        DataGrid.Columns(18).HeaderText = "Status Nota"
+        'DataGrid.Columns(18).HeaderText = "Status Nota"
         'DataGrid.Columns(19).HeaderText = "Cód. Reg. Entrada"
 
         DataGrid.Columns(0).Width = 50
@@ -98,7 +98,7 @@ Public Class FrmPagamentoEfetuado
         DataGrid.Columns(7).Width = 150
         DataGrid.Columns(8).Width = 50
         DataGrid.Columns(5).Width = 100
-        DataGrid.Columns(18).Width = 90
+        'DataGrid.Columns(18).Width = 90
 
         DataGrid.Columns(0).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
@@ -121,8 +121,8 @@ Public Class FrmPagamentoEfetuado
         DataGrid.Columns(16).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid.Columns(17).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
 
-        DataGrid.Columns(18).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
-        DataGrid.Columns(18).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
+        ' DataGrid.Columns(18).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+        ' DataGrid.Columns(18).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
 
 
         DataGrid.Columns(5).DefaultCellStyle.Format = "c"
@@ -146,10 +146,9 @@ Public Class FrmPagamentoEfetuado
         ListarTudo()
 
         If statusBtn = "Visible" Then
-            GBoxExluir.Visible = True
+            'GBoxExluir.Visible = True
+            BtnExcluir.Enabled = True
 
-            'TxtIdReg.Text = DataGrid.CurrentRow.Cells(0).Value
-            ' TxtIdRegDup.Text = DataGrid.CurrentRow.Cells(1).Value
         End If
 
     End Sub
@@ -157,76 +156,83 @@ Public Class FrmPagamentoEfetuado
     Private Sub DataGrid_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGrid.CellClick
         If e.RowIndex > -1 Then
 
-            If statusBtn = "Visible" Then
 
-                TxtIdReg.Text = DataGrid.CurrentRow.Cells(0).Value
-                TxtIdRegDup.Text = DataGrid.CurrentRow.Cells(1).Value
-
+            TxtIdReg.Text = DataGrid.CurrentRow.Cells(0).Value
+            TxtIdRegDup.Text = DataGrid.CurrentRow.Cells(1).Value
+            TxtNota.Text = DataGrid.CurrentRow.Cells(4).Value
+            TxtParcela.Text = DataGrid.CurrentRow.Cells(8).Value
+            TxtValorParcela.Text = DataGrid.CurrentRow.Cells(9).Value
+            TxtValorPago.Text = DataGrid.CurrentRow.Cells(10).Value
 
             End If
-        End If
     End Sub
 
     Private Sub BtnExcluir_Click(sender As Object, e As EventArgs) Handles BtnExcluir.Click
+        'Stop
+        Dim total As Double
+        Dim parcela As Double
+        Dim saldo As Double
+
         If TxtIdReg.Text <> "" And TxtIdRegDup.Text <> "" Then
 
+            If MsgBox("Deseja excluir registro?", vbYesNo, "Exclusão") = vbYes Then
 
-            Dim linhaPed As Integer
-            Try
-                Abrir()
-                Dim cmdp As MySqlCommand
-                Dim sql As String
-                Dim ultima As MySqlDataReader
+                Try
+                    Abrir()
 
+                    'PROGRAMANDO EXCLUSÃO DE REGISTRO NO BANCO
+                    Dim cmd As MySqlCommand
+                    Dim sql As String
 
-                sql = "SELECT MAX(id) AS Id FROM mvto_pagamentos WHERE id_duplicata = '" & TxtIdRegDup.Text & "' "
-
-                cmdp = New MySqlCommand(sql, con)
-                ultima = cmdp.ExecuteReader()
-
-                If (ultima.Read()) Then
-                    linhaPed = ultima("id")
-                    ultima.Close()
-                Else
-                    ultima.Close()
-                End If
-
-            Catch ex As Exception
-                MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
-            End Try
+                    sql = "DELETE FROM mvto_pagamentos where id = '" & TxtIdReg.Text & "' "
+                    cmd = New MySqlCommand(sql, con)
+                    cmd.ExecuteNonQuery()
 
 
-            If TxtIdReg.Text = linhaPed Then
+                    'BUSCANDO TOTAL PAGO NO MVTO PAGAMENTOS
+                    Dim cmd3 As MySqlCommand
+                    Dim reader3 As MySqlDataReader
+                    Dim sql3 As String
+                    sql3 = "Select SUM(valor_pago) As valor_pago, valor_parcela FROM mvto_pagamentos WHERE id_duplicata = '" & TxtIdRegDup.Text & "' "
+                    cmd3 = New MySqlCommand(sql3, con)
+                    reader3 = cmd3.ExecuteReader
 
+                    reader3.Read()
 
-                If MsgBox("Deseja excluir registro?", vbYesNo, "Exclusão") = vbYes Then
+                    If Not IsDBNull(reader3("valor_pago")) Then
 
-                    Try
-                        Abrir()
+                        total = reader3("valor_pago")
+                        parcela = reader3("valor_parcela")
 
-                        'PROGRAMANDO EXCLUSÃO DE REGISTRO NO BANCO
-                        Dim cmd As MySqlCommand
-                        Dim sql As String
+                        reader3.Close()
+                    Else
+                        reader3.Close()
+                    End If
 
-                        sql = "DELETE FROM mvto_pagamentos where id = '" & TxtIdReg.Text & "' "
-                        cmd = New MySqlCommand(sql, con)
-                        cmd.ExecuteNonQuery()
+                    saldo = parcela - total
 
-                        TxtIdReg.Text = ""
-                        MsgBox("Registro excluído com Sucesso!!", MsgBoxStyle.Information, "Exlusão")
+                    'ATUALIZAR SALDO NA TABELA DUPLICATAS
+                    Dim cmd1 As MySqlCommand
+                    Dim sql1 As String
+                    sql1 = "UPDATE duplicatas SET saldo_duplicata = '" & saldo & "' WHERE id = '" & TxtIdRegDup.Text & "' "
+                    cmd1 = New MySqlCommand(sql1, con)
+                    cmd1.ExecuteNonQuery()
 
-                    Catch ex As Exception
-                        MsgBox("Erro ao excluir!!" + ex.Message)
-                    End Try
+                    TxtIdReg.Text = ""
+                    TxtIdRegDup.Text=""
+                    TxtNota.Text = ""
+                    TxtParcela.Text = ""
+                    TxtValorPago.Text = ""
+                    TxtValorParcela.Text = ""
 
-                End If
+                    MsgBox("Registro excluído com Sucesso!!", MsgBoxStyle.Information, "Excluir Pagamento")
 
+                Catch ex As Exception
+                    MsgBox("Erro ao excluir!!" + ex.Message)
+                End Try
 
-            Else
-                MsgBox("Duplicata possui mais de um registro de pagamento, é necessário primeiro excluir o último pagamento dessa duplicata para prosseguir!!", MsgBoxStyle.Information, "Exluir pagamento")
-
-                Exit Sub
             End If
+
         Else
 
             MsgBox("Selecione um registro para excluir!!", MsgBoxStyle.Information, "Exlusão")

@@ -125,7 +125,6 @@ Public Class FrmPagarTitulo
                 TxtDescontos.Text = reader3("descontos")
                 TxtTotalPago.Text = reader3("total_pago")
                 DataPagamento.Text = reader3("data_pagamento")
-                TxtStatusTitulo.Text = reader3("status_nota")
                 TxtRefEntrada.Text = reader3("id_entrada")
 
                 reader3.Close()
@@ -137,8 +136,22 @@ Public Class FrmPagarTitulo
                 TxtJurosMultas.Text = 0
                 TxtDescontos.Text = 0
                 TxtTotalPago.Text = 0
-                TxtStatusTitulo.Text = "Aberto"
+                'TxtStatusTitulo.Text = "Aberto"
             End If
+
+
+            If TxtValorPago.Text = "0" Then
+                TxtStatusTitulo.Text = "Aberto"
+            Else
+
+                If TxtSaldoTitulo.Text = "0,00" Then
+                    TxtStatusTitulo.Text = "Pgto. Total"
+                Else
+
+                    TxtStatusTitulo.Text = "Pgto. Parcial"
+                End If
+            End If
+
 
         Catch ex As Exception
             MsgBox("Erro ao carregar dados!! ---- " + ex.Message)
@@ -220,7 +233,7 @@ Public Class FrmPagarTitulo
                 TxtDescontos.Text = reader3("descontos")
                 TxtTotalPago.Text = reader3("total_pago")
                 DataPagamento.Text = reader3("data_pagamento")
-                TxtStatusTitulo.Text = reader3("status_nota")
+                ' TxtStatusTitulo.Text = reader3("status_nota")
                 TxtRefEntrada.Text = reader3("id_entrada")
 
                 reader3.Close()
@@ -232,11 +245,23 @@ Public Class FrmPagarTitulo
                 TxtJurosMultas.Text = 0
                 TxtDescontos.Text = 0
                 TxtTotalPago.Text = 0
-                TxtStatusTitulo.Text = "Aberto"
+                'TxtStatusTitulo.Text = "Aberto"
             End If
 
             TxtIdPesquisar.Text = ""
 
+
+            If TxtValorPago.Text = "0" Then
+                TxtStatusTitulo.Text = "Aberto"
+            Else
+
+                If TxtSaldoTitulo.Text = "0,00" Then
+                    TxtStatusTitulo.Text = "Pgto. Total"
+                Else
+
+                    TxtStatusTitulo.Text = "Pgto. Parcial"
+                End If
+            End If
 
         Catch ex As Exception
             MsgBox("Erro ao carregar dados!! ---- " + ex.Message)
@@ -362,7 +387,7 @@ Line1:
                 TxtDescontos.Text = reader3("descontos")
                 TxtTotalPago.Text = reader3("total_pago")
                 DataPagamento.Text = reader3("data_pagamento")
-                TxtStatusTitulo.Text = reader3("status_nota")
+                ' TxtStatusTitulo.Text = reader3("status_nota")
                 TxtRefEntrada.Text = reader3("id_entrada")
 
                 reader3.Close()
@@ -374,7 +399,20 @@ Line1:
                 TxtJurosMultas.Text = 0
                 TxtDescontos.Text = 0
                 TxtTotalPago.Text = 0
+                ' TxtStatusTitulo.Text = "Aberto"
+            End If
+
+
+            If TxtValorPago.Text = "0" Then
                 TxtStatusTitulo.Text = "Aberto"
+            Else
+
+                If TxtSaldoTitulo.Text = "0,00" Then
+                    TxtStatusTitulo.Text = "Pgto. Total"
+                Else
+
+                    TxtStatusTitulo.Text = "Pgto. Parcial"
+                End If
             End If
 
 
@@ -525,7 +563,7 @@ Line1:
                 TxtDescontos.Text = reader3("descontos")
                 TxtTotalPago.Text = reader3("total_pago")
                 DataPagamento.Text = reader3("data_pagamento")
-                TxtStatusTitulo.Text = reader3("status_nota")
+                'TxtStatusTitulo.Text = reader3("status_nota")
                 TxtRefEntrada.Text = reader3("id_entrada")
 
                 reader3.Close()
@@ -537,8 +575,22 @@ Line1:
                 TxtJurosMultas.Text = 0
                 TxtDescontos.Text = 0
                 TxtTotalPago.Text = 0
-                TxtStatusTitulo.Text = "Aberto"
+                'TxtStatusTitulo.Text = "Aberto"
             End If
+
+
+            If TxtValorPago.Text = "0" Then
+                TxtStatusTitulo.Text = "Aberto"
+            Else
+
+                If TxtSaldoTitulo.Text = "0,00" Then
+                    TxtStatusTitulo.Text = "Pgto. Total"
+                Else
+
+                    TxtStatusTitulo.Text = "Pgto. Parcial"
+                End If
+            End If
+
 
         Catch ex As Exception
 
@@ -574,7 +626,7 @@ Line1:
                 TxtDescontos.Text = reader3("descontos")
                 TxtTotalPago.Text = reader3("total_pago")
                 DataPagamento.Text = reader3("data_pagamento")
-                TxtStatusTitulo.Text = reader3("status_nota")
+                'TxtStatusTitulo.Text = reader3("status_nota")
                 TxtRefEntrada.Text = reader3("id_entrada")
 
                 reader3.Close()
@@ -586,7 +638,20 @@ Line1:
                 TxtJurosMultas.Text = 0
                 TxtDescontos.Text = 0
                 TxtTotalPago.Text = 0
+                'TxtStatusTitulo.Text = "Aberto"
+            End If
+
+
+            If TxtValorPago.Text = "0" Then
                 TxtStatusTitulo.Text = "Aberto"
+            Else
+
+                If TxtSaldoTitulo.Text = "0,00" Then
+                    TxtStatusTitulo.Text = "Pgto. Total"
+                Else
+
+                    TxtStatusTitulo.Text = "Pgto. Parcial"
+                End If
             End If
 
             'BUSCANDO DADOS NA TBL DUPLICATAS

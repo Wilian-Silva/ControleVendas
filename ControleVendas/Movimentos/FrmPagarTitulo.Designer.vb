@@ -69,12 +69,12 @@ Partial Class FrmPagarTitulo
         Me.BtnBaixarTitulo = New System.Windows.Forms.Button()
         Me.BtnSair = New System.Windows.Forms.Button()
         Me.GboxPesProd = New System.Windows.Forms.GroupBox()
+        Me.BtnPesquisar = New System.Windows.Forms.Button()
         Me.TxtIdPesquisar = New System.Windows.Forms.TextBox()
         Me.BtnProximo = New System.Windows.Forms.Button()
         Me.BtnCarregar = New System.Windows.Forms.Button()
         Me.BtnAnterior = New System.Windows.Forms.Button()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
-        Me.BtnPesquisar = New System.Windows.Forms.Button()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -109,7 +109,7 @@ Partial Class FrmPagarTitulo
         Me.Label19.AutoSize = True
         Me.Label19.BackColor = System.Drawing.Color.Transparent
         Me.Label19.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.Location = New System.Drawing.Point(141, 51)
+        Me.Label19.Location = New System.Drawing.Point(18, 51)
         Me.Label19.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(42, 16)
@@ -119,7 +119,7 @@ Partial Class FrmPagarTitulo
         'TxtTotalTitulo
         '
         Me.TxtTotalTitulo.Enabled = False
-        Me.TxtTotalTitulo.Location = New System.Drawing.Point(187, 49)
+        Me.TxtTotalTitulo.Location = New System.Drawing.Point(64, 49)
         Me.TxtTotalTitulo.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtTotalTitulo.Name = "TxtTotalTitulo"
         Me.TxtTotalTitulo.Size = New System.Drawing.Size(80, 20)
@@ -128,7 +128,7 @@ Partial Class FrmPagarTitulo
         'TxtDescPed
         '
         Me.TxtDescPed.Enabled = False
-        Me.TxtDescPed.Location = New System.Drawing.Point(366, 50)
+        Me.TxtDescPed.Location = New System.Drawing.Point(267, 49)
         Me.TxtDescPed.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtDescPed.Name = "TxtDescPed"
         Me.TxtDescPed.Size = New System.Drawing.Size(111, 20)
@@ -137,7 +137,7 @@ Partial Class FrmPagarTitulo
         'TxtCodPedido
         '
         Me.TxtCodPedido.Enabled = False
-        Me.TxtCodPedido.Location = New System.Drawing.Point(333, 50)
+        Me.TxtCodPedido.Location = New System.Drawing.Point(234, 49)
         Me.TxtCodPedido.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtCodPedido.Name = "TxtCodPedido"
         Me.TxtCodPedido.Size = New System.Drawing.Size(32, 20)
@@ -148,7 +148,7 @@ Partial Class FrmPagarTitulo
         Me.Label8.AutoSize = True
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(278, 51)
+        Me.Label8.Location = New System.Drawing.Point(179, 50)
         Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(51, 16)
@@ -158,7 +158,7 @@ Partial Class FrmPagarTitulo
         'TxtIdRegistro
         '
         Me.TxtIdRegistro.Enabled = False
-        Me.TxtIdRegistro.Location = New System.Drawing.Point(62, 19)
+        Me.TxtIdRegistro.Location = New System.Drawing.Point(433, 49)
         Me.TxtIdRegistro.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtIdRegistro.Name = "TxtIdRegistro"
         Me.TxtIdRegistro.Size = New System.Drawing.Size(44, 20)
@@ -169,7 +169,7 @@ Partial Class FrmPagarTitulo
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(15, 21)
+        Me.Label4.Location = New System.Drawing.Point(386, 52)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(44, 16)
@@ -179,10 +179,10 @@ Partial Class FrmPagarTitulo
         'TxtNomeFornecedor
         '
         Me.TxtNomeFornecedor.Enabled = False
-        Me.TxtNomeFornecedor.Location = New System.Drawing.Point(280, 17)
+        Me.TxtNomeFornecedor.Location = New System.Drawing.Point(267, 17)
         Me.TxtNomeFornecedor.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtNomeFornecedor.Name = "TxtNomeFornecedor"
-        Me.TxtNomeFornecedor.Size = New System.Drawing.Size(197, 20)
+        Me.TxtNomeFornecedor.Size = New System.Drawing.Size(210, 20)
         Me.TxtNomeFornecedor.TabIndex = 130
         '
         'TxtCodFornecedor
@@ -191,7 +191,7 @@ Partial Class FrmPagarTitulo
         Me.TxtCodFornecedor.Location = New System.Drawing.Point(234, 17)
         Me.TxtCodFornecedor.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtCodFornecedor.Name = "TxtCodFornecedor"
-        Me.TxtCodFornecedor.Size = New System.Drawing.Size(44, 20)
+        Me.TxtCodFornecedor.Size = New System.Drawing.Size(32, 20)
         Me.TxtCodFornecedor.TabIndex = 129
         '
         'Label3
@@ -211,7 +211,7 @@ Partial Class FrmPagarTitulo
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(19, 51)
+        Me.Label2.Location = New System.Drawing.Point(21, 18)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(39, 16)
@@ -221,7 +221,7 @@ Partial Class FrmPagarTitulo
         'TxtNotaFiscal
         '
         Me.TxtNotaFiscal.Enabled = False
-        Me.TxtNotaFiscal.Location = New System.Drawing.Point(62, 49)
+        Me.TxtNotaFiscal.Location = New System.Drawing.Point(64, 17)
         Me.TxtNotaFiscal.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtNotaFiscal.Name = "TxtNotaFiscal"
         Me.TxtNotaFiscal.Size = New System.Drawing.Size(70, 20)
@@ -614,6 +614,21 @@ Partial Class FrmPagarTitulo
         Me.GboxPesProd.TabIndex = 159
         Me.GboxPesProd.TabStop = False
         '
+        'BtnPesquisar
+        '
+        Me.BtnPesquisar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.BtnPesquisar.FlatAppearance.BorderSize = 0
+        Me.BtnPesquisar.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BtnPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnPesquisar.ForeColor = System.Drawing.Color.Transparent
+        Me.BtnPesquisar.Image = CType(resources.GetObject("BtnPesquisar.Image"), System.Drawing.Image)
+        Me.BtnPesquisar.Location = New System.Drawing.Point(89, 16)
+        Me.BtnPesquisar.Name = "BtnPesquisar"
+        Me.BtnPesquisar.Size = New System.Drawing.Size(25, 25)
+        Me.BtnPesquisar.TabIndex = 164
+        Me.ToolTip.SetToolTip(Me.BtnPesquisar, "Consultar Pedido")
+        Me.BtnPesquisar.UseVisualStyleBackColor = True
+        '
         'TxtIdPesquisar
         '
         Me.TxtIdPesquisar.Location = New System.Drawing.Point(144, 20)
@@ -679,27 +694,12 @@ Partial Class FrmPagarTitulo
         Me.ToolTip.SetToolTip(Me.BtnAnterior, "Anterior")
         Me.BtnAnterior.UseVisualStyleBackColor = True
         '
-        'BtnPesquisar
-        '
-        Me.BtnPesquisar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.BtnPesquisar.FlatAppearance.BorderSize = 0
-        Me.BtnPesquisar.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.BtnPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnPesquisar.ForeColor = System.Drawing.Color.Transparent
-        Me.BtnPesquisar.Image = CType(resources.GetObject("BtnPesquisar.Image"), System.Drawing.Image)
-        Me.BtnPesquisar.Location = New System.Drawing.Point(89, 16)
-        Me.BtnPesquisar.Name = "BtnPesquisar"
-        Me.BtnPesquisar.Size = New System.Drawing.Size(25, 25)
-        Me.BtnPesquisar.TabIndex = 164
-        Me.ToolTip.SetToolTip(Me.BtnPesquisar, "Consultar Pedido")
-        Me.BtnPesquisar.UseVisualStyleBackColor = True
-        '
         'FrmPagarTitulo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(531, 417)
+        Me.ClientSize = New System.Drawing.Size(531, 419)
         Me.Controls.Add(Me.GboxPesProd)
         Me.Controls.Add(Me.GroupBox5)
         Me.Controls.Add(Me.GroupBox4)
