@@ -432,6 +432,7 @@ Public Class FrmFornecedor
 
         If novoFonecedor = "True" Then
             If RbPessoaFisica.Checked = True Then
+                RbPessoaJuridica.Enabled = False
                 TxtCPF.Enabled = True
                 TxtCNPJ.Enabled = False
             End If
@@ -443,6 +444,7 @@ Public Class FrmFornecedor
         If novoFonecedor = "True" Then
             If RbPessoaJuridica.Checked = True Then
                 TxtCPF.Enabled = False
+                RbPessoaFisica.Enabled = False
                 TxtCNPJ.Enabled = True
             End If
         End If

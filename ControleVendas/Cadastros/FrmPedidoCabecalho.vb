@@ -136,6 +136,8 @@ Public Class FrmPedidoCabecalho
                 TxtFornecedor.Text = ""
                 TxtStatus.Text = ""
 
+                ListarTudo()
+
             Catch ex As Exception
                 MsgBox("Erro ao excluir!!" + ex.Message)
             End Try

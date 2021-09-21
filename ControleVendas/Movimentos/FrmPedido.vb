@@ -1,9 +1,8 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class FrmPedido
+    Private Table1 As New DataTable("MyTable")
 
-    Dim Table1 As New DataTable("MyTable")
-    ' Dim dt As New DataTable
     Dim proximo As Integer
     Dim anterior As Integer
     Dim maximo As Integer
@@ -69,6 +68,7 @@ Public Class FrmPedido
         TxtValorTotal.Text = ""
         TxtTotalPedido.Text = ""
         DataGrid.DataSource = Nothing
+        Table1.Columns.Clear()
         IncluirPedido = ""
         editarpedido = ""
         TxtStatusPedido.Text = ""
@@ -131,7 +131,7 @@ Public Class FrmPedido
         DataGrid.Columns(5).Width = 50
         DataGrid.Columns(6).Width = 120
         DataGrid.Columns(7).Width = 50
-        DataGrid.Columns(8).Width = 200
+        DataGrid.Columns(8).Width = 250
         DataGrid.Columns(9).Width = 40
         DataGrid.Columns(12).Width = 60
 
@@ -359,7 +359,7 @@ Public Class FrmPedido
             Exit Sub
         End If
 
-        If TxtIdRegistro.Text <> 0 Then
+        If TxtIdRegistro.Text <> "" Then
 
             If MsgBox("Deseja excluir o pedido " + TxtIdRegistro.Text + "?", vbYesNo, "Pedido") = vbYes Then
 
@@ -447,7 +447,8 @@ Public Class FrmPedido
             TxtPedido.BackColor = Color.White
 
             If TxtCodFornecedor.Text <> "" And TxtCodProduto.Text <> "" And TxtQuantidade.Text <> "" And TxtValorUnit.Text <> "" And TxtPedido.Text <> "" Then
-                If DataGrid.RowCount < 1 Then
+
+                If DataGrid.Rows.Count < 1 Then
 
                     Table1.Columns.Add("Id Reg.")
                     Table1.Columns.Add("Pedido")
@@ -479,7 +480,7 @@ Public Class FrmPedido
                     DataGrid.Columns(5).Width = 50
                     DataGrid.Columns(6).Width = 120
                     DataGrid.Columns(7).Width = 50
-                    DataGrid.Columns(8).Width = 170
+                    DataGrid.Columns(8).Width = 250
                     DataGrid.Columns(9).Width = 40
 
                     DataGrid.Columns(4).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
@@ -705,10 +706,17 @@ Public Class FrmPedido
             Exit Sub
         End If
         If IncluirPedido = "True" Then
-            DataGrid.Rows.Remove(DataGrid.CurrentRow)
+
+            If DataGrid.Rows.Count < 1 Then
+                Exit Sub
+
+            Else
+                DataGrid.Rows.Remove(DataGrid.CurrentRow)
+            End If
+
         Else
 
-            If TxtIdRegistro.Text <> 0 And TxtItem.Text <> 0 Then
+            If TxtIdRegistro.Text <> "" And TxtItem.Text <> "" Then
 
                 If MsgBox("Deseja excluir o item " + TxtItem.Text + " do pedido" + TxtIdRegistro.Text + "?", vbYesNo, "Pedido") = vbYes Then
 
@@ -941,50 +949,57 @@ Line1:
     End Sub
 
     Private Sub BtnIncluir_Click(sender As Object, e As EventArgs) Handles BtnIncluir.Click
-        Dim linhaPed As Integer
 
-        If TxtStatusPedido.Text = "Fechado" Then
-            MsgBox("Pedido fechado, não pode ser alterado!!", MsgBoxStyle.Information, "Pedido Fechado")
-
-            Exit Sub
-        End If
-
-        Try
-            Abrir()
-            Dim cmdp As MySqlCommand
-            Dim sql As String
-            Dim ultima As MySqlDataReader
+        If TxtStatusPedido.Text <> "" Then
 
 
-            sql = "SELECT MAX(item) AS Item FROM pedidos WHERE pedido = '" & TxtIdRegistro.Text & "' "
+            Dim linhaPed As Integer
 
-            cmdp = New MySqlCommand(sql, con)
-            ultima = cmdp.ExecuteReader()
+            If TxtStatusPedido.Text = "Fechado" Then
+                MsgBox("Pedido fechado, não pode ser alterado!!", MsgBoxStyle.Information, "Pedido Fechado")
 
-            If (ultima.Read()) Then
-                linhaPed = ultima("item")
-                ultima.Close()
-            Else
-                ultima.Close()
+                Exit Sub
             End If
 
-        Catch ex As Exception
-            MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
-        End Try
+            Try
+                Abrir()
+                Dim cmdp As MySqlCommand
+                Dim sql As String
+                Dim ultima As MySqlDataReader
 
 
-        Dim form = New FrmAddItemPedido
+                sql = "SELECT MAX(item) AS Item FROM pedidos WHERE pedido = '" & TxtIdRegistro.Text & "' "
 
-        form.TxtItem.Text = linhaPed + 1
-        form.TxtIdRegistro.Text = TxtIdRegistro.Text
-        form.TxtPedido.Text = TxtPedido.Text
-        form.TxtCodFornecedor.Text = TxtCodFornecedor.Text
-        form.TxtFornecedor.Text = TxtFornecedor.Text
-        form.DataPed.Value = DataPed.Value
-        form.TxtStatusPedido.Text = TxtStatusPedido.Text
+                cmdp = New MySqlCommand(sql, con)
+                ultima = cmdp.ExecuteReader()
 
-        form.ShowDialog()
+                If (ultima.Read()) Then
+                    linhaPed = ultima("item")
+                    ultima.Close()
+                Else
+                    ultima.Close()
+                End If
 
+            Catch ex As Exception
+                MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
+            End Try
+
+
+            Dim form = New FrmAddItemPedido
+
+            form.TxtItem.Text = linhaPed + 1
+            form.TxtIdRegistro.Text = TxtIdRegistro.Text
+            form.TxtPedido.Text = TxtPedido.Text
+            form.TxtCodFornecedor.Text = TxtCodFornecedor.Text
+            form.TxtFornecedor.Text = TxtFornecedor.Text
+            form.DataPed.Value = DataPed.Value
+            form.TxtStatusPedido.Text = TxtStatusPedido.Text
+
+            form.ShowDialog()
+        Else
+            Exit Sub
+
+        End If
     End Sub
 
     Private Sub BtnCarregar_Click(sender As Object, e As EventArgs) Handles BtnCarregar.Click

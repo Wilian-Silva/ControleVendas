@@ -91,7 +91,7 @@ Public Class FrmProdutos
 
         DataGrid.Columns(5).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid.Columns(0).Width = 58
-        DataGrid.Columns(1).Width = 200
+        DataGrid.Columns(1).Width = 250
         DataGrid.Columns(2).Width = 90
         DataGrid.Columns(3).Width = 85
         DataGrid.Columns(5).Width = 85

@@ -198,7 +198,7 @@ Partial Class FrmTelaInicial
         '
         'MovimentaçõesToolStripMenuItem
         '
-        Me.MovimentaçõesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CboxMvto1_01, Me.CboxMvto1_02, Me.CboxMvto1_03, Me.CboxMvto1_04, Me.CboxMvto1_05, Me.CboxMvto1_06})
+        Me.MovimentaçõesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CboxMvto1_01, Me.CboxMvto1_06, Me.CboxMvto1_02, Me.CboxMvto1_03, Me.CboxMvto1_04, Me.CboxMvto1_05})
         Me.MovimentaçõesToolStripMenuItem.Image = CType(resources.GetObject("MovimentaçõesToolStripMenuItem.Image"), System.Drawing.Image)
         Me.MovimentaçõesToolStripMenuItem.Name = "MovimentaçõesToolStripMenuItem"
         Me.MovimentaçõesToolStripMenuItem.Size = New System.Drawing.Size(120, 20)
@@ -207,42 +207,42 @@ Partial Class FrmTelaInicial
         'CboxMvto1_01
         '
         Me.CboxMvto1_01.Name = "CboxMvto1_01"
-        Me.CboxMvto1_01.Size = New System.Drawing.Size(205, 22)
+        Me.CboxMvto1_01.Size = New System.Drawing.Size(214, 22)
         Me.CboxMvto1_01.Text = "Criar Pedido de Compra"
         '
         'CboxMvto1_02
         '
         Me.CboxMvto1_02.Name = "CboxMvto1_02"
-        Me.CboxMvto1_02.Size = New System.Drawing.Size(205, 22)
+        Me.CboxMvto1_02.Size = New System.Drawing.Size(214, 22)
         Me.CboxMvto1_02.Text = "Entrada Nota Fiscal"
         '
         'CboxMvto1_03
         '
         Me.CboxMvto1_03.Name = "CboxMvto1_03"
-        Me.CboxMvto1_03.Size = New System.Drawing.Size(205, 22)
+        Me.CboxMvto1_03.Size = New System.Drawing.Size(214, 22)
         Me.CboxMvto1_03.Text = "Venda de Produtos"
         '
         'CboxMvto1_04
         '
         Me.CboxMvto1_04.Name = "CboxMvto1_04"
-        Me.CboxMvto1_04.Size = New System.Drawing.Size(205, 22)
+        Me.CboxMvto1_04.Size = New System.Drawing.Size(214, 22)
         Me.CboxMvto1_04.Text = "Recebimento de Clientes"
         '
         'CboxMvto1_05
         '
         Me.CboxMvto1_05.Name = "CboxMvto1_05"
-        Me.CboxMvto1_05.Size = New System.Drawing.Size(205, 22)
-        Me.CboxMvto1_05.Text = "Pagar Fornecedor"
+        Me.CboxMvto1_05.Size = New System.Drawing.Size(214, 22)
+        Me.CboxMvto1_05.Text = "Pagamento de Fornecedor"
         '
         'CboxMvto1_06
         '
         Me.CboxMvto1_06.Name = "CboxMvto1_06"
-        Me.CboxMvto1_06.Size = New System.Drawing.Size(205, 22)
+        Me.CboxMvto1_06.Size = New System.Drawing.Size(214, 22)
         Me.CboxMvto1_06.Text = "Criar Pedido de Venda"
         '
         'ExclusõesToolStripMenuItem
         '
-        Me.ExclusõesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CboxExcluir1_01, Me.CboxExcluir1_02, Me.CboxExcluir1_03, Me.CboxExcluir1_04, Me.CboxExcluir1_05, Me.CboxExcluir1_06})
+        Me.ExclusõesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CboxExcluir1_01, Me.CboxExcluir1_06, Me.CboxExcluir1_02, Me.CboxExcluir1_04, Me.CboxExcluir1_03, Me.CboxExcluir1_05})
         Me.ExclusõesToolStripMenuItem.Image = CType(resources.GetObject("ExclusõesToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ExclusõesToolStripMenuItem.Name = "ExclusõesToolStripMenuItem"
         Me.ExclusõesToolStripMenuItem.Size = New System.Drawing.Size(86, 20)
