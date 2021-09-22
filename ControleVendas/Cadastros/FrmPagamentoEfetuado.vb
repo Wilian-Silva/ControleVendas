@@ -207,6 +207,7 @@ Public Class FrmPagamentoEfetuado
                         reader3.Close()
                     Else
                         reader3.Close()
+                        parcela = TxtValorParcela.Text
                     End If
 
                     saldo = parcela - total
@@ -224,6 +225,8 @@ Public Class FrmPagamentoEfetuado
                     TxtParcela.Text = ""
                     TxtValorPago.Text = ""
                     TxtValorParcela.Text = ""
+
+                    ListarTudo()
 
                     MsgBox("Registro excluído com Sucesso!!", MsgBoxStyle.Information, "Excluir Pagamento")
 

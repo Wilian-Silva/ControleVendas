@@ -32,6 +32,11 @@ Public Class FrmEntrada
         TxtTotalDuplicatas.Text = 0
         novaEntrada = ""
         editarDuplicata = ""
+
+        Table1Duplicatas.Columns.Clear()
+        Table1Duplicatas.Rows.Clear()
+        parcela = Nothing
+
     End Sub
     Sub HabilitarCampos()
 

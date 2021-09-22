@@ -3,9 +3,6 @@
 Public Class FrmDuplicatas
 
 
-    Private Sub BtnEditar_Click(sender As Object, e As EventArgs)
-
-    End Sub
 
     Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
         Me.Close()

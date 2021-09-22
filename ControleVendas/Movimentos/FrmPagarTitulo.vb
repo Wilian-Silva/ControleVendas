@@ -142,6 +142,8 @@ Public Class FrmPagarTitulo
 
             If TxtValorPago.Text = "0" Then
                 TxtStatusTitulo.Text = "Aberto"
+                DataPagamento.Visible = False
+                LblDataPagamento.Visible = False
             Else
 
                 If TxtSaldoTitulo.Text = "0,00" Then
@@ -253,6 +255,10 @@ Public Class FrmPagarTitulo
 
             If TxtValorPago.Text = "0" Then
                 TxtStatusTitulo.Text = "Aberto"
+                DataPagamento.Visible = False
+                LblDataPagamento.Visible = False
+                TxtRegPagamento.Visible = False
+                LblRegPgto.Visible = False
             Else
 
                 If TxtSaldoTitulo.Text = "0,00" Then
@@ -405,6 +411,10 @@ Line1:
 
             If TxtValorPago.Text = "0" Then
                 TxtStatusTitulo.Text = "Aberto"
+                DataPagamento.Visible = False
+                LblDataPagamento.Visible = False
+                TxtRegPagamento.Visible = False
+                LblRegPgto.Visible = False
             Else
 
                 If TxtSaldoTitulo.Text = "0,00" Then
@@ -581,6 +591,10 @@ Line1:
 
             If TxtValorPago.Text = "0" Then
                 TxtStatusTitulo.Text = "Aberto"
+                DataPagamento.Visible = False
+                LblDataPagamento.Visible = False
+                TxtRegPagamento.Visible = False
+                LblRegPgto.Visible = False
             Else
 
                 If TxtSaldoTitulo.Text = "0,00" Then
@@ -644,6 +658,10 @@ Line1:
 
             If TxtValorPago.Text = "0" Then
                 TxtStatusTitulo.Text = "Aberto"
+                DataPagamento.Visible = False
+                LblDataPagamento.Visible = False
+                TxtRegPagamento.Visible = False
+                LblRegPgto.Visible = False
             Else
 
                 If TxtSaldoTitulo.Text = "0,00" Then
