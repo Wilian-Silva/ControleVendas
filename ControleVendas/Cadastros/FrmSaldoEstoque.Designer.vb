@@ -27,126 +27,71 @@ Partial Class FrmSaldoEstoque
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.TxtCodProduto = New System.Windows.Forms.TextBox()
-        Me.BtnCarregar = New System.Windows.Forms.Button()
-        Me.BtnPesqNota = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.TxtProduto = New System.Windows.Forms.TextBox()
-        Me.BtnFiltrar = New System.Windows.Forms.Button()
-        Me.BtnSair = New System.Windows.Forms.Button()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.BtnProximo = New System.Windows.Forms.Button()
+        Me.BtnAnterior = New System.Windows.Forms.Button()
         Me.DataGrid = New System.Windows.Forms.DataGridView()
-        Me.GroupBox2.SuspendLayout()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.TxtSaldoEstoque = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.TxtCodAuxiliar = New System.Windows.Forms.TextBox()
+        Me.TxtId = New System.Windows.Forms.TextBox()
+        Me.TxtLucro = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.TxtNome = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.TxtMargemVenda = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.TxtPrecoVenda = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.BtnSair = New System.Windows.Forms.Button()
+        Me.TxtPesquisa = New System.Windows.Forms.TextBox()
+        Me.RbDescricao = New System.Windows.Forms.RadioButton()
+        Me.RbCodAux = New System.Windows.Forms.RadioButton()
+        Me.GboxPesProd = New System.Windows.Forms.GroupBox()
         CType(Me.DataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox3.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
+        Me.GboxPesProd.SuspendLayout()
         Me.SuspendLayout()
         '
-        'GroupBox2
+        'BtnProximo
         '
-        Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox2.Controls.Add(Me.TxtCodProduto)
-        Me.GroupBox2.Controls.Add(Me.BtnCarregar)
-        Me.GroupBox2.Controls.Add(Me.BtnPesqNota)
-        Me.GroupBox2.Controls.Add(Me.Label1)
-        Me.GroupBox2.Controls.Add(Me.TxtProduto)
-        Me.GroupBox2.Controls.Add(Me.BtnFiltrar)
-        Me.GroupBox2.Controls.Add(Me.BtnSair)
-        Me.GroupBox2.Location = New System.Drawing.Point(28, 22)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(554, 50)
-        Me.GroupBox2.TabIndex = 153
-        Me.GroupBox2.TabStop = False
+        Me.BtnProximo.AccessibleDescription = ""
+        Me.BtnProximo.AccessibleName = "Adicionar"
+        Me.BtnProximo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.BtnProximo.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnProximo.FlatAppearance.BorderSize = 0
+        Me.BtnProximo.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BtnProximo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnProximo.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnProximo.Image = CType(resources.GetObject("BtnProximo.Image"), System.Drawing.Image)
+        Me.BtnProximo.Location = New System.Drawing.Point(429, 14)
+        Me.BtnProximo.Name = "BtnProximo"
+        Me.BtnProximo.Size = New System.Drawing.Size(25, 25)
+        Me.BtnProximo.TabIndex = 156
+        Me.ToolTip.SetToolTip(Me.BtnProximo, "Próximo")
+        Me.BtnProximo.UseVisualStyleBackColor = True
         '
-        'TxtCodProduto
+        'BtnAnterior
         '
-        Me.TxtCodProduto.BackColor = System.Drawing.Color.White
-        Me.TxtCodProduto.Location = New System.Drawing.Point(148, 18)
-        Me.TxtCodProduto.Margin = New System.Windows.Forms.Padding(4)
-        Me.TxtCodProduto.Name = "TxtCodProduto"
-        Me.TxtCodProduto.ReadOnly = True
-        Me.TxtCodProduto.Size = New System.Drawing.Size(27, 20)
-        Me.TxtCodProduto.TabIndex = 144
-        Me.TxtCodProduto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'BtnCarregar
-        '
-        Me.BtnCarregar.AccessibleDescription = ""
-        Me.BtnCarregar.AccessibleName = "Adicionar"
-        Me.BtnCarregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnCarregar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnCarregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke
-        Me.BtnCarregar.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnCarregar.Image = CType(resources.GetObject("BtnCarregar.Image"), System.Drawing.Image)
-        Me.BtnCarregar.Location = New System.Drawing.Point(434, 15)
-        Me.BtnCarregar.Name = "BtnCarregar"
-        Me.BtnCarregar.Size = New System.Drawing.Size(25, 25)
-        Me.BtnCarregar.TabIndex = 143
-        Me.ToolTip.SetToolTip(Me.BtnCarregar, "Carregar item")
-        Me.BtnCarregar.UseVisualStyleBackColor = True
-        '
-        'BtnPesqNota
-        '
-        Me.BtnPesqNota.Image = CType(resources.GetObject("BtnPesqNota.Image"), System.Drawing.Image)
-        Me.BtnPesqNota.Location = New System.Drawing.Point(406, 15)
-        Me.BtnPesqNota.Name = "BtnPesqNota"
-        Me.BtnPesqNota.Size = New System.Drawing.Size(25, 25)
-        Me.BtnPesqNota.TabIndex = 142
-        Me.ToolTip.SetToolTip(Me.BtnPesqNota, "Pesquisar item")
-        Me.BtnPesqNota.UseVisualStyleBackColor = True
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(76, 20)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(68, 16)
-        Me.Label1.TabIndex = 114
-        Me.Label1.Text = "Pesquisar:"
-        '
-        'TxtProduto
-        '
-        Me.TxtProduto.BackColor = System.Drawing.Color.White
-        Me.TxtProduto.Location = New System.Drawing.Point(176, 18)
-        Me.TxtProduto.Margin = New System.Windows.Forms.Padding(4)
-        Me.TxtProduto.Name = "TxtProduto"
-        Me.TxtProduto.ReadOnly = True
-        Me.TxtProduto.Size = New System.Drawing.Size(224, 20)
-        Me.TxtProduto.TabIndex = 113
-        '
-        'BtnFiltrar
-        '
-        Me.BtnFiltrar.AccessibleDescription = ""
-        Me.BtnFiltrar.AccessibleName = ""
-        Me.BtnFiltrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnFiltrar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnFiltrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke
-        Me.BtnFiltrar.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnFiltrar.Image = CType(resources.GetObject("BtnFiltrar.Image"), System.Drawing.Image)
-        Me.BtnFiltrar.Location = New System.Drawing.Point(8, 11)
-        Me.BtnFiltrar.Name = "BtnFiltrar"
-        Me.BtnFiltrar.Size = New System.Drawing.Size(35, 35)
-        Me.BtnFiltrar.TabIndex = 58
-        Me.ToolTip.SetToolTip(Me.BtnFiltrar, "Listar todos os itens")
-        Me.BtnFiltrar.UseVisualStyleBackColor = True
-        '
-        'BtnSair
-        '
-        Me.BtnSair.AccessibleDescription = ""
-        Me.BtnSair.AccessibleName = "Adicionar"
-        Me.BtnSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnSair.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke
-        Me.BtnSair.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnSair.Image = CType(resources.GetObject("BtnSair.Image"), System.Drawing.Image)
-        Me.BtnSair.Location = New System.Drawing.Point(500, 11)
-        Me.BtnSair.Name = "BtnSair"
-        Me.BtnSair.Size = New System.Drawing.Size(35, 35)
-        Me.BtnSair.TabIndex = 57
-        Me.ToolTip.SetToolTip(Me.BtnSair, "Sair")
-        Me.BtnSair.UseVisualStyleBackColor = True
+        Me.BtnAnterior.AccessibleDescription = ""
+        Me.BtnAnterior.AccessibleName = "Adicionar"
+        Me.BtnAnterior.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.BtnAnterior.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnAnterior.FlatAppearance.BorderSize = 0
+        Me.BtnAnterior.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BtnAnterior.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnAnterior.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnAnterior.Image = CType(resources.GetObject("BtnAnterior.Image"), System.Drawing.Image)
+        Me.BtnAnterior.Location = New System.Drawing.Point(398, 14)
+        Me.BtnAnterior.Name = "BtnAnterior"
+        Me.BtnAnterior.Size = New System.Drawing.Size(25, 25)
+        Me.BtnAnterior.TabIndex = 155
+        Me.ToolTip.SetToolTip(Me.BtnAnterior, "Anterior")
+        Me.BtnAnterior.UseVisualStyleBackColor = True
         '
         'DataGrid
         '
@@ -173,7 +118,7 @@ Partial Class FrmSaldoEstoque
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DataGrid.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGrid.EnableHeadersVisualStyles = False
-        Me.DataGrid.Location = New System.Drawing.Point(28, 87)
+        Me.DataGrid.Location = New System.Drawing.Point(20, 154)
         Me.DataGrid.MultiSelect = False
         Me.DataGrid.Name = "DataGrid"
         Me.DataGrid.ReadOnly = True
@@ -182,37 +127,298 @@ Partial Class FrmSaldoEstoque
         DataGridViewCellStyle3.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
         Me.DataGrid.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGrid.Size = New System.Drawing.Size(554, 316)
+        Me.DataGrid.Size = New System.Drawing.Size(570, 218)
         Me.DataGrid.TabIndex = 154
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox3.Controls.Add(Me.TxtSaldoEstoque)
+        Me.GroupBox3.Controls.Add(Me.Label7)
+        Me.GroupBox3.Controls.Add(Me.TxtCodAuxiliar)
+        Me.GroupBox3.Controls.Add(Me.TxtId)
+        Me.GroupBox3.Controls.Add(Me.TxtLucro)
+        Me.GroupBox3.Controls.Add(Me.Label6)
+        Me.GroupBox3.Controls.Add(Me.TxtNome)
+        Me.GroupBox3.Controls.Add(Me.Label2)
+        Me.GroupBox3.Controls.Add(Me.Label3)
+        Me.GroupBox3.Controls.Add(Me.TxtMargemVenda)
+        Me.GroupBox3.Controls.Add(Me.Label4)
+        Me.GroupBox3.Controls.Add(Me.TxtPrecoVenda)
+        Me.GroupBox3.Controls.Add(Me.Label5)
+        Me.GroupBox3.Location = New System.Drawing.Point(20, 55)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(570, 86)
+        Me.GroupBox3.TabIndex = 155
+        Me.GroupBox3.TabStop = False
+        '
+        'TxtSaldoEstoque
+        '
+        Me.TxtSaldoEstoque.BackColor = System.Drawing.Color.White
+        Me.TxtSaldoEstoque.Enabled = False
+        Me.TxtSaldoEstoque.Location = New System.Drawing.Point(521, 53)
+        Me.TxtSaldoEstoque.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtSaldoEstoque.Name = "TxtSaldoEstoque"
+        Me.TxtSaldoEstoque.Size = New System.Drawing.Size(35, 20)
+        Me.TxtSaldoEstoque.TabIndex = 74
+        Me.TxtSaldoEstoque.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.Transparent
+        Me.Label7.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(460, 55)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(57, 16)
+        Me.Label7.TabIndex = 75
+        Me.Label7.Text = "Qtd. Est."
+        '
+        'TxtCodAuxiliar
+        '
+        Me.TxtCodAuxiliar.BackColor = System.Drawing.Color.White
+        Me.TxtCodAuxiliar.Enabled = False
+        Me.TxtCodAuxiliar.HideSelection = False
+        Me.TxtCodAuxiliar.Location = New System.Drawing.Point(462, 18)
+        Me.TxtCodAuxiliar.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtCodAuxiliar.Name = "TxtCodAuxiliar"
+        Me.TxtCodAuxiliar.Size = New System.Drawing.Size(94, 20)
+        Me.TxtCodAuxiliar.TabIndex = 73
+        '
+        'TxtId
+        '
+        Me.TxtId.BackColor = System.Drawing.Color.White
+        Me.TxtId.Enabled = False
+        Me.TxtId.Location = New System.Drawing.Point(119, 18)
+        Me.TxtId.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtId.Name = "TxtId"
+        Me.TxtId.Size = New System.Drawing.Size(30, 20)
+        Me.TxtId.TabIndex = 44
+        Me.TxtId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TxtLucro
+        '
+        Me.TxtLucro.BackColor = System.Drawing.Color.White
+        Me.TxtLucro.Enabled = False
+        Me.TxtLucro.Location = New System.Drawing.Point(393, 53)
+        Me.TxtLucro.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtLucro.Name = "TxtLucro"
+        Me.TxtLucro.Size = New System.Drawing.Size(60, 20)
+        Me.TxtLucro.TabIndex = 5
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
+        Me.Label6.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(307, 55)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(85, 16)
+        Me.Label6.TabIndex = 72
+        Me.Label6.Text = "Preço Venda:"
+        '
+        'TxtNome
+        '
+        Me.TxtNome.BackColor = System.Drawing.Color.White
+        Me.TxtNome.Enabled = False
+        Me.TxtNome.HideSelection = False
+        Me.TxtNome.Location = New System.Drawing.Point(150, 18)
+        Me.TxtNome.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtNome.Name = "TxtNome"
+        Me.TxtNome.Size = New System.Drawing.Size(218, 20)
+        Me.TxtNome.TabIndex = 1
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(5, 19)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(116, 16)
+        Me.Label2.TabIndex = 64
+        Me.Label2.Text = "Descrição Produto:"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(379, 20)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(80, 16)
+        Me.Label3.TabIndex = 66
+        Me.Label3.Text = "Cód. Auxiliar"
+        '
+        'TxtMargemVenda
+        '
+        Me.TxtMargemVenda.BackColor = System.Drawing.Color.White
+        Me.TxtMargemVenda.Enabled = False
+        Me.TxtMargemVenda.Location = New System.Drawing.Point(251, 53)
+        Me.TxtMargemVenda.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtMargemVenda.Name = "TxtMargemVenda"
+        Me.TxtMargemVenda.Size = New System.Drawing.Size(40, 20)
+        Me.TxtMargemVenda.TabIndex = 4
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
+        Me.Label4.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(189, 54)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(60, 16)
+        Me.Label4.TabIndex = 70
+        Me.Label4.Text = "% Lucro:"
+        '
+        'TxtPrecoVenda
+        '
+        Me.TxtPrecoVenda.BackColor = System.Drawing.Color.White
+        Me.TxtPrecoVenda.Enabled = False
+        Me.TxtPrecoVenda.Location = New System.Drawing.Point(119, 53)
+        Me.TxtPrecoVenda.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtPrecoVenda.Name = "TxtPrecoVenda"
+        Me.TxtPrecoVenda.Size = New System.Drawing.Size(60, 20)
+        Me.TxtPrecoVenda.TabIndex = 3
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
+        Me.Label5.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(7, 55)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(112, 16)
+        Me.Label5.TabIndex = 68
+        Me.Label5.Text = "Preço de Compra:"
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox1.Controls.Add(Me.BtnProximo)
+        Me.GroupBox1.Controls.Add(Me.BtnAnterior)
+        Me.GroupBox1.Controls.Add(Me.TxtPesquisa)
+        Me.GroupBox1.Controls.Add(Me.RbDescricao)
+        Me.GroupBox1.Controls.Add(Me.RbCodAux)
+        Me.GroupBox1.Location = New System.Drawing.Point(20, 3)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(480, 50)
+        Me.GroupBox1.TabIndex = 161
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Pesquisar"
+        '
+        'BtnSair
+        '
+        Me.BtnSair.AccessibleDescription = ""
+        Me.BtnSair.AccessibleName = "Adicionar"
+        Me.BtnSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.BtnSair.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnSair.FlatAppearance.BorderSize = 0
+        Me.BtnSair.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BtnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnSair.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnSair.ForeColor = System.Drawing.Color.Transparent
+        Me.BtnSair.Image = CType(resources.GetObject("BtnSair.Image"), System.Drawing.Image)
+        Me.BtnSair.Location = New System.Drawing.Point(35, 10)
+        Me.BtnSair.Name = "BtnSair"
+        Me.BtnSair.Size = New System.Drawing.Size(35, 35)
+        Me.BtnSair.TabIndex = 164
+        Me.BtnSair.TabStop = False
+        Me.BtnSair.UseVisualStyleBackColor = True
+        '
+        'TxtPesquisa
+        '
+        Me.TxtPesquisa.Location = New System.Drawing.Point(182, 19)
+        Me.TxtPesquisa.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtPesquisa.Name = "TxtPesquisa"
+        Me.TxtPesquisa.Size = New System.Drawing.Size(208, 20)
+        Me.TxtPesquisa.TabIndex = 160
+        '
+        'RbDescricao
+        '
+        Me.RbDescricao.AutoSize = True
+        Me.RbDescricao.Checked = True
+        Me.RbDescricao.Location = New System.Drawing.Point(20, 20)
+        Me.RbDescricao.Name = "RbDescricao"
+        Me.RbDescricao.Size = New System.Drawing.Size(73, 17)
+        Me.RbDescricao.TabIndex = 159
+        Me.RbDescricao.TabStop = True
+        Me.RbDescricao.Text = "Descrição"
+        Me.RbDescricao.UseVisualStyleBackColor = True
+        '
+        'RbCodAux
+        '
+        Me.RbCodAux.AutoSize = True
+        Me.RbCodAux.Location = New System.Drawing.Point(102, 20)
+        Me.RbCodAux.Name = "RbCodAux"
+        Me.RbCodAux.Size = New System.Drawing.Size(71, 17)
+        Me.RbCodAux.TabIndex = 158
+        Me.RbCodAux.Text = "Cód. Aux."
+        Me.RbCodAux.UseVisualStyleBackColor = True
+        '
+        'GboxPesProd
+        '
+        Me.GboxPesProd.BackColor = System.Drawing.Color.Transparent
+        Me.GboxPesProd.Controls.Add(Me.BtnSair)
+        Me.GboxPesProd.Location = New System.Drawing.Point(506, 3)
+        Me.GboxPesProd.Name = "GboxPesProd"
+        Me.GboxPesProd.Size = New System.Drawing.Size(84, 50)
+        Me.GboxPesProd.TabIndex = 165
+        Me.GboxPesProd.TabStop = False
         '
         'FrmSaldoEstoque
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(614, 435)
+        Me.ClientSize = New System.Drawing.Size(614, 397)
+        Me.Controls.Add(Me.GboxPesProd)
+        Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.DataGrid)
-        Me.Controls.Add(Me.GroupBox2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "FrmSaldoEstoque"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Saldo Estoque"
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
+        Me.Text = "Consulta Saldo Estoque"
         CType(Me.DataGrid, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        Me.GboxPesProd.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents TxtProduto As TextBox
-    Friend WithEvents BtnFiltrar As Button
-    Friend WithEvents BtnSair As Button
-    Friend WithEvents BtnCarregar As Button
-    Friend WithEvents BtnPesqNota As Button
-    Friend WithEvents TxtCodProduto As TextBox
     Friend WithEvents ToolTip As ToolTip
     Friend WithEvents DataGrid As DataGridView
+    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents TxtSaldoEstoque As TextBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents TxtCodAuxiliar As TextBox
+    Friend WithEvents TxtId As TextBox
+    Friend WithEvents TxtLucro As TextBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents TxtNome As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents TxtMargemVenda As TextBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents TxtPrecoVenda As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents BtnProximo As Button
+    Friend WithEvents BtnAnterior As Button
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents TxtPesquisa As TextBox
+    Friend WithEvents RbDescricao As RadioButton
+    Friend WithEvents RbCodAux As RadioButton
+    Friend WithEvents BtnSair As Button
+    Friend WithEvents GboxPesProd As GroupBox
 End Class

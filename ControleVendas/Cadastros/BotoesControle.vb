@@ -1,7 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class BotoesControle
-    Dim Table1 As New DataTable("MyTable")
+    Private ReadOnly Table1 As New DataTable("MyTable")
     Private Sub BotoesControle_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
 
