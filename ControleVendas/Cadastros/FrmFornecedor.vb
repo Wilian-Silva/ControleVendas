@@ -516,7 +516,7 @@ Line1:
                 Exit Sub
             Else
                 reader.Close()
-                proximo = proximo + 1
+                proximo += 1
                 GoTo Line1
             End If
 
@@ -578,7 +578,7 @@ Line1:
                 Exit Sub
             Else
                 reader.Close()
-                anterior = anterior - 1
+                anterior -= 1
                 GoTo Line1
             End If
 

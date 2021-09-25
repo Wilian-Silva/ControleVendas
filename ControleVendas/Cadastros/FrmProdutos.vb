@@ -24,6 +24,7 @@ Public Class FrmProdutos
         TxtPesquisar.Text = ""
         TxtNome.Text = ""
         TxtCodAuxiliar.Text = ""
+        TxtSaldoEstoque.Text = ""
         TxtPrecoVenda.Text = Nothing
         TxtMargemVenda.Text = Nothing
         TxtLucro.Text = Nothing
@@ -81,6 +82,7 @@ Public Class FrmProdutos
         DataGrid.Columns(3).HeaderText = "Preço Compra"
         DataGrid.Columns(4).HeaderText = "Margem Lucro"
         DataGrid.Columns(5).HeaderText = "Preço Venda"
+        DataGrid.Columns(6).HeaderText = "Saldo Estoque"
 
         DataGrid.Columns(0).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid.Columns(3).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
@@ -89,6 +91,9 @@ Public Class FrmProdutos
         DataGrid.Columns(4).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
 
+        DataGrid.Columns(6).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGrid.Columns(6).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+
         DataGrid.Columns(5).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid.Columns(0).Width = 58
         DataGrid.Columns(1).Width = 250
@@ -96,6 +101,7 @@ Public Class FrmProdutos
         DataGrid.Columns(3).Width = 85
         DataGrid.Columns(5).Width = 85
         DataGrid.Columns(4).Width = 60
+        DataGrid.Columns(6).Width = 80
         DataGrid.Columns(3).DefaultCellStyle.Format = "c"
         DataGrid.Columns(5).DefaultCellStyle.Format = "c"
 
@@ -109,6 +115,7 @@ Public Class FrmProdutos
         TxtPrecoVenda.Text = DataGrid.CurrentRow.Cells(3).Value
         TxtMargemVenda.Text = DataGrid.CurrentRow.Cells(4).Value
         TxtLucro.Text = DataGrid.CurrentRow.Cells(5).Value
+        TxtSaldoEstoque.Text = DataGrid.CurrentRow.Cells(6).Value
 
     End Sub
     Private Sub DataGrid_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGrid.CellClick
