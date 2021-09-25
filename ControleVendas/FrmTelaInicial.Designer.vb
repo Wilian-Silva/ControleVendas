@@ -45,18 +45,18 @@ Partial Class FrmTelaInicial
         Me.CboxCons1_06 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MovimentaçõesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CboxMvto1_01 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CboxMvto1_06 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CboxMvto1_02 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CboxMvto1_03 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CboxMvto1_04 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CboxMvto1_05 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CboxMvto1_06 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExclusõesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CboxExcluir1_01 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CboxExcluir1_02 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CboxExcluir1_03 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CboxExcluir1_04 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CboxExcluir1_05 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CboxExcluir1_06 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CboxExcluir1_02 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CboxExcluir1_04 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CboxExcluir1_03 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CboxExcluir1_05 = New System.Windows.Forms.ToolStripMenuItem()
         Me.RelatoriosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CboxRel1_01 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CboxRel1_02 = New System.Windows.Forms.ToolStripMenuItem()
@@ -210,6 +210,12 @@ Partial Class FrmTelaInicial
         Me.CboxMvto1_01.Size = New System.Drawing.Size(214, 22)
         Me.CboxMvto1_01.Text = "Criar Pedido de Compra"
         '
+        'CboxMvto1_06
+        '
+        Me.CboxMvto1_06.Name = "CboxMvto1_06"
+        Me.CboxMvto1_06.Size = New System.Drawing.Size(214, 22)
+        Me.CboxMvto1_06.Text = "Criar Pedido de Venda"
+        '
         'CboxMvto1_02
         '
         Me.CboxMvto1_02.Name = "CboxMvto1_02"
@@ -234,12 +240,6 @@ Partial Class FrmTelaInicial
         Me.CboxMvto1_05.Size = New System.Drawing.Size(214, 22)
         Me.CboxMvto1_05.Text = "Pagamento de Fornecedor"
         '
-        'CboxMvto1_06
-        '
-        Me.CboxMvto1_06.Name = "CboxMvto1_06"
-        Me.CboxMvto1_06.Size = New System.Drawing.Size(214, 22)
-        Me.CboxMvto1_06.Text = "Criar Pedido de Venda"
-        '
         'ExclusõesToolStripMenuItem
         '
         Me.ExclusõesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CboxExcluir1_01, Me.CboxExcluir1_06, Me.CboxExcluir1_02, Me.CboxExcluir1_04, Me.CboxExcluir1_03, Me.CboxExcluir1_05})
@@ -254,17 +254,17 @@ Partial Class FrmTelaInicial
         Me.CboxExcluir1_01.Size = New System.Drawing.Size(211, 22)
         Me.CboxExcluir1_01.Text = "Excluir Pedido de Compra"
         '
+        'CboxExcluir1_06
+        '
+        Me.CboxExcluir1_06.Name = "CboxExcluir1_06"
+        Me.CboxExcluir1_06.Size = New System.Drawing.Size(211, 22)
+        Me.CboxExcluir1_06.Text = "Excluir Pedido de Venda"
+        '
         'CboxExcluir1_02
         '
         Me.CboxExcluir1_02.Name = "CboxExcluir1_02"
         Me.CboxExcluir1_02.Size = New System.Drawing.Size(211, 22)
         Me.CboxExcluir1_02.Text = "Excluir Entrada"
-        '
-        'CboxExcluir1_03
-        '
-        Me.CboxExcluir1_03.Name = "CboxExcluir1_03"
-        Me.CboxExcluir1_03.Size = New System.Drawing.Size(211, 22)
-        Me.CboxExcluir1_03.Text = "Excluir Pagamento"
         '
         'CboxExcluir1_04
         '
@@ -272,17 +272,17 @@ Partial Class FrmTelaInicial
         Me.CboxExcluir1_04.Size = New System.Drawing.Size(211, 22)
         Me.CboxExcluir1_04.Text = "Excluir Venda"
         '
+        'CboxExcluir1_03
+        '
+        Me.CboxExcluir1_03.Name = "CboxExcluir1_03"
+        Me.CboxExcluir1_03.Size = New System.Drawing.Size(211, 22)
+        Me.CboxExcluir1_03.Text = "Excluir Pagamento"
+        '
         'CboxExcluir1_05
         '
         Me.CboxExcluir1_05.Name = "CboxExcluir1_05"
         Me.CboxExcluir1_05.Size = New System.Drawing.Size(211, 22)
         Me.CboxExcluir1_05.Text = "Excluir Recebimento"
-        '
-        'CboxExcluir1_06
-        '
-        Me.CboxExcluir1_06.Name = "CboxExcluir1_06"
-        Me.CboxExcluir1_06.Size = New System.Drawing.Size(211, 22)
-        Me.CboxExcluir1_06.Text = "Excluir Pedido de Venda"
         '
         'RelatoriosToolStripMenuItem
         '

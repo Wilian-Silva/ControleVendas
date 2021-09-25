@@ -6,7 +6,7 @@ Public Class FrmFornecedor
     Dim maximo As Integer
     Private Sub FrmFornecedor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        If pesquisarFornecedor = "True" Then
+        If pesquisarCliente = "True" Then
             GBoxFornecedor.Visible = False
             BtnSelecionarItem.Visible = True
             BtnCacelarConsulta.Visible = True
@@ -406,7 +406,7 @@ Public Class FrmFornecedor
     End Sub
 
     Private Sub BtnCacelarConsulta_Click(sender As Object, e As EventArgs) Handles BtnCacelarConsulta.Click
-        pesquisarFornecedor = ""
+        pesquisarCliente = ""
         Me.Close()
     End Sub
 

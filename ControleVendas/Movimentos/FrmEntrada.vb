@@ -410,13 +410,6 @@ Public Class FrmEntrada
             Dim saldoEstoque As Integer
 
 
-            'Dim dbl1 As Double = 0
-            'Dim dbl2 As Double = 0
-            'Double.TryParse(TxtSaldoAbertoParcela.Text, dbl1)
-            'Double.TryParse(TxtValorPago.Text, dbl2)
-
-            'TxtSaldoTitulo.Text = (dbl1 - dbl2).ToString("n")
-
             For i = 0 To DataGrid.RowCount - 1
 
                 codItem = CInt(DataGrid.Rows(i).Cells(1).Value.ToString)
@@ -1008,6 +1001,8 @@ Line1:
 
             Exluir_Estoque()
 
+            Atualizar_Saldo_Estoque()
+
             Exluir_Duplicatas()
 
             Atualizar_PedidoStatus()
@@ -1017,6 +1012,53 @@ Line1:
             ListarUltimaNota()
 
         End If
+    End Sub
+
+    Private Sub Atualizar_Saldo_Estoque()
+        Try
+            Abrir()
+
+            Dim cmd As MySqlCommand
+            Dim sql As String
+
+            Dim saldoItem As Integer
+            Dim codItem As Integer
+            Dim qtd As Integer
+            Dim saldoEstoque As Integer
+
+
+            For i = 0 To DataGrid.RowCount - 1
+
+                codItem = CInt(DataGrid.Rows(i).Cells(1).Value.ToString)
+                qtd = CInt(DataGrid.Rows(i).Cells(3).Value.ToString)
+
+                Dim cmdp As MySqlCommand
+                Dim sqlp As String
+                Dim ultima As MySqlDataReader
+
+                sqlp = "SELECT saldo_estoque FROM produtos WHERE id= '" & codItem & "'"
+                cmdp = New MySqlCommand(sqlp, con)
+                ultima = cmdp.ExecuteReader()
+
+                If (ultima.Read()) Then
+                    saldoEstoque = ultima("saldo_estoque")
+                    ultima.Close()
+                Else
+                    ultima.Close()
+                End If
+
+                saldoItem = saldoEstoque - qtd
+
+                sql = "UPDATE produtos SET saldo_estoque = '" & saldoItem & "' WHERE id = '" & codItem & "'"
+                cmd = New MySqlCommand(sql, con)
+                cmd.ExecuteNonQuery()
+
+            Next
+
+        Catch ex As Exception
+            MsgBox("Erro ao Salvar!!" + ex.Message)
+        End Try
+
     End Sub
 
     Private Sub Exluir_Entrada()

@@ -542,7 +542,7 @@ Partial Class FrmEntrada
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPageDuplicatas)
-        Me.TabControl1.Location = New System.Drawing.Point(27, 156)
+        Me.TabControl1.Location = New System.Drawing.Point(27, 157)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(640, 277)

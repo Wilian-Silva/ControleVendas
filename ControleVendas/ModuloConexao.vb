@@ -23,6 +23,9 @@ Module ModuloConexao
     Public bs As New BindingSource()
 
     Public Table1Duplicatas As New DataTable("MyTable")
+
+    Public Table1DuplicatasReceber As New DataTable("MyTable")
+
     Public parcela As Integer
 
     Public IdDuplicata2 As Integer

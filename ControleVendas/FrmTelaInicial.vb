@@ -119,9 +119,9 @@ Public Class FrmTelaInicial
     End Sub
     Private Sub FrmTelaInicial_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        TotalTitulos()
+        'TotalTitulos()
 
-        FormatarGridTelaIncial()
+        'FormatarGridTelaIncial()
 
         'CarregarAcessos()
 
@@ -276,7 +276,7 @@ Public Class FrmTelaInicial
     End Sub
 
     Private Sub SaidaToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles CboxMvto1_03.Click
-        Dim form = New FrmVenda
+        Dim form = New FrmVendaProdutos
         form.ShowDialog()
     End Sub
 
@@ -385,8 +385,8 @@ Public Class FrmTelaInicial
     End Sub
 
     Private Sub FrmTelaInicial_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
-        TotalTitulos()
-        TOTAL()
+        ' TotalTitulos()
+        ' TOTAL()
     End Sub
 
     Private Sub TítulosVencidosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CboxRel1_04.Click
@@ -407,5 +407,10 @@ Public Class FrmTelaInicial
     Private Sub FornecedoresToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CboxCad1_03.Click
         Dim form = New FrmFornecedor
         form.ShowDialog()
+    End Sub
+
+    Private Sub CboxMvto1_06_Click(sender As Object, e As EventArgs) Handles CboxMvto1_06.Click
+
+
     End Sub
 End Class

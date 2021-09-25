@@ -1,33 +1,33 @@
 ﻿Imports MySql.Data.MySqlClient
 
-Public Class FrmPedido
-    Private ReadOnly Table1 As New DataTable("MyTable")
+Public Class FrmVendaProdutos
 
+    Private ReadOnly Table1 As New DataTable("MyTable")
     Dim proximo As Integer
     Dim anterior As Integer
     Dim maximo As Integer
 
     Private Sub FrmPedido_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        ListarTudoUltimoPedido()
+        ListarUltimaVenda()
         LimparVariaveisGlobais()
-        TxtNumPedido.Text = ""
+
 
     End Sub
     Private Sub HabilitarCampos()
-        TxtPedido.Enabled = True
-        DataPed.Enabled = True
+
+        DataVenda.Enabled = True
         TxtQuantidade.Enabled = True
         TxtValorUnit.Enabled = True
         BtnPesqFornecedor.Enabled = True
         BtnPesqProduto.Enabled = True
         TxtProduto.ReadOnly = True
-        TxtFornecedor.ReadOnly = True
+        TxtCliente.ReadOnly = True
         TxtProduto.Enabled = True
-        TxtFornecedor.Enabled = True
+        TxtCliente.Enabled = True
         BtnEditar.Enabled = False
-
         BtnIncluir.Enabled = False
+
     End Sub
 
     Private Sub HabilitarCamposEdicao()
@@ -41,8 +41,7 @@ Public Class FrmPedido
 
     Private Sub DesabilitarCampos()
 
-        TxtPedido.Enabled = False
-        DataPed.Enabled = False
+        DataVenda.Enabled = False
         TxtQuantidade.Enabled = False
         TxtValorUnit.Enabled = False
         BtnPesqFornecedor.Enabled = False
@@ -50,38 +49,36 @@ Public Class FrmPedido
         TxtProduto.Enabled = False
         BtnEditar.Enabled = True
         TxtProduto.ReadOnly = True
-        TxtFornecedor.ReadOnly = True
+        TxtCliente.ReadOnly = True
         BtnIncluir.Enabled = True
     End Sub
     Private Sub LimparCampos()
 
         TxtIdRegistro.Text = ""
         TxtItem.Text = ""
-        TxtPedido.Text = ""
-        DataPed.Value = Now()
-        TxtCodFornecedor.Text = ""
-        TxtFornecedor.Text = ""
+        DataVenda.Value = Now()
+        TxtCodCliente.Text = ""
+        TxtCliente.Text = ""
         TxtCodProduto.Text = ""
         TxtProduto.Text = ""
         TxtQuantidade.Text = ""
         TxtValorUnit.Text = ""
         TxtValorTotal.Text = ""
-        TxtTotalPedido.Text = ""
+        TxtTotalVenda.Text = ""
         DataGrid.DataSource = Nothing
         Table1.Columns.Clear()
         IncluirPedido = ""
         editarpedido = ""
-        TxtStatusPedido.Text = ""
+
     End Sub
 
     Private Sub LimparCampossemdg()
 
         TxtIdRegistro.Text = ""
         TxtItem.Text = ""
-        TxtPedido.Text = ""
-        DataPed.Value = Now()
-        TxtCodFornecedor.Text = ""
-        TxtFornecedor.Text = ""
+        DataVenda.Value = Now()
+        TxtCodCliente.Text = ""
+        TxtCliente.Text = ""
         TxtCodProduto.Text = ""
         TxtProduto.Text = ""
         TxtQuantidade.Text = ""
@@ -98,9 +95,7 @@ Public Class FrmPedido
 
     End Sub
     Sub Limpar_cores()
-
-        TxtPedido.BackColor = Color.White
-        TxtFornecedor.BackColor = Color.White
+        TxtCliente.BackColor = Color.White
         TxtProduto.BackColor = Color.White
         TxtQuantidade.BackColor = Color.White
         TxtValorUnit.BackColor = Color.White
@@ -157,33 +152,31 @@ Public Class FrmPedido
         On Error Resume Next
         TxtIdRegistro.Text = DataGrid.CurrentRow.Cells(1).Value
         TxtItem.Text = DataGrid.CurrentRow.Cells(2).Value
-        TxtPedido.Text = DataGrid.CurrentRow.Cells(3).Value
-        DataPed.Value = DataGrid.CurrentRow.Cells(4).Value
-        TxtCodFornecedor.Text = DataGrid.CurrentRow.Cells(5).Value
-        TxtFornecedor.Text = DataGrid.CurrentRow.Cells(6).Value
-        TxtCodProduto.Text = DataGrid.CurrentRow.Cells(7).Value
-        TxtProduto.Text = DataGrid.CurrentRow.Cells(8).Value
-        TxtQuantidade.Text = DataGrid.CurrentRow.Cells(9).Value
-        TxtValorUnit.Text = DataGrid.CurrentRow.Cells(10).Value
-        TxtValorTotal.Text = DataGrid.CurrentRow.Cells(11).Value
-        TxtStatusPedido.Text = DataGrid.CurrentRow.Cells(12).Value
+        DataVenda.Value = DataGrid.CurrentRow.Cells(3).Value
+        TxtCodCliente.Text = DataGrid.CurrentRow.Cells(4).Value
+        TxtCliente.Text = DataGrid.CurrentRow.Cells(5).Value
+        TxtCodProduto.Text = DataGrid.CurrentRow.Cells(6).Value
+        TxtProduto.Text = DataGrid.CurrentRow.Cells(7).Value
+        TxtQuantidade.Text = DataGrid.CurrentRow.Cells(8).Value
+        TxtValorUnit.Text = DataGrid.CurrentRow.Cells(9).Value
+        TxtValorTotal.Text = DataGrid.CurrentRow.Cells(10).Value
     End Sub
-    Sub ListarTudoUltimoPedido()
+    Sub ListarUltimaVenda()
         ' Stop
         Try
-            Abrir()
 
+            Abrir()
             'VERIFICAR ULTIMO ID NO BANCO 
             Dim cmdp As MySqlCommand
             Dim sql1 As String
             Dim ultima As MySqlDataReader
 
-            sql1 = "SELECT pedido FROM pedidos WHERE pedido=(SELECT MAX(pedido) FROM pedidos) "
+            sql1 = "SELECT pedido FROM venda WHERE id_venda=(SELECT MAX(id_venda) FROM venda) "
             cmdp = New MySqlCommand(sql1, con)
             ultima = cmdp.ExecuteReader()
 
             If (ultima.Read()) Then
-                maximo = ultima("pedido")
+                maximo = ultima("id_venda")
                 ultima.Close()
             Else
                 ultima.Close()
@@ -193,14 +186,12 @@ Public Class FrmPedido
             MsgBox("Erro ao Salvar!! " + ex.Message)
         End Try
 
-
-
         Try
             Abrir()
             Dim sql As String
             Dim dt As New DataTable
             Dim da As MySqlDataAdapter
-            sql = "SELECT p.id, p.pedido, p.item, p.descricao, p.data_emissao, p.cod_fornecedor, p.fornecedor, p.cod_produto, p.produto, p.quantidade, p.valor_unitario, p.valor_total, c.status FROM pedidos as p INNER JOIN pedido_cabecalho as c ON p.pedido = c.id WHERE p.pedido= '" & maximo & "' order by p.item asc "
+            sql = "SELECT * FROM venda WHERE id_venda= '" & maximo & "' order by p.item asc "
             da = New MySqlDataAdapter(sql, con)
             da.Fill(dt)
             DataGrid.DataSource = dt
@@ -229,7 +220,6 @@ Public Class FrmPedido
             LimparCampos()
             GerarIdRegistro()
 
-            TxtPedido.Focus()
             TxtItem.Text = 1
             IncluirPedido = "True"
         End If
@@ -245,7 +235,7 @@ Public Class FrmPedido
             Dim sql As String
             Dim ultima As MySqlDataReader
 
-            sql = "SELECT id FROM pedido_cabecalho WHERE id=(SELECT MAX(id) FROM pedido_cabecalho) "
+            sql = "SELECT id_venda FROM venda_cabecalho WHERE id_venda=(SELECT MAX(id_venda) FROM venda_cabecalho) "
             cmd = New MySqlCommand(sql, con)
             ultima = cmd.ExecuteReader()
 
@@ -254,9 +244,8 @@ Public Class FrmPedido
             Else
                 TxtIdRegistro.Text = 1
 
+                ultima.Close()
             End If
-
-            ultima.Close()
 
         Catch ex As Exception
             MsgBox("Erro ao Salvar!! " + ex.Message)
@@ -271,30 +260,13 @@ Public Class FrmPedido
 
         Abrir()
 
-        'VERIFICAR SE O PEDIDO JÁ EXISTE
-        Dim cmdped As MySqlCommand
-        Dim readerped As MySqlDataReader
-        Dim sqlped As String
-
-        sqlped = "SELECT * FROM pedido_cabecalho WHERE id = '" & TxtIdRegistro.Text & "' "
-        cmdped = New MySqlCommand(sqlped, con)
-        readerped = cmdped.ExecuteReader
-        If readerped.Read = True Then
-            readerped.Close()
-            MsgBox("Este pedido " + TxtIdRegistro.Text + " já está cadastrado!!", MsgBoxStyle.Information, "Pedido Já Cadastrado")
-            Exit Sub
-        Else
-            readerped.Close()
-        End If
-
-
         Try
             'PROGRAMANDO INSERÇÃO DE REGISTRO NO BANCO
             Dim cmd As MySqlCommand
             Dim sqls As String
             Dim data As String
 
-            data = DataPed.Value.ToString("yyyy-MM-dd")
+            data = DataVenda.Value.ToString("yyyy-MM-dd")
 
             Dim i As Integer
             If MsgBox("Deseja salvar esse pedido?", vbYesNo + vbQuestion) = vbYes Then
@@ -303,20 +275,19 @@ Public Class FrmPedido
 
                 For i = 0 To DataGrid.RowCount - 1
 
-                    sqls = "INSERT INTO pedidos (pedido, item, descricao, data_emissao, cod_fornecedor, fornecedor, cod_produto, produto, quantidade, valor_unitario, valor_total ) VALUES (@pedido, @item, @descricao, @data_emissao, @cod_fornecedor, @fornecedor, @cod_produto, @produto, @quantidade, @valor_unitario, @valor_total )"
+                    sqls = "INSERT INTO venda (id_venda, item, data_venda, cod_cliente, cliente, cod_produto, produto, quantidade, valor_unitario, valor_total, custo_total ) VALUES (@id_venda, @item, '" & data & "', @cod_cliente, @cliente, @cod_produto, @produto, @quantidade, @valor_unitario, @valor_total, @custo_total)"
                     cmd = New MySqlCommand(sqls, con)
                     With cmd
-                        .Parameters.AddWithValue("@pedido", CInt(DataGrid.Rows(i).Cells(1).Value.ToString))
+                        .Parameters.AddWithValue("@id_venda", CInt(DataGrid.Rows(i).Cells(1).Value.ToString))
                         .Parameters.AddWithValue("@item", CInt(DataGrid.Rows(i).Cells(2).Value.ToString))
-                        .Parameters.AddWithValue("@descricao", DataGrid.Rows(i).Cells(3).Value.ToString)
-                        .Parameters.AddWithValue("@data_emissao", CDate(DataGrid.Rows(i).Cells(4).Value.ToString))
-                        .Parameters.AddWithValue("@cod_fornecedor", CInt(DataGrid.Rows(i).Cells(5).Value.ToString))
-                        .Parameters.AddWithValue("@fornecedor", DataGrid.Rows(i).Cells(6).Value.ToString)
-                        .Parameters.AddWithValue("@cod_produto", CInt(DataGrid.Rows(i).Cells(7).Value.ToString))
-                        .Parameters.AddWithValue("@produto", DataGrid.Rows(i).Cells(8).Value.ToString)
-                        .Parameters.AddWithValue("@quantidade", CInt(DataGrid.Rows(i).Cells(9).Value.ToString))
-                        .Parameters.AddWithValue("@valor_unitario", CDbl(DataGrid.Rows(i).Cells(10).Value.ToString))
-                        .Parameters.AddWithValue("@valor_total", CDbl(DataGrid.Rows(i).Cells(11).Value.ToString))
+                        .Parameters.AddWithValue("@cod_cliente", CInt(DataGrid.Rows(i).Cells(3).Value.ToString))
+                        .Parameters.AddWithValue("@cliente", DataGrid.Rows(i).Cells(4).Value.ToString)
+                        .Parameters.AddWithValue("@cod_produto", CInt(DataGrid.Rows(i).Cells(5).Value.ToString))
+                        .Parameters.AddWithValue("@produto", DataGrid.Rows(i).Cells(6).Value.ToString)
+                        .Parameters.AddWithValue("@quantidade", CInt(DataGrid.Rows(i).Cells(7).Value.ToString))
+                        .Parameters.AddWithValue("@valor_unitario", CDbl(DataGrid.Rows(i).Cells(8).Value.ToString))
+                        .Parameters.AddWithValue("@valor_total", CDbl(DataGrid.Rows(i).Cells(9).Value.ToString))
+                        .Parameters.AddWithValue("@custo_total", CDbl(DataGrid.Rows(i).Cells(10).Value.ToString))
                         cmd.ExecuteNonQuery()
                     End With
 
@@ -329,14 +300,14 @@ Public Class FrmPedido
                 Dim statusPedido As String
                 statusPedido = "Aberto"
 
-                data = DataPed.Value.ToString("yyyy-MM-dd")
-                sql = "INSERT INTO pedido_cabecalho (id, pedido, cod_fornecedor, fornecedor, data, total, status) VALUES ('" & TxtIdRegistro.Text & "','" & TxtPedido.Text & "','" & TxtCodFornecedor.Text & "','" & TxtFornecedor.Text & "', '" & data & "', '" & TxtTotalPedido.Text.Replace(",", ".") & "', '" & statusPedido & "')"
+                data = DataVenda.Value.ToString("yyyy-MM-dd")
+                sql = "INSERT INTO venda_cabecalho (id_venda, data_venda, cod_cliente, cliente, valor_total, saldo_venda VALUES ('" & TxtIdRegistro.Text & "', '" & data & "', '" & TxtCodCliente.Text & "','" & TxtCliente.Text & "', '" & TxtTotalVenda.Text.Replace(",", ".") & "', '" & TxtTotalVenda.Text.Replace(",", ".") & "' )"
                 cmdp = New MySqlCommand(sql, con)
                 cmdp.ExecuteNonQuery()
 
                 LimparCampos()
 
-                ListarTudoUltimoPedido()
+                ListarUltimaVenda()
 
                 DesabilitarCampos()
 
@@ -354,14 +325,10 @@ Public Class FrmPedido
     End Sub
 
     Private Sub BtnExluir_Click(sender As Object, e As EventArgs) Handles BtnExcluir.Click
-        If TxtStatusPedido.Text = "Fechado" Then
-            MsgBox("Pedido fechado, não pode ser exluído!!", MsgBoxStyle.Information, "Excluir Pedido")
-            Exit Sub
-        End If
 
         If TxtIdRegistro.Text <> "" Then
 
-            If MsgBox("Deseja excluir o pedido " + TxtIdRegistro.Text + "?", vbYesNo, "Pedido") = vbYes Then
+            If MsgBox("Deseja excluir a venda de " + TxtCliente.Text + "?", vbYesNo, "Pedido") = vbYes Then
 
 
                 Try
@@ -369,23 +336,25 @@ Public Class FrmPedido
                     'PROGRAMANDO EXCLUSÃO DE REGISTRO NO BANCO
                     Dim cmd As MySqlCommand
                     Dim sql As String
-                    Dim codpedido As String
-                    codpedido = TxtIdRegistro.Text
+                    Dim codvenda As String
+                    codvenda = TxtIdRegistro.Text
 
-                    sql = "DELETE FROM pedidos where pedido = '" & codpedido & "' "
+                    sql = "DELETE FROM vendas where pedido = '" & codvenda & "' "
                     cmd = New MySqlCommand(sql, con)
                     cmd.ExecuteNonQuery()
 
 
                     Dim cmd1 As MySqlCommand
                     Dim sql1 As String
-                    sql1 = "DELETE FROM pedido_cabecalho where id = '" & codpedido & "' "
+                    sql1 = "DELETE FROM venda_cabecalho where id_venda = '" & codvenda & "' "
                     cmd1 = New MySqlCommand(sql1, con)
                     cmd1.ExecuteNonQuery()
 
-                    MsgBox("Pedido excluído com sucesso!!", MsgBoxStyle.Information, "Excluir")
+                    Atualizar_Saldo_Estoque()
 
-                    ListarTudoUltimoPedido()
+                    MsgBox("Venda excluída com sucesso!!", MsgBoxStyle.Information, "Excluir")
+
+                    ListarUltimaVenda()
 
                 Catch ex As Exception
                     MsgBox("Erro ao excluir!!" + ex.Message)
@@ -398,12 +367,59 @@ Public Class FrmPedido
             MsgBox("Selecione um pedido para excluir!!", MsgBoxStyle.Information, "Excluir")
         End If
     End Sub
+
+    Private Sub Atualizar_Saldo_Estoque()
+        Try
+            Abrir()
+
+            Dim cmd As MySqlCommand
+            Dim sql As String
+
+            Dim saldoItem As Integer
+            Dim codItem As Integer
+            Dim qtd As Integer
+            Dim saldoEstoque As Integer
+
+
+            For i = 0 To DataGrid.RowCount - 1
+
+                codItem = CInt(DataGrid.Rows(i).Cells(1).Value.ToString)
+                qtd = CInt(DataGrid.Rows(i).Cells(3).Value.ToString)
+
+                Dim cmdp As MySqlCommand
+                Dim sqlp As String
+                Dim ultima As MySqlDataReader
+
+                sqlp = "SELECT saldo_estoque FROM produtos WHERE id= '" & codItem & "'"
+                cmdp = New MySqlCommand(sqlp, con)
+                ultima = cmdp.ExecuteReader()
+
+                If (ultima.Read()) Then
+                    saldoEstoque = ultima("saldo_estoque")
+                    ultima.Close()
+                Else
+                    ultima.Close()
+                End If
+
+                saldoItem = saldoEstoque + qtd
+
+                sql = "UPDATE produtos SET saldo_estoque = '" & saldoItem & "' WHERE id = '" & codItem & "'"
+                cmd = New MySqlCommand(sql, con)
+                cmd.ExecuteNonQuery()
+
+            Next
+
+        Catch ex As Exception
+            MsgBox("Erro ao Salvar!!" + ex.Message)
+        End Try
+
+    End Sub
     Private Sub BtnSair_Click(sender As Object, e As EventArgs) Handles BtnSair.Click
         Me.Close()
     End Sub
     Private Sub BtnPesqCliente_Click(sender As Object, e As EventArgs) Handles BtnPesqFornecedor.Click
-        pesquisarFornecedor = "True"
-        Dim form = New FrmFornecedor
+        pesquisarCliente = "True"
+        Dim form = New FrmClientes
         form.ShowDialog()
     End Sub
     Private Sub BtnPesqProduto_Click(sender As Object, e As EventArgs) Handles BtnPesqProduto.Click
@@ -421,9 +437,6 @@ Public Class FrmPedido
 
         TxtValorTotal.Text = (dbl1 * dbl2).ToString("n")
 
-        'TxtValorTotal.Text = TxtValorUnit.Text * TxtQuantidade.Text
-        'TxtValorTotal.Text = Convert.ToDouble(TxtValorTotal.Text).ToString("C")
-
     End Sub
     Private Sub TxtValorUnit_TextChanged(sender As Object, e As EventArgs) Handles TxtValorUnit.TextChanged
         On Error Resume Next
@@ -434,8 +447,6 @@ Public Class FrmPedido
 
         TxtValorTotal.Text = (dbl1 * dbl2).ToString("n")
 
-        'TxtValorTotal.Text = TxtValorUnit.Text * TxtQuantidade.Text
-        'TxtValorTotal.Text = Convert.ToDouble(TxtValorTotal.Text).ToString("C")
     End Sub
     Private Sub BtndAdicionarItem_Click(sender As Object, e As EventArgs) Handles BtnOk.Click
 
@@ -443,10 +454,10 @@ Public Class FrmPedido
         If IncluirPedido = "True" Then
 
             Limpar_cores()
-            TxtFornecedor.BackColor = Color.White
-            TxtPedido.BackColor = Color.White
+            TxtCliente.BackColor = Color.White
 
-            If TxtCodFornecedor.Text <> "" And TxtCodProduto.Text <> "" And TxtQuantidade.Text <> "" And TxtValorUnit.Text <> "" And TxtPedido.Text <> "" Then
+
+            If TxtCodCliente.Text <> "" And TxtCodProduto.Text <> "" And TxtQuantidade.Text <> "" And TxtValorUnit.Text <> "" Then
 
                 If DataGrid.Rows.Count < 1 Then
 
@@ -467,7 +478,7 @@ Public Class FrmPedido
                     bs.DataSource = Table1
                     DataGrid.DataSource = bs
 
-                    Table1.Rows.Add(TxtItem.Text, TxtIdRegistro.Text, TxtItem.Text, TxtPedido.Text, DataPed.Value.ToShortDateString, TxtCodFornecedor.Text, TxtFornecedor.Text, TxtCodProduto.Text, TxtProduto.Text, TxtQuantidade.Text, TxtValorUnit.Text, TxtValorTotal.Text)
+                    Table1.Rows.Add(TxtItem.Text, TxtIdRegistro.Text, TxtItem.Text, DataVenda.Value.ToShortDateString, TxtCodCliente.Text, TxtCliente.Text, TxtCodProduto.Text, TxtProduto.Text, TxtQuantidade.Text, TxtValorUnit.Text, TxtValorTotal.Text)
 
                     TxtItem.Text = TxtItem.Text + 1
 
@@ -501,16 +512,16 @@ Public Class FrmPedido
 
                     TotalDatagrid()
 
-                    TxtPedido.Enabled = False
+
                     BtnPesqFornecedor.Enabled = False
-                    TxtFornecedor.Enabled = False
+                    TxtCliente.Enabled = False
 
                     LimparCamposAddItemPedido()
 
 
                 Else
 
-                    Table1.Rows.Add(TxtItem.Text, TxtIdRegistro.Text, TxtItem.Text, TxtPedido.Text, DataPed.Value.ToShortDateString, TxtCodFornecedor.Text, TxtFornecedor.Text, TxtCodProduto.Text, TxtProduto.Text, TxtQuantidade.Text, TxtValorUnit.Text, TxtValorTotal.Text)
+                    Table1.Rows.Add(TxtItem.Text, TxtIdRegistro.Text, TxtItem.Text, DataVenda.Value.ToShortDateString, TxtCodCliente.Text, TxtCliente.Text, TxtCodProduto.Text, TxtProduto.Text, TxtQuantidade.Text, TxtValorUnit.Text, TxtValorTotal.Text)
 
                     TxtItem.Text = TxtItem.Text + 1
 
@@ -520,8 +531,8 @@ Public Class FrmPedido
 
             Else
                 Editar_Cores()
-                TxtFornecedor.BackColor = Color.Salmon
-                TxtPedido.BackColor = Color.Salmon
+                TxtCliente.BackColor = Color.Salmon
+
                 MsgBox("Campos em branco ou vazios", MsgBoxStyle.Information, "Adicionar item")
             End If
         End If
@@ -541,8 +552,8 @@ Public Class FrmPedido
         For i = 0 To DataGrid.Rows.Count - 1
             total += +DataGrid.Rows(i).Cells(11).Value
         Next
-        TxtTotalPedido.Text = total
-        'TxtTotalPedido.Text = Convert.ToDouble(TxtTotalPedido.Text).ToString("C")
+        TxtTotalVenda.Text = total
+
     End Sub
 
     Private Sub BtnLimpar_Click(sender As Object, e As EventArgs) Handles BtnLimpar.Click
@@ -554,10 +565,7 @@ Public Class FrmPedido
     End Sub
 
     Private Sub BtnEditar_Click(sender As Object, e As EventArgs) Handles BtnEditar.Click
-        If TxtStatusPedido.Text = "Fechado" Then
-            MsgBox("Pedido fechado, não pode ser editado!!", MsgBoxStyle.Information, "Editar Pedido")
-            Exit Sub
-        End If
+
 
         If TxtItem.Text <> "" Then
 
@@ -567,13 +575,13 @@ Public Class FrmPedido
 
                 form.TxtItem.Text = TxtItem.Text
                 form.TxtIdRegistro.Text = TxtIdRegistro.Text
-                form.TxtPedido.Text = TxtPedido.Text
-                form.TxtCodFornecedor.Text = TxtCodFornecedor.Text
-                form.TxtFornecedor.Text = TxtFornecedor.Text
-                form.DataPed.Value = DataPed.Value
-                form.TxtStatusPedido.Text = TxtStatusPedido.Text
-                form.TxtCodFornecedor.Text = TxtCodFornecedor.Text
-                form.TxtFornecedor.Text = TxtFornecedor.Text
+
+                form.TxtCodFornecedor.Text = TxtCodCliente.Text
+                form.TxtFornecedor.Text = TxtCliente.Text
+                form.DataPed.Value = DataVenda.Value
+
+                form.TxtCodFornecedor.Text = TxtCodCliente.Text
+                form.TxtFornecedor.Text = TxtCliente.Text
                 form.TxtQuantidade.Text = TxtQuantidade.Text
                 form.TxtValorUnit.Text = TxtValorUnit.Text
                 form.TxtCodProduto.Text = TxtCodProduto.Text
@@ -619,7 +627,7 @@ Public Class FrmPedido
             Dim sql As String
             Dim dt As New DataTable
             Dim da As MySqlDataAdapter
-            sql = "SELECT p.id, p.pedido, p.item, p.descricao, p.data_emissao, p.cod_fornecedor, p.fornecedor, p.cod_produto, p.produto, p.quantidade, p.valor_unitario, p.valor_total, c.status FROM pedidos as p INNER JOIN pedido_cabecalho as c ON p.pedido = c.id WHERE p.pedido= '" & TxtNumPedido.Text & "' order by p.item asc "
+            sql = "SELECT p.id, p.pedido, p.item, p.descricao, p.data_emissao, p.cod_fornecedor, p.fornecedor, p.cod_produto, p.produto, p.quantidade, p.valor_unitario, p.valor_total, c.status FROM pedidos as p INNER JOIN pedido_cabecalho as c ON p.pedido = c.id WHERE p.pedido= '" & TxtIdRegistro.Text & "' order by p.item asc "
             da = New MySqlDataAdapter(sql, con)
             da.Fill(dt)
             DataGrid.DataSource = dt
@@ -642,7 +650,7 @@ Public Class FrmPedido
     Private Sub BtnCacelar_Click(sender As Object, e As EventArgs) Handles BtnCacelar.Click
         LimparCampos()
         DesabilitarCampos()
-        ListarTudoUltimoPedido()
+        ListarUltimaVenda()
         Limpar_cores()
     End Sub
 
@@ -667,7 +675,7 @@ Public Class FrmPedido
     Private Sub FrmPedido_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
 
         If pedidoPesquisar = "True" Then
-            TxtNumPedido.Text = numeroPedido
+
 
             pedidoPesquisar = ""
             pedidoPesquisar = ""
@@ -678,10 +686,10 @@ Public Class FrmPedido
             nomeFornecedor = ""
         End If
 
-        If pesquisarFornecedor = "True" Then
-            TxtCodFornecedor.Text = codFornecedor
-            TxtFornecedor.Text = nomeFornecedor
-            pesquisarFornecedor = ""
+        If pesquisarCliente = "True" Then
+            TxtCodCliente.Text = codFornecedor
+            TxtCliente.Text = nomeFornecedor
+            pesquisarCliente = ""
         End If
 
         If pesquisarProduto = "True" Then
@@ -701,10 +709,7 @@ Public Class FrmPedido
 
 
     Private Sub BtnExcluirItemPedido_Click(sender As Object, e As EventArgs) Handles BtnExcluirItemPedido.Click
-        If TxtStatusPedido.Text = "Fechado" Then
-            MsgBox("Pedido fechado, não pode ser exluído!!", MsgBoxStyle.Information, "Excluir Pedido")
-            Exit Sub
-        End If
+
         If IncluirPedido = "True" Then
 
             If DataGrid.Rows.Count < 1 Then
@@ -764,7 +769,7 @@ Public Class FrmPedido
 
                         MsgBox("Item excluído com sucesso!!", MsgBoxStyle.Information, "Excluir")
 
-                        ListarTudoUltimoPedido()
+                        ListarUltimaVenda()
 
                     Catch ex As Exception
                         MsgBox("Erro ao excluir!!" + ex.Message)
@@ -782,12 +787,6 @@ Public Class FrmPedido
 
 
     End Sub
-
-    Private Sub TxtNumPedido_TextChanged(sender As Object, e As EventArgs) Handles TxtNumPedido.TextChanged
-        PesquisarPedido()
-    End Sub
-
-
 
     Sub ListarProximoPedido()
 
@@ -950,16 +949,11 @@ Line1:
 
     Private Sub BtnIncluir_Click(sender As Object, e As EventArgs) Handles BtnIncluir.Click
 
-        If TxtStatusPedido.Text <> "" Then
 
 
-            Dim linhaPed As Integer
 
-            If TxtStatusPedido.Text = "Fechado" Then
-                MsgBox("Pedido fechado, não pode ser alterado!!", MsgBoxStyle.Information, "Pedido Fechado")
+        Dim linhaPed As Integer
 
-                Exit Sub
-            End If
 
             Try
                 Abrir()
@@ -989,17 +983,13 @@ Line1:
 
             form.TxtItem.Text = linhaPed + 1
             form.TxtIdRegistro.Text = TxtIdRegistro.Text
-            form.TxtPedido.Text = TxtPedido.Text
-            form.TxtCodFornecedor.Text = TxtCodFornecedor.Text
-            form.TxtFornecedor.Text = TxtFornecedor.Text
-            form.DataPed.Value = DataPed.Value
-            form.TxtStatusPedido.Text = TxtStatusPedido.Text
+            form.TxtCodFornecedor.Text = TxtCodCliente.Text
+            form.TxtFornecedor.Text = TxtCliente.Text
+            form.DataPed.Value = DataVenda.Value
+
 
             form.ShowDialog()
-        Else
-            Exit Sub
 
-        End If
     End Sub
 
     Private Sub BtnCarregar_Click(sender As Object, e As EventArgs) Handles BtnCarregar.Click
@@ -1033,4 +1023,5 @@ Line1:
 
 
     End Sub
+
 End Class
