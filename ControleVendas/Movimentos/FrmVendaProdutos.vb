@@ -105,50 +105,51 @@ Public Class FrmVendaProdutos
         'DataGrid.Columns(0).Visible = False
 
         DataGrid.Columns(0).HeaderText = "Id Reg."
-        DataGrid.Columns(1).HeaderText = "Pedido"
+        DataGrid.Columns(1).HeaderText = "Nº Venda"
         DataGrid.Columns(2).HeaderText = "Item"
-        DataGrid.Columns(3).HeaderText = "Desc."
-        DataGrid.Columns(4).HeaderText = "Data"
-        DataGrid.Columns(5).HeaderText = "Cód. Fornec."
-        DataGrid.Columns(6).HeaderText = "Fornecedor"
-        DataGrid.Columns(7).HeaderText = "Cód. Produto"
-        DataGrid.Columns(8).HeaderText = "Produto"
-        DataGrid.Columns(9).HeaderText = "Qtd."
-        DataGrid.Columns(10).HeaderText = "Vlr. Unit."
-        DataGrid.Columns(11).HeaderText = "Valor Total"
-        DataGrid.Columns(12).HeaderText = "Status"
+        DataGrid.Columns(3).HeaderText = "Data Venda"
+        DataGrid.Columns(4).HeaderText = "Cód. Cliente"
+        DataGrid.Columns(5).HeaderText = "Cliente"
+        DataGrid.Columns(6).HeaderText = "Cód. Produto"
+        DataGrid.Columns(7).HeaderText = "Produto"
+        DataGrid.Columns(8).HeaderText = "Qtd."
+        DataGrid.Columns(9).HeaderText = "Vlr. Unit."
+        DataGrid.Columns(10).HeaderText = "Valor Total"
+        DataGrid.Columns(11).HeaderText = "Custo Total"
 
         DataGrid.Columns(0).Width = 1
         DataGrid.Columns(1).Width = 50
         DataGrid.Columns(2).Width = 40
-        DataGrid.Columns(3).Width = 120
-        DataGrid.Columns(4).Width = 90
-        DataGrid.Columns(5).Width = 50
-        DataGrid.Columns(6).Width = 120
-        DataGrid.Columns(7).Width = 50
-        DataGrid.Columns(8).Width = 250
-        DataGrid.Columns(9).Width = 40
-        DataGrid.Columns(12).Width = 60
+        DataGrid.Columns(4).Width = 50
+        DataGrid.Columns(5).Width = 150
+        DataGrid.Columns(6).Width = 50
+        DataGrid.Columns(7).Width = 200
+        DataGrid.Columns(8).Width = 40
+        DataGrid.Columns(9).Width = 60
 
-        DataGrid.Columns(4).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
-        DataGrid.Columns(5).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
-        DataGrid.Columns(7).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
-        DataGrid.Columns(2).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid.Columns(1).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
-        DataGrid.Columns(0).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
-
-        DataGrid.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-        DataGrid.Columns(7).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-        DataGrid.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+
+        DataGrid.Columns(0).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
 
+        DataGrid.Columns(4).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGrid.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+
+        DataGrid.Columns(6).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGrid.Columns(6).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+
+        DataGrid.Columns(8).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGrid.Columns(8).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+
+        DataGrid.Columns(9).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+
+        DataGrid.Columns(9).DefaultCellStyle.Format = "c"
         DataGrid.Columns(10).DefaultCellStyle.Format = "c"
         DataGrid.Columns(11).DefaultCellStyle.Format = "c"
 
     End Sub
     Sub DadosCabecalho()
-
         On Error Resume Next
         TxtIdRegistro.Text = DataGrid.CurrentRow.Cells(1).Value
         TxtItem.Text = DataGrid.CurrentRow.Cells(2).Value
@@ -171,7 +172,7 @@ Public Class FrmVendaProdutos
             Dim sql1 As String
             Dim ultima As MySqlDataReader
 
-            sql1 = "SELECT pedido FROM venda WHERE id_venda=(SELECT MAX(id_venda) FROM venda) "
+            sql1 = "SELECT id_venda FROM venda WHERE id_venda=(SELECT MAX(id_venda) FROM venda) "
             cmdp = New MySqlCommand(sql1, con)
             ultima = cmdp.ExecuteReader()
 
@@ -183,7 +184,7 @@ Public Class FrmVendaProdutos
             End If
 
         Catch ex As Exception
-            MsgBox("Erro ao Salvar!! " + ex.Message)
+            MsgBox("Erro ao consultar ultimo id_venda!! " + ex.Message)
         End Try
 
         Try
@@ -191,12 +192,14 @@ Public Class FrmVendaProdutos
             Dim sql As String
             Dim dt As New DataTable
             Dim da As MySqlDataAdapter
-            sql = "SELECT * FROM venda WHERE id_venda= '" & maximo & "' order by p.item asc "
+            sql = "SELECT * FROM venda WHERE id_venda= '" & maximo & "' order by item asc "
             da = New MySqlDataAdapter(sql, con)
             da.Fill(dt)
             DataGrid.DataSource = dt
 
             FormatarGrid()
+
+            ListarDuplicatas()
 
             If DataGrid.Rows.Count > 0 Then
                 DadosCabecalho()
@@ -208,11 +211,79 @@ Public Class FrmVendaProdutos
             MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
         End Try
 
+    End Sub
 
+    Public Sub ListarDuplicatas()
+
+        'BUSCAR INFORMAÇÕES DA TABELA E MOSTRAR NO DATAGRID
+        Try
+            Abrir()
+            Dim sql As String
+            Dim dt As New DataTable
+            Dim da As MySqlDataAdapter
+            sql = "SELECT * FROM duplicatas_receber WHERE id_venda = '" & TxtIdRegistro.Text & "' "
+            da = New MySqlDataAdapter(sql, con)
+            da.Fill(dt)
+            DataGridDuplicatas.DataSource = dt
+
+            FormatarGridDuplicatas()
+
+        Catch ex As Exception
+            MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
+        End Try
 
     End Sub
 
+    Public Sub FormatarGridDuplicatas()
+        ' Stop
+        DataGridDuplicatas.Columns(7).Visible = False
+        DataGridDuplicatas.Columns(8).Visible = False
+        DataGridDuplicatas.Columns(9).Visible = False
 
+        DataGridDuplicatas.Columns(0).HeaderText = "Id. Dup."
+        DataGridDuplicatas.Columns(1).HeaderText = "Parcela"
+        DataGridDuplicatas.Columns(2).HeaderText = "Nº Venda"
+        DataGridDuplicatas.Columns(3).HeaderText = "Data Venda"
+        DataGridDuplicatas.Columns(4).HeaderText = "Data Vencimento"
+        DataGridDuplicatas.Columns(5).HeaderText = "Valor Parcela"
+        DataGridDuplicatas.Columns(6).HeaderText = "Observação"
+
+
+
+        DataGridDuplicatas.Columns(5).DefaultCellStyle.Format = "c"
+
+        TotalDatagridDuplicatas()
+
+        TotalNfe_TotalDuplicatas()
+
+    End Sub
+
+    Public Sub TotalNfe_TotalDuplicatas()
+        Dim soma As Double
+        Dim dbl1 As Double = 0
+        Dim dbl2 As Double = 0
+        Double.TryParse(TxtTotalVenda.Text, dbl1)
+        Double.TryParse(TxtTotalDuplicatas.Text, dbl2)
+
+        soma = (dbl1 - dbl2).ToString("n")
+
+        LblSaldo.Text = ""
+        If soma > 0 Or soma < 0 Then
+            LblSaldo.Text = "Valor total das duplicatas diferente do valor total da Nota!"
+        End If
+
+    End Sub
+    Public Sub TotalDatagridDuplicatas()
+
+        'CALCULANDO SOMA TOTAL
+        On Error Resume Next
+        Dim total As Decimal = 0
+        For i = 0 To DataGridDuplicatas.Rows.Count - 1
+            total += DataGridDuplicatas.Rows(i).Cells(5).Value
+        Next
+        TxtTotalDuplicatas.Text = total
+
+    End Sub
     Private Sub BtnNovo_Click(sender As Object, e As EventArgs) Handles BtnNovo.Click
         If MsgBox("Deseja incluir novo pedido?", vbYesNo, " Novo Pedido") = vbYes Then
 
@@ -550,7 +621,7 @@ Public Class FrmVendaProdutos
         On Error Resume Next
         Dim total As Decimal = 0
         For i = 0 To DataGrid.Rows.Count - 1
-            total += +DataGrid.Rows(i).Cells(11).Value
+            total += +DataGrid.Rows(i).Cells(10).Value
         Next
         TxtTotalVenda.Text = total
 

@@ -286,7 +286,7 @@ Public Class FrmEntrada
             total += DataGridDuplicatas.Rows(i).Cells(5).Value
         Next
         TxtTotalDuplicatas.Text = total
-        'TxtTotalPedido.Text = Convert.ToDouble(TxtTotalPedido.Text).ToString("C")
+
     End Sub
     Private Sub BtnSair_Click(sender As Object, e As EventArgs) Handles BtnSair.Click
 
