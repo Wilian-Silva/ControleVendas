@@ -68,7 +68,9 @@ Public Class FrmVendaProdutos
         DataGrid.DataSource = Nothing
         Table1.Columns.Clear()
         Table1.Rows.Clear()
-        IncluirPedido = ""
+        Table1DuplicatasReceber.Columns.Clear()
+        Table1DuplicatasReceber.Rows.Clear()
+        novaVenda = ""
         editarpedido = ""
 
     End Sub
@@ -117,7 +119,6 @@ Public Class FrmVendaProdutos
         DataGrid.Columns(8).HeaderText = "Qtd."
         DataGrid.Columns(9).HeaderText = "Vlr. Unit."
         DataGrid.Columns(10).HeaderText = "Valor Total"
-        DataGrid.Columns(11).HeaderText = "Custo Total"
 
         DataGrid.Columns(0).Width = 1
         DataGrid.Columns(1).Width = 50
@@ -125,7 +126,7 @@ Public Class FrmVendaProdutos
         DataGrid.Columns(4).Width = 50
         DataGrid.Columns(5).Width = 150
         DataGrid.Columns(6).Width = 50
-        DataGrid.Columns(7).Width = 200
+        DataGrid.Columns(7).Width = 250
         DataGrid.Columns(8).Width = 40
         DataGrid.Columns(9).Width = 80
 
@@ -148,7 +149,6 @@ Public Class FrmVendaProdutos
 
         DataGrid.Columns(9).DefaultCellStyle.Format = "c"
         DataGrid.Columns(10).DefaultCellStyle.Format = "c"
-        DataGrid.Columns(11).DefaultCellStyle.Format = "c"
 
     End Sub
     Sub DadosCabecalho()
@@ -201,13 +201,15 @@ Public Class FrmVendaProdutos
 
             FormatarGrid()
 
-            ListarDuplicatas()
-
             If DataGrid.Rows.Count > 0 Then
                 DadosCabecalho()
             End If
 
+            ListarDuplicatas()
+
             TotalDatagrid()
+            TotalDatagridDuplicatas()
+            TotalNfe_TotalDuplicatas()
 
         Catch ex As Exception
             MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
@@ -219,11 +221,12 @@ Public Class FrmVendaProdutos
 
         'BUSCAR INFORMAÇÕES DA TABELA E MOSTRAR NO DATAGRID
         Try
+            'Stop
             Abrir()
             Dim sql As String
             Dim dt As New DataTable
             Dim da As MySqlDataAdapter
-            sql = "SELECT * FROM duplicatas_receber WHERE id_venda = '" & TxtIdRegistro.Text & "' "
+            sql = "SELECT * FROM duplicatas_receber WHERE id_venda = '" & TxtIdRegistro.Text & "' order by parcela asc"
             da = New MySqlDataAdapter(sql, con)
             da.Fill(dt)
             DataGridDuplicatas.DataSource = dt
@@ -250,8 +253,6 @@ Public Class FrmVendaProdutos
         DataGridDuplicatas.Columns(5).HeaderText = "Valor Parcela"
         DataGridDuplicatas.Columns(6).HeaderText = "Observação"
 
-
-
         DataGridDuplicatas.Columns(5).DefaultCellStyle.Format = "c"
 
         TotalDatagridDuplicatas()
@@ -269,7 +270,7 @@ Public Class FrmVendaProdutos
             GerarIdRegistro()
 
             TxtItem.Text = 1
-            IncluirPedido = "True"
+            novaVenda = "True"
         End If
     End Sub
 
@@ -306,9 +307,134 @@ Public Class FrmVendaProdutos
             Exit Sub
         End If
 
-        Abrir()
+
+        If LblSaldo.Text <> "" Then
+            If MsgBox("Total de duplicatas diferente do total da venda, deja salvar mesmo assim ?", vbYesNo, "Total duplicatas") = vbYes Then
+
+                Salvar_registro_nova_venda()
+
+                MsgBox("Cadastro salvo com Sucesso!!", MsgBoxStyle.Information, "Salvar")
+
+            End If
+        Else
+
+            If MsgBox("Deseja salvar essa venda?", vbYesNo + vbQuestion) = vbYes Then
+
+                Salvar_registro_nova_venda()
+
+                MsgBox("Cadastro salvo com Sucesso!!", MsgBoxStyle.Information, "Salvar")
+            End If
+        End If
+
+    End Sub
+
+    Sub Salvar_registro_nova_venda()
+
+        SalvarNovaVenda()
+
+        SalvarDuplicata()
+
+        SalvarEstoque()
+
+        SalvarSaldoItem()
+
+        LimparCampos()
+
+        ListarUltimaVenda()
+
+        DesabilitarCampos()
+
+        DadosCabecalho()
+
+        Limpar_cores()
+    End Sub
+    Sub SalvarEstoque()
+        Try
+            Abrir()
+
+            Dim cmd1 As MySqlCommand
+            Dim sql1 As String
+            Dim data1 As String
+            Dim IdVenda As Integer
+            data1 = Now().ToString("yyyy-MM-dd")
+            IdVenda = TxtIdRegistro.Text
+
+
+            Dim tipomvto As String
+            tipomvto = "Saída"
+            For i = 0 To DataGrid.RowCount - 1
+
+                sql1 = "INSERT INTO estoque (data_registro, tipo, cod_produto, produto, quantidade, valor_unitario, valor_total, id_venda, item ) VALUES ('" & data1 & "', '" & tipomvto & "', @cod_produto, @produto, @quantidade, @valor_unitario, @valor_total,'" & IdVenda & "', @item )"
+                cmd1 = New MySqlCommand(sql1, con)
+                With cmd1
+                    .Parameters.AddWithValue("@cod_produto", CInt(DataGrid.Rows(i).Cells(6).Value.ToString))
+                    .Parameters.AddWithValue("@produto", DataGrid.Rows(i).Cells(7).Value.ToString)
+                    .Parameters.AddWithValue("@quantidade", CInt(DataGrid.Rows(i).Cells(8).Value.ToString))
+                    .Parameters.AddWithValue("@valor_unitario", CDbl(DataGrid.Rows(i).Cells(9).Value.ToString))
+                    .Parameters.AddWithValue("@valor_total", CDbl(DataGrid.Rows(i).Cells(10).Value.ToString))
+                    .Parameters.AddWithValue("@item", CInt(DataGrid.Rows(i).Cells(2).Value.ToString))
+                    cmd1.ExecuteNonQuery()
+                End With
+
+            Next
+
+        Catch ex As Exception
+            MsgBox("Erro ao Salvar!!" + ex.Message)
+        End Try
+    End Sub
+    Private Sub SalvarSaldoItem()
 
         Try
+            Abrir()
+
+            Dim cmd As MySqlCommand
+            Dim sql As String
+
+            Dim saldoItem As Integer
+            Dim codItem As Integer
+            Dim qtd As Integer
+            Dim saldoEstoque As Integer
+
+
+            For i = 0 To DataGrid.RowCount - 1
+
+                codItem = CInt(DataGrid.Rows(i).Cells(6).Value.ToString)
+                qtd = CInt(DataGrid.Rows(i).Cells(8).Value.ToString)
+
+                Dim cmdp As MySqlCommand
+                Dim sqlp As String
+                Dim ultima As MySqlDataReader
+
+                sqlp = "SELECT saldo_estoque FROM produtos WHERE id= '" & codItem & "'"
+                cmdp = New MySqlCommand(sqlp, con)
+                ultima = cmdp.ExecuteReader()
+
+                If (ultima.Read()) Then
+                    saldoEstoque = ultima("saldo_estoque")
+                    ultima.Close()
+                Else
+                    ultima.Close()
+                End If
+
+
+                saldoItem = saldoEstoque - qtd
+
+                sql = "UPDATE produtos SET saldo_estoque = '" & saldoItem & "' WHERE id = '" & codItem & "'"
+                cmd = New MySqlCommand(sql, con)
+                cmd.ExecuteNonQuery()
+
+            Next
+
+        Catch ex As Exception
+            MsgBox("Erro ao Salvar!!" + ex.Message)
+        End Try
+
+
+    End Sub
+    Sub SalvarNovaVenda()
+        'Stop
+        Try
+            Abrir()
             'PROGRAMANDO INSERÇÃO DE REGISTRO NO BANCO
             Dim cmd As MySqlCommand
             Dim sqls As String
@@ -317,26 +443,26 @@ Public Class FrmVendaProdutos
             data = DataVenda.Value.ToString("yyyy-MM-dd")
 
             Dim i As Integer
-            If MsgBox("Deseja salvar esse pedido?", vbYesNo + vbQuestion) = vbYes Then
 
-                'ADIONANDO VARIAS LINHAS NO BANCO DE DADOS COM DATAGRID
 
-                For i = 0 To DataGrid.RowCount - 1
+            'ADIONANDO VARIAS LINHAS NO BANCO DE DADOS COM DATAGRID
 
-                    sqls = "INSERT INTO venda (id_venda, item, data_venda, cod_cliente, cliente, cod_produto, produto, quantidade, valor_unitario, valor_total, custo_total ) VALUES (@id_venda, @item, '" & data & "', @cod_cliente, @cliente, @cod_produto, @produto, @quantidade, @valor_unitario, @valor_total, @custo_total)"
-                    cmd = New MySqlCommand(sqls, con)
+            For i = 0 To DataGrid.RowCount - 1
+
+                sqls = "INSERT INTO venda (id_venda, item, data_venda, cod_cliente, cliente, cod_produto, produto, quantidade, valor_unitario, valor_total ) VALUES (@id_venda, @item, '" & data & "', @cod_cliente, @cliente, @cod_produto, @produto, @quantidade, @valor_unitario, @valor_total)"
+                cmd = New MySqlCommand(sqls, con)
                     With cmd
-                        .Parameters.AddWithValue("@id_venda", CInt(DataGrid.Rows(i).Cells(1).Value.ToString))
-                        .Parameters.AddWithValue("@item", CInt(DataGrid.Rows(i).Cells(2).Value.ToString))
-                        .Parameters.AddWithValue("@cod_cliente", CInt(DataGrid.Rows(i).Cells(3).Value.ToString))
-                        .Parameters.AddWithValue("@cliente", DataGrid.Rows(i).Cells(4).Value.ToString)
-                        .Parameters.AddWithValue("@cod_produto", CInt(DataGrid.Rows(i).Cells(5).Value.ToString))
-                        .Parameters.AddWithValue("@produto", DataGrid.Rows(i).Cells(6).Value.ToString)
-                        .Parameters.AddWithValue("@quantidade", CInt(DataGrid.Rows(i).Cells(7).Value.ToString))
-                        .Parameters.AddWithValue("@valor_unitario", CDbl(DataGrid.Rows(i).Cells(8).Value.ToString))
-                        .Parameters.AddWithValue("@valor_total", CDbl(DataGrid.Rows(i).Cells(9).Value.ToString))
-                        .Parameters.AddWithValue("@custo_total", CDbl(DataGrid.Rows(i).Cells(10).Value.ToString))
-                        cmd.ExecuteNonQuery()
+                    .Parameters.AddWithValue("@id_venda", CInt(DataGrid.Rows(i).Cells(1).Value.ToString))
+                    .Parameters.AddWithValue("@item", CInt(DataGrid.Rows(i).Cells(2).Value.ToString))
+                    .Parameters.AddWithValue("@cod_cliente", CInt(DataGrid.Rows(i).Cells(4).Value.ToString))
+                    .Parameters.AddWithValue("@cliente", DataGrid.Rows(i).Cells(5).Value.ToString)
+                    .Parameters.AddWithValue("@cod_produto", CInt(DataGrid.Rows(i).Cells(6).Value.ToString))
+                    .Parameters.AddWithValue("@produto", DataGrid.Rows(i).Cells(7).Value.ToString)
+                    .Parameters.AddWithValue("@quantidade", CInt(DataGrid.Rows(i).Cells(8).Value.ToString))
+                    .Parameters.AddWithValue("@valor_unitario", CDbl(DataGrid.Rows(i).Cells(9).Value.ToString))
+                    .Parameters.AddWithValue("@valor_total", CDbl(DataGrid.Rows(i).Cells(10).Value.ToString))
+
+                    cmd.ExecuteNonQuery()
                     End With
 
                 Next
@@ -345,33 +471,47 @@ Public Class FrmVendaProdutos
 
                 Dim cmdp As MySqlCommand
                 Dim sql As String
-                Dim statusPedido As String
-                statusPedido = "Aberto"
 
-                data = DataVenda.Value.ToString("yyyy-MM-dd")
-                sql = "INSERT INTO venda_cabecalho (id_venda, data_venda, cod_cliente, cliente, valor_total, saldo_venda VALUES ('" & TxtIdRegistro.Text & "', '" & data & "', '" & TxtCodCliente.Text & "','" & TxtCliente.Text & "', '" & TxtTotalVenda.Text.Replace(",", ".") & "', '" & TxtTotalVenda.Text.Replace(",", ".") & "' )"
-                cmdp = New MySqlCommand(sql, con)
+
+            data = DataVenda.Value.ToString("yyyy-MM-dd")
+            sql = "INSERT INTO venda_cabecalho (id_venda, data_venda, cod_cliente, cliente, valor_total, saldo_venda) VALUES ('" & TxtIdRegistro.Text & "', '" & data & "', '" & TxtCodCliente.Text & "','" & TxtCliente.Text & "', '" & TxtTotalVenda.Text.Replace(",", ".") & "', '" & TxtTotalVenda.Text.Replace(",", ".") & "' )"
+            cmdp = New MySqlCommand(sql, con)
                 cmdp.ExecuteNonQuery()
 
-                LimparCampos()
+        Catch ex As Exception
+            MsgBox("Erro ao Salvar!!" + ex.Message)
+        End Try
 
-                ListarUltimaVenda()
 
-                DesabilitarCampos()
+    End Sub
 
-                DadosCabecalho()
+    Sub SalvarDuplicata()
+        'Stop
+        Try
+            For i = 0 To DataGridDuplicatas.RowCount - 1
 
-                Limpar_cores()
+                Dim cmd As MySqlCommand
+                Dim sqls As String
+                sqls = "INSERT INTO duplicatas_receber (parcela, id_venda, data_venda, data_vencimento, valor_parcela, observacao, cod_cliente, cliente, saldo_duplicata) VALUES (@parcela, @id_venda, @data_venda, @data_vencimento, @valor_parcela, @observacao, '" & TxtCodCliente.Text & "','" & TxtCliente.Text & "', @saldo_duplicata )"
+                cmd = New MySqlCommand(sqls, con)
+                With cmd
+                    .Parameters.AddWithValue("@parcela", CInt(DataGridDuplicatas.Rows(i).Cells(1).Value.ToString))
+                    .Parameters.AddWithValue("@id_venda", DataGridDuplicatas.Rows(i).Cells(2).Value.ToString)
+                    .Parameters.AddWithValue("@data_venda", CDate(DataGridDuplicatas.Rows(i).Cells(3).Value.ToString))
+                    .Parameters.AddWithValue("@data_vencimento", CDate(DataGridDuplicatas.Rows(i).Cells(4).Value.ToString))
+                    .Parameters.AddWithValue("@valor_parcela", CDbl(DataGridDuplicatas.Rows(i).Cells(5).Value.ToString))
+                    .Parameters.AddWithValue("@observacao", DataGridDuplicatas.Rows(i).Cells(6).Value.ToString)
+                    .Parameters.AddWithValue("@saldo_duplicata", CDbl(DataGridDuplicatas.Rows(i).Cells(5).Value.ToString))
+                    cmd.ExecuteNonQuery()
+                End With
 
-                MsgBox("Cadastro salvo com Sucesso!!", MsgBoxStyle.Information, "Salvar")
+            Next
 
-            End If
         Catch ex As Exception
             MsgBox("Erro ao Salvar!!" + ex.Message)
         End Try
 
     End Sub
-
     Private Sub BtnExluir_Click(sender As Object, e As EventArgs) Handles BtnExcluir.Click
 
         If TxtIdRegistro.Text <> "" Then
@@ -499,7 +639,7 @@ Public Class FrmVendaProdutos
     Private Sub BtndAdicionarItem_Click(sender As Object, e As EventArgs) Handles BtnOk.Click
         ' Stop
         If editarpedido = "Editar" Then Exit Sub
-        If IncluirPedido = "True" Then
+        If novaVenda = "True" Then
 
             Limpar_cores()
 
@@ -658,7 +798,6 @@ Public Class FrmVendaProdutos
     Private Sub FrmPedido_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
 
         LimparCampos()
-        LimparVariaveisGlobais()
 
     End Sub
 
@@ -709,7 +848,7 @@ Public Class FrmVendaProdutos
 
         If e.RowIndex > -1 Then
 
-            If IncluirPedido = "True" Then
+            If novaVenda = "True" Then
                 Exit Sub
 
             Else
@@ -748,8 +887,8 @@ Public Class FrmVendaProdutos
             pesquisarProduto = ""
         End If
 
-        If IncluirPedido = "True" Then
-            DataGridDuplicatas.DataSource = bs
+        If novaVenda = "True" Then
+            DataGridDuplicatas.DataSource = bsd
             TotalDatagridDuplicatas()
             TotalNfe_TotalDuplicatas()
         End If
@@ -788,7 +927,7 @@ Public Class FrmVendaProdutos
     End Sub
     Private Sub BtnExcluirItemPedido_Click(sender As Object, e As EventArgs) Handles BtnExcluirItem_venda.Click
 
-        If IncluirPedido = "True" Then
+        If novaVenda = "True" Then
 
             If DataGrid.Rows.Count < 1 Then
                 Exit Sub
@@ -1102,12 +1241,12 @@ Line1:
 
     Private Sub BtnIncluirDuplicata_Click(sender As Object, e As EventArgs) Handles BtnIncluir_duplicata.Click
 
-        Dim form = New FrmDuplicatas()
-        form.TxtNotaFiscal.Text = TxtIdRegistro.Text
-        form.TxtNotaFiscal.Text = TxtItem.Text
+
+        Dim form = New FrmDuplReceber()
+        form.TxtNum_venda.Text = TxtIdRegistro.Text
         form.DataEmissao.Value = DataVenda.Value
-        form.TxtIdREg.Text = TxtCodCliente.Text
-        form.TxtIdREg.Text = TxtCliente.Text
+        form.TxtIdCliente.Text = TxtCodCliente.Text
+        form.TxtCliente.Text = TxtCliente.Text
 
         Dim dbl1 As Double = 0
         Dim dbl2 As Double = 0
@@ -1117,6 +1256,101 @@ Line1:
         form.TxtTotalDuplicata.Text = (dbl1 - dbl2).ToString("n")
 
         form.ShowDialog()
+
+    End Sub
+
+    Private Sub BtnEliminar_duplicata_Click(sender As Object, e As EventArgs) Handles BtnEliminar_duplicata.Click
+        'Stop
+        If novaVenda = "True" Then
+
+            If DataGridDuplicatas.Rows.Count < 1 Then Exit Sub
+
+            DataGridDuplicatas.Rows.Remove(DataGridDuplicatas.CurrentRow)
+            TotalDatagridDuplicatas()
+            TotalNfe_TotalDuplicatas()
+
+        Else
+            If DataGridDuplicatas.Rows.Count < 1 Then Exit Sub
+
+            If MsgBox("Deseja eliminar parcela ?", vbYesNo, "Eliminar duplicatas") = vbYes Then
+
+                DeletarParcelaBanco()
+                ListarDuplicatas()
+                TotalDatagridDuplicatas()
+                TotalNfe_TotalDuplicatas()
+
+            End If
+
+            End If
+
+
+    End Sub
+
+    Sub DeletarParcelaBanco()
+        Try
+
+            Abrir()
+
+            'VERIFICAR ULTIMO ID NO BANCO 
+            Dim cmdp As MySqlCommand
+            Dim sql As String
+            Dim reader As MySqlDataReader
+            Dim idReg As String
+
+            idReg = DataGridDuplicatas.CurrentRow.Cells(0).Value.ToString
+
+            sql = "SELECT * FROM duplicatas_receber WHERE id = '" & idReg & "' "
+            cmdp = New MySqlCommand(sql, con)
+            reader = cmdp.ExecuteReader
+
+            If reader.Read = True Then
+                reader.Close()
+
+                Dim cmd As MySqlCommand
+                Dim sql1 As String
+                sql1 = "DELETE FROM duplicatas_receber where id = '" & idReg & "' "
+                cmd = New MySqlCommand(sql1, con)
+                cmd.ExecuteNonQuery()
+
+                MsgBox("Registro excluído com Sucesso!!", MsgBoxStyle.Information, "Exlusão")
+
+            Else
+                reader.Close()
+            End If
+        Catch ex As Exception
+            MsgBox("Erro ao Salvar!! " + ex.Message)
+        End Try
+
+    End Sub
+
+    Private Sub BtnAtualizar_duplicata_Click(sender As Object, e As EventArgs) Handles BtnAtualizar_duplicata.Click
+        ListarDuplicatas()
+    End Sub
+
+    Private Sub BtnEditar_duplicata_Click(sender As Object, e As EventArgs) Handles BtnEditar_duplicata.Click
+
+        If MsgBox("Deseja editar parcela ?", vbYesNo, "Editar duplicatas") = vbYes Then
+
+            editarDuplicata = "True"
+
+            Dim form = New FrmDuplReceber()
+            form.TxtNum_venda.Text = TxtIdRegistro.Text
+            form.DataEmissao.Value = DataVenda.Value
+            form.TxtIdCliente.Text = TxtCodCliente.Text
+            form.TxtCliente.Text = TxtCliente.Text
+            form.TxtParcela.Text = DataGridDuplicatas.CurrentRow.Cells(1).Value.ToString()
+            form.TxtId_Reg.Text = DataGridDuplicatas.CurrentRow.Cells(0).Value.ToString()
+
+            Dim dbl1 As Double = 0
+            Dim dbl2 As Double = 0
+            Double.TryParse(TxtTotalVenda.Text, dbl1)
+            Double.TryParse(TxtTotalDuplicatas.Text, dbl2)
+
+            form.TxtTotalDuplicata.Text = (dbl1 - dbl2).ToString("n")
+            form.TxtParcela.Enabled = False
+            form.ShowDialog()
+
+        End If
 
     End Sub
 End Class

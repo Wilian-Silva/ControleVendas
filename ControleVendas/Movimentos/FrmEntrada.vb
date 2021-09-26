@@ -486,12 +486,10 @@ Public Class FrmEntrada
             Dim sql1 As String
             Dim data1 As String
             Dim IdNota As Integer
-            Dim fornec As String
             Dim idPed As Integer
 
             data1 = Now().ToString("yyyy-MM-dd")
             IdNota = TxtIdRegistro.Text
-            fornec = TxtFornecedor.Text
             idPed = TxtCodPedido.Text
 
             Dim tipomvto As String

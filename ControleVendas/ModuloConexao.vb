@@ -20,7 +20,8 @@ Module ModuloConexao
     End Sub
 
     'DECLAÇÃO DE VARIAVEIS GLOBAIS
-    Public bs As New BindingSource()
+    Public bs As New BindingSource() 'Tabela duplicatas a pagar
+    Public bsd As New BindingSource() 'Tabela duplicatas a receber
 
     Public Table1Duplicatas As New DataTable("MyTable")
 
@@ -48,6 +49,7 @@ Module ModuloConexao
     Public totalPedido As String
 
     Public novaEntrada As String
+    Public novaVenda As String
 
     Public IdPedido As String
     Public StatusPedido As String
@@ -64,7 +66,7 @@ Module ModuloConexao
     Public pesquisarDuplicata As String
     Public IdDuplicata As String
 
-    Public novavenda As String
+
     Public custoUntario As String
     Public pesquisarCliente As String
     Public pesquisarProduto As String

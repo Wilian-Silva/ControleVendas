@@ -24,12 +24,12 @@ Partial Class FrmVendaProdutos
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmVendaProdutos))
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle46 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle47 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle48 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle43 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle44 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle45 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PedidosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Controle_vendasDataSet = New ControleVendas.Controle_vendasDataSet3()
         Me.BtnCarregar = New System.Windows.Forms.Button()
@@ -134,7 +134,7 @@ Partial Class FrmVendaProdutos
         Me.BtnIncluirItem_venda.Size = New System.Drawing.Size(100, 30)
         Me.BtnIncluirItem_venda.TabIndex = 175
         Me.BtnIncluirItem_venda.Text = "Incluir"
-        Me.ToolTip.SetToolTip(Me.BtnIncluirItem_venda, "Inlcuir item do pedido")
+        Me.ToolTip.SetToolTip(Me.BtnIncluirItem_venda, "Inlcuir item a venda")
         Me.BtnIncluirItem_venda.UseVisualStyleBackColor = True
         '
         'BtnPesqPedido
@@ -149,7 +149,7 @@ Partial Class FrmVendaProdutos
         Me.BtnPesqPedido.Name = "BtnPesqPedido"
         Me.BtnPesqPedido.Size = New System.Drawing.Size(30, 30)
         Me.BtnPesqPedido.TabIndex = 140
-        Me.ToolTip.SetToolTip(Me.BtnPesqPedido, "Pesquisar pedido de compra")
+        Me.ToolTip.SetToolTip(Me.BtnPesqPedido, "Pesquisar venda")
         Me.BtnPesqPedido.UseVisualStyleBackColor = True
         '
         'BtnOk
@@ -221,7 +221,7 @@ Partial Class FrmVendaProdutos
         Me.BtnExcluirItem_venda.Size = New System.Drawing.Size(100, 30)
         Me.BtnExcluirItem_venda.TabIndex = 172
         Me.BtnExcluirItem_venda.Text = "Eliminar"
-        Me.ToolTip.SetToolTip(Me.BtnExcluirItem_venda, "Eliminar item do pedido")
+        Me.ToolTip.SetToolTip(Me.BtnExcluirItem_venda, "Eliminar item da venda")
         Me.BtnExcluirItem_venda.UseVisualStyleBackColor = True
         '
         'PedidosTableAdapter
@@ -285,7 +285,7 @@ Partial Class FrmVendaProdutos
         Me.BtnSalvar.Size = New System.Drawing.Size(35, 35)
         Me.BtnSalvar.TabIndex = 166
         Me.BtnSalvar.TabStop = False
-        Me.ToolTip.SetToolTip(Me.BtnSalvar, "Salvar Pedido")
+        Me.ToolTip.SetToolTip(Me.BtnSalvar, "Salvar ")
         Me.BtnSalvar.UseVisualStyleBackColor = True
         '
         'BtnSair
@@ -325,7 +325,7 @@ Partial Class FrmVendaProdutos
         Me.BtnExcluir.Size = New System.Drawing.Size(35, 35)
         Me.BtnExcluir.TabIndex = 164
         Me.BtnExcluir.TabStop = False
-        Me.ToolTip.SetToolTip(Me.BtnExcluir, "Excluir pedido ")
+        Me.ToolTip.SetToolTip(Me.BtnExcluir, "Excluir ")
         Me.BtnExcluir.UseVisualStyleBackColor = True
         '
         'BtnNova_venda
@@ -337,7 +337,7 @@ Partial Class FrmVendaProdutos
         Me.BtnNova_venda.Size = New System.Drawing.Size(100, 30)
         Me.BtnNova_venda.TabIndex = 170
         Me.BtnNova_venda.Text = "Novo"
-        Me.ToolTip.SetToolTip(Me.BtnNova_venda, "Incluir novo pedido")
+        Me.ToolTip.SetToolTip(Me.BtnNova_venda, "Incluir nova venda")
         Me.BtnNova_venda.UseVisualStyleBackColor = True
         '
         'BtnAtualizar_duplicata
@@ -373,7 +373,7 @@ Partial Class FrmVendaProdutos
         Me.BtnIncluir_duplicata.Size = New System.Drawing.Size(100, 30)
         Me.BtnIncluir_duplicata.TabIndex = 164
         Me.BtnIncluir_duplicata.Text = "Incluir"
-        Me.ToolTip.SetToolTip(Me.BtnIncluir_duplicata, "Incluir novo pedido")
+        Me.ToolTip.SetToolTip(Me.BtnIncluir_duplicata, "Incluir duplicata")
         Me.BtnIncluir_duplicata.UseVisualStyleBackColor = True
         '
         'BtnEliminar_duplicata
@@ -397,7 +397,7 @@ Partial Class FrmVendaProdutos
         Me.BtnPesqProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnPesqProduto.ForeColor = System.Drawing.Color.Transparent
         Me.BtnPesqProduto.Image = CType(resources.GetObject("BtnPesqProduto.Image"), System.Drawing.Image)
-        Me.BtnPesqProduto.Location = New System.Drawing.Point(300, 49)
+        Me.BtnPesqProduto.Location = New System.Drawing.Point(323, 49)
         Me.BtnPesqProduto.Name = "BtnPesqProduto"
         Me.BtnPesqProduto.Size = New System.Drawing.Size(22, 22)
         Me.BtnPesqProduto.TabIndex = 136
@@ -467,32 +467,32 @@ Partial Class FrmVendaProdutos
         Me.DataGrid.AllowUserToResizeRows = False
         Me.DataGrid.BackgroundColor = System.Drawing.Color.White
         Me.DataGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle10.BackColor = System.Drawing.Color.LightGray
-        DataGridViewCellStyle10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.ControlDark
-        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle46.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle46.BackColor = System.Drawing.Color.LightGray
+        DataGridViewCellStyle46.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle46.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle46.SelectionBackColor = System.Drawing.SystemColors.ControlDark
+        DataGridViewCellStyle46.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle46.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle46
         Me.DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark
-        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGrid.DefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle47.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle47.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle47.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle47.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle47.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle47.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGrid.DefaultCellStyle = DataGridViewCellStyle47
         Me.DataGrid.EnableHeadersVisualStyles = False
         Me.DataGrid.Location = New System.Drawing.Point(3, 3)
         Me.DataGrid.MultiSelect = False
         Me.DataGrid.Name = "DataGrid"
         Me.DataGrid.ReadOnly = True
         Me.DataGrid.RowHeadersVisible = False
-        DataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.ControlLightLight
-        DataGridViewCellStyle12.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
-        Me.DataGrid.RowsDefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle48.BackColor = System.Drawing.SystemColors.ControlLightLight
+        DataGridViewCellStyle48.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.DataGrid.RowsDefaultCellStyle = DataGridViewCellStyle48
         Me.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGrid.Size = New System.Drawing.Size(669, 216)
         Me.DataGrid.TabIndex = 154
@@ -545,32 +545,32 @@ Partial Class FrmVendaProdutos
         Me.DataGridDuplicatas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader
         Me.DataGridDuplicatas.BackgroundColor = System.Drawing.Color.White
         Me.DataGridDuplicatas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.LightGray
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.ControlDark
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridDuplicatas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle43.BackColor = System.Drawing.Color.LightGray
+        DataGridViewCellStyle43.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle43.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle43.SelectionBackColor = System.Drawing.SystemColors.ControlDark
+        DataGridViewCellStyle43.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle43.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridDuplicatas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle43
         Me.DataGridDuplicatas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridDuplicatas.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle44.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle44.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle44.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle44.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle44.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle44.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridDuplicatas.DefaultCellStyle = DataGridViewCellStyle44
         Me.DataGridDuplicatas.EnableHeadersVisualStyles = False
         Me.DataGridDuplicatas.Location = New System.Drawing.Point(8, 6)
         Me.DataGridDuplicatas.MultiSelect = False
         Me.DataGridDuplicatas.Name = "DataGridDuplicatas"
         Me.DataGridDuplicatas.ReadOnly = True
         Me.DataGridDuplicatas.RowHeadersVisible = False
-        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.ControlLightLight
-        DataGridViewCellStyle9.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
-        Me.DataGridDuplicatas.RowsDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle45.BackColor = System.Drawing.SystemColors.ControlLightLight
+        DataGridViewCellStyle45.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.DataGridDuplicatas.RowsDefaultCellStyle = DataGridViewCellStyle45
         Me.DataGridDuplicatas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridDuplicatas.Size = New System.Drawing.Size(660, 178)
         Me.DataGridDuplicatas.TabIndex = 165
@@ -613,7 +613,7 @@ Partial Class FrmVendaProdutos
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(405, 53)
+        Me.Label4.Location = New System.Drawing.Point(430, 53)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(58, 16)
@@ -624,7 +624,7 @@ Partial Class FrmVendaProdutos
         '
         Me.TxtValorUnit.BackColor = System.Drawing.Color.White
         Me.TxtValorUnit.Enabled = False
-        Me.TxtValorUnit.Location = New System.Drawing.Point(463, 51)
+        Me.TxtValorUnit.Location = New System.Drawing.Point(487, 51)
         Me.TxtValorUnit.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtValorUnit.Name = "TxtValorUnit"
         Me.TxtValorUnit.Size = New System.Drawing.Size(59, 20)
@@ -634,7 +634,7 @@ Partial Class FrmVendaProdutos
         '
         Me.TxtQuantidade.BackColor = System.Drawing.Color.White
         Me.TxtQuantidade.Enabled = False
-        Me.TxtQuantidade.Location = New System.Drawing.Point(366, 51)
+        Me.TxtQuantidade.Location = New System.Drawing.Point(389, 51)
         Me.TxtQuantidade.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtQuantidade.Name = "TxtQuantidade"
         Me.TxtQuantidade.Size = New System.Drawing.Size(32, 20)
@@ -646,7 +646,7 @@ Partial Class FrmVendaProdutos
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(532, 53)
+        Me.Label5.Location = New System.Drawing.Point(556, 53)
         Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(42, 16)
@@ -658,7 +658,7 @@ Partial Class FrmVendaProdutos
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(333, 53)
+        Me.Label3.Location = New System.Drawing.Point(356, 53)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(32, 16)
@@ -669,10 +669,10 @@ Partial Class FrmVendaProdutos
         '
         Me.TxtValorTotal.BackColor = System.Drawing.Color.White
         Me.TxtValorTotal.Enabled = False
-        Me.TxtValorTotal.Location = New System.Drawing.Point(576, 51)
+        Me.TxtValorTotal.Location = New System.Drawing.Point(596, 51)
         Me.TxtValorTotal.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtValorTotal.Name = "TxtValorTotal"
-        Me.TxtValorTotal.Size = New System.Drawing.Size(83, 20)
+        Me.TxtValorTotal.Size = New System.Drawing.Size(63, 20)
         Me.TxtValorTotal.TabIndex = 8
         '
         'Label1
@@ -694,7 +694,7 @@ Partial Class FrmVendaProdutos
         Me.TxtProduto.Location = New System.Drawing.Point(117, 51)
         Me.TxtProduto.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtProduto.Name = "TxtProduto"
-        Me.TxtProduto.Size = New System.Drawing.Size(178, 20)
+        Me.TxtProduto.Size = New System.Drawing.Size(199, 20)
         Me.TxtProduto.TabIndex = 3
         '
         'DataVenda
@@ -769,7 +769,7 @@ Partial Class FrmVendaProdutos
         Me.TxtIdRegistro.Location = New System.Drawing.Point(76, 18)
         Me.TxtIdRegistro.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtIdRegistro.Name = "TxtIdRegistro"
-        Me.TxtIdRegistro.Size = New System.Drawing.Size(45, 20)
+        Me.TxtIdRegistro.Size = New System.Drawing.Size(40, 20)
         Me.TxtIdRegistro.TabIndex = 129
         Me.TxtIdRegistro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '

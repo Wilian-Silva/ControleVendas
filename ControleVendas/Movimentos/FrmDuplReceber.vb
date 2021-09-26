@@ -2,7 +2,6 @@
 
 Public Class FrmDuplReceber
 
-
     Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
         Me.Close()
     End Sub
@@ -18,17 +17,51 @@ Public Class FrmDuplReceber
     End Sub
 
     Private Sub FrmDuplicatas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Stop
+        Dim linhaPed As Integer
+
         If editarDuplicata = "True" Then
             BtnSalvar.Enabled = True
             BtnOk.Enabled = False
             Exit Sub
         End If
 
-        If novaEntrada = "True" Then
+        If novaVenda = "True" Then
             BtnOk.Enabled = True
             BtnSalvar.Enabled = False
             TxtParcela.Text = parcela + 1
             parcela = TxtParcela.Text
+
+        Else
+
+            Try
+                Abrir()
+                Dim cmdp As MySqlCommand
+                Dim sql As String
+                Dim ultima As MySqlDataReader
+
+                sql = "SELECT MAX(parcela) AS Item FROM duplicatas_receber WHERE id_venda = '" & TxtNum_venda.Text & "' "
+
+                cmdp = New MySqlCommand(sql, con)
+                ultima = cmdp.ExecuteReader()
+                ultima.Read()
+
+                If Not IsDBNull(ultima("Item")) Then
+
+                    linhaPed = ultima("Item")
+                    ultima.Close()
+                Else
+                    ultima.Close()
+                End If
+
+
+                TxtParcela.Text = linhaPed + 1
+
+            Catch ex As Exception
+                MsgBox("Erro ao buscar ultimo parcela!! ---- " + ex.Message)
+            End Try
+
+
         End If
 
     End Sub
@@ -37,11 +70,10 @@ Public Class FrmDuplReceber
 
         TxtParcela.BackColor = Color.White
         TxtTotalDuplicata.BackColor = Color.White
-        TxtNotaFiscal.BackColor = Color.White
+        TxtNum_venda.BackColor = Color.White
 
-        If TxtParcela.Text <> "" And TxtTotalDuplicata.Text <> "" And TxtNotaFiscal.Text <> "" Then
+        If TxtParcela.Text <> "" And TxtTotalDuplicata.Text <> "" And TxtNum_venda.Text <> "" Then
 
-            'If FrmEntrada.DataGridDuplicatas.Rows.Count < 1 Then
             If Table1DuplicatasReceber.Columns.Count < 1 Then
                 Table1DuplicatasReceber.Columns.Add("Id. Dup.")
                 Table1DuplicatasReceber.Columns.Add("Parcela")
@@ -51,23 +83,20 @@ Public Class FrmDuplReceber
                 Table1DuplicatasReceber.Columns.Add("Valor Parcela")
                 Table1DuplicatasReceber.Columns.Add("Observação")
 
-                'Dim bs As New BindingSource()
-                bs.DataSource = Table1Duplicatas
+                bsd.DataSource = Table1DuplicatasReceber
 
-                'FrmEntrada.DataGridDuplicatas.DataSource = bs
-
-                Table1DuplicatasReceber.Rows.Add("", TxtParcela.Text, TxtNotaFiscal.Text, DataEmissao.Value.ToShortDateString, DataVencimento.Value.ToShortDateString, TxtTotalDuplicata.Text, TxtObs.Text)
+                Table1DuplicatasReceber.Rows.Add("", TxtParcela.Text, TxtNum_venda.Text, DataEmissao.Value.ToShortDateString, DataVencimento.Value.ToShortDateString, TxtTotalDuplicata.Text, TxtObs.Text)
                 Me.Close()
 
             Else
-                Table1DuplicatasReceber.Rows.Add("", TxtParcela.Text, TxtNotaFiscal.Text, DataEmissao.Value.ToShortDateString, DataVencimento.Value.ToShortDateString, TxtTotalDuplicata.Text, TxtObs.Text)
+                Table1DuplicatasReceber.Rows.Add("", TxtParcela.Text, TxtNum_venda.Text, DataEmissao.Value.ToShortDateString, DataVencimento.Value.ToShortDateString, TxtTotalDuplicata.Text, TxtObs.Text)
 
                 Me.Close()
             End If
         Else
 
             TxtParcela.BackColor = Color.Salmon
-            TxtNotaFiscal.BackColor = Color.Salmon
+            TxtNum_venda.BackColor = Color.Salmon
             TxtTotalDuplicata.BackColor = Color.Salmon
             MsgBox("Campos em branco ou vazios", MsgBoxStyle.Information, "Adicionar duplicatas")
         End If
@@ -78,9 +107,9 @@ Public Class FrmDuplReceber
         'Stop
         TxtParcela.BackColor = Color.White
         TxtTotalDuplicata.BackColor = Color.White
-        TxtNotaFiscal.BackColor = Color.White
+        TxtNum_venda.BackColor = Color.White
 
-        If TxtParcela.Text <> "" And TxtTotalDuplicata.Text <> "" And TxtNotaFiscal.Text <> "" Then
+        If TxtParcela.Text <> "" And TxtTotalDuplicata.Text <> "" And TxtNum_venda.Text <> "" Then
             If MsgBox("Deseja salvar alterações ?", vbYesNo, "Editar duplicatas") = vbYes Then
 
                 If editarDuplicata = "True" Then
@@ -92,10 +121,9 @@ Public Class FrmDuplReceber
 
                     vencimento1 = DataVencimento.Value.ToString("yyyy-MM-dd")
 
-                    sqls1 = "UPDATE duplicatas SET data_vencimento = '" & vencimento1 & "', valor_parcela = '" & TxtTotalDuplicata.Text.Replace(",", ".") & "', observacao = '" & TxtObs.Text & "' , saldo_duplicata = '" & TxtTotalDuplicata.Text.Replace(",", ".") & "' WHERE id = '" & TxtIdREg.Text & "'"
+                    sqls1 = "UPDATE duplicatas_receber SET data_vencimento = '" & vencimento1 & "', valor_parcela = '" & TxtTotalDuplicata.Text.Replace(",", ".") & "', observacao = '" & TxtObs.Text & "' , saldo_duplicata = '" & TxtTotalDuplicata.Text.Replace(",", ".") & "' WHERE id = '" & TxtId_Reg.Text & "'"
                     cmd1 = New MySqlCommand(sqls1, con)
                     cmd1.ExecuteNonQuery()
-
 
                     editarDuplicata = ""
                     Me.Close()
@@ -111,7 +139,7 @@ Public Class FrmDuplReceber
                     emissao = DataEmissao.Value.ToString("yyyy-MM-dd")
                     vencimento = DataVencimento.Value.ToString("yyyy-MM-dd")
 
-                    sqls = "INSERT INTO duplicatas (parcela, documento, data_emissao, data_vencimento, valor_parcela, observacao, id_entrada, cod_fornecedor, saldo_duplicata) VALUES ('" & TxtParcela.Text & "','" & TxtNotaFiscal.Text & "',  '" & emissao & "','" & vencimento & "', '" & TxtTotalDuplicata.Text.Replace(",", ".") & "', '" & TxtObs.Text & "' ,'" & TxtIdREg.Text & "', '" & TxtIdFornecedor.Text & "', '" & TxtTotalDuplicata.Text.Replace(",", ".") & "')"
+                    sqls = "INSERT INTO duplicatas_receber (parcela, id_venda, data_venda, data_vencimento, valor_parcela, observacao, cod_cliente, cliente, saldo_duplicata) VALUES ('" & TxtParcela.Text & "','" & TxtNum_venda.Text & "',  '" & emissao & "','" & vencimento & "', '" & TxtTotalDuplicata.Text.Replace(",", ".") & "', '" & TxtObs.Text & "' ,'" & TxtIdCliente.Text & "', '" & TxtCliente.Text & "', '" & TxtTotalDuplicata.Text.Replace(",", ".") & "')"
                     cmd = New MySqlCommand(sqls, con)
                     cmd.ExecuteNonQuery()
 
@@ -127,7 +155,7 @@ Public Class FrmDuplReceber
         Else
 
             TxtParcela.BackColor = Color.Salmon
-            TxtNotaFiscal.BackColor = Color.Salmon
+            TxtNum_venda.BackColor = Color.Salmon
             TxtTotalDuplicata.BackColor = Color.Salmon
             MsgBox("Campos em branco ou vazios", MsgBoxStyle.Information, "Adicionar duplicatas")
         End If

@@ -102,7 +102,7 @@ Partial Class FrmEntrada
         Me.BtnIncluir.Size = New System.Drawing.Size(100, 30)
         Me.BtnIncluir.TabIndex = 164
         Me.BtnIncluir.Text = "Incluir"
-        Me.ToolTip.SetToolTip(Me.BtnIncluir, "Incluir novo pedido")
+        Me.ToolTip.SetToolTip(Me.BtnIncluir, "Incluir duplicata")
         Me.BtnIncluir.UseVisualStyleBackColor = True
         '
         'BtnEditar

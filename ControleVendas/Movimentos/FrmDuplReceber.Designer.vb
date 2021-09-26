@@ -25,13 +25,13 @@ Partial Class FrmDuplReceber
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmDuplReceber))
         Me.BtnSalvar = New System.Windows.Forms.Button()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.TxtIdFornecedor = New System.Windows.Forms.TextBox()
+        Me.TxtIdCliente = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.TxtIdREg = New System.Windows.Forms.TextBox()
+        Me.TxtId_Reg = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TxtParcela = New System.Windows.Forms.TextBox()
-        Me.TxtNotaFiscal = New System.Windows.Forms.TextBox()
+        Me.TxtNum_venda = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TxtObs = New System.Windows.Forms.TextBox()
         Me.DataEmissao = New System.Windows.Forms.DateTimePicker()
@@ -46,6 +46,7 @@ Partial Class FrmDuplReceber
         Me.BtnOk = New System.Windows.Forms.Button()
         Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.TxtCliente = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -66,22 +67,22 @@ Partial Class FrmDuplReceber
         Me.Label9.AutoSize = True
         Me.Label9.BackColor = System.Drawing.Color.Transparent
         Me.Label9.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(287, 42)
+        Me.Label9.Location = New System.Drawing.Point(208, 43)
         Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(81, 16)
+        Me.Label9.Size = New System.Drawing.Size(47, 16)
         Me.Label9.TabIndex = 164
-        Me.Label9.Text = "Cód. Fornec."
+        Me.Label9.Text = "Cliente"
         '
-        'TxtIdFornecedor
+        'TxtIdCliente
         '
-        Me.TxtIdFornecedor.Enabled = False
-        Me.TxtIdFornecedor.Location = New System.Drawing.Point(372, 39)
-        Me.TxtIdFornecedor.Margin = New System.Windows.Forms.Padding(4)
-        Me.TxtIdFornecedor.Name = "TxtIdFornecedor"
-        Me.TxtIdFornecedor.Size = New System.Drawing.Size(45, 20)
-        Me.TxtIdFornecedor.TabIndex = 165
-        Me.TxtIdFornecedor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TxtIdCliente.Enabled = False
+        Me.TxtIdCliente.Location = New System.Drawing.Point(259, 41)
+        Me.TxtIdCliente.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtIdCliente.Name = "TxtIdCliente"
+        Me.TxtIdCliente.Size = New System.Drawing.Size(34, 20)
+        Me.TxtIdCliente.TabIndex = 165
+        Me.TxtIdCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label8
         '
@@ -95,15 +96,15 @@ Partial Class FrmDuplReceber
         Me.Label8.TabIndex = 162
         Me.Label8.Text = "Id. Reg."
         '
-        'TxtIdREg
+        'TxtId_Reg
         '
-        Me.TxtIdREg.Enabled = False
-        Me.TxtIdREg.Location = New System.Drawing.Point(259, 11)
-        Me.TxtIdREg.Margin = New System.Windows.Forms.Padding(4)
-        Me.TxtIdREg.Name = "TxtIdREg"
-        Me.TxtIdREg.Size = New System.Drawing.Size(45, 20)
-        Me.TxtIdREg.TabIndex = 163
-        Me.TxtIdREg.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TxtId_Reg.Enabled = False
+        Me.TxtId_Reg.Location = New System.Drawing.Point(259, 11)
+        Me.TxtId_Reg.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtId_Reg.Name = "TxtId_Reg"
+        Me.TxtId_Reg.Size = New System.Drawing.Size(34, 20)
+        Me.TxtId_Reg.TabIndex = 163
+        Me.TxtId_Reg.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label7
         '
@@ -121,13 +122,14 @@ Partial Class FrmDuplReceber
         '
         Me.Panel1.BackColor = System.Drawing.Color.Gainsboro
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel1.Controls.Add(Me.TxtCliente)
         Me.Panel1.Controls.Add(Me.Label9)
-        Me.Panel1.Controls.Add(Me.TxtIdFornecedor)
+        Me.Panel1.Controls.Add(Me.TxtIdCliente)
         Me.Panel1.Controls.Add(Me.Label8)
-        Me.Panel1.Controls.Add(Me.TxtIdREg)
+        Me.Panel1.Controls.Add(Me.TxtId_Reg)
         Me.Panel1.Controls.Add(Me.Label7)
         Me.Panel1.Controls.Add(Me.TxtParcela)
-        Me.Panel1.Controls.Add(Me.TxtNotaFiscal)
+        Me.Panel1.Controls.Add(Me.TxtNum_venda)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.TxtObs)
         Me.Panel1.Controls.Add(Me.DataEmissao)
@@ -153,14 +155,15 @@ Partial Class FrmDuplReceber
         Me.TxtParcela.TabIndex = 131
         Me.TxtParcela.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'TxtNotaFiscal
+        'TxtNum_venda
         '
-        Me.TxtNotaFiscal.Enabled = False
-        Me.TxtNotaFiscal.Location = New System.Drawing.Point(134, 40)
-        Me.TxtNotaFiscal.Margin = New System.Windows.Forms.Padding(4)
-        Me.TxtNotaFiscal.Name = "TxtNotaFiscal"
-        Me.TxtNotaFiscal.Size = New System.Drawing.Size(97, 20)
-        Me.TxtNotaFiscal.TabIndex = 132
+        Me.TxtNum_venda.Enabled = False
+        Me.TxtNum_venda.Location = New System.Drawing.Point(134, 40)
+        Me.TxtNum_venda.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtNum_venda.Name = "TxtNum_venda"
+        Me.TxtNum_venda.Size = New System.Drawing.Size(45, 20)
+        Me.TxtNum_venda.TabIndex = 132
+        Me.TxtNum_venda.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label2
         '
@@ -314,6 +317,15 @@ Partial Class FrmDuplReceber
         Me.GroupBox1.TabIndex = 173
         Me.GroupBox1.TabStop = False
         '
+        'TxtCliente
+        '
+        Me.TxtCliente.Enabled = False
+        Me.TxtCliente.Location = New System.Drawing.Point(294, 41)
+        Me.TxtCliente.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtCliente.Name = "TxtCliente"
+        Me.TxtCliente.Size = New System.Drawing.Size(123, 20)
+        Me.TxtCliente.TabIndex = 167
+        '
         'FrmDuplReceber
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -336,13 +348,13 @@ Partial Class FrmDuplReceber
 
     Friend WithEvents BtnSalvar As Button
     Friend WithEvents Label9 As Label
-    Friend WithEvents TxtIdFornecedor As TextBox
+    Friend WithEvents TxtIdCliente As TextBox
     Friend WithEvents Label8 As Label
-    Friend WithEvents TxtIdREg As TextBox
+    Friend WithEvents TxtId_Reg As TextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents Panel1 As Panel
     Friend WithEvents TxtParcela As TextBox
-    Friend WithEvents TxtNotaFiscal As TextBox
+    Friend WithEvents TxtNum_venda As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents TxtObs As TextBox
     Friend WithEvents DataEmissao As DateTimePicker
@@ -357,4 +369,5 @@ Partial Class FrmDuplReceber
     Friend WithEvents BtnOk As Button
     Friend WithEvents BtnCancelar As Button
     Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents TxtCliente As TextBox
 End Class
