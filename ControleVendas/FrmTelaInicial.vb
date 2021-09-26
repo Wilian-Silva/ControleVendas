@@ -63,7 +63,7 @@ Public Class FrmTelaInicial
 
     Private Sub BtnVenda_Click(sender As Object, e As EventArgs) Handles BtnVenda.Click
 
-        Dim form = New FrmVenda
+        Dim form = New FrmVendaProdutos
         form.ShowDialog()
     End Sub
 

@@ -27,15 +27,14 @@ Partial Class FrmAddItemVenda
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.BtnSalvar = New System.Windows.Forms.Button()
         Me.BtnCancelar = New System.Windows.Forms.Button()
-        Me.TxtCodFornecedor = New System.Windows.Forms.TextBox()
+        Me.TxtCodCliente = New System.Windows.Forms.TextBox()
         Me.TxtItem = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.TxtIdRegistro = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.TxtFornecedor = New System.Windows.Forms.TextBox()
+        Me.TxtCliente = New System.Windows.Forms.TextBox()
         Me.TxtCodProduto = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.BtnPesqProduto = New System.Windows.Forms.Button()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.TxtProduto = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -49,6 +48,7 @@ Partial Class FrmAddItemVenda
         Me.DataVenda = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.TxtQtdOriginal = New System.Windows.Forms.TextBox()
+        Me.BtnPesqProduto = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
@@ -77,16 +77,16 @@ Partial Class FrmAddItemVenda
         Me.ToolTip.SetToolTip(Me.BtnCancelar, "Cancelar")
         Me.BtnCancelar.UseVisualStyleBackColor = True
         '
-        'TxtCodFornecedor
+        'TxtCodCliente
         '
-        Me.TxtCodFornecedor.BackColor = System.Drawing.Color.White
-        Me.TxtCodFornecedor.Enabled = False
-        Me.TxtCodFornecedor.Location = New System.Drawing.Point(102, 62)
-        Me.TxtCodFornecedor.Margin = New System.Windows.Forms.Padding(4)
-        Me.TxtCodFornecedor.Name = "TxtCodFornecedor"
-        Me.TxtCodFornecedor.Size = New System.Drawing.Size(41, 20)
-        Me.TxtCodFornecedor.TabIndex = 141
-        Me.TxtCodFornecedor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TxtCodCliente.BackColor = System.Drawing.Color.White
+        Me.TxtCodCliente.Enabled = False
+        Me.TxtCodCliente.Location = New System.Drawing.Point(102, 62)
+        Me.TxtCodCliente.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtCodCliente.Name = "TxtCodCliente"
+        Me.TxtCodCliente.Size = New System.Drawing.Size(41, 20)
+        Me.TxtCodCliente.TabIndex = 141
+        Me.TxtCodCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TxtItem
         '
@@ -132,15 +132,15 @@ Partial Class FrmAddItemVenda
         Me.Label7.TabIndex = 128
         Me.Label7.Text = "Nº Venda"
         '
-        'TxtFornecedor
+        'TxtCliente
         '
-        Me.TxtFornecedor.BackColor = System.Drawing.Color.White
-        Me.TxtFornecedor.Enabled = False
-        Me.TxtFornecedor.Location = New System.Drawing.Point(144, 62)
-        Me.TxtFornecedor.Margin = New System.Windows.Forms.Padding(4)
-        Me.TxtFornecedor.Name = "TxtFornecedor"
-        Me.TxtFornecedor.Size = New System.Drawing.Size(207, 20)
-        Me.TxtFornecedor.TabIndex = 4
+        Me.TxtCliente.BackColor = System.Drawing.Color.White
+        Me.TxtCliente.Enabled = False
+        Me.TxtCliente.Location = New System.Drawing.Point(144, 62)
+        Me.TxtCliente.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtCliente.Name = "TxtCliente"
+        Me.TxtCliente.Size = New System.Drawing.Size(207, 20)
+        Me.TxtCliente.TabIndex = 4
         '
         'TxtCodProduto
         '
@@ -164,20 +164,6 @@ Partial Class FrmAddItemVenda
         Me.Label8.Size = New System.Drawing.Size(52, 16)
         Me.Label8.TabIndex = 80
         Me.Label8.Text = "Cliente:"
-        '
-        'BtnPesqProduto
-        '
-        Me.BtnPesqProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.BtnPesqProduto.FlatAppearance.BorderSize = 0
-        Me.BtnPesqProduto.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.BtnPesqProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnPesqProduto.ForeColor = System.Drawing.Color.Transparent
-        Me.BtnPesqProduto.Image = CType(resources.GetObject("BtnPesqProduto.Image"), System.Drawing.Image)
-        Me.BtnPesqProduto.Location = New System.Drawing.Point(358, 102)
-        Me.BtnPesqProduto.Name = "BtnPesqProduto"
-        Me.BtnPesqProduto.Size = New System.Drawing.Size(22, 22)
-        Me.BtnPesqProduto.TabIndex = 136
-        Me.BtnPesqProduto.UseVisualStyleBackColor = True
         '
         'Label12
         '
@@ -301,16 +287,16 @@ Partial Class FrmAddItemVenda
         'GroupBox3
         '
         Me.GroupBox3.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox3.Controls.Add(Me.BtnPesqProduto)
         Me.GroupBox3.Controls.Add(Me.TxtQtdOriginal)
-        Me.GroupBox3.Controls.Add(Me.TxtCodFornecedor)
+        Me.GroupBox3.Controls.Add(Me.TxtCodCliente)
         Me.GroupBox3.Controls.Add(Me.TxtItem)
         Me.GroupBox3.Controls.Add(Me.Label10)
         Me.GroupBox3.Controls.Add(Me.TxtIdRegistro)
         Me.GroupBox3.Controls.Add(Me.Label7)
-        Me.GroupBox3.Controls.Add(Me.TxtFornecedor)
+        Me.GroupBox3.Controls.Add(Me.TxtCliente)
         Me.GroupBox3.Controls.Add(Me.TxtCodProduto)
         Me.GroupBox3.Controls.Add(Me.Label8)
-        Me.GroupBox3.Controls.Add(Me.BtnPesqProduto)
         Me.GroupBox3.Controls.Add(Me.Label12)
         Me.GroupBox3.Controls.Add(Me.DataVenda)
         Me.GroupBox3.Controls.Add(Me.TxtProduto)
@@ -338,6 +324,20 @@ Partial Class FrmAddItemVenda
         Me.TxtQtdOriginal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.TxtQtdOriginal.Visible = False
         '
+        'BtnPesqProduto
+        '
+        Me.BtnPesqProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.BtnPesqProduto.FlatAppearance.BorderSize = 0
+        Me.BtnPesqProduto.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BtnPesqProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnPesqProduto.ForeColor = System.Drawing.Color.Transparent
+        Me.BtnPesqProduto.Image = CType(resources.GetObject("BtnPesqProduto.Image"), System.Drawing.Image)
+        Me.BtnPesqProduto.Location = New System.Drawing.Point(354, 101)
+        Me.BtnPesqProduto.Name = "BtnPesqProduto"
+        Me.BtnPesqProduto.Size = New System.Drawing.Size(22, 22)
+        Me.BtnPesqProduto.TabIndex = 143
+        Me.BtnPesqProduto.UseVisualStyleBackColor = True
+        '
         'FrmAddItemVenda
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -362,15 +362,14 @@ Partial Class FrmAddItemVenda
     Friend WithEvents ToolTip As ToolTip
     Friend WithEvents BtnSalvar As Button
     Friend WithEvents BtnCancelar As Button
-    Friend WithEvents TxtCodFornecedor As TextBox
+    Friend WithEvents TxtCodCliente As TextBox
     Friend WithEvents TxtItem As TextBox
     Friend WithEvents Label10 As Label
     Friend WithEvents TxtIdRegistro As TextBox
     Friend WithEvents Label7 As Label
-    Friend WithEvents TxtFornecedor As TextBox
+    Friend WithEvents TxtCliente As TextBox
     Friend WithEvents TxtCodProduto As TextBox
     Friend WithEvents Label8 As Label
-    Friend WithEvents BtnPesqProduto As Button
     Friend WithEvents Label12 As Label
     Friend WithEvents TxtProduto As TextBox
     Friend WithEvents Label1 As Label
@@ -384,4 +383,5 @@ Partial Class FrmAddItemVenda
     Friend WithEvents DataVenda As DateTimePicker
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents TxtQtdOriginal As TextBox
+    Friend WithEvents BtnPesqProduto As Button
 End Class

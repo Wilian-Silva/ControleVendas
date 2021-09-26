@@ -45,7 +45,7 @@ Public Class FrmAddItemPedido
         TxtValorUnit.BackColor = Color.White
 
         If TxtQuantidade.Text <> "" And TxtValorUnit.Text <> "" Then
-
+            ' Stop
             If editarpedido = "Editar" Then
                 If MsgBox("Deseja salvar alterações no o item " + TxtItem.Text + " no pedido" + TxtIdRegistro.Text + "?", vbYesNo, "Pedido") = vbYes Then
                     Try
@@ -73,7 +73,7 @@ Public Class FrmAddItemPedido
                         'ATUALIZAR TOTAL PEDIDO
                         Dim cmd1 As MySqlCommand
                         Dim sql1 As String
-                        sql1 = "UPDATE pedido_cabecalho SET total= '" & total & "' WHERE id =  '" & TxtIdRegistro.Text & "' "
+                        sql1 = "UPDATE pedido_cabecalho SET total= '" & total.Replace(",", ".") & "' WHERE id =  '" & TxtIdRegistro.Text & "' "
                         cmd1 = New MySqlCommand(sql1, con)
                         cmd1.ExecuteNonQuery()
 

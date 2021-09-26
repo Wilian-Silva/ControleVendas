@@ -276,12 +276,6 @@
     <Compile Include="Movimentos\FrmDuplReceber.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Movimentos\FrmNovaVenda.Designer.vb">
-      <DependentUpon>FrmNovaVenda.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Movimentos\FrmNovaVenda.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Movimentos\FrmPagarTitulo.Designer.vb">
       <DependentUpon>FrmPagarTitulo.vb</DependentUpon>
     </Compile>
@@ -310,12 +304,6 @@
       <DependentUpon>FrmPedido.vb</DependentUpon>
     </Compile>
     <Compile Include="Movimentos\FrmPedido.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Movimentos\FrmVenda.Designer.vb">
-      <DependentUpon>FrmVenda.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Movimentos\FrmVenda.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Movimentos\FrmVlrPgto.Designer.vb">
@@ -449,9 +437,6 @@
     <EmbeddedResource Include="Movimentos\FrmDuplReceber.resx">
       <DependentUpon>FrmDuplReceber.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Movimentos\FrmNovaVenda.resx">
-      <DependentUpon>FrmNovaVenda.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Movimentos\FrmPagarTitulo.resx">
       <DependentUpon>FrmPagarTitulo.vb</DependentUpon>
     </EmbeddedResource>
@@ -466,9 +451,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Movimentos\FrmPedido.resx">
       <DependentUpon>FrmPedido.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Movimentos\FrmVenda.resx">
-      <DependentUpon>FrmVenda.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Movimentos\FrmVlrPgto.resx">
       <DependentUpon>FrmVlrPgto.vb</DependentUpon>

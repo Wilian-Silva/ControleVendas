@@ -276,7 +276,7 @@ Public Class FrmVendaProdutos
     End Sub
 
     Sub GerarIdRegistro()
-
+        'Stop
         Try
             Abrir()
 
@@ -290,7 +290,8 @@ Public Class FrmVendaProdutos
             ultima = cmd.ExecuteReader()
 
             If (ultima.Read()) Then
-                TxtIdRegistro.Text = ultima("id") + 1
+                TxtIdRegistro.Text = ultima("id_venda") + 1
+                ultima.Close()
             Else
                 TxtIdRegistro.Text = 1
 
@@ -767,11 +768,11 @@ Public Class FrmVendaProdutos
 
                 form.TxtItem.Text = TxtItem.Text
                 form.TxtIdRegistro.Text = TxtIdRegistro.Text
-                form.TxtCodFornecedor.Text = TxtCodCliente.Text
-                form.TxtFornecedor.Text = TxtCliente.Text
+                form.TxtCodCliente.Text = TxtCodCliente.Text
+                form.TxtCliente.Text = TxtCliente.Text
                 form.DataVenda.Value = DataVenda.Value
-                form.TxtCodFornecedor.Text = TxtCodCliente.Text
-                form.TxtFornecedor.Text = TxtCliente.Text
+                form.TxtCodCliente.Text = TxtCodCliente.Text
+                form.TxtCliente.Text = TxtCliente.Text
                 form.TxtQuantidade.Text = TxtQuantidade.Text
                 form.TxtQtdOriginal.Text = TxtQuantidade.Text
                 form.TxtValorUnit.Text = TxtValorUnit.Text
@@ -779,6 +780,7 @@ Public Class FrmVendaProdutos
                 form.TxtProduto.Text = TxtProduto.Text
                 editarVenda = "Editar"
 
+                form.BtnPesqProduto.Enabled = False
                 form.ShowDialog()
 
             End If
@@ -995,8 +997,6 @@ Public Class FrmVendaProdutos
 
         End If
 
-
-
     End Sub
 
     Sub ListarProximoPedido()
@@ -1011,12 +1011,12 @@ Public Class FrmVendaProdutos
                 Dim sql As String
                 Dim ultima As MySqlDataReader
 
-                sql = "SELECT id FROM pedido_cabecalho WHERE id=(SELECT MAX(id) FROM pedido_cabecalho) "
+                sql = "SELECT id_venda FROM venda_cabecalho WHERE id_venda=(SELECT MAX(id_venda) FROM venda_cabecalho) "
                 cmdp = New MySqlCommand(sql, con)
                 ultima = cmdp.ExecuteReader()
 
                 If (ultima.Read()) Then
-                    maximo = ultima("id")
+                    maximo = ultima("id_venda")
                     ultima.Close()
                 Else
                     ultima.Close()
@@ -1042,7 +1042,7 @@ Line1:
                 Exit Sub
             End If
 
-            sqlp = "SELECT * FROM pedido_cabecalho WHERE id = '" & proximo & "' "
+            sqlp = "SELECT * FROM venda_cabecalho WHERE id_venda = '" & proximo & "' "
             cmd = New MySqlCommand(sqlp, con)
             reader = cmd.ExecuteReader
 
@@ -1072,7 +1072,7 @@ Line1:
             Dim sql As String
             Dim dt As New DataTable
             Dim da As MySqlDataAdapter
-            sql = "SELECT p.id, p.pedido, p.item, p.descricao, p.data_emissao, p.cod_fornecedor, p.fornecedor, p.cod_produto, p.produto, p.quantidade, p.valor_unitario, p.valor_total, c.status FROM pedidos as p INNER JOIN pedido_cabecalho as c ON p.pedido = c.id WHERE p.pedido= '" & proximo & "' order by p.item asc "
+            sql = "SELECT * FROM venda WHERE id_venda= '" & proximo & "' order by item asc "
             da = New MySqlDataAdapter(sql, con)
             da.Fill(dt)
             DataGrid.DataSource = dt
@@ -1106,7 +1106,7 @@ Line1:
                 Exit Sub
             End If
 
-            sqlp = "SELECT * FROM pedido_cabecalho WHERE id = '" & anterior & "' "
+            sqlp = "SELECT * FROM venda_cabecalho WHERE id_venda = '" & anterior & "' "
             cmd = New MySqlCommand(sqlp, con)
             reader = cmd.ExecuteReader
 
@@ -1139,7 +1139,7 @@ Line1:
             Dim sql As String
             Dim dt As New DataTable
             Dim da As MySqlDataAdapter
-            sql = "SELECT p.id, p.pedido, p.item, p.descricao, p.data_emissao, p.cod_fornecedor, p.fornecedor, p.cod_produto, p.produto, p.quantidade, p.valor_unitario, p.valor_total, c.status FROM pedidos as p INNER JOIN pedido_cabecalho as c ON p.pedido = c.id WHERE p.pedido= '" & anterior & "' order by p.item asc "
+            sql = "SELECT * FROM venda WHERE id_venda= '" & anterior & "' order by item asc "
             da = New MySqlDataAdapter(sql, con)
             da.Fill(dt)
             DataGrid.DataSource = dt
@@ -1169,7 +1169,7 @@ Line1:
             Dim ultima As MySqlDataReader
 
 
-            sql = "SELECT MAX(item) AS Item FROM pedidos WHERE pedido = '" & TxtIdRegistro.Text & "' "
+            sql = "SELECT MAX(item) AS Item FROM venda WHERE id_venda = '" & TxtIdRegistro.Text & "' "
 
             cmdp = New MySqlCommand(sql, con)
             ultima = cmdp.ExecuteReader()
@@ -1188,13 +1188,13 @@ Line1:
         End Try
 
 
-        Dim form = New FrmAddItemPedido
+        Dim form = New FrmAddItemVenda
 
         form.TxtItem.Text = linhaPed + 1
         form.TxtIdRegistro.Text = TxtIdRegistro.Text
-        form.TxtCodFornecedor.Text = TxtCodCliente.Text
-        form.TxtFornecedor.Text = TxtCliente.Text
-        form.DataPed.Value = DataVenda.Value
+        form.TxtCodCliente.Text = TxtCodCliente.Text
+        form.TxtCliente.Text = TxtCliente.Text
+        form.DataVenda.Value = DataVenda.Value
 
 
         form.ShowDialog()
@@ -1207,12 +1207,11 @@ Line1:
     Sub AtualizarForm()
 
         Try
-
             Abrir()
             Dim sql As String
             Dim dt As New DataTable
             Dim da As MySqlDataAdapter
-            sql = "SELECT p.id, p.pedido, p.item, p.descricao, p.data_emissao, p.cod_fornecedor, p.fornecedor, p.cod_produto, p.produto, p.quantidade, p.valor_unitario, p.valor_total, c.status FROM pedidos as p INNER JOIN pedido_cabecalho as c ON p.pedido = c.id WHERE p.pedido= '" & TxtIdRegistro.Text & "' order by p.item asc "
+            sql = "SELECT * FROM venda WHERE id_venda= '" & TxtIdRegistro.Text & "' order by item asc "
             da = New MySqlDataAdapter(sql, con)
             da.Fill(dt)
             DataGrid.DataSource = dt
@@ -1223,7 +1222,11 @@ Line1:
                 DadosCabecalho()
             End If
 
+            ListarDuplicatas()
+
             TotalDatagrid()
+            TotalDatagridDuplicatas()
+            TotalNfe_TotalDuplicatas()
 
         Catch ex As Exception
             MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
@@ -1338,6 +1341,7 @@ Line1:
             form.TxtCliente.Text = DataGridDuplicatas.CurrentRow.Cells(8).Value.ToString()
 
             form.TxtParcela.Enabled = False
+
             form.ShowDialog()
 
         End If
