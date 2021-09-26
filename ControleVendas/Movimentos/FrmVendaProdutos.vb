@@ -6,6 +6,7 @@ Public Class FrmVendaProdutos
     Dim proximo As Integer
     Dim anterior As Integer
     Dim maximo As Integer
+    Dim total As String
 
     Private Sub FrmPedido_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -27,6 +28,9 @@ Public Class FrmVendaProdutos
         TxtCliente.Enabled = True
         BtnEditar_venda.Enabled = False
         BtnIncluirItem_venda.Enabled = False
+
+        BtnEditar_duplicata.Enabled = False
+        BtnAtualizar_duplicata.Enabled = False
 
     End Sub
 
@@ -51,6 +55,9 @@ Public Class FrmVendaProdutos
         TxtProduto.ReadOnly = True
         TxtCliente.ReadOnly = True
         BtnIncluirItem_venda.Enabled = True
+
+        BtnEditar_duplicata.Enabled = True
+        BtnAtualizar_duplicata.Enabled = True
     End Sub
     Private Sub LimparCampos()
 
@@ -209,6 +216,7 @@ Public Class FrmVendaProdutos
             ListarDuplicatas()
 
             TotalDatagrid()
+
             TotalDatagridDuplicatas()
             TotalNfe_TotalDuplicatas()
 
@@ -263,7 +271,7 @@ Public Class FrmVendaProdutos
     End Sub
 
 
-    Private Sub BtnNovo_Click(sender As Object, e As EventArgs) Handles BtnNova_venda.Click
+    Private Sub BtnNovo_Click(sender As Object, e As EventArgs)
         If MsgBox("Deseja incluir novo venda?", vbYesNo, " Novo Venda") = vbYes Then
 
             HabilitarCampos()
@@ -453,7 +461,7 @@ Public Class FrmVendaProdutos
 
                 sqls = "INSERT INTO venda (id_venda, item, data_venda, cod_cliente, cliente, cod_produto, produto, quantidade, valor_unitario, valor_total ) VALUES (@id_venda, @item, '" & data & "', @cod_cliente, @cliente, @cod_produto, @produto, @quantidade, @valor_unitario, @valor_total)"
                 cmd = New MySqlCommand(sqls, con)
-                    With cmd
+                With cmd
                     .Parameters.AddWithValue("@id_venda", CInt(DataGrid.Rows(i).Cells(1).Value.ToString))
                     .Parameters.AddWithValue("@item", CInt(DataGrid.Rows(i).Cells(2).Value.ToString))
                     .Parameters.AddWithValue("@cod_cliente", CInt(DataGrid.Rows(i).Cells(4).Value.ToString))
@@ -465,20 +473,20 @@ Public Class FrmVendaProdutos
                     .Parameters.AddWithValue("@valor_total", CDbl(DataGrid.Rows(i).Cells(10).Value.ToString))
 
                     cmd.ExecuteNonQuery()
-                    End With
+                End With
 
-                Next
+            Next
 
-                'PROGRAMANDO A INSERÇÃO NA TABELA PEDIDO_CABEÇALHO
+            'PROGRAMANDO A INSERÇÃO NA TABELA PEDIDO_CABEÇALHO
 
-                Dim cmdp As MySqlCommand
-                Dim sql As String
+            Dim cmdp As MySqlCommand
+            Dim sql As String
 
 
             data = DataVenda.Value.ToString("yyyy-MM-dd")
             sql = "INSERT INTO venda_cabecalho (id_venda, data_venda, cod_cliente, cliente, valor_total, saldo_venda) VALUES ('" & TxtIdRegistro.Text & "', '" & data & "', '" & TxtCodCliente.Text & "','" & TxtCliente.Text & "', '" & TxtTotalVenda.Text.Replace(",", ".") & "', '" & TxtTotalVenda.Text.Replace(",", ".") & "' )"
             cmdp = New MySqlCommand(sql, con)
-                cmdp.ExecuteNonQuery()
+            cmdp.ExecuteNonQuery()
 
         Catch ex As Exception
             MsgBox("Erro ao Salvar!!" + ex.Message)
@@ -518,7 +526,7 @@ Public Class FrmVendaProdutos
 
         If TxtIdRegistro.Text <> "" Then
 
-            If MsgBox("Deseja excluir a venda de " + TxtCliente.Text + "?", vbYesNo, "Pedido") = vbYes Then
+            If MsgBox("Deseja excluir a venda do cliente " + TxtCliente.Text + "?", vbYesNo, "Venda") = vbYes Then
 
 
                 Try
@@ -856,6 +864,11 @@ Public Class FrmVendaProdutos
 
     Private Sub BtnAnterior_Click(sender As Object, e As EventArgs) Handles BtnAnterior.Click
         ListarPedidoAnterior()
+        ListarDuplicatas()
+        TotalDatagrid()
+        TotalDatagridDuplicatas()
+        TotalNfe_TotalDuplicatas()
+
     End Sub
 
     Private Sub FrmPedido_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
@@ -920,6 +933,11 @@ Public Class FrmVendaProdutos
 
     Private Sub BtnProximo_Click(sender As Object, e As EventArgs) Handles BtnProximo.Click
         ListarProximoPedido()
+        ListarDuplicatas()
+        TotalDatagrid()
+        TotalDatagridDuplicatas()
+        TotalNfe_TotalDuplicatas()
+
     End Sub
     Private Sub BtnExcluirItemPedido_Click(sender As Object, e As EventArgs) Handles BtnExcluirItem_venda.Click
 
@@ -936,58 +954,19 @@ Public Class FrmVendaProdutos
 
             If TxtIdRegistro.Text <> "" And TxtItem.Text <> "" Then
 
-                If MsgBox("Deseja excluir o item " + TxtItem.Text + " da venda" + TxtIdRegistro.Text + "?", vbYesNo, "Pedido") = vbYes Then
+                If MsgBox("Deseja excluir o item " + TxtItem.Text + " da venda " + TxtIdRegistro.Text + "?", vbYesNo, "Venda") = vbYes Then
 
-                    Try
-                        Abrir()
-                        'PROGRAMANDO EXCLUSÃO DE REGISTRO NO BANCO
-                        Dim cmd As MySqlCommand
-                        Dim sql As String
+                    Excluir_venda()
 
-                        sql = "DELETE FROM pedidos where pedido = '" & TxtIdRegistro.Text & "' AND item = '" & TxtItem.Text & "' "
-                        cmd = New MySqlCommand(sql, con)
-                        cmd.ExecuteNonQuery()
+                    Atualizar_venda_cabecalho()
 
-                        '.....................................................................................
-                        'CONSULTAR TOTAL NA TABELA PEDIDOS
-                        Dim dg As New DataGridView
-                        Dim da As MySqlDataAdapter
-                        Dim sql2 As String
-                        Dim dt As New DataTable
-                        Dim total As String
+                    Excluir_Saida_Estoque()
 
-                        sql2 = "SELECT SUM(valor_total) as TOTAL FROM pedidos WHERE pedido =  '" & TxtIdRegistro.Text & "' "
-                        da = New MySqlDataAdapter(sql2, con)
-                        da.Fill(dt)
-                        total = dt.Rows(0)("TOTAL").ToString()
+                    SalvarSaldoItem_ExclusaoItem()
 
-                        '............................................................................
-                        'ATUALIZAR TOTAL PEDIDO
-                        If DataGrid.Rows.Count > 1 Then
-                            Dim cmd1 As MySqlCommand
-                            Dim sql1 As String
-                            sql1 = "UPDATE pedido_cabecalho SET total= '" & total & "' WHERE id =  '" & TxtIdRegistro.Text & "' "
-                            cmd1 = New MySqlCommand(sql1, con)
-                            cmd1.ExecuteNonQuery()
+                    MsgBox("Item excluído com sucesso!!", MsgBoxStyle.Information, "Excluir")
 
-                        Else
-
-                            Dim cmd3 As MySqlCommand
-                            Dim sql3 As String
-                            sql3 = "DELETE FROM pedido_cabecalho WHERE id =  '" & TxtIdRegistro.Text & "' "
-                            cmd3 = New MySqlCommand(sql3, con)
-                            cmd3.ExecuteNonQuery()
-
-                        End If
-
-                        MsgBox("Item excluído com sucesso!!", MsgBoxStyle.Information, "Excluir")
-
-                        ListarUltimaVenda()
-
-                    Catch ex As Exception
-                        MsgBox("Erro ao excluir!!" + ex.Message)
-                    End Try
-
+                    ListarUltimaVenda()
 
                 End If
             Else
@@ -998,7 +977,114 @@ Public Class FrmVendaProdutos
         End If
 
     End Sub
+    Private Sub SalvarSaldoItem_ExclusaoItem()
 
+        Try
+            Abrir()
+
+            Dim cmd As MySqlCommand
+            Dim sql As String
+
+            Dim saldoItem As Integer
+            Dim codItem As Integer
+            Dim qtd As Integer
+            Dim saldoEstoque As Integer
+
+            codItem = TxtCodProduto.Text
+            qtd = TxtQuantidade.Text
+
+            Dim cmdp As MySqlCommand
+            Dim sqlp As String
+            Dim ultima As MySqlDataReader
+
+            sqlp = "SELECT saldo_estoque FROM produtos WHERE id= '" & codItem & "'"
+            cmdp = New MySqlCommand(sqlp, con)
+            ultima = cmdp.ExecuteReader()
+
+            If (ultima.Read()) Then
+                saldoEstoque = ultima("saldo_estoque")
+                ultima.Close()
+            Else
+                ultima.Close()
+            End If
+
+            saldoItem = saldoEstoque + qtd
+
+            sql = "UPDATE produtos SET saldo_estoque = '" & saldoItem & "' WHERE id = '" & codItem & "'"
+            cmd = New MySqlCommand(sql, con)
+            cmd.ExecuteNonQuery()
+
+        Catch ex As Exception
+            MsgBox("Erro ao Salvar!!" + ex.Message)
+        End Try
+
+
+    End Sub
+    Sub Excluir_Saida_Estoque()
+        'Stop
+        Try
+            Abrir()
+            Dim tipomov As String
+            Dim cmd1 As MySqlCommand
+            Dim sql1 As String
+            tipomov = "Saída"
+            sql1 = "DELETE FROM estoque WHERE id_venda =  '" & TxtIdRegistro.Text & "' AND item =  '" & TxtItem.Text & "' and tipo = '" & tipomov & "'"
+            cmd1 = New MySqlCommand(sql1, con)
+            cmd1.ExecuteNonQuery()
+
+        Catch ex As Exception
+            MsgBox("Erro ao Salvar!!" + ex.Message)
+        End Try
+    End Sub
+    Sub Atualizar_venda_cabecalho()
+        ' Stop
+        Try
+            '.....................................................................................                   
+            'CONSULTAR TOTAL NA TABELA VENDA
+            Abrir()
+            Dim cmd3 As MySqlCommand
+            Dim reader3 As MySqlDataReader
+            Dim sql3 As String
+
+            sql3 = "SELECT SUM(valor_total) as valor_tota FROM venda WHERE id_venda =  '" & TxtIdRegistro.Text & "' "
+            cmd3 = New MySqlCommand(sql3, con)
+            reader3 = cmd3.ExecuteReader
+            reader3.Read()
+
+            If Not IsDBNull(reader3("valor_tota")) Then
+                total = reader3("valor_tota")
+                reader3.Close()
+            Else
+                reader3.Close()
+            End If
+
+            'ATUALIZAR TOTAL VENDA_CABECALHO
+            Dim cmd1 As MySqlCommand
+            Dim sql1 As String
+            sql1 = "UPDATE venda_cabecalho SET valor_total= '" & total.Replace(",", ".") & "', saldo_venda = '" & total.Replace(",", ".") & "' WHERE id_venda =  '" & TxtIdRegistro.Text & "' "
+            cmd1 = New MySqlCommand(sql1, con)
+            cmd1.ExecuteNonQuery()
+
+        Catch ex As Exception
+            MsgBox("Erro ao editar!!" + ex.Message)
+        End Try
+
+    End Sub
+    Sub Excluir_venda()
+        ' Stop
+        Try
+
+            Abrir()
+            Dim cmd As MySqlCommand
+            Dim sql As String
+            sql = "DELETE FROM venda WHERE id_venda =  '" & TxtIdRegistro.Text & "' AND item =  '" & TxtItem.Text & "'"
+            cmd = New MySqlCommand(sql, con)
+            cmd.ExecuteNonQuery()
+
+        Catch ex As Exception
+            MsgBox("Erro ao Salvar!!" + ex.Message)
+        End Try
+    End Sub
     Sub ListarProximoPedido()
 
         Try
@@ -1161,44 +1247,44 @@ Line1:
 
         Dim linhaPed As Integer
 
-
-        Try
-            Abrir()
-            Dim cmdp As MySqlCommand
-            Dim sql As String
-            Dim ultima As MySqlDataReader
-
-
-            sql = "SELECT MAX(item) AS Item FROM venda WHERE id_venda = '" & TxtIdRegistro.Text & "' "
-
-            cmdp = New MySqlCommand(sql, con)
-            ultima = cmdp.ExecuteReader()
-
-            ultima.Read()
-
-            If Not IsDBNull(ultima("item")) Then
-                linhaPed = ultima("item")
-                ultima.Close()
-            Else
-                ultima.Close()
-            End If
-
-        Catch ex As Exception
-            MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
-        End Try
+        If MsgBox("Deseja excluir novo item  na venda " + TxtIdRegistro.Text + "?", vbYesNo, "Venda") = vbYes Then
+            Try
+                Abrir()
+                Dim cmdp As MySqlCommand
+                Dim sql As String
+                Dim ultima As MySqlDataReader
 
 
-        Dim form = New FrmAddItemVenda
+                sql = "SELECT MAX(item) AS Item FROM venda WHERE id_venda = '" & TxtIdRegistro.Text & "' "
 
-        form.TxtItem.Text = linhaPed + 1
-        form.TxtIdRegistro.Text = TxtIdRegistro.Text
-        form.TxtCodCliente.Text = TxtCodCliente.Text
-        form.TxtCliente.Text = TxtCliente.Text
-        form.DataVenda.Value = DataVenda.Value
+                cmdp = New MySqlCommand(sql, con)
+                ultima = cmdp.ExecuteReader()
+
+                ultima.Read()
+
+                If Not IsDBNull(ultima("item")) Then
+                    linhaPed = ultima("item")
+                    ultima.Close()
+                Else
+                    ultima.Close()
+                End If
+
+            Catch ex As Exception
+                MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
+            End Try
 
 
-        form.ShowDialog()
+            Dim form = New FrmAddItemVenda
 
+            form.TxtItem.Text = linhaPed + 1
+            form.TxtIdRegistro.Text = TxtIdRegistro.Text
+            form.TxtCodCliente.Text = TxtCodCliente.Text
+            form.TxtCliente.Text = TxtCliente.Text
+            form.DataVenda.Value = DataVenda.Value
+
+
+            form.ShowDialog()
+        End If
     End Sub
 
     Private Sub BtnCarregar_Click(sender As Object, e As EventArgs) Handles BtnCarregar.Click
@@ -1277,7 +1363,7 @@ Line1:
 
             End If
 
-            End If
+        End If
 
 
     End Sub
@@ -1346,5 +1432,17 @@ Line1:
 
         End If
 
+    End Sub
+
+    Private Sub BtnNovo_Click_1(sender As Object, e As EventArgs) Handles BtnNova_venda.Click
+        If MsgBox("Deseja incluir novo venda?", vbYesNo, " Novo Venda") = vbYes Then
+
+            HabilitarCampos()
+            LimparCampos()
+            GerarIdRegistro()
+
+            TxtItem.Text = 1
+            novaVenda = "True"
+        End If
     End Sub
 End Class

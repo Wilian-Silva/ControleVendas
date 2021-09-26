@@ -43,7 +43,8 @@ Public Class FrmEntrada
         TxtNotaFiscal.Enabled = True
         BtnPesqPedido.Enabled = True
         DataEmissao.Enabled = True
-
+        BtnEditar.Enabled = False
+        BtnAtualizar.Enabled = False
     End Sub
 
     Sub BloquearCampos()
@@ -553,8 +554,7 @@ Public Class FrmEntrada
         GerarIdRegistro()
 
         novaEntrada = "True"
-        BtnEditar.Enabled = False
-        BtnAtualizar.Enabled = False
+
 
     End Sub
     Sub SalvarStatusPedido()
