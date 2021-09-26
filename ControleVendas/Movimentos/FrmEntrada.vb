@@ -605,6 +605,7 @@ Public Class FrmEntrada
 
         If novaEntrada = "True" Then
             DataGridDuplicatas.DataSource = bs
+
             TotalDatagridDuplicatas()
             TotalNfe_TotalDuplicatas()
         End If

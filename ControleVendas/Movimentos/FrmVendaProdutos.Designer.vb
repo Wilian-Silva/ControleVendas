@@ -24,22 +24,22 @@ Partial Class FrmVendaProdutos
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmVendaProdutos))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PedidosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Controle_vendasDataSet = New ControleVendas.Controle_vendasDataSet3()
         Me.BtnCarregar = New System.Windows.Forms.Button()
-        Me.BtnIncluir = New System.Windows.Forms.Button()
+        Me.BtnIncluirItem_venda = New System.Windows.Forms.Button()
         Me.BtnPesqPedido = New System.Windows.Forms.Button()
         Me.BtnOk = New System.Windows.Forms.Button()
         Me.BtnProximo = New System.Windows.Forms.Button()
         Me.BtnAnterior = New System.Windows.Forms.Button()
-        Me.BtnEditar = New System.Windows.Forms.Button()
-        Me.BtnExcluirItemPedido = New System.Windows.Forms.Button()
+        Me.BtnEditar_venda = New System.Windows.Forms.Button()
+        Me.BtnExcluirItem_venda = New System.Windows.Forms.Button()
         Me.PedidosTableAdapter = New ControleVendas.Controle_vendasDataSet3TableAdapters.pedidosTableAdapter()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.BtnCacelar = New System.Windows.Forms.Button()
@@ -47,13 +47,13 @@ Partial Class FrmVendaProdutos
         Me.BtnSalvar = New System.Windows.Forms.Button()
         Me.BtnSair = New System.Windows.Forms.Button()
         Me.BtnExcluir = New System.Windows.Forms.Button()
-        Me.BtnNovo = New System.Windows.Forms.Button()
-        Me.BtnAtualizar = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.BtnEliminar = New System.Windows.Forms.Button()
+        Me.BtnNova_venda = New System.Windows.Forms.Button()
+        Me.BtnAtualizar_duplicata = New System.Windows.Forms.Button()
+        Me.BtnEditar_duplicata = New System.Windows.Forms.Button()
+        Me.BtnIncluir_duplicata = New System.Windows.Forms.Button()
+        Me.BtnEliminar_duplicata = New System.Windows.Forms.Button()
         Me.BtnPesqProduto = New System.Windows.Forms.Button()
-        Me.BtnPesqFornecedor = New System.Windows.Forms.Button()
+        Me.BtnPesqCliente = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
@@ -125,17 +125,17 @@ Partial Class FrmVendaProdutos
         Me.ToolTip.SetToolTip(Me.BtnCarregar, "Atualizar")
         Me.BtnCarregar.UseVisualStyleBackColor = True
         '
-        'BtnIncluir
+        'BtnIncluirItem_venda
         '
-        Me.BtnIncluir.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnIncluir.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.BtnIncluir.Location = New System.Drawing.Point(417, 392)
-        Me.BtnIncluir.Name = "BtnIncluir"
-        Me.BtnIncluir.Size = New System.Drawing.Size(100, 30)
-        Me.BtnIncluir.TabIndex = 175
-        Me.BtnIncluir.Text = "Incluir"
-        Me.ToolTip.SetToolTip(Me.BtnIncluir, "Inlcuir item do pedido")
-        Me.BtnIncluir.UseVisualStyleBackColor = True
+        Me.BtnIncluirItem_venda.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnIncluirItem_venda.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.BtnIncluirItem_venda.Location = New System.Drawing.Point(417, 392)
+        Me.BtnIncluirItem_venda.Name = "BtnIncluirItem_venda"
+        Me.BtnIncluirItem_venda.Size = New System.Drawing.Size(100, 30)
+        Me.BtnIncluirItem_venda.TabIndex = 175
+        Me.BtnIncluirItem_venda.Text = "Incluir"
+        Me.ToolTip.SetToolTip(Me.BtnIncluirItem_venda, "Inlcuir item do pedido")
+        Me.BtnIncluirItem_venda.UseVisualStyleBackColor = True
         '
         'BtnPesqPedido
         '
@@ -200,29 +200,29 @@ Partial Class FrmVendaProdutos
         Me.ToolTip.SetToolTip(Me.BtnAnterior, "Anterior")
         Me.BtnAnterior.UseVisualStyleBackColor = True
         '
-        'BtnEditar
+        'BtnEditar_venda
         '
-        Me.BtnEditar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnEditar.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.BtnEditar.Location = New System.Drawing.Point(219, 392)
-        Me.BtnEditar.Name = "BtnEditar"
-        Me.BtnEditar.Size = New System.Drawing.Size(100, 30)
-        Me.BtnEditar.TabIndex = 171
-        Me.BtnEditar.Text = "Alterar"
-        Me.ToolTip.SetToolTip(Me.BtnEditar, "Editar registro")
-        Me.BtnEditar.UseVisualStyleBackColor = True
+        Me.BtnEditar_venda.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnEditar_venda.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.BtnEditar_venda.Location = New System.Drawing.Point(219, 392)
+        Me.BtnEditar_venda.Name = "BtnEditar_venda"
+        Me.BtnEditar_venda.Size = New System.Drawing.Size(100, 30)
+        Me.BtnEditar_venda.TabIndex = 171
+        Me.BtnEditar_venda.Text = "Alterar"
+        Me.ToolTip.SetToolTip(Me.BtnEditar_venda, "Editar registro")
+        Me.BtnEditar_venda.UseVisualStyleBackColor = True
         '
-        'BtnExcluirItemPedido
+        'BtnExcluirItem_venda
         '
-        Me.BtnExcluirItemPedido.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnExcluirItemPedido.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.BtnExcluirItemPedido.Location = New System.Drawing.Point(318, 392)
-        Me.BtnExcluirItemPedido.Name = "BtnExcluirItemPedido"
-        Me.BtnExcluirItemPedido.Size = New System.Drawing.Size(100, 30)
-        Me.BtnExcluirItemPedido.TabIndex = 172
-        Me.BtnExcluirItemPedido.Text = "Eliminar"
-        Me.ToolTip.SetToolTip(Me.BtnExcluirItemPedido, "Eliminar item do pedido")
-        Me.BtnExcluirItemPedido.UseVisualStyleBackColor = True
+        Me.BtnExcluirItem_venda.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnExcluirItem_venda.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.BtnExcluirItem_venda.Location = New System.Drawing.Point(318, 392)
+        Me.BtnExcluirItem_venda.Name = "BtnExcluirItem_venda"
+        Me.BtnExcluirItem_venda.Size = New System.Drawing.Size(100, 30)
+        Me.BtnExcluirItem_venda.TabIndex = 172
+        Me.BtnExcluirItem_venda.Text = "Eliminar"
+        Me.ToolTip.SetToolTip(Me.BtnExcluirItem_venda, "Eliminar item do pedido")
+        Me.BtnExcluirItem_venda.UseVisualStyleBackColor = True
         '
         'PedidosTableAdapter
         '
@@ -328,65 +328,65 @@ Partial Class FrmVendaProdutos
         Me.ToolTip.SetToolTip(Me.BtnExcluir, "Excluir pedido ")
         Me.BtnExcluir.UseVisualStyleBackColor = True
         '
-        'BtnNovo
+        'BtnNova_venda
         '
-        Me.BtnNovo.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnNovo.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.BtnNovo.Location = New System.Drawing.Point(21, 392)
-        Me.BtnNovo.Name = "BtnNovo"
-        Me.BtnNovo.Size = New System.Drawing.Size(100, 30)
-        Me.BtnNovo.TabIndex = 170
-        Me.BtnNovo.Text = "Novo"
-        Me.ToolTip.SetToolTip(Me.BtnNovo, "Incluir novo pedido")
-        Me.BtnNovo.UseVisualStyleBackColor = True
+        Me.BtnNova_venda.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnNova_venda.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.BtnNova_venda.Location = New System.Drawing.Point(21, 392)
+        Me.BtnNova_venda.Name = "BtnNova_venda"
+        Me.BtnNova_venda.Size = New System.Drawing.Size(100, 30)
+        Me.BtnNova_venda.TabIndex = 170
+        Me.BtnNova_venda.Text = "Novo"
+        Me.ToolTip.SetToolTip(Me.BtnNova_venda, "Incluir novo pedido")
+        Me.BtnNova_venda.UseVisualStyleBackColor = True
         '
-        'BtnAtualizar
+        'BtnAtualizar_duplicata
         '
-        Me.BtnAtualizar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnAtualizar.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.BtnAtualizar.Location = New System.Drawing.Point(305, 185)
-        Me.BtnAtualizar.Name = "BtnAtualizar"
-        Me.BtnAtualizar.Size = New System.Drawing.Size(100, 30)
-        Me.BtnAtualizar.TabIndex = 169
-        Me.BtnAtualizar.Text = "Atualizar"
-        Me.ToolTip.SetToolTip(Me.BtnAtualizar, "Atualizar DataGrid")
-        Me.BtnAtualizar.UseVisualStyleBackColor = True
+        Me.BtnAtualizar_duplicata.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnAtualizar_duplicata.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.BtnAtualizar_duplicata.Location = New System.Drawing.Point(305, 185)
+        Me.BtnAtualizar_duplicata.Name = "BtnAtualizar_duplicata"
+        Me.BtnAtualizar_duplicata.Size = New System.Drawing.Size(100, 30)
+        Me.BtnAtualizar_duplicata.TabIndex = 169
+        Me.BtnAtualizar_duplicata.Text = "Atualizar"
+        Me.ToolTip.SetToolTip(Me.BtnAtualizar_duplicata, "Atualizar DataGrid")
+        Me.BtnAtualizar_duplicata.UseVisualStyleBackColor = True
         '
-        'Button1
+        'BtnEditar_duplicata
         '
-        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.Button1.Location = New System.Drawing.Point(206, 185)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(100, 30)
-        Me.Button1.TabIndex = 166
-        Me.Button1.Text = "Editar"
-        Me.ToolTip.SetToolTip(Me.Button1, "Editar registro")
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.BtnEditar_duplicata.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnEditar_duplicata.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.BtnEditar_duplicata.Location = New System.Drawing.Point(206, 185)
+        Me.BtnEditar_duplicata.Name = "BtnEditar_duplicata"
+        Me.BtnEditar_duplicata.Size = New System.Drawing.Size(100, 30)
+        Me.BtnEditar_duplicata.TabIndex = 166
+        Me.BtnEditar_duplicata.Text = "Editar"
+        Me.ToolTip.SetToolTip(Me.BtnEditar_duplicata, "Editar registro")
+        Me.BtnEditar_duplicata.UseVisualStyleBackColor = True
         '
-        'Button2
+        'BtnIncluir_duplicata
         '
-        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button2.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.Button2.Location = New System.Drawing.Point(8, 185)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(100, 30)
-        Me.Button2.TabIndex = 164
-        Me.Button2.Text = "Incluir"
-        Me.ToolTip.SetToolTip(Me.Button2, "Incluir novo pedido")
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.BtnIncluir_duplicata.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnIncluir_duplicata.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.BtnIncluir_duplicata.Location = New System.Drawing.Point(8, 185)
+        Me.BtnIncluir_duplicata.Name = "BtnIncluir_duplicata"
+        Me.BtnIncluir_duplicata.Size = New System.Drawing.Size(100, 30)
+        Me.BtnIncluir_duplicata.TabIndex = 164
+        Me.BtnIncluir_duplicata.Text = "Incluir"
+        Me.ToolTip.SetToolTip(Me.BtnIncluir_duplicata, "Incluir novo pedido")
+        Me.BtnIncluir_duplicata.UseVisualStyleBackColor = True
         '
-        'BtnEliminar
+        'BtnEliminar_duplicata
         '
-        Me.BtnEliminar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.BtnEliminar.Location = New System.Drawing.Point(107, 185)
-        Me.BtnEliminar.Name = "BtnEliminar"
-        Me.BtnEliminar.Size = New System.Drawing.Size(100, 30)
-        Me.BtnEliminar.TabIndex = 162
-        Me.BtnEliminar.Text = "Eliminar"
-        Me.ToolTip.SetToolTip(Me.BtnEliminar, "Excluir parcela")
-        Me.BtnEliminar.UseVisualStyleBackColor = True
+        Me.BtnEliminar_duplicata.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnEliminar_duplicata.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.BtnEliminar_duplicata.Location = New System.Drawing.Point(107, 185)
+        Me.BtnEliminar_duplicata.Name = "BtnEliminar_duplicata"
+        Me.BtnEliminar_duplicata.Size = New System.Drawing.Size(100, 30)
+        Me.BtnEliminar_duplicata.TabIndex = 162
+        Me.BtnEliminar_duplicata.Text = "Eliminar"
+        Me.ToolTip.SetToolTip(Me.BtnEliminar_duplicata, "Excluir parcela")
+        Me.BtnEliminar_duplicata.UseVisualStyleBackColor = True
         '
         'BtnPesqProduto
         '
@@ -404,21 +404,21 @@ Partial Class FrmVendaProdutos
         Me.ToolTip.SetToolTip(Me.BtnPesqProduto, "Consultar Produto")
         Me.BtnPesqProduto.UseVisualStyleBackColor = True
         '
-        'BtnPesqFornecedor
+        'BtnPesqCliente
         '
-        Me.BtnPesqFornecedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.BtnPesqFornecedor.Enabled = False
-        Me.BtnPesqFornecedor.FlatAppearance.BorderSize = 0
-        Me.BtnPesqFornecedor.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.BtnPesqFornecedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnPesqFornecedor.ForeColor = System.Drawing.Color.Transparent
-        Me.BtnPesqFornecedor.Image = CType(resources.GetObject("BtnPesqFornecedor.Image"), System.Drawing.Image)
-        Me.BtnPesqFornecedor.Location = New System.Drawing.Point(650, 16)
-        Me.BtnPesqFornecedor.Name = "BtnPesqFornecedor"
-        Me.BtnPesqFornecedor.Size = New System.Drawing.Size(22, 22)
-        Me.BtnPesqFornecedor.TabIndex = 140
-        Me.ToolTip.SetToolTip(Me.BtnPesqFornecedor, "Consultar Fornecedor")
-        Me.BtnPesqFornecedor.UseVisualStyleBackColor = True
+        Me.BtnPesqCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.BtnPesqCliente.Enabled = False
+        Me.BtnPesqCliente.FlatAppearance.BorderSize = 0
+        Me.BtnPesqCliente.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BtnPesqCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnPesqCliente.ForeColor = System.Drawing.Color.Transparent
+        Me.BtnPesqCliente.Image = CType(resources.GetObject("BtnPesqCliente.Image"), System.Drawing.Image)
+        Me.BtnPesqCliente.Location = New System.Drawing.Point(650, 16)
+        Me.BtnPesqCliente.Name = "BtnPesqCliente"
+        Me.BtnPesqCliente.Size = New System.Drawing.Size(22, 22)
+        Me.BtnPesqCliente.TabIndex = 140
+        Me.ToolTip.SetToolTip(Me.BtnPesqCliente, "Consultar Fornecedor")
+        Me.BtnPesqCliente.UseVisualStyleBackColor = True
         '
         'GroupBox1
         '
@@ -467,32 +467,32 @@ Partial Class FrmVendaProdutos
         Me.DataGrid.AllowUserToResizeRows = False
         Me.DataGrid.BackgroundColor = System.Drawing.Color.White
         Me.DataGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDark
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle10.BackColor = System.Drawing.Color.LightGray
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.ControlDark
+        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle10
         Me.DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGrid.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGrid.DefaultCellStyle = DataGridViewCellStyle11
         Me.DataGrid.EnableHeadersVisualStyles = False
         Me.DataGrid.Location = New System.Drawing.Point(3, 3)
         Me.DataGrid.MultiSelect = False
         Me.DataGrid.Name = "DataGrid"
         Me.DataGrid.ReadOnly = True
         Me.DataGrid.RowHeadersVisible = False
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ControlLightLight
-        DataGridViewCellStyle3.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
-        Me.DataGrid.RowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.ControlLightLight
+        DataGridViewCellStyle12.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.DataGrid.RowsDefaultCellStyle = DataGridViewCellStyle12
         Me.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGrid.Size = New System.Drawing.Size(669, 216)
         Me.DataGrid.TabIndex = 154
@@ -500,13 +500,13 @@ Partial Class FrmVendaProdutos
         'TabPageDuplicatas
         '
         Me.TabPageDuplicatas.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.TabPageDuplicatas.Controls.Add(Me.BtnAtualizar)
+        Me.TabPageDuplicatas.Controls.Add(Me.BtnAtualizar_duplicata)
         Me.TabPageDuplicatas.Controls.Add(Me.Label6)
         Me.TabPageDuplicatas.Controls.Add(Me.TxtTotalDuplicatas)
-        Me.TabPageDuplicatas.Controls.Add(Me.Button1)
+        Me.TabPageDuplicatas.Controls.Add(Me.BtnEditar_duplicata)
         Me.TabPageDuplicatas.Controls.Add(Me.DataGridDuplicatas)
-        Me.TabPageDuplicatas.Controls.Add(Me.Button2)
-        Me.TabPageDuplicatas.Controls.Add(Me.BtnEliminar)
+        Me.TabPageDuplicatas.Controls.Add(Me.BtnIncluir_duplicata)
+        Me.TabPageDuplicatas.Controls.Add(Me.BtnEliminar_duplicata)
         Me.TabPageDuplicatas.Location = New System.Drawing.Point(4, 22)
         Me.TabPageDuplicatas.Name = "TabPageDuplicatas"
         Me.TabPageDuplicatas.Padding = New System.Windows.Forms.Padding(3)
@@ -545,32 +545,32 @@ Partial Class FrmVendaProdutos
         Me.DataGridDuplicatas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader
         Me.DataGridDuplicatas.BackgroundColor = System.Drawing.Color.White
         Me.DataGridDuplicatas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.LightGray
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ControlDark
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridDuplicatas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.LightGray
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.ControlDark
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridDuplicatas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.DataGridDuplicatas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridDuplicatas.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridDuplicatas.DefaultCellStyle = DataGridViewCellStyle8
         Me.DataGridDuplicatas.EnableHeadersVisualStyles = False
         Me.DataGridDuplicatas.Location = New System.Drawing.Point(8, 6)
         Me.DataGridDuplicatas.MultiSelect = False
         Me.DataGridDuplicatas.Name = "DataGridDuplicatas"
         Me.DataGridDuplicatas.ReadOnly = True
         Me.DataGridDuplicatas.RowHeadersVisible = False
-        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.ControlLightLight
-        DataGridViewCellStyle6.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
-        Me.DataGridDuplicatas.RowsDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.ControlLightLight
+        DataGridViewCellStyle9.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.DataGridDuplicatas.RowsDefaultCellStyle = DataGridViewCellStyle9
         Me.DataGridDuplicatas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridDuplicatas.Size = New System.Drawing.Size(660, 178)
         Me.DataGridDuplicatas.TabIndex = 165
@@ -582,9 +582,9 @@ Partial Class FrmVendaProdutos
         Me.LblSaldo.ForeColor = System.Drawing.Color.Brown
         Me.LblSaldo.Location = New System.Drawing.Point(323, 429)
         Me.LblSaldo.Name = "LblSaldo"
-        Me.LblSaldo.Size = New System.Drawing.Size(375, 15)
+        Me.LblSaldo.Size = New System.Drawing.Size(383, 15)
         Me.LblSaldo.TabIndex = 177
-        Me.LblSaldo.Text = "Valor total das duplicatas diferente do valor total da Nota!"
+        Me.LblSaldo.Text = "Valor total das duplicatas diferente do valor total da venda!"
         '
         'TxtTotalVenda
         '
@@ -810,7 +810,7 @@ Partial Class FrmVendaProdutos
         '
         Me.GroupBox3.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox3.Controls.Add(Me.TxtCodCliente)
-        Me.GroupBox3.Controls.Add(Me.BtnPesqFornecedor)
+        Me.GroupBox3.Controls.Add(Me.BtnPesqCliente)
         Me.GroupBox3.Controls.Add(Me.TxtItem)
         Me.GroupBox3.Controls.Add(Me.Label10)
         Me.GroupBox3.Controls.Add(Me.TxtIdRegistro)
@@ -845,11 +845,11 @@ Partial Class FrmVendaProdutos
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.LblSaldo)
         Me.Controls.Add(Me.TabControl1)
-        Me.Controls.Add(Me.BtnIncluir)
+        Me.Controls.Add(Me.BtnIncluirItem_venda)
         Me.Controls.Add(Me.BtnOk)
-        Me.Controls.Add(Me.BtnEditar)
-        Me.Controls.Add(Me.BtnExcluirItemPedido)
-        Me.Controls.Add(Me.BtnNovo)
+        Me.Controls.Add(Me.BtnEditar_venda)
+        Me.Controls.Add(Me.BtnExcluirItem_venda)
+        Me.Controls.Add(Me.BtnNova_venda)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.GroupBox3)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -878,32 +878,32 @@ Partial Class FrmVendaProdutos
     Friend WithEvents Controle_vendasDataSet As Controle_vendasDataSet3
     Friend WithEvents ToolTip As ToolTip
     Friend WithEvents BtnCarregar As Button
-    Friend WithEvents BtnIncluir As Button
+    Friend WithEvents BtnIncluirItem_venda As Button
     Friend WithEvents BtnPesqPedido As Button
     Friend WithEvents BtnOk As Button
     Friend WithEvents BtnProximo As Button
     Friend WithEvents BtnAnterior As Button
-    Friend WithEvents BtnEditar As Button
-    Friend WithEvents BtnExcluirItemPedido As Button
+    Friend WithEvents BtnEditar_venda As Button
+    Friend WithEvents BtnExcluirItem_venda As Button
     Friend WithEvents PedidosTableAdapter As Controle_vendasDataSet3TableAdapters.pedidosTableAdapter
     Friend WithEvents BtnCacelar As Button
     Friend WithEvents BtnLimpar As Button
     Friend WithEvents BtnSalvar As Button
     Friend WithEvents BtnSair As Button
     Friend WithEvents BtnExcluir As Button
-    Friend WithEvents BtnNovo As Button
+    Friend WithEvents BtnNova_venda As Button
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents DataGrid As DataGridView
     Friend WithEvents TabPageDuplicatas As TabPage
-    Friend WithEvents BtnAtualizar As Button
+    Friend WithEvents BtnAtualizar_duplicata As Button
     Friend WithEvents Label6 As Label
     Friend WithEvents TxtTotalDuplicatas As TextBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents BtnEditar_duplicata As Button
     Friend WithEvents DataGridDuplicatas As DataGridView
-    Friend WithEvents Button2 As Button
-    Friend WithEvents BtnEliminar As Button
+    Friend WithEvents BtnIncluir_duplicata As Button
+    Friend WithEvents BtnEliminar_duplicata As Button
     Friend WithEvents LblSaldo As Label
     Friend WithEvents TxtTotalVenda As TextBox
     Friend WithEvents Label2 As Label
@@ -925,7 +925,7 @@ Partial Class FrmVendaProdutos
     Friend WithEvents TxtIdRegistro As TextBox
     Friend WithEvents Label10 As Label
     Friend WithEvents TxtItem As TextBox
-    Friend WithEvents BtnPesqFornecedor As Button
+    Friend WithEvents BtnPesqCliente As Button
     Friend WithEvents TxtCodCliente As TextBox
     Friend WithEvents GroupBox3 As GroupBox
 End Class

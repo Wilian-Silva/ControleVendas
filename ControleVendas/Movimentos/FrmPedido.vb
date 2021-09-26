@@ -448,7 +448,7 @@ Public Class FrmPedido
 
             If TxtCodFornecedor.Text <> "" And TxtCodProduto.Text <> "" And TxtQuantidade.Text <> "" And TxtValorUnit.Text <> "" And TxtPedido.Text <> "" Then
 
-                If DataGrid.Rows.Count < 1 Then
+                If DataGrid.Columns.Count < 1 Then
 
                     Table1.Columns.Add("Id Reg.")
                     Table1.Columns.Add("Pedido")

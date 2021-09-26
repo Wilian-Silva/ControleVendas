@@ -19,14 +19,14 @@ Public Class FrmVendaProdutos
         DataVenda.Enabled = True
         TxtQuantidade.Enabled = True
         TxtValorUnit.Enabled = True
-        BtnPesqFornecedor.Enabled = True
+        BtnPesqCliente.Enabled = True
         BtnPesqProduto.Enabled = True
         TxtProduto.ReadOnly = True
         TxtCliente.ReadOnly = True
         TxtProduto.Enabled = True
         TxtCliente.Enabled = True
-        BtnEditar.Enabled = False
-        BtnIncluir.Enabled = False
+        BtnEditar_venda.Enabled = False
+        BtnIncluirItem_venda.Enabled = False
 
     End Sub
 
@@ -44,13 +44,13 @@ Public Class FrmVendaProdutos
         DataVenda.Enabled = False
         TxtQuantidade.Enabled = False
         TxtValorUnit.Enabled = False
-        BtnPesqFornecedor.Enabled = False
+        BtnPesqCliente.Enabled = False
         BtnPesqProduto.Enabled = False
         TxtProduto.Enabled = False
-        BtnEditar.Enabled = True
+        BtnEditar_venda.Enabled = True
         TxtProduto.ReadOnly = True
         TxtCliente.ReadOnly = True
-        BtnIncluir.Enabled = True
+        BtnIncluirItem_venda.Enabled = True
     End Sub
     Private Sub LimparCampos()
 
@@ -67,6 +67,7 @@ Public Class FrmVendaProdutos
         TxtTotalVenda.Text = ""
         DataGrid.DataSource = Nothing
         Table1.Columns.Clear()
+        Table1.Rows.Clear()
         IncluirPedido = ""
         editarpedido = ""
 
@@ -92,6 +93,7 @@ Public Class FrmVendaProdutos
         TxtProduto.BackColor = Color.Salmon
         TxtQuantidade.BackColor = Color.Salmon
         TxtValorUnit.BackColor = Color.Salmon
+        TxtCliente.BackColor = Color.Salmon
 
     End Sub
     Sub Limpar_cores()
@@ -125,7 +127,7 @@ Public Class FrmVendaProdutos
         DataGrid.Columns(6).Width = 50
         DataGrid.Columns(7).Width = 200
         DataGrid.Columns(8).Width = 40
-        DataGrid.Columns(9).Width = 60
+        DataGrid.Columns(9).Width = 80
 
         DataGrid.Columns(1).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
@@ -258,34 +260,9 @@ Public Class FrmVendaProdutos
 
     End Sub
 
-    Public Sub TotalNfe_TotalDuplicatas()
-        Dim soma As Double
-        Dim dbl1 As Double = 0
-        Dim dbl2 As Double = 0
-        Double.TryParse(TxtTotalVenda.Text, dbl1)
-        Double.TryParse(TxtTotalDuplicatas.Text, dbl2)
 
-        soma = (dbl1 - dbl2).ToString("n")
-
-        LblSaldo.Text = ""
-        If soma > 0 Or soma < 0 Then
-            LblSaldo.Text = "Valor total das duplicatas diferente do valor total da Nota!"
-        End If
-
-    End Sub
-    Public Sub TotalDatagridDuplicatas()
-
-        'CALCULANDO SOMA TOTAL
-        On Error Resume Next
-        Dim total As Decimal = 0
-        For i = 0 To DataGridDuplicatas.Rows.Count - 1
-            total += DataGridDuplicatas.Rows(i).Cells(5).Value
-        Next
-        TxtTotalDuplicatas.Text = total
-
-    End Sub
-    Private Sub BtnNovo_Click(sender As Object, e As EventArgs) Handles BtnNovo.Click
-        If MsgBox("Deseja incluir novo pedido?", vbYesNo, " Novo Pedido") = vbYes Then
+    Private Sub BtnNovo_Click(sender As Object, e As EventArgs) Handles BtnNova_venda.Click
+        If MsgBox("Deseja incluir novo venda?", vbYesNo, " Novo Venda") = vbYes Then
 
             HabilitarCampos()
             LimparCampos()
@@ -488,7 +465,7 @@ Public Class FrmVendaProdutos
     Private Sub BtnSair_Click(sender As Object, e As EventArgs) Handles BtnSair.Click
         Me.Close()
     End Sub
-    Private Sub BtnPesqCliente_Click(sender As Object, e As EventArgs) Handles BtnPesqFornecedor.Click
+    Private Sub BtnPesqCliente_Click(sender As Object, e As EventArgs) Handles BtnPesqCliente.Click
         pesquisarCliente = "True"
         Dim form = New FrmClientes
         form.ShowDialog()
@@ -520,25 +497,22 @@ Public Class FrmVendaProdutos
 
     End Sub
     Private Sub BtndAdicionarItem_Click(sender As Object, e As EventArgs) Handles BtnOk.Click
-
+        ' Stop
         If editarpedido = "Editar" Then Exit Sub
         If IncluirPedido = "True" Then
 
             Limpar_cores()
-            TxtCliente.BackColor = Color.White
-
 
             If TxtCodCliente.Text <> "" And TxtCodProduto.Text <> "" And TxtQuantidade.Text <> "" And TxtValorUnit.Text <> "" Then
 
-                If DataGrid.Rows.Count < 1 Then
+                If DataGrid.Columns.Count < 1 Then
 
                     Table1.Columns.Add("Id Reg.")
-                    Table1.Columns.Add("Pedido")
+                    Table1.Columns.Add("Nº Venda")
                     Table1.Columns.Add("Item")
-                    Table1.Columns.Add("Desc.")
-                    Table1.Columns.Add("Data")
-                    Table1.Columns.Add("Cód. Fornec.")
-                    Table1.Columns.Add("Fornecedor")
+                    Table1.Columns.Add("Data Venda")
+                    Table1.Columns.Add("Cód. Cliente")
+                    Table1.Columns.Add("Cliente")
                     Table1.Columns.Add("Cód. Produto")
                     Table1.Columns.Add("Produto")
                     Table1.Columns.Add("Qtd.")
@@ -549,46 +523,51 @@ Public Class FrmVendaProdutos
                     bs.DataSource = Table1
                     DataGrid.DataSource = bs
 
-                    Table1.Rows.Add(TxtItem.Text, TxtIdRegistro.Text, TxtItem.Text, DataVenda.Value.ToShortDateString, TxtCodCliente.Text, TxtCliente.Text, TxtCodProduto.Text, TxtProduto.Text, TxtQuantidade.Text, TxtValorUnit.Text, TxtValorTotal.Text)
+                    Table1.Rows.Add("", TxtIdRegistro.Text, TxtItem.Text, DataVenda.Value.ToShortDateString, TxtCodCliente.Text, TxtCliente.Text, TxtCodProduto.Text, TxtProduto.Text, TxtQuantidade.Text, TxtValorUnit.Text, TxtValorTotal.Text)
 
                     TxtItem.Text = TxtItem.Text + 1
 
                     ''FORMATAR DATAGRI
+
                     DataGrid.Columns(0).Width = 1
                     DataGrid.Columns(1).Width = 50
                     DataGrid.Columns(2).Width = 40
-                    DataGrid.Columns(3).Width = 80
-                    DataGrid.Columns(4).Width = 90
-                    DataGrid.Columns(5).Width = 50
-                    DataGrid.Columns(6).Width = 120
-                    DataGrid.Columns(7).Width = 50
-                    DataGrid.Columns(8).Width = 250
-                    DataGrid.Columns(9).Width = 40
+                    DataGrid.Columns(4).Width = 50
+                    DataGrid.Columns(5).Width = 150
+                    DataGrid.Columns(6).Width = 50
+                    DataGrid.Columns(7).Width = 200
+                    DataGrid.Columns(8).Width = 40
+                    DataGrid.Columns(9).Width = 80
 
-                    DataGrid.Columns(4).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
-                    DataGrid.Columns(5).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
-                    DataGrid.Columns(7).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
-                    DataGrid.Columns(2).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
                     DataGrid.Columns(1).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
-                    DataGrid.Columns(0).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
-
-                    DataGrid.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-                    DataGrid.Columns(7).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-                    DataGrid.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
                     DataGrid.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+
+                    DataGrid.Columns(0).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
                     DataGrid.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
 
+                    DataGrid.Columns(4).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+                    DataGrid.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+
+                    DataGrid.Columns(6).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+                    DataGrid.Columns(6).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+
+                    DataGrid.Columns(8).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+                    DataGrid.Columns(8).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+
+                    DataGrid.Columns(9).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+
+                    DataGrid.Columns(9).DefaultCellStyle.Format = "c"
                     DataGrid.Columns(10).DefaultCellStyle.Format = "c"
-                    DataGrid.Columns(11).DefaultCellStyle.Format = "c"
-
-                    TotalDatagrid()
 
 
-                    BtnPesqFornecedor.Enabled = False
+                    BtnPesqCliente.Enabled = False
                     TxtCliente.Enabled = False
+                    DataVenda.Enabled = False
 
                     LimparCamposAddItemPedido()
 
+                    TotalDatagrid()
+                    TotalNfe_TotalDuplicatas()
 
                 Else
 
@@ -597,12 +576,13 @@ Public Class FrmVendaProdutos
                     TxtItem.Text = TxtItem.Text + 1
 
                     TotalDatagrid()
+                    TotalNfe_TotalDuplicatas()
                     LimparCamposAddItemPedido()
                 End If
 
             Else
                 Editar_Cores()
-                TxtCliente.BackColor = Color.Salmon
+
 
                 MsgBox("Campos em branco ou vazios", MsgBoxStyle.Information, "Adicionar item")
             End If
@@ -635,7 +615,7 @@ Public Class FrmVendaProdutos
 
     End Sub
 
-    Private Sub BtnEditar_Click(sender As Object, e As EventArgs) Handles BtnEditar.Click
+    Private Sub BtnEditar_Click(sender As Object, e As EventArgs) Handles BtnEditar_venda.Click
 
 
         If TxtItem.Text <> "" Then
@@ -746,8 +726,6 @@ Public Class FrmVendaProdutos
     Private Sub FrmPedido_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
 
         If pedidoPesquisar = "True" Then
-
-
             pedidoPesquisar = ""
             pedidoPesquisar = ""
             nomePedido = ""
@@ -758,8 +736,8 @@ Public Class FrmVendaProdutos
         End If
 
         If pesquisarCliente = "True" Then
-            TxtCodCliente.Text = codFornecedor
-            TxtCliente.Text = nomeFornecedor
+            TxtCodCliente.Text = codCliente
+            TxtCliente.Text = nomeCliente
             pesquisarCliente = ""
         End If
 
@@ -770,16 +748,45 @@ Public Class FrmVendaProdutos
             pesquisarProduto = ""
         End If
 
-        TotalDatagrid()
+        If IncluirPedido = "True" Then
+            DataGridDuplicatas.DataSource = bs
+            TotalDatagridDuplicatas()
+            TotalNfe_TotalDuplicatas()
+        End If
+
+    End Sub
+    Public Sub TotalNfe_TotalDuplicatas()
+
+        Dim soma As Double
+        Dim dbl1 As Double = 0
+        Dim dbl2 As Double = 0
+        Double.TryParse(TxtTotalVenda.Text, dbl1)
+        Double.TryParse(TxtTotalDuplicatas.Text, dbl2)
+
+        soma = (dbl1 - dbl2).ToString("n")
+
+        LblSaldo.Text = ""
+        If soma > 0 Or soma < 0 Then
+            LblSaldo.Text = "Valor total das duplicatas diferente do valor total da venda!"
+        End If
+
+    End Sub
+    Public Sub TotalDatagridDuplicatas()
+
+        'CALCULANDO SOMA TOTAL
+        On Error Resume Next
+        Dim total As Decimal = 0
+        For i = 0 To DataGridDuplicatas.Rows.Count - 1
+            total += DataGridDuplicatas.Rows(i).Cells(5).Value
+        Next
+        TxtTotalDuplicatas.Text = total
+
     End Sub
 
     Private Sub BtnProximo_Click(sender As Object, e As EventArgs) Handles BtnProximo.Click
         ListarProximoPedido()
     End Sub
-
-
-
-    Private Sub BtnExcluirItemPedido_Click(sender As Object, e As EventArgs) Handles BtnExcluirItemPedido.Click
+    Private Sub BtnExcluirItemPedido_Click(sender As Object, e As EventArgs) Handles BtnExcluirItem_venda.Click
 
         If IncluirPedido = "True" Then
 
@@ -794,7 +801,7 @@ Public Class FrmVendaProdutos
 
             If TxtIdRegistro.Text <> "" And TxtItem.Text <> "" Then
 
-                If MsgBox("Deseja excluir o item " + TxtItem.Text + " do pedido" + TxtIdRegistro.Text + "?", vbYesNo, "Pedido") = vbYes Then
+                If MsgBox("Deseja excluir o item " + TxtItem.Text + " da venda" + TxtIdRegistro.Text + "?", vbYesNo, "Pedido") = vbYes Then
 
                     Try
                         Abrir()
@@ -1018,48 +1025,47 @@ Line1:
         End Try
     End Sub
 
-    Private Sub BtnIncluir_Click(sender As Object, e As EventArgs) Handles BtnIncluir.Click
-
-
-
+    Private Sub BtnIncluir_Click(sender As Object, e As EventArgs) Handles BtnIncluirItem_venda.Click
 
         Dim linhaPed As Integer
 
 
-            Try
-                Abrir()
-                Dim cmdp As MySqlCommand
-                Dim sql As String
-                Dim ultima As MySqlDataReader
+        Try
+            Abrir()
+            Dim cmdp As MySqlCommand
+            Dim sql As String
+            Dim ultima As MySqlDataReader
 
 
-                sql = "SELECT MAX(item) AS Item FROM pedidos WHERE pedido = '" & TxtIdRegistro.Text & "' "
+            sql = "SELECT MAX(item) AS Item FROM pedidos WHERE pedido = '" & TxtIdRegistro.Text & "' "
 
-                cmdp = New MySqlCommand(sql, con)
-                ultima = cmdp.ExecuteReader()
+            cmdp = New MySqlCommand(sql, con)
+            ultima = cmdp.ExecuteReader()
 
-                If (ultima.Read()) Then
-                    linhaPed = ultima("item")
-                    ultima.Close()
-                Else
-                    ultima.Close()
-                End If
+            ultima.Read()
 
-            Catch ex As Exception
-                MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
-            End Try
+            If Not IsDBNull(ultima("item")) Then
+                linhaPed = ultima("item")
+                ultima.Close()
+            Else
+                ultima.Close()
+            End If
 
-
-            Dim form = New FrmAddItemPedido
-
-            form.TxtItem.Text = linhaPed + 1
-            form.TxtIdRegistro.Text = TxtIdRegistro.Text
-            form.TxtCodFornecedor.Text = TxtCodCliente.Text
-            form.TxtFornecedor.Text = TxtCliente.Text
-            form.DataPed.Value = DataVenda.Value
+        Catch ex As Exception
+            MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
+        End Try
 
 
-            form.ShowDialog()
+        Dim form = New FrmAddItemPedido
+
+        form.TxtItem.Text = linhaPed + 1
+        form.TxtIdRegistro.Text = TxtIdRegistro.Text
+        form.TxtCodFornecedor.Text = TxtCodCliente.Text
+        form.TxtFornecedor.Text = TxtCliente.Text
+        form.DataPed.Value = DataVenda.Value
+
+
+        form.ShowDialog()
 
     End Sub
 
@@ -1092,7 +1098,25 @@ Line1:
         End Try
 
 
-
     End Sub
 
+    Private Sub BtnIncluirDuplicata_Click(sender As Object, e As EventArgs) Handles BtnIncluir_duplicata.Click
+
+        Dim form = New FrmDuplicatas()
+        form.TxtNotaFiscal.Text = TxtIdRegistro.Text
+        form.TxtNotaFiscal.Text = TxtItem.Text
+        form.DataEmissao.Value = DataVenda.Value
+        form.TxtIdREg.Text = TxtCodCliente.Text
+        form.TxtIdREg.Text = TxtCliente.Text
+
+        Dim dbl1 As Double = 0
+        Dim dbl2 As Double = 0
+        Double.TryParse(TxtTotalVenda.Text, dbl1)
+        Double.TryParse(TxtTotalDuplicatas.Text, dbl2)
+
+        form.TxtTotalDuplicata.Text = (dbl1 - dbl2).ToString("n")
+
+        form.ShowDialog()
+
+    End Sub
 End Class
