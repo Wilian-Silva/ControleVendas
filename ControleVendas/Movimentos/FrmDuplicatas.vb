@@ -1,9 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class FrmDuplicatas
-
-
-
     Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
         Me.Close()
     End Sub

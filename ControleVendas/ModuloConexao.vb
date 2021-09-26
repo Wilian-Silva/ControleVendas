@@ -50,6 +50,7 @@ Module ModuloConexao
 
     Public novaEntrada As String
     Public novaVenda As String
+    Public editarVenda As String
 
     Public IdPedido As String
     Public StatusPedido As String
@@ -60,7 +61,7 @@ Module ModuloConexao
     Public valorUnit As String
     Public idNota As String
     Public statusBtn As String
-    Public editarVenda As String
+
     Public index As Integer
 
     Public pesquisarDuplicata As String

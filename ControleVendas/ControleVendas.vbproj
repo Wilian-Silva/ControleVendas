@@ -258,6 +258,12 @@
     <Compile Include="Movimentos\FrmAddItemPedido.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Movimentos\FrmAddItemVenda.Designer.vb">
+      <DependentUpon>FrmAddItemVenda.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentos\FrmAddItemVenda.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Movimentos\FrmDuplicatas.Designer.vb">
       <DependentUpon>FrmDuplicatas.vb</DependentUpon>
     </Compile>
@@ -433,6 +439,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Movimentos\FrmAddItemPedido.resx">
       <DependentUpon>FrmAddItemPedido.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentos\FrmAddItemVenda.resx">
+      <DependentUpon>FrmAddItemVenda.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Movimentos\FrmDuplicatas.resx">
       <DependentUpon>FrmDuplicatas.vb</DependentUpon>

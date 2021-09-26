@@ -71,7 +71,8 @@ Public Class FrmVendaProdutos
         Table1DuplicatasReceber.Columns.Clear()
         Table1DuplicatasReceber.Rows.Clear()
         novaVenda = ""
-        editarpedido = ""
+        editarVenda = ""
+        editarDuplicata = ""
 
     End Sub
 
@@ -87,7 +88,7 @@ Public Class FrmVendaProdutos
         TxtQuantidade.Text = ""
         TxtValorUnit.Text = ""
         TxtValorTotal.Text = ""
-        editarpedido = ""
+        editarVenda = ""
 
     End Sub
     Sub Editar_Cores()
@@ -638,7 +639,7 @@ Public Class FrmVendaProdutos
     End Sub
     Private Sub BtndAdicionarItem_Click(sender As Object, e As EventArgs) Handles BtnOk.Click
         ' Stop
-        If editarpedido = "Editar" Then Exit Sub
+        If editarVenda = "Editar" Then Exit Sub
         If novaVenda = "True" Then
 
             Limpar_cores()
@@ -760,28 +761,25 @@ Public Class FrmVendaProdutos
 
         If TxtItem.Text <> "" Then
 
-            If MsgBox("Deseja editar o item " & TxtItem.Text & " do pedido " & TxtIdRegistro.Text & "?", vbYesNo, "Editar") = vbYes Then
+            If MsgBox("Deseja editar o item " & TxtItem.Text & " da venda " & TxtIdRegistro.Text & " do cliente " & TxtCliente.Text & "?", vbYesNo, "Editar") = vbYes Then
 
-                Dim form = New FrmAddItemPedido
+                Dim form = New FrmAddItemVenda
 
                 form.TxtItem.Text = TxtItem.Text
                 form.TxtIdRegistro.Text = TxtIdRegistro.Text
-
                 form.TxtCodFornecedor.Text = TxtCodCliente.Text
                 form.TxtFornecedor.Text = TxtCliente.Text
-                form.DataPed.Value = DataVenda.Value
-
+                form.DataVenda.Value = DataVenda.Value
                 form.TxtCodFornecedor.Text = TxtCodCliente.Text
                 form.TxtFornecedor.Text = TxtCliente.Text
                 form.TxtQuantidade.Text = TxtQuantidade.Text
+                form.TxtQtdOriginal.Text = TxtQuantidade.Text
                 form.TxtValorUnit.Text = TxtValorUnit.Text
                 form.TxtCodProduto.Text = TxtCodProduto.Text
                 form.TxtProduto.Text = TxtProduto.Text
-
-                editarpedido = "Editar"
+                editarVenda = "Editar"
 
                 form.ShowDialog()
-
 
             End If
         Else
@@ -790,10 +788,7 @@ Public Class FrmVendaProdutos
 
         End If
 
-
     End Sub
-
-
 
     Private Sub FrmPedido_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
 
@@ -810,7 +805,6 @@ Public Class FrmVendaProdutos
     End Sub
 
     Sub PesquisarPedido()
-
 
         Try
             Abrir()
@@ -1140,7 +1134,6 @@ Line1:
 
     Sub RegistroAnterior()
 
-
         Try
             Abrir()
             Dim sql As String
@@ -1334,19 +1327,16 @@ Line1:
             editarDuplicata = "True"
 
             Dim form = New FrmDuplReceber()
-            form.TxtNum_venda.Text = TxtIdRegistro.Text
-            form.DataEmissao.Value = DataVenda.Value
-            form.TxtIdCliente.Text = TxtCodCliente.Text
-            form.TxtCliente.Text = TxtCliente.Text
-            form.TxtParcela.Text = DataGridDuplicatas.CurrentRow.Cells(1).Value.ToString()
             form.TxtId_Reg.Text = DataGridDuplicatas.CurrentRow.Cells(0).Value.ToString()
+            form.TxtNum_venda.Text = DataGridDuplicatas.CurrentRow.Cells(1).Value.ToString()
+            form.TxtParcela.Text = DataGridDuplicatas.CurrentRow.Cells(2).Value.ToString()
+            form.DataEmissao.Value = DataGridDuplicatas.CurrentRow.Cells(3).Value.ToString()
+            form.DataVencimento.Value = DataGridDuplicatas.CurrentRow.Cells(4).Value.ToString()
+            form.TxtTotalDuplicata.Text = DataGridDuplicatas.CurrentRow.Cells(5).Value.ToString()
+            form.TxtObs.Text = DataGridDuplicatas.CurrentRow.Cells(6).Value.ToString()
+            form.TxtIdCliente.Text = DataGridDuplicatas.CurrentRow.Cells(7).Value.ToString()
+            form.TxtCliente.Text = DataGridDuplicatas.CurrentRow.Cells(8).Value.ToString()
 
-            Dim dbl1 As Double = 0
-            Dim dbl2 As Double = 0
-            Double.TryParse(TxtTotalVenda.Text, dbl1)
-            Double.TryParse(TxtTotalDuplicatas.Text, dbl2)
-
-            form.TxtTotalDuplicata.Text = (dbl1 - dbl2).ToString("n")
             form.TxtParcela.Enabled = False
             form.ShowDialog()
 
