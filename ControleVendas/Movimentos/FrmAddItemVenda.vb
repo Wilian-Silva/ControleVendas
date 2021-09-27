@@ -36,7 +36,7 @@ Public Class FrmAddItemVenda
             TxtValorUnit.Text = valorUnit
             TxtSaldoEstoque.Text = saldoEstoque
             pesquisarProduto = ""
-            saldoEstoque = ""
+            saldoEstoque = Nothing
         End If
     End Sub
 

@@ -596,13 +596,34 @@ Public Class FrmVendaProdutos
     End Sub
     Private Sub BtnExluir_Click(sender As Object, e As EventArgs) Handles BtnExcluir.Click
 
+
+
+        'PESQUISAR SE A NOTA JA NÃO FOI PAGA
+        Dim cmd1 As MySqlCommand
+        Dim reader As MySqlDataReader
+        Dim sql1 As String
+
+        sql1 = "SELECT * FROM mvto_recebimentos where id_venda = '" & TxtIdRegistro.Text & "' "
+        cmd1 = New MySqlCommand(sql1, con)
+        reader = cmd1.ExecuteReader
+
+        If reader.Read = True Then
+
+            MsgBox("Documento não pode ser excluido, já foi pago!!", MsgBoxStyle.Information, "Excluir Documento")
+            reader.Close()
+            Exit Sub
+        Else
+            reader.Close()
+        End If
+
+
         If TxtIdRegistro.Text <> "" Then
 
             If MsgBox("Deseja excluir a venda do cliente " + TxtCliente.Text + "?", vbYesNo, "Venda") = vbYes Then
 
-                Excluir_Saida_Estoque()
+                Excluir_Venda_Estoque()
 
-                Excluir_venda()
+                Excluir_venda_total()
 
                 Excluir_venda_cabecalho()
 
@@ -1075,6 +1096,23 @@ Public Class FrmVendaProdutos
 
 
     End Sub
+
+    Sub Excluir_Venda_Estoque()
+        'Stop
+        Try
+            Abrir()
+            Dim tipomov As String
+            Dim cmd1 As MySqlCommand
+            Dim sql1 As String
+            tipomov = "Saída"
+            sql1 = "DELETE FROM estoque WHERE id_venda =  '" & TxtIdRegistro.Text & "' and tipo = '" & tipomov & "'"
+            cmd1 = New MySqlCommand(sql1, con)
+            cmd1.ExecuteNonQuery()
+
+        Catch ex As Exception
+            MsgBox("Erro ao Salvar!!" + ex.Message)
+        End Try
+    End Sub
     Sub Excluir_Saida_Estoque()
         'Stop
         Try
@@ -1141,6 +1179,23 @@ Public Class FrmVendaProdutos
         End Try
 
     End Sub
+
+    Sub Excluir_venda_total()
+        ' Stop
+        Try
+
+            Abrir()
+            Dim cmd As MySqlCommand
+            Dim sql As String
+            sql = "DELETE FROM venda WHERE id_venda =  '" & TxtIdRegistro.Text & "'"
+            cmd = New MySqlCommand(sql, con)
+            cmd.ExecuteNonQuery()
+
+        Catch ex As Exception
+            MsgBox("Erro ao Salvar!!" + ex.Message)
+        End Try
+    End Sub
+
     Sub Excluir_venda()
         ' Stop
         Try
