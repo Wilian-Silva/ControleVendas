@@ -24,7 +24,7 @@ Public Class FrmTelaInicial
     End Sub
 
     Private Sub RecebimentoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CboxMvto1_04.Click
-        Dim form = New FrmRecebimento
+        Dim form = New FrmReceberTitulo
         form.ShowDialog()
     End Sub
 
@@ -317,7 +317,7 @@ Public Class FrmTelaInicial
     End Sub
 
     Private Sub BtnContasReceber_Click(sender As Object, e As EventArgs) Handles BtnContasReceber.Click
-        Dim form = New FrmRecebimento
+        Dim form = New FrmReceberTitulo
         form.ShowDialog()
     End Sub
 

@@ -599,6 +599,7 @@ Partial Class FrmVlrPgto
         Me.MaximizeBox = False
         Me.Name = "FrmVlrPgto"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Contas a Pagar"
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)

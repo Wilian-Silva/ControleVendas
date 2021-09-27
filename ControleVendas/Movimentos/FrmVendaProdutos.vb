@@ -882,39 +882,11 @@ Public Class FrmVendaProdutos
 
     Private Sub BtnPesqPedido_Click(sender As Object, e As EventArgs) Handles BtnPesqPedido.Click
 
-        pedidoPesquisar = "True"
+        pesquisarDuplicata = "True"
         Dim form = New FrmVendaCabecalho
         form.ShowDialog()
 
     End Sub
-
-    Sub PesquisarPedido()
-
-        Try
-            Abrir()
-            Dim sql As String
-            Dim dt As New DataTable
-            Dim da As MySqlDataAdapter
-            sql = "SELECT p.id, p.pedido, p.item, p.descricao, p.data_emissao, p.cod_fornecedor, p.fornecedor, p.cod_produto, p.produto, p.quantidade, p.valor_unitario, p.valor_total, c.status FROM pedidos as p INNER JOIN pedido_cabecalho as c ON p.pedido = c.id WHERE p.pedido= '" & TxtIdRegistro.Text & "' order by p.item asc "
-            da = New MySqlDataAdapter(sql, con)
-            da.Fill(dt)
-            DataGrid.DataSource = dt
-
-            FormatarGrid()
-
-            If DataGrid.Rows.Count > 0 Then
-                DadosCabecalho()
-            End If
-
-            TotalDatagrid()
-
-        Catch ex As Exception
-            MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
-        End Try
-
-
-    End Sub
-
     Private Sub BtnCacelar_Click(sender As Object, e As EventArgs) Handles BtnCacelar.Click
         LimparCampos()
         DesabilitarCampos()
@@ -978,6 +950,9 @@ Public Class FrmVendaProdutos
             TotalNfe_TotalDuplicatas()
         End If
 
+        If pesquisarDuplicata = "True" Then
+            TxtPesquisar.Text = IdDuplicata
+        End If
     End Sub
     Public Sub TotalNfe_TotalDuplicatas()
 
@@ -1446,7 +1421,36 @@ Line1:
 
 
     End Sub
+    Sub Pesquisar_venda()
 
+        Try
+            Abrir()
+            Dim sql As String
+            Dim dt As New DataTable
+            Dim da As MySqlDataAdapter
+            sql = "SELECT * FROM venda WHERE id_venda= '" & TxtPesquisar.Text & "' order by item asc "
+            da = New MySqlDataAdapter(sql, con)
+            da.Fill(dt)
+            DataGrid.DataSource = dt
+
+            FormatarGrid()
+
+            If DataGrid.Rows.Count > 0 Then
+                DadosCabecalho()
+            End If
+
+            ListarDuplicatas()
+
+            TotalDatagrid()
+            TotalDatagridDuplicatas()
+            TotalNfe_TotalDuplicatas()
+
+        Catch ex As Exception
+            MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
+        End Try
+
+
+    End Sub
     Private Sub BtnIncluirDuplicata_Click(sender As Object, e As EventArgs) Handles BtnIncluir_duplicata.Click
 
 
@@ -1584,5 +1588,12 @@ Line1:
             TxtItem.Text = 1
             novaVenda = "True"
         End If
+    End Sub
+
+    Private Sub TxtPesquisar_TextChanged(sender As Object, e As EventArgs) Handles TxtPesquisar.TextChanged
+        If TxtPesquisar.Text <> "" Then
+            Pesquisar_venda()
+        End If
+
     End Sub
 End Class

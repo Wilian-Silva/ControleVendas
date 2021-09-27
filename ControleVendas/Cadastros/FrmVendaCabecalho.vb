@@ -285,14 +285,16 @@ Public Class FrmVendaCabecalho
 
             TxtRegVenda.Text = DataGrid.CurrentRow.Cells(1).Value
             TxtCliente.Text = DataGrid.CurrentRow.Cells(7).Value
-            TxtValor_Venda.Text = DataGrid.CurrentRow.Cells(3).Value
+            TxtParcela.Text = DataGrid.CurrentRow.Cells(2).Value
             TxtSaldo_venda.Text = DataGrid.CurrentRow.Cells(8).Value
         End If
 
     End Sub
 
     Private Sub TxtPesquisa_TextChanged(sender As Object, e As EventArgs) Handles TxtPesquisa.TextChanged
-        FiltroDataGrid()
+        If TxtPesquisa.Text <> "" Then
+            FiltroDataGrid()
+        End If
     End Sub
 
     Private Sub BtnCacelarConsulta_Click(sender As Object, e As EventArgs) Handles BtnCacelarConsulta.Click
@@ -304,7 +306,7 @@ Public Class FrmVendaCabecalho
         'Stop
         If DataGrid.RowCount > 0 Then
 
-            IdDuplicata = DataGrid.CurrentRow.Cells(11).Value
+            IdDuplicata = DataGrid.CurrentRow.Cells(1).Value
             IdDuplicata2 = DataGrid.CurrentRow.Cells(0).Value
 
             Me.Close()
