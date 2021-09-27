@@ -50,50 +50,26 @@ Public Class FrmAddItemVenda
             Exit Sub
         End If
 
-
         TxtQuantidade.BackColor = Color.White
         TxtProduto.BackColor = Color.White
 
         If TxtQuantidade.Text <> "" And TxtValorUnit.Text <> "" Then
 
-            If editarVenda = "Editar" Then
-                If MsgBox("Deseja salvar alterações no o item " + TxtItem.Text + " na venda" + TxtIdRegistro.Text + "?", vbYesNo, "Pedido") = vbYes Then
+            If MsgBox("Deseja incluir o item " + TxtItem.Text + " na venda " + TxtIdRegistro.Text + "?", vbYesNo, "Venda Produtos") = vbYes Then
 
-                    Atualizar_venda()
+                Inserir_venda()
 
-                    Atualizar_venda_cabecalho()
+                Atualizar_venda_cabecalho()
 
-                    Atualisar_Saida_Estoque()
+                Inserir_Saida_Estoque()
 
-                    SalvarSaldoItem()
+                SalvarSaldoItem()
 
-                    MsgBox("Registro editado com Sucesso!!", MsgBoxStyle.Information, "Editar Venda")
+                MsgBox("Registro salvo com Sucesso!!", MsgBoxStyle.Information, "Salvar Registro")
 
-                    editarVenda = ""
-                    BtnPesqProduto.Enabled = True
-                    Me.Close()
-
-                End If
-            Else
-
-                If MsgBox("Deseja incluir o item " + TxtItem.Text + " na venda " + TxtIdRegistro.Text + "?", vbYesNo, "Venda Produtos") = vbYes Then
-
-                    Inserir_venda()
-
-                    Atualizar_venda_cabecalho()
-
-                    Inserir_Saida_Estoque()
-
-                    SalvarSaldoItem()
-
-                    MsgBox("Registro salvo com Sucesso!!", MsgBoxStyle.Information, "Salvar Registro")
-
-                    Me.Close()
-
-                End If
+                Me.Close()
 
             End If
-
         Else
 
             TxtQuantidade.BackColor = Color.Salmon
@@ -211,21 +187,7 @@ Public Class FrmAddItemVenda
         End Try
 
     End Sub
-    Sub Atualizar_venda()
 
-        Try
-
-            Abrir()
-            Dim cmd As MySqlCommand
-            Dim sql As String
-            sql = "UPDATE venda SET cod_produto = '" & TxtCodProduto.Text & "', produto = '" & TxtProduto.Text & "', quantidade = '" & TxtQuantidade.Text & "', valor_unitario = '" & TxtValorUnit.Text.Replace(",", ".") & "', valor_total= '" & TxtValorTotal.Text.Replace(",", ".") & "' WHERE id_venda =  '" & TxtIdRegistro.Text & "' AND item =  '" & TxtItem.Text & "'"
-            cmd = New MySqlCommand(sql, con)
-            cmd.ExecuteNonQuery()
-
-        Catch ex As Exception
-            MsgBox("Erro ao Salvar!!" + ex.Message)
-        End Try
-    End Sub
     Sub Atualizar_venda_cabecalho()
         'Stop
         Try

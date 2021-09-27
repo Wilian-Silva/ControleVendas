@@ -350,6 +350,7 @@ Partial Class FrmAddItemVenda
         Me.TxtSaldoEstoque.Size = New System.Drawing.Size(32, 20)
         Me.TxtSaldoEstoque.TabIndex = 172
         Me.TxtSaldoEstoque.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TxtSaldoEstoque.Visible = False
         '
         'FrmAddItemVenda
         '

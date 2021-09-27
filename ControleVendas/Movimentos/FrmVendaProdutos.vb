@@ -26,7 +26,7 @@ Public Class FrmVendaProdutos
         TxtCliente.ReadOnly = True
         TxtProduto.Enabled = True
         TxtCliente.Enabled = True
-        BtnEditar_venda.Enabled = False
+
         BtnIncluirItem_venda.Enabled = False
 
         BtnEditar_duplicata.Enabled = False
@@ -51,7 +51,7 @@ Public Class FrmVendaProdutos
         BtnPesqCliente.Enabled = False
         BtnPesqProduto.Enabled = False
         TxtProduto.Enabled = False
-        BtnEditar_venda.Enabled = True
+
         TxtProduto.ReadOnly = True
         TxtCliente.ReadOnly = True
         BtnIncluirItem_venda.Enabled = True
@@ -78,7 +78,7 @@ Public Class FrmVendaProdutos
         Table1DuplicatasReceber.Columns.Clear()
         Table1DuplicatasReceber.Rows.Clear()
         novaVenda = ""
-        editarVenda = ""
+
         editarDuplicata = ""
         saldoEstoque = Nothing
         TxtSaldoEstoque.Text = ""
@@ -851,40 +851,7 @@ Public Class FrmVendaProdutos
 
     End Sub
 
-    Private Sub BtnEditar_Click(sender As Object, e As EventArgs) Handles BtnEditar_venda.Click
 
-
-        If TxtItem.Text <> "" Then
-
-            If MsgBox("Deseja editar o item " & TxtItem.Text & " da venda " & TxtIdRegistro.Text & " do cliente " & TxtCliente.Text & "?", vbYesNo, "Editar") = vbYes Then
-
-                Dim form = New FrmAddItemVenda
-
-                form.TxtItem.Text = TxtItem.Text
-                form.TxtIdRegistro.Text = TxtIdRegistro.Text
-                form.TxtCodCliente.Text = TxtCodCliente.Text
-                form.TxtCliente.Text = TxtCliente.Text
-                form.DataVenda.Value = DataVenda.Value
-                form.TxtCodCliente.Text = TxtCodCliente.Text
-                form.TxtCliente.Text = TxtCliente.Text
-                form.TxtQuantidade.Text = TxtQuantidade.Text
-                form.TxtQtdOriginal.Text = TxtQuantidade.Text
-                form.TxtValorUnit.Text = TxtValorUnit.Text
-                form.TxtCodProduto.Text = TxtCodProduto.Text
-                form.TxtProduto.Text = TxtProduto.Text
-                editarVenda = "Editar"
-
-                form.BtnPesqProduto.Enabled = False
-                form.ShowDialog()
-
-            End If
-        Else
-
-            MsgBox("Selecione um registro para editar!!", MsgBoxStyle.Information, "Editar")
-
-        End If
-
-    End Sub
 
     Private Sub FrmPedido_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
 
