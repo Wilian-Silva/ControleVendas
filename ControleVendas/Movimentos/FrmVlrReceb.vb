@@ -45,7 +45,7 @@ Public Class FrmVlrReceb
         SomarValores()
     End Sub
 
-    Private Sub BtnOk_Click(sender As Object, e As EventArgs) Handles BtnOk.Click
+    Private Sub BtnOk_Click(sender As Object, e As EventArgs) Handles BtnSalvar.Click
 
         If MsgBox("Deseja salvar a baixa do título " & TxtNotaFiscal.Text & " Parcela " & TxtParcela.Text & "?", vbYesNo, "Salvar Baixa") = vbYes Then
 
@@ -62,16 +62,14 @@ Public Class FrmVlrReceb
                 data2 = DataVencimento.Value.ToString("yyyy-MM-dd")
                 data3 = DataPgto.Value.ToString("yyyy-MM-dd")
 
-                sql = "INSERT INTO mvto_pagamentos (id_duplicata, cod_fornecedor, fornecedor, titulo, total_titulo, cod_pedido, " _
-                    & "descricao_pedido, parcela, valor_parcela, valor_pago, valor_saldo, juros_multa, descontos, total_pago, data_emissao," _
-                    & "data_vencimento, data_pagamento, status_nota, id_entrada) VALUES ( '" & TxtCodCliente.Text & "', " _
+                sql = "INSERT INTO mvto_recebimentos (id_duplicata, cod_cliente, cliente, id_venda, valor_total, parcela, " _
+                    & "valor_parcela, valor_pago, valor_saldo, juros_multa, descontos, total_pago, data_emissao," _
+                    & "data_vencimento, data_pagamento, status_nota) VALUES ( '" & TxtIdDuplicata.Text & "','" & TxtCodCliente.Text & "', " _
                     & " '" & TxtNomeCliente.Text & "','" & TxtNotaFiscal.Text & "','" & TxtValorOriginal.Text.Replace(",", ".") & "', " _
                     & "  '" & TxtParcela.Text & "','" & TxtValorParcela.Text.Replace(",", ".") & "', '" & TxtValorPago.Text.Replace(",", ".") & "', " _
                     & " '" & TxtSaldoTitulo.Text.Replace(",", ".") & "','" & TxtMultasJuros.Text.Replace(",", ".") & "', '" & TxtDescontos.Text.Replace(",", ".") & "', " _
-                    & " '" & TxtTotalPago.Text.Replace(",", ".") & "', '" & data1 & "', '" & data2 & "',  '" & data3 & "', '" & TxtStatusTitulo.Text & "', '" & TxtIdDuplicata.Text & "') "
+                    & " '" & TxtTotalPago.Text.Replace(",", ".") & "', '" & data1 & "', '" & data2 & "',  '" & data3 & "', '" & TxtStatusTitulo.Text & "') "
 
-
-                'sql = "INSERT INTO mvto_pagamentos (id_duplicata, cod_fornecedor, fornecedor, titulo, total_titulo, cod_pedido, descricao_pedido, parcela, valor_parcela, valor_pago, valor_saldo, juros_multa, descontos, total_pago, data_emissao, data_vencimento, data_pagamento, saldo_nota, status_nota, id_entrada) VALUES ( '" & TxtIdRegistro.Text & "', '" & TxtCodFornecedor.Text & "',  '" & TxtNomeFornecedor.Text & "','" & TxtNotaFiscal.Text & "','" & TxtValorOriginal.Text.Replace(",", ".") & "', '" & TxtCodPedido.Text & "', '" & TxtDescPed.Text & "', '" & TxtParcela.Text & "','" & TxtValorParcela.Text.Replace(",", ".") & "', '" & TxtValorPago.Text.Replace(",", ".") & "', '" & TxtSaldoAbertoParcela.Text.Replace(",", ".") & "','" & TxtMultasJuros.Text.Replace(",", ".") & "', '" & TxtDescontos.Text.Replace(",", ".") & "', '" & TxtTotalPago.Text.Replace(",", ".") & "', '" & data1 & "', '" & data2 & "',  '" & data3 & "', '" & TxtStatusTitulo.Text & "', '" & TxtRefEntrada.Text & "') "
 
                 cmd = New MySqlCommand(sql, con)
                 cmd.ExecuteNonQuery()
@@ -79,7 +77,7 @@ Public Class FrmVlrReceb
                 'ATUALIZAR SALDO NA TABELA DUPLICATAS
                 Dim cmd1 As MySqlCommand
                 Dim sql1 As String
-                sql1 = "UPDATE duplicatas SET saldo_duplicata = '" & TxtSaldoTitulo.Text & "' WHERE id = '" & TxtIdDuplicata.Text & "' "
+                sql1 = "UPDATE duplicatas_receber SET saldo_duplicata = '" & TxtSaldoTitulo.Text & "' WHERE id = '" & TxtIdDuplicata.Text & "' "
                 cmd1 = New MySqlCommand(sql1, con)
                 cmd1.ExecuteNonQuery()
 

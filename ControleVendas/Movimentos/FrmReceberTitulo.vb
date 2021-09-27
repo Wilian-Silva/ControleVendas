@@ -72,6 +72,8 @@ Public Class FrmReceberTitulo
                 TxtSaldoTitulo.Text = reader("saldo_duplicata")
                 DataEmissao.Text = reader("data_venda")
                 DataVencimento.Text = reader("data_vencimento")
+                TxtObeservacao.Text = reader("observacao")
+
                 idVenda = reader("id_venda")
                 idDuplicata = reader("id")
                 reader.Close()
@@ -179,6 +181,7 @@ Public Class FrmReceberTitulo
                 TxtSaldoTitulo.Text = reader("saldo_duplicata")
                 DataEmissao.Text = reader("data_venda")
                 DataVencimento.Text = reader("data_vencimento")
+                TxtObeservacao.Text = reader("observacao")
                 idVenda = reader("id_venda")
                 idDuplicata = reader("id")
                 reader.Close()
@@ -331,6 +334,7 @@ Line1:
                 TxtSaldoTitulo.Text = reader("saldo_duplicata")
                 DataEmissao.Text = reader("data_venda")
                 DataVencimento.Text = reader("data_vencimento")
+                TxtObeservacao.Text = reader("observacao")
                 idVenda = reader("id_venda")
                 idDuplicata = reader("id")
                 reader.Close()
@@ -509,6 +513,7 @@ Line1:
                 TxtSaldoTitulo.Text = reader("saldo_duplicata")
                 DataEmissao.Text = reader("data_venda")
                 DataVencimento.Text = reader("data_vencimento")
+                TxtObeservacao.Text = reader("observacao")
                 idVenda = reader("id_venda")
                 idDuplicata = reader("id")
                 reader.Close()
@@ -596,11 +601,12 @@ Line1:
     End Sub
 
     Private Sub BtnCarregar_Click(sender As Object, e As EventArgs) Handles BtnCarregar.Click
+        'Stop
         Try
             Dim cmd3 As MySqlCommand
             Dim reader3 As MySqlDataReader
             Dim sql3 As String
-            sql3 = "Select MAX(id) As id , SUM(valor_pago) As valor_pago , SUM(juros_multa) As juros_multa , SUM(descontos) As descontos, SUM(total_pago) As total_pago, data_pagamento, MAX(status_nota) As status_nota FROM mvto_recebimentos WHERE id_duplicata = '" & IdDuplicata & "' "
+            sql3 = "Select MAX(id) As id , SUM(valor_pago) As valor_pago , SUM(juros_multa) As juros_multa , SUM(descontos) As descontos, SUM(total_pago) As total_pago, data_pagamento, MAX(status_nota) As status_nota FROM mvto_recebimentos WHERE id_duplicata = '" & TxtId_duplicata.Text & "' "
             cmd3 = New MySqlCommand(sql3, con)
             reader3 = cmd3.ExecuteReader
 
@@ -620,9 +626,9 @@ Line1:
                 TxtTotalPago.Text = reader3("total_pago")
                 DataPagamento.Text = reader3("data_pagamento")
 
+
                 reader3.Close()
             Else
-
 
                 reader3.Close()
                 TxtValorPago.Text = 0
@@ -635,7 +641,6 @@ Line1:
                 LblRegPgto.Visible = False
 
             End If
-
 
             If TxtValorPago.Text = "0" Then
                 TxtStatusTitulo.Text = "Aberto"

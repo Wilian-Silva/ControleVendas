@@ -47,7 +47,7 @@ Partial Class FrmVlrReceb
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TxtNotaFiscal = New System.Windows.Forms.TextBox()
-        Me.BtnOk = New System.Windows.Forms.Button()
+        Me.BtnSalvar = New System.Windows.Forms.Button()
         Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label13 = New System.Windows.Forms.Label()
@@ -343,17 +343,17 @@ Partial Class FrmVlrReceb
         Me.TxtNotaFiscal.TabIndex = 97
         Me.TxtNotaFiscal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'BtnOk
+        'BtnSalvar
         '
-        Me.BtnOk.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnOk.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.BtnOk.Location = New System.Drawing.Point(28, 14)
-        Me.BtnOk.Name = "BtnOk"
-        Me.BtnOk.Size = New System.Drawing.Size(70, 30)
-        Me.BtnOk.TabIndex = 168
-        Me.BtnOk.TabStop = False
-        Me.BtnOk.Text = "Salvar"
-        Me.BtnOk.UseVisualStyleBackColor = True
+        Me.BtnSalvar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnSalvar.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.BtnSalvar.Location = New System.Drawing.Point(28, 14)
+        Me.BtnSalvar.Name = "BtnSalvar"
+        Me.BtnSalvar.Size = New System.Drawing.Size(70, 30)
+        Me.BtnSalvar.TabIndex = 168
+        Me.BtnSalvar.TabStop = False
+        Me.BtnSalvar.Text = "Salvar"
+        Me.BtnSalvar.UseVisualStyleBackColor = True
         '
         'BtnCancelar
         '
@@ -369,7 +369,7 @@ Partial Class FrmVlrReceb
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.GroupBox1.Controls.Add(Me.BtnOk)
+        Me.GroupBox1.Controls.Add(Me.BtnSalvar)
         Me.GroupBox1.Controls.Add(Me.BtnCancelar)
         Me.GroupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.GroupBox1.Location = New System.Drawing.Point(252, 347)
@@ -572,7 +572,7 @@ Partial Class FrmVlrReceb
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents TxtNotaFiscal As TextBox
-    Friend WithEvents BtnOk As Button
+    Friend WithEvents BtnSalvar As Button
     Friend WithEvents BtnCancelar As Button
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Label13 As Label
