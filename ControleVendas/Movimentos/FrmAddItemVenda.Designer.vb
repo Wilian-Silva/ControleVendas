@@ -47,8 +47,9 @@ Partial Class FrmAddItemVenda
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.DataVenda = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.TxtQtdOriginal = New System.Windows.Forms.TextBox()
         Me.BtnPesqProduto = New System.Windows.Forms.Button()
+        Me.TxtQtdOriginal = New System.Windows.Forms.TextBox()
+        Me.TxtSaldoEstoque = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
@@ -287,6 +288,7 @@ Partial Class FrmAddItemVenda
         'GroupBox3
         '
         Me.GroupBox3.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox3.Controls.Add(Me.TxtSaldoEstoque)
         Me.GroupBox3.Controls.Add(Me.BtnPesqProduto)
         Me.GroupBox3.Controls.Add(Me.TxtQtdOriginal)
         Me.GroupBox3.Controls.Add(Me.TxtCodCliente)
@@ -313,17 +315,6 @@ Partial Class FrmAddItemVenda
         Me.GroupBox3.TabIndex = 163
         Me.GroupBox3.TabStop = False
         '
-        'TxtQtdOriginal
-        '
-        Me.TxtQtdOriginal.BackColor = System.Drawing.Color.White
-        Me.TxtQtdOriginal.Location = New System.Drawing.Point(442, 105)
-        Me.TxtQtdOriginal.Margin = New System.Windows.Forms.Padding(4)
-        Me.TxtQtdOriginal.Name = "TxtQtdOriginal"
-        Me.TxtQtdOriginal.Size = New System.Drawing.Size(42, 20)
-        Me.TxtQtdOriginal.TabIndex = 142
-        Me.TxtQtdOriginal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TxtQtdOriginal.Visible = False
-        '
         'BtnPesqProduto
         '
         Me.BtnPesqProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
@@ -337,6 +328,28 @@ Partial Class FrmAddItemVenda
         Me.BtnPesqProduto.Size = New System.Drawing.Size(22, 22)
         Me.BtnPesqProduto.TabIndex = 143
         Me.BtnPesqProduto.UseVisualStyleBackColor = True
+        '
+        'TxtQtdOriginal
+        '
+        Me.TxtQtdOriginal.BackColor = System.Drawing.Color.White
+        Me.TxtQtdOriginal.Location = New System.Drawing.Point(442, 105)
+        Me.TxtQtdOriginal.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtQtdOriginal.Name = "TxtQtdOriginal"
+        Me.TxtQtdOriginal.Size = New System.Drawing.Size(42, 20)
+        Me.TxtQtdOriginal.TabIndex = 142
+        Me.TxtQtdOriginal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TxtQtdOriginal.Visible = False
+        '
+        'TxtSaldoEstoque
+        '
+        Me.TxtSaldoEstoque.BackColor = System.Drawing.Color.White
+        Me.TxtSaldoEstoque.Enabled = False
+        Me.TxtSaldoEstoque.Location = New System.Drawing.Point(442, 64)
+        Me.TxtSaldoEstoque.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtSaldoEstoque.Name = "TxtSaldoEstoque"
+        Me.TxtSaldoEstoque.Size = New System.Drawing.Size(32, 20)
+        Me.TxtSaldoEstoque.TabIndex = 172
+        Me.TxtSaldoEstoque.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'FrmAddItemVenda
         '
@@ -384,4 +397,5 @@ Partial Class FrmAddItemVenda
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents TxtQtdOriginal As TextBox
     Friend WithEvents BtnPesqProduto As Button
+    Friend WithEvents TxtSaldoEstoque As TextBox
 End Class

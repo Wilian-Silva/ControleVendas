@@ -53,17 +53,20 @@ Partial Class FrmVendaProdutos
         Me.BtnEliminar_duplicata = New System.Windows.Forms.Button()
         Me.BtnPesqProduto = New System.Windows.Forms.Button()
         Me.BtnPesqCliente = New System.Windows.Forms.Button()
+        Me.BtnNova_venda = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.TxtTotalVenda = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.DataGrid = New System.Windows.Forms.DataGridView()
         Me.TabPageDuplicatas = New System.Windows.Forms.TabPage()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TxtTotalDuplicatas = New System.Windows.Forms.TextBox()
         Me.DataGridDuplicatas = New System.Windows.Forms.DataGridView()
         Me.LblSaldo = New System.Windows.Forms.Label()
-        Me.TxtTotalVenda = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TxtValorUnit = New System.Windows.Forms.TextBox()
         Me.TxtQuantidade = New System.Windows.Forms.TextBox()
@@ -83,20 +86,18 @@ Partial Class FrmVendaProdutos
         Me.TxtItem = New System.Windows.Forms.TextBox()
         Me.TxtCodCliente = New System.Windows.Forms.TextBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.BtnNova_venda = New System.Windows.Forms.Button()
+        Me.TxtSaldoEstoque = New System.Windows.Forms.TextBox()
         CType(Me.PedidosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Controle_vendasDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
+        Me.GroupBox4.SuspendLayout()
         CType(Me.DataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPageDuplicatas.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridDuplicatas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
-        Me.GroupBox4.SuspendLayout()
         Me.SuspendLayout()
         '
         'PedidosBindingSource
@@ -412,9 +413,30 @@ Partial Class FrmVendaProdutos
         Me.ToolTip.SetToolTip(Me.BtnPesqCliente, "Consultar Fornecedor")
         Me.BtnPesqCliente.UseVisualStyleBackColor = True
         '
+        'BtnNova_venda
+        '
+        Me.BtnNova_venda.AccessibleDescription = ""
+        Me.BtnNova_venda.AccessibleName = "Adicionar"
+        Me.BtnNova_venda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnNova_venda.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnNova_venda.FlatAppearance.BorderSize = 0
+        Me.BtnNova_venda.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BtnNova_venda.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnNova_venda.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnNova_venda.ForeColor = System.Drawing.Color.Transparent
+        Me.BtnNova_venda.Image = CType(resources.GetObject("BtnNova_venda.Image"), System.Drawing.Image)
+        Me.BtnNova_venda.Location = New System.Drawing.Point(434, 10)
+        Me.BtnNova_venda.Name = "BtnNova_venda"
+        Me.BtnNova_venda.Size = New System.Drawing.Size(35, 35)
+        Me.BtnNova_venda.TabIndex = 170
+        Me.BtnNova_venda.TabStop = False
+        Me.ToolTip.SetToolTip(Me.BtnNova_venda, "Adicionar nova venda")
+        Me.BtnNova_venda.UseVisualStyleBackColor = False
+        '
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox1.Controls.Add(Me.TxtSaldoEstoque)
         Me.GroupBox1.Controls.Add(Me.BtnNova_venda)
         Me.GroupBox1.Controls.Add(Me.BtnCacelar)
         Me.GroupBox1.Controls.Add(Me.BtnCarregar)
@@ -452,6 +474,43 @@ Partial Class FrmVendaProdutos
         Me.TabPage1.Size = New System.Drawing.Size(675, 259)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Itens"
+        '
+        'GroupBox4
+        '
+        Me.GroupBox4.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox4.Controls.Add(Me.TxtTotalVenda)
+        Me.GroupBox4.Controls.Add(Me.Label2)
+        Me.GroupBox4.Controls.Add(Me.BtnOk)
+        Me.GroupBox4.Controls.Add(Me.BtnIncluirItem_venda)
+        Me.GroupBox4.Controls.Add(Me.BtnEditar_venda)
+        Me.GroupBox4.Controls.Add(Me.BtnExcluirItem_venda)
+        Me.GroupBox4.Location = New System.Drawing.Point(9, 200)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(660, 50)
+        Me.GroupBox4.TabIndex = 179
+        Me.GroupBox4.TabStop = False
+        '
+        'TxtTotalVenda
+        '
+        Me.TxtTotalVenda.BackColor = System.Drawing.Color.White
+        Me.TxtTotalVenda.Enabled = False
+        Me.TxtTotalVenda.Location = New System.Drawing.Point(578, 19)
+        Me.TxtTotalVenda.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtTotalVenda.Name = "TxtTotalVenda"
+        Me.TxtTotalVenda.Size = New System.Drawing.Size(74, 20)
+        Me.TxtTotalVenda.TabIndex = 178
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(508, 22)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(68, 13)
+        Me.Label2.TabIndex = 179
+        Me.Label2.Text = "Total Venda:"
         '
         'DataGrid
         '
@@ -502,6 +561,21 @@ Partial Class FrmVendaProdutos
         Me.TabPageDuplicatas.Size = New System.Drawing.Size(675, 259)
         Me.TabPageDuplicatas.TabIndex = 1
         Me.TabPageDuplicatas.Text = "Duplicatas"
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox2.Controls.Add(Me.Label6)
+        Me.GroupBox2.Controls.Add(Me.BtnAtualizar_duplicata)
+        Me.GroupBox2.Controls.Add(Me.TxtTotalDuplicatas)
+        Me.GroupBox2.Controls.Add(Me.BtnIncluir_duplicata)
+        Me.GroupBox2.Controls.Add(Me.BtnEliminar_duplicata)
+        Me.GroupBox2.Controls.Add(Me.BtnEditar_duplicata)
+        Me.GroupBox2.Location = New System.Drawing.Point(7, 201)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(660, 50)
+        Me.GroupBox2.TabIndex = 178
+        Me.GroupBox2.TabStop = False
         '
         'Label6
         '
@@ -574,28 +648,6 @@ Partial Class FrmVendaProdutos
         Me.LblSaldo.Size = New System.Drawing.Size(383, 15)
         Me.LblSaldo.TabIndex = 177
         Me.LblSaldo.Text = "Valor total das duplicatas diferente do valor total da venda!"
-        '
-        'TxtTotalVenda
-        '
-        Me.TxtTotalVenda.BackColor = System.Drawing.Color.White
-        Me.TxtTotalVenda.Enabled = False
-        Me.TxtTotalVenda.Location = New System.Drawing.Point(578, 19)
-        Me.TxtTotalVenda.Margin = New System.Windows.Forms.Padding(4)
-        Me.TxtTotalVenda.Name = "TxtTotalVenda"
-        Me.TxtTotalVenda.Size = New System.Drawing.Size(74, 20)
-        Me.TxtTotalVenda.TabIndex = 178
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(508, 22)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(68, 13)
-        Me.Label2.TabIndex = 179
-        Me.Label2.Text = "Total Venda:"
         '
         'Label4
         '
@@ -824,55 +876,17 @@ Partial Class FrmVendaProdutos
         Me.GroupBox3.TabIndex = 168
         Me.GroupBox3.TabStop = False
         '
-        'GroupBox2
+        'TxtSaldoEstoque
         '
-        Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox2.Controls.Add(Me.Label6)
-        Me.GroupBox2.Controls.Add(Me.BtnAtualizar_duplicata)
-        Me.GroupBox2.Controls.Add(Me.TxtTotalDuplicatas)
-        Me.GroupBox2.Controls.Add(Me.BtnIncluir_duplicata)
-        Me.GroupBox2.Controls.Add(Me.BtnEliminar_duplicata)
-        Me.GroupBox2.Controls.Add(Me.BtnEditar_duplicata)
-        Me.GroupBox2.Location = New System.Drawing.Point(7, 201)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(660, 50)
-        Me.GroupBox2.TabIndex = 178
-        Me.GroupBox2.TabStop = False
-        '
-        'GroupBox4
-        '
-        Me.GroupBox4.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox4.Controls.Add(Me.TxtTotalVenda)
-        Me.GroupBox4.Controls.Add(Me.Label2)
-        Me.GroupBox4.Controls.Add(Me.BtnOk)
-        Me.GroupBox4.Controls.Add(Me.BtnIncluirItem_venda)
-        Me.GroupBox4.Controls.Add(Me.BtnEditar_venda)
-        Me.GroupBox4.Controls.Add(Me.BtnExcluirItem_venda)
-        Me.GroupBox4.Location = New System.Drawing.Point(9, 200)
-        Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(660, 50)
-        Me.GroupBox4.TabIndex = 179
-        Me.GroupBox4.TabStop = False
-        '
-        'BtnNova_venda
-        '
-        Me.BtnNova_venda.AccessibleDescription = ""
-        Me.BtnNova_venda.AccessibleName = "Adicionar"
-        Me.BtnNova_venda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnNova_venda.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnNova_venda.FlatAppearance.BorderSize = 0
-        Me.BtnNova_venda.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.BtnNova_venda.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnNova_venda.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnNova_venda.ForeColor = System.Drawing.Color.Transparent
-        Me.BtnNova_venda.Image = CType(resources.GetObject("BtnNova_venda.Image"), System.Drawing.Image)
-        Me.BtnNova_venda.Location = New System.Drawing.Point(434, 10)
-        Me.BtnNova_venda.Name = "BtnNova_venda"
-        Me.BtnNova_venda.Size = New System.Drawing.Size(35, 35)
-        Me.BtnNova_venda.TabIndex = 170
-        Me.BtnNova_venda.TabStop = False
-        Me.ToolTip.SetToolTip(Me.BtnNova_venda, "Adicionar nova venda")
-        Me.BtnNova_venda.UseVisualStyleBackColor = False
+        Me.TxtSaldoEstoque.BackColor = System.Drawing.Color.White
+        Me.TxtSaldoEstoque.Enabled = False
+        Me.TxtSaldoEstoque.Location = New System.Drawing.Point(303, 18)
+        Me.TxtSaldoEstoque.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtSaldoEstoque.Name = "TxtSaldoEstoque"
+        Me.TxtSaldoEstoque.Size = New System.Drawing.Size(32, 20)
+        Me.TxtSaldoEstoque.TabIndex = 171
+        Me.TxtSaldoEstoque.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TxtSaldoEstoque.Visible = False
         '
         'FrmVendaProdutos
         '
@@ -893,17 +907,18 @@ Partial Class FrmVendaProdutos
         CType(Me.PedidosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Controle_vendasDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
+        Me.GroupBox4.ResumeLayout(False)
+        Me.GroupBox4.PerformLayout()
         CType(Me.DataGrid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPageDuplicatas.ResumeLayout(False)
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         CType(Me.DataGridDuplicatas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
-        Me.GroupBox4.ResumeLayout(False)
-        Me.GroupBox4.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -965,4 +980,5 @@ Partial Class FrmVendaProdutos
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents BtnNova_venda As Button
+    Friend WithEvents TxtSaldoEstoque As TextBox
 End Class

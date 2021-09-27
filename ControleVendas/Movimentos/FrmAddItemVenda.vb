@@ -34,12 +34,22 @@ Public Class FrmAddItemVenda
             TxtCodProduto.Text = codProduto
             TxtProduto.Text = nomeProduto
             TxtValorUnit.Text = valorUnit
+            TxtSaldoEstoque.Text = saldoEstoque
             pesquisarProduto = ""
+            saldoEstoque = ""
         End If
     End Sub
 
     Private Sub BtnSalvar_Click(sender As Object, e As EventArgs) Handles BtnSalvar.Click
         'Stop
+
+        If TxtQuantidade.Text > TxtSaldoEstoque.Text Then
+
+            MsgBox("Saldo em estoque insuficiente!", MsgBoxStyle.Information, "Saldo estoque")
+
+            Exit Sub
+        End If
+
 
         TxtQuantidade.BackColor = Color.White
         TxtProduto.BackColor = Color.White

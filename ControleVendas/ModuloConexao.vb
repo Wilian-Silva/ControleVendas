@@ -27,7 +27,11 @@ Module ModuloConexao
 
     Public Table1DuplicatasReceber As New DataTable("MyTable")
 
+    Public dgStatus As String
+
     Public parcela As Integer
+
+    Public saldoEstoque As Integer
 
     Public IdDuplicata2 As Integer
     Public utilizarPedido As String
@@ -82,6 +86,7 @@ Module ModuloConexao
 
 
     Public Sub LimparVariaveisGlobais()
+        saldoEstoque = Nothing
         utilizarPedido = ""
         totalPedido = ""
         nomePedido = ""
@@ -103,7 +108,7 @@ Module ModuloConexao
         index = Nothing
         IdPedido = ""
         StatusPedido = ""
-        novavenda = ""
+        novaVenda = ""
         custoUntario = ""
         pesquisarCliente = ""
         pesquisarProduto = ""

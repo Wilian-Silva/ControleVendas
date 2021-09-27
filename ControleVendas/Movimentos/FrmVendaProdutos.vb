@@ -80,6 +80,9 @@ Public Class FrmVendaProdutos
         novaVenda = ""
         editarVenda = ""
         editarDuplicata = ""
+        saldoEstoque = Nothing
+        TxtSaldoEstoque.Text = ""
+        dgStatus = ""
 
     End Sub
 
@@ -312,6 +315,25 @@ Public Class FrmVendaProdutos
     End Sub
     Private Sub BtnSalvar_Click(sender As Object, e As EventArgs) Handles BtnSalvar.Click
 
+        Abrir()
+        'VERIFICAR SE O REGISTRO JÁ EXISTE
+        Dim cmdUSU As MySqlCommand
+        Dim readerUSU As MySqlDataReader
+        Dim sqlUSU As String
+
+        sqlUSU = "SELECT * FROM venda WHERE id_venda = '" & TxtIdRegistro.Text & "' "
+        cmdUSU = New MySqlCommand(sqlUSU, con)
+        readerUSU = cmdUSU.ExecuteReader
+
+        If readerUSU.Read = True Then
+            readerUSU.Close()
+            MsgBox("Registro já está cadastrado!!", MsgBoxStyle.Information, "Venda")
+
+            Exit Sub
+        Else
+            readerUSU.Close()
+        End If
+
         If DataGrid.RowCount < 1 Then
             MsgBox("Adicione registro para salvar!!", MsgBoxStyle.Information, "Salvar")
             Exit Sub
@@ -328,7 +350,7 @@ Public Class FrmVendaProdutos
             End If
         Else
 
-            If MsgBox("Deseja salvar essa venda?", vbYesNo + vbQuestion) = vbYes Then
+            If MsgBox("Deseja salvar essa venda?", vbYesNo + vbQuestion, "Salvar") = vbYes Then
 
                 Salvar_registro_nova_venda()
 
@@ -441,6 +463,56 @@ Public Class FrmVendaProdutos
 
 
     End Sub
+
+    Private Sub AtualizarSaldoItem_Exlusao_venda()
+
+        Try
+            Abrir()
+
+            Dim cmd As MySqlCommand
+            Dim sql As String
+
+            Dim saldoItem As Integer
+            Dim codItem As Integer
+            Dim qtd As Integer
+            Dim saldoEstoque As Integer
+
+
+            For i = 0 To DataGrid.RowCount - 1
+
+                codItem = CInt(DataGrid.Rows(i).Cells(6).Value.ToString)
+                qtd = CInt(DataGrid.Rows(i).Cells(8).Value.ToString)
+
+                Dim cmdp As MySqlCommand
+                Dim sqlp As String
+                Dim ultima As MySqlDataReader
+
+                sqlp = "SELECT saldo_estoque FROM produtos WHERE id= '" & codItem & "'"
+                cmdp = New MySqlCommand(sqlp, con)
+                ultima = cmdp.ExecuteReader()
+
+                If (ultima.Read()) Then
+                    saldoEstoque = ultima("saldo_estoque")
+                    ultima.Close()
+                Else
+                    ultima.Close()
+                End If
+
+
+                saldoItem = saldoEstoque + qtd
+
+                sql = "UPDATE produtos SET saldo_estoque = '" & saldoItem & "' WHERE id = '" & codItem & "'"
+                cmd = New MySqlCommand(sql, con)
+                cmd.ExecuteNonQuery()
+
+            Next
+
+        Catch ex As Exception
+            MsgBox("Erro ao Salvar!!" + ex.Message)
+        End Try
+
+
+    End Sub
     Sub SalvarNovaVenda()
         'Stop
         Try
@@ -528,37 +600,21 @@ Public Class FrmVendaProdutos
 
             If MsgBox("Deseja excluir a venda do cliente " + TxtCliente.Text + "?", vbYesNo, "Venda") = vbYes Then
 
+                Excluir_Saida_Estoque()
 
-                Try
-                    Abrir()
-                    'PROGRAMANDO EXCLUSÃO DE REGISTRO NO BANCO
-                    Dim cmd As MySqlCommand
-                    Dim sql As String
-                    Dim codvenda As String
-                    codvenda = TxtIdRegistro.Text
+                Excluir_venda()
 
-                    sql = "DELETE FROM vendas where pedido = '" & codvenda & "' "
-                    cmd = New MySqlCommand(sql, con)
-                    cmd.ExecuteNonQuery()
+                Excluir_venda_cabecalho()
 
+                Excluir_duplicata_receber()
 
-                    Dim cmd1 As MySqlCommand
-                    Dim sql1 As String
-                    sql1 = "DELETE FROM venda_cabecalho where id_venda = '" & codvenda & "' "
-                    cmd1 = New MySqlCommand(sql1, con)
-                    cmd1.ExecuteNonQuery()
+                AtualizarSaldoItem_Exlusao_venda()
 
-                    Atualizar_Saldo_Estoque()
+                MsgBox("Registro escluído com Sucesso!!", MsgBoxStyle.Information, "Exclusão")
 
-                    MsgBox("Venda excluída com sucesso!!", MsgBoxStyle.Information, "Excluir")
+                LimparCampos()
 
-                    ListarUltimaVenda()
-
-                Catch ex As Exception
-                    MsgBox("Erro ao excluir!!" + ex.Message)
-                End Try
-
-
+                ListarUltimaVenda()
             End If
         Else
 
@@ -647,13 +703,42 @@ Public Class FrmVendaProdutos
 
     End Sub
     Private Sub BtndAdicionarItem_Click(sender As Object, e As EventArgs) Handles BtnOk.Click
-        ' Stop
+        'Stop
+        Dim total As Integer
+        If dgStatus = "True" Then
+
+            For i = 0 To DataGrid.Rows.Count - 1
+
+                If DataGrid.Rows(i).Cells(6).Value = TxtCodProduto.Text Then
+
+                    total += +DataGrid.Rows(i).Cells(8).Value
+
+                End If
+
+            Next
+
+        End If
+
+
         If editarVenda = "Editar" Then Exit Sub
         If novaVenda = "True" Then
 
             Limpar_cores()
 
             If TxtCodCliente.Text <> "" And TxtCodProduto.Text <> "" And TxtQuantidade.Text <> "" And TxtValorUnit.Text <> "" Then
+
+
+                Dim totalUsado As Integer
+                totalUsado = total + TxtQuantidade.Text
+
+                If TxtSaldoEstoque.Text <= 0 Or totalUsado > TxtSaldoEstoque.Text Then
+
+                    MsgBox("Saldo em estoque insuficiente!", MsgBoxStyle.Information, "Saldo estoque")
+
+                    Exit Sub
+                End If
+
+
 
                 If DataGrid.Columns.Count < 1 Then
 
@@ -719,6 +804,7 @@ Public Class FrmVendaProdutos
                     TotalDatagrid()
                     TotalNfe_TotalDuplicatas()
 
+                    dgStatus = "True"
                 Else
 
                     Table1.Rows.Add(TxtItem.Text, TxtIdRegistro.Text, TxtItem.Text, DataVenda.Value.ToShortDateString, TxtCodCliente.Text, TxtCliente.Text, TxtCodProduto.Text, TxtProduto.Text, TxtQuantidade.Text, TxtValorUnit.Text, TxtValorTotal.Text)
@@ -809,7 +895,7 @@ Public Class FrmVendaProdutos
     Private Sub BtnPesqPedido_Click(sender As Object, e As EventArgs) Handles BtnPesqPedido.Click
 
         pedidoPesquisar = "True"
-        Dim form = New FrmPedidoCabecalho
+        Dim form = New FrmVendaCabecalho
         form.ShowDialog()
 
     End Sub
@@ -893,7 +979,9 @@ Public Class FrmVendaProdutos
             TxtCodProduto.Text = codProduto
             TxtProduto.Text = nomeProduto
             TxtValorUnit.Text = valorUnit
+            TxtSaldoEstoque.Text = saldoEstoque
             pesquisarProduto = ""
+            saldoEstoque = Nothing
         End If
 
         If novaVenda = "True" Then
@@ -1062,6 +1150,22 @@ Public Class FrmVendaProdutos
             Dim cmd1 As MySqlCommand
             Dim sql1 As String
             sql1 = "UPDATE venda_cabecalho SET valor_total= '" & total.Replace(",", ".") & "', saldo_venda = '" & total.Replace(",", ".") & "' WHERE id_venda =  '" & TxtIdRegistro.Text & "' "
+            cmd1 = New MySqlCommand(sql1, con)
+            cmd1.ExecuteNonQuery()
+
+        Catch ex As Exception
+            MsgBox("Erro ao editar!!" + ex.Message)
+        End Try
+
+    End Sub
+    Sub Excluir_venda_cabecalho()
+        Try
+
+            'CONSULTAR TOTAL NA TABELA VENDA
+            Abrir()
+            Dim cmd1 As MySqlCommand
+            Dim sql1 As String
+            sql1 = "DELETE FROM venda_cabecalho WHERE id_venda =  '" & TxtIdRegistro.Text & "' "
             cmd1 = New MySqlCommand(sql1, con)
             cmd1.ExecuteNonQuery()
 
@@ -1366,6 +1470,20 @@ Line1:
         End If
 
 
+    End Sub
+
+    Sub Excluir_duplicata_receber()
+        Try
+            Abrir()
+            Dim cmd As MySqlCommand
+            Dim sql1 As String
+            sql1 = "DELETE FROM duplicatas_receber where id_venda = '" & TxtIdRegistro.Text & "' "
+            cmd = New MySqlCommand(sql1, con)
+            cmd.ExecuteNonQuery()
+
+        Catch ex As Exception
+            MsgBox("Erro ao Salvar!! " + ex.Message)
+        End Try
     End Sub
 
     Sub DeletarParcelaBanco()
