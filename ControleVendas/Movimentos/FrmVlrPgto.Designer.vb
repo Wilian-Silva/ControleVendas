@@ -68,6 +68,8 @@ Partial Class FrmVlrPgto
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.TxtStatusTitulo = New System.Windows.Forms.TextBox()
+        Me.CbPortador = New System.Windows.Forms.ComboBox()
+        Me.Label19 = New System.Windows.Forms.Label()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -506,7 +508,7 @@ Partial Class FrmVlrPgto
         'TxtRegPagamento
         '
         Me.TxtRegPagamento.Enabled = False
-        Me.TxtRegPagamento.Location = New System.Drawing.Point(120, 64)
+        Me.TxtRegPagamento.Location = New System.Drawing.Point(120, 53)
         Me.TxtRegPagamento.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtRegPagamento.Name = "TxtRegPagamento"
         Me.TxtRegPagamento.Size = New System.Drawing.Size(44, 20)
@@ -518,7 +520,7 @@ Partial Class FrmVlrPgto
         Me.Label18.AutoSize = True
         Me.Label18.BackColor = System.Drawing.Color.Transparent
         Me.Label18.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.Location = New System.Drawing.Point(2, 65)
+        Me.Label18.Location = New System.Drawing.Point(2, 54)
         Me.Label18.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(117, 16)
@@ -530,7 +532,7 @@ Partial Class FrmVlrPgto
         Me.Label17.AutoSize = True
         Me.Label17.BackColor = System.Drawing.Color.Transparent
         Me.Label17.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(26, 32)
+        Me.Label17.Location = New System.Drawing.Point(26, 21)
         Me.Label17.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(92, 16)
@@ -540,7 +542,7 @@ Partial Class FrmVlrPgto
         'TxtRefEntrada
         '
         Me.TxtRefEntrada.Enabled = False
-        Me.TxtRefEntrada.Location = New System.Drawing.Point(121, 31)
+        Me.TxtRefEntrada.Location = New System.Drawing.Point(121, 20)
         Me.TxtRefEntrada.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtRefEntrada.Name = "TxtRefEntrada"
         Me.TxtRefEntrada.Size = New System.Drawing.Size(43, 20)
@@ -550,6 +552,8 @@ Partial Class FrmVlrPgto
         'GroupBox4
         '
         Me.GroupBox4.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.GroupBox4.Controls.Add(Me.CbPortador)
+        Me.GroupBox4.Controls.Add(Me.Label19)
         Me.GroupBox4.Controls.Add(Me.Label16)
         Me.GroupBox4.Controls.Add(Me.TxtStatusTitulo)
         Me.GroupBox4.Controls.Add(Me.TxtRefEntrada)
@@ -559,7 +563,7 @@ Partial Class FrmVlrPgto
         Me.GroupBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.GroupBox4.Location = New System.Drawing.Point(252, 180)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(220, 147)
+        Me.GroupBox4.Size = New System.Drawing.Size(220, 158)
         Me.GroupBox4.TabIndex = 176
         Me.GroupBox4.TabStop = False
         '
@@ -568,7 +572,7 @@ Partial Class FrmVlrPgto
         Me.Label16.AutoSize = True
         Me.Label16.BackColor = System.Drawing.Color.Transparent
         Me.Label16.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(53, 104)
+        Me.Label16.Location = New System.Drawing.Point(53, 88)
         Me.Label16.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(62, 16)
@@ -578,11 +582,31 @@ Partial Class FrmVlrPgto
         'TxtStatusTitulo
         '
         Me.TxtStatusTitulo.Enabled = False
-        Me.TxtStatusTitulo.Location = New System.Drawing.Point(120, 100)
+        Me.TxtStatusTitulo.Location = New System.Drawing.Point(119, 87)
         Me.TxtStatusTitulo.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtStatusTitulo.Name = "TxtStatusTitulo"
         Me.TxtStatusTitulo.Size = New System.Drawing.Size(82, 20)
         Me.TxtStatusTitulo.TabIndex = 176
+        '
+        'CbPortador
+        '
+        Me.CbPortador.FormattingEnabled = True
+        Me.CbPortador.Location = New System.Drawing.Point(118, 121)
+        Me.CbPortador.Name = "CbPortador"
+        Me.CbPortador.Size = New System.Drawing.Size(86, 21)
+        Me.CbPortador.TabIndex = 182
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.BackColor = System.Drawing.Color.Transparent
+        Me.Label19.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.Location = New System.Drawing.Point(54, 122)
+        Me.Label19.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(62, 16)
+        Me.Label19.TabIndex = 181
+        Me.Label19.Text = "Portador:"
         '
         'FrmVlrPgto
         '
@@ -655,4 +679,6 @@ Partial Class FrmVlrPgto
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents Label16 As Label
     Friend WithEvents TxtStatusTitulo As TextBox
+    Friend WithEvents CbPortador As ComboBox
+    Friend WithEvents Label19 As Label
 End Class

@@ -73,6 +73,7 @@ Public Class FrmReceberTitulo
                 DataEmissao.Text = reader("data_venda")
                 DataVencimento.Text = reader("data_vencimento")
                 TxtObeservacao.Text = reader("observacao")
+                TxtPortador.Text = reader("portador")
 
                 idVenda = reader("id_venda")
                 idDuplicata = reader("id")

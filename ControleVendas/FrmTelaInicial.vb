@@ -408,9 +408,8 @@ Public Class FrmTelaInicial
         Dim form = New FrmFornecedor
         form.ShowDialog()
     End Sub
-
-    Private Sub CboxMvto1_06_Click(sender As Object, e As EventArgs) Handles CboxMvto1_06.Click
-
-
+    Private Sub PortadorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CboxCad1_05.Click
+        Dim form = New FrmPortador
+        form.ShowDialog()
     End Sub
 End Class

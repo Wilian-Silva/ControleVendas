@@ -139,7 +139,7 @@ Public Class FrmNotasEntrada
     Private Sub BtnExcluir_Click(sender As Object, e As EventArgs) Handles BtnExcluir.Click
 
         If TxtId.Text <> "" Then
-
+            Abrir()
             'PESQUISAR SE A NOTA JA NÃO FOI PAGA
             Dim cmd1 As MySqlCommand
             Dim reader As MySqlDataReader
@@ -160,7 +160,7 @@ Public Class FrmNotasEntrada
 
 
             'PROGRAMANDO EXCLUSÃO DE REGISTRO NO BANCO
-            If MsgBox("Deseja excluir registro?", vbYesNo, "Exclusão") = vbYes Then
+            If MsgBox("Deseja excluir todos os registros da nota " + TxtNota.Text + " do fornecedor " + TxtFornecedor.Text + "?", vbYesNo, "Exclusão") = vbYes Then
 
                 Try
                     Abrir()

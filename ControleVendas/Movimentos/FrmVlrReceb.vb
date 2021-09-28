@@ -46,8 +46,14 @@ Public Class FrmVlrReceb
     End Sub
 
     Private Sub BtnOk_Click(sender As Object, e As EventArgs) Handles BtnSalvar.Click
+        If CbPortador.Text = "" Then
+            MsgBox("Portador inválido!!", MsgBoxStyle.Information, "Portador")
+            Exit Sub
+        End If
 
         If MsgBox("Deseja salvar a baixa do título " & TxtNotaFiscal.Text & " Parcela " & TxtParcela.Text & "?", vbYesNo, "Salvar Baixa") = vbYes Then
+
+
 
             Try
 
@@ -63,12 +69,12 @@ Public Class FrmVlrReceb
                 data3 = DataPgto.Value.ToString("yyyy-MM-dd")
 
                 sql = "INSERT INTO mvto_recebimentos (id_duplicata, cod_cliente, cliente, id_venda, valor_total, parcela, " _
-                    & "valor_parcela, valor_pago, valor_saldo, juros_multa, descontos, total_pago, data_emissao," _
-                    & "data_vencimento, data_pagamento, status_nota) VALUES ( '" & TxtIdDuplicata.Text & "','" & TxtCodCliente.Text & "', " _
-                    & " '" & TxtNomeCliente.Text & "','" & TxtNotaFiscal.Text & "','" & TxtValorOriginal.Text.Replace(",", ".") & "', " _
-                    & "  '" & TxtParcela.Text & "','" & TxtValorParcela.Text.Replace(",", ".") & "', '" & TxtValorPago.Text.Replace(",", ".") & "', " _
-                    & " '" & TxtSaldoTitulo.Text.Replace(",", ".") & "','" & TxtMultasJuros.Text.Replace(",", ".") & "', '" & TxtDescontos.Text.Replace(",", ".") & "', " _
-                    & " '" & TxtTotalPago.Text.Replace(",", ".") & "', '" & data1 & "', '" & data2 & "',  '" & data3 & "', '" & TxtStatusTitulo.Text & "') "
+                & "valor_parcela, valor_pago, valor_saldo, juros_multa, descontos, total_pago, data_emissao," _
+                & "data_vencimento, data_pagamento, status_nota, portador) VALUES ( '" & TxtIdDuplicata.Text & "','" & TxtCodCliente.Text & "', " _
+                & " '" & TxtNomeCliente.Text & "','" & TxtNotaFiscal.Text & "','" & TxtValorOriginal.Text.Replace(",", ".") & "', " _
+                & "  '" & TxtParcela.Text & "','" & TxtValorParcela.Text.Replace(",", ".") & "', '" & TxtValorPago.Text.Replace(",", ".") & "', " _
+                & " '" & TxtSaldoTitulo.Text.Replace(",", ".") & "','" & TxtMultasJuros.Text.Replace(",", ".") & "', '" & TxtDescontos.Text.Replace(",", ".") & "', " _
+                & " '" & TxtTotalPago.Text.Replace(",", ".") & "', '" & data1 & "', '" & data2 & "',  '" & data3 & "', '" & TxtStatusTitulo.Text & "', '" & CbPortador.Text & "') "
 
 
                 cmd = New MySqlCommand(sql, con)

@@ -150,6 +150,12 @@
     <Compile Include="Cadastros\FrmPagamentoEfetuado.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Cadastros\FrmPortador.Designer.vb">
+      <DependentUpon>FrmPortador.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastros\FrmPortador.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Cadastros\FrmProdutos.Designer.vb">
       <DependentUpon>FrmProdutos.vb</DependentUpon>
     </Compile>
@@ -406,6 +412,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Cadastros\FrmPagamentoEfetuado.resx">
       <DependentUpon>FrmPagamentoEfetuado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastros\FrmPortador.resx">
+      <DependentUpon>FrmPortador.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cadastros\FrmProdutos.resx">
       <DependentUpon>FrmProdutos.vb</DependentUpon>

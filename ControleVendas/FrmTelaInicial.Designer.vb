@@ -36,6 +36,7 @@ Partial Class FrmTelaInicial
         Me.CboxCad1_02 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CboxCad1_03 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CboxCad1_04 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CboxCad1_05 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConsultasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CboxCons1_01 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CboxCons1_02 = New System.Windows.Forms.ToolStripMenuItem()
@@ -122,7 +123,7 @@ Partial Class FrmTelaInicial
         '
         'CadastrosToolStripMenuItem
         '
-        Me.CadastrosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CboxCad1_01, Me.CboxCad1_02, Me.CboxCad1_03, Me.CboxCad1_04})
+        Me.CadastrosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CboxCad1_01, Me.CboxCad1_02, Me.CboxCad1_03, Me.CboxCad1_04, Me.CboxCad1_05})
         Me.CadastrosToolStripMenuItem.Image = CType(resources.GetObject("CadastrosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.CadastrosToolStripMenuItem.Name = "CadastrosToolStripMenuItem"
         Me.CadastrosToolStripMenuItem.Size = New System.Drawing.Size(87, 20)
@@ -131,26 +132,32 @@ Partial Class FrmTelaInicial
         'CboxCad1_01
         '
         Me.CboxCad1_01.Name = "CboxCad1_01"
-        Me.CboxCad1_01.Size = New System.Drawing.Size(145, 22)
+        Me.CboxCad1_01.Size = New System.Drawing.Size(180, 22)
         Me.CboxCad1_01.Text = "Produtos"
         '
         'CboxCad1_02
         '
         Me.CboxCad1_02.Name = "CboxCad1_02"
-        Me.CboxCad1_02.Size = New System.Drawing.Size(145, 22)
+        Me.CboxCad1_02.Size = New System.Drawing.Size(180, 22)
         Me.CboxCad1_02.Text = "Clientes"
         '
         'CboxCad1_03
         '
         Me.CboxCad1_03.Name = "CboxCad1_03"
-        Me.CboxCad1_03.Size = New System.Drawing.Size(145, 22)
+        Me.CboxCad1_03.Size = New System.Drawing.Size(180, 22)
         Me.CboxCad1_03.Text = "Fornecedores"
         '
         'CboxCad1_04
         '
         Me.CboxCad1_04.Name = "CboxCad1_04"
-        Me.CboxCad1_04.Size = New System.Drawing.Size(145, 22)
+        Me.CboxCad1_04.Size = New System.Drawing.Size(180, 22)
         Me.CboxCad1_04.Text = "Usuários"
+        '
+        'CboxCad1_05
+        '
+        Me.CboxCad1_05.Name = "CboxCad1_05"
+        Me.CboxCad1_05.Size = New System.Drawing.Size(180, 22)
+        Me.CboxCad1_05.Text = "Portador"
         '
         'ConsultasToolStripMenuItem
         '
@@ -163,37 +170,37 @@ Partial Class FrmTelaInicial
         'CboxCons1_01
         '
         Me.CboxCons1_01.Name = "CboxCons1_01"
-        Me.CboxCons1_01.Size = New System.Drawing.Size(180, 22)
+        Me.CboxCons1_01.Size = New System.Drawing.Size(174, 22)
         Me.CboxCons1_01.Text = "Notas de Entrada"
         '
         'CboxCons1_02
         '
         Me.CboxCons1_02.Name = "CboxCons1_02"
-        Me.CboxCons1_02.Size = New System.Drawing.Size(180, 22)
+        Me.CboxCons1_02.Size = New System.Drawing.Size(174, 22)
         Me.CboxCons1_02.Text = "Pagamentos"
         '
         'CboxCons1_03
         '
         Me.CboxCons1_03.Name = "CboxCons1_03"
-        Me.CboxCons1_03.Size = New System.Drawing.Size(180, 22)
+        Me.CboxCons1_03.Size = New System.Drawing.Size(174, 22)
         Me.CboxCons1_03.Text = "Recebimentos"
         '
         'CboxCons1_04
         '
         Me.CboxCons1_04.Name = "CboxCons1_04"
-        Me.CboxCons1_04.Size = New System.Drawing.Size(180, 22)
+        Me.CboxCons1_04.Size = New System.Drawing.Size(174, 22)
         Me.CboxCons1_04.Text = "Pedido de Compra"
         '
         'CboxCons1_05
         '
         Me.CboxCons1_05.Name = "CboxCons1_05"
-        Me.CboxCons1_05.Size = New System.Drawing.Size(180, 22)
+        Me.CboxCons1_05.Size = New System.Drawing.Size(174, 22)
         Me.CboxCons1_05.Text = "Vendas Registradas"
         '
         'CboxCons1_06
         '
         Me.CboxCons1_06.Name = "CboxCons1_06"
-        Me.CboxCons1_06.Size = New System.Drawing.Size(180, 22)
+        Me.CboxCons1_06.Size = New System.Drawing.Size(174, 22)
         Me.CboxCons1_06.Text = "Saldo Estoque"
         '
         'MovimentaçõesToolStripMenuItem
@@ -980,4 +987,5 @@ Partial Class FrmTelaInicial
     Friend WithEvents CboxExcluir1_06 As ToolStripMenuItem
     Friend WithEvents CboxRel1_08 As ToolStripMenuItem
     Friend WithEvents CboxCad1_03 As ToolStripMenuItem
+    Friend WithEvents CboxCad1_05 As ToolStripMenuItem
 End Class

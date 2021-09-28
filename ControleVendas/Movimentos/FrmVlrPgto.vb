@@ -46,6 +46,12 @@ Public Class FrmVlrPgto
 
     Private Sub BtnOk_Click(sender As Object, e As EventArgs) Handles BtnOk.Click
 
+        If CbPortador.Text = "" Then
+            MsgBox("Portador inválido!!", MsgBoxStyle.Information, "Portador")
+            Exit Sub
+        End If
+
+
         If MsgBox("Deseja salvar a baixa do título " & TxtNotaFiscal.Text & " Parcela " & TxtParcela.Text & "?", vbYesNo, "Salvar Baixa") = vbYes Then
 
             Try
@@ -63,11 +69,11 @@ Public Class FrmVlrPgto
 
                 sql = "INSERT INTO mvto_pagamentos (id_duplicata, cod_fornecedor, fornecedor, titulo, total_titulo, cod_pedido, " _
                     & "descricao_pedido, parcela, valor_parcela, valor_pago, valor_saldo, juros_multa, descontos, total_pago, data_emissao," _
-                    & "data_vencimento, data_pagamento, status_nota, id_entrada) VALUES ( '" & TxtIdRegistro.Text & "', '" & TxtCodFornecedor.Text & "', " _
+                    & "data_vencimento, data_pagamento, status_nota, id_entrada, portador) VALUES ( '" & TxtIdRegistro.Text & "', '" & TxtCodFornecedor.Text & "', " _
                     & " '" & TxtNomeFornecedor.Text & "','" & TxtNotaFiscal.Text & "','" & TxtValorOriginal.Text.Replace(",", ".") & "', '" & TxtCodPedido.Text & "', " _
                     & " '" & TxtDescPed.Text & "', '" & TxtParcela.Text & "','" & TxtValorParcela.Text.Replace(",", ".") & "', '" & TxtValorPago.Text.Replace(",", ".") & "', " _
                     & " '" & TxtSaldoTitulo.Text.Replace(",", ".") & "','" & TxtMultasJuros.Text.Replace(",", ".") & "', '" & TxtDescontos.Text.Replace(",", ".") & "', " _
-                    & " '" & TxtTotalPago.Text.Replace(",", ".") & "', '" & data1 & "', '" & data2 & "',  '" & data3 & "', '" & TxtStatusTitulo.Text & "', '" & TxtRefEntrada.Text & "') "
+                    & " '" & TxtTotalPago.Text.Replace(",", ".") & "', '" & data1 & "', '" & data2 & "',  '" & data3 & "', '" & TxtStatusTitulo.Text & "', '" & TxtRefEntrada.Text & "', '" & CbPortador.Text & "') "
 
 
                 'sql = "INSERT INTO mvto_pagamentos (id_duplicata, cod_fornecedor, fornecedor, titulo, total_titulo, cod_pedido, descricao_pedido, parcela, valor_parcela, valor_pago, valor_saldo, juros_multa, descontos, total_pago, data_emissao, data_vencimento, data_pagamento, saldo_nota, status_nota, id_entrada) VALUES ( '" & TxtIdRegistro.Text & "', '" & TxtCodFornecedor.Text & "',  '" & TxtNomeFornecedor.Text & "','" & TxtNotaFiscal.Text & "','" & TxtValorOriginal.Text.Replace(",", ".") & "', '" & TxtCodPedido.Text & "', '" & TxtDescPed.Text & "', '" & TxtParcela.Text & "','" & TxtValorParcela.Text.Replace(",", ".") & "', '" & TxtValorPago.Text.Replace(",", ".") & "', '" & TxtSaldoAbertoParcela.Text.Replace(",", ".") & "','" & TxtMultasJuros.Text.Replace(",", ".") & "', '" & TxtDescontos.Text.Replace(",", ".") & "', '" & TxtTotalPago.Text.Replace(",", ".") & "', '" & data1 & "', '" & data2 & "',  '" & data3 & "', '" & TxtStatusTitulo.Text & "', '" & TxtRefEntrada.Text & "') "

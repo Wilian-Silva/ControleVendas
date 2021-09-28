@@ -32,6 +32,7 @@ Partial Class FrmNivel2
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GboxNivel1 = New System.Windows.Forms.GroupBox()
+        Me.CboxMvto1_06 = New System.Windows.Forms.CheckBox()
         Me.CboxConfig_01 = New System.Windows.Forms.CheckBox()
         Me.CboxAllRel = New System.Windows.Forms.CheckBox()
         Me.CboxAllExcluir = New System.Windows.Forms.CheckBox()
@@ -68,7 +69,7 @@ Partial Class FrmNivel2
         Me.CboxCons1_01 = New System.Windows.Forms.CheckBox()
         Me.CboxCad1_01 = New System.Windows.Forms.CheckBox()
         Me.CboxCad1_02 = New System.Windows.Forms.CheckBox()
-        Me.CboxMvto1_06 = New System.Windows.Forms.CheckBox()
+        Me.CboxCad1_05 = New System.Windows.Forms.CheckBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GboxNivel1.SuspendLayout()
@@ -164,6 +165,7 @@ Partial Class FrmNivel2
         'GboxNivel1
         '
         Me.GboxNivel1.BackColor = System.Drawing.Color.Transparent
+        Me.GboxNivel1.Controls.Add(Me.CboxCad1_05)
         Me.GboxNivel1.Controls.Add(Me.CboxMvto1_06)
         Me.GboxNivel1.Controls.Add(Me.CboxConfig_01)
         Me.GboxNivel1.Controls.Add(Me.CboxAllRel)
@@ -207,6 +209,17 @@ Partial Class FrmNivel2
         Me.GboxNivel1.Size = New System.Drawing.Size(875, 227)
         Me.GboxNivel1.TabIndex = 1
         Me.GboxNivel1.TabStop = False
+        '
+        'CboxMvto1_06
+        '
+        Me.CboxMvto1_06.AutoSize = True
+        Me.CboxMvto1_06.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CboxMvto1_06.Location = New System.Drawing.Point(292, 132)
+        Me.CboxMvto1_06.Name = "CboxMvto1_06"
+        Me.CboxMvto1_06.Size = New System.Drawing.Size(132, 17)
+        Me.CboxMvto1_06.TabIndex = 27
+        Me.CboxMvto1_06.Text = "Criar Pedido de Venda"
+        Me.CboxMvto1_06.UseVisualStyleBackColor = True
         '
         'CboxConfig_01
         '
@@ -300,7 +313,7 @@ Partial Class FrmNivel2
         '
         Me.CboxAllCadastros.AutoSize = True
         Me.CboxAllCadastros.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CboxAllCadastros.Location = New System.Drawing.Point(6, 109)
+        Me.CboxAllCadastros.Location = New System.Drawing.Point(6, 132)
         Me.CboxAllCadastros.Name = "CboxAllCadastros"
         Me.CboxAllCadastros.Size = New System.Drawing.Size(92, 17)
         Me.CboxAllCadastros.TabIndex = 4
@@ -604,16 +617,16 @@ Partial Class FrmNivel2
         Me.CboxCad1_02.Text = "Cadastro de Clientes"
         Me.CboxCad1_02.UseVisualStyleBackColor = True
         '
-        'CboxMvto1_06
+        'CboxCad1_05
         '
-        Me.CboxMvto1_06.AutoSize = True
-        Me.CboxMvto1_06.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CboxMvto1_06.Location = New System.Drawing.Point(292, 132)
-        Me.CboxMvto1_06.Name = "CboxMvto1_06"
-        Me.CboxMvto1_06.Size = New System.Drawing.Size(132, 17)
-        Me.CboxMvto1_06.TabIndex = 27
-        Me.CboxMvto1_06.Text = "Criar Pedido de Venda"
-        Me.CboxMvto1_06.UseVisualStyleBackColor = True
+        Me.CboxCad1_05.AutoSize = True
+        Me.CboxCad1_05.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CboxCad1_05.Location = New System.Drawing.Point(6, 109)
+        Me.CboxCad1_05.Name = "CboxCad1_05"
+        Me.CboxCad1_05.Size = New System.Drawing.Size(111, 17)
+        Me.CboxCad1_05.TabIndex = 28
+        Me.CboxCad1_05.Text = "Cadastro Portador"
+        Me.CboxCad1_05.UseVisualStyleBackColor = True
         '
         'FrmNivel2
         '
@@ -683,4 +696,5 @@ Partial Class FrmNivel2
     Friend WithEvents CboxCad1_01 As CheckBox
     Friend WithEvents CboxCad1_02 As CheckBox
     Friend WithEvents CboxMvto1_06 As CheckBox
+    Friend WithEvents CboxCad1_05 As CheckBox
 End Class
