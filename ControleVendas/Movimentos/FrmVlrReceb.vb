@@ -87,6 +87,8 @@ Public Class FrmVlrReceb
                 cmd1 = New MySqlCommand(sql1, con)
                 cmd1.ExecuteNonQuery()
 
+                Salvar_mvto_portador()
+
                 MsgBox("Registro salvo com Sucesso!!", MsgBoxStyle.Information, "Salvar Pagamento")
 
                 Me.Close()
@@ -99,7 +101,28 @@ Public Class FrmVlrReceb
 
         End If
     End Sub
+    Sub Salvar_mvto_portador()
 
+        Try
+            Abrir()
+
+            'ATUALIZAR MVTO PORTADOR
+            Dim cmd1 As MySqlCommand
+            Dim sql1 As String
+            Dim tipoMov As String
+            Dim data3 As String
+
+            data3 = DataPgto.Value.ToString("yyyy-MM-dd")
+            tipoMov = "Entrada"
+
+            sql1 = "INSERT INTO mvto_portador (id_portador, nome, tipo, data, valor, id_duplicata) VALUES ( '" & CbPortador.SelectedValue & "','" & CbPortador.Text & "','" & tipoMov & "', '" & data3 & "','" & TxtTotalPago.Text.Replace(",", ".") & "','" & TxtIdDuplicata.Text & "' )"
+            cmd1 = New MySqlCommand(sql1, con)
+            cmd1.ExecuteNonQuery()
+
+        Catch ex As Exception
+            MsgBox("Erro ao salvar mvto portador!!" + ex.Message)
+        End Try
+    End Sub
     Private Sub FrmVlrReceb_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CarregarPortador()
     End Sub

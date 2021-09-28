@@ -213,12 +213,16 @@ Public Class FrmRecebimentosEfetuados
                     cmd1 = New MySqlCommand(sql1, con)
                     cmd1.ExecuteNonQuery()
 
+
+                    Excluir_mvto_portador()
+
                     TxtIdReg.Text = ""
                     TxtIdRegDup.Text = ""
                     TxtNota.Text = ""
                     TxtParcela.Text = ""
                     TxtValorPago.Text = ""
                     TxtValorParcela.Text = ""
+
 
                     ListarTudo()
 
@@ -236,7 +240,24 @@ Public Class FrmRecebimentosEfetuados
         End If
 
     End Sub
+    Sub Excluir_mvto_portador()
+        Try
+            Abrir()
 
+            'ATUALIZAR MVTO PORTADOR
+            Dim cmd1 As MySqlCommand
+            Dim sql1 As String
+            Dim tipoMov As String
+            tipoMov = "Entrada"
+
+            sql1 = "DELETE FROM mvto_portador WHERE tipo = '" & tipoMov & "' and id_duplicata =  '" & TxtIdRegDup.Text & "' "
+            cmd1 = New MySqlCommand(sql1, con)
+            cmd1.ExecuteNonQuery()
+
+        Catch ex As Exception
+            MsgBox("Erro ao excluir mvto portador!!" + ex.Message)
+        End Try
+    End Sub
     Private Sub FrmPagamentoEfetuado_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
 
         statusBtn = ""
