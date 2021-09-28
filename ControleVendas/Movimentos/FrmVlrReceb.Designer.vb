@@ -25,6 +25,8 @@ Partial Class FrmVlrReceb
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmVlrReceb))
         Me.TxtStatusTitulo = New System.Windows.Forms.TextBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.CbPortador = New System.Windows.Forms.ComboBox()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.TxtRegPagamento = New System.Windows.Forms.TextBox()
         Me.Label18 = New System.Windows.Forms.Label()
@@ -63,8 +65,6 @@ Partial Class FrmVlrReceb
         Me.TxtValorPago = New System.Windows.Forms.TextBox()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.TxtMultasJuros = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.CbPortador = New System.Windows.Forms.ComboBox()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -95,6 +95,26 @@ Partial Class FrmVlrReceb
         Me.GroupBox4.Size = New System.Drawing.Size(220, 141)
         Me.GroupBox4.TabIndex = 180
         Me.GroupBox4.TabStop = False
+        '
+        'CbPortador
+        '
+        Me.CbPortador.FormattingEnabled = True
+        Me.CbPortador.Location = New System.Drawing.Point(112, 97)
+        Me.CbPortador.Name = "CbPortador"
+        Me.CbPortador.Size = New System.Drawing.Size(86, 21)
+        Me.CbPortador.TabIndex = 180
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.BackColor = System.Drawing.Color.Transparent
+        Me.Label8.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(48, 98)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(62, 16)
+        Me.Label8.TabIndex = 179
+        Me.Label8.Text = "Portador:"
         '
         'Label16
         '
@@ -524,26 +544,6 @@ Partial Class FrmVlrReceb
         Me.TxtMultasJuros.Name = "TxtMultasJuros"
         Me.TxtMultasJuros.Size = New System.Drawing.Size(100, 20)
         Me.TxtMultasJuros.TabIndex = 5
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.BackColor = System.Drawing.Color.Transparent
-        Me.Label8.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(48, 98)
-        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(62, 16)
-        Me.Label8.TabIndex = 179
-        Me.Label8.Text = "Portador:"
-        '
-        'CbPortador
-        '
-        Me.CbPortador.FormattingEnabled = True
-        Me.CbPortador.Location = New System.Drawing.Point(112, 97)
-        Me.CbPortador.Name = "CbPortador"
-        Me.CbPortador.Size = New System.Drawing.Size(86, 21)
-        Me.CbPortador.TabIndex = 180
         '
         'FrmVlrReceb
         '

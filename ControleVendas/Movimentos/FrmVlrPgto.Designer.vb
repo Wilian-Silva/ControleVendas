@@ -66,10 +66,10 @@ Partial Class FrmVlrPgto
         Me.Label17 = New System.Windows.Forms.Label()
         Me.TxtRefEntrada = New System.Windows.Forms.TextBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.TxtStatusTitulo = New System.Windows.Forms.TextBox()
         Me.CbPortador = New System.Windows.Forms.ComboBox()
         Me.Label19 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.TxtStatusTitulo = New System.Windows.Forms.TextBox()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -567,6 +567,26 @@ Partial Class FrmVlrPgto
         Me.GroupBox4.TabIndex = 176
         Me.GroupBox4.TabStop = False
         '
+        'CbPortador
+        '
+        Me.CbPortador.FormattingEnabled = True
+        Me.CbPortador.Location = New System.Drawing.Point(118, 121)
+        Me.CbPortador.Name = "CbPortador"
+        Me.CbPortador.Size = New System.Drawing.Size(86, 21)
+        Me.CbPortador.TabIndex = 182
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.BackColor = System.Drawing.Color.Transparent
+        Me.Label19.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.Location = New System.Drawing.Point(54, 122)
+        Me.Label19.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(62, 16)
+        Me.Label19.TabIndex = 181
+        Me.Label19.Text = "Portador:"
+        '
         'Label16
         '
         Me.Label16.AutoSize = True
@@ -587,26 +607,6 @@ Partial Class FrmVlrPgto
         Me.TxtStatusTitulo.Name = "TxtStatusTitulo"
         Me.TxtStatusTitulo.Size = New System.Drawing.Size(82, 20)
         Me.TxtStatusTitulo.TabIndex = 176
-        '
-        'CbPortador
-        '
-        Me.CbPortador.FormattingEnabled = True
-        Me.CbPortador.Location = New System.Drawing.Point(118, 121)
-        Me.CbPortador.Name = "CbPortador"
-        Me.CbPortador.Size = New System.Drawing.Size(86, 21)
-        Me.CbPortador.TabIndex = 182
-        '
-        'Label19
-        '
-        Me.Label19.AutoSize = True
-        Me.Label19.BackColor = System.Drawing.Color.Transparent
-        Me.Label19.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.Location = New System.Drawing.Point(54, 122)
-        Me.Label19.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(62, 16)
-        Me.Label19.TabIndex = 181
-        Me.Label19.Text = "Portador:"
         '
         'FrmVlrPgto
         '

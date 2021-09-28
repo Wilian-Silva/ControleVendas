@@ -66,7 +66,7 @@ Public Class FrmPagamentoEfetuado
         DataGrid.Columns(1).Visible = False
         DataGrid.Columns(19).Visible = False
         DataGrid.Columns(18).Visible = False
-        'DataGrid.Columns(8).Visible = False
+        DataGrid.Columns(21).Visible = False
         'DataGrid.Columns(9).Visible = False
 
         DataGrid.Columns(0).HeaderText = "Id Pgto."
@@ -89,6 +89,8 @@ Public Class FrmPagamentoEfetuado
         DataGrid.Columns(17).HeaderText = "Data Pagamento"
         'DataGrid.Columns(18).HeaderText = "Status Nota"
         'DataGrid.Columns(19).HeaderText = "Cód. Reg. Entrada"
+        DataGrid.Columns(20).HeaderText = "Portador"
+        'DataGrid.Columns(20).HeaderText = "ID Portador"
 
         DataGrid.Columns(0).Width = 50
         DataGrid.Columns(2).Width = 50
@@ -163,15 +165,18 @@ Public Class FrmPagamentoEfetuado
             TxtParcela.Text = DataGrid.CurrentRow.Cells(8).Value
             TxtValorParcela.Text = DataGrid.CurrentRow.Cells(9).Value
             TxtValorPago.Text = DataGrid.CurrentRow.Cells(10).Value
+            TxtFornecedor.Text = DataGrid.CurrentRow.Cells(3).Value
+            TxtTotaVenda.Text = DataGrid.CurrentRow.Cells(5).Value
+            TxtPortador.Text = DataGrid.CurrentRow.Cells(20).Value
 
-            End If
+        End If
     End Sub
 
     Private Sub BtnExcluir_Click(sender As Object, e As EventArgs) Handles BtnExcluir.Click
         'Stop
         Dim total As Double
         Dim parcela As Double
-        Dim saldo As Double
+        Dim saldo As String
 
         If TxtIdReg.Text <> "" And TxtIdRegDup.Text <> "" Then
 
@@ -215,7 +220,7 @@ Public Class FrmPagamentoEfetuado
                     'ATUALIZAR SALDO NA TABELA DUPLICATAS
                     Dim cmd1 As MySqlCommand
                     Dim sql1 As String
-                    sql1 = "UPDATE duplicatas SET saldo_duplicata = '" & saldo & "' WHERE id = '" & TxtIdRegDup.Text & "' "
+                    sql1 = "UPDATE duplicatas SET saldo_duplicata = '" & saldo.Replace(",", ".") & "' WHERE id = '" & TxtIdRegDup.Text & "' "
                     cmd1 = New MySqlCommand(sql1, con)
                     cmd1.ExecuteNonQuery()
 

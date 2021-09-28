@@ -70,11 +70,11 @@ Public Class FrmVlrReceb
 
                 sql = "INSERT INTO mvto_recebimentos (id_duplicata, cod_cliente, cliente, id_venda, valor_total, parcela, " _
                 & "valor_parcela, valor_pago, valor_saldo, juros_multa, descontos, total_pago, data_emissao," _
-                & "data_vencimento, data_pagamento, status_nota, portador) VALUES ( '" & TxtIdDuplicata.Text & "','" & TxtCodCliente.Text & "', " _
+                & "data_vencimento, data_pagamento, status_nota, portador, id_portador) VALUES ( '" & TxtIdDuplicata.Text & "','" & TxtCodCliente.Text & "', " _
                 & " '" & TxtNomeCliente.Text & "','" & TxtNotaFiscal.Text & "','" & TxtValorOriginal.Text.Replace(",", ".") & "', " _
                 & "  '" & TxtParcela.Text & "','" & TxtValorParcela.Text.Replace(",", ".") & "', '" & TxtValorPago.Text.Replace(",", ".") & "', " _
                 & " '" & TxtSaldoTitulo.Text.Replace(",", ".") & "','" & TxtMultasJuros.Text.Replace(",", ".") & "', '" & TxtDescontos.Text.Replace(",", ".") & "', " _
-                & " '" & TxtTotalPago.Text.Replace(",", ".") & "', '" & data1 & "', '" & data2 & "',  '" & data3 & "', '" & TxtStatusTitulo.Text & "', '" & CbPortador.Text & "') "
+                & " '" & TxtTotalPago.Text.Replace(",", ".") & "', '" & data1 & "', '" & data2 & "',  '" & data3 & "', '" & TxtStatusTitulo.Text & "', '" & CbPortador.Text & "', '" & CbPortador.SelectedValue & "') "
 
 
                 cmd = New MySqlCommand(sql, con)
@@ -100,5 +100,32 @@ Public Class FrmVlrReceb
         End If
     End Sub
 
+    Private Sub FrmVlrReceb_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        CarregarPortador()
+    End Sub
+    Private Sub CarregarPortador()
+        Try
+            Abrir()
 
+            Dim sql As String
+            Dim dt As New DataTable
+            Dim da As MySqlDataAdapter
+
+            sql = "SELECT * FROM portador order by nome asc"
+            da = New MySqlDataAdapter(sql, con)
+            da.Fill(dt)
+
+            If dt.Rows.Count > 0 Then
+                CbPortador.ValueMember = "id"
+                CbPortador.DisplayMember = "nome"
+                CbPortador.DataSource = dt
+            Else
+                CbPortador.Text = ""
+
+            End If
+
+        Catch ex As Exception
+            MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
+        End Try
+    End Sub
 End Class

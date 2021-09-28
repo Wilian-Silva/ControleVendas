@@ -53,8 +53,10 @@ Public Class FrmVendaCabecalho
             End If
 
             If RbVenda.Checked = True Then
-                dt.DefaultView.RowFilter = "id_venda = " & TxtPesquisa.Text
-                DataGrid.DataSource = dt
+                If TxtPesquisa.Text <> "" Then
+                    dt.DefaultView.RowFilter = "id_venda = " & TxtPesquisa.Text
+                    DataGrid.DataSource = dt
+                End If
             End If
 
 
@@ -292,9 +294,9 @@ Public Class FrmVendaCabecalho
     End Sub
 
     Private Sub TxtPesquisa_TextChanged(sender As Object, e As EventArgs) Handles TxtPesquisa.TextChanged
-        If TxtPesquisa.Text <> "" Then
-            FiltroDataGrid()
-        End If
+
+        FiltroDataGrid()
+
     End Sub
 
     Private Sub BtnCacelarConsulta_Click(sender As Object, e As EventArgs) Handles BtnCacelarConsulta.Click

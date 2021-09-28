@@ -31,8 +31,6 @@ Partial Class FrmPagamentoEfetuado
         Me.BtnSair = New System.Windows.Forms.Button()
         Me.BtnExcluir = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.LblId = New System.Windows.Forms.Label()
-        Me.TxtIdReg = New System.Windows.Forms.TextBox()
         Me.DataGrid = New System.Windows.Forms.DataGridView()
         Me.GboxPesProd = New System.Windows.Forms.GroupBox()
         Me.TxtPesquisar = New System.Windows.Forms.TextBox()
@@ -40,8 +38,13 @@ Partial Class FrmPagamentoEfetuado
         Me.RbFornecedor = New System.Windows.Forms.RadioButton()
         Me.RbPedido = New System.Windows.Forms.RadioButton()
         Me.GBoxExluir = New System.Windows.Forms.GroupBox()
+        Me.TxtPortador = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.TxtFornecedor = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.TxtTotaVenda = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.TxtValorParcela = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.TxtValorPago = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TxtParcela = New System.Windows.Forms.TextBox()
@@ -50,6 +53,8 @@ Partial Class FrmPagamentoEfetuado
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TxtIdRegDup = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.TxtIdReg = New System.Windows.Forms.TextBox()
+        Me.LblId = New System.Windows.Forms.Label()
         Me.GroupBox3.SuspendLayout()
         CType(Me.DataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GboxPesProd.SuspendLayout()
@@ -68,7 +73,7 @@ Partial Class FrmPagamentoEfetuado
         Me.BtnSair.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSair.ForeColor = System.Drawing.Color.Transparent
         Me.BtnSair.Image = CType(resources.GetObject("BtnSair.Image"), System.Drawing.Image)
-        Me.BtnSair.Location = New System.Drawing.Point(22, 9)
+        Me.BtnSair.Location = New System.Drawing.Point(46, 10)
         Me.BtnSair.Name = "BtnSair"
         Me.BtnSair.Size = New System.Drawing.Size(35, 35)
         Me.BtnSair.TabIndex = 167
@@ -89,7 +94,7 @@ Partial Class FrmPagamentoEfetuado
         Me.BtnExcluir.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnExcluir.ForeColor = System.Drawing.Color.Transparent
         Me.BtnExcluir.Image = CType(resources.GetObject("BtnExcluir.Image"), System.Drawing.Image)
-        Me.BtnExcluir.Location = New System.Drawing.Point(586, 9)
+        Me.BtnExcluir.Location = New System.Drawing.Point(6, 10)
         Me.BtnExcluir.Name = "BtnExcluir"
         Me.BtnExcluir.Size = New System.Drawing.Size(35, 35)
         Me.BtnExcluir.TabIndex = 166
@@ -101,30 +106,12 @@ Partial Class FrmPagamentoEfetuado
         '
         Me.GroupBox3.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox3.Controls.Add(Me.BtnSair)
-        Me.GroupBox3.Location = New System.Drawing.Point(584, 6)
+        Me.GroupBox3.Controls.Add(Me.BtnExcluir)
+        Me.GroupBox3.Location = New System.Drawing.Point(534, 6)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(71, 50)
+        Me.GroupBox3.Size = New System.Drawing.Size(88, 50)
         Me.GroupBox3.TabIndex = 148
         Me.GroupBox3.TabStop = False
-        '
-        'LblId
-        '
-        Me.LblId.AutoSize = True
-        Me.LblId.BackColor = System.Drawing.Color.Transparent
-        Me.LblId.Location = New System.Drawing.Point(8, 22)
-        Me.LblId.Name = "LblId"
-        Me.LblId.Size = New System.Drawing.Size(47, 13)
-        Me.LblId.TabIndex = 150
-        Me.LblId.Text = "Id. Pgto."
-        '
-        'TxtIdReg
-        '
-        Me.TxtIdReg.Enabled = False
-        Me.TxtIdReg.Location = New System.Drawing.Point(54, 19)
-        Me.TxtIdReg.Name = "TxtIdReg"
-        Me.TxtIdReg.Size = New System.Drawing.Size(30, 20)
-        Me.TxtIdReg.TabIndex = 149
-        Me.TxtIdReg.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'DataGrid
         '
@@ -151,7 +138,7 @@ Partial Class FrmPagamentoEfetuado
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DataGrid.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGrid.EnableHeadersVisualStyles = False
-        Me.DataGrid.Location = New System.Drawing.Point(21, 116)
+        Me.DataGrid.Location = New System.Drawing.Point(24, 155)
         Me.DataGrid.MultiSelect = False
         Me.DataGrid.Name = "DataGrid"
         Me.DataGrid.ReadOnly = True
@@ -160,7 +147,7 @@ Partial Class FrmPagamentoEfetuado
         DataGridViewCellStyle3.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
         Me.DataGrid.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGrid.Size = New System.Drawing.Size(634, 295)
+        Me.DataGrid.Size = New System.Drawing.Size(598, 230)
         Me.DataGrid.TabIndex = 151
         '
         'GboxPesProd
@@ -172,7 +159,7 @@ Partial Class FrmPagamentoEfetuado
         Me.GboxPesProd.Controls.Add(Me.RbPedido)
         Me.GboxPesProd.Location = New System.Drawing.Point(24, 6)
         Me.GboxPesProd.Name = "GboxPesProd"
-        Me.GboxPesProd.Size = New System.Drawing.Size(554, 50)
+        Me.GboxPesProd.Size = New System.Drawing.Size(486, 50)
         Me.GboxPesProd.TabIndex = 161
         Me.GboxPesProd.TabStop = False
         Me.GboxPesProd.Text = "Pesquisar"
@@ -182,7 +169,7 @@ Partial Class FrmPagamentoEfetuado
         Me.TxtPesquisar.Location = New System.Drawing.Point(253, 17)
         Me.TxtPesquisar.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtPesquisar.Name = "TxtPesquisar"
-        Me.TxtPesquisar.Size = New System.Drawing.Size(266, 20)
+        Me.TxtPesquisar.Size = New System.Drawing.Size(209, 20)
         Me.TxtPesquisar.TabIndex = 160
         '
         'RbNota
@@ -220,8 +207,13 @@ Partial Class FrmPagamentoEfetuado
         'GBoxExluir
         '
         Me.GBoxExluir.BackColor = System.Drawing.Color.Transparent
+        Me.GBoxExluir.Controls.Add(Me.TxtPortador)
+        Me.GBoxExluir.Controls.Add(Me.Label8)
+        Me.GBoxExluir.Controls.Add(Me.TxtFornecedor)
+        Me.GBoxExluir.Controls.Add(Me.Label7)
+        Me.GBoxExluir.Controls.Add(Me.TxtTotaVenda)
+        Me.GBoxExluir.Controls.Add(Me.Label6)
         Me.GBoxExluir.Controls.Add(Me.TxtValorParcela)
-        Me.GBoxExluir.Controls.Add(Me.Label5)
         Me.GBoxExluir.Controls.Add(Me.TxtValorPago)
         Me.GBoxExluir.Controls.Add(Me.Label4)
         Me.GBoxExluir.Controls.Add(Me.TxtParcela)
@@ -231,48 +223,90 @@ Partial Class FrmPagamentoEfetuado
         Me.GBoxExluir.Controls.Add(Me.TxtIdRegDup)
         Me.GBoxExluir.Controls.Add(Me.Label1)
         Me.GBoxExluir.Controls.Add(Me.TxtIdReg)
-        Me.GBoxExluir.Controls.Add(Me.BtnExcluir)
         Me.GBoxExluir.Controls.Add(Me.LblId)
-        Me.GBoxExluir.Location = New System.Drawing.Point(24, 55)
+        Me.GBoxExluir.Location = New System.Drawing.Point(24, 62)
         Me.GBoxExluir.Name = "GBoxExluir"
-        Me.GBoxExluir.Size = New System.Drawing.Size(631, 50)
-        Me.GBoxExluir.TabIndex = 162
+        Me.GBoxExluir.Size = New System.Drawing.Size(598, 83)
+        Me.GBoxExluir.TabIndex = 165
         Me.GBoxExluir.TabStop = False
         Me.GBoxExluir.Text = "Dados do Pagamento"
+        '
+        'TxtPortador
+        '
+        Me.TxtPortador.Enabled = False
+        Me.TxtPortador.Location = New System.Drawing.Point(505, 51)
+        Me.TxtPortador.Name = "TxtPortador"
+        Me.TxtPortador.Size = New System.Drawing.Size(77, 20)
+        Me.TxtPortador.TabIndex = 181
+        Me.TxtPortador.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.BackColor = System.Drawing.Color.Transparent
+        Me.Label8.Location = New System.Drawing.Point(454, 55)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(47, 13)
+        Me.Label8.TabIndex = 182
+        Me.Label8.Text = "Portador"
+        '
+        'TxtFornecedor
+        '
+        Me.TxtFornecedor.Enabled = False
+        Me.TxtFornecedor.Location = New System.Drawing.Point(54, 20)
+        Me.TxtFornecedor.Name = "TxtFornecedor"
+        Me.TxtFornecedor.Size = New System.Drawing.Size(149, 20)
+        Me.TxtFornecedor.TabIndex = 179
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.Transparent
+        Me.Label7.Location = New System.Drawing.Point(12, 22)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(43, 13)
+        Me.Label7.TabIndex = 180
+        Me.Label7.Text = "Fornec."
+        '
+        'TxtTotaVenda
+        '
+        Me.TxtTotaVenda.Enabled = False
+        Me.TxtTotaVenda.Location = New System.Drawing.Point(505, 20)
+        Me.TxtTotaVenda.Name = "TxtTotaVenda"
+        Me.TxtTotaVenda.Size = New System.Drawing.Size(77, 20)
+        Me.TxtTotaVenda.TabIndex = 177
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
+        Me.Label6.Location = New System.Drawing.Point(445, 23)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(57, 13)
+        Me.Label6.TabIndex = 178
+        Me.Label6.Text = "Total Nota"
         '
         'TxtValorParcela
         '
         Me.TxtValorParcela.Enabled = False
-        Me.TxtValorParcela.Location = New System.Drawing.Point(411, 19)
+        Me.TxtValorParcela.Location = New System.Drawing.Point(85, 51)
         Me.TxtValorParcela.Name = "TxtValorParcela"
-        Me.TxtValorParcela.Size = New System.Drawing.Size(54, 20)
+        Me.TxtValorParcela.Size = New System.Drawing.Size(88, 20)
         Me.TxtValorParcela.TabIndex = 175
-        Me.TxtValorParcela.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Location = New System.Drawing.Point(349, 22)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(61, 13)
-        Me.Label5.TabIndex = 176
-        Me.Label5.Text = "Vlr. Parcela"
         '
         'TxtValorPago
         '
         Me.TxtValorPago.Enabled = False
-        Me.TxtValorPago.Location = New System.Drawing.Point(522, 19)
+        Me.TxtValorPago.Location = New System.Drawing.Point(343, 51)
         Me.TxtValorPago.Name = "TxtValorPago"
-        Me.TxtValorPago.Size = New System.Drawing.Size(54, 20)
+        Me.TxtValorPago.Size = New System.Drawing.Size(77, 20)
         Me.TxtValorPago.TabIndex = 173
-        Me.TxtValorPago.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Location = New System.Drawing.Point(473, 23)
+        Me.Label4.Location = New System.Drawing.Point(292, 54)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(50, 13)
         Me.Label4.TabIndex = 174
@@ -281,7 +315,7 @@ Partial Class FrmPagamentoEfetuado
         'TxtParcela
         '
         Me.TxtParcela.Enabled = False
-        Me.TxtParcela.Location = New System.Drawing.Point(308, 19)
+        Me.TxtParcela.Location = New System.Drawing.Point(54, 51)
         Me.TxtParcela.Name = "TxtParcela"
         Me.TxtParcela.Size = New System.Drawing.Size(30, 20)
         Me.TxtParcela.TabIndex = 171
@@ -291,7 +325,7 @@ Partial Class FrmPagamentoEfetuado
         '
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Location = New System.Drawing.Point(265, 22)
+        Me.Label3.Location = New System.Drawing.Point(10, 55)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(43, 13)
         Me.Label3.TabIndex = 172
@@ -300,7 +334,7 @@ Partial Class FrmPagamentoEfetuado
         'TxtNota
         '
         Me.TxtNota.Enabled = False
-        Me.TxtNota.Location = New System.Drawing.Point(215, 19)
+        Me.TxtNota.Location = New System.Drawing.Point(376, 20)
         Me.TxtNota.Name = "TxtNota"
         Me.TxtNota.Size = New System.Drawing.Size(44, 20)
         Me.TxtNota.TabIndex = 169
@@ -310,7 +344,7 @@ Partial Class FrmPagamentoEfetuado
         '
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Location = New System.Drawing.Point(169, 22)
+        Me.Label2.Location = New System.Drawing.Point(330, 23)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(45, 13)
         Me.Label2.TabIndex = 170
@@ -319,7 +353,7 @@ Partial Class FrmPagamentoEfetuado
         'TxtIdRegDup
         '
         Me.TxtIdRegDup.Enabled = False
-        Me.TxtIdRegDup.Location = New System.Drawing.Point(132, 19)
+        Me.TxtIdRegDup.Location = New System.Drawing.Point(278, 20)
         Me.TxtIdRegDup.Name = "TxtIdRegDup"
         Me.TxtIdRegDup.Size = New System.Drawing.Size(30, 20)
         Me.TxtIdRegDup.TabIndex = 167
@@ -329,18 +363,37 @@ Partial Class FrmPagamentoEfetuado
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Location = New System.Drawing.Point(89, 22)
+        Me.Label1.Location = New System.Drawing.Point(233, 23)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(44, 13)
         Me.Label1.TabIndex = 168
         Me.Label1.Text = "Id.Dupl."
+        '
+        'TxtIdReg
+        '
+        Me.TxtIdReg.Enabled = False
+        Me.TxtIdReg.Location = New System.Drawing.Point(236, 51)
+        Me.TxtIdReg.Name = "TxtIdReg"
+        Me.TxtIdReg.Size = New System.Drawing.Size(30, 20)
+        Me.TxtIdReg.TabIndex = 149
+        Me.TxtIdReg.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'LblId
+        '
+        Me.LblId.AutoSize = True
+        Me.LblId.BackColor = System.Drawing.Color.Transparent
+        Me.LblId.Location = New System.Drawing.Point(190, 55)
+        Me.LblId.Name = "LblId"
+        Me.LblId.Size = New System.Drawing.Size(45, 13)
+        Me.LblId.TabIndex = 150
+        Me.LblId.Text = "Id. Rec."
         '
         'FrmPagamentoEfetuado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(677, 431)
+        Me.ClientSize = New System.Drawing.Size(644, 407)
         Me.Controls.Add(Me.GBoxExluir)
         Me.Controls.Add(Me.GboxPesProd)
         Me.Controls.Add(Me.DataGrid)
@@ -362,8 +415,6 @@ Partial Class FrmPagamentoEfetuado
     End Sub
     Friend WithEvents ToolTip As ToolTip
     Friend WithEvents GroupBox3 As GroupBox
-    Friend WithEvents LblId As Label
-    Friend WithEvents TxtIdReg As TextBox
     Friend WithEvents DataGrid As DataGridView
     Friend WithEvents BtnSair As Button
     Friend WithEvents BtnExcluir As Button
@@ -373,14 +424,21 @@ Partial Class FrmPagamentoEfetuado
     Friend WithEvents RbFornecedor As RadioButton
     Friend WithEvents RbPedido As RadioButton
     Friend WithEvents GBoxExluir As GroupBox
-    Friend WithEvents TxtIdRegDup As TextBox
-    Friend WithEvents Label1 As Label
+    Friend WithEvents TxtPortador As TextBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents TxtFornecedor As TextBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents TxtTotaVenda As TextBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents TxtValorParcela As TextBox
     Friend WithEvents TxtValorPago As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents TxtParcela As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents TxtNota As TextBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents TxtValorParcela As TextBox
-    Friend WithEvents Label5 As Label
+    Friend WithEvents TxtIdRegDup As TextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents TxtIdReg As TextBox
+    Friend WithEvents LblId As Label
 End Class
