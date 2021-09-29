@@ -85,43 +85,59 @@ Public Class FrmTelaInicial
 
     Sub FormatarGridTelaIncial()
         DataGrid_AVencer.Columns(0).HeaderText = "Cliente"
-        DataGrid_AVencer.Columns(1).HeaderText = "Produto"
-        DataGrid_AVencer.Columns(2).HeaderText = "Qtd."
-        DataGrid_AVencer.Columns(3).HeaderText = "Valor Total"
-        DataGrid_AVencer.Columns(4).HeaderText = "Saldo Venda"
-        DataGrid_AVencer.Columns(5).HeaderText = "Data Vencimento"
-        DataGrid_AVencer.Columns(3).DefaultCellStyle.Format = "c"
+        DataGrid_AVencer.Columns(1).HeaderText = "Nº Venda"
+        DataGrid_AVencer.Columns(2).HeaderText = "Parcela"
+        DataGrid_AVencer.Columns(3).HeaderText = "Vencimento"
+        DataGrid_AVencer.Columns(4).HeaderText = "Valor Parcela"
+        DataGrid_AVencer.Columns(5).HeaderText = "Saldo Parcela"
+        DataGrid_AVencer.Columns(6).HeaderText = "Observação"
         DataGrid_AVencer.Columns(4).DefaultCellStyle.Format = "c"
+        DataGrid_AVencer.Columns(5).DefaultCellStyle.Format = "c"
+        DataGrid_AVencer.Columns(0).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGrid_AVencer.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGrid_AVencer.Columns(1).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid_AVencer.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-        DataGrid_AVencer.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-        DataGrid_AVencer.Columns(0).Width = 90
+        DataGrid_AVencer.Columns(2).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGrid_AVencer.Columns(0).Width = 122
         DataGrid_AVencer.Columns(2).Width = 50
-        DataGrid_AVencer.Columns(1).Width = 120
-        DataGrid_AVencer.Columns(3).Width = 90
-        DataGrid_AVencer.Columns(4).Width = 90
+        DataGrid_AVencer.Columns(1).Width = 50
+
+        DataGrid_AVencer.Columns(3).Width = 75
+        DataGrid_AVencer.Columns(4).Width = 75
+        DataGrid_AVencer.Columns(5).Width = 75
+        DataGrid_AVencer.Columns(6).Width = 75
 
 
         DataGrid_Vencidos.Columns(0).HeaderText = "Cliente"
-        DataGrid_Vencidos.Columns(1).HeaderText = "Produto"
-        DataGrid_Vencidos.Columns(2).HeaderText = "Qtd."
-        DataGrid_Vencidos.Columns(3).HeaderText = "Valor Total"
-        DataGrid_Vencidos.Columns(4).HeaderText = "Saldo Venda"
-        DataGrid_Vencidos.Columns(5).HeaderText = "Data Vencimento"
-        DataGrid_Vencidos.Columns(3).DefaultCellStyle.Format = "c"
+        DataGrid_Vencidos.Columns(1).HeaderText = "Nº Venda"
+        DataGrid_Vencidos.Columns(2).HeaderText = "Parcela"
+        DataGrid_Vencidos.Columns(3).HeaderText = "Vencimento"
+        DataGrid_Vencidos.Columns(4).HeaderText = "Valor Parcela"
+        DataGrid_Vencidos.Columns(5).HeaderText = "Saldo Parcela"
+        DataGrid_Vencidos.Columns(6).HeaderText = "Observação"
         DataGrid_Vencidos.Columns(4).DefaultCellStyle.Format = "c"
+        DataGrid_Vencidos.Columns(5).DefaultCellStyle.Format = "c"
+        DataGrid_Vencidos.Columns(0).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGrid_Vencidos.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGrid_Vencidos.Columns(1).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid_Vencidos.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-        DataGrid_Vencidos.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-        DataGrid_Vencidos.Columns(0).Width = 90
+        DataGrid_Vencidos.Columns(2).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGrid_Vencidos.Columns(0).Width = 122
         DataGrid_Vencidos.Columns(2).Width = 50
-        DataGrid_Vencidos.Columns(1).Width = 120
-        DataGrid_Vencidos.Columns(3).Width = 90
-        DataGrid_Vencidos.Columns(4).Width = 90
+        DataGrid_Vencidos.Columns(1).Width = 50
+
+        DataGrid_Vencidos.Columns(3).Width = 75
+        DataGrid_Vencidos.Columns(4).Width = 75
+        DataGrid_Vencidos.Columns(5).Width = 75
+        DataGrid_Vencidos.Columns(6).Width = 75
+
+
     End Sub
     Private Sub FrmTelaInicial_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        'TotalTitulos()
+        TotalTitulos()
 
-        'FormatarGridTelaIncial()
+        FormatarGridTelaIncial()
 
         'CarregarAcessos()
 
@@ -203,7 +219,7 @@ Public Class FrmTelaInicial
             Dim dt As New DataTable
 
 
-            sql = "SELECT v.cliente, v.produto, v.quantidade,  v.valor_total, c.saldo_venda, v.data_vencimento FROM venda as v INNER JOIN venda_cabecalho as c ON v.id_venda = c.id_venda WHERE v.data_vencimento  >= '" & data2 & "' and v.data_vencimento <= '" & dataFormatada & "' and c.saldo_venda >0 "
+            sql = "SELECT cliente, id_venda, parcela, data_vencimento, valor_parcela, saldo_duplicata, observacao FROM duplicatas_receber WHERE data_vencimento  >= '" & data2 & "' and data_vencimento <= '" & dataFormatada & "' and saldo_duplicata >0 "
             cmd = New MySqlCommand(sql, con)
             cmd.ExecuteNonQuery()
             da = New MySqlDataAdapter(sql, con)
@@ -220,7 +236,7 @@ Public Class FrmTelaInicial
             data0 = Date.Now().AddDays(-30)
             dataFormatada2 = data0.ToString("yyyy-MM-dd")
 
-            sql1 = "SELECT v.cliente, v.produto, v.quantidade, v.valor_total, c.saldo_venda, v.data_vencimento FROM venda as v INNER JOIN venda_cabecalho as c ON v.id_venda = c.id_venda WHERE v.data_vencimento  <= '" & data2 & "' and c.saldo_venda >0 "
+            sql1 = "SELECT cliente, id_venda, parcela, data_vencimento, valor_parcela, saldo_duplicata, observacao FROM duplicatas_receber WHERE data_vencimento  <= '" & data2 & "' and saldo_duplicata >0 "
             cmd1 = New MySqlCommand(sql1, con)
             cmd1.ExecuteNonQuery()
             da1 = New MySqlDataAdapter(sql1, con)
@@ -370,8 +386,8 @@ Public Class FrmTelaInicial
     End Sub
 
     Private Sub FrmTelaInicial_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
-        ' TotalTitulos()
-        ' TOTAL()
+        TotalTitulos()
+        TOTAL()
     End Sub
 
     Private Sub TítulosVencidosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CboxRel1_04.Click

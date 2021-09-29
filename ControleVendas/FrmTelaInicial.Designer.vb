@@ -303,49 +303,49 @@ Partial Class FrmTelaInicial
         'CboxRel1_01
         '
         Me.CboxRel1_01.Name = "CboxRel1_01"
-        Me.CboxRel1_01.Size = New System.Drawing.Size(178, 22)
+        Me.CboxRel1_01.Size = New System.Drawing.Size(180, 22)
         Me.CboxRel1_01.Text = "Vendas"
         '
         'CboxRel1_02
         '
         Me.CboxRel1_02.Name = "CboxRel1_02"
-        Me.CboxRel1_02.Size = New System.Drawing.Size(178, 22)
+        Me.CboxRel1_02.Size = New System.Drawing.Size(180, 22)
         Me.CboxRel1_02.Text = "Recebimentos"
         '
         'CboxRel1_03
         '
         Me.CboxRel1_03.Name = "CboxRel1_03"
-        Me.CboxRel1_03.Size = New System.Drawing.Size(178, 22)
+        Me.CboxRel1_03.Size = New System.Drawing.Size(180, 22)
         Me.CboxRel1_03.Text = "Títulos a Receber"
         '
         'CboxRel1_04
         '
         Me.CboxRel1_04.Name = "CboxRel1_04"
-        Me.CboxRel1_04.Size = New System.Drawing.Size(178, 22)
+        Me.CboxRel1_04.Size = New System.Drawing.Size(180, 22)
         Me.CboxRel1_04.Text = "Títulos Vencidos"
         '
         'CboxRel1_05
         '
         Me.CboxRel1_05.Name = "CboxRel1_05"
-        Me.CboxRel1_05.Size = New System.Drawing.Size(178, 22)
+        Me.CboxRel1_05.Size = New System.Drawing.Size(180, 22)
         Me.CboxRel1_05.Text = "Compras"
         '
         'CboxRel1_06
         '
         Me.CboxRel1_06.Name = "CboxRel1_06"
-        Me.CboxRel1_06.Size = New System.Drawing.Size(178, 22)
+        Me.CboxRel1_06.Size = New System.Drawing.Size(180, 22)
         Me.CboxRel1_06.Text = "Saldo Estoque"
         '
         'CboxRel1_07
         '
         Me.CboxRel1_07.Name = "CboxRel1_07"
-        Me.CboxRel1_07.Size = New System.Drawing.Size(178, 22)
+        Me.CboxRel1_07.Size = New System.Drawing.Size(180, 22)
         Me.CboxRel1_07.Text = "Pedidos de Compra"
         '
         'CboxRel1_08
         '
         Me.CboxRel1_08.Name = "CboxRel1_08"
-        Me.CboxRel1_08.Size = New System.Drawing.Size(178, 22)
+        Me.CboxRel1_08.Size = New System.Drawing.Size(180, 22)
         Me.CboxRel1_08.Text = "Pedidos de Venda"
         '
         'ConfiguraçõesToolStripMenuItem
@@ -804,9 +804,8 @@ Partial Class FrmTelaInicial
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DataGrid_AVencer.DefaultCellStyle = DataGridViewCellStyle2
-        Me.DataGrid_AVencer.Enabled = False
         Me.DataGrid_AVencer.EnableHeadersVisualStyles = False
-        Me.DataGrid_AVencer.Location = New System.Drawing.Point(224, 486)
+        Me.DataGrid_AVencer.Location = New System.Drawing.Point(223, 486)
         Me.DataGrid_AVencer.MultiSelect = False
         Me.DataGrid_AVencer.Name = "DataGrid_AVencer"
         Me.DataGrid_AVencer.ReadOnly = True
