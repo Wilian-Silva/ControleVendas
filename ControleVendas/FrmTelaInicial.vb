@@ -334,7 +334,7 @@ Public Class FrmTelaInicial
     End Sub
 
     Private Sub BtnEstoque_Click(sender As Object, e As EventArgs) Handles BtnEstoque.Click
-        Dim form = New FrmSaldoEstoque
+        Dim form = New FrmRelSaldoEstoque
         form.ShowDialog()
     End Sub
 
@@ -389,6 +389,11 @@ Public Class FrmTelaInicial
 
     Private Sub CboxRel1_05_Click(sender As Object, e As EventArgs) Handles CboxRel1_05.Click
         Dim form = New FrmReportCompras
+        form.ShowDialog()
+    End Sub
+
+    Private Sub CboxRel1_06_Click(sender As Object, e As EventArgs) Handles CboxRel1_06.Click
+        Dim form = New FrmRelSaldoEstoque
         form.ShowDialog()
     End Sub
 End Class

@@ -199,6 +199,11 @@
     <Compile Include="DataSet_ReportVendas.vb">
       <DependentUpon>DataSet_ReportVendas.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSet_saldoestoque.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_saldoestoque.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FrmLogin.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -308,6 +313,12 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="MySqlCommand.vb" />
+    <Compile Include="Relatorios\FrmRelSaldoEstoque.Designer.vb">
+      <DependentUpon>FrmRelSaldoEstoque.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\FrmRelSaldoEstoque.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Relatorios\FrmReportCompras.Designer.vb">
       <DependentUpon>FrmReportCompras.vb</DependentUpon>
     </Compile>
@@ -419,10 +430,14 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\FrmRelSaldoEstoque.resx">
+      <DependentUpon>FrmRelSaldoEstoque.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\FrmReportCompras.resx">
       <DependentUpon>FrmReportCompras.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\ReportCompras.rdlc" />
+    <EmbeddedResource Include="Relatorios\ReportSaldoEstoque.rdlc" />
     <EmbeddedResource Include="Relatorios\ReportVendas.rdlc" />
     <EmbeddedResource Include="Relatorios\ReportVendas.resx">
       <DependentUpon>ReportVendas.vb</DependentUpon>
@@ -450,6 +465,17 @@
     </None>
     <None Include="DataSet_ReportVendas.xss">
       <DependentUpon>DataSet_ReportVendas.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet_saldoestoque.xsc">
+      <DependentUpon>DataSet_saldoestoque.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet_saldoestoque.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_saldoestoque.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet_saldoestoque.xss">
+      <DependentUpon>DataSet_saldoestoque.xsd</DependentUpon>
     </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
