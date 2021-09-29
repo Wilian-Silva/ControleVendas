@@ -10,11 +10,13 @@ Public Class FrmNivel1
             CboxCad1_02.Checked = True
             CboxCad1_03.Checked = True
             CboxCad1_04.Checked = True
+            CboxCad1_05.Checked = True
         Else
             CboxCad1_01.Checked = False
             CboxCad1_02.Checked = False
             CboxCad1_03.Checked = False
             CboxCad1_04.Checked = False
+            CboxCad1_05.Checked = False
 
         End If
 
@@ -51,12 +53,14 @@ Public Class FrmNivel1
             CboxMvto1_03.Checked = True
             CboxMvto1_04.Checked = True
             CboxMvto1_05.Checked = True
+            CboxMvto1_06.Checked = True
         Else
             CboxMvto1_01.Checked = False
             CboxMvto1_02.Checked = False
             CboxMvto1_03.Checked = False
             CboxMvto1_04.Checked = False
             CboxMvto1_05.Checked = False
+            CboxMvto1_06.Checked = False
 
         End If
 

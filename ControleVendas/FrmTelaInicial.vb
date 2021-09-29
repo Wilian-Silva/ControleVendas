@@ -412,4 +412,15 @@ Public Class FrmTelaInicial
         Dim form = New FrmPortador
         form.ShowDialog()
     End Sub
+
+    Private Sub SaldoPortadorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CboxCons1_07.Click
+        Dim form = New FrmSaldoPortador
+        form.ShowDialog()
+    End Sub
+
+    Private Sub PortadorToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles CboxMvto1_07.Click
+        statusBtn = "Visible"
+        Dim form = New FrmSaldoPortador
+        form.ShowDialog()
+    End Sub
 End Class

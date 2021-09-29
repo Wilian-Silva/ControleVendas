@@ -24,7 +24,7 @@ Partial Class FrmNivel1
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmNivel1))
         Me.GboxNivel1 = New System.Windows.Forms.GroupBox()
-        Me.CboxMvto1_06 = New System.Windows.Forms.CheckBox()
+        Me.CboxCad1_05 = New System.Windows.Forms.CheckBox()
         Me.CboxConfig_01 = New System.Windows.Forms.CheckBox()
         Me.CboxAllRel = New System.Windows.Forms.CheckBox()
         Me.CboxAllExcluir = New System.Windows.Forms.CheckBox()
@@ -69,7 +69,7 @@ Partial Class FrmNivel1
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.CboxCad1_05 = New System.Windows.Forms.CheckBox()
+        Me.CboxMvto1_06 = New System.Windows.Forms.CheckBox()
         Me.GboxNivel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -78,8 +78,8 @@ Partial Class FrmNivel1
         'GboxNivel1
         '
         Me.GboxNivel1.BackColor = System.Drawing.Color.Transparent
-        Me.GboxNivel1.Controls.Add(Me.CboxCad1_05)
         Me.GboxNivel1.Controls.Add(Me.CboxMvto1_06)
+        Me.GboxNivel1.Controls.Add(Me.CboxCad1_05)
         Me.GboxNivel1.Controls.Add(Me.CboxConfig_01)
         Me.GboxNivel1.Controls.Add(Me.CboxAllRel)
         Me.GboxNivel1.Controls.Add(Me.CboxAllExcluir)
@@ -123,16 +123,16 @@ Partial Class FrmNivel1
         Me.GboxNivel1.TabIndex = 1
         Me.GboxNivel1.TabStop = False
         '
-        'CboxMvto1_06
+        'CboxCad1_05
         '
-        Me.CboxMvto1_06.AutoSize = True
-        Me.CboxMvto1_06.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CboxMvto1_06.Location = New System.Drawing.Point(292, 132)
-        Me.CboxMvto1_06.Name = "CboxMvto1_06"
-        Me.CboxMvto1_06.Size = New System.Drawing.Size(132, 17)
-        Me.CboxMvto1_06.TabIndex = 26
-        Me.CboxMvto1_06.Text = "Criar Pedido de Venda"
-        Me.CboxMvto1_06.UseVisualStyleBackColor = True
+        Me.CboxCad1_05.AutoSize = True
+        Me.CboxCad1_05.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CboxCad1_05.Location = New System.Drawing.Point(6, 110)
+        Me.CboxCad1_05.Name = "CboxCad1_05"
+        Me.CboxCad1_05.Size = New System.Drawing.Size(111, 17)
+        Me.CboxCad1_05.TabIndex = 27
+        Me.CboxCad1_05.Text = "Cadastro Portador"
+        Me.CboxCad1_05.UseVisualStyleBackColor = True
         '
         'CboxConfig_01
         '
@@ -171,7 +171,7 @@ Partial Class FrmNivel1
         '
         Me.CboxAllMvto.AutoSize = True
         Me.CboxAllMvto.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CboxAllMvto.Location = New System.Drawing.Point(292, 155)
+        Me.CboxAllMvto.Location = New System.Drawing.Point(292, 153)
         Me.CboxAllMvto.Name = "CboxAllMvto"
         Me.CboxAllMvto.Size = New System.Drawing.Size(92, 17)
         Me.CboxAllMvto.TabIndex = 16
@@ -193,7 +193,7 @@ Partial Class FrmNivel1
         '
         Me.CboxAllConsultas.AutoSize = True
         Me.CboxAllConsultas.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CboxAllConsultas.Location = New System.Drawing.Point(165, 178)
+        Me.CboxAllConsultas.Location = New System.Drawing.Point(165, 177)
         Me.CboxAllConsultas.Name = "CboxAllConsultas"
         Me.CboxAllConsultas.Size = New System.Drawing.Size(92, 17)
         Me.CboxAllConsultas.TabIndex = 11
@@ -305,9 +305,9 @@ Partial Class FrmNivel1
         Me.CboxCons1_07.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CboxCons1_07.Location = New System.Drawing.Point(165, 155)
         Me.CboxCons1_07.Name = "CboxCons1_07"
-        Me.CboxCons1_07.Size = New System.Drawing.Size(113, 17)
+        Me.CboxCons1_07.Size = New System.Drawing.Size(96, 17)
         Me.CboxCons1_07.TabIndex = 10
-        Me.CboxCons1_07.Text = "Pedido de Vendas"
+        Me.CboxCons1_07.Text = "Saldo Portador"
         Me.CboxCons1_07.UseVisualStyleBackColor = True
         '
         'CboxRel1_03
@@ -617,16 +617,16 @@ Partial Class FrmNivel1
         Me.GroupBox2.TabIndex = 163
         Me.GroupBox2.TabStop = False
         '
-        'CboxCad1_05
+        'CboxMvto1_06
         '
-        Me.CboxCad1_05.AutoSize = True
-        Me.CboxCad1_05.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CboxCad1_05.Location = New System.Drawing.Point(6, 110)
-        Me.CboxCad1_05.Name = "CboxCad1_05"
-        Me.CboxCad1_05.Size = New System.Drawing.Size(111, 17)
-        Me.CboxCad1_05.TabIndex = 27
-        Me.CboxCad1_05.Text = "Cadastro Portador"
-        Me.CboxCad1_05.UseVisualStyleBackColor = True
+        Me.CboxMvto1_06.AutoSize = True
+        Me.CboxMvto1_06.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CboxMvto1_06.Location = New System.Drawing.Point(292, 131)
+        Me.CboxMvto1_06.Name = "CboxMvto1_06"
+        Me.CboxMvto1_06.Size = New System.Drawing.Size(121, 17)
+        Me.CboxMvto1_06.TabIndex = 28
+        Me.CboxMvto1_06.Text = "Movimento Portador"
+        Me.CboxMvto1_06.UseVisualStyleBackColor = True
         '
         'FrmNivel1
         '
@@ -695,6 +695,6 @@ Partial Class FrmNivel1
     Friend WithEvents Label1 As Label
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents CboxMvto1_06 As CheckBox
     Friend WithEvents CboxCad1_05 As CheckBox
+    Friend WithEvents CboxMvto1_06 As CheckBox
 End Class

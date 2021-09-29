@@ -32,6 +32,7 @@ Partial Class FrmNivel2
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GboxNivel1 = New System.Windows.Forms.GroupBox()
+        Me.CboxCad1_05 = New System.Windows.Forms.CheckBox()
         Me.CboxMvto1_06 = New System.Windows.Forms.CheckBox()
         Me.CboxConfig_01 = New System.Windows.Forms.CheckBox()
         Me.CboxAllRel = New System.Windows.Forms.CheckBox()
@@ -69,7 +70,6 @@ Partial Class FrmNivel2
         Me.CboxCons1_01 = New System.Windows.Forms.CheckBox()
         Me.CboxCad1_01 = New System.Windows.Forms.CheckBox()
         Me.CboxCad1_02 = New System.Windows.Forms.CheckBox()
-        Me.CboxCad1_05 = New System.Windows.Forms.CheckBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GboxNivel1.SuspendLayout()
@@ -210,15 +210,26 @@ Partial Class FrmNivel2
         Me.GboxNivel1.TabIndex = 1
         Me.GboxNivel1.TabStop = False
         '
+        'CboxCad1_05
+        '
+        Me.CboxCad1_05.AutoSize = True
+        Me.CboxCad1_05.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CboxCad1_05.Location = New System.Drawing.Point(6, 109)
+        Me.CboxCad1_05.Name = "CboxCad1_05"
+        Me.CboxCad1_05.Size = New System.Drawing.Size(111, 17)
+        Me.CboxCad1_05.TabIndex = 28
+        Me.CboxCad1_05.Text = "Cadastro Portador"
+        Me.CboxCad1_05.UseVisualStyleBackColor = True
+        '
         'CboxMvto1_06
         '
         Me.CboxMvto1_06.AutoSize = True
         Me.CboxMvto1_06.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CboxMvto1_06.Location = New System.Drawing.Point(292, 132)
         Me.CboxMvto1_06.Name = "CboxMvto1_06"
-        Me.CboxMvto1_06.Size = New System.Drawing.Size(132, 17)
+        Me.CboxMvto1_06.Size = New System.Drawing.Size(121, 17)
         Me.CboxMvto1_06.TabIndex = 27
-        Me.CboxMvto1_06.Text = "Criar Pedido de Venda"
+        Me.CboxMvto1_06.Text = "Movimento Portador"
         Me.CboxMvto1_06.UseVisualStyleBackColor = True
         '
         'CboxConfig_01
@@ -392,9 +403,9 @@ Partial Class FrmNivel2
         Me.CboxCons1_07.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CboxCons1_07.Location = New System.Drawing.Point(165, 155)
         Me.CboxCons1_07.Name = "CboxCons1_07"
-        Me.CboxCons1_07.Size = New System.Drawing.Size(113, 17)
+        Me.CboxCons1_07.Size = New System.Drawing.Size(96, 17)
         Me.CboxCons1_07.TabIndex = 10
-        Me.CboxCons1_07.Text = "Pedido de Vendas"
+        Me.CboxCons1_07.Text = "Saldo Portador"
         Me.CboxCons1_07.UseVisualStyleBackColor = True
         '
         'CboxRel1_03
@@ -616,17 +627,6 @@ Partial Class FrmNivel2
         Me.CboxCad1_02.TabIndex = 1
         Me.CboxCad1_02.Text = "Cadastro de Clientes"
         Me.CboxCad1_02.UseVisualStyleBackColor = True
-        '
-        'CboxCad1_05
-        '
-        Me.CboxCad1_05.AutoSize = True
-        Me.CboxCad1_05.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CboxCad1_05.Location = New System.Drawing.Point(6, 109)
-        Me.CboxCad1_05.Name = "CboxCad1_05"
-        Me.CboxCad1_05.Size = New System.Drawing.Size(111, 17)
-        Me.CboxCad1_05.TabIndex = 28
-        Me.CboxCad1_05.Text = "Cadastro Portador"
-        Me.CboxCad1_05.UseVisualStyleBackColor = True
         '
         'FrmNivel2
         '

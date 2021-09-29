@@ -29,6 +29,8 @@ Module ModuloConexao
 
     Public dgStatus As String
 
+    Public editarMvtoPortador As String
+
     Public parcela As Integer
 
     Public saldoEstoque As Integer
@@ -86,6 +88,7 @@ Module ModuloConexao
 
 
     Public Sub LimparVariaveisGlobais()
+        editarMvtoPortador = ""
         saldoEstoque = Nothing
         utilizarPedido = ""
         totalPedido = ""

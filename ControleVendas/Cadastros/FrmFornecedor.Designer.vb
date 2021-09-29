@@ -29,11 +29,11 @@ Partial Class FrmFornecedor
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TxtPesquisar = New System.Windows.Forms.TextBox()
         Me.GboxPesProd = New System.Windows.Forms.GroupBox()
-        Me.BtnProximo = New System.Windows.Forms.Button()
         Me.BtnAnterior = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.BtnCacelarConsulta = New System.Windows.Forms.Button()
         Me.BtnSelecionarItem = New System.Windows.Forms.Button()
+        Me.BtnProximo = New System.Windows.Forms.Button()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.BtnSalvar = New System.Windows.Forms.Button()
@@ -92,24 +92,6 @@ Partial Class FrmFornecedor
         Me.GboxPesProd.Size = New System.Drawing.Size(304, 50)
         Me.GboxPesProd.TabIndex = 154
         Me.GboxPesProd.TabStop = False
-        '
-        'BtnProximo
-        '
-        Me.BtnProximo.AccessibleDescription = ""
-        Me.BtnProximo.AccessibleName = "Adicionar"
-        Me.BtnProximo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.BtnProximo.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnProximo.FlatAppearance.BorderSize = 0
-        Me.BtnProximo.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.BtnProximo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnProximo.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnProximo.Image = CType(resources.GetObject("BtnProximo.Image"), System.Drawing.Image)
-        Me.BtnProximo.Location = New System.Drawing.Point(191, 15)
-        Me.BtnProximo.Name = "BtnProximo"
-        Me.BtnProximo.Size = New System.Drawing.Size(25, 25)
-        Me.BtnProximo.TabIndex = 156
-        Me.ToolTip.SetToolTip(Me.BtnProximo, "Próximo")
-        Me.BtnProximo.UseVisualStyleBackColor = True
         '
         'BtnAnterior
         '
@@ -182,6 +164,24 @@ Partial Class FrmFornecedor
         Me.ToolTip.SetToolTip(Me.BtnSelecionarItem, "Selecionar ")
         Me.BtnSelecionarItem.UseVisualStyleBackColor = True
         Me.BtnSelecionarItem.Visible = False
+        '
+        'BtnProximo
+        '
+        Me.BtnProximo.AccessibleDescription = ""
+        Me.BtnProximo.AccessibleName = "Adicionar"
+        Me.BtnProximo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.BtnProximo.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnProximo.FlatAppearance.BorderSize = 0
+        Me.BtnProximo.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BtnProximo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnProximo.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnProximo.Image = CType(resources.GetObject("BtnProximo.Image"), System.Drawing.Image)
+        Me.BtnProximo.Location = New System.Drawing.Point(191, 15)
+        Me.BtnProximo.Name = "BtnProximo"
+        Me.BtnProximo.Size = New System.Drawing.Size(25, 25)
+        Me.BtnProximo.TabIndex = 156
+        Me.ToolTip.SetToolTip(Me.BtnProximo, "Próximo")
+        Me.BtnProximo.UseVisualStyleBackColor = True
         '
         'BtnCancelar
         '
@@ -330,6 +330,7 @@ Partial Class FrmFornecedor
         Me.DataGrid.AllowUserToResizeColumns = False
         Me.DataGrid.AllowUserToResizeRows = False
         Me.DataGrid.BackgroundColor = System.Drawing.Color.WhiteSmoke
+        Me.DataGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))

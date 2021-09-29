@@ -44,6 +44,7 @@ Partial Class FrmTelaInicial
         Me.CboxCons1_04 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CboxCons1_05 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CboxCons1_06 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CboxCons1_07 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MovimentaçõesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CboxMvto1_01 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CboxMvto1_06 = New System.Windows.Forms.ToolStripMenuItem()
@@ -51,6 +52,7 @@ Partial Class FrmTelaInicial
         Me.CboxMvto1_03 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CboxMvto1_04 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CboxMvto1_05 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CboxMvto1_07 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExclusõesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CboxExcluir1_01 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CboxExcluir1_06 = New System.Windows.Forms.ToolStripMenuItem()
@@ -132,36 +134,36 @@ Partial Class FrmTelaInicial
         'CboxCad1_01
         '
         Me.CboxCad1_01.Name = "CboxCad1_01"
-        Me.CboxCad1_01.Size = New System.Drawing.Size(180, 22)
+        Me.CboxCad1_01.Size = New System.Drawing.Size(145, 22)
         Me.CboxCad1_01.Text = "Produtos"
         '
         'CboxCad1_02
         '
         Me.CboxCad1_02.Name = "CboxCad1_02"
-        Me.CboxCad1_02.Size = New System.Drawing.Size(180, 22)
+        Me.CboxCad1_02.Size = New System.Drawing.Size(145, 22)
         Me.CboxCad1_02.Text = "Clientes"
         '
         'CboxCad1_03
         '
         Me.CboxCad1_03.Name = "CboxCad1_03"
-        Me.CboxCad1_03.Size = New System.Drawing.Size(180, 22)
+        Me.CboxCad1_03.Size = New System.Drawing.Size(145, 22)
         Me.CboxCad1_03.Text = "Fornecedores"
         '
         'CboxCad1_04
         '
         Me.CboxCad1_04.Name = "CboxCad1_04"
-        Me.CboxCad1_04.Size = New System.Drawing.Size(180, 22)
+        Me.CboxCad1_04.Size = New System.Drawing.Size(145, 22)
         Me.CboxCad1_04.Text = "Usuários"
         '
         'CboxCad1_05
         '
         Me.CboxCad1_05.Name = "CboxCad1_05"
-        Me.CboxCad1_05.Size = New System.Drawing.Size(180, 22)
+        Me.CboxCad1_05.Size = New System.Drawing.Size(145, 22)
         Me.CboxCad1_05.Text = "Portador"
         '
         'ConsultasToolStripMenuItem
         '
-        Me.ConsultasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CboxCons1_01, Me.CboxCons1_02, Me.CboxCons1_03, Me.CboxCons1_04, Me.CboxCons1_05, Me.CboxCons1_06})
+        Me.ConsultasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CboxCons1_01, Me.CboxCons1_02, Me.CboxCons1_03, Me.CboxCons1_04, Me.CboxCons1_05, Me.CboxCons1_06, Me.CboxCons1_07})
         Me.ConsultasToolStripMenuItem.Image = CType(resources.GetObject("ConsultasToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ConsultasToolStripMenuItem.Name = "ConsultasToolStripMenuItem"
         Me.ConsultasToolStripMenuItem.Size = New System.Drawing.Size(87, 20)
@@ -170,7 +172,7 @@ Partial Class FrmTelaInicial
         'CboxCons1_01
         '
         Me.CboxCons1_01.Name = "CboxCons1_01"
-        Me.CboxCons1_01.Size = New System.Drawing.Size(174, 22)
+        Me.CboxCons1_01.Size = New System.Drawing.Size(219, 22)
         Me.CboxCons1_01.Text = "Notas de Entrada"
         '
         'CboxCons1_02
@@ -188,24 +190,30 @@ Partial Class FrmTelaInicial
         'CboxCons1_04
         '
         Me.CboxCons1_04.Name = "CboxCons1_04"
-        Me.CboxCons1_04.Size = New System.Drawing.Size(174, 22)
+        Me.CboxCons1_04.Size = New System.Drawing.Size(219, 22)
         Me.CboxCons1_04.Text = "Pedido de Compra"
         '
         'CboxCons1_05
         '
         Me.CboxCons1_05.Name = "CboxCons1_05"
-        Me.CboxCons1_05.Size = New System.Drawing.Size(174, 22)
+        Me.CboxCons1_05.Size = New System.Drawing.Size(219, 22)
         Me.CboxCons1_05.Text = "Vendas Registradas"
         '
         'CboxCons1_06
         '
         Me.CboxCons1_06.Name = "CboxCons1_06"
-        Me.CboxCons1_06.Size = New System.Drawing.Size(174, 22)
+        Me.CboxCons1_06.Size = New System.Drawing.Size(219, 22)
         Me.CboxCons1_06.Text = "Saldo Estoque"
+        '
+        'CboxCons1_07
+        '
+        Me.CboxCons1_07.Name = "CboxCons1_07"
+        Me.CboxCons1_07.Size = New System.Drawing.Size(219, 22)
+        Me.CboxCons1_07.Text = "Saldo Portador"
         '
         'MovimentaçõesToolStripMenuItem
         '
-        Me.MovimentaçõesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CboxMvto1_01, Me.CboxMvto1_06, Me.CboxMvto1_02, Me.CboxMvto1_03, Me.CboxMvto1_04, Me.CboxMvto1_05})
+        Me.MovimentaçõesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CboxMvto1_01, Me.CboxMvto1_06, Me.CboxMvto1_02, Me.CboxMvto1_03, Me.CboxMvto1_04, Me.CboxMvto1_05, Me.CboxMvto1_07})
         Me.MovimentaçõesToolStripMenuItem.Image = CType(resources.GetObject("MovimentaçõesToolStripMenuItem.Image"), System.Drawing.Image)
         Me.MovimentaçõesToolStripMenuItem.Name = "MovimentaçõesToolStripMenuItem"
         Me.MovimentaçõesToolStripMenuItem.Size = New System.Drawing.Size(120, 20)
@@ -247,6 +255,12 @@ Partial Class FrmTelaInicial
         Me.CboxMvto1_05.Size = New System.Drawing.Size(214, 22)
         Me.CboxMvto1_05.Text = "Pagamento de Fornecedor"
         '
+        'CboxMvto1_07
+        '
+        Me.CboxMvto1_07.Name = "CboxMvto1_07"
+        Me.CboxMvto1_07.Size = New System.Drawing.Size(214, 22)
+        Me.CboxMvto1_07.Text = "Movimentos Portador"
+        '
         'ExclusõesToolStripMenuItem
         '
         Me.ExclusõesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CboxExcluir1_01, Me.CboxExcluir1_06, Me.CboxExcluir1_02, Me.CboxExcluir1_04, Me.CboxExcluir1_03, Me.CboxExcluir1_05})
@@ -258,13 +272,13 @@ Partial Class FrmTelaInicial
         'CboxExcluir1_01
         '
         Me.CboxExcluir1_01.Name = "CboxExcluir1_01"
-        Me.CboxExcluir1_01.Size = New System.Drawing.Size(211, 22)
+        Me.CboxExcluir1_01.Size = New System.Drawing.Size(216, 22)
         Me.CboxExcluir1_01.Text = "Excluir Pedido de Compra"
         '
         'CboxExcluir1_06
         '
         Me.CboxExcluir1_06.Name = "CboxExcluir1_06"
-        Me.CboxExcluir1_06.Size = New System.Drawing.Size(211, 22)
+        Me.CboxExcluir1_06.Size = New System.Drawing.Size(216, 22)
         Me.CboxExcluir1_06.Text = "Excluir Pedido de Venda"
         Me.CboxExcluir1_06.Visible = False
         '
@@ -433,7 +447,7 @@ Partial Class FrmTelaInicial
         Me.BtnEstoque.Name = "BtnEstoque"
         Me.BtnEstoque.Size = New System.Drawing.Size(194, 56)
         Me.BtnEstoque.TabIndex = 14
-        Me.BtnEstoque.Text = "           Saldo Estoque"
+        Me.BtnEstoque.Text = "     Saldo Estoque"
         Me.BtnEstoque.UseCompatibleTextRendering = True
         Me.BtnEstoque.UseVisualStyleBackColor = False
         '
@@ -451,7 +465,7 @@ Partial Class FrmTelaInicial
         Me.BtnContasPagar.Name = "BtnContasPagar"
         Me.BtnContasPagar.Size = New System.Drawing.Size(194, 56)
         Me.BtnContasPagar.TabIndex = 13
-        Me.BtnContasPagar.Text = "           Contas a Pagar"
+        Me.BtnContasPagar.Text = "        Contas a Pagar"
         Me.BtnContasPagar.UseCompatibleTextRendering = True
         Me.BtnContasPagar.UseVisualStyleBackColor = False
         '
@@ -541,7 +555,7 @@ Partial Class FrmTelaInicial
         Me.BtnEntrada.Name = "BtnEntrada"
         Me.BtnEntrada.Size = New System.Drawing.Size(194, 56)
         Me.BtnEntrada.TabIndex = 7
-        Me.BtnEntrada.Text = "             Entrada de Nota Fiscal"
+        Me.BtnEntrada.Text = "   Entrada de NFe"
         Me.BtnEntrada.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnEntrada.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.BtnEntrada.UseCompatibleTextRendering = True
@@ -989,4 +1003,6 @@ Partial Class FrmTelaInicial
     Friend WithEvents CboxRel1_08 As ToolStripMenuItem
     Friend WithEvents CboxCad1_03 As ToolStripMenuItem
     Friend WithEvents CboxCad1_05 As ToolStripMenuItem
+    Friend WithEvents CboxCons1_07 As ToolStripMenuItem
+    Friend WithEvents CboxMvto1_07 As ToolStripMenuItem
 End Class

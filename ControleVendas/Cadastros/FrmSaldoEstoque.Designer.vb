@@ -46,10 +46,10 @@ Partial Class FrmSaldoEstoque
         Me.TxtPrecoVenda = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.BtnSair = New System.Windows.Forms.Button()
         Me.TxtPesquisa = New System.Windows.Forms.TextBox()
         Me.RbDescricao = New System.Windows.Forms.RadioButton()
         Me.RbCodAux = New System.Windows.Forms.RadioButton()
+        Me.BtnSair = New System.Windows.Forms.Button()
         Me.GboxPesProd = New System.Windows.Forms.GroupBox()
         CType(Me.DataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
@@ -100,6 +100,7 @@ Partial Class FrmSaldoEstoque
         Me.DataGrid.AllowUserToResizeColumns = False
         Me.DataGrid.AllowUserToResizeRows = False
         Me.DataGrid.BackgroundColor = System.Drawing.Color.WhiteSmoke
+        Me.DataGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -313,25 +314,6 @@ Partial Class FrmSaldoEstoque
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Pesquisar"
         '
-        'BtnSair
-        '
-        Me.BtnSair.AccessibleDescription = ""
-        Me.BtnSair.AccessibleName = "Adicionar"
-        Me.BtnSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.BtnSair.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnSair.FlatAppearance.BorderSize = 0
-        Me.BtnSair.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.BtnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnSair.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnSair.ForeColor = System.Drawing.Color.Transparent
-        Me.BtnSair.Image = CType(resources.GetObject("BtnSair.Image"), System.Drawing.Image)
-        Me.BtnSair.Location = New System.Drawing.Point(35, 10)
-        Me.BtnSair.Name = "BtnSair"
-        Me.BtnSair.Size = New System.Drawing.Size(35, 35)
-        Me.BtnSair.TabIndex = 164
-        Me.BtnSair.TabStop = False
-        Me.BtnSair.UseVisualStyleBackColor = True
-        '
         'TxtPesquisa
         '
         Me.TxtPesquisa.Location = New System.Drawing.Point(182, 19)
@@ -361,6 +343,25 @@ Partial Class FrmSaldoEstoque
         Me.RbCodAux.TabIndex = 158
         Me.RbCodAux.Text = "Cód. Aux."
         Me.RbCodAux.UseVisualStyleBackColor = True
+        '
+        'BtnSair
+        '
+        Me.BtnSair.AccessibleDescription = ""
+        Me.BtnSair.AccessibleName = "Adicionar"
+        Me.BtnSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.BtnSair.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnSair.FlatAppearance.BorderSize = 0
+        Me.BtnSair.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BtnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnSair.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnSair.ForeColor = System.Drawing.Color.Transparent
+        Me.BtnSair.Image = CType(resources.GetObject("BtnSair.Image"), System.Drawing.Image)
+        Me.BtnSair.Location = New System.Drawing.Point(35, 10)
+        Me.BtnSair.Name = "BtnSair"
+        Me.BtnSair.Size = New System.Drawing.Size(35, 35)
+        Me.BtnSair.TabIndex = 164
+        Me.BtnSair.TabStop = False
+        Me.BtnSair.UseVisualStyleBackColor = True
         '
         'GboxPesProd
         '

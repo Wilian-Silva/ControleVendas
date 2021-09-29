@@ -115,7 +115,7 @@ Public Class FrmVlrReceb
             data3 = DataPgto.Value.ToString("yyyy-MM-dd")
             tipoMov = "Entrada"
 
-            sql1 = "INSERT INTO mvto_portador (id_portador, nome, tipo, data, valor, id_duplicata) VALUES ( '" & CbPortador.SelectedValue & "','" & CbPortador.Text & "','" & tipoMov & "', '" & data3 & "','" & TxtTotalPago.Text.Replace(",", ".") & "','" & TxtIdDuplicata.Text & "' )"
+            sql1 = "INSERT INTO mvto_portador (id_portador, nome, tipo, data, valor, id_duplicata, pagador_recebedor) VALUES ( '" & CbPortador.SelectedValue & "','" & CbPortador.Text & "','" & tipoMov & "', '" & data3 & "','" & TxtTotalPago.Text.Replace(",", ".") & "','" & TxtIdDuplicata.Text & "', '" & TxtNomeCliente.Text & "' )"
             cmd1 = New MySqlCommand(sql1, con)
             cmd1.ExecuteNonQuery()
 
