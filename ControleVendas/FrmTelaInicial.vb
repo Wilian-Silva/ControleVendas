@@ -343,62 +343,13 @@ Public Class FrmTelaInicial
         form.ShowDialog()
     End Sub
 
-    Private Sub EstoqueToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CboxRel1_06.Click
-        Dim form = New FrmReportEstoque
-        form.ShowDialog()
-    End Sub
-
-    Private Sub BtnRelVendas_Click(sender As Object, e As EventArgs) Handles BtnRelVendas.Click
-        Dim form = New FrmReportVendas
-        form.ShowDialog()
-
-    End Sub
-
-    Private Sub VendasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CboxRel1_01.Click
-        Dim form = New FrmReportVendas
-        form.ShowDialog()
-
-    End Sub
-
-    Private Sub RecebimentosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CboxRel1_02.Click
-        Dim form = New FrmReportRecebimentos
-        form.ShowDialog()
-    End Sub
-
-    Private Sub ContasAReceberToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CboxRel1_03.Click
-        Dim form = New FrmReportTitulosAbert
-        form.ShowDialog()
-    End Sub
-
-    Private Sub ComprasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CboxRel1_05.Click
-        Dim form = New FrmReportCompras
-        form.ShowDialog()
-    End Sub
-
-    Private Sub PedidosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CboxRel1_07.Click
-        Dim form = New ReportPedidos
-        form.ShowDialog()
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim form = New FrmReportRecebimentos
-        form.ShowDialog()
-    End Sub
 
     Private Sub FrmTelaInicial_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
         TotalTitulos()
         TOTAL()
     End Sub
 
-    Private Sub TítulosVencidosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CboxRel1_04.Click
-        Dim form = New FrmReporteVencidos
-        form.ShowDialog()
-    End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles BtnLogoff.Click
-        Dim form = New BotoesControle
-        form.ShowDialog()
-    End Sub
 
     Private Sub NivelDeAcessoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CboxConfig_01.Click
         Dim form = New FrmNivelAcesso

@@ -31,7 +31,7 @@ Partial Class FrmVendaProdutos
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PedidosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Controle_vendasDataSet = New ControleVendas.Controle_vendasDataSet3()
+
         Me.BtnCarregar = New System.Windows.Forms.Button()
         Me.BtnIncluirItem_venda = New System.Windows.Forms.Button()
         Me.BtnPesqPedido = New System.Windows.Forms.Button()
@@ -39,7 +39,7 @@ Partial Class FrmVendaProdutos
         Me.BtnProximo = New System.Windows.Forms.Button()
         Me.BtnAnterior = New System.Windows.Forms.Button()
         Me.BtnExcluirItem_venda = New System.Windows.Forms.Button()
-        Me.PedidosTableAdapter = New ControleVendas.Controle_vendasDataSet3TableAdapters.pedidosTableAdapter()
+
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.BtnCacelar = New System.Windows.Forms.Button()
         Me.BtnLimpar = New System.Windows.Forms.Button()
@@ -88,7 +88,7 @@ Partial Class FrmVendaProdutos
         Me.TxtCodCliente = New System.Windows.Forms.TextBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         CType(Me.PedidosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Controle_vendasDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+
         Me.GroupBox1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -103,12 +103,11 @@ Partial Class FrmVendaProdutos
         'PedidosBindingSource
         '
         Me.PedidosBindingSource.DataMember = "pedidos"
-        Me.PedidosBindingSource.DataSource = Me.Controle_vendasDataSet
+
         '
         'Controle_vendasDataSet
         '
-        Me.Controle_vendasDataSet.DataSetName = "controle_vendasDataSet"
-        Me.Controle_vendasDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+
         '
         'BtnCarregar
         '
@@ -219,7 +218,7 @@ Partial Class FrmVendaProdutos
         '
         'PedidosTableAdapter
         '
-        Me.PedidosTableAdapter.ClearBeforeFill = True
+
         '
         'BtnCacelar
         '
@@ -903,7 +902,7 @@ Partial Class FrmVendaProdutos
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Venda de Produtos"
         CType(Me.PedidosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Controle_vendasDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.TabControl1.ResumeLayout(False)
@@ -923,7 +922,7 @@ Partial Class FrmVendaProdutos
     End Sub
 
     Friend WithEvents PedidosBindingSource As BindingSource
-    Friend WithEvents Controle_vendasDataSet As Controle_vendasDataSet3
+
     Friend WithEvents ToolTip As ToolTip
     Friend WithEvents BtnCarregar As Button
     Friend WithEvents BtnIncluirItem_venda As Button
@@ -932,7 +931,7 @@ Partial Class FrmVendaProdutos
     Friend WithEvents BtnProximo As Button
     Friend WithEvents BtnAnterior As Button
     Friend WithEvents BtnExcluirItem_venda As Button
-    Friend WithEvents PedidosTableAdapter As Controle_vendasDataSet3TableAdapters.pedidosTableAdapter
+
     Friend WithEvents BtnCacelar As Button
     Friend WithEvents BtnLimpar As Button
     Friend WithEvents BtnSalvar As Button

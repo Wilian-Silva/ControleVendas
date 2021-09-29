@@ -70,13 +70,13 @@ Partial Class FrmPedido
         Me.BtnPesqPedido = New System.Windows.Forms.Button()
         Me.BtnIncluir = New System.Windows.Forms.Button()
         Me.BtnCarregar = New System.Windows.Forms.Button()
-        Me.Controle_vendasDataSet = New ControleVendas.Controle_vendasDataSet3()
+
         Me.PedidosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.PedidosTableAdapter = New ControleVendas.Controle_vendasDataSet3TableAdapters.pedidosTableAdapter()
+
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.DataGrid = New System.Windows.Forms.DataGridView()
         Me.GroupBox3.SuspendLayout()
-        CType(Me.Controle_vendasDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+
         CType(Me.PedidosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -658,17 +658,14 @@ Partial Class FrmPedido
         '
         'Controle_vendasDataSet
         '
-        Me.Controle_vendasDataSet.DataSetName = "controle_vendasDataSet"
-        Me.Controle_vendasDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
+
         'PedidosBindingSource
         '
         Me.PedidosBindingSource.DataMember = "pedidos"
-        Me.PedidosBindingSource.DataSource = Me.Controle_vendasDataSet
+
         '
         'PedidosTableAdapter
-        '
-        Me.PedidosTableAdapter.ClearBeforeFill = True
+
         '
         'GroupBox1
         '
@@ -749,7 +746,7 @@ Partial Class FrmPedido
         Me.Text = "Incluir Pedido de Compra"
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
-        CType(Me.Controle_vendasDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+
         CType(Me.PedidosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
@@ -775,9 +772,9 @@ Partial Class FrmPedido
     Friend WithEvents Label4 As Label
     Friend WithEvents ToolTip As ToolTip
     Friend WithEvents BtnPesqProduto As Button
-    Friend WithEvents Controle_vendasDataSet As Controle_vendasDataSet3
+
     Friend WithEvents PedidosBindingSource As BindingSource
-    Friend WithEvents PedidosTableAdapter As Controle_vendasDataSet3TableAdapters.pedidosTableAdapter
+
     Friend WithEvents TxtNumPedido As TextBox
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents TxtCodProduto As TextBox
