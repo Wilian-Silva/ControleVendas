@@ -24,6 +24,7 @@ Partial Class FrmNivel1
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmNivel1))
         Me.GboxNivel1 = New System.Windows.Forms.GroupBox()
+        Me.CboxMvto1_06 = New System.Windows.Forms.CheckBox()
         Me.CboxCad1_05 = New System.Windows.Forms.CheckBox()
         Me.CboxConfig_01 = New System.Windows.Forms.CheckBox()
         Me.CboxAllRel = New System.Windows.Forms.CheckBox()
@@ -44,8 +45,6 @@ Partial Class FrmNivel1
         Me.CboxRel1_03 = New System.Windows.Forms.CheckBox()
         Me.CboxExcluir1_01 = New System.Windows.Forms.CheckBox()
         Me.CboxRel1_04 = New System.Windows.Forms.CheckBox()
-        Me.CboxExcluir1_04 = New System.Windows.Forms.CheckBox()
-        Me.CboxExcluir1_02 = New System.Windows.Forms.CheckBox()
         Me.CboxMvto1_04 = New System.Windows.Forms.CheckBox()
         Me.CboxExcluir1_03 = New System.Windows.Forms.CheckBox()
         Me.CboxCons1_06 = New System.Windows.Forms.CheckBox()
@@ -69,7 +68,6 @@ Partial Class FrmNivel1
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.CboxMvto1_06 = New System.Windows.Forms.CheckBox()
         Me.GboxNivel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -99,8 +97,6 @@ Partial Class FrmNivel1
         Me.GboxNivel1.Controls.Add(Me.CboxRel1_03)
         Me.GboxNivel1.Controls.Add(Me.CboxExcluir1_01)
         Me.GboxNivel1.Controls.Add(Me.CboxRel1_04)
-        Me.GboxNivel1.Controls.Add(Me.CboxExcluir1_04)
-        Me.GboxNivel1.Controls.Add(Me.CboxExcluir1_02)
         Me.GboxNivel1.Controls.Add(Me.CboxMvto1_04)
         Me.GboxNivel1.Controls.Add(Me.CboxExcluir1_03)
         Me.GboxNivel1.Controls.Add(Me.CboxCons1_06)
@@ -122,6 +118,17 @@ Partial Class FrmNivel1
         Me.GboxNivel1.Size = New System.Drawing.Size(875, 227)
         Me.GboxNivel1.TabIndex = 1
         Me.GboxNivel1.TabStop = False
+        '
+        'CboxMvto1_06
+        '
+        Me.CboxMvto1_06.AutoSize = True
+        Me.CboxMvto1_06.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CboxMvto1_06.Location = New System.Drawing.Point(292, 131)
+        Me.CboxMvto1_06.Name = "CboxMvto1_06"
+        Me.CboxMvto1_06.Size = New System.Drawing.Size(121, 17)
+        Me.CboxMvto1_06.TabIndex = 28
+        Me.CboxMvto1_06.Text = "Movimento Portador"
+        Me.CboxMvto1_06.UseVisualStyleBackColor = True
         '
         'CboxCad1_05
         '
@@ -160,7 +167,7 @@ Partial Class FrmNivel1
         '
         Me.CboxAllExcluir.AutoSize = True
         Me.CboxAllExcluir.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CboxAllExcluir.Location = New System.Drawing.Point(460, 155)
+        Me.CboxAllExcluir.Location = New System.Drawing.Point(460, 105)
         Me.CboxAllExcluir.Name = "CboxAllExcluir"
         Me.CboxAllExcluir.Size = New System.Drawing.Size(92, 17)
         Me.CboxAllExcluir.TabIndex = 17
@@ -204,7 +211,7 @@ Partial Class FrmNivel1
         '
         Me.CboxExcluir1_06.AutoSize = True
         Me.CboxExcluir1_06.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CboxExcluir1_06.Location = New System.Drawing.Point(460, 132)
+        Me.CboxExcluir1_06.Location = New System.Drawing.Point(460, 82)
         Me.CboxExcluir1_06.Name = "CboxExcluir1_06"
         Me.CboxExcluir1_06.Size = New System.Drawing.Size(142, 17)
         Me.CboxExcluir1_06.TabIndex = 16
@@ -281,7 +288,7 @@ Partial Class FrmNivel1
         '
         Me.CboxExcluir1_05.AutoSize = True
         Me.CboxExcluir1_05.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CboxExcluir1_05.Location = New System.Drawing.Point(460, 109)
+        Me.CboxExcluir1_05.Location = New System.Drawing.Point(460, 59)
         Me.CboxExcluir1_05.Name = "CboxExcluir1_05"
         Me.CboxExcluir1_05.Size = New System.Drawing.Size(123, 17)
         Me.CboxExcluir1_05.TabIndex = 15
@@ -343,28 +350,6 @@ Partial Class FrmNivel1
         Me.CboxRel1_04.Text = "Títulos Vencidos"
         Me.CboxRel1_04.UseVisualStyleBackColor = True
         '
-        'CboxExcluir1_04
-        '
-        Me.CboxExcluir1_04.AutoSize = True
-        Me.CboxExcluir1_04.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CboxExcluir1_04.Location = New System.Drawing.Point(460, 86)
-        Me.CboxExcluir1_04.Name = "CboxExcluir1_04"
-        Me.CboxExcluir1_04.Size = New System.Drawing.Size(91, 17)
-        Me.CboxExcluir1_04.TabIndex = 14
-        Me.CboxExcluir1_04.Text = "Excluir Venda"
-        Me.CboxExcluir1_04.UseVisualStyleBackColor = True
-        '
-        'CboxExcluir1_02
-        '
-        Me.CboxExcluir1_02.AutoSize = True
-        Me.CboxExcluir1_02.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CboxExcluir1_02.Location = New System.Drawing.Point(460, 40)
-        Me.CboxExcluir1_02.Name = "CboxExcluir1_02"
-        Me.CboxExcluir1_02.Size = New System.Drawing.Size(97, 17)
-        Me.CboxExcluir1_02.TabIndex = 12
-        Me.CboxExcluir1_02.Text = "Excluir Entrada"
-        Me.CboxExcluir1_02.UseVisualStyleBackColor = True
-        '
         'CboxMvto1_04
         '
         Me.CboxMvto1_04.AutoSize = True
@@ -380,7 +365,7 @@ Partial Class FrmNivel1
         '
         Me.CboxExcluir1_03.AutoSize = True
         Me.CboxExcluir1_03.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CboxExcluir1_03.Location = New System.Drawing.Point(460, 63)
+        Me.CboxExcluir1_03.Location = New System.Drawing.Point(460, 38)
         Me.CboxExcluir1_03.Name = "CboxExcluir1_03"
         Me.CboxExcluir1_03.Size = New System.Drawing.Size(114, 17)
         Me.CboxExcluir1_03.TabIndex = 13
@@ -617,17 +602,6 @@ Partial Class FrmNivel1
         Me.GroupBox2.TabIndex = 163
         Me.GroupBox2.TabStop = False
         '
-        'CboxMvto1_06
-        '
-        Me.CboxMvto1_06.AutoSize = True
-        Me.CboxMvto1_06.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CboxMvto1_06.Location = New System.Drawing.Point(292, 131)
-        Me.CboxMvto1_06.Name = "CboxMvto1_06"
-        Me.CboxMvto1_06.Size = New System.Drawing.Size(121, 17)
-        Me.CboxMvto1_06.TabIndex = 28
-        Me.CboxMvto1_06.Text = "Movimento Portador"
-        Me.CboxMvto1_06.UseVisualStyleBackColor = True
-        '
         'FrmNivel1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -654,9 +628,7 @@ Partial Class FrmNivel1
     Friend WithEvents CboxConfig_01 As CheckBox
     Friend WithEvents CboxExcluir1_06 As CheckBox
     Friend WithEvents CboxExcluir1_05 As CheckBox
-    Friend WithEvents CboxExcluir1_04 As CheckBox
     Friend WithEvents CboxExcluir1_03 As CheckBox
-    Friend WithEvents CboxExcluir1_02 As CheckBox
     Friend WithEvents CboxExcluir1_01 As CheckBox
     Friend WithEvents CboxRel1_08 As CheckBox
     Friend WithEvents CboxRel1_07 As CheckBox

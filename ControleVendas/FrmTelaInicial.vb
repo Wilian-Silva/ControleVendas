@@ -274,7 +274,6 @@ Public Class FrmTelaInicial
         form.ShowDialog()
 
     End Sub
-
     Private Sub SaidaToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles CboxMvto1_03.Click
         Dim form = New FrmVendaProdutos
         form.ShowDialog()
@@ -283,14 +282,6 @@ Public Class FrmTelaInicial
     Private Sub PedidoDeCompraToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CboxCons1_04.Click
         Dim form = New FrmPedidoCabecalho
         form.ShowDialog()
-    End Sub
-
-
-    Private Sub ExcluirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CboxExcluir1_02.Click
-        statusBtn = "Visible"
-        Dim form = New FrmNotasEntrada
-        form.ShowDialog()
-
     End Sub
 
     Private Sub ExcluirPagamentoToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles CboxExcluir1_03.Click
@@ -306,12 +297,6 @@ Public Class FrmTelaInicial
     End Sub
 
     Private Sub VendasRegistradasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CboxCons1_05.Click
-        Dim form = New FrmVendaCabecalho
-        form.ShowDialog()
-    End Sub
-
-    Private Sub ExcluirVendaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CboxExcluir1_04.Click
-        statusBtn = "Visible"
         Dim form = New FrmVendaCabecalho
         form.ShowDialog()
     End Sub

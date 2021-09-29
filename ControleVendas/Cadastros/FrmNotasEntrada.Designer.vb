@@ -32,7 +32,6 @@ Partial Class FrmNotasEntrada
         Me.BtnSelecionarItem = New System.Windows.Forms.Button()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.BtnSair = New System.Windows.Forms.Button()
-        Me.BtnExcluir = New System.Windows.Forms.Button()
         Me.TxtId = New System.Windows.Forms.TextBox()
         Me.LblId = New System.Windows.Forms.Label()
         Me.GboxExluir = New System.Windows.Forms.GroupBox()
@@ -125,26 +124,6 @@ Partial Class FrmNotasEntrada
         Me.BtnSair.TabStop = False
         Me.BtnSair.UseVisualStyleBackColor = True
         '
-        'BtnExcluir
-        '
-        Me.BtnExcluir.AccessibleDescription = ""
-        Me.BtnExcluir.AccessibleName = "Adicionar"
-        Me.BtnExcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnExcluir.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnExcluir.Enabled = False
-        Me.BtnExcluir.FlatAppearance.BorderSize = 0
-        Me.BtnExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.BtnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnExcluir.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnExcluir.ForeColor = System.Drawing.Color.Transparent
-        Me.BtnExcluir.Image = CType(resources.GetObject("BtnExcluir.Image"), System.Drawing.Image)
-        Me.BtnExcluir.Location = New System.Drawing.Point(476, 9)
-        Me.BtnExcluir.Name = "BtnExcluir"
-        Me.BtnExcluir.Size = New System.Drawing.Size(35, 35)
-        Me.BtnExcluir.TabIndex = 164
-        Me.BtnExcluir.TabStop = False
-        Me.BtnExcluir.UseVisualStyleBackColor = True
-        '
         'TxtId
         '
         Me.TxtId.Enabled = False
@@ -172,7 +151,6 @@ Partial Class FrmNotasEntrada
         Me.GboxExluir.Controls.Add(Me.TxtNota)
         Me.GboxExluir.Controls.Add(Me.Label1)
         Me.GboxExluir.Controls.Add(Me.TxtIdPedido)
-        Me.GboxExluir.Controls.Add(Me.BtnExcluir)
         Me.GboxExluir.Controls.Add(Me.LblIdPedido)
         Me.GboxExluir.Controls.Add(Me.TxtId)
         Me.GboxExluir.Controls.Add(Me.LblId)
@@ -225,7 +203,7 @@ Partial Class FrmNotasEntrada
         Me.TxtIdPedido.Enabled = False
         Me.TxtIdPedido.Location = New System.Drawing.Point(429, 20)
         Me.TxtIdPedido.Name = "TxtIdPedido"
-        Me.TxtIdPedido.Size = New System.Drawing.Size(34, 20)
+        Me.TxtIdPedido.Size = New System.Drawing.Size(55, 20)
         Me.TxtIdPedido.TabIndex = 147
         Me.TxtIdPedido.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -366,7 +344,6 @@ Partial Class FrmNotasEntrada
     Friend WithEvents LblIdPedido As Label
     Friend WithEvents DataGrid As DataGridView
     Friend WithEvents BtnSair As Button
-    Friend WithEvents BtnExcluir As Button
     Friend WithEvents GboxPesProd As GroupBox
     Friend WithEvents TxtPesquisa As TextBox
     Friend WithEvents RbNota As RadioButton

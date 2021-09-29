@@ -24,12 +24,12 @@ Partial Class FrmTelaInicial
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmTelaInicial))
-        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.CadastrosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CboxCad1_01 = New System.Windows.Forms.ToolStripMenuItem()
@@ -56,8 +56,6 @@ Partial Class FrmTelaInicial
         Me.ExclusõesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CboxExcluir1_01 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CboxExcluir1_06 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CboxExcluir1_02 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CboxExcluir1_04 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CboxExcluir1_03 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CboxExcluir1_05 = New System.Windows.Forms.ToolStripMenuItem()
         Me.RelatoriosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -263,7 +261,7 @@ Partial Class FrmTelaInicial
         '
         'ExclusõesToolStripMenuItem
         '
-        Me.ExclusõesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CboxExcluir1_01, Me.CboxExcluir1_06, Me.CboxExcluir1_02, Me.CboxExcluir1_04, Me.CboxExcluir1_03, Me.CboxExcluir1_05})
+        Me.ExclusõesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CboxExcluir1_01, Me.CboxExcluir1_06, Me.CboxExcluir1_03, Me.CboxExcluir1_05})
         Me.ExclusõesToolStripMenuItem.Image = CType(resources.GetObject("ExclusõesToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ExclusõesToolStripMenuItem.Name = "ExclusõesToolStripMenuItem"
         Me.ExclusõesToolStripMenuItem.Size = New System.Drawing.Size(86, 20)
@@ -281,18 +279,6 @@ Partial Class FrmTelaInicial
         Me.CboxExcluir1_06.Size = New System.Drawing.Size(216, 22)
         Me.CboxExcluir1_06.Text = "Excluir Pedido de Venda"
         Me.CboxExcluir1_06.Visible = False
-        '
-        'CboxExcluir1_02
-        '
-        Me.CboxExcluir1_02.Name = "CboxExcluir1_02"
-        Me.CboxExcluir1_02.Size = New System.Drawing.Size(216, 22)
-        Me.CboxExcluir1_02.Text = "Excluir Entrada Nota Fiscal"
-        '
-        'CboxExcluir1_04
-        '
-        Me.CboxExcluir1_04.Name = "CboxExcluir1_04"
-        Me.CboxExcluir1_04.Size = New System.Drawing.Size(216, 22)
-        Me.CboxExcluir1_04.Text = "Excluir Venda de Produtos"
         '
         'CboxExcluir1_03
         '
@@ -801,23 +787,23 @@ Partial Class FrmTelaInicial
         Me.DataGrid_AVencer.AllowUserToResizeRows = False
         Me.DataGrid_AVencer.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.DataGrid_AVencer.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle13.BackColor = System.Drawing.Color.DarkGray
-        DataGridViewCellStyle13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.DarkGray
-        DataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGrid_AVencer.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle13
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkGray
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkGray
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGrid_AVencer.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGrid_AVencer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle14.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGrid_AVencer.DefaultCellStyle = DataGridViewCellStyle14
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGrid_AVencer.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGrid_AVencer.Enabled = False
         Me.DataGrid_AVencer.EnableHeadersVisualStyles = False
         Me.DataGrid_AVencer.Location = New System.Drawing.Point(224, 486)
@@ -825,9 +811,9 @@ Partial Class FrmTelaInicial
         Me.DataGrid_AVencer.Name = "DataGrid_AVencer"
         Me.DataGrid_AVencer.ReadOnly = True
         Me.DataGrid_AVencer.RowHeadersVisible = False
-        DataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.ControlLightLight
-        DataGridViewCellStyle15.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
-        Me.DataGrid_AVencer.RowsDefaultCellStyle = DataGridViewCellStyle15
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ControlLightLight
+        DataGridViewCellStyle3.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.DataGrid_AVencer.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGrid_AVencer.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGrid_AVencer.Size = New System.Drawing.Size(543, 193)
         Me.DataGrid_AVencer.TabIndex = 143
@@ -862,23 +848,23 @@ Partial Class FrmTelaInicial
         Me.DataGrid_Vencidos.AllowUserToResizeRows = False
         Me.DataGrid_Vencidos.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.DataGrid_Vencidos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle16.BackColor = System.Drawing.Color.DarkGray
-        DataGridViewCellStyle16.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.DarkGray
-        DataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGrid_Vencidos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle16
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.DarkGray
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkGray
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGrid_Vencidos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.DataGrid_Vencidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle17.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGrid_Vencidos.DefaultCellStyle = DataGridViewCellStyle17
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGrid_Vencidos.DefaultCellStyle = DataGridViewCellStyle5
         Me.DataGrid_Vencidos.Enabled = False
         Me.DataGrid_Vencidos.EnableHeadersVisualStyles = False
         Me.DataGrid_Vencidos.Location = New System.Drawing.Point(783, 486)
@@ -886,9 +872,9 @@ Partial Class FrmTelaInicial
         Me.DataGrid_Vencidos.Name = "DataGrid_Vencidos"
         Me.DataGrid_Vencidos.ReadOnly = True
         Me.DataGrid_Vencidos.RowHeadersVisible = False
-        DataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.ControlLightLight
-        DataGridViewCellStyle18.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
-        Me.DataGrid_Vencidos.RowsDefaultCellStyle = DataGridViewCellStyle18
+        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.ControlLightLight
+        DataGridViewCellStyle6.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.DataGrid_Vencidos.RowsDefaultCellStyle = DataGridViewCellStyle6
         Me.DataGrid_Vencidos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGrid_Vencidos.Size = New System.Drawing.Size(543, 193)
         Me.DataGrid_Vencidos.TabIndex = 147
@@ -972,10 +958,8 @@ Partial Class FrmTelaInicial
     Friend WithEvents CboxCons1_04 As ToolStripMenuItem
     Friend WithEvents ExclusõesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CboxExcluir1_01 As ToolStripMenuItem
-    Friend WithEvents CboxExcluir1_02 As ToolStripMenuItem
     Friend WithEvents CboxExcluir1_03 As ToolStripMenuItem
     Friend WithEvents CboxCons1_05 As ToolStripMenuItem
-    Friend WithEvents CboxExcluir1_04 As ToolStripMenuItem
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents GroupBox3 As GroupBox

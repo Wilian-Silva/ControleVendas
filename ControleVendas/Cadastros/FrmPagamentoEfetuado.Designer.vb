@@ -239,7 +239,6 @@ Partial Class FrmPagamentoEfetuado
         Me.TxtPortador.Name = "TxtPortador"
         Me.TxtPortador.Size = New System.Drawing.Size(77, 20)
         Me.TxtPortador.TabIndex = 181
-        Me.TxtPortador.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label8
         '

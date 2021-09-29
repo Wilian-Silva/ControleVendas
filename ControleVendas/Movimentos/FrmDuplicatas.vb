@@ -16,6 +16,9 @@ Public Class FrmDuplicatas
     End Sub
 
     Private Sub FrmDuplicatas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        Dim linhaPed As Integer
+
         If editarDuplicata = "True" Then
             BtnSalvar.Enabled = True
             BtnOk.Enabled = False
@@ -27,6 +30,36 @@ Public Class FrmDuplicatas
             BtnSalvar.Enabled = False
             TxtParcela.Text = parcela + 1
             parcela = TxtParcela.Text
+
+        Else
+
+            Try
+                Abrir()
+                Dim cmdp As MySqlCommand
+                Dim sql As String
+                Dim ultima As MySqlDataReader
+
+                sql = "SELECT MAX(parcela) AS Item FROM duplicatas WHERE documento = '" & TxtNotaFiscal.Text & "' "
+
+                cmdp = New MySqlCommand(sql, con)
+                ultima = cmdp.ExecuteReader()
+                ultima.Read()
+
+                If Not IsDBNull(ultima("Item")) Then
+
+                    linhaPed = ultima("Item")
+                    ultima.Close()
+                Else
+                    ultima.Close()
+                End If
+
+                TxtParcela.Text = linhaPed + 1
+
+            Catch ex As Exception
+                MsgBox("Erro ao buscar ultimo parcela!! ---- " + ex.Message)
+            End Try
+
+
         End If
 
     End Sub

@@ -53,8 +53,6 @@ Partial Class FrmNivel3
         Me.CboxRel1_03 = New System.Windows.Forms.CheckBox()
         Me.CboxExcluir1_01 = New System.Windows.Forms.CheckBox()
         Me.CboxRel1_04 = New System.Windows.Forms.CheckBox()
-        Me.CboxExcluir1_04 = New System.Windows.Forms.CheckBox()
-        Me.CboxExcluir1_02 = New System.Windows.Forms.CheckBox()
         Me.CboxMvto1_04 = New System.Windows.Forms.CheckBox()
         Me.CboxExcluir1_03 = New System.Windows.Forms.CheckBox()
         Me.CboxCons1_06 = New System.Windows.Forms.CheckBox()
@@ -186,8 +184,6 @@ Partial Class FrmNivel3
         Me.GboxNivel1.Controls.Add(Me.CboxRel1_03)
         Me.GboxNivel1.Controls.Add(Me.CboxExcluir1_01)
         Me.GboxNivel1.Controls.Add(Me.CboxRel1_04)
-        Me.GboxNivel1.Controls.Add(Me.CboxExcluir1_04)
-        Me.GboxNivel1.Controls.Add(Me.CboxExcluir1_02)
         Me.GboxNivel1.Controls.Add(Me.CboxMvto1_04)
         Me.GboxNivel1.Controls.Add(Me.CboxExcluir1_03)
         Me.GboxNivel1.Controls.Add(Me.CboxCons1_06)
@@ -258,7 +254,7 @@ Partial Class FrmNivel3
         '
         Me.CboxAllExcluir.AutoSize = True
         Me.CboxAllExcluir.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CboxAllExcluir.Location = New System.Drawing.Point(460, 155)
+        Me.CboxAllExcluir.Location = New System.Drawing.Point(460, 106)
         Me.CboxAllExcluir.Name = "CboxAllExcluir"
         Me.CboxAllExcluir.Size = New System.Drawing.Size(92, 17)
         Me.CboxAllExcluir.TabIndex = 17
@@ -302,7 +298,7 @@ Partial Class FrmNivel3
         '
         Me.CboxExcluir1_06.AutoSize = True
         Me.CboxExcluir1_06.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CboxExcluir1_06.Location = New System.Drawing.Point(460, 132)
+        Me.CboxExcluir1_06.Location = New System.Drawing.Point(460, 83)
         Me.CboxExcluir1_06.Name = "CboxExcluir1_06"
         Me.CboxExcluir1_06.Size = New System.Drawing.Size(142, 17)
         Me.CboxExcluir1_06.TabIndex = 16
@@ -379,7 +375,7 @@ Partial Class FrmNivel3
         '
         Me.CboxExcluir1_05.AutoSize = True
         Me.CboxExcluir1_05.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CboxExcluir1_05.Location = New System.Drawing.Point(460, 109)
+        Me.CboxExcluir1_05.Location = New System.Drawing.Point(460, 60)
         Me.CboxExcluir1_05.Name = "CboxExcluir1_05"
         Me.CboxExcluir1_05.Size = New System.Drawing.Size(123, 17)
         Me.CboxExcluir1_05.TabIndex = 15
@@ -441,28 +437,6 @@ Partial Class FrmNivel3
         Me.CboxRel1_04.Text = "Títulos Vencidos"
         Me.CboxRel1_04.UseVisualStyleBackColor = True
         '
-        'CboxExcluir1_04
-        '
-        Me.CboxExcluir1_04.AutoSize = True
-        Me.CboxExcluir1_04.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CboxExcluir1_04.Location = New System.Drawing.Point(460, 86)
-        Me.CboxExcluir1_04.Name = "CboxExcluir1_04"
-        Me.CboxExcluir1_04.Size = New System.Drawing.Size(91, 17)
-        Me.CboxExcluir1_04.TabIndex = 14
-        Me.CboxExcluir1_04.Text = "Excluir Venda"
-        Me.CboxExcluir1_04.UseVisualStyleBackColor = True
-        '
-        'CboxExcluir1_02
-        '
-        Me.CboxExcluir1_02.AutoSize = True
-        Me.CboxExcluir1_02.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CboxExcluir1_02.Location = New System.Drawing.Point(460, 40)
-        Me.CboxExcluir1_02.Name = "CboxExcluir1_02"
-        Me.CboxExcluir1_02.Size = New System.Drawing.Size(97, 17)
-        Me.CboxExcluir1_02.TabIndex = 12
-        Me.CboxExcluir1_02.Text = "Excluir Entrada"
-        Me.CboxExcluir1_02.UseVisualStyleBackColor = True
-        '
         'CboxMvto1_04
         '
         Me.CboxMvto1_04.AutoSize = True
@@ -478,7 +452,7 @@ Partial Class FrmNivel3
         '
         Me.CboxExcluir1_03.AutoSize = True
         Me.CboxExcluir1_03.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CboxExcluir1_03.Location = New System.Drawing.Point(460, 63)
+        Me.CboxExcluir1_03.Location = New System.Drawing.Point(460, 38)
         Me.CboxExcluir1_03.Name = "CboxExcluir1_03"
         Me.CboxExcluir1_03.Size = New System.Drawing.Size(114, 17)
         Me.CboxExcluir1_03.TabIndex = 13
@@ -677,8 +651,6 @@ Partial Class FrmNivel3
     Friend WithEvents CboxRel1_03 As CheckBox
     Friend WithEvents CboxExcluir1_01 As CheckBox
     Friend WithEvents CboxRel1_04 As CheckBox
-    Friend WithEvents CboxExcluir1_04 As CheckBox
-    Friend WithEvents CboxExcluir1_02 As CheckBox
     Friend WithEvents CboxMvto1_04 As CheckBox
     Friend WithEvents CboxExcluir1_03 As CheckBox
     Friend WithEvents CboxCons1_06 As CheckBox

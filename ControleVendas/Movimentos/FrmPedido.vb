@@ -69,6 +69,7 @@ Public Class FrmPedido
         TxtTotalPedido.Text = ""
         DataGrid.DataSource = Nothing
         Table1.Columns.Clear()
+        Table1.Rows.Clear()
         IncluirPedido = ""
         editarpedido = ""
         TxtStatusPedido.Text = ""

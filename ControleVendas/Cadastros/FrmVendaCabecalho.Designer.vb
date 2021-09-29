@@ -32,7 +32,6 @@ Partial Class FrmVendaCabecalho
         Me.BtnSelecionarItem = New System.Windows.Forms.Button()
         Me.DataGrid = New System.Windows.Forms.DataGridView()
         Me.GboxExluir = New System.Windows.Forms.GroupBox()
-        Me.BtnExcluir = New System.Windows.Forms.Button()
         Me.TxtCliente = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TxtSaldo_venda = New System.Windows.Forms.TextBox()
@@ -135,7 +134,6 @@ Partial Class FrmVendaCabecalho
         'GboxExluir
         '
         Me.GboxExluir.BackColor = System.Drawing.Color.Transparent
-        Me.GboxExluir.Controls.Add(Me.BtnExcluir)
         Me.GboxExluir.Controls.Add(Me.TxtCliente)
         Me.GboxExluir.Controls.Add(Me.Label3)
         Me.GboxExluir.Controls.Add(Me.TxtSaldo_venda)
@@ -150,26 +148,6 @@ Partial Class FrmVendaCabecalho
         Me.GboxExluir.TabIndex = 154
         Me.GboxExluir.TabStop = False
         Me.GboxExluir.Text = "Dados da Venda"
-        '
-        'BtnExcluir
-        '
-        Me.BtnExcluir.AccessibleDescription = ""
-        Me.BtnExcluir.AccessibleName = "Adicionar"
-        Me.BtnExcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnExcluir.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnExcluir.Enabled = False
-        Me.BtnExcluir.FlatAppearance.BorderSize = 0
-        Me.BtnExcluir.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.BtnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnExcluir.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnExcluir.ForeColor = System.Drawing.Color.Transparent
-        Me.BtnExcluir.Image = CType(resources.GetObject("BtnExcluir.Image"), System.Drawing.Image)
-        Me.BtnExcluir.Location = New System.Drawing.Point(488, 10)
-        Me.BtnExcluir.Name = "BtnExcluir"
-        Me.BtnExcluir.Size = New System.Drawing.Size(35, 35)
-        Me.BtnExcluir.TabIndex = 169
-        Me.BtnExcluir.TabStop = False
-        Me.BtnExcluir.UseVisualStyleBackColor = True
         '
         'TxtCliente
         '
@@ -194,7 +172,7 @@ Partial Class FrmVendaCabecalho
         Me.TxtSaldo_venda.Enabled = False
         Me.TxtSaldo_venda.Location = New System.Drawing.Point(426, 20)
         Me.TxtSaldo_venda.Name = "TxtSaldo_venda"
-        Me.TxtSaldo_venda.Size = New System.Drawing.Size(55, 20)
+        Me.TxtSaldo_venda.Size = New System.Drawing.Size(76, 20)
         Me.TxtSaldo_venda.TabIndex = 165
         '
         'TxtParcela
@@ -374,7 +352,6 @@ Partial Class FrmVendaCabecalho
     Friend WithEvents GboxPesquisar As GroupBox
     Friend WithEvents BtnCacelarConsulta As Button
     Friend WithEvents BtnSelecionarItem As Button
-    Friend WithEvents BtnExcluir As Button
     Friend WithEvents BtnSair As Button
     Friend WithEvents RbVenda As RadioButton
 End Class

@@ -69,16 +69,12 @@ Public Class FrmNivel3
 
         If CboxAllExcluir.Checked = True Then
             CboxExcluir1_01.Checked = True
-            CboxExcluir1_02.Checked = True
             CboxExcluir1_03.Checked = True
-            CboxExcluir1_04.Checked = True
             CboxExcluir1_05.Checked = True
             CboxExcluir1_06.Checked = True
         Else
             CboxExcluir1_01.Checked = False
-            CboxExcluir1_02.Checked = False
             CboxExcluir1_03.Checked = False
-            CboxExcluir1_04.Checked = False
             CboxExcluir1_05.Checked = False
             CboxExcluir1_06.Checked = False
 

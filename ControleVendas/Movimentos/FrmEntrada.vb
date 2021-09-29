@@ -643,13 +643,22 @@ Public Class FrmEntrada
 
     Private Sub BtnEliminar_Click(sender As Object, e As EventArgs) Handles BtnEliminar.Click
 
-        If MsgBox("Deseja eliminar parcela ?", vbYesNo, "Eliminar duplicatas") = vbYes Then
+        If novaEntrada = "True" Then
 
-            DeltarParcelaBanco()
-            ListarDuplicatas()
+            If DataGridDuplicatas.Rows.Count < 1 Then Exit Sub
+            DataGridDuplicatas.Rows.Remove(DataGridDuplicatas.CurrentRow)
             TotalDatagridDuplicatas()
             TotalNfe_TotalDuplicatas()
 
+        Else
+            If MsgBox("Deseja eliminar parcela ?", vbYesNo, "Eliminar duplicatas") = vbYes Then
+
+                DeltarParcelaBanco()
+                ListarDuplicatas()
+                TotalDatagridDuplicatas()
+                TotalNfe_TotalDuplicatas()
+
+            End If
         End If
 
     End Sub
@@ -685,7 +694,6 @@ Public Class FrmEntrada
                 reader.Close()
 
 
-                DataGridDuplicatas.Rows.Remove(DataGridDuplicatas.CurrentRow)
             End If
         Catch ex As Exception
             MsgBox("Erro ao Salvar!! " + ex.Message)

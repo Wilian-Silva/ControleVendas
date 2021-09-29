@@ -72,7 +72,7 @@ Partial Class FrmUsuarios
         Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox2.Controls.Add(Me.Label1)
         Me.GroupBox2.Controls.Add(Me.TxtPesquisar)
-        Me.GroupBox2.Location = New System.Drawing.Point(25, 9)
+        Me.GroupBox2.Location = New System.Drawing.Point(25, 3)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(319, 50)
         Me.GroupBox2.TabIndex = 61
@@ -122,9 +122,9 @@ Partial Class FrmUsuarios
         Me.GroupBox1.Controls.Add(Me.TxtCPF)
         Me.GroupBox1.Controls.Add(Me.TxtTelefone)
         Me.GroupBox1.Controls.Add(Me.Label5)
-        Me.GroupBox1.Location = New System.Drawing.Point(25, 72)
+        Me.GroupBox1.Location = New System.Drawing.Point(25, 56)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(319, 181)
+        Me.GroupBox1.Size = New System.Drawing.Size(319, 146)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Dados Cadastrais"
@@ -133,7 +133,7 @@ Partial Class FrmUsuarios
         '
         Me.TxtEmail.BackColor = System.Drawing.Color.White
         Me.TxtEmail.Enabled = False
-        Me.TxtEmail.Location = New System.Drawing.Point(75, 141)
+        Me.TxtEmail.Location = New System.Drawing.Point(75, 114)
         Me.TxtEmail.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtEmail.Name = "TxtEmail"
         Me.TxtEmail.Size = New System.Drawing.Size(221, 20)
@@ -144,7 +144,7 @@ Partial Class FrmUsuarios
         Me.Label6.AutoSize = True
         Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(28, 142)
+        Me.Label6.Location = New System.Drawing.Point(28, 115)
         Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(44, 16)
@@ -177,7 +177,7 @@ Partial Class FrmUsuarios
         '
         Me.TxtEndereco.BackColor = System.Drawing.Color.White
         Me.TxtEndereco.Enabled = False
-        Me.TxtEndereco.Location = New System.Drawing.Point(76, 60)
+        Me.TxtEndereco.Location = New System.Drawing.Point(76, 52)
         Me.TxtEndereco.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtEndereco.Name = "TxtEndereco"
         Me.TxtEndereco.Size = New System.Drawing.Size(220, 20)
@@ -188,7 +188,7 @@ Partial Class FrmUsuarios
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(6, 61)
+        Me.Label4.Location = New System.Drawing.Point(6, 53)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(66, 16)
@@ -200,7 +200,7 @@ Partial Class FrmUsuarios
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(37, 102)
+        Me.Label3.Location = New System.Drawing.Point(37, 86)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(35, 16)
@@ -211,7 +211,7 @@ Partial Class FrmUsuarios
         '
         Me.TxtCPF.BackColor = System.Drawing.Color.White
         Me.TxtCPF.Enabled = False
-        Me.TxtCPF.Location = New System.Drawing.Point(76, 100)
+        Me.TxtCPF.Location = New System.Drawing.Point(76, 84)
         Me.TxtCPF.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtCPF.Mask = "000,000,000-00"
         Me.TxtCPF.Name = "TxtCPF"
@@ -267,7 +267,7 @@ Partial Class FrmUsuarios
         '
         Me.TxtSenha.BackColor = System.Drawing.Color.White
         Me.TxtSenha.Enabled = False
-        Me.TxtSenha.Location = New System.Drawing.Point(78, 55)
+        Me.TxtSenha.Location = New System.Drawing.Point(78, 52)
         Me.TxtSenha.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtSenha.Name = "TxtSenha"
         Me.TxtSenha.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
@@ -279,7 +279,7 @@ Partial Class FrmUsuarios
         Me.Label8.AutoSize = True
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(26, 57)
+        Me.Label8.Location = New System.Drawing.Point(26, 54)
         Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(49, 16)
@@ -451,7 +451,7 @@ Partial Class FrmUsuarios
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DataGrid.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGrid.EnableHeadersVisualStyles = False
-        Me.DataGrid.Location = New System.Drawing.Point(25, 259)
+        Me.DataGrid.Location = New System.Drawing.Point(25, 210)
         Me.DataGrid.MultiSelect = False
         Me.DataGrid.Name = "DataGrid"
         Me.DataGrid.ReadOnly = True
@@ -460,7 +460,7 @@ Partial Class FrmUsuarios
         DataGridViewCellStyle3.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
         Me.DataGrid.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGrid.Size = New System.Drawing.Size(603, 209)
+        Me.DataGrid.Size = New System.Drawing.Size(603, 175)
         Me.DataGrid.TabIndex = 149
         '
         'GboxNivelAcesso
@@ -473,9 +473,9 @@ Partial Class FrmUsuarios
         Me.GboxNivelAcesso.Controls.Add(Me.Label8)
         Me.GboxNivelAcesso.Controls.Add(Me.Label9)
         Me.GboxNivelAcesso.Controls.Add(Me.TxtSenha)
-        Me.GboxNivelAcesso.Location = New System.Drawing.Point(361, 72)
+        Me.GboxNivelAcesso.Location = New System.Drawing.Point(361, 56)
         Me.GboxNivelAcesso.Name = "GboxNivelAcesso"
-        Me.GboxNivelAcesso.Size = New System.Drawing.Size(267, 181)
+        Me.GboxNivelAcesso.Size = New System.Drawing.Size(267, 146)
         Me.GboxNivelAcesso.TabIndex = 2
         Me.GboxNivelAcesso.TabStop = False
         Me.GboxNivelAcesso.Text = "Dados de Login"
@@ -484,7 +484,7 @@ Partial Class FrmUsuarios
         '
         Me.RbNivel2.AutoSize = True
         Me.RbNivel2.Enabled = False
-        Me.RbNivel2.Location = New System.Drawing.Point(78, 117)
+        Me.RbNivel2.Location = New System.Drawing.Point(78, 99)
         Me.RbNivel2.Name = "RbNivel2"
         Me.RbNivel2.Size = New System.Drawing.Size(98, 17)
         Me.RbNivel2.TabIndex = 156
@@ -495,7 +495,7 @@ Partial Class FrmUsuarios
         '
         Me.RbNivel3.AutoSize = True
         Me.RbNivel3.Enabled = False
-        Me.RbNivel3.Location = New System.Drawing.Point(78, 146)
+        Me.RbNivel3.Location = New System.Drawing.Point(78, 122)
         Me.RbNivel3.Name = "RbNivel3"
         Me.RbNivel3.Size = New System.Drawing.Size(98, 17)
         Me.RbNivel3.TabIndex = 155
@@ -506,7 +506,7 @@ Partial Class FrmUsuarios
         '
         Me.RbNivel1.AutoSize = True
         Me.RbNivel1.Enabled = False
-        Me.RbNivel1.Location = New System.Drawing.Point(78, 89)
+        Me.RbNivel1.Location = New System.Drawing.Point(78, 78)
         Me.RbNivel1.Name = "RbNivel1"
         Me.RbNivel1.Size = New System.Drawing.Size(98, 17)
         Me.RbNivel1.TabIndex = 154
@@ -523,7 +523,7 @@ Partial Class FrmUsuarios
         Me.GboxProduto.Controls.Add(Me.BtnLimpar)
         Me.GboxProduto.Controls.Add(Me.BtnSalvar)
         Me.GboxProduto.Controls.Add(Me.BtnEditar)
-        Me.GboxProduto.Location = New System.Drawing.Point(361, 9)
+        Me.GboxProduto.Location = New System.Drawing.Point(361, 4)
         Me.GboxProduto.Name = "GboxProduto"
         Me.GboxProduto.Size = New System.Drawing.Size(269, 50)
         Me.GboxProduto.TabIndex = 147
@@ -534,7 +534,7 @@ Partial Class FrmUsuarios
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(653, 488)
+        Me.ClientSize = New System.Drawing.Size(653, 405)
         Me.Controls.Add(Me.GboxProduto)
         Me.Controls.Add(Me.GboxNivelAcesso)
         Me.Controls.Add(Me.DataGrid)

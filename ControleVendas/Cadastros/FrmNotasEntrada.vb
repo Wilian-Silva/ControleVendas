@@ -127,73 +127,10 @@ Public Class FrmNotasEntrada
 
     Private Sub FrmNotasEntrada_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        If statusBtn = "Visible" Then
-            BtnExcluir.Enabled = True
-        End If
         If pesquisarDuplicata = "True" Then
             GboxPesquisar.Visible = True
         End If
         ListarTudo()
-    End Sub
-
-    Private Sub BtnExcluir_Click(sender As Object, e As EventArgs) Handles BtnExcluir.Click
-
-        If TxtId.Text <> "" Then
-            Abrir()
-            'PESQUISAR SE A NOTA JA NÃO FOI PAGA
-            Dim cmd1 As MySqlCommand
-            Dim reader As MySqlDataReader
-            Dim sql1 As String
-
-            sql1 = "SELECT * FROM mvto_pagamentos where id_entrada = '" & TxtId.Text & "' "
-            cmd1 = New MySqlCommand(sql1, con)
-            reader = cmd1.ExecuteReader
-
-            If reader.Read = True Then
-
-                MsgBox("Documento não pode ser excluido, já foi pago!!", MsgBoxStyle.Information, "Excluir Documento")
-                reader.Close()
-                Exit Sub
-            Else
-                reader.Close()
-            End If
-
-
-            'PROGRAMANDO EXCLUSÃO DE REGISTRO NO BANCO
-            If MsgBox("Deseja excluir todos os registros da nota " + TxtNota.Text + " do fornecedor " + TxtFornecedor.Text + "?", vbYesNo, "Exclusão") = vbYes Then
-
-                Try
-                    Abrir()
-
-                    Dim cmd As MySqlCommand
-                    Dim sql As String
-
-                    sql = "DELETE FROM entrada where id = '" & TxtId.Text & "' "
-                    cmd = New MySqlCommand(sql, con)
-                    cmd.ExecuteNonQuery()
-
-                    Excluir_Estoque()
-
-                    Atualizar_Saldo_Estoque()
-
-                    Exluir_Duplicatas()
-
-                    Atualizar_PedidoStatus()
-
-                    MsgBox("Registro excluído com Sucesso!!", MsgBoxStyle.Information, "Exlusão")
-
-                    TxtId.Text = ""
-                    TxtIdPedido.Text = ""
-
-                Catch ex As Exception
-                    MsgBox("Erro ao excluir!!" + ex.Message)
-                End Try
-
-            End If
-        Else
-            MsgBox("Selecione um registro para excluir!!", MsgBoxStyle.Information, "Registro Vazio")
-        End If
-
     End Sub
 
     Private Sub DataGrid_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGrid.CellClick
@@ -209,93 +146,6 @@ Public Class FrmNotasEntrada
 
     End Sub
 
-    Private Sub Atualizar_Saldo_Estoque()
-        Try
-            Abrir()
-
-            Dim cmd As MySqlCommand
-            Dim sql As String
-
-            Dim saldoItem As Integer
-            Dim codItem As Integer
-            Dim qtd As Integer
-            Dim saldoEstoque As Integer
-
-
-            For i = 0 To DataGrid.RowCount - 1
-
-                codItem = CInt(DataGrid.Rows(i).Cells(1).Value.ToString)
-                qtd = CInt(DataGrid.Rows(i).Cells(3).Value.ToString)
-
-                Dim cmdp As MySqlCommand
-                Dim sqlp As String
-                Dim ultima As MySqlDataReader
-
-                sqlp = "SELECT saldo_estoque FROM produtos WHERE id= '" & codItem & "'"
-                cmdp = New MySqlCommand(sqlp, con)
-                ultima = cmdp.ExecuteReader()
-
-                If (ultima.Read()) Then
-                    saldoEstoque = ultima("saldo_estoque")
-                    ultima.Close()
-                Else
-                    ultima.Close()
-                End If
-
-                saldoItem = saldoEstoque - qtd
-
-                sql = "UPDATE produtos SET saldo_estoque = '" & saldoItem & "' WHERE id = '" & codItem & "'"
-                cmd = New MySqlCommand(sql, con)
-                cmd.ExecuteNonQuery()
-
-            Next
-
-        Catch ex As Exception
-            MsgBox("Erro ao Salvar!!" + ex.Message)
-        End Try
-
-    End Sub
-    Private Sub Exluir_Duplicatas()
-        Try
-            Abrir()
-
-            Dim cmd As MySqlCommand
-            Dim sql As String
-
-            sql = "DELETE FROM duplicatas where id_entrada = '" & TxtId.Text & "' "
-            cmd = New MySqlCommand(sql, con)
-            cmd.ExecuteNonQuery()
-
-        Catch ex As Exception
-            MsgBox("Erro ao Salvar!! " + ex.Message)
-        End Try
-
-    End Sub
-    Sub Excluir_Estoque()
-
-        'PROMAGAMANDO EXCLUSÃO NO ESTOQUE
-        Abrir()
-        Dim cmd As MySqlCommand
-        Dim sql As String
-
-        sql = "DELETE FROM estoque where id_entrada = '" & TxtId.Text & "' "
-        cmd = New MySqlCommand(sql, con)
-        cmd.ExecuteNonQuery()
-    End Sub
-    Sub Atualizar_PedidoStatus()
-
-        'PROMAGAMANDO ATUALIZAÇÃO STATUS DO PEDIDO
-        Abrir()
-        Dim cmd As MySqlCommand
-        Dim sql As String
-        Dim stpedido As String
-        stpedido = "Aberto"
-
-        sql = "UPDATE pedido_cabecalho SET status = '" & stpedido & "' WHERE id = '" & TxtIdPedido.Text & "'"
-        cmd = New MySqlCommand(sql, con)
-        cmd.ExecuteNonQuery()
-
-    End Sub
     Private Sub TxtPesquisa_TextChanged(sender As Object, e As EventArgs) Handles TxtPesquisa.TextChanged
         FiltroDataGrid()
     End Sub
