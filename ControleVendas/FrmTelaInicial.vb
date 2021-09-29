@@ -375,4 +375,20 @@ Public Class FrmTelaInicial
         Dim form = New FrmSaldoPortador
         form.ShowDialog()
     End Sub
+
+    Private Sub CboxRel1_01_Click(sender As Object, e As EventArgs) Handles CboxRel1_01.Click
+        Dim form = New ReportVendas
+        form.ShowDialog()
+
+    End Sub
+
+    Private Sub BtnRelVendas_Click(sender As Object, e As EventArgs) Handles BtnRelVendas.Click
+        Dim form = New ReportVendas
+        form.ShowDialog()
+    End Sub
+
+    Private Sub CboxRel1_05_Click(sender As Object, e As EventArgs) Handles CboxRel1_05.Click
+        Dim form = New FrmReportCompras
+        form.ShowDialog()
+    End Sub
 End Class

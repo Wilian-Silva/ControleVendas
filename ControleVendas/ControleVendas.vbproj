@@ -186,6 +186,19 @@
     <Compile Include="Cadastros\FrmVendaCabecalho.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="DataSet_ReportCompras.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_ReportCompras.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet_ReportVendas.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_ReportVendas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet_ReportVendas.vb">
+      <DependentUpon>DataSet_ReportVendas.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FrmLogin.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -295,6 +308,18 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="MySqlCommand.vb" />
+    <Compile Include="Relatorios\FrmReportCompras.Designer.vb">
+      <DependentUpon>FrmReportCompras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\FrmReportCompras.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\ReportVendas.Designer.vb">
+      <DependentUpon>ReportVendas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\ReportVendas.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Cadastros\FrmClientes.resx">
@@ -394,8 +419,38 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\FrmReportCompras.resx">
+      <DependentUpon>FrmReportCompras.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\ReportCompras.rdlc" />
+    <EmbeddedResource Include="Relatorios\ReportVendas.rdlc" />
+    <EmbeddedResource Include="Relatorios\ReportVendas.resx">
+      <DependentUpon>ReportVendas.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="DataSet_ReportCompras.xsc">
+      <DependentUpon>DataSet_ReportCompras.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet_ReportCompras.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_ReportCompras.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet_ReportCompras.xss">
+      <DependentUpon>DataSet_ReportCompras.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet_ReportVendas.xsc">
+      <DependentUpon>DataSet_ReportVendas.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet_ReportVendas.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_ReportVendas.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet_ReportVendas.xss">
+      <DependentUpon>DataSet_ReportVendas.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -428,8 +483,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Relatorios\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

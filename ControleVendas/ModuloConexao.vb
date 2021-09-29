@@ -31,6 +31,8 @@ Module ModuloConexao
 
     Public editarMvtoPortador As String
 
+    Public PedidoRelCompra As String
+
     Public parcela As Integer
 
     Public saldoEstoque As Integer
@@ -88,6 +90,8 @@ Module ModuloConexao
 
 
     Public Sub LimparVariaveisGlobais()
+
+        PedidoRelCompra = "'"
         editarMvtoPortador = ""
         saldoEstoque = Nothing
         utilizarPedido = ""

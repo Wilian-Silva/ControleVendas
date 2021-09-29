@@ -161,6 +161,7 @@ Public Class FrmNotasEntrada
 
             IdDuplicata = DataGrid.CurrentRow.Cells(11).Value
             IdDuplicata2 = DataGrid.CurrentRow.Cells(0).Value
+            PedidoRelCompra = DataGrid.CurrentRow.Cells(9).Value
 
             Me.Close()
         Else
