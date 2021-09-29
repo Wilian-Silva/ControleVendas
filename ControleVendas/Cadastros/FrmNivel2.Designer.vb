@@ -38,7 +38,6 @@ Partial Class FrmNivel2
         Me.CboxAllRel = New System.Windows.Forms.CheckBox()
         Me.CboxAllExcluir = New System.Windows.Forms.CheckBox()
         Me.CboxAllMvto = New System.Windows.Forms.CheckBox()
-        Me.CboxRel1_08 = New System.Windows.Forms.CheckBox()
         Me.CboxAllConsultas = New System.Windows.Forms.CheckBox()
         Me.CboxExcluir1_06 = New System.Windows.Forms.CheckBox()
         Me.CboxRel1_07 = New System.Windows.Forms.CheckBox()
@@ -169,7 +168,6 @@ Partial Class FrmNivel2
         Me.GboxNivel1.Controls.Add(Me.CboxAllRel)
         Me.GboxNivel1.Controls.Add(Me.CboxAllExcluir)
         Me.GboxNivel1.Controls.Add(Me.CboxAllMvto)
-        Me.GboxNivel1.Controls.Add(Me.CboxRel1_08)
         Me.GboxNivel1.Controls.Add(Me.CboxAllConsultas)
         Me.GboxNivel1.Controls.Add(Me.CboxExcluir1_06)
         Me.GboxNivel1.Controls.Add(Me.CboxRel1_07)
@@ -243,7 +241,7 @@ Partial Class FrmNivel2
         '
         Me.CboxAllRel.AutoSize = True
         Me.CboxAllRel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CboxAllRel.Location = New System.Drawing.Point(606, 200)
+        Me.CboxAllRel.Location = New System.Drawing.Point(606, 179)
         Me.CboxAllRel.Name = "CboxAllRel"
         Me.CboxAllRel.Size = New System.Drawing.Size(92, 17)
         Me.CboxAllRel.TabIndex = 25
@@ -271,17 +269,6 @@ Partial Class FrmNivel2
         Me.CboxAllMvto.TabIndex = 16
         Me.CboxAllMvto.Text = "Marcar Todos"
         Me.CboxAllMvto.UseVisualStyleBackColor = True
-        '
-        'CboxRel1_08
-        '
-        Me.CboxRel1_08.AutoSize = True
-        Me.CboxRel1_08.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CboxRel1_08.Location = New System.Drawing.Point(606, 178)
-        Me.CboxRel1_08.Name = "CboxRel1_08"
-        Me.CboxRel1_08.Size = New System.Drawing.Size(113, 17)
-        Me.CboxRel1_08.TabIndex = 24
-        Me.CboxRel1_08.Text = "Pedidos de Venda"
-        Me.CboxRel1_08.UseVisualStyleBackColor = True
         '
         'CboxAllConsultas
         '
@@ -637,7 +624,6 @@ Partial Class FrmNivel2
     Friend WithEvents CboxAllRel As CheckBox
     Friend WithEvents CboxAllExcluir As CheckBox
     Friend WithEvents CboxAllMvto As CheckBox
-    Friend WithEvents CboxRel1_08 As CheckBox
     Friend WithEvents CboxAllConsultas As CheckBox
     Friend WithEvents CboxExcluir1_06 As CheckBox
     Friend WithEvents CboxRel1_07 As CheckBox
