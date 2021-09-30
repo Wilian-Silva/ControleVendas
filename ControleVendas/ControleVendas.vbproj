@@ -313,6 +313,12 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="MySqlCommand.vb" />
+    <Compile Include="Relatorios\FrmContasReceber.Designer.vb">
+      <DependentUpon>FrmContasReceber.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\FrmContasReceber.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Relatorios\FrmRelSaldoEstoque.Designer.vb">
       <DependentUpon>FrmRelSaldoEstoque.vb</DependentUpon>
     </Compile>
@@ -325,11 +331,22 @@
     <Compile Include="Relatorios\FrmReportCompras.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Relatorios\FrmTituloVencidos.Designer.vb">
+      <DependentUpon>FrmTituloVencidos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\FrmTituloVencidos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Relatorios\ReportVendas.Designer.vb">
       <DependentUpon>ReportVendas.vb</DependentUpon>
     </Compile>
     <Compile Include="Relatorios\ReportVendas.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportTitulosVencidos.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportTitulosVencidos.xsd</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -430,14 +447,22 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\FrmContasReceber.resx">
+      <DependentUpon>FrmContasReceber.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\FrmRelSaldoEstoque.resx">
       <DependentUpon>FrmRelSaldoEstoque.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\FrmReportCompras.resx">
       <DependentUpon>FrmReportCompras.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\FrmTituloVencidos.resx">
+      <DependentUpon>FrmTituloVencidos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\ReportCompras.rdlc" />
+    <EmbeddedResource Include="Relatorios\ReportContasReceber.rdlc" />
     <EmbeddedResource Include="Relatorios\ReportSaldoEstoque.rdlc" />
+    <EmbeddedResource Include="Relatorios\ReportTitulosVencidos.rdlc" />
     <EmbeddedResource Include="Relatorios\ReportVendas.rdlc" />
     <EmbeddedResource Include="Relatorios\ReportVendas.resx">
       <DependentUpon>ReportVendas.vb</DependentUpon>
@@ -488,6 +513,17 @@
     </None>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="ReportTitulosVencidos.xsc">
+      <DependentUpon>ReportTitulosVencidos.xsd</DependentUpon>
+    </None>
+    <None Include="ReportTitulosVencidos.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReportTitulosVencidos.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ReportTitulosVencidos.xss">
+      <DependentUpon>ReportTitulosVencidos.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

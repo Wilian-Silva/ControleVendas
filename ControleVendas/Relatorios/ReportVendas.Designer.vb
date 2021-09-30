@@ -23,12 +23,12 @@ Partial Class ReportVendas
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ReportDataSource2 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ReportVendas))
+        Me.DataSetvendaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataSet_ReportVendas = New ControleVendas.DataSet_ReportVendas()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.DataSetReportVendasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DataSet_ReportVendas = New ControleVendas.DataSet_ReportVendas()
-        Me.DataSetvendaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataSet_vendaTableAdapter = New ControleVendas.DataSet_ReportVendasTableAdapters.DataSet_vendaTableAdapter()
         Me.BtnCarregar = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -36,37 +36,37 @@ Partial Class ReportVendas
         Me.Label10 = New System.Windows.Forms.Label()
         Me.DataInicio = New System.Windows.Forms.DateTimePicker()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        CType(Me.DataSetReportVendasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataSet_ReportVendas, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSetvendaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSet_ReportVendas, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSetReportVendasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'ReportViewer1
+        'DataSetvendaBindingSource
         '
-        ReportDataSource2.Name = "DataSet_Vendas"
-        ReportDataSource2.Value = Me.DataSetvendaBindingSource
-        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource2)
-        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "ControleVendas.ReportVendas.rdlc"
-        Me.ReportViewer1.Location = New System.Drawing.Point(-1, 46)
-        Me.ReportViewer1.Name = "ReportViewer1"
-        Me.ReportViewer1.ServerReport.BearerToken = Nothing
-        Me.ReportViewer1.Size = New System.Drawing.Size(798, 652)
-        Me.ReportViewer1.TabIndex = 0
-        '
-        'DataSetReportVendasBindingSource
-        '
-        Me.DataSetReportVendasBindingSource.DataSource = Me.DataSet_ReportVendas
-        Me.DataSetReportVendasBindingSource.Position = 0
+        Me.DataSetvendaBindingSource.DataMember = "DataSet_venda"
+        Me.DataSetvendaBindingSource.DataSource = Me.DataSet_ReportVendas
         '
         'DataSet_ReportVendas
         '
         Me.DataSet_ReportVendas.DataSetName = "DataSet_ReportVendas"
         Me.DataSet_ReportVendas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'DataSetvendaBindingSource
+        'ReportViewer1
         '
-        Me.DataSetvendaBindingSource.DataMember = "DataSet_venda"
-        Me.DataSetvendaBindingSource.DataSource = Me.DataSet_ReportVendas
+        ReportDataSource1.Name = "DataSet_Vendas"
+        ReportDataSource1.Value = Me.DataSetvendaBindingSource
+        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
+        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "ControleVendas.ReportVendas.rdlc"
+        Me.ReportViewer1.Location = New System.Drawing.Point(-1, 46)
+        Me.ReportViewer1.Name = "ReportViewer1"
+        Me.ReportViewer1.ServerReport.BearerToken = Nothing
+        Me.ReportViewer1.Size = New System.Drawing.Size(753, 652)
+        Me.ReportViewer1.TabIndex = 0
+        '
+        'DataSetReportVendasBindingSource
+        '
+        Me.DataSetReportVendasBindingSource.DataSource = Me.DataSet_ReportVendas
+        Me.DataSetReportVendasBindingSource.Position = 0
         '
         'DataSet_vendaTableAdapter
         '
@@ -136,7 +136,7 @@ Partial Class ReportVendas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(794, 695)
+        Me.ClientSize = New System.Drawing.Size(754, 695)
         Me.Controls.Add(Me.BtnCarregar)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.DataFim)
@@ -149,9 +149,9 @@ Partial Class ReportVendas
         Me.Name = "ReportVendas"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Relatório de Vendas"
-        CType(Me.DataSetReportVendasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataSet_ReportVendas, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataSetvendaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSet_ReportVendas, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSetReportVendasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

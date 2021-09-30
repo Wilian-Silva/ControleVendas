@@ -396,4 +396,15 @@ Public Class FrmTelaInicial
         Dim form = New FrmRelSaldoEstoque
         form.ShowDialog()
     End Sub
+
+    Private Sub CboxRel1_04_Click(sender As Object, e As EventArgs) Handles CboxRel1_04.Click
+        Dim form = New FrmTituloVencidos
+        form.ShowDialog()
+    End Sub
+
+    Private Sub CboxRel1_03_Click(sender As Object, e As EventArgs) Handles CboxRel1_03.Click
+        Dim form = New FrmContasReceber
+        form.ShowDialog()
+
+    End Sub
 End Class
