@@ -417,4 +417,10 @@ Public Class FrmTelaInicial
         Dim form = New FrmRecebimentos
         form.ShowDialog()
     End Sub
+
+    Private Sub CboxRel1_07_Click(sender As Object, e As EventArgs) Handles CboxRel1_07.Click
+        Dim form = New FrmResultadoPeriodo
+        form.ShowDialog()
+
+    End Sub
 End Class

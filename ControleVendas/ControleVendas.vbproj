@@ -196,6 +196,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetRecebimentos.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DatasetResultadoPeriodo.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatasetResultadoPeriodo.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSet_ReportCompras.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -347,6 +352,12 @@
     <Compile Include="Relatorios\FrmReportCompras.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Relatorios\FrmResultadoPeriodo.Designer.vb">
+      <DependentUpon>FrmResultadoPeriodo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\FrmResultadoPeriodo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Relatorios\FrmTituloVencidos.Designer.vb">
       <DependentUpon>FrmTituloVencidos.vb</DependentUpon>
     </Compile>
@@ -475,12 +486,16 @@
     <EmbeddedResource Include="Relatorios\FrmReportCompras.resx">
       <DependentUpon>FrmReportCompras.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\FrmResultadoPeriodo.resx">
+      <DependentUpon>FrmResultadoPeriodo.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\FrmTituloVencidos.resx">
       <DependentUpon>FrmTituloVencidos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\ReportCompras.rdlc" />
     <EmbeddedResource Include="Relatorios\ReportContasReceber.rdlc" />
     <EmbeddedResource Include="Relatorios\ReportRecebimentos.rdlc" />
+    <EmbeddedResource Include="Relatorios\ReportResultadoPeriod.rdlc" />
     <EmbeddedResource Include="Relatorios\ReportSaldoEstoque.rdlc" />
     <EmbeddedResource Include="Relatorios\ReportTitulosVencidos.rdlc" />
     <EmbeddedResource Include="Relatorios\ReportVendas.rdlc" />
@@ -510,6 +525,17 @@
     </None>
     <None Include="DataSetRecebimentos.xss">
       <DependentUpon>DataSetRecebimentos.xsd</DependentUpon>
+    </None>
+    <None Include="DatasetResultadoPeriodo.xsc">
+      <DependentUpon>DatasetResultadoPeriodo.xsd</DependentUpon>
+    </None>
+    <None Include="DatasetResultadoPeriodo.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatasetResultadoPeriodo.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DatasetResultadoPeriodo.xss">
+      <DependentUpon>DatasetResultadoPeriodo.xsd</DependentUpon>
     </None>
     <None Include="DataSet_ReportCompras.xsc">
       <DependentUpon>DataSet_ReportCompras.xsd</DependentUpon>
