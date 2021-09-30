@@ -186,6 +186,16 @@
     <Compile Include="Cadastros\FrmVendaCabecalho.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="controle_vendasDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>controle_vendasDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetRecebimentos.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetRecebimentos.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSet_ReportCompras.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -319,6 +329,12 @@
     <Compile Include="Relatorios\FrmContasReceber.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Relatorios\FrmRecebimentos.Designer.vb">
+      <DependentUpon>FrmRecebimentos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\FrmRecebimentos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Relatorios\FrmRelSaldoEstoque.Designer.vb">
       <DependentUpon>FrmRelSaldoEstoque.vb</DependentUpon>
     </Compile>
@@ -450,6 +466,9 @@
     <EmbeddedResource Include="Relatorios\FrmContasReceber.resx">
       <DependentUpon>FrmContasReceber.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\FrmRecebimentos.resx">
+      <DependentUpon>FrmRecebimentos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\FrmRelSaldoEstoque.resx">
       <DependentUpon>FrmRelSaldoEstoque.vb</DependentUpon>
     </EmbeddedResource>
@@ -461,6 +480,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\ReportCompras.rdlc" />
     <EmbeddedResource Include="Relatorios\ReportContasReceber.rdlc" />
+    <EmbeddedResource Include="Relatorios\ReportRecebimentos.rdlc" />
     <EmbeddedResource Include="Relatorios\ReportSaldoEstoque.rdlc" />
     <EmbeddedResource Include="Relatorios\ReportTitulosVencidos.rdlc" />
     <EmbeddedResource Include="Relatorios\ReportVendas.rdlc" />
@@ -469,6 +489,28 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="controle_vendasDataSet.xsc">
+      <DependentUpon>controle_vendasDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="controle_vendasDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>controle_vendasDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="controle_vendasDataSet.xss">
+      <DependentUpon>controle_vendasDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetRecebimentos.xsc">
+      <DependentUpon>DataSetRecebimentos.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetRecebimentos.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetRecebimentos.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetRecebimentos.xss">
+      <DependentUpon>DataSetRecebimentos.xsd</DependentUpon>
+    </None>
     <None Include="DataSet_ReportCompras.xsc">
       <DependentUpon>DataSet_ReportCompras.xsd</DependentUpon>
     </None>
