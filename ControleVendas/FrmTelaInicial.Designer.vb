@@ -47,12 +47,11 @@ Partial Class FrmTelaInicial
         Me.CboxCons1_07 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MovimentaçõesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CboxMvto1_01 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CboxMvto1_06 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CboxMvto1_02 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CboxMvto1_03 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CboxMvto1_04 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CboxMvto1_05 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CboxMvto1_07 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CboxMvto1_06 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExclusõesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CboxExcluir1_01 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CboxExcluir1_06 = New System.Windows.Forms.ToolStripMenuItem()
@@ -70,19 +69,19 @@ Partial Class FrmTelaInicial
         Me.ConfiguraçõesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CboxConfig_01 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.BtnCupomVenda = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.BtnEstoque = New System.Windows.Forms.Button()
-        Me.BtnContasPagar = New System.Windows.Forms.Button()
+        Me.GbBtnAtalhos = New System.Windows.Forms.GroupBox()
+        Me.CboxRel2_08 = New System.Windows.Forms.Button()
+        Me.CboxRel2_02 = New System.Windows.Forms.Button()
+        Me.CboxRel2_06 = New System.Windows.Forms.Button()
+        Me.CboxMvto2_05 = New System.Windows.Forms.Button()
         Me.BtnSaisSistema = New System.Windows.Forms.Button()
-        Me.BtnContasReceber = New System.Windows.Forms.Button()
-        Me.BtnRelVendas = New System.Windows.Forms.Button()
-        Me.BtnVenda = New System.Windows.Forms.Button()
-        Me.BtnEntrada = New System.Windows.Forms.Button()
-        Me.BtnPedido = New System.Windows.Forms.Button()
-        Me.BtnCadCliente = New System.Windows.Forms.Button()
-        Me.BtnCadProduto = New System.Windows.Forms.Button()
+        Me.CboxMvto2_04 = New System.Windows.Forms.Button()
+        Me.CboxRel2_01 = New System.Windows.Forms.Button()
+        Me.CboxMvto2_03 = New System.Windows.Forms.Button()
+        Me.CboxMvto2_02 = New System.Windows.Forms.Button()
+        Me.CboxMvto2_01 = New System.Windows.Forms.Button()
+        Me.CboxCad2_02 = New System.Windows.Forms.Button()
+        Me.CboxCad2_01 = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.LblHora = New System.Windows.Forms.Label()
@@ -104,7 +103,7 @@ Partial Class FrmTelaInicial
         Me.Label9 = New System.Windows.Forms.Label()
         Me.DataGrid_Vencidos = New System.Windows.Forms.DataGridView()
         Me.MenuStrip1.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
+        Me.GbBtnAtalhos.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -211,7 +210,7 @@ Partial Class FrmTelaInicial
         '
         'MovimentaçõesToolStripMenuItem
         '
-        Me.MovimentaçõesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CboxMvto1_01, Me.CboxMvto1_06, Me.CboxMvto1_02, Me.CboxMvto1_03, Me.CboxMvto1_04, Me.CboxMvto1_05, Me.CboxMvto1_07})
+        Me.MovimentaçõesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CboxMvto1_01, Me.CboxMvto1_02, Me.CboxMvto1_03, Me.CboxMvto1_04, Me.CboxMvto1_05, Me.CboxMvto1_06})
         Me.MovimentaçõesToolStripMenuItem.Image = CType(resources.GetObject("MovimentaçõesToolStripMenuItem.Image"), System.Drawing.Image)
         Me.MovimentaçõesToolStripMenuItem.Name = "MovimentaçõesToolStripMenuItem"
         Me.MovimentaçõesToolStripMenuItem.Size = New System.Drawing.Size(120, 20)
@@ -222,12 +221,6 @@ Partial Class FrmTelaInicial
         Me.CboxMvto1_01.Name = "CboxMvto1_01"
         Me.CboxMvto1_01.Size = New System.Drawing.Size(214, 22)
         Me.CboxMvto1_01.Text = "Criar Pedido de Compra"
-        '
-        'CboxMvto1_06
-        '
-        Me.CboxMvto1_06.Name = "CboxMvto1_06"
-        Me.CboxMvto1_06.Size = New System.Drawing.Size(214, 22)
-        Me.CboxMvto1_06.Text = "Criar Pedido de Venda"
         '
         'CboxMvto1_02
         '
@@ -253,11 +246,11 @@ Partial Class FrmTelaInicial
         Me.CboxMvto1_05.Size = New System.Drawing.Size(214, 22)
         Me.CboxMvto1_05.Text = "Pagamento de Fornecedor"
         '
-        'CboxMvto1_07
+        'CboxMvto1_06
         '
-        Me.CboxMvto1_07.Name = "CboxMvto1_07"
-        Me.CboxMvto1_07.Size = New System.Drawing.Size(214, 22)
-        Me.CboxMvto1_07.Text = "Movimentos Portador"
+        Me.CboxMvto1_06.Name = "CboxMvto1_06"
+        Me.CboxMvto1_06.Size = New System.Drawing.Size(214, 22)
+        Me.CboxMvto1_06.Text = "Movimentos Portador"
         '
         'ExclusõesToolStripMenuItem
         '
@@ -346,7 +339,7 @@ Partial Class FrmTelaInicial
         '
         Me.CboxRel1_08.Name = "CboxRel1_08"
         Me.CboxRel1_08.Size = New System.Drawing.Size(188, 22)
-        Me.CboxRel1_08.Text = "Cupom de Venda"
+        Me.CboxRel1_08.Text = "Recibo de Venda"
         '
         'ConfiguraçõesToolStripMenuItem
         '
@@ -359,102 +352,107 @@ Partial Class FrmTelaInicial
         'CboxConfig_01
         '
         Me.CboxConfig_01.Name = "CboxConfig_01"
-        Me.CboxConfig_01.Size = New System.Drawing.Size(180, 22)
+        Me.CboxConfig_01.Size = New System.Drawing.Size(157, 22)
         Me.CboxConfig_01.Text = "Nivel de Acesso"
         '
-        'GroupBox1
+        'GbBtnAtalhos
         '
-        Me.GroupBox1.Controls.Add(Me.BtnCupomVenda)
-        Me.GroupBox1.Controls.Add(Me.Button1)
-        Me.GroupBox1.Controls.Add(Me.BtnEstoque)
-        Me.GroupBox1.Controls.Add(Me.BtnContasPagar)
-        Me.GroupBox1.Controls.Add(Me.BtnSaisSistema)
-        Me.GroupBox1.Controls.Add(Me.BtnContasReceber)
-        Me.GroupBox1.Controls.Add(Me.BtnRelVendas)
-        Me.GroupBox1.Controls.Add(Me.BtnVenda)
-        Me.GroupBox1.Controls.Add(Me.BtnEntrada)
-        Me.GroupBox1.Controls.Add(Me.BtnPedido)
-        Me.GroupBox1.Controls.Add(Me.BtnCadCliente)
-        Me.GroupBox1.Controls.Add(Me.BtnCadProduto)
-        Me.GroupBox1.Location = New System.Drawing.Point(-1, 24)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(198, 696)
-        Me.GroupBox1.TabIndex = 3
-        Me.GroupBox1.TabStop = False
+        Me.GbBtnAtalhos.Controls.Add(Me.CboxRel2_08)
+        Me.GbBtnAtalhos.Controls.Add(Me.CboxRel2_02)
+        Me.GbBtnAtalhos.Controls.Add(Me.CboxRel2_06)
+        Me.GbBtnAtalhos.Controls.Add(Me.CboxMvto2_05)
+        Me.GbBtnAtalhos.Controls.Add(Me.BtnSaisSistema)
+        Me.GbBtnAtalhos.Controls.Add(Me.CboxMvto2_04)
+        Me.GbBtnAtalhos.Controls.Add(Me.CboxRel2_01)
+        Me.GbBtnAtalhos.Controls.Add(Me.CboxMvto2_03)
+        Me.GbBtnAtalhos.Controls.Add(Me.CboxMvto2_02)
+        Me.GbBtnAtalhos.Controls.Add(Me.CboxMvto2_01)
+        Me.GbBtnAtalhos.Controls.Add(Me.CboxCad2_02)
+        Me.GbBtnAtalhos.Controls.Add(Me.CboxCad2_01)
+        Me.GbBtnAtalhos.Location = New System.Drawing.Point(-1, 24)
+        Me.GbBtnAtalhos.Name = "GbBtnAtalhos"
+        Me.GbBtnAtalhos.Size = New System.Drawing.Size(198, 696)
+        Me.GbBtnAtalhos.TabIndex = 3
+        Me.GbBtnAtalhos.TabStop = False
         '
-        'BtnCupomVenda
+        'CboxRel2_08
         '
-        Me.BtnCupomVenda.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.BtnCupomVenda.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnCupomVenda.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.BtnCupomVenda.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
-        Me.BtnCupomVenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnCupomVenda.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnCupomVenda.Image = CType(resources.GetObject("BtnCupomVenda.Image"), System.Drawing.Image)
-        Me.BtnCupomVenda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnCupomVenda.Location = New System.Drawing.Point(2, 570)
-        Me.BtnCupomVenda.Name = "BtnCupomVenda"
-        Me.BtnCupomVenda.Size = New System.Drawing.Size(194, 56)
-        Me.BtnCupomVenda.TabIndex = 16
-        Me.BtnCupomVenda.Text = "           Cupom de Venda"
-        Me.BtnCupomVenda.UseCompatibleTextRendering = True
-        Me.BtnCupomVenda.UseVisualStyleBackColor = False
+        Me.CboxRel2_08.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.CboxRel2_08.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.CboxRel2_08.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.CboxRel2_08.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.CboxRel2_08.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CboxRel2_08.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CboxRel2_08.Image = CType(resources.GetObject("CboxRel2_08.Image"), System.Drawing.Image)
+        Me.CboxRel2_08.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.CboxRel2_08.Location = New System.Drawing.Point(2, 570)
+        Me.CboxRel2_08.Name = "CboxRel2_08"
+        Me.CboxRel2_08.Size = New System.Drawing.Size(194, 56)
+        Me.CboxRel2_08.TabIndex = 11
+        Me.CboxRel2_08.Tag = "CboxRel1_08"
+        Me.CboxRel2_08.Text = "           Recibo de Venda"
+        Me.CboxRel2_08.UseCompatibleTextRendering = True
+        Me.CboxRel2_08.UseVisualStyleBackColor = False
         '
-        'Button1
+        'CboxRel2_02
         '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.Button1.Location = New System.Drawing.Point(2, 514)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(194, 56)
-        Me.Button1.TabIndex = 15
-        Me.Button1.Text = "          Relatório de Recebimentos"
-        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button1.UseCompatibleTextRendering = True
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.CboxRel2_02.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.CboxRel2_02.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.CboxRel2_02.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.CboxRel2_02.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.CboxRel2_02.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CboxRel2_02.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CboxRel2_02.Image = CType(resources.GetObject("CboxRel2_02.Image"), System.Drawing.Image)
+        Me.CboxRel2_02.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.CboxRel2_02.Location = New System.Drawing.Point(2, 514)
+        Me.CboxRel2_02.Name = "CboxRel2_02"
+        Me.CboxRel2_02.Size = New System.Drawing.Size(194, 56)
+        Me.CboxRel2_02.TabIndex = 10
+        Me.CboxRel2_02.Tag = "CboxRel1_02"
+        Me.CboxRel2_02.Text = "          Relatório de Recebimentos"
+        Me.CboxRel2_02.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.CboxRel2_02.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.CboxRel2_02.UseCompatibleTextRendering = True
+        Me.CboxRel2_02.UseVisualStyleBackColor = False
         '
-        'BtnEstoque
+        'CboxRel2_06
         '
-        Me.BtnEstoque.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.BtnEstoque.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnEstoque.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.BtnEstoque.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
-        Me.BtnEstoque.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnEstoque.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnEstoque.Image = CType(resources.GetObject("BtnEstoque.Image"), System.Drawing.Image)
-        Me.BtnEstoque.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnEstoque.Location = New System.Drawing.Point(2, 402)
-        Me.BtnEstoque.Name = "BtnEstoque"
-        Me.BtnEstoque.Size = New System.Drawing.Size(194, 56)
-        Me.BtnEstoque.TabIndex = 14
-        Me.BtnEstoque.Text = "     Saldo Estoque"
-        Me.BtnEstoque.UseCompatibleTextRendering = True
-        Me.BtnEstoque.UseVisualStyleBackColor = False
+        Me.CboxRel2_06.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.CboxRel2_06.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.CboxRel2_06.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.CboxRel2_06.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.CboxRel2_06.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CboxRel2_06.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CboxRel2_06.Image = CType(resources.GetObject("CboxRel2_06.Image"), System.Drawing.Image)
+        Me.CboxRel2_06.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.CboxRel2_06.Location = New System.Drawing.Point(2, 402)
+        Me.CboxRel2_06.Name = "CboxRel2_06"
+        Me.CboxRel2_06.Size = New System.Drawing.Size(194, 56)
+        Me.CboxRel2_06.TabIndex = 8
+        Me.CboxRel2_06.Tag = "CboxRel1_06"
+        Me.CboxRel2_06.Text = "    Relatório Saldo Estoque"
+        Me.CboxRel2_06.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.CboxRel2_06.UseCompatibleTextRendering = True
+        Me.CboxRel2_06.UseVisualStyleBackColor = False
         '
-        'BtnContasPagar
+        'CboxMvto2_05
         '
-        Me.BtnContasPagar.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.BtnContasPagar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnContasPagar.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.BtnContasPagar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
-        Me.BtnContasPagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnContasPagar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnContasPagar.Image = CType(resources.GetObject("BtnContasPagar.Image"), System.Drawing.Image)
-        Me.BtnContasPagar.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.BtnContasPagar.Location = New System.Drawing.Point(2, 346)
-        Me.BtnContasPagar.Name = "BtnContasPagar"
-        Me.BtnContasPagar.Size = New System.Drawing.Size(194, 56)
-        Me.BtnContasPagar.TabIndex = 13
-        Me.BtnContasPagar.Text = "        Contas a Pagar"
-        Me.BtnContasPagar.UseCompatibleTextRendering = True
-        Me.BtnContasPagar.UseVisualStyleBackColor = False
+        Me.CboxMvto2_05.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.CboxMvto2_05.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.CboxMvto2_05.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.CboxMvto2_05.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.CboxMvto2_05.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CboxMvto2_05.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CboxMvto2_05.Image = CType(resources.GetObject("CboxMvto2_05.Image"), System.Drawing.Image)
+        Me.CboxMvto2_05.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.CboxMvto2_05.Location = New System.Drawing.Point(2, 346)
+        Me.CboxMvto2_05.Name = "CboxMvto2_05"
+        Me.CboxMvto2_05.Size = New System.Drawing.Size(194, 56)
+        Me.CboxMvto2_05.TabIndex = 7
+        Me.CboxMvto2_05.Tag = "CboxMvto1_05"
+        Me.CboxMvto2_05.Text = "        Contas a Pagar"
+        Me.CboxMvto2_05.UseCompatibleTextRendering = True
+        Me.CboxMvto2_05.UseVisualStyleBackColor = False
         '
         'BtnSaisSistema
         '
@@ -474,134 +472,141 @@ Partial Class FrmTelaInicial
         Me.BtnSaisSistema.UseCompatibleTextRendering = True
         Me.BtnSaisSistema.UseVisualStyleBackColor = False
         '
-        'BtnContasReceber
+        'CboxMvto2_04
         '
-        Me.BtnContasReceber.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.BtnContasReceber.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnContasReceber.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.BtnContasReceber.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
-        Me.BtnContasReceber.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnContasReceber.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnContasReceber.Image = CType(resources.GetObject("BtnContasReceber.Image"), System.Drawing.Image)
-        Me.BtnContasReceber.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.BtnContasReceber.Location = New System.Drawing.Point(2, 290)
-        Me.BtnContasReceber.Name = "BtnContasReceber"
-        Me.BtnContasReceber.Size = New System.Drawing.Size(194, 56)
-        Me.BtnContasReceber.TabIndex = 11
-        Me.BtnContasReceber.Text = "           Contas a Receber"
-        Me.BtnContasReceber.UseCompatibleTextRendering = True
-        Me.BtnContasReceber.UseVisualStyleBackColor = False
+        Me.CboxMvto2_04.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.CboxMvto2_04.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.CboxMvto2_04.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.CboxMvto2_04.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.CboxMvto2_04.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CboxMvto2_04.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CboxMvto2_04.Image = CType(resources.GetObject("CboxMvto2_04.Image"), System.Drawing.Image)
+        Me.CboxMvto2_04.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.CboxMvto2_04.Location = New System.Drawing.Point(2, 290)
+        Me.CboxMvto2_04.Name = "CboxMvto2_04"
+        Me.CboxMvto2_04.Size = New System.Drawing.Size(194, 56)
+        Me.CboxMvto2_04.TabIndex = 6
+        Me.CboxMvto2_04.Tag = "CboxMvto1_04"
+        Me.CboxMvto2_04.Text = "           Contas a Receber"
+        Me.CboxMvto2_04.UseCompatibleTextRendering = True
+        Me.CboxMvto2_04.UseVisualStyleBackColor = False
         '
-        'BtnRelVendas
+        'CboxRel2_01
         '
-        Me.BtnRelVendas.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.BtnRelVendas.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnRelVendas.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.BtnRelVendas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
-        Me.BtnRelVendas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnRelVendas.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnRelVendas.Image = CType(resources.GetObject("BtnRelVendas.Image"), System.Drawing.Image)
-        Me.BtnRelVendas.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.BtnRelVendas.Location = New System.Drawing.Point(2, 458)
-        Me.BtnRelVendas.Name = "BtnRelVendas"
-        Me.BtnRelVendas.Size = New System.Drawing.Size(194, 56)
-        Me.BtnRelVendas.TabIndex = 10
-        Me.BtnRelVendas.Text = "              Relatório de Vendas"
-        Me.BtnRelVendas.UseCompatibleTextRendering = True
-        Me.BtnRelVendas.UseVisualStyleBackColor = False
+        Me.CboxRel2_01.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.CboxRel2_01.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.CboxRel2_01.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.CboxRel2_01.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.CboxRel2_01.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CboxRel2_01.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CboxRel2_01.Image = CType(resources.GetObject("CboxRel2_01.Image"), System.Drawing.Image)
+        Me.CboxRel2_01.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.CboxRel2_01.Location = New System.Drawing.Point(2, 458)
+        Me.CboxRel2_01.Name = "CboxRel2_01"
+        Me.CboxRel2_01.Size = New System.Drawing.Size(194, 56)
+        Me.CboxRel2_01.TabIndex = 9
+        Me.CboxRel2_01.Tag = "CboxRel1_01"
+        Me.CboxRel2_01.Text = "              Relatório de Vendas"
+        Me.CboxRel2_01.UseCompatibleTextRendering = True
+        Me.CboxRel2_01.UseVisualStyleBackColor = False
         '
-        'BtnVenda
+        'CboxMvto2_03
         '
-        Me.BtnVenda.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.BtnVenda.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnVenda.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.BtnVenda.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
-        Me.BtnVenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnVenda.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnVenda.Image = CType(resources.GetObject("BtnVenda.Image"), System.Drawing.Image)
-        Me.BtnVenda.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.BtnVenda.Location = New System.Drawing.Point(2, 234)
-        Me.BtnVenda.Name = "BtnVenda"
-        Me.BtnVenda.Size = New System.Drawing.Size(194, 56)
-        Me.BtnVenda.TabIndex = 8
-        Me.BtnVenda.Text = "            Venda de Produtos"
-        Me.BtnVenda.UseCompatibleTextRendering = True
-        Me.BtnVenda.UseVisualStyleBackColor = False
+        Me.CboxMvto2_03.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.CboxMvto2_03.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.CboxMvto2_03.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.CboxMvto2_03.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.CboxMvto2_03.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CboxMvto2_03.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CboxMvto2_03.Image = CType(resources.GetObject("CboxMvto2_03.Image"), System.Drawing.Image)
+        Me.CboxMvto2_03.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.CboxMvto2_03.Location = New System.Drawing.Point(2, 234)
+        Me.CboxMvto2_03.Name = "CboxMvto2_03"
+        Me.CboxMvto2_03.Size = New System.Drawing.Size(194, 56)
+        Me.CboxMvto2_03.TabIndex = 5
+        Me.CboxMvto2_03.Tag = "CboxMvto1_03"
+        Me.CboxMvto2_03.Text = "            Venda de Produtos"
+        Me.CboxMvto2_03.UseCompatibleTextRendering = True
+        Me.CboxMvto2_03.UseVisualStyleBackColor = False
         '
-        'BtnEntrada
+        'CboxMvto2_02
         '
-        Me.BtnEntrada.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.BtnEntrada.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnEntrada.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.BtnEntrada.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
-        Me.BtnEntrada.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnEntrada.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnEntrada.Image = CType(resources.GetObject("BtnEntrada.Image"), System.Drawing.Image)
-        Me.BtnEntrada.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.BtnEntrada.Location = New System.Drawing.Point(2, 178)
-        Me.BtnEntrada.Name = "BtnEntrada"
-        Me.BtnEntrada.Size = New System.Drawing.Size(194, 56)
-        Me.BtnEntrada.TabIndex = 7
-        Me.BtnEntrada.Text = "   Entrada de NFe"
-        Me.BtnEntrada.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnEntrada.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.BtnEntrada.UseCompatibleTextRendering = True
-        Me.BtnEntrada.UseVisualStyleBackColor = False
+        Me.CboxMvto2_02.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.CboxMvto2_02.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.CboxMvto2_02.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.CboxMvto2_02.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.CboxMvto2_02.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CboxMvto2_02.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CboxMvto2_02.Image = CType(resources.GetObject("CboxMvto2_02.Image"), System.Drawing.Image)
+        Me.CboxMvto2_02.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.CboxMvto2_02.Location = New System.Drawing.Point(2, 178)
+        Me.CboxMvto2_02.Name = "CboxMvto2_02"
+        Me.CboxMvto2_02.Size = New System.Drawing.Size(194, 56)
+        Me.CboxMvto2_02.TabIndex = 4
+        Me.CboxMvto2_02.Tag = "CboxMvto1_02"
+        Me.CboxMvto2_02.Text = "   Entrada de NFe"
+        Me.CboxMvto2_02.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.CboxMvto2_02.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.CboxMvto2_02.UseCompatibleTextRendering = True
+        Me.CboxMvto2_02.UseVisualStyleBackColor = False
         '
-        'BtnPedido
+        'CboxMvto2_01
         '
-        Me.BtnPedido.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.BtnPedido.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnPedido.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.BtnPedido.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
-        Me.BtnPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnPedido.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnPedido.Image = CType(resources.GetObject("BtnPedido.Image"), System.Drawing.Image)
-        Me.BtnPedido.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.BtnPedido.Location = New System.Drawing.Point(2, 122)
-        Me.BtnPedido.Name = "BtnPedido"
-        Me.BtnPedido.Size = New System.Drawing.Size(194, 56)
-        Me.BtnPedido.TabIndex = 6
-        Me.BtnPedido.Text = "           Pedido de Compra"
-        Me.BtnPedido.UseCompatibleTextRendering = True
-        Me.BtnPedido.UseVisualStyleBackColor = False
+        Me.CboxMvto2_01.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.CboxMvto2_01.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.CboxMvto2_01.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.CboxMvto2_01.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.CboxMvto2_01.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CboxMvto2_01.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CboxMvto2_01.Image = CType(resources.GetObject("CboxMvto2_01.Image"), System.Drawing.Image)
+        Me.CboxMvto2_01.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.CboxMvto2_01.Location = New System.Drawing.Point(2, 122)
+        Me.CboxMvto2_01.Name = "CboxMvto2_01"
+        Me.CboxMvto2_01.Size = New System.Drawing.Size(194, 56)
+        Me.CboxMvto2_01.TabIndex = 3
+        Me.CboxMvto2_01.Tag = "CboxMvto1_01"
+        Me.CboxMvto2_01.Text = "           Pedido de Compra"
+        Me.CboxMvto2_01.UseCompatibleTextRendering = True
+        Me.CboxMvto2_01.UseVisualStyleBackColor = False
         '
-        'BtnCadCliente
+        'CboxCad2_02
         '
-        Me.BtnCadCliente.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.BtnCadCliente.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnCadCliente.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.BtnCadCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
-        Me.BtnCadCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnCadCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnCadCliente.Image = CType(resources.GetObject("BtnCadCliente.Image"), System.Drawing.Image)
-        Me.BtnCadCliente.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.BtnCadCliente.Location = New System.Drawing.Point(2, 66)
-        Me.BtnCadCliente.Name = "BtnCadCliente"
-        Me.BtnCadCliente.Size = New System.Drawing.Size(194, 56)
-        Me.BtnCadCliente.TabIndex = 5
-        Me.BtnCadCliente.Text = "            Cadastro de Cliente"
-        Me.BtnCadCliente.UseCompatibleTextRendering = True
-        Me.BtnCadCliente.UseVisualStyleBackColor = False
+        Me.CboxCad2_02.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.CboxCad2_02.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.CboxCad2_02.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.CboxCad2_02.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.CboxCad2_02.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CboxCad2_02.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CboxCad2_02.Image = CType(resources.GetObject("CboxCad2_02.Image"), System.Drawing.Image)
+        Me.CboxCad2_02.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.CboxCad2_02.Location = New System.Drawing.Point(2, 66)
+        Me.CboxCad2_02.Name = "CboxCad2_02"
+        Me.CboxCad2_02.Size = New System.Drawing.Size(194, 56)
+        Me.CboxCad2_02.TabIndex = 2
+        Me.CboxCad2_02.Tag = "CboxCad1_02"
+        Me.CboxCad2_02.Text = "            Cadastro de Cliente"
+        Me.CboxCad2_02.UseCompatibleTextRendering = True
+        Me.CboxCad2_02.UseVisualStyleBackColor = False
         '
-        'BtnCadProduto
+        'CboxCad2_01
         '
-        Me.BtnCadProduto.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.BtnCadProduto.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnCadProduto.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.BtnCadProduto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
-        Me.BtnCadProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnCadProduto.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnCadProduto.Image = CType(resources.GetObject("BtnCadProduto.Image"), System.Drawing.Image)
-        Me.BtnCadProduto.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.BtnCadProduto.Location = New System.Drawing.Point(2, 10)
-        Me.BtnCadProduto.Name = "BtnCadProduto"
-        Me.BtnCadProduto.Size = New System.Drawing.Size(194, 56)
-        Me.BtnCadProduto.TabIndex = 4
-        Me.BtnCadProduto.Text = "Cadastro de Produtos"
-        Me.BtnCadProduto.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnCadProduto.UseCompatibleTextRendering = True
-        Me.BtnCadProduto.UseVisualStyleBackColor = False
+        Me.CboxCad2_01.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.CboxCad2_01.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.CboxCad2_01.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.CboxCad2_01.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.CboxCad2_01.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CboxCad2_01.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CboxCad2_01.Image = CType(resources.GetObject("CboxCad2_01.Image"), System.Drawing.Image)
+        Me.CboxCad2_01.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.CboxCad2_01.Location = New System.Drawing.Point(2, 10)
+        Me.CboxCad2_01.Name = "CboxCad2_01"
+        Me.CboxCad2_01.Size = New System.Drawing.Size(194, 56)
+        Me.CboxCad2_01.TabIndex = 1
+        Me.CboxCad2_01.Tag = "CboxCad1_01"
+        Me.CboxCad2_01.Text = "Cadastro de Produtos"
+        Me.CboxCad2_01.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.CboxCad2_01.UseCompatibleTextRendering = True
+        Me.CboxCad2_01.UseVisualStyleBackColor = False
         '
         'GroupBox2
         '
@@ -865,7 +870,6 @@ Partial Class FrmTelaInicial
         DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ControlText
         DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DataGrid_Vencidos.DefaultCellStyle = DataGridViewCellStyle5
-        Me.DataGrid_Vencidos.Enabled = False
         Me.DataGrid_Vencidos.EnableHeadersVisualStyles = False
         Me.DataGrid_Vencidos.Location = New System.Drawing.Point(783, 486)
         Me.DataGrid_Vencidos.MultiSelect = False
@@ -892,7 +896,7 @@ Partial Class FrmTelaInicial
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
-        Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.GbBtnAtalhos)
         Me.Controls.Add(Me.MenuStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -903,7 +907,7 @@ Partial Class FrmTelaInicial
         Me.Text = "Controle de Vendas"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        Me.GroupBox1.ResumeLayout(False)
+        Me.GbBtnAtalhos.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
@@ -933,17 +937,17 @@ Partial Class FrmTelaInicial
     Friend WithEvents CboxMvto1_04 As ToolStripMenuItem
     Friend WithEvents CboxRel1_02 As ToolStripMenuItem
     Friend WithEvents ToolTip As ToolTip
-    Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents BtnCadProduto As Button
-    Friend WithEvents BtnCadCliente As Button
-    Friend WithEvents BtnPedido As Button
-    Friend WithEvents BtnEntrada As Button
-    Friend WithEvents BtnVenda As Button
-    Friend WithEvents BtnRelVendas As Button
-    Friend WithEvents BtnContasReceber As Button
+    Friend WithEvents GbBtnAtalhos As GroupBox
+    Friend WithEvents CboxCad2_01 As Button
+    Friend WithEvents CboxCad2_02 As Button
+    Friend WithEvents CboxMvto2_01 As Button
+    Friend WithEvents CboxMvto2_02 As Button
+    Friend WithEvents CboxMvto2_03 As Button
+    Friend WithEvents CboxRel2_01 As Button
+    Friend WithEvents CboxMvto2_04 As Button
     Friend WithEvents BtnSaisSistema As Button
-    Friend WithEvents BtnEstoque As Button
-    Friend WithEvents BtnContasPagar As Button
+    Friend WithEvents CboxRel2_06 As Button
+    Friend WithEvents CboxMvto2_05 As Button
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents LblUsuario As Label
     Friend WithEvents LblHora As Label
@@ -966,7 +970,7 @@ Partial Class FrmTelaInicial
     Friend WithEvents CboxExcluir1_05 As ToolStripMenuItem
     Friend WithEvents CboxCons1_06 As ToolStripMenuItem
     Friend WithEvents CboxRel1_07 As ToolStripMenuItem
-    Friend WithEvents Button1 As Button
+    Friend WithEvents CboxRel2_02 As Button
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents Label6 As Label
     Friend WithEvents Label7 As Label
@@ -979,14 +983,13 @@ Partial Class FrmTelaInicial
     Friend WithEvents DataGrid_Vencidos As DataGridView
     Friend WithEvents LblVencidos As Label
     Friend WithEvents LblAVencer As Label
-    Friend WithEvents BtnCupomVenda As Button
+    Friend WithEvents CboxRel2_08 As Button
     Friend WithEvents ConfiguraçõesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CboxConfig_01 As ToolStripMenuItem
-    Friend WithEvents CboxMvto1_06 As ToolStripMenuItem
     Friend WithEvents CboxExcluir1_06 As ToolStripMenuItem
     Friend WithEvents CboxRel1_08 As ToolStripMenuItem
     Friend WithEvents CboxCad1_03 As ToolStripMenuItem
     Friend WithEvents CboxCad1_05 As ToolStripMenuItem
     Friend WithEvents CboxCons1_07 As ToolStripMenuItem
-    Friend WithEvents CboxMvto1_07 As ToolStripMenuItem
+    Friend WithEvents CboxMvto1_06 As ToolStripMenuItem
 End Class

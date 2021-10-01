@@ -99,7 +99,7 @@ Partial Class FrmLogin
         Me.Label3.Image = CType(resources.GetObject("Label3.Image"), System.Drawing.Image)
         Me.Label3.Location = New System.Drawing.Point(12, 38)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(145, 127)
+        Me.Label3.Size = New System.Drawing.Size(134, 115)
         Me.Label3.TabIndex = 6
         '
         'FrmLogin

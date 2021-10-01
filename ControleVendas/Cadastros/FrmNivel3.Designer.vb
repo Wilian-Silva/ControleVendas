@@ -32,6 +32,7 @@ Partial Class FrmNivel3
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GboxNivel1 = New System.Windows.Forms.GroupBox()
+        Me.CboxRel1_08 = New System.Windows.Forms.CheckBox()
         Me.CboxCad1_05 = New System.Windows.Forms.CheckBox()
         Me.CboxMvto1_06 = New System.Windows.Forms.CheckBox()
         Me.CboxConfig_01 = New System.Windows.Forms.CheckBox()
@@ -67,7 +68,6 @@ Partial Class FrmNivel3
         Me.CboxCons1_01 = New System.Windows.Forms.CheckBox()
         Me.CboxCad1_01 = New System.Windows.Forms.CheckBox()
         Me.CboxCad1_02 = New System.Windows.Forms.CheckBox()
-        Me.CboxRel1_08 = New System.Windows.Forms.CheckBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GboxNivel1.SuspendLayout()
@@ -205,6 +205,17 @@ Partial Class FrmNivel3
         Me.GboxNivel1.Size = New System.Drawing.Size(875, 227)
         Me.GboxNivel1.TabIndex = 1
         Me.GboxNivel1.TabStop = False
+        '
+        'CboxRel1_08
+        '
+        Me.CboxRel1_08.AutoSize = True
+        Me.CboxRel1_08.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CboxRel1_08.Location = New System.Drawing.Point(606, 175)
+        Me.CboxRel1_08.Name = "CboxRel1_08"
+        Me.CboxRel1_08.Size = New System.Drawing.Size(109, 17)
+        Me.CboxRel1_08.TabIndex = 31
+        Me.CboxRel1_08.Text = "Recibo de Venda"
+        Me.CboxRel1_08.UseVisualStyleBackColor = True
         '
         'CboxCad1_05
         '
@@ -590,17 +601,6 @@ Partial Class FrmNivel3
         Me.CboxCad1_02.TabIndex = 1
         Me.CboxCad1_02.Text = "Cadastro de Clientes"
         Me.CboxCad1_02.UseVisualStyleBackColor = True
-        '
-        'CboxRel1_08
-        '
-        Me.CboxRel1_08.AutoSize = True
-        Me.CboxRel1_08.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CboxRel1_08.Location = New System.Drawing.Point(606, 175)
-        Me.CboxRel1_08.Name = "CboxRel1_08"
-        Me.CboxRel1_08.Size = New System.Drawing.Size(109, 17)
-        Me.CboxRel1_08.TabIndex = 31
-        Me.CboxRel1_08.Text = "Recibo de Venda"
-        Me.CboxRel1_08.UseVisualStyleBackColor = True
         '
         'FrmNivel3
         '

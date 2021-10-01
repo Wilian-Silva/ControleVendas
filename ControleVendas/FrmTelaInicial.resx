@@ -460,7 +460,7 @@
   <metadata name="ToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>109, 17</value>
   </metadata>
-  <data name="BtnCupomVenda.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="CboxRel2_08.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAC0AAAAtCAYAAAA6GuKaAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
         JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJ
@@ -511,7 +511,7 @@
         AAAASUVORK5CYII=
 </value>
   </data>
-  <data name="Button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="CboxRel2_02.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
         JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAB3RJTUUH5QgdFBoLJI7M7QAAD9RJREFU
@@ -585,7 +585,7 @@
         qU/x3jewShEAEH1Or+hX3GLghRfN33g7JsT/A08SWVP9mRVMAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="BtnEstoque.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="CboxRel2_06.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
         JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAB3RJTUUH5QgVEhk1D/vW2AAADFRJREFU
@@ -644,7 +644,7 @@
         jbDTBLYUZoXJ7k0jmCeQZcA4NrTnJw0P4kE8CIsA+C+Q+VkNUoM6fgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="BtnContasPagar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="CboxMvto2_05.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
         JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAB3RJTUUH5QgVEiItICWhtgAACIlJREFU
@@ -771,7 +771,7 @@
         jpJhOnQOAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="BtnContasReceber.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="CboxMvto2_04.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAC0AAAAtCAYAAAA6GuKaAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAACc1JREFUaEPtl3tUE1cex6n2dLtUK6iLPRTF4oMkkBeJhEdgCCSTEJ5FKMoqSIEE
@@ -819,7 +819,7 @@
         Vv8DnTLka+P0t5YAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="BtnRelVendas.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="CboxRel2_01.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
         JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJ
@@ -863,7 +863,7 @@
         lHwggIduwyAHC/q8BVR3nl44/WmYDQ+ifwOwh/iyneJdqAAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="BtnVenda.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="CboxMvto2_03.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
         JQAAgIMAAPn/AACA6AAAUggAARVYAAA6lwAAF2/XWh+QAAAACXBIWXMAABwgAAAcIAHND5ueAAAAB3RJ
@@ -906,7 +906,7 @@
         f0Ibhq+mBGM9UggCLy9WCX9L9Zu0EP8F1oxzG5OcF3sAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="BtnEntrada.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="CboxMvto2_02.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAADWZJREFUaEPtWXlQlPfdf3Zhr+fc0+VSTATBRVflZjmWa9ldbpEF5b5PIYLcKCso
@@ -969,7 +969,7 @@
         6erQeXW02Hbut9D+R+BjPMZj/KcAw/4f7s4J27N4GIsAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="BtnPedido.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="CboxMvto2_01.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAAEhhJREFUaEPtWQlQVVe2VXnvDu89RBwwMWmNijEmMbGjif6uXz+JcYzGITFxFlFx
@@ -1052,7 +1052,7 @@
         tDphknZ59Lti421P/Wa/2W/2m/3ftnbt/hOc9DhYVfNRNgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="BtnCadCliente.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="CboxCad2_02.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAACzlJREFUaEPNWQdUFWcWvm50U3Y3OSm7aceoQUBAjGVdTAQxEiNGk2BEktVNLHER
@@ -1106,7 +1106,7 @@
         /ys/nwH+C6wpRDit6zygAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="BtnCadProduto.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="CboxCad2_01.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAC0AAAAtCAYAAAA6GuKaAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
         JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAB3RJTUUH5QgVEBYeJ1vnOQAAD9JJREFU

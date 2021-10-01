@@ -37,31 +37,31 @@ Public Class FrmTelaInicial
 
 
 
-    Private Sub BtnCadProduto_Click(sender As Object, e As EventArgs) Handles BtnCadProduto.Click
+    Private Sub BtnCadProduto_Click(sender As Object, e As EventArgs) Handles CboxCad2_01.Click
         Dim form = New FrmProdutos
         form.ShowDialog()
 
     End Sub
 
-    Private Sub BtnCadCliente_Click(sender As Object, e As EventArgs) Handles BtnCadCliente.Click
+    Private Sub BtnCadCliente_Click(sender As Object, e As EventArgs) Handles CboxCad2_02.Click
         Dim form = New FrmClientes
         form.ShowDialog()
 
     End Sub
 
-    Private Sub BtnPedido_Click(sender As Object, e As EventArgs) Handles BtnPedido.Click
+    Private Sub BtnPedido_Click(sender As Object, e As EventArgs) Handles CboxMvto2_01.Click
         Dim form = New FrmPedido
         form.ShowDialog()
 
     End Sub
 
-    Private Sub BtnEntrada_Click(sender As Object, e As EventArgs) Handles BtnEntrada.Click
+    Private Sub BtnEntrada_Click(sender As Object, e As EventArgs) Handles CboxMvto2_02.Click
         Dim form = New FrmEntrada
         form.ShowDialog()
 
     End Sub
 
-    Private Sub BtnVenda_Click(sender As Object, e As EventArgs) Handles BtnVenda.Click
+    Private Sub BtnVenda_Click(sender As Object, e As EventArgs) Handles CboxMvto2_03.Click
 
         Dim form = New FrmVendaProdutos
         form.ShowDialog()
@@ -139,13 +139,68 @@ Public Class FrmTelaInicial
 
         FormatarGridTelaIncial()
 
-        'CarregarAcessos()
+        CarregarAcessos()
+
+        CarergarAcessoAtalhos()
 
         LblUsuario.Text = nomeFuncionario
 
     End Sub
+    Sub CarergarAcessoAtalhos()
+
+        Dim btn As Button
+        Dim status As String
+        Dim nome As String
+
+        For Each btn In GbBtnAtalhos.Controls
+
+            nome = btn.Tag
+
+
+            Dim cmd As MySqlCommand
+            Dim reader As MySqlDataReader
+            Dim sql As String
+
+            sql = "SELECT *FROM controle_acesso where rotina =  '" & nome & "' "
+
+            cmd = New MySqlCommand(sql, con)
+            reader = cmd.ExecuteReader
+
+            If reader.Read = True Then
+
+                'vericando o nivel de acesso do usuário no banco nivel1, nivel2 ou nivel3
+                If nivelAcesso = 1 Then
+                    status = reader("nivel1")
+                Else
+                    If nivelAcesso = 2 Then
+                        status = reader("nivel2")
+                    Else
+                        If nivelAcesso = 3 Then
+                            status = reader("nivel3")
+                        End If
+                    End If
+                End If
+
+                reader.Close()
+            Else
+                reader.Close()
+
+            End If
+
+#Disable Warning BC42104 ' A variável é usada antes de receber um valor
+            If status = 1 Then
+#Enable Warning BC42104 ' A variável é usada antes de receber um valor
+                btn.Enabled = True
+            Else
+                btn.Enabled = False
+            End If
+
+        Next
+    End Sub
+
 
     Sub CarregarAcessos()
+        'Stop
         Dim tool As ToolStripMenuItem
         Dim nome As String
         Dim cmd As MySqlCommand
@@ -168,21 +223,22 @@ Public Class FrmTelaInicial
                     reader = cmd.ExecuteReader
                     If reader.Read = True Then
 
+                        'vericando o nivel de acesso do usuário no banco nivel1, nivel2 ou nivel3
                         If nivelAcesso = 1 Then
-                            status = reader(3)
+                            status = reader("nivel1")
                         Else
                             If nivelAcesso = 2 Then
-                                status = reader(4)
+                                status = reader("nivel2")
                             Else
                                 If nivelAcesso = 3 Then
-                                    status = reader(5)
+                                    status = reader("nivel3")
                                 End If
                             End If
                         End If
 
-                        status = ""
-
+#Disable Warning BC42104 ' A variável é usada antes de receber um valor
                         If status = 1 Then
+#Enable Warning BC42104 ' A variável é usada antes de receber um valor
                             tool.Enabled = True
                         Else
                             tool.Enabled = False
@@ -191,6 +247,19 @@ Public Class FrmTelaInicial
                     Else
                         reader.Close()
                     End If
+
+
+
+                    If nome = "CboxCad1_01" Then
+                        If status = 1 Then
+                            CboxCad2_01.Enabled = True
+                        Else
+                            CboxCad2_01.Enabled = False
+                        End If
+
+                    End If
+
+
 
                 Next tool
 
@@ -268,10 +337,9 @@ Public Class FrmTelaInicial
         LblVencidos.Text = valor2
         LblVencidos.Text = Format(valor2, "R$ 00.00")
     End Sub
-    Private Sub BtnContasPagar_Click(sender As Object, e As EventArgs) Handles BtnContasPagar.Click
+    Private Sub BtnContasPagar_Click(sender As Object, e As EventArgs) Handles CboxMvto2_05.Click
         Dim form = New FrmPagarTitulo
         form.ShowDialog()
-
     End Sub
 
     Private Sub PagamentosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CboxMvto1_05.Click
@@ -317,7 +385,7 @@ Public Class FrmTelaInicial
         form.ShowDialog()
     End Sub
 
-    Private Sub BtnContasReceber_Click(sender As Object, e As EventArgs) Handles BtnContasReceber.Click
+    Private Sub BtnContasReceber_Click(sender As Object, e As EventArgs) Handles CboxMvto2_04.Click
         Dim form = New FrmReceberTitulo
         form.ShowDialog()
     End Sub
@@ -333,7 +401,7 @@ Public Class FrmTelaInicial
         form.ShowDialog()
     End Sub
 
-    Private Sub BtnEstoque_Click(sender As Object, e As EventArgs) Handles BtnEstoque.Click
+    Private Sub BtnEstoque_Click(sender As Object, e As EventArgs) Handles CboxRel2_06.Click
         Dim form = New FrmRelSaldoEstoque
         form.ShowDialog()
     End Sub
@@ -370,7 +438,7 @@ Public Class FrmTelaInicial
         form.ShowDialog()
     End Sub
 
-    Private Sub PortadorToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles CboxMvto1_07.Click
+    Private Sub PortadorToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles CboxMvto1_06.Click
         statusBtn = "Visible"
         Dim form = New FrmSaldoPortador
         form.ShowDialog()
@@ -382,7 +450,7 @@ Public Class FrmTelaInicial
 
     End Sub
 
-    Private Sub BtnRelVendas_Click(sender As Object, e As EventArgs) Handles BtnRelVendas.Click
+    Private Sub BtnRelVendas_Click(sender As Object, e As EventArgs) Handles CboxRel2_01.Click
         Dim form = New ReportVendas
         form.ShowDialog()
     End Sub
@@ -413,7 +481,7 @@ Public Class FrmTelaInicial
         form.ShowDialog()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles CboxRel2_02.Click
         Dim form = New FrmRecebimentos
         form.ShowDialog()
     End Sub
@@ -424,7 +492,7 @@ Public Class FrmTelaInicial
 
     End Sub
 
-    Private Sub BtnLogoff_Click(sender As Object, e As EventArgs) Handles BtnCupomVenda.Click
+    Private Sub BtnLogoff_Click(sender As Object, e As EventArgs) Handles CboxRel2_08.Click
         Dim form = New FrmCupomVenda
         form.ShowDialog()
     End Sub
