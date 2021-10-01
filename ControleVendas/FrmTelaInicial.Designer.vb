@@ -24,12 +24,12 @@ Partial Class FrmTelaInicial
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmTelaInicial))
-        Dim DataGridViewCellStyle37 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle38 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle39 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle40 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle41 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle42 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.CadastrosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CboxCad1_01 = New System.Windows.Forms.ToolStripMenuItem()
@@ -71,7 +71,7 @@ Partial Class FrmTelaInicial
         Me.CboxConfig_01 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.BtnLogoff = New System.Windows.Forms.Button()
+        Me.BtnCupomVenda = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.BtnEstoque = New System.Windows.Forms.Button()
         Me.BtnContasPagar = New System.Windows.Forms.Button()
@@ -364,7 +364,7 @@ Partial Class FrmTelaInicial
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.BtnLogoff)
+        Me.GroupBox1.Controls.Add(Me.BtnCupomVenda)
         Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Controls.Add(Me.BtnEstoque)
         Me.GroupBox1.Controls.Add(Me.BtnContasPagar)
@@ -382,23 +382,23 @@ Partial Class FrmTelaInicial
         Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
         '
-        'BtnLogoff
+        'BtnCupomVenda
         '
-        Me.BtnLogoff.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.BtnLogoff.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnLogoff.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.BtnLogoff.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
-        Me.BtnLogoff.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnLogoff.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnLogoff.Image = CType(resources.GetObject("BtnLogoff.Image"), System.Drawing.Image)
-        Me.BtnLogoff.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnLogoff.Location = New System.Drawing.Point(2, 570)
-        Me.BtnLogoff.Name = "BtnLogoff"
-        Me.BtnLogoff.Size = New System.Drawing.Size(194, 56)
-        Me.BtnLogoff.TabIndex = 16
-        Me.BtnLogoff.Text = "           Cupom de Venda"
-        Me.BtnLogoff.UseCompatibleTextRendering = True
-        Me.BtnLogoff.UseVisualStyleBackColor = False
+        Me.BtnCupomVenda.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.BtnCupomVenda.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnCupomVenda.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.BtnCupomVenda.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
+        Me.BtnCupomVenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnCupomVenda.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnCupomVenda.Image = CType(resources.GetObject("BtnCupomVenda.Image"), System.Drawing.Image)
+        Me.BtnCupomVenda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnCupomVenda.Location = New System.Drawing.Point(2, 570)
+        Me.BtnCupomVenda.Name = "BtnCupomVenda"
+        Me.BtnCupomVenda.Size = New System.Drawing.Size(194, 56)
+        Me.BtnCupomVenda.TabIndex = 16
+        Me.BtnCupomVenda.Text = "           Cupom de Venda"
+        Me.BtnCupomVenda.UseCompatibleTextRendering = True
+        Me.BtnCupomVenda.UseVisualStyleBackColor = False
         '
         'Button1
         '
@@ -466,7 +466,7 @@ Partial Class FrmTelaInicial
         Me.BtnSaisSistema.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSaisSistema.Image = CType(resources.GetObject("BtnSaisSistema.Image"), System.Drawing.Image)
         Me.BtnSaisSistema.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnSaisSistema.Location = New System.Drawing.Point(2, 627)
+        Me.BtnSaisSistema.Location = New System.Drawing.Point(2, 626)
         Me.BtnSaisSistema.Name = "BtnSaisSistema"
         Me.BtnSaisSistema.Size = New System.Drawing.Size(194, 56)
         Me.BtnSaisSistema.TabIndex = 12
@@ -788,32 +788,32 @@ Partial Class FrmTelaInicial
         Me.DataGrid_AVencer.AllowUserToResizeRows = False
         Me.DataGrid_AVencer.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.DataGrid_AVencer.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        DataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle37.BackColor = System.Drawing.Color.DarkGray
-        DataGridViewCellStyle37.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle37.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle37.SelectionBackColor = System.Drawing.Color.DarkGray
-        DataGridViewCellStyle37.SelectionForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle37.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGrid_AVencer.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle37
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkGray
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkGray
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGrid_AVencer.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGrid_AVencer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle38.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle38.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle38.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle38.SelectionBackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle38.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle38.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGrid_AVencer.DefaultCellStyle = DataGridViewCellStyle38
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGrid_AVencer.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGrid_AVencer.EnableHeadersVisualStyles = False
         Me.DataGrid_AVencer.Location = New System.Drawing.Point(223, 486)
         Me.DataGrid_AVencer.MultiSelect = False
         Me.DataGrid_AVencer.Name = "DataGrid_AVencer"
         Me.DataGrid_AVencer.ReadOnly = True
         Me.DataGrid_AVencer.RowHeadersVisible = False
-        DataGridViewCellStyle39.BackColor = System.Drawing.SystemColors.ControlLightLight
-        DataGridViewCellStyle39.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
-        Me.DataGrid_AVencer.RowsDefaultCellStyle = DataGridViewCellStyle39
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ControlLightLight
+        DataGridViewCellStyle3.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.DataGrid_AVencer.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGrid_AVencer.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGrid_AVencer.Size = New System.Drawing.Size(543, 193)
         Me.DataGrid_AVencer.TabIndex = 143
@@ -848,23 +848,23 @@ Partial Class FrmTelaInicial
         Me.DataGrid_Vencidos.AllowUserToResizeRows = False
         Me.DataGrid_Vencidos.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.DataGrid_Vencidos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        DataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle40.BackColor = System.Drawing.Color.DarkGray
-        DataGridViewCellStyle40.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle40.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle40.SelectionBackColor = System.Drawing.Color.DarkGray
-        DataGridViewCellStyle40.SelectionForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle40.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGrid_Vencidos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle40
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.DarkGray
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkGray
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGrid_Vencidos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.DataGrid_Vencidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle41.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle41.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle41.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle41.SelectionBackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle41.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle41.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGrid_Vencidos.DefaultCellStyle = DataGridViewCellStyle41
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGrid_Vencidos.DefaultCellStyle = DataGridViewCellStyle5
         Me.DataGrid_Vencidos.Enabled = False
         Me.DataGrid_Vencidos.EnableHeadersVisualStyles = False
         Me.DataGrid_Vencidos.Location = New System.Drawing.Point(783, 486)
@@ -872,9 +872,9 @@ Partial Class FrmTelaInicial
         Me.DataGrid_Vencidos.Name = "DataGrid_Vencidos"
         Me.DataGrid_Vencidos.ReadOnly = True
         Me.DataGrid_Vencidos.RowHeadersVisible = False
-        DataGridViewCellStyle42.BackColor = System.Drawing.SystemColors.ControlLightLight
-        DataGridViewCellStyle42.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
-        Me.DataGrid_Vencidos.RowsDefaultCellStyle = DataGridViewCellStyle42
+        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.ControlLightLight
+        DataGridViewCellStyle6.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.DataGrid_Vencidos.RowsDefaultCellStyle = DataGridViewCellStyle6
         Me.DataGrid_Vencidos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGrid_Vencidos.Size = New System.Drawing.Size(543, 193)
         Me.DataGrid_Vencidos.TabIndex = 147
@@ -979,7 +979,7 @@ Partial Class FrmTelaInicial
     Friend WithEvents DataGrid_Vencidos As DataGridView
     Friend WithEvents LblVencidos As Label
     Friend WithEvents LblAVencer As Label
-    Friend WithEvents BtnLogoff As Button
+    Friend WithEvents BtnCupomVenda As Button
     Friend WithEvents ConfiguraçõesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CboxConfig_01 As ToolStripMenuItem
     Friend WithEvents CboxMvto1_06 As ToolStripMenuItem

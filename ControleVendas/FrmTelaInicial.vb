@@ -423,4 +423,9 @@ Public Class FrmTelaInicial
         form.ShowDialog()
 
     End Sub
+
+    Private Sub BtnLogoff_Click(sender As Object, e As EventArgs) Handles BtnCupomVenda.Click
+        Dim form = New FrmCupomVenda
+        form.ShowDialog()
+    End Sub
 End Class

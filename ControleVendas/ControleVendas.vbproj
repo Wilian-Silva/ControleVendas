@@ -191,6 +191,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>controle_vendasDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSetCupomVenda.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetCupomVenda.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetRecebimentos.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -332,6 +337,12 @@
       <DependentUpon>FrmContasReceber.vb</DependentUpon>
     </Compile>
     <Compile Include="Relatorios\FrmContasReceber.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\FrmCupomVenda.Designer.vb">
+      <DependentUpon>FrmCupomVenda.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\FrmCupomVenda.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Relatorios\FrmRecebimentos.Designer.vb">
@@ -477,6 +488,9 @@
     <EmbeddedResource Include="Relatorios\FrmContasReceber.resx">
       <DependentUpon>FrmContasReceber.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\FrmCupomVenda.resx">
+      <DependentUpon>FrmCupomVenda.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\FrmRecebimentos.resx">
       <DependentUpon>FrmRecebimentos.vb</DependentUpon>
     </EmbeddedResource>
@@ -494,6 +508,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\ReportCompras.rdlc" />
     <EmbeddedResource Include="Relatorios\ReportContasReceber.rdlc" />
+    <EmbeddedResource Include="Relatorios\ReportCupomVenda.rdlc" />
     <EmbeddedResource Include="Relatorios\ReportRecebimentos.rdlc" />
     <EmbeddedResource Include="Relatorios\ReportResultadoPeriod.rdlc" />
     <EmbeddedResource Include="Relatorios\ReportSaldoEstoque.rdlc" />
@@ -514,6 +529,17 @@
     </None>
     <None Include="controle_vendasDataSet.xss">
       <DependentUpon>controle_vendasDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetCupomVenda.xsc">
+      <DependentUpon>DataSetCupomVenda.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetCupomVenda.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetCupomVenda.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetCupomVenda.xss">
+      <DependentUpon>DataSetCupomVenda.xsd</DependentUpon>
     </None>
     <None Include="DataSetRecebimentos.xsc">
       <DependentUpon>DataSetRecebimentos.xsd</DependentUpon>
