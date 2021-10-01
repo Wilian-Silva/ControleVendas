@@ -24,8 +24,8 @@ Partial Class FrmCupomVenda
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmCupomVenda))
-        Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Dim ReportDataSource2 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim ReportDataSource3 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim ReportDataSource4 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Me.BtnCarregar = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TxtIdVenda = New System.Windows.Forms.TextBox()
@@ -100,17 +100,17 @@ Partial Class FrmCupomVenda
         '
         'ReportViewer1
         '
-        ReportDataSource1.Name = "DataSetVenda"
-        ReportDataSource1.Value = Me.cumpoVendaBindingSource
-        ReportDataSource2.Name = "DataSetTeste"
-        ReportDataSource2.Value = Me.CupomCompraV2BindingSource
-        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
-        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource2)
+        ReportDataSource3.Name = "DataSetVenda"
+        ReportDataSource3.Value = Me.cumpoVendaBindingSource
+        ReportDataSource4.Name = "DataSetTeste"
+        ReportDataSource4.Value = Me.CupomCompraV2BindingSource
+        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource3)
+        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource4)
         Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "ControleVendas.ReportCupomVenda.rdlc"
-        Me.ReportViewer1.Location = New System.Drawing.Point(1, 47)
+        Me.ReportViewer1.Location = New System.Drawing.Point(0, 52)
         Me.ReportViewer1.Name = "ReportViewer1"
         Me.ReportViewer1.ServerReport.BearerToken = Nothing
-        Me.ReportViewer1.Size = New System.Drawing.Size(841, 726)
+        Me.ReportViewer1.Size = New System.Drawing.Size(800, 611)
         Me.ReportViewer1.TabIndex = 174
         '
         'cumpoVendaBindingSource
@@ -145,7 +145,7 @@ Partial Class FrmCupomVenda
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(844, 771)
+        Me.ClientSize = New System.Drawing.Size(800, 664)
         Me.Controls.Add(Me.ReportViewer1)
         Me.Controls.Add(Me.BtnCarregar)
         Me.Controls.Add(Me.Label2)

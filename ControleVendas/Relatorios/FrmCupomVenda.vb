@@ -28,4 +28,8 @@
     Private Sub BtnCarregar_Click(sender As Object, e As EventArgs) Handles BtnCarregar.Click
         Carregar_relatorio()
     End Sub
+
+    Private Sub FrmCupomVenda_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        TxtIdVenda.Text = ""
+    End Sub
 End Class
