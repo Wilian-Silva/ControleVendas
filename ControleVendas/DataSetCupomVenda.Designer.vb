@@ -2081,18 +2081,18 @@ Partial Public Class DataSetCupomVenda
                 Me(Me.tablevenda.id_vendaColumn) = value
             End Set
         End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property item() As Integer
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>
+        Public Overloads Property item() As Integer
             Get
-                Return CType(Me(Me.tablevenda.itemColumn),Integer)
+                Return CType(Me(Me.tablevenda.itemColumn), Integer)
             End Get
             Set
-                Me(Me.tablevenda.itemColumn) = value
+                Me(Me.tablevenda.itemColumn) = Value
             End Set
         End Property
-        
+
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Property data_venda() As Date
@@ -2295,18 +2295,18 @@ Partial Public Class DataSetCupomVenda
                 Me(Me.tablecumpoVenda.idColumn) = value
             End Set
         End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property item() As Integer
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>
+        Public Overloads Property item() As Integer
             Get
-                Return CType(Me(Me.tablecumpoVenda.itemColumn),Integer)
+                Return CType(Me(Me.tablecumpoVenda.itemColumn), Integer)
             End Get
             Set
-                Me(Me.tablecumpoVenda.itemColumn) = value
+                Me(Me.tablecumpoVenda.itemColumn) = Value
             End Set
         End Property
-        
+
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Property cod_cliente() As Integer

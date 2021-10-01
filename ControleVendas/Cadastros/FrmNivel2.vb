@@ -92,6 +92,7 @@ Public Class FrmNivel2
             CboxRel1_05.Checked = True
             CboxRel1_06.Checked = True
             CboxRel1_07.Checked = True
+            CboxRel1_08.Checked = True
 
         Else
             CboxRel1_01.Checked = False
@@ -101,6 +102,7 @@ Public Class FrmNivel2
             CboxRel1_05.Checked = False
             CboxRel1_06.Checked = False
             CboxRel1_07.Checked = False
+            CboxRel1_08.Checked = False
 
 
         End If

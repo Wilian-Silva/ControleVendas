@@ -1746,15 +1746,15 @@ Partial Public Class DataSet_ReportCompras
                 Me(Me.tableestoque.id_pedidoColumn) = value
             End Set
         End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property item() As Integer
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>
+        Public Overloads Property item() As Integer
             Get
-                Return CType(Me(Me.tableestoque.itemColumn),Integer)
+                Return CType(Me(Me.tableestoque.itemColumn), Integer)
             End Get
             Set
-                Me(Me.tableestoque.itemColumn) = value
+                Me(Me.tableestoque.itemColumn) = Value
             End Set
         End Property
     End Class

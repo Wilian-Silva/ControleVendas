@@ -67,6 +67,7 @@ Partial Class FrmNivel1
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.CboxRel1_08 = New System.Windows.Forms.CheckBox()
         Me.GboxNivel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -75,6 +76,7 @@ Partial Class FrmNivel1
         'GboxNivel1
         '
         Me.GboxNivel1.BackColor = System.Drawing.Color.Transparent
+        Me.GboxNivel1.Controls.Add(Me.CboxRel1_08)
         Me.GboxNivel1.Controls.Add(Me.CboxMvto1_06)
         Me.GboxNivel1.Controls.Add(Me.CboxCad1_05)
         Me.GboxNivel1.Controls.Add(Me.CboxConfig_01)
@@ -154,7 +156,7 @@ Partial Class FrmNivel1
         '
         Me.CboxAllRel.AutoSize = True
         Me.CboxAllRel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CboxAllRel.Location = New System.Drawing.Point(606, 177)
+        Me.CboxAllRel.Location = New System.Drawing.Point(606, 200)
         Me.CboxAllRel.Name = "CboxAllRel"
         Me.CboxAllRel.Size = New System.Drawing.Size(92, 17)
         Me.CboxAllRel.TabIndex = 25
@@ -211,9 +213,9 @@ Partial Class FrmNivel1
         Me.CboxRel1_07.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CboxRel1_07.Location = New System.Drawing.Point(606, 155)
         Me.CboxRel1_07.Name = "CboxRel1_07"
-        Me.CboxRel1_07.Size = New System.Drawing.Size(118, 17)
+        Me.CboxRel1_07.Size = New System.Drawing.Size(130, 17)
         Me.CboxRel1_07.TabIndex = 23
-        Me.CboxRel1_07.Text = "Pedidos de Compra"
+        Me.CboxRel1_07.Text = "Resultado do Período"
         Me.CboxRel1_07.UseVisualStyleBackColor = True
         '
         'CboxAllCadastros
@@ -233,9 +235,9 @@ Partial Class FrmNivel1
         Me.CboxRel1_01.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CboxRel1_01.Location = New System.Drawing.Point(606, 17)
         Me.CboxRel1_01.Name = "CboxRel1_01"
-        Me.CboxRel1_01.Size = New System.Drawing.Size(62, 17)
+        Me.CboxRel1_01.Size = New System.Drawing.Size(122, 17)
         Me.CboxRel1_01.TabIndex = 17
-        Me.CboxRel1_01.Text = "Vendas"
+        Me.CboxRel1_01.Text = "Relatório de Vendas"
         Me.CboxRel1_01.UseVisualStyleBackColor = True
         '
         'CboxRel1_06
@@ -288,9 +290,9 @@ Partial Class FrmNivel1
         Me.CboxRel1_05.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CboxRel1_05.Location = New System.Drawing.Point(606, 109)
         Me.CboxRel1_05.Name = "CboxRel1_05"
-        Me.CboxRel1_05.Size = New System.Drawing.Size(67, 17)
+        Me.CboxRel1_05.Size = New System.Drawing.Size(127, 17)
         Me.CboxRel1_05.TabIndex = 21
-        Me.CboxRel1_05.Text = "Compras"
+        Me.CboxRel1_05.Text = "Relatório de Compras"
         Me.CboxRel1_05.UseVisualStyleBackColor = True
         '
         'CboxCons1_07
@@ -312,7 +314,7 @@ Partial Class FrmNivel1
         Me.CboxRel1_03.Name = "CboxRel1_03"
         Me.CboxRel1_03.Size = New System.Drawing.Size(112, 17)
         Me.CboxRel1_03.TabIndex = 19
-        Me.CboxRel1_03.Text = "Títulos a Receber"
+        Me.CboxRel1_03.Text = "Contas a Receber"
         Me.CboxRel1_03.UseVisualStyleBackColor = True
         '
         'CboxExcluir1_01
@@ -589,6 +591,17 @@ Partial Class FrmNivel1
         Me.GroupBox2.TabIndex = 163
         Me.GroupBox2.TabStop = False
         '
+        'CboxRel1_08
+        '
+        Me.CboxRel1_08.AutoSize = True
+        Me.CboxRel1_08.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CboxRel1_08.Location = New System.Drawing.Point(606, 177)
+        Me.CboxRel1_08.Name = "CboxRel1_08"
+        Me.CboxRel1_08.Size = New System.Drawing.Size(109, 17)
+        Me.CboxRel1_08.TabIndex = 29
+        Me.CboxRel1_08.Text = "Recibo de Venda"
+        Me.CboxRel1_08.UseVisualStyleBackColor = True
+        '
         'FrmNivel1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -655,4 +668,5 @@ Partial Class FrmNivel1
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents CboxCad1_05 As CheckBox
     Friend WithEvents CboxMvto1_06 As CheckBox
+    Friend WithEvents CboxRel1_08 As CheckBox
 End Class

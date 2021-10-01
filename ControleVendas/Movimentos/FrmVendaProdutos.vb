@@ -366,7 +366,9 @@ Public Class FrmVendaProdutos
 
         SalvarDuplicata()
 
-        SalvarEstoque()
+        'SalvarEstoque()
+
+        SalvarEstoque_CustoItem()
 
         SalvarSaldoItem()
 
@@ -380,7 +382,7 @@ Public Class FrmVendaProdutos
 
         Limpar_cores()
     End Sub
-    Sub SalvarEstoque()
+    Sub SalvarEstoque() 'não esta sendo utilizado
         Try
             Abrir()
 
@@ -388,9 +390,9 @@ Public Class FrmVendaProdutos
             Dim sql1 As String
             Dim data1 As String
             Dim IdVenda As Integer
+
             data1 = Now().ToString("yyyy-MM-dd")
             IdVenda = TxtIdRegistro.Text
-
 
             Dim tipomvto As String
             tipomvto = "Saída"
@@ -404,6 +406,69 @@ Public Class FrmVendaProdutos
                     .Parameters.AddWithValue("@quantidade", CInt(DataGrid.Rows(i).Cells(8).Value.ToString))
                     .Parameters.AddWithValue("@valor_unitario", CDbl(DataGrid.Rows(i).Cells(9).Value.ToString))
                     .Parameters.AddWithValue("@valor_total", CDbl(DataGrid.Rows(i).Cells(10).Value.ToString))
+                    .Parameters.AddWithValue("@item", CInt(DataGrid.Rows(i).Cells(2).Value.ToString))
+                    cmd1.ExecuteNonQuery()
+                End With
+
+            Next
+
+        Catch ex As Exception
+            MsgBox("Erro ao Salvar!!" + ex.Message)
+        End Try
+    End Sub
+
+    Sub SalvarEstoque_CustoItem()
+        'Stop
+        Try
+            Abrir()
+
+
+            Dim cmd1 As MySqlCommand
+            Dim sql1 As String
+            Dim data1 As String
+            Dim IdVenda As Integer
+            Dim CostUnit As String
+            Dim CostTotal As String
+            Dim Qtd As Integer
+            Dim codProduto As Integer
+
+            data1 = Now().ToString("yyyy-MM-dd")
+            IdVenda = TxtIdRegistro.Text
+
+            Dim tipomvto As String
+            tipomvto = "Saída"
+
+            For i = 0 To DataGrid.RowCount - 1
+
+                codProduto = DataGrid.Rows(i).Cells(6).Value.ToString
+                Qtd = DataGrid.Rows(i).Cells(8).Value.ToString
+
+                'consultar custo unitario do item
+                Dim cmd As MySqlCommand
+                Dim reader As MySqlDataReader
+                Dim sql As String
+                sql = "SELECT * FROM produtos WHERE id= '" & codProduto & "'"
+                cmd = New MySqlCommand(sql, con)
+                reader = cmd.ExecuteReader
+                If reader.Read = True Then
+                    CostUnit = reader("preco_compra")
+                    reader.Close()
+                Else
+                    reader.Close()
+                End If
+
+
+#Disable Warning BC42104 ' A variável é usada antes de receber um valor
+                CostTotal = CostUnit * Qtd
+#Enable Warning BC42104 ' A variável é usada antes de receber um valor
+
+                'inserindo dados no banco
+                sql1 = "INSERT INTO estoque (data_registro, tipo, cod_produto, produto, quantidade, valor_unitario, valor_total, id_venda, item ) VALUES ('" & data1 & "', '" & tipomvto & "', @cod_produto, @produto, @quantidade, '" & CostUnit.Replace(",", ".") & "', '" & CostTotal.Replace(",", ".") & "','" & IdVenda & "', @item )"
+                cmd1 = New MySqlCommand(sql1, con)
+                With cmd1
+                    .Parameters.AddWithValue("@cod_produto", CInt(DataGrid.Rows(i).Cells(6).Value.ToString))
+                    .Parameters.AddWithValue("@produto", DataGrid.Rows(i).Cells(7).Value.ToString)
+                    .Parameters.AddWithValue("@quantidade", CInt(DataGrid.Rows(i).Cells(8).Value.ToString))
                     .Parameters.AddWithValue("@item", CInt(DataGrid.Rows(i).Cells(2).Value.ToString))
                     cmd1.ExecuteNonQuery()
                 End With
@@ -775,7 +840,9 @@ Public Class FrmVendaProdutos
                     Table1.Columns.Add("Vlr. Unit.")
                     Table1.Columns.Add("Valor Total")
 
+#Disable Warning IDE0017 ' Simplificar a inicialização de objeto
                     Dim bs As New BindingSource()
+#Enable Warning IDE0017 ' Simplificar a inicialização de objeto
                     bs.DataSource = Table1
                     DataGrid.DataSource = bs
 

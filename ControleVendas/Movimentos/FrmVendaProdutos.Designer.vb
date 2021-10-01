@@ -31,7 +31,6 @@ Partial Class FrmVendaProdutos
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PedidosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-
         Me.BtnCarregar = New System.Windows.Forms.Button()
         Me.BtnIncluirItem_venda = New System.Windows.Forms.Button()
         Me.BtnPesqPedido = New System.Windows.Forms.Button()
@@ -39,7 +38,6 @@ Partial Class FrmVendaProdutos
         Me.BtnProximo = New System.Windows.Forms.Button()
         Me.BtnAnterior = New System.Windows.Forms.Button()
         Me.BtnExcluirItem_venda = New System.Windows.Forms.Button()
-
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.BtnCacelar = New System.Windows.Forms.Button()
         Me.BtnLimpar = New System.Windows.Forms.Button()
@@ -88,7 +86,6 @@ Partial Class FrmVendaProdutos
         Me.TxtCodCliente = New System.Windows.Forms.TextBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         CType(Me.PedidosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-
         Me.GroupBox1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -103,11 +100,6 @@ Partial Class FrmVendaProdutos
         'PedidosBindingSource
         '
         Me.PedidosBindingSource.DataMember = "pedidos"
-
-        '
-        'Controle_vendasDataSet
-        '
-
         '
         'BtnCarregar
         '
@@ -215,10 +207,6 @@ Partial Class FrmVendaProdutos
         Me.BtnExcluirItem_venda.Text = "Eliminar"
         Me.ToolTip.SetToolTip(Me.BtnExcluirItem_venda, "Eliminar item da venda")
         Me.BtnExcluirItem_venda.UseVisualStyleBackColor = True
-        '
-        'PedidosTableAdapter
-        '
-
         '
         'BtnCacelar
         '
@@ -455,7 +443,7 @@ Partial Class FrmVendaProdutos
         '
         Me.TxtSaldoEstoque.BackColor = System.Drawing.Color.White
         Me.TxtSaldoEstoque.Enabled = False
-        Me.TxtSaldoEstoque.Location = New System.Drawing.Point(303, 18)
+        Me.TxtSaldoEstoque.Location = New System.Drawing.Point(203, 19)
         Me.TxtSaldoEstoque.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtSaldoEstoque.Name = "TxtSaldoEstoque"
         Me.TxtSaldoEstoque.Size = New System.Drawing.Size(32, 20)
@@ -902,7 +890,6 @@ Partial Class FrmVendaProdutos
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Venda de Produtos"
         CType(Me.PedidosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.TabControl1.ResumeLayout(False)
