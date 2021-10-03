@@ -31,8 +31,6 @@ Partial Class FrmMvtoEstoque
         Me.Label2 = New System.Windows.Forms.Label()
         Me.CbTipoMvto = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.DataMvto = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.BtnSalvar = New System.Windows.Forms.Button()
         Me.BtnCancelar = New System.Windows.Forms.Button()
@@ -47,8 +45,6 @@ Partial Class FrmMvtoEstoque
         Me.GroupBox3.Controls.Add(Me.BtnPesqProduto)
         Me.GroupBox3.Controls.Add(Me.CbTipoMvto)
         Me.GroupBox3.Controls.Add(Me.Label1)
-        Me.GroupBox3.Controls.Add(Me.Label10)
-        Me.GroupBox3.Controls.Add(Me.DataMvto)
         Me.GroupBox3.Controls.Add(Me.TxtQuantidade)
         Me.GroupBox3.Controls.Add(Me.Label7)
         Me.GroupBox3.Controls.Add(Me.TxtCodProduto)
@@ -56,19 +52,18 @@ Partial Class FrmMvtoEstoque
         Me.GroupBox3.Controls.Add(Me.Label2)
         Me.GroupBox3.Location = New System.Drawing.Point(14, 11)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(376, 101)
+        Me.GroupBox3.Size = New System.Drawing.Size(356, 91)
         Me.GroupBox3.TabIndex = 148
         Me.GroupBox3.TabStop = False
         '
         'TxtQuantidade
         '
         Me.TxtQuantidade.BackColor = System.Drawing.Color.White
-        Me.TxtQuantidade.Enabled = False
-        Me.TxtQuantidade.Location = New System.Drawing.Point(315, 18)
+        Me.TxtQuantidade.Location = New System.Drawing.Point(270, 55)
         Me.TxtQuantidade.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtQuantidade.Name = "TxtQuantidade"
-        Me.TxtQuantidade.Size = New System.Drawing.Size(35, 20)
-        Me.TxtQuantidade.TabIndex = 74
+        Me.TxtQuantidade.Size = New System.Drawing.Size(43, 20)
+        Me.TxtQuantidade.TabIndex = 3
         Me.TxtQuantidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label7
@@ -76,7 +71,7 @@ Partial Class FrmMvtoEstoque
         Me.Label7.AutoSize = True
         Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(287, 21)
+        Me.Label7.Location = New System.Drawing.Point(232, 57)
         Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(32, 16)
@@ -102,7 +97,7 @@ Partial Class FrmMvtoEstoque
         Me.TxtProduto.Location = New System.Drawing.Point(95, 18)
         Me.TxtProduto.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtProduto.Name = "TxtProduto"
-        Me.TxtProduto.Size = New System.Drawing.Size(161, 20)
+        Me.TxtProduto.Size = New System.Drawing.Size(208, 20)
         Me.TxtProduto.TabIndex = 1
         '
         'Label2
@@ -121,42 +116,22 @@ Partial Class FrmMvtoEstoque
         '
         Me.CbTipoMvto.FormattingEnabled = True
         Me.CbTipoMvto.Items.AddRange(New Object() {"Entrada", "Saída"})
-        Me.CbTipoMvto.Location = New System.Drawing.Point(265, 55)
+        Me.CbTipoMvto.Location = New System.Drawing.Point(95, 55)
         Me.CbTipoMvto.Name = "CbTipoMvto"
-        Me.CbTipoMvto.Size = New System.Drawing.Size(86, 21)
-        Me.CbTipoMvto.TabIndex = 188
+        Me.CbTipoMvto.Size = New System.Drawing.Size(108, 21)
+        Me.CbTipoMvto.TabIndex = 2
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(194, 56)
+        Me.Label1.Location = New System.Drawing.Point(24, 56)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(68, 16)
         Me.Label1.TabIndex = 187
         Me.Label1.Text = "Tipo Mvto."
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.BackColor = System.Drawing.Color.Transparent
-        Me.Label10.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(21, 54)
-        Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(39, 16)
-        Me.Label10.TabIndex = 186
-        Me.Label10.Text = "Data:"
-        '
-        'DataMvto
-        '
-        Me.DataMvto.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DataMvto.Location = New System.Drawing.Point(64, 52)
-        Me.DataMvto.Name = "DataMvto"
-        Me.DataMvto.Size = New System.Drawing.Size(97, 20)
-        Me.DataMvto.TabIndex = 185
         '
         'GroupBox1
         '
@@ -164,9 +139,9 @@ Partial Class FrmMvtoEstoque
         Me.GroupBox1.Controls.Add(Me.BtnSalvar)
         Me.GroupBox1.Controls.Add(Me.BtnCancelar)
         Me.GroupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.GroupBox1.Location = New System.Drawing.Point(14, 117)
+        Me.GroupBox1.Location = New System.Drawing.Point(14, 108)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(376, 52)
+        Me.GroupBox1.Size = New System.Drawing.Size(356, 52)
         Me.GroupBox1.TabIndex = 180
         Me.GroupBox1.TabStop = False
         '
@@ -174,7 +149,7 @@ Partial Class FrmMvtoEstoque
         '
         Me.BtnSalvar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnSalvar.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.BtnSalvar.Location = New System.Drawing.Point(193, 14)
+        Me.BtnSalvar.Location = New System.Drawing.Point(193, 12)
         Me.BtnSalvar.Name = "BtnSalvar"
         Me.BtnSalvar.Size = New System.Drawing.Size(70, 30)
         Me.BtnSalvar.TabIndex = 168
@@ -186,7 +161,7 @@ Partial Class FrmMvtoEstoque
         '
         Me.BtnCancelar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.BtnCancelar.Location = New System.Drawing.Point(280, 14)
+        Me.BtnCancelar.Location = New System.Drawing.Point(268, 12)
         Me.BtnCancelar.Name = "BtnCancelar"
         Me.BtnCancelar.Size = New System.Drawing.Size(70, 30)
         Me.BtnCancelar.TabIndex = 167
@@ -196,16 +171,15 @@ Partial Class FrmMvtoEstoque
         'BtnPesqProduto
         '
         Me.BtnPesqProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.BtnPesqProduto.Enabled = False
         Me.BtnPesqProduto.FlatAppearance.BorderSize = 0
         Me.BtnPesqProduto.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.BtnPesqProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnPesqProduto.ForeColor = System.Drawing.Color.Transparent
         Me.BtnPesqProduto.Image = CType(resources.GetObject("BtnPesqProduto.Image"), System.Drawing.Image)
-        Me.BtnPesqProduto.Location = New System.Drawing.Point(259, 16)
+        Me.BtnPesqProduto.Location = New System.Drawing.Point(310, 16)
         Me.BtnPesqProduto.Name = "BtnPesqProduto"
         Me.BtnPesqProduto.Size = New System.Drawing.Size(22, 22)
-        Me.BtnPesqProduto.TabIndex = 189
+        Me.BtnPesqProduto.TabIndex = 1
         Me.BtnPesqProduto.UseVisualStyleBackColor = True
         '
         'FrmMvtoEstoque
@@ -213,7 +187,7 @@ Partial Class FrmMvtoEstoque
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(411, 183)
+        Me.ClientSize = New System.Drawing.Size(391, 180)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.GroupBox3)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -236,8 +210,6 @@ Partial Class FrmMvtoEstoque
     Friend WithEvents Label2 As Label
     Friend WithEvents CbTipoMvto As ComboBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents Label10 As Label
-    Friend WithEvents DataMvto As DateTimePicker
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents BtnSalvar As Button
     Friend WithEvents BtnCancelar As Button

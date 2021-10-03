@@ -26,24 +26,28 @@ Public Class FrmMvtoEstoque
 
         CbTipoMvto.BackColor = Color.White
         TxtQuantidade.BackColor = Color.White
-        If CbTipoMvto.Text <> "" And TxtQuantidade.Text <> "'" Then
+        TxtProduto.BackColor = Color.White
+
+        If CbTipoMvto.Text <> "" And TxtQuantidade.Text <> "" And TxtCodProduto.Text <> "" Then
 
             If MsgBox("Deseja salvar esse ajuste manual no estoque?", vbYesNo, "Ajuste Saldo") = vbYes Then
 
-                SalvarEdicao()
+                SalvarAjusteEstoque()
 
-                MsgBox("Registro salvo com Sucesso!!", MsgBoxStyle.Information, "Salvar")
+
                 Me.Close()
             End If
 
         Else
             CbTipoMvto.BackColor = Color.Salmon
-        TxtQuantidade.BackColor = Color.Salmon
-        MsgBox("Campos em vazios!!", MsgBoxStyle.Information, "Salar")
+            TxtQuantidade.BackColor = Color.Salmon
+            TxtProduto.BackColor = Color.Salmon
+            MsgBox("Campos em vazios!!", MsgBoxStyle.Information, "Salar")
         End If
     End Sub
 
-    Sub SalvarEdicao()
+    Sub SalvarAjusteEstoque()
+        'Stop
         Try
 
             Abrir()
@@ -53,7 +57,7 @@ Public Class FrmMvtoEstoque
             Dim cmd1 As MySqlCommand
             Dim reader As MySqlDataReader
             Dim sql1 As String
-            sql1 = "SELECT * from produtos WHERE where id = '" & TxtCodProduto.Text & "'"
+            sql1 = "SELECT * from produtos WHERE id = '" & TxtCodProduto.Text & "'"
             cmd1 = New MySqlCommand(sql1, con)
             reader = cmd1.ExecuteReader
             If reader.Read = True Then
@@ -65,15 +69,26 @@ Public Class FrmMvtoEstoque
 
             'QUANTIDADE A SER AJUSTADA
             Dim QtdAjuste As Integer
+            Dim novoSaldo As Integer
+
+            QtdAjuste = TxtQuantidade.Text
+
             If CbTipoMvto.Text = "Entrada" Then
-                QtdAjuste = TxtQuantidade.Text
+                novoSaldo = saldoEstoque + QtdAjuste
+            Else
                 If CbTipoMvto.Text = "Saída" Then
-                    QtdAjuste = -TxtQuantidade.Text
+                    novoSaldo = saldoEstoque - QtdAjuste
                 End If
             End If
 
-            Dim novoSaldo As Integer
-            novoSaldo = saldoEstoque + QtdAjuste
+
+            If novoSaldo < 0 Then
+
+                If MsgBox("ATENÇÃO: saldo do item irá ficar negativo, confirmar ajuste?", vbYesNo, "SALDO NEGATIVO") = vbYes Then
+                Else
+                    Exit Sub
+                End If
+            End If
 
             Dim cmd As MySqlCommand
             Dim sql As String
@@ -81,8 +96,14 @@ Public Class FrmMvtoEstoque
             cmd = New MySqlCommand(sql, con)
             cmd.ExecuteNonQuery()
 
+            MsgBox("Registro salvo com Sucesso!!", MsgBoxStyle.Information, "Salvar")
+
         Catch ex As Exception
             MsgBox("Erro ao salvar ajuste no estoque!!" + ex.Message)
         End Try
+    End Sub
+
+    Private Sub FrmMvtoEstoque_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        BtnPesqProduto.Focus()
     End Sub
 End Class
