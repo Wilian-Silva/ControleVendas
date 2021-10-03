@@ -2,6 +2,7 @@
 
 Module ModuloConexao
 
+    'Public con As New MySqlConnection("server=localhost; userid=root; password=; database=controle_vendas_oficial; port=;")
     Public con As New MySqlConnection("server=localhost; userid=root; password=; database=controle_vendas; port=;")
     'Public con As New MySqlConnection("server=mysql746.umbler.com; userid=xufu; password=EZBjW9LtUscBmb; database=controle_vendas; port=41890;")
 

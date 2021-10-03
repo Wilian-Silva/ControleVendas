@@ -496,4 +496,14 @@ Public Class FrmTelaInicial
         Dim form = New FrmCupomVenda
         form.ShowDialog()
     End Sub
+
+    Private Sub CboxRel1_08_Click(sender As Object, e As EventArgs) Handles CboxRel1_08.Click
+        Dim form = New FrmCupomVenda
+        form.ShowDialog()
+    End Sub
+
+    Private Sub CboxMvto1_07_Click(sender As Object, e As EventArgs) Handles CboxMvto1_07.Click
+        Dim form = New FrmMvtoEstoque
+        form.ShowDialog()
+    End Sub
 End Class

@@ -262,6 +262,12 @@
     <Compile Include="Movimentos\FrmDuplReceber.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Movimentos\FrmMvtoEstoque.Designer.vb">
+      <DependentUpon>FrmMvtoEstoque.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentos\FrmMvtoEstoque.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Movimentos\FrmMvtoPortador.Designer.vb">
       <DependentUpon>FrmMvtoPortador.vb</DependentUpon>
     </Compile>
@@ -451,6 +457,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Movimentos\FrmDuplReceber.resx">
       <DependentUpon>FrmDuplReceber.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentos\FrmMvtoEstoque.resx">
+      <DependentUpon>FrmMvtoEstoque.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Movimentos\FrmMvtoPortador.resx">
       <DependentUpon>FrmMvtoPortador.vb</DependentUpon>

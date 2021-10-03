@@ -25,15 +25,25 @@ Partial Class FrmRelSaldoEstoque
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmRelSaldoEstoque))
-        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
+        Me.ProdutosBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataSet_saldoestoque = New ControleVendas.DataSet_saldoestoque()
+        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.produtosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.produtosTableAdapter = New ControleVendas.DataSet_saldoestoqueTableAdapters.produtosTableAdapter()
-        Me.ProdutosBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        CType(Me.ProdutosBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSet_saldoestoque, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.produtosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ProdutosBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'ProdutosBindingSource1
+        '
+        Me.ProdutosBindingSource1.DataMember = "produtos"
+        Me.ProdutosBindingSource1.DataSource = Me.DataSet_saldoestoque
+        '
+        'DataSet_saldoestoque
+        '
+        Me.DataSet_saldoestoque.DataSetName = "DataSet_saldoestoque"
+        Me.DataSet_saldoestoque.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ReportViewer1
         '
@@ -45,13 +55,8 @@ Partial Class FrmRelSaldoEstoque
         Me.ReportViewer1.Location = New System.Drawing.Point(0, 0)
         Me.ReportViewer1.Name = "ReportViewer1"
         Me.ReportViewer1.ServerReport.BearerToken = Nothing
-        Me.ReportViewer1.Size = New System.Drawing.Size(637, 601)
+        Me.ReportViewer1.Size = New System.Drawing.Size(658, 711)
         Me.ReportViewer1.TabIndex = 0
-        '
-        'DataSet_saldoestoque
-        '
-        Me.DataSet_saldoestoque.DataSetName = "DataSet_saldoestoque"
-        Me.DataSet_saldoestoque.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'produtosBindingSource
         '
@@ -62,16 +67,11 @@ Partial Class FrmRelSaldoEstoque
         '
         Me.produtosTableAdapter.ClearBeforeFill = True
         '
-        'ProdutosBindingSource1
-        '
-        Me.ProdutosBindingSource1.DataMember = "produtos"
-        Me.ProdutosBindingSource1.DataSource = Me.DataSet_saldoestoque
-        '
         'FrmRelSaldoEstoque
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(637, 601)
+        Me.ClientSize = New System.Drawing.Size(658, 711)
         Me.Controls.Add(Me.ReportViewer1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -79,9 +79,9 @@ Partial Class FrmRelSaldoEstoque
         Me.Name = "FrmRelSaldoEstoque"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Saldo Estoque"
+        CType(Me.ProdutosBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataSet_saldoestoque, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.produtosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ProdutosBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

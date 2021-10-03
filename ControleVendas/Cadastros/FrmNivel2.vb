@@ -54,6 +54,7 @@ Public Class FrmNivel2
             CboxMvto1_04.Checked = True
             CboxMvto1_05.Checked = True
             CboxMvto1_06.Checked = True
+            CboxMvto1_07.Checked = True
         Else
             CboxMvto1_01.Checked = False
             CboxMvto1_02.Checked = False
@@ -61,6 +62,7 @@ Public Class FrmNivel2
             CboxMvto1_04.Checked = False
             CboxMvto1_05.Checked = False
             CboxMvto1_06.Checked = False
+            CboxMvto1_07.Checked = False
 
         End If
 
@@ -72,12 +74,12 @@ Public Class FrmNivel2
             CboxExcluir1_01.Checked = True
             CboxExcluir1_03.Checked = True
             CboxExcluir1_05.Checked = True
-            CboxExcluir1_06.Checked = True
+
         Else
             CboxExcluir1_01.Checked = False
             CboxExcluir1_03.Checked = False
             CboxExcluir1_05.Checked = False
-            CboxExcluir1_06.Checked = False
+
 
         End If
     End Sub
