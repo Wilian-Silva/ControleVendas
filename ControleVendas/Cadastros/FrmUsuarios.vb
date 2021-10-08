@@ -207,6 +207,8 @@ Public Class FrmUsuarios
 
     Private Sub BtnSalvar_Click(sender As Object, e As EventArgs) Handles BtnSalvar.Click
 
+        Limpar_cores()
+
         If editarUsuario = "Editar" And TxtId.Text <> "" Then
 
 

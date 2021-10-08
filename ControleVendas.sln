@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31605.320
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ControleVendas", "ControleVendas\ControleVendas.vbproj", "{8D7BBBB7-EBE1-4690-9DDC-EA6853C2C7B8}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SistemaControleVendas", "SistemaControleVendas\SistemaControleVendas.vdproj", "{EA2A2D4F-83E5-4507-BF5F-B6B42BC2DCFC}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ControleVendas_2.0", "ControleVendas_2.0\ControleVendas_2.0.vdproj", "{3874D421-0D17-4AD5-9242-E64A2C296367}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,8 +17,8 @@ Global
 		{8D7BBBB7-EBE1-4690-9DDC-EA6853C2C7B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D7BBBB7-EBE1-4690-9DDC-EA6853C2C7B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D7BBBB7-EBE1-4690-9DDC-EA6853C2C7B8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EA2A2D4F-83E5-4507-BF5F-B6B42BC2DCFC}.Debug|Any CPU.ActiveCfg = Debug
-		{EA2A2D4F-83E5-4507-BF5F-B6B42BC2DCFC}.Release|Any CPU.ActiveCfg = Release
+		{3874D421-0D17-4AD5-9242-E64A2C296367}.Debug|Any CPU.ActiveCfg = Debug
+		{3874D421-0D17-4AD5-9242-E64A2C296367}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

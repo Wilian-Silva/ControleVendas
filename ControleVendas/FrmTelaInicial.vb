@@ -182,18 +182,22 @@ Public Class FrmTelaInicial
                 End If
 
                 reader.Close()
+
+#Disable Warning BC42104 ' A variável é usada antes de receber um valor
+                If status = 1 Then
+#Enable Warning BC42104 ' A variável é usada antes de receber um valor
+                    btn.Enabled = True
+                Else
+                    If status = 0 Then
+                        btn.Enabled = False
+                    End If
+                End If
+
             Else
                 reader.Close()
 
             End If
 
-#Disable Warning BC42104 ' A variável é usada antes de receber um valor
-            If status = 1 Then
-#Enable Warning BC42104 ' A variável é usada antes de receber um valor
-                btn.Enabled = True
-            Else
-                btn.Enabled = False
-            End If
 
         Next
     End Sub

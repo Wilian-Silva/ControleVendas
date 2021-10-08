@@ -287,7 +287,7 @@ Public Class FrmPedido
         Else
             readerped.Close()
         End If
-
+        'Stop
 
         Try
             'PROGRAMANDO INSERÇÃO DE REGISTRO NO BANCO
