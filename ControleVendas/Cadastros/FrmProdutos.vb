@@ -375,7 +375,7 @@ Public Class FrmProdutos
         If DataGrid.RowCount > 0 Then
             codProduto = DataGrid.CurrentRow.Cells(0).Value
             nomeProduto = DataGrid.CurrentRow.Cells(1).Value
-            valorUnit = DataGrid.CurrentRow.Cells(3).Value
+            valorUnit = DataGrid.CurrentRow.Cells(5).Value
             saldoEstoque = DataGrid.CurrentRow.Cells(6).Value
             Me.Close()
         Else

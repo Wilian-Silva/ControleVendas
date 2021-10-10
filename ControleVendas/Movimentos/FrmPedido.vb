@@ -505,6 +505,7 @@ Public Class FrmPedido
                     TxtPedido.Enabled = False
                     BtnPesqFornecedor.Enabled = False
                     TxtFornecedor.Enabled = False
+                    DataPed.Enabled = False
 
                     LimparCamposAddItemPedido()
 

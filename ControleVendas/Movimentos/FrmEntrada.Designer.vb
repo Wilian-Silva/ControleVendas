@@ -333,7 +333,7 @@ Partial Class FrmEntrada
         Me.TxtNotaFiscal.Location = New System.Drawing.Point(97, 16)
         Me.TxtNotaFiscal.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtNotaFiscal.Name = "TxtNotaFiscal"
-        Me.TxtNotaFiscal.Size = New System.Drawing.Size(83, 20)
+        Me.TxtNotaFiscal.Size = New System.Drawing.Size(97, 20)
         Me.TxtNotaFiscal.TabIndex = 97
         '
         'Label2

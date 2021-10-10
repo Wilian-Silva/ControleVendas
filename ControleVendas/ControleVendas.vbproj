@@ -186,10 +186,23 @@
     <Compile Include="Cadastros\FrmVendaCabecalho.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ContasPagar.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContasPagar.xsd</DependentUpon>
+    </Compile>
     <Compile Include="controle_vendasDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>controle_vendasDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="controle_vendasDataSet2.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>controle_vendasDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="controle_vendasDataSet2.vb">
+      <DependentUpon>controle_vendasDataSet2.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSetCupomVenda.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -339,6 +352,12 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="MySqlCommand.vb" />
+    <Compile Include="Relatorios\FrmContasPagar.Designer.vb">
+      <DependentUpon>FrmContasPagar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\FrmContasPagar.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Relatorios\FrmContasReceber.Designer.vb">
       <DependentUpon>FrmContasReceber.vb</DependentUpon>
     </Compile>
@@ -494,6 +513,9 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\FrmContasPagar.resx">
+      <DependentUpon>FrmContasPagar.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\FrmContasReceber.resx">
       <DependentUpon>FrmContasReceber.vb</DependentUpon>
     </EmbeddedResource>
@@ -516,6 +538,7 @@
       <DependentUpon>FrmTituloVencidos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\ReportCompras.rdlc" />
+    <EmbeddedResource Include="Relatorios\ReportContasPagar.rdlc" />
     <EmbeddedResource Include="Relatorios\ReportContasReceber.rdlc" />
     <EmbeddedResource Include="Relatorios\ReportCupomVenda.rdlc" />
     <EmbeddedResource Include="Relatorios\ReportRecebimentos.rdlc" />
@@ -528,6 +551,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="ContasPagar.xsc">
+      <DependentUpon>ContasPagar.xsd</DependentUpon>
+    </None>
+    <None Include="ContasPagar.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ContasPagar.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ContasPagar.xss">
+      <DependentUpon>ContasPagar.xsd</DependentUpon>
+    </None>
     <None Include="controle_vendasDataSet.xsc">
       <DependentUpon>controle_vendasDataSet.xsd</DependentUpon>
     </None>
@@ -538,6 +572,17 @@
     </None>
     <None Include="controle_vendasDataSet.xss">
       <DependentUpon>controle_vendasDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="controle_vendasDataSet2.xsc">
+      <DependentUpon>controle_vendasDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="controle_vendasDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>controle_vendasDataSet2.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="controle_vendasDataSet2.xss">
+      <DependentUpon>controle_vendasDataSet2.xsd</DependentUpon>
     </None>
     <None Include="DataSetCupomVenda.xsc">
       <DependentUpon>DataSetCupomVenda.xsd</DependentUpon>

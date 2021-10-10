@@ -105,7 +105,7 @@ Public Class FrmTelaInicial
         DataGrid_AVencer.Columns(3).Width = 75
         DataGrid_AVencer.Columns(4).Width = 75
         DataGrid_AVencer.Columns(5).Width = 75
-        DataGrid_AVencer.Columns(6).Width = 75
+        DataGrid_AVencer.Columns(6).Width = 200
 
 
         DataGrid_Vencidos.Columns(0).HeaderText = "Cliente"
@@ -129,7 +129,7 @@ Public Class FrmTelaInicial
         DataGrid_Vencidos.Columns(3).Width = 75
         DataGrid_Vencidos.Columns(4).Width = 75
         DataGrid_Vencidos.Columns(5).Width = 75
-        DataGrid_Vencidos.Columns(6).Width = 75
+        DataGrid_Vencidos.Columns(6).Width = 200
 
 
     End Sub
@@ -508,6 +508,11 @@ Public Class FrmTelaInicial
 
     Private Sub CboxMvto1_07_Click(sender As Object, e As EventArgs) Handles CboxMvto1_07.Click
         Dim form = New FrmMvtoEstoque
+        form.ShowDialog()
+    End Sub
+
+    Private Sub ContasAPagarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ContasAPagarToolStripMenuItem.Click
+        Dim form = New FrmContasPagar
         form.ShowDialog()
     End Sub
 End Class
