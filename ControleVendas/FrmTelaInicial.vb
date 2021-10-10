@@ -507,11 +507,11 @@ Public Class FrmTelaInicial
     End Sub
 
     Private Sub CboxMvto1_07_Click(sender As Object, e As EventArgs) Handles CboxMvto1_07.Click
-        Dim form = New FrmMvtoEstoque
+        Dim form = New FrmRelMvtoEstoque
         form.ShowDialog()
     End Sub
 
-    Private Sub ContasAPagarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ContasAPagarToolStripMenuItem.Click
+    Private Sub ContasAPagarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CboxRel1_09.Click
         Dim form = New FrmContasPagar
         form.ShowDialog()
     End Sub

@@ -204,6 +204,11 @@
     <Compile Include="controle_vendasDataSet2.vb">
       <DependentUpon>controle_vendasDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="controle_vendasDataSetEstoque.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>controle_vendasDataSetEstoque.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetCupomVenda.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -541,6 +546,7 @@
     <EmbeddedResource Include="Relatorios\ReportContasPagar.rdlc" />
     <EmbeddedResource Include="Relatorios\ReportContasReceber.rdlc" />
     <EmbeddedResource Include="Relatorios\ReportCupomVenda.rdlc" />
+    <EmbeddedResource Include="Relatorios\ReportMvtoEstoque.rdlc" />
     <EmbeddedResource Include="Relatorios\ReportRecebimentos.rdlc" />
     <EmbeddedResource Include="Relatorios\ReportResultadoPeriod.rdlc" />
     <EmbeddedResource Include="Relatorios\ReportSaldoEstoque.rdlc" />
@@ -583,6 +589,17 @@
     </None>
     <None Include="controle_vendasDataSet2.xss">
       <DependentUpon>controle_vendasDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="controle_vendasDataSetEstoque.xsc">
+      <DependentUpon>controle_vendasDataSetEstoque.xsd</DependentUpon>
+    </None>
+    <None Include="controle_vendasDataSetEstoque.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>controle_vendasDataSetEstoque.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="controle_vendasDataSetEstoque.xss">
+      <DependentUpon>controle_vendasDataSetEstoque.xsd</DependentUpon>
     </None>
     <None Include="DataSetCupomVenda.xsc">
       <DependentUpon>DataSetCupomVenda.xsd</DependentUpon>

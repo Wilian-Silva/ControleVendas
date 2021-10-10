@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class FrmMvtoEstoque
+Partial Class FrmRelMvtoEstoque
     Inherits System.Windows.Forms.Form
 
     'Descartar substituições de formulário para limpar a lista de componentes.
@@ -22,7 +22,7 @@ Partial Class FrmMvtoEstoque
     'Não o modifique usando o editor de códigos.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmMvtoEstoque))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmRelMvtoEstoque))
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.TxtQuantidade = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()

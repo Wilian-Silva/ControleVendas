@@ -1,6 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 
-Public Class FrmMvtoEstoque
+Public Class FrmRelMvtoEstoque
     Private Sub BtnPesqProduto_Click(sender As Object, e As EventArgs) Handles BtnPesqProduto.Click
         pesquisarProduto = "True"
         Dim form = New FrmProdutos
