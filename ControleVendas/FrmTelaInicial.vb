@@ -515,4 +515,9 @@ Public Class FrmTelaInicial
         Dim form = New FrmContasPagar
         form.ShowDialog()
     End Sub
+
+    Private Sub MovimentaçãoEstoqueToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MovimentaçãoEstoqueToolStripMenuItem.Click
+        Dim form = New FrmMvtoEstoque
+        form.ShowDialog()
+    End Sub
 End Class

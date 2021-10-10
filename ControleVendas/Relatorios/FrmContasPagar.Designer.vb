@@ -25,15 +25,25 @@ Partial Class FrmContasPagar
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmContasPagar))
-        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
+        Me.DuplicatasReceberBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.controle_vendasDataSet2 = New ControleVendas.controle_vendasDataSet2()
+        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.duplicatasReceberBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.duplicatasReceberTableAdapter = New ControleVendas.controle_vendasDataSet2TableAdapters.duplicatasReceberTableAdapter()
-        Me.DuplicatasReceberBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        CType(Me.DuplicatasReceberBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.controle_vendasDataSet2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.duplicatasReceberBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DuplicatasReceberBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'DuplicatasReceberBindingSource1
+        '
+        Me.DuplicatasReceberBindingSource1.DataMember = "duplicatasReceber"
+        Me.DuplicatasReceberBindingSource1.DataSource = Me.controle_vendasDataSet2
+        '
+        'controle_vendasDataSet2
+        '
+        Me.controle_vendasDataSet2.DataSetName = "controle_vendasDataSet2"
+        Me.controle_vendasDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ReportViewer1
         '
@@ -48,11 +58,6 @@ Partial Class FrmContasPagar
         Me.ReportViewer1.Size = New System.Drawing.Size(929, 522)
         Me.ReportViewer1.TabIndex = 0
         '
-        'controle_vendasDataSet2
-        '
-        Me.controle_vendasDataSet2.DataSetName = "controle_vendasDataSet2"
-        Me.controle_vendasDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'duplicatasReceberBindingSource
         '
         Me.duplicatasReceberBindingSource.DataMember = "duplicatasReceber"
@@ -62,11 +67,6 @@ Partial Class FrmContasPagar
         '
         Me.duplicatasReceberTableAdapter.ClearBeforeFill = True
         '
-        'DuplicatasReceberBindingSource1
-        '
-        Me.DuplicatasReceberBindingSource1.DataMember = "duplicatasReceber"
-        Me.DuplicatasReceberBindingSource1.DataSource = Me.controle_vendasDataSet2
-        '
         'FrmContasPagar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -75,12 +75,13 @@ Partial Class FrmContasPagar
         Me.Controls.Add(Me.ReportViewer1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "FrmContasPagar"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Contas a Pagar"
+        CType(Me.DuplicatasReceberBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.controle_vendasDataSet2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.duplicatasReceberBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DuplicatasReceberBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
