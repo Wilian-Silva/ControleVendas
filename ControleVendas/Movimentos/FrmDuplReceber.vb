@@ -18,6 +18,9 @@ Public Class FrmDuplReceber
 
     Private Sub FrmDuplicatas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Stop
+
+        CarregarPortador()
+
         Dim linhaPed As Integer
 
         If editarDuplicata = "True" Then
@@ -54,7 +57,7 @@ Public Class FrmDuplReceber
                     ultima.Close()
                 End If
 
-                CarregarPortador()
+
 
                 TxtParcela.Text = linhaPed + 1
 
@@ -111,11 +114,11 @@ Public Class FrmDuplReceber
 
                 bsd.DataSource = Table1DuplicatasReceber
 
-                Table1DuplicatasReceber.Rows.Add("", TxtParcela.Text, TxtNum_venda.Text, DataEmissao.Value.ToShortDateString, DataVencimento.Value.ToShortDateString, TxtTotalDuplicata.Text, TxtObs.Text, CbPortador.ValueMember)
+                Table1DuplicatasReceber.Rows.Add("", TxtParcela.Text, TxtNum_venda.Text, DataEmissao.Value.ToShortDateString, DataVencimento.Value.ToShortDateString, TxtTotalDuplicata.Text, TxtObs.Text, CbPortador.SelectedValue)
                 Me.Close()
 
             Else
-                Table1DuplicatasReceber.Rows.Add("", TxtParcela.Text, TxtNum_venda.Text, DataEmissao.Value.ToShortDateString, DataVencimento.Value.ToShortDateString, TxtTotalDuplicata.Text, TxtObs.Text, CbPortador.ValueMember)
+                Table1DuplicatasReceber.Rows.Add("", TxtParcela.Text, TxtNum_venda.Text, DataEmissao.Value.ToShortDateString, DataVencimento.Value.ToShortDateString, TxtTotalDuplicata.Text, TxtObs.Text, CbPortador.SelectedValue)
 
                 Me.Close()
             End If
@@ -130,7 +133,7 @@ Public Class FrmDuplReceber
     End Sub
 
     Private Sub BtnSalvar_Click(sender As Object, e As EventArgs) Handles BtnSalvar.Click
-        Stop
+        'Stop
         TxtParcela.BackColor = Color.White
         TxtTotalDuplicata.BackColor = Color.White
         TxtNum_venda.BackColor = Color.White
@@ -147,7 +150,7 @@ Public Class FrmDuplReceber
 
                     vencimento1 = DataVencimento.Value.ToString("yyyy-MM-dd")
 
-                    sqls1 = "UPDATE duplicatas_receber SET data_vencimento = '" & vencimento1 & "', valor_parcela = '" & TxtTotalDuplicata.Text.Replace(",", ".") & "', observacao = '" & TxtObs.Text & "' , saldo_duplicata = '" & TxtTotalDuplicata.Text.Replace(",", ".") & "' , id_portador = '" & CbPortador.ValueMember & "' WHERE id = '" & TxtId_Reg.Text & "'"
+                    sqls1 = "UPDATE duplicatas_receber SET data_vencimento = '" & vencimento1 & "', valor_parcela = '" & TxtTotalDuplicata.Text.Replace(",", ".") & "', observacao = '" & TxtObs.Text & "' , saldo_duplicata = '" & TxtTotalDuplicata.Text.Replace(",", ".") & "' , id_portador = '" & CbPortador.SelectedValue & "' WHERE id = '" & TxtId_Reg.Text & "'"
                     cmd1 = New MySqlCommand(sqls1, con)
                     cmd1.ExecuteNonQuery()
 
@@ -165,7 +168,7 @@ Public Class FrmDuplReceber
                     emissao = DataEmissao.Value.ToString("yyyy-MM-dd")
                     vencimento = DataVencimento.Value.ToString("yyyy-MM-dd")
 
-                    sqls = "INSERT INTO duplicatas_receber (parcela, id_venda, data_venda, data_vencimento, valor_parcela, observacao, cod_cliente, cliente, saldo_duplicata, id_portador) VALUES ('" & TxtParcela.Text & "','" & TxtNum_venda.Text & "',  '" & emissao & "','" & vencimento & "', '" & TxtTotalDuplicata.Text.Replace(",", ".") & "', '" & TxtObs.Text & "' ,'" & TxtIdCliente.Text & "', '" & TxtCliente.Text & "', '" & TxtTotalDuplicata.Text.Replace(",", ".") & "'; '" & CbPortador.ValueMember & "')"
+                    sqls = "INSERT INTO duplicatas_receber (parcela, id_venda, data_venda, data_vencimento, valor_parcela, observacao, cod_cliente, cliente, saldo_duplicata, id_portador) VALUES ('" & TxtParcela.Text & "','" & TxtNum_venda.Text & "',  '" & emissao & "','" & vencimento & "', '" & TxtTotalDuplicata.Text.Replace(",", ".") & "', '" & TxtObs.Text & "' ,'" & TxtIdCliente.Text & "', '" & TxtCliente.Text & "', '" & TxtTotalDuplicata.Text.Replace(",", ".") & "', '" & CbPortador.SelectedValue & "')"
                     cmd = New MySqlCommand(sqls, con)
                     cmd.ExecuteNonQuery()
 

@@ -209,6 +209,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>controle_vendasDataSetEstoque.xsd</DependentUpon>
     </Compile>
+    <Compile Include="controle_vendasDataSet_Portador.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>controle_vendasDataSet_Portador.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetCupomVenda.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -417,6 +422,12 @@
     <Compile Include="Relatorios\ReportVendas.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Relatorios\ReportVendasPortador.Designer.vb">
+      <DependentUpon>ReportVendasPortador.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\ReportVendasPortador.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ReportTitulosVencidos.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -551,6 +562,7 @@
     <EmbeddedResource Include="Relatorios\FrmTituloVencidos.resx">
       <DependentUpon>FrmTituloVencidos.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\ReportArPortador.rdlc" />
     <EmbeddedResource Include="Relatorios\ReportCompras.rdlc" />
     <EmbeddedResource Include="Relatorios\ReportContasPagar.rdlc" />
     <EmbeddedResource Include="Relatorios\ReportContasReceber.rdlc" />
@@ -563,6 +575,9 @@
     <EmbeddedResource Include="Relatorios\ReportVendas.rdlc" />
     <EmbeddedResource Include="Relatorios\ReportVendas.resx">
       <DependentUpon>ReportVendas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\ReportVendasPortador.resx">
+      <DependentUpon>ReportVendasPortador.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -609,6 +624,17 @@
     </None>
     <None Include="controle_vendasDataSetEstoque.xss">
       <DependentUpon>controle_vendasDataSetEstoque.xsd</DependentUpon>
+    </None>
+    <None Include="controle_vendasDataSet_Portador.xsc">
+      <DependentUpon>controle_vendasDataSet_Portador.xsd</DependentUpon>
+    </None>
+    <None Include="controle_vendasDataSet_Portador.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>controle_vendasDataSet_Portador.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="controle_vendasDataSet_Portador.xss">
+      <DependentUpon>controle_vendasDataSet_Portador.xsd</DependentUpon>
     </None>
     <None Include="DataSetCupomVenda.xsc">
       <DependentUpon>DataSetCupomVenda.xsd</DependentUpon>

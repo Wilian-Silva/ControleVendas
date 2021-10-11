@@ -75,7 +75,8 @@ Module ModuloConexao
 
     Public pesquisarDuplicata As String
     Public IdDuplicata As String
-
+    Public IdPortador As String
+    Public PesquisarPortador As String
 
     Public custoUntario As String
     Public pesquisarCliente As String

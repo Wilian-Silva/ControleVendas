@@ -520,4 +520,9 @@ Public Class FrmTelaInicial
         Dim form = New FrmMvtoEstoque
         form.ShowDialog()
     End Sub
+
+    Private Sub CtasReceberPortadorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CtasReceberPortadorToolStripMenuItem.Click
+        Dim form = New ReportVendasPortador
+        form.ShowDialog()
+    End Sub
 End Class

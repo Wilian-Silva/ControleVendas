@@ -5,6 +5,12 @@ Public Class FrmPortador
 
     Private Sub FrmClientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        BtnSelecionarItem.Visible = False
+
+        If PesquisarPortador = "True" Then
+            BtnSelecionarItem.Visible = True
+        End If
+
         Listar()
 
     End Sub
@@ -288,5 +294,10 @@ Public Class FrmPortador
             MsgBox("Selecione um registro para editar!!", MsgBoxStyle.Information, "Editar")
             TxtNome.Focus()
         End If
+    End Sub
+
+    Private Sub BtnSelecionarItem_Click(sender As Object, e As EventArgs) Handles BtnSelecionarItem.Click
+        IdPortador = TxtId.Text
+        Me.Close()
     End Sub
 End Class

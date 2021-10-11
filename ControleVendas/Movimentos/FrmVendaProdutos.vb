@@ -650,7 +650,7 @@ Public Class FrmVendaProdutos
                     .Parameters.AddWithValue("@valor_parcela", CDbl(DataGridDuplicatas.Rows(i).Cells(5).Value.ToString))
                     .Parameters.AddWithValue("@observacao", DataGridDuplicatas.Rows(i).Cells(6).Value.ToString)
                     .Parameters.AddWithValue("@saldo_duplicata", CDbl(DataGridDuplicatas.Rows(i).Cells(5).Value.ToString))
-                    .Parameters.AddWithValue("@id_portador", CInt(DataGridDuplicatas.Rows(i).Cells(6).Value.ToString))
+                    .Parameters.AddWithValue("@id_portador", CInt(DataGridDuplicatas.Rows(i).Cells(7).Value.ToString))
                     cmd.ExecuteNonQuery()
                 End With
 
