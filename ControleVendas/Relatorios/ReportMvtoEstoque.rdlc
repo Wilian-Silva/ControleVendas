@@ -912,11 +912,12 @@ Produto</Value>
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
+        <RepeatRowHeaders>true</RepeatRowHeaders>
         <DataSetName>DataSetMvtoEstoque</DataSetName>
         <Top>0.10266cm</Top>
         <Left>0.72169cm</Left>
         <Height>1.62333cm</Height>
-        <Width>24.34266cm</Width>
+        <Width>24.34268cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
