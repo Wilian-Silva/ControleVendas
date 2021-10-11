@@ -30,6 +30,9 @@ Partial Class FrmDuplReceber
         Me.TxtId_Reg = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.CbPortador = New System.Windows.Forms.ComboBox()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.TxtCliente = New System.Windows.Forms.TextBox()
         Me.TxtParcela = New System.Windows.Forms.TextBox()
         Me.TxtNum_venda = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -46,7 +49,6 @@ Partial Class FrmDuplReceber
         Me.BtnOk = New System.Windows.Forms.Button()
         Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.TxtCliente = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -122,6 +124,8 @@ Partial Class FrmDuplReceber
         '
         Me.Panel1.BackColor = System.Drawing.Color.Gainsboro
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel1.Controls.Add(Me.CbPortador)
+        Me.Panel1.Controls.Add(Me.Label19)
         Me.Panel1.Controls.Add(Me.TxtCliente)
         Me.Panel1.Controls.Add(Me.Label9)
         Me.Panel1.Controls.Add(Me.TxtIdCliente)
@@ -145,6 +149,35 @@ Partial Class FrmDuplReceber
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(469, 233)
         Me.Panel1.TabIndex = 172
+        '
+        'CbPortador
+        '
+        Me.CbPortador.FormattingEnabled = True
+        Me.CbPortador.Location = New System.Drawing.Point(307, 138)
+        Me.CbPortador.Name = "CbPortador"
+        Me.CbPortador.Size = New System.Drawing.Size(133, 21)
+        Me.CbPortador.TabIndex = 184
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.BackColor = System.Drawing.Color.Transparent
+        Me.Label19.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.Location = New System.Drawing.Point(238, 139)
+        Me.Label19.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(62, 16)
+        Me.Label19.TabIndex = 183
+        Me.Label19.Text = "Portador:"
+        '
+        'TxtCliente
+        '
+        Me.TxtCliente.Enabled = False
+        Me.TxtCliente.Location = New System.Drawing.Point(294, 41)
+        Me.TxtCliente.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtCliente.Name = "TxtCliente"
+        Me.TxtCliente.Size = New System.Drawing.Size(123, 20)
+        Me.TxtCliente.TabIndex = 167
         '
         'TxtParcela
         '
@@ -183,7 +216,7 @@ Partial Class FrmDuplReceber
         Me.TxtObs.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtObs.Multiline = True
         Me.TxtObs.Name = "TxtObs"
-        Me.TxtObs.Size = New System.Drawing.Size(283, 45)
+        Me.TxtObs.Size = New System.Drawing.Size(306, 45)
         Me.TxtObs.TabIndex = 161
         '
         'DataEmissao
@@ -317,15 +350,6 @@ Partial Class FrmDuplReceber
         Me.GroupBox1.TabIndex = 173
         Me.GroupBox1.TabStop = False
         '
-        'TxtCliente
-        '
-        Me.TxtCliente.Enabled = False
-        Me.TxtCliente.Location = New System.Drawing.Point(294, 41)
-        Me.TxtCliente.Margin = New System.Windows.Forms.Padding(4)
-        Me.TxtCliente.Name = "TxtCliente"
-        Me.TxtCliente.Size = New System.Drawing.Size(123, 20)
-        Me.TxtCliente.TabIndex = 167
-        '
         'FrmDuplReceber
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -370,4 +394,6 @@ Partial Class FrmDuplReceber
     Friend WithEvents BtnCancelar As Button
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents TxtCliente As TextBox
+    Friend WithEvents CbPortador As ComboBox
+    Friend WithEvents Label19 As Label
 End Class

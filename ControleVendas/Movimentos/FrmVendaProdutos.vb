@@ -264,6 +264,7 @@ Public Class FrmVendaProdutos
         DataGridDuplicatas.Columns(4).HeaderText = "Data Vencimento"
         DataGridDuplicatas.Columns(5).HeaderText = "Valor Parcela"
         DataGridDuplicatas.Columns(6).HeaderText = "Observação"
+        DataGridDuplicatas.Columns(10).HeaderText = "ID Portador"
 
         DataGridDuplicatas.Columns(5).DefaultCellStyle.Format = "c"
 
@@ -639,7 +640,7 @@ Public Class FrmVendaProdutos
 
                 Dim cmd As MySqlCommand
                 Dim sqls As String
-                sqls = "INSERT INTO duplicatas_receber (parcela, id_venda, data_venda, data_vencimento, valor_parcela, observacao, cod_cliente, cliente, saldo_duplicata) VALUES (@parcela, @id_venda, @data_venda, @data_vencimento, @valor_parcela, @observacao, '" & TxtCodCliente.Text & "','" & TxtCliente.Text & "', @saldo_duplicata )"
+                sqls = "INSERT INTO duplicatas_receber (parcela, id_venda, data_venda, data_vencimento, valor_parcela, observacao, cod_cliente, cliente, saldo_duplicata, id_portador) VALUES (@parcela, @id_venda, @data_venda, @data_vencimento, @valor_parcela, @observacao, '" & TxtCodCliente.Text & "','" & TxtCliente.Text & "', @saldo_duplicata, @id_portador )"
                 cmd = New MySqlCommand(sqls, con)
                 With cmd
                     .Parameters.AddWithValue("@parcela", CInt(DataGridDuplicatas.Rows(i).Cells(1).Value.ToString))
@@ -649,6 +650,7 @@ Public Class FrmVendaProdutos
                     .Parameters.AddWithValue("@valor_parcela", CDbl(DataGridDuplicatas.Rows(i).Cells(5).Value.ToString))
                     .Parameters.AddWithValue("@observacao", DataGridDuplicatas.Rows(i).Cells(6).Value.ToString)
                     .Parameters.AddWithValue("@saldo_duplicata", CDbl(DataGridDuplicatas.Rows(i).Cells(5).Value.ToString))
+                    .Parameters.AddWithValue("@id_portador", CInt(DataGridDuplicatas.Rows(i).Cells(6).Value.ToString))
                     cmd.ExecuteNonQuery()
                 End With
 

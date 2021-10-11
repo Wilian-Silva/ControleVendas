@@ -508,7 +508,7 @@ Partial Class FrmVlrPgto
         'TxtRegPagamento
         '
         Me.TxtRegPagamento.Enabled = False
-        Me.TxtRegPagamento.Location = New System.Drawing.Point(120, 53)
+        Me.TxtRegPagamento.Location = New System.Drawing.Point(107, 53)
         Me.TxtRegPagamento.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtRegPagamento.Name = "TxtRegPagamento"
         Me.TxtRegPagamento.Size = New System.Drawing.Size(44, 20)
@@ -520,19 +520,19 @@ Partial Class FrmVlrPgto
         Me.Label18.AutoSize = True
         Me.Label18.BackColor = System.Drawing.Color.Transparent
         Me.Label18.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.Location = New System.Drawing.Point(2, 54)
+        Me.Label18.Location = New System.Drawing.Point(7, 54)
         Me.Label18.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(117, 16)
+        Me.Label18.Size = New System.Drawing.Size(97, 16)
         Me.Label18.TabIndex = 157
-        Me.Label18.Text = "Refer. Último Pgto:"
+        Me.Label18.Text = "Id. Último Pgto:"
         '
         'Label17
         '
         Me.Label17.AutoSize = True
         Me.Label17.BackColor = System.Drawing.Color.Transparent
         Me.Label17.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(26, 21)
+        Me.Label17.Location = New System.Drawing.Point(13, 21)
         Me.Label17.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(92, 16)
@@ -542,7 +542,7 @@ Partial Class FrmVlrPgto
         'TxtRefEntrada
         '
         Me.TxtRefEntrada.Enabled = False
-        Me.TxtRefEntrada.Location = New System.Drawing.Point(121, 20)
+        Me.TxtRefEntrada.Location = New System.Drawing.Point(108, 20)
         Me.TxtRefEntrada.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtRefEntrada.Name = "TxtRefEntrada"
         Me.TxtRefEntrada.Size = New System.Drawing.Size(43, 20)
@@ -570,9 +570,9 @@ Partial Class FrmVlrPgto
         'CbPortador
         '
         Me.CbPortador.FormattingEnabled = True
-        Me.CbPortador.Location = New System.Drawing.Point(118, 121)
+        Me.CbPortador.Location = New System.Drawing.Point(105, 121)
         Me.CbPortador.Name = "CbPortador"
-        Me.CbPortador.Size = New System.Drawing.Size(86, 21)
+        Me.CbPortador.Size = New System.Drawing.Size(109, 21)
         Me.CbPortador.TabIndex = 182
         '
         'Label19
@@ -580,7 +580,7 @@ Partial Class FrmVlrPgto
         Me.Label19.AutoSize = True
         Me.Label19.BackColor = System.Drawing.Color.Transparent
         Me.Label19.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.Location = New System.Drawing.Point(54, 122)
+        Me.Label19.Location = New System.Drawing.Point(39, 122)
         Me.Label19.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(62, 16)
@@ -592,7 +592,7 @@ Partial Class FrmVlrPgto
         Me.Label16.AutoSize = True
         Me.Label16.BackColor = System.Drawing.Color.Transparent
         Me.Label16.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(53, 88)
+        Me.Label16.Location = New System.Drawing.Point(40, 88)
         Me.Label16.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(62, 16)
@@ -602,7 +602,7 @@ Partial Class FrmVlrPgto
         'TxtStatusTitulo
         '
         Me.TxtStatusTitulo.Enabled = False
-        Me.TxtStatusTitulo.Location = New System.Drawing.Point(119, 87)
+        Me.TxtStatusTitulo.Location = New System.Drawing.Point(106, 87)
         Me.TxtStatusTitulo.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtStatusTitulo.Name = "TxtStatusTitulo"
         Me.TxtStatusTitulo.Size = New System.Drawing.Size(82, 20)
