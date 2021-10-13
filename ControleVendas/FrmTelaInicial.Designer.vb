@@ -68,6 +68,7 @@ Partial Class FrmTelaInicial
         Me.CboxRel1_08 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CboxRel1_09 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MovimentaçãoEstoqueToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CtasReceberPortadorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConfiguraçõesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CboxConfig_01 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
@@ -104,7 +105,7 @@ Partial Class FrmTelaInicial
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.DataGrid_Vencidos = New System.Windows.Forms.DataGridView()
-        Me.CtasReceberPortadorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.VendasPorClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.GbBtnAtalhos.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -289,7 +290,7 @@ Partial Class FrmTelaInicial
         '
         'RelatoriosToolStripMenuItem
         '
-        Me.RelatoriosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CboxRel1_01, Me.CboxRel1_02, Me.CboxRel1_03, Me.CboxRel1_04, Me.CboxRel1_05, Me.CboxRel1_06, Me.CboxRel1_07, Me.CboxRel1_08, Me.CboxRel1_09, Me.MovimentaçãoEstoqueToolStripMenuItem, Me.CtasReceberPortadorToolStripMenuItem})
+        Me.RelatoriosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CboxRel1_01, Me.CboxRel1_02, Me.CboxRel1_03, Me.CboxRel1_04, Me.CboxRel1_05, Me.CboxRel1_06, Me.CboxRel1_07, Me.CboxRel1_08, Me.CboxRel1_09, Me.MovimentaçãoEstoqueToolStripMenuItem, Me.CtasReceberPortadorToolStripMenuItem, Me.VendasPorClienteToolStripMenuItem})
         Me.RelatoriosToolStripMenuItem.Image = CType(resources.GetObject("RelatoriosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.RelatoriosToolStripMenuItem.Name = "RelatoriosToolStripMenuItem"
         Me.RelatoriosToolStripMenuItem.Size = New System.Drawing.Size(87, 20)
@@ -354,6 +355,12 @@ Partial Class FrmTelaInicial
         Me.MovimentaçãoEstoqueToolStripMenuItem.Name = "MovimentaçãoEstoqueToolStripMenuItem"
         Me.MovimentaçãoEstoqueToolStripMenuItem.Size = New System.Drawing.Size(199, 22)
         Me.MovimentaçãoEstoqueToolStripMenuItem.Text = "Movimentação Estoque"
+        '
+        'CtasReceberPortadorToolStripMenuItem
+        '
+        Me.CtasReceberPortadorToolStripMenuItem.Name = "CtasReceberPortadorToolStripMenuItem"
+        Me.CtasReceberPortadorToolStripMenuItem.Size = New System.Drawing.Size(199, 22)
+        Me.CtasReceberPortadorToolStripMenuItem.Text = "Ctas. Receber Portador"
         '
         'ConfiguraçõesToolStripMenuItem
         '
@@ -897,11 +904,11 @@ Partial Class FrmTelaInicial
         Me.DataGrid_Vencidos.Size = New System.Drawing.Size(543, 193)
         Me.DataGrid_Vencidos.TabIndex = 147
         '
-        'CtasReceberPortadorToolStripMenuItem
+        'VendasPorClienteToolStripMenuItem
         '
-        Me.CtasReceberPortadorToolStripMenuItem.Name = "CtasReceberPortadorToolStripMenuItem"
-        Me.CtasReceberPortadorToolStripMenuItem.Size = New System.Drawing.Size(199, 22)
-        Me.CtasReceberPortadorToolStripMenuItem.Text = "Ctas. Receber Portador"
+        Me.VendasPorClienteToolStripMenuItem.Name = "VendasPorClienteToolStripMenuItem"
+        Me.VendasPorClienteToolStripMenuItem.Size = New System.Drawing.Size(199, 22)
+        Me.VendasPorClienteToolStripMenuItem.Text = "Vendas Por Cliente"
         '
         'FrmTelaInicial
         '
@@ -1015,4 +1022,5 @@ Partial Class FrmTelaInicial
     Friend WithEvents CboxRel1_09 As ToolStripMenuItem
     Friend WithEvents MovimentaçãoEstoqueToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CtasReceberPortadorToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents VendasPorClienteToolStripMenuItem As ToolStripMenuItem
 End Class

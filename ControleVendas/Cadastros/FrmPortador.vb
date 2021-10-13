@@ -30,6 +30,7 @@ Public Class FrmPortador
         TxtId.Text = ""
         TxtCodPortador.Text = ""
         editarCliente = ""
+        IdPortador = ""
     End Sub
     Sub DadosCabecalho()
 
@@ -268,6 +269,7 @@ Public Class FrmPortador
     End Sub
 
     Private Sub BtnSair_Click(sender As Object, e As EventArgs) Handles BtnSair.Click
+        LimparCampos()
         Me.Close()
     End Sub
     Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click

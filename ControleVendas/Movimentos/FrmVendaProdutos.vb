@@ -1076,6 +1076,14 @@ Public Class FrmVendaProdutos
 
                 If MsgBox("Deseja excluir o item " + TxtItem.Text + " da venda " + TxtIdRegistro.Text + "?", vbYesNo, "Venda") = vbYes Then
 
+
+                    If DataGrid.Rows.Count = 1 Then
+
+                        MsgBox("Item não pode ser excluído, venda com apenas um item. Exclua a venda se desejar!!", MsgBoxStyle.Information, "Excluir item")
+
+                        Exit Sub
+                    End If
+
                     Excluir_venda()
 
                     Atualizar_venda_cabecalho()
@@ -1347,7 +1355,7 @@ Line1:
 
     End Sub
     Sub ListarPedidoAnterior()
-
+        'Stop
         Try
             If TxtIdRegistro.Text <> "" Then
                 anterior = TxtIdRegistro.Text - 1
@@ -1389,7 +1397,7 @@ Line1:
     End Sub
 
     Sub RegistroAnterior()
-
+        ' Stop
         Try
             Abrir()
             Dim sql As String

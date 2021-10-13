@@ -9,6 +9,7 @@
 
         If PesquisarPortador = "True" Then
             TxtIdPortador.Text = IdPortador
+            IdPortador = ""
         End If
     End Sub
 

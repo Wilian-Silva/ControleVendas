@@ -525,4 +525,9 @@ Public Class FrmTelaInicial
         Dim form = New ReportVendasPortador
         form.ShowDialog()
     End Sub
+
+    Private Sub VendasPorClienteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VendasPorClienteToolStripMenuItem.Click
+        Dim form = New FrmRelVendaCliente
+        form.ShowDialog()
+    End Sub
 End Class
