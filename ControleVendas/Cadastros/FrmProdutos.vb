@@ -376,6 +376,7 @@ Public Class FrmProdutos
             codProduto = DataGrid.CurrentRow.Cells(0).Value
             nomeProduto = DataGrid.CurrentRow.Cells(1).Value
             valorUnit = DataGrid.CurrentRow.Cells(5).Value
+            ValorUntPedido = DataGrid.CurrentRow.Cells(3).Value
             saldoEstoque = DataGrid.CurrentRow.Cells(6).Value
             Me.Close()
         Else

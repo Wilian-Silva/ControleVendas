@@ -359,7 +359,7 @@ Total</Value>
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>0.46771cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -671,7 +671,7 @@ Total</Value>
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>0.54708cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -1013,8 +1013,8 @@ Total</Value>
         <DataSetName>DataSetVendasCliente</DataSetName>
         <Top>0.67056cm</Top>
         <Left>0.62854cm</Left>
-        <Height>2.09104cm</Height>
-        <Width>21.17959cm</Width>
+        <Height>1.90583cm</Height>
+        <Width>21.17958cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1336,7 +1336,7 @@ Total</Value>
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>0.46771cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -1613,7 +1613,7 @@ Total</Value>
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>0.46771cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -1921,8 +1921,8 @@ Total</Value>
         <DataSetName>DataSetDuplicatasCliente</DataSetName>
         <Top>3.75391cm</Top>
         <Left>0.62854cm</Left>
-        <Height>1.8cm</Height>
-        <Width>21.17958cm</Width>
+        <Height>1.53542cm</Height>
+        <Width>21.17957cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>

@@ -689,7 +689,7 @@ Public Class FrmPedido
         If pesquisarProduto = "True" Then
             TxtCodProduto.Text = codProduto
             TxtProduto.Text = nomeProduto
-            TxtValorUnit.Text = valorUnit
+            TxtValorUnit.Text = ValorUntPedido
             pesquisarProduto = ""
         End If
 

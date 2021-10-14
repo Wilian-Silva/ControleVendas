@@ -266,6 +266,8 @@ Public Class FrmVendaProdutos
         DataGridDuplicatas.Columns(6).HeaderText = "Observação"
         DataGridDuplicatas.Columns(10).HeaderText = "ID Portador"
 
+        DataGrid.Columns(6).Width = 150
+
         DataGridDuplicatas.Columns(5).DefaultCellStyle.Format = "c"
 
         TotalDatagridDuplicatas()

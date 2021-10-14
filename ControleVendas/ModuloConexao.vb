@@ -30,6 +30,8 @@ Module ModuloConexao
 
     Public dgStatus As String
 
+    Public ValorUntPedido As String
+
     Public editarMvtoPortador As String
 
     Public PedidoRelCompra As String

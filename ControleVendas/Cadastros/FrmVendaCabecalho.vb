@@ -84,6 +84,7 @@ Public Class FrmVendaCabecalho
         DataGrid.Columns(2).Width = 50
         DataGrid.Columns(6).Width = 50
         DataGrid.Columns(7).Width = 150
+        DataGrid.Columns(9).Width = 150
 
         DataGrid.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid.Columns(0).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter

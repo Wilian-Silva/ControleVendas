@@ -69,6 +69,7 @@ Partial Class FrmTelaInicial
         Me.CboxRel1_09 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MovimentaçãoEstoqueToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CtasReceberPortadorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.VendasPorClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConfiguraçõesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CboxConfig_01 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
@@ -105,7 +106,6 @@ Partial Class FrmTelaInicial
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.DataGrid_Vencidos = New System.Windows.Forms.DataGridView()
-        Me.VendasPorClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.GbBtnAtalhos.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -361,6 +361,12 @@ Partial Class FrmTelaInicial
         Me.CtasReceberPortadorToolStripMenuItem.Name = "CtasReceberPortadorToolStripMenuItem"
         Me.CtasReceberPortadorToolStripMenuItem.Size = New System.Drawing.Size(199, 22)
         Me.CtasReceberPortadorToolStripMenuItem.Text = "Ctas. Receber Portador"
+        '
+        'VendasPorClienteToolStripMenuItem
+        '
+        Me.VendasPorClienteToolStripMenuItem.Name = "VendasPorClienteToolStripMenuItem"
+        Me.VendasPorClienteToolStripMenuItem.Size = New System.Drawing.Size(199, 22)
+        Me.VendasPorClienteToolStripMenuItem.Text = "Vendas Por Cliente"
         '
         'ConfiguraçõesToolStripMenuItem
         '
@@ -903,12 +909,6 @@ Partial Class FrmTelaInicial
         Me.DataGrid_Vencidos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGrid_Vencidos.Size = New System.Drawing.Size(543, 193)
         Me.DataGrid_Vencidos.TabIndex = 147
-        '
-        'VendasPorClienteToolStripMenuItem
-        '
-        Me.VendasPorClienteToolStripMenuItem.Name = "VendasPorClienteToolStripMenuItem"
-        Me.VendasPorClienteToolStripMenuItem.Size = New System.Drawing.Size(199, 22)
-        Me.VendasPorClienteToolStripMenuItem.Text = "Vendas Por Cliente"
         '
         'FrmTelaInicial
         '
