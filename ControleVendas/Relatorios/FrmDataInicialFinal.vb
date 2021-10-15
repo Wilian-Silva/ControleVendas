@@ -39,5 +39,17 @@
             form1.ShowDialog()
             relatorio = ""
         End If
+
+        If relatorio = "Rel.Resultado Periodo" Then
+            Dim form2 = New FrmResultadoPeriodo '
+            form2.ShowDialog()
+            relatorio = ""
+        End If
+
+        If relatorio = "Rel.Mvto Estoque" Then
+            Dim form3 = New FrmMvtoEstoque
+            form3.ShowDialog()
+            relatorio = ""
+        End If
     End Sub
 End Class

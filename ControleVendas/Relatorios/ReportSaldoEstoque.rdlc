@@ -15,7 +15,7 @@
               <Width>3.34855cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.96863cm</Width>
+              <Width>2.683cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -55,7 +55,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -89,7 +88,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -125,7 +123,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -161,7 +158,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -201,7 +197,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -234,7 +229,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -269,7 +263,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -304,7 +297,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -333,8 +325,8 @@
         <DataSetName>DataSetSaldoEstoque</DataSetName>
         <Top>0.14111cm</Top>
         <Left>0.89312cm</Left>
-        <Height>0.96187cm</Height>
-        <Width>15.04125cm</Width>
+        <Height>0.96188cm</Height>
+        <Width>15.75562cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -345,10 +337,10 @@
     <Height>2.80208in</Height>
     <Style />
   </Body>
-  <Width>6.54905in</Width>
+  <Width>6.99697in</Width>
   <Page>
     <PageHeader>
-      <Height>1.66687cm</Height>
+      <Height>1.48166cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -359,7 +351,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Saldo Estoque</Value>
+                  <Value>Saldo de Produtos em Estoque</Value>
                   <Style>
                     <FontSize>12pt</FontSize>
                     <FontWeight>Bold</FontWeight>
@@ -373,9 +365,9 @@
           </Paragraphs>
           <rd:DefaultName>Textbox35</rd:DefaultName>
           <Top>0.40114cm</Top>
-          <Left>1.3341cm</Left>
+          <Left>0.89312cm</Left>
           <Height>0.6cm</Height>
-          <Width>12.37369cm</Width>
+          <Width>13.37438cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -393,51 +385,25 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
+                  <Value>Pág:</Value>
+                  <Style />
+                </TextRun>
+                <TextRun>
                   <Value>=Globals!PageNumber</Value>
                   <Style />
                 </TextRun>
               </TextRuns>
               <Style>
-                <TextAlign>Left</TextAlign>
+                <TextAlign>Right</TextAlign>
               </Style>
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox36</rd:DefaultName>
           <Top>0.40114cm</Top>
-          <Left>14.73084cm</Left>
+          <Left>13.11907cm</Left>
           <Height>0.6cm</Height>
-          <Width>1.20354cm</Width>
+          <Width>3.52967cm</Width>
           <ZIndex>1</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Textbox37">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>Pág.</Value>
-                  <Style />
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox37</rd:DefaultName>
-          <Top>0.40114cm</Top>
-          <Left>13.81362cm</Left>
-          <Height>0.6cm</Height>
-          <Width>0.88194cm</Width>
-          <ZIndex>2</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>

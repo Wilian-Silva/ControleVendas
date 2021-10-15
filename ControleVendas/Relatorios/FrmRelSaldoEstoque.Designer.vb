@@ -55,7 +55,7 @@ Partial Class FrmRelSaldoEstoque
         Me.ReportViewer1.Location = New System.Drawing.Point(0, 0)
         Me.ReportViewer1.Name = "ReportViewer1"
         Me.ReportViewer1.ServerReport.BearerToken = Nothing
-        Me.ReportViewer1.Size = New System.Drawing.Size(658, 711)
+        Me.ReportViewer1.Size = New System.Drawing.Size(703, 564)
         Me.ReportViewer1.TabIndex = 0
         '
         'produtosBindingSource
@@ -71,11 +71,9 @@ Partial Class FrmRelSaldoEstoque
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(658, 711)
+        Me.ClientSize = New System.Drawing.Size(703, 564)
         Me.Controls.Add(Me.ReportViewer1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.MaximizeBox = False
         Me.Name = "FrmRelSaldoEstoque"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Saldo Estoque"

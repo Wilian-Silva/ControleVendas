@@ -495,7 +495,9 @@ Public Class FrmTelaInicial
     End Sub
 
     Private Sub CboxRel1_07_Click(sender As Object, e As EventArgs) Handles CboxRel1_07.Click
-        Dim form = New FrmResultadoPeriodo
+
+        relatorio = "Rel.Resultado Periodo"
+        Dim form = New FrmDataInicialFinal
         form.ShowDialog()
 
     End Sub
@@ -521,8 +523,10 @@ Public Class FrmTelaInicial
     End Sub
 
     Private Sub MovimentaçãoEstoqueToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MovimentaçãoEstoqueToolStripMenuItem.Click
-        Dim form = New FrmMvtoEstoque
+        relatorio = "Rel.Mvto Estoque"
+        Dim form = New FrmDataInicialFinal
         form.ShowDialog()
+
     End Sub
 
     Private Sub CtasReceberPortadorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CtasReceberPortadorToolStripMenuItem.Click

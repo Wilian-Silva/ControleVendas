@@ -1348,7 +1348,6 @@ Recebimento</Value>
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -1450,8 +1449,8 @@ Recebimento</Value>
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSetRecebimentos</DataSetName>
-        <Top>0.73766cm</Top>
-        <Left>0.82345cm</Left>
+        <Top>0.31433cm</Top>
+        <Left>0.79699cm</Left>
         <Height>2.06458cm</Height>
         <Width>27.71951cm</Width>
         <Style>
@@ -1512,51 +1511,25 @@ Recebimento</Value>
             <Paragraph>
               <TextRuns>
                 <TextRun>
+                  <Value>Pág. </Value>
+                  <Style />
+                </TextRun>
+                <TextRun>
                   <Value>=Globals!PageNumber</Value>
                   <Style />
                 </TextRun>
               </TextRuns>
               <Style>
-                <TextAlign>Left</TextAlign>
+                <TextAlign>Right</TextAlign>
               </Style>
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox36</rd:DefaultName>
-          <Top>0.93031cm</Top>
-          <Left>27.43084cm</Left>
+          <Top>0.85093cm</Top>
+          <Left>24.77737cm</Left>
           <Height>0.67938cm</Height>
-          <Width>1.20354cm</Width>
+          <Width>3.76559cm</Width>
           <ZIndex>1</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Textbox37">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>Pág.</Value>
-                  <Style />
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox37</rd:DefaultName>
-          <Top>0.93031cm</Top>
-          <Left>26.53125cm</Left>
-          <Height>0.67938cm</Height>
-          <Width>0.88194cm</Width>
-          <ZIndex>2</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>

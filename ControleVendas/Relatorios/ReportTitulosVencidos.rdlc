@@ -1098,51 +1098,25 @@ Parcela</Value>
             <Paragraph>
               <TextRuns>
                 <TextRun>
+                  <Value>Pág. </Value>
+                  <Style />
+                </TextRun>
+                <TextRun>
                   <Value>=Globals!PageNumber</Value>
                   <Style />
                 </TextRun>
               </TextRuns>
               <Style>
-                <TextAlign>Left</TextAlign>
+                <TextAlign>Right</TextAlign>
               </Style>
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox36</rd:DefaultName>
-          <Top>0.57312cm</Top>
-          <Left>20.8824cm</Left>
+          <Top>0.44082cm</Top>
+          <Left>18.32034cm</Left>
           <Height>0.67938cm</Height>
-          <Width>1.20354cm</Width>
+          <Width>3.76559cm</Width>
           <ZIndex>1</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Textbox37">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>Pág.</Value>
-                  <Style />
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox37</rd:DefaultName>
-          <Top>0.57312cm</Top>
-          <Left>19.98281cm</Left>
-          <Height>0.67938cm</Height>
-          <Width>0.88194cm</Width>
-          <ZIndex>2</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
