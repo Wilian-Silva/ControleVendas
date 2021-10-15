@@ -449,7 +449,9 @@ Public Class FrmTelaInicial
     End Sub
 
     Private Sub CboxRel1_01_Click(sender As Object, e As EventArgs) Handles CboxRel1_01.Click
-        Dim form = New ReportVendas
+
+        relatorio = "Rel.Vendas"
+        Dim form = New FrmDataInicialFinal
         form.ShowDialog()
 
     End Sub
@@ -460,7 +462,7 @@ Public Class FrmTelaInicial
     End Sub
 
     Private Sub CboxRel1_05_Click(sender As Object, e As EventArgs) Handles CboxRel1_05.Click
-        Dim form = New FrmReportCompras
+        Dim form = New FrmRelPedido
         form.ShowDialog()
     End Sub
 
@@ -481,7 +483,9 @@ Public Class FrmTelaInicial
     End Sub
 
     Private Sub CboxRel1_02_Click(sender As Object, e As EventArgs) Handles CboxRel1_02.Click
-        Dim form = New FrmRecebimentos
+
+        relatorio = "Rel.Recebimentos"
+        Dim form = New FrmDataInicialFinal
         form.ShowDialog()
     End Sub
 

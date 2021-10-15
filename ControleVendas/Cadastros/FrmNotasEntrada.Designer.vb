@@ -24,9 +24,9 @@ Partial Class FrmNotasEntrada
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmNotasEntrada))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GboxPesquisar = New System.Windows.Forms.GroupBox()
         Me.BtnCacelarConsulta = New System.Windows.Forms.Button()
         Me.BtnSelecionarItem = New System.Windows.Forms.Button()
@@ -58,9 +58,9 @@ Partial Class FrmNotasEntrada
         Me.GboxPesquisar.BackColor = System.Drawing.Color.Transparent
         Me.GboxPesquisar.Controls.Add(Me.BtnCacelarConsulta)
         Me.GboxPesquisar.Controls.Add(Me.BtnSelecionarItem)
-        Me.GboxPesquisar.Location = New System.Drawing.Point(415, 9)
+        Me.GboxPesquisar.Location = New System.Drawing.Point(445, 9)
         Me.GboxPesquisar.Name = "GboxPesquisar"
-        Me.GboxPesquisar.Size = New System.Drawing.Size(79, 50)
+        Me.GboxPesquisar.Size = New System.Drawing.Size(110, 50)
         Me.GboxPesquisar.TabIndex = 142
         Me.GboxPesquisar.TabStop = False
         Me.GboxPesquisar.Visible = False
@@ -77,7 +77,7 @@ Partial Class FrmNotasEntrada
         Me.BtnCacelarConsulta.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnCacelarConsulta.ForeColor = System.Drawing.Color.Transparent
         Me.BtnCacelarConsulta.Image = CType(resources.GetObject("BtnCacelarConsulta.Image"), System.Drawing.Image)
-        Me.BtnCacelarConsulta.Location = New System.Drawing.Point(40, 9)
+        Me.BtnCacelarConsulta.Location = New System.Drawing.Point(64, 9)
         Me.BtnCacelarConsulta.Name = "BtnCacelarConsulta"
         Me.BtnCacelarConsulta.Size = New System.Drawing.Size(35, 35)
         Me.BtnCacelarConsulta.TabIndex = 153
@@ -97,7 +97,7 @@ Partial Class FrmNotasEntrada
         Me.BtnSelecionarItem.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSelecionarItem.ForeColor = System.Drawing.Color.Transparent
         Me.BtnSelecionarItem.Image = CType(resources.GetObject("BtnSelecionarItem.Image"), System.Drawing.Image)
-        Me.BtnSelecionarItem.Location = New System.Drawing.Point(4, 8)
+        Me.BtnSelecionarItem.Location = New System.Drawing.Point(18, 8)
         Me.BtnSelecionarItem.Name = "BtnSelecionarItem"
         Me.BtnSelecionarItem.Size = New System.Drawing.Size(35, 35)
         Me.BtnSelecionarItem.TabIndex = 152
@@ -117,7 +117,7 @@ Partial Class FrmNotasEntrada
         Me.BtnSair.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSair.ForeColor = System.Drawing.Color.Transparent
         Me.BtnSair.Image = CType(resources.GetObject("BtnSair.Image"), System.Drawing.Image)
-        Me.BtnSair.Location = New System.Drawing.Point(502, 17)
+        Me.BtnSair.Location = New System.Drawing.Point(576, 19)
         Me.BtnSair.Name = "BtnSair"
         Me.BtnSair.Size = New System.Drawing.Size(35, 35)
         Me.BtnSair.TabIndex = 165
@@ -127,7 +127,7 @@ Partial Class FrmNotasEntrada
         'TxtId
         '
         Me.TxtId.Enabled = False
-        Me.TxtId.Location = New System.Drawing.Point(76, 20)
+        Me.TxtId.Location = New System.Drawing.Point(78, 20)
         Me.TxtId.Name = "TxtId"
         Me.TxtId.Size = New System.Drawing.Size(34, 20)
         Me.TxtId.TabIndex = 145
@@ -137,7 +137,7 @@ Partial Class FrmNotasEntrada
         '
         Me.LblId.AutoSize = True
         Me.LblId.BackColor = System.Drawing.Color.Transparent
-        Me.LblId.Location = New System.Drawing.Point(7, 23)
+        Me.LblId.Location = New System.Drawing.Point(6, 23)
         Me.LblId.Name = "LblId"
         Me.LblId.Size = New System.Drawing.Size(70, 13)
         Me.LblId.TabIndex = 146
@@ -156,7 +156,7 @@ Partial Class FrmNotasEntrada
         Me.GboxExluir.Controls.Add(Me.LblId)
         Me.GboxExluir.Location = New System.Drawing.Point(23, 59)
         Me.GboxExluir.Name = "GboxExluir"
-        Me.GboxExluir.Size = New System.Drawing.Size(521, 50)
+        Me.GboxExluir.Size = New System.Drawing.Size(600, 50)
         Me.GboxExluir.TabIndex = 147
         Me.GboxExluir.TabStop = False
         Me.GboxExluir.Text = "Dados da Entrada"
@@ -164,7 +164,7 @@ Partial Class FrmNotasEntrada
         'TxtFornecedor
         '
         Me.TxtFornecedor.Enabled = False
-        Me.TxtFornecedor.Location = New System.Drawing.Point(260, 20)
+        Me.TxtFornecedor.Location = New System.Drawing.Point(329, 20)
         Me.TxtFornecedor.Name = "TxtFornecedor"
         Me.TxtFornecedor.Size = New System.Drawing.Size(110, 20)
         Me.TxtFornecedor.TabIndex = 167
@@ -173,7 +173,7 @@ Partial Class FrmNotasEntrada
         '
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Location = New System.Drawing.Point(219, 23)
+        Me.Label2.Location = New System.Drawing.Point(285, 23)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(43, 13)
         Me.Label2.TabIndex = 168
@@ -182,17 +182,16 @@ Partial Class FrmNotasEntrada
         'TxtNota
         '
         Me.TxtNota.Enabled = False
-        Me.TxtNota.Location = New System.Drawing.Point(166, 20)
+        Me.TxtNota.Location = New System.Drawing.Point(175, 20)
         Me.TxtNota.Name = "TxtNota"
-        Me.TxtNota.Size = New System.Drawing.Size(41, 20)
+        Me.TxtNota.Size = New System.Drawing.Size(93, 20)
         Me.TxtNota.TabIndex = 165
-        Me.TxtNota.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Location = New System.Drawing.Point(119, 23)
+        Me.Label1.Location = New System.Drawing.Point(127, 23)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(45, 13)
         Me.Label1.TabIndex = 166
@@ -201,7 +200,7 @@ Partial Class FrmNotasEntrada
         'TxtIdPedido
         '
         Me.TxtIdPedido.Enabled = False
-        Me.TxtIdPedido.Location = New System.Drawing.Point(429, 20)
+        Me.TxtIdPedido.Location = New System.Drawing.Point(515, 20)
         Me.TxtIdPedido.Name = "TxtIdPedido"
         Me.TxtIdPedido.Size = New System.Drawing.Size(55, 20)
         Me.TxtIdPedido.TabIndex = 147
@@ -211,7 +210,7 @@ Partial Class FrmNotasEntrada
         '
         Me.LblIdPedido.AutoSize = True
         Me.LblIdPedido.BackColor = System.Drawing.Color.Transparent
-        Me.LblIdPedido.Location = New System.Drawing.Point(390, 23)
+        Me.LblIdPedido.Location = New System.Drawing.Point(471, 23)
         Me.LblIdPedido.Name = "LblIdPedido"
         Me.LblIdPedido.Size = New System.Drawing.Size(40, 13)
         Me.LblIdPedido.TabIndex = 148
@@ -225,34 +224,34 @@ Partial Class FrmNotasEntrada
         Me.DataGrid.AllowUserToResizeRows = False
         Me.DataGrid.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.DataGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDark
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.LightGray
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ControlDark
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGrid.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGrid.DefaultCellStyle = DataGridViewCellStyle5
         Me.DataGrid.EnableHeadersVisualStyles = False
         Me.DataGrid.Location = New System.Drawing.Point(23, 121)
         Me.DataGrid.MultiSelect = False
         Me.DataGrid.Name = "DataGrid"
         Me.DataGrid.ReadOnly = True
         Me.DataGrid.RowHeadersVisible = False
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ControlLightLight
-        DataGridViewCellStyle3.Padding = New System.Windows.Forms.Padding(3, 0, 0, 0)
-        Me.DataGrid.RowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.ControlLightLight
+        DataGridViewCellStyle6.Padding = New System.Windows.Forms.Padding(3, 0, 0, 0)
+        Me.DataGrid.RowsDefaultCellStyle = DataGridViewCellStyle6
         Me.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGrid.Size = New System.Drawing.Size(521, 209)
+        Me.DataGrid.Size = New System.Drawing.Size(600, 209)
         Me.DataGrid.TabIndex = 148
         '
         'GboxPesProd
@@ -264,14 +263,14 @@ Partial Class FrmNotasEntrada
         Me.GboxPesProd.Controls.Add(Me.RbPedido)
         Me.GboxPesProd.Location = New System.Drawing.Point(23, 9)
         Me.GboxPesProd.Name = "GboxPesProd"
-        Me.GboxPesProd.Size = New System.Drawing.Size(384, 50)
+        Me.GboxPesProd.Size = New System.Drawing.Size(410, 50)
         Me.GboxPesProd.TabIndex = 160
         Me.GboxPesProd.TabStop = False
         Me.GboxPesProd.Text = "Pesquisar"
         '
         'TxtPesquisa
         '
-        Me.TxtPesquisa.Location = New System.Drawing.Point(220, 18)
+        Me.TxtPesquisa.Location = New System.Drawing.Point(241, 18)
         Me.TxtPesquisa.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtPesquisa.Name = "TxtPesquisa"
         Me.TxtPesquisa.Size = New System.Drawing.Size(142, 20)
@@ -280,7 +279,7 @@ Partial Class FrmNotasEntrada
         'RbNota
         '
         Me.RbNota.AutoSize = True
-        Me.RbNota.Location = New System.Drawing.Point(157, 20)
+        Me.RbNota.Location = New System.Drawing.Point(178, 20)
         Me.RbNota.Name = "RbNota"
         Me.RbNota.Size = New System.Drawing.Size(48, 17)
         Me.RbNota.TabIndex = 159
@@ -290,7 +289,7 @@ Partial Class FrmNotasEntrada
         'RbFornecedor
         '
         Me.RbFornecedor.AutoSize = True
-        Me.RbFornecedor.Location = New System.Drawing.Point(73, 20)
+        Me.RbFornecedor.Location = New System.Drawing.Point(94, 20)
         Me.RbFornecedor.Name = "RbFornecedor"
         Me.RbFornecedor.Size = New System.Drawing.Size(79, 17)
         Me.RbFornecedor.TabIndex = 158
@@ -301,7 +300,7 @@ Partial Class FrmNotasEntrada
         '
         Me.RbPedido.AutoSize = True
         Me.RbPedido.Checked = True
-        Me.RbPedido.Location = New System.Drawing.Point(7, 20)
+        Me.RbPedido.Location = New System.Drawing.Point(28, 20)
         Me.RbPedido.Name = "RbPedido"
         Me.RbPedido.Size = New System.Drawing.Size(58, 17)
         Me.RbPedido.TabIndex = 157
@@ -314,7 +313,7 @@ Partial Class FrmNotasEntrada
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(563, 357)
+        Me.ClientSize = New System.Drawing.Size(640, 357)
         Me.Controls.Add(Me.BtnSair)
         Me.Controls.Add(Me.GboxPesProd)
         Me.Controls.Add(Me.DataGrid)

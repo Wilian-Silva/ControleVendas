@@ -5,12 +5,10 @@
     End Sub
 
     Sub CarregarRelatorio()
-        Me.titulosVencidosTableAdapter.Fill(Me.ReportTitulosVencidos.titulosVencidos, DataFim.Text)
+        Dim database As Date
+        database = Now
+        Me.titulosVencidosTableAdapter.Fill(Me.ReportTitulosVencidos.titulosVencidos, database)
 
         Me.ReportViewer1.RefreshReport()
-    End Sub
-
-    Private Sub DataFim_ValueChanged(sender As Object, e As EventArgs) Handles DataFim.ValueChanged
-        CarregarRelatorio()
     End Sub
 End Class

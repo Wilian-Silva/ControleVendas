@@ -411,6 +411,12 @@
     <Compile Include="Relatorios\FrmCupomVenda.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Relatorios\FrmDataInicialFinal.Designer.vb">
+      <DependentUpon>FrmDataInicialFinal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\FrmDataInicialFinal.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Relatorios\FrmMvtoEstoque.Designer.vb">
       <DependentUpon>FrmMvtoEstoque.vb</DependentUpon>
     </Compile>
@@ -421,6 +427,12 @@
       <DependentUpon>FrmRecebimentos.vb</DependentUpon>
     </Compile>
     <Compile Include="Relatorios\FrmRecebimentos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\FrmRelPedido.Designer.vb">
+      <DependentUpon>FrmRelPedido.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\FrmRelPedido.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Relatorios\FrmRelSaldoEstoque.Designer.vb">
@@ -581,11 +593,17 @@
     <EmbeddedResource Include="Relatorios\FrmCupomVenda.resx">
       <DependentUpon>FrmCupomVenda.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\FrmDataInicialFinal.resx">
+      <DependentUpon>FrmDataInicialFinal.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\FrmMvtoEstoque.resx">
       <DependentUpon>FrmMvtoEstoque.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\FrmRecebimentos.resx">
       <DependentUpon>FrmRecebimentos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\FrmRelPedido.resx">
+      <DependentUpon>FrmRelPedido.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\FrmRelSaldoEstoque.resx">
       <DependentUpon>FrmRelSaldoEstoque.vb</DependentUpon>

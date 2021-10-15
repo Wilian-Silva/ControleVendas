@@ -6,7 +6,7 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.20896cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1.46812cm</Width>
@@ -27,7 +27,7 @@
               <Width>2.5cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.88172cm</Width>
+              <Width>3.62668cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -894,7 +894,7 @@ Parcela</Value>
           <TablixMembers>
             <TablixMember>
               <TablixHeader>
-                <Size>2.97625cm</Size>
+                <Size>3.26728cm</Size>
                 <CellContents>
                   <Textbox Name="Textbox56">
                     <CanGrow>true</CanGrow>
@@ -903,7 +903,7 @@ Parcela</Value>
                       <Paragraph>
                         <TextRuns>
                           <TextRun>
-                            <Value>cliente</Value>
+                            <Value>Cliente</Value>
                             <Style>
                               <FontSize>8pt</FontSize>
                               <FontWeight>Bold</FontWeight>
@@ -911,7 +911,7 @@ Parcela</Value>
                           </TextRun>
                         </TextRuns>
                         <Style>
-                          <TextAlign>Center</TextAlign>
+                          <TextAlign>Left</TextAlign>
                         </Style>
                       </Paragraph>
                     </Paragraphs>
@@ -946,7 +946,7 @@ Parcela</Value>
                 </SortExpression>
               </SortExpressions>
               <TablixHeader>
-                <Size>2.97625cm</Size>
+                <Size>3.26728cm</Size>
                 <CellContents>
                   <Textbox Name="cliente">
                     <CanGrow>true</CanGrow>
@@ -962,7 +962,7 @@ Parcela</Value>
                           </TextRun>
                         </TextRuns>
                         <Style>
-                          <TextAlign>Center</TextAlign>
+                          <TextAlign>Left</TextAlign>
                         </Style>
                       </Paragraph>
                     </Paragraphs>
@@ -992,7 +992,7 @@ Parcela</Value>
             </TablixMember>
             <TablixMember>
               <TablixHeader>
-                <Size>2.97625cm</Size>
+                <Size>3.26728cm</Size>
                 <CellContents>
                   <Textbox Name="Textbox59">
                     <CanGrow>true</CanGrow>
@@ -1036,10 +1036,10 @@ Parcela</Value>
         <PageBreak>
           <BreakLocation>End</BreakLocation>
         </PageBreak>
-        <Top>0.63183cm</Top>
+        <Top>0.31433cm</Top>
         <Left>0.90635cm</Left>
-        <Height>1.93229cm</Height>
-        <Width>20.43464cm</Width>
+        <Height>1.93228cm</Height>
+        <Width>21.17958cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1047,7 +1047,7 @@ Parcela</Value>
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>11.23958in</Height>
+    <Height>6.54166in</Height>
     <Style />
   </Body>
   <Width>8.92877in</Width>

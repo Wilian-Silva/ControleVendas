@@ -9,13 +9,13 @@
               <Width>1.94293cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.82776cm</Width>
+              <Width>3.51568cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.23cm</Width>
+              <Width>2.05431cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.52173cm</Width>
+              <Width>2.87861cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>6.22576cm</Width>
@@ -863,10 +863,10 @@
         </TablixRowHierarchy>
         <RepeatRowHeaders>true</RepeatRowHeaders>
         <DataSetName>DataSetCompra</DataSetName>
-        <Top>0.34078cm</Top>
+        <Top>0.02328cm</Top>
         <Left>0.97578cm</Left>
         <Height>1.45604cm</Height>
-        <Width>19.74345cm</Width>
+        <Width>21.61256cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -874,13 +874,13 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>11.38542in</Height>
+    <Height>6.63542in</Height>
     <Style />
   </Body>
-  <Width>8.48171in</Width>
+  <Width>9.28379in</Width>
   <Page>
     <PageHeader>
-      <Height>2.19604cm</Height>
+      <Height>1.66687cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -891,7 +891,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Relatório de Compras</Value>
+                  <Value>Pedido de Compra</Value>
                   <Style>
                     <FontSize>12pt</FontSize>
                     <FontWeight>Bold</FontWeight>
@@ -904,10 +904,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox35</rd:DefaultName>
-          <Top>0.90385cm</Top>
+          <Top>0.95677cm</Top>
           <Left>0.97578cm</Left>
           <Height>0.6cm</Height>
-          <Width>17.82553cm</Width>
+          <Width>21.61256cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -936,7 +936,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox36</rd:DefaultName>
           <Top>0.95677cm</Top>
-          <Left>19.46688cm</Left>
+          <Left>21.3848cm</Left>
           <Height>0.67938cm</Height>
           <Width>1.20354cm</Width>
           <ZIndex>1</ZIndex>
@@ -966,7 +966,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox37</rd:DefaultName>
           <Top>0.95677cm</Top>
-          <Left>18.56729cm</Left>
+          <Left>20.48521cm</Left>
           <Height>0.67938cm</Height>
           <Width>0.88194cm</Width>
           <ZIndex>2</ZIndex>

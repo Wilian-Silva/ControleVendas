@@ -3,11 +3,11 @@
 Module ModuloConexao
 
     'Public con As New MySqlConnection("server=localhost; userid=root; password=; database=controle_vendas_oficial; port=;")
-    Public con As New MySqlConnection("server=localhost; userid=root; password=; database=controle_vendas; port=;")
+    Public con As New MySqlConnection("server=localhost; userid=root; password=; database=controle_vendas; port=; SslMode=none;")
     'Public con As New MySqlConnection("server=mysql746.umbler.com; userid=xufu; password=EZBjW9LtUscBmb; database=controle_vendas; port=41890;")
 
     Sub Abrir()
-
+        'Stop
         If con.State = 0 Then
             con.Open()
         End If
@@ -29,6 +29,8 @@ Module ModuloConexao
     Public Table1DuplicatasReceber As New DataTable("MyTable")
 
     Public dgStatus As String
+
+    Public relatorio As String
 
     Public ValorUntPedido As String
 
@@ -90,6 +92,9 @@ Module ModuloConexao
     Public novoFonecedor As String
     Public pesquisarFornecedor As String
     Public editarDuplicata As String
+
+    Public dataInicial As Date
+    Public dataFinal As Date
 
 
 

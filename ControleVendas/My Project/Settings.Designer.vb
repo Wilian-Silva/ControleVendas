@@ -63,17 +63,6 @@ Namespace My
                 Return CType(Me("controle_vendasConnectionString"),String)
             End Get
         End Property
-        
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\Controle_vendas.acc"& _ 
-            "db")>  _
-        Public ReadOnly Property Controle_vendasConnectionString1() As String
-            Get
-                Return CType(Me("Controle_vendasConnectionString1"),String)
-            End Get
-        End Property
     End Class
 End Namespace
 

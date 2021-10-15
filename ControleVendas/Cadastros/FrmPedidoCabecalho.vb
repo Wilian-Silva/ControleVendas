@@ -38,7 +38,7 @@ Public Class FrmPedidoCabecalho
 
         DataGrid.Columns(0).Width = 50
         DataGrid.Columns(2).Width = 50
-        DataGrid.Columns(1).Width = 115
+        DataGrid.Columns(1).Width = 125
         DataGrid.Columns(3).Width = 140
         DataGrid.Columns(4).Width = 90
         DataGrid.Columns(5).Width = 100

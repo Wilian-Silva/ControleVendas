@@ -2,7 +2,7 @@
 
 Public Class FrmLogin
     Private Sub BtnLogin_Click(sender As Object, e As EventArgs) Handles BtnLogin.Click
-
+        ' Stop
         Dim usuario As String
         Dim senha As String
         usuario = TxtUsuario.Text

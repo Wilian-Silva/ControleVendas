@@ -83,8 +83,8 @@ Public Class FrmNotasEntrada
         ' DataGrid.Columns(11).HeaderText = "Reg. Duplicata"
 
 
-        DataGrid.Columns(0).Width = 50
-        DataGrid.Columns(1).Width = 60
+        DataGrid.Columns(0).Width = 60
+        DataGrid.Columns(1).Width = 100
         DataGrid.Columns(2).Width = 90
         DataGrid.Columns(3).Width = 150
         DataGrid.Columns(4).Width = 50

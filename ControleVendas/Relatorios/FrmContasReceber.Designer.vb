@@ -73,12 +73,10 @@ Partial Class FrmContasReceber
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(872, 799)
         Me.Controls.Add(Me.ReportViewer1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.MaximizeBox = False
         Me.Name = "FrmContasReceber"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Contas a Receber"
+        Me.Text = "Título em Aberto a Receber"
         CType(Me.ContasreceberBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ReportTitulosVencidos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.contas_receberBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
