@@ -15,6 +15,9 @@
               <Width>2.05431cm</Width>
             </TablixColumn>
             <TablixColumn>
+              <Width>1.91792cm</Width>
+            </TablixColumn>
+            <TablixColumn>
               <Width>2.87861cm</Width>
             </TablixColumn>
             <TablixColumn>
@@ -122,6 +125,41 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox24</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox1">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Nº Pedido</Value>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox1</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -408,6 +446,40 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
+                    <Textbox Name="id_pedido">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!id_pedido.Value</Value>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>id_pedido</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
                     <Textbox Name="descricao">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
@@ -671,6 +743,40 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
+                    <Textbox Name="Textbox4">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox4</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
                     <Textbox Name="Textbox48">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
@@ -846,6 +952,7 @@
             <TablixMember />
             <TablixMember />
             <TablixMember />
+            <TablixMember />
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
@@ -866,7 +973,7 @@
         <Top>0.02328cm</Top>
         <Left>0.97578cm</Left>
         <Height>1.45604cm</Height>
-        <Width>21.61256cm</Width>
+        <Width>23.53048cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -877,7 +984,7 @@
     <Height>6.63542in</Height>
     <Style />
   </Body>
-  <Width>9.28379in</Width>
+  <Width>9.8773in</Width>
   <Page>
     <PageHeader>
       <Height>1.66687cm</Height>
@@ -907,7 +1014,7 @@
           <Top>0.95677cm</Top>
           <Left>0.97578cm</Left>
           <Height>0.6cm</Height>
-          <Width>21.61256cm</Width>
+          <Width>23.53048cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -936,7 +1043,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox36</rd:DefaultName>
           <Top>0.95677cm</Top>
-          <Left>21.3848cm</Left>
+          <Left>23.48793cm</Left>
           <Height>0.67938cm</Height>
           <Width>1.20354cm</Width>
           <ZIndex>1</ZIndex>
@@ -966,7 +1073,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox37</rd:DefaultName>
           <Top>0.95677cm</Top>
-          <Left>20.48521cm</Left>
+          <Left>22.58834cm</Left>
           <Height>0.67938cm</Height>
           <Width>0.88194cm</Width>
           <ZIndex>2</ZIndex>
@@ -1065,6 +1172,10 @@
         <Field Name="valor_total">
           <DataField>valor_total</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="id_pedido">
+          <DataField>id_pedido</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>

@@ -25,26 +25,16 @@ Partial Class FrmReportCompras
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmReportCompras))
-        Me.DataTableEntradaBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DataSet_ReportCompras = New ControleVendas.DataSet_ReportCompras()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.DataTableEntradaBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataSet_ReportCompras = New ControleVendas.DataSet_ReportCompras()
         Me.DataTableEntradaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataTableEntradaTableAdapter = New ControleVendas.DataSet_ReportComprasTableAdapters.DataTableEntradaTableAdapter()
         CType(Me.DataTableEntradaBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSet_ReportCompras, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataTableEntradaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'DataTableEntradaBindingSource1
-        '
-        Me.DataTableEntradaBindingSource1.DataMember = "DataTableEntrada"
-        Me.DataTableEntradaBindingSource1.DataSource = Me.DataSet_ReportCompras
-        '
-        'DataSet_ReportCompras
-        '
-        Me.DataSet_ReportCompras.DataSetName = "DataSet_ReportCompras"
-        Me.DataSet_ReportCompras.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ReportViewer1
         '
@@ -56,8 +46,18 @@ Partial Class FrmReportCompras
         Me.ReportViewer1.Location = New System.Drawing.Point(0, 0)
         Me.ReportViewer1.Name = "ReportViewer1"
         Me.ReportViewer1.ServerReport.BearerToken = Nothing
-        Me.ReportViewer1.Size = New System.Drawing.Size(918, 799)
+        Me.ReportViewer1.Size = New System.Drawing.Size(985, 657)
         Me.ReportViewer1.TabIndex = 0
+        '
+        'DataTableEntradaBindingSource1
+        '
+        Me.DataTableEntradaBindingSource1.DataMember = "DataTableEntrada"
+        Me.DataTableEntradaBindingSource1.DataSource = Me.DataSet_ReportCompras
+        '
+        'DataSet_ReportCompras
+        '
+        Me.DataSet_ReportCompras.DataSetName = "DataSet_ReportCompras"
+        Me.DataSet_ReportCompras.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'DataTableEntradaBindingSource
         '
@@ -72,11 +72,9 @@ Partial Class FrmReportCompras
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(918, 799)
+        Me.ClientSize = New System.Drawing.Size(985, 657)
         Me.Controls.Add(Me.ReportViewer1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.MaximizeBox = False
         Me.Name = "FrmReportCompras"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Pedido de Compra"

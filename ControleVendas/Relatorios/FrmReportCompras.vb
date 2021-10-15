@@ -1,7 +1,7 @@
 ﻿Public Class FrmReportCompras
 
     Sub Carregar_realatorio()
-        Me.DataTableEntradaTableAdapter.Fill(Me.DataSet_ReportCompras.DataTableEntrada, nomePedido)
+        Me.DataTableEntradaTableAdapter.Fill(Me.DataSet_ReportCompras.DataTableEntrada, numeroPedido)
         Me.ReportViewer1.RefreshReport()
 
     End Sub

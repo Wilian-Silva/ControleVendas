@@ -1165,6 +1165,8 @@ Partial Public Class DataSet_ReportCompras
         
         Private columnvalor_total As Global.System.Data.DataColumn
         
+        Private columnid_pedido As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
@@ -1265,6 +1267,14 @@ Partial Public Class DataSet_ReportCompras
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property id_pedidoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnid_pedido
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -1301,9 +1311,9 @@ Partial Public Class DataSet_ReportCompras
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddDataTableEntradaRow(ByVal fornecedor As String, ByVal nota As String, ByVal data_registro As Date, ByVal descricao As String, ByVal produto As String, ByVal quantidade As Integer, ByVal valor_unitario As Decimal, ByVal valor_total As Decimal) As DataTableEntradaRow
+        Public Overloads Function AddDataTableEntradaRow(ByVal fornecedor As String, ByVal nota As String, ByVal data_registro As Date, ByVal descricao As String, ByVal produto As String, ByVal quantidade As Integer, ByVal valor_unitario As Decimal, ByVal valor_total As Decimal, ByVal id_pedido As Integer) As DataTableEntradaRow
             Dim rowDataTableEntradaRow As DataTableEntradaRow = CType(Me.NewRow,DataTableEntradaRow)
-            Dim columnValuesArray() As Object = New Object() {fornecedor, nota, data_registro, descricao, produto, quantidade, valor_unitario, valor_total}
+            Dim columnValuesArray() As Object = New Object() {fornecedor, nota, data_registro, descricao, produto, quantidade, valor_unitario, valor_total, id_pedido}
             rowDataTableEntradaRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowDataTableEntradaRow)
             Return rowDataTableEntradaRow
@@ -1334,6 +1344,7 @@ Partial Public Class DataSet_ReportCompras
             Me.columnquantidade = MyBase.Columns("quantidade")
             Me.columnvalor_unitario = MyBase.Columns("valor_unitario")
             Me.columnvalor_total = MyBase.Columns("valor_total")
+            Me.columnid_pedido = MyBase.Columns("id_pedido")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1355,6 +1366,8 @@ Partial Public Class DataSet_ReportCompras
             MyBase.Columns.Add(Me.columnvalor_unitario)
             Me.columnvalor_total = New Global.System.Data.DataColumn("valor_total", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnvalor_total)
+            Me.columnid_pedido = New Global.System.Data.DataColumn("id_pedido", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnid_pedido)
             Me.columnfornecedor.AllowDBNull = false
             Me.columnfornecedor.MaxLength = 50
             Me.columnnota.AllowDBNull = false
@@ -1367,6 +1380,7 @@ Partial Public Class DataSet_ReportCompras
             Me.columnquantidade.AllowDBNull = false
             Me.columnvalor_unitario.AllowDBNull = false
             Me.columnvalor_total.AllowDBNull = false
+            Me.columnid_pedido.AllowDBNull = false
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1746,15 +1760,15 @@ Partial Public Class DataSet_ReportCompras
                 Me(Me.tableestoque.id_pedidoColumn) = value
             End Set
         End Property
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>
-        Public Overloads Property item() As Integer
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property item() As Integer
             Get
-                Return CType(Me(Me.tableestoque.itemColumn), Integer)
+                Return CType(Me(Me.tableestoque.itemColumn),Integer)
             End Get
             Set
-                Me(Me.tableestoque.itemColumn) = Value
+                Me(Me.tableestoque.itemColumn) = value
             End Set
         End Property
     End Class
@@ -1859,6 +1873,17 @@ Partial Public Class DataSet_ReportCompras
             End Get
             Set
                 Me(Me.tableDataTableEntrada.valor_totalColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property id_pedido() As Integer
+            Get
+                Return CType(Me(Me.tableDataTableEntrada.id_pedidoColumn),Integer)
+            End Get
+            Set
+                Me(Me.tableDataTableEntrada.id_pedidoColumn) = value
             End Set
         End Property
     End Class
@@ -3541,6 +3566,7 @@ Namespace DataSet_ReportComprasTableAdapters
             tableMapping.ColumnMappings.Add("quantidade", "quantidade")
             tableMapping.ColumnMappings.Add("valor_unitario", "valor_unitario")
             tableMapping.ColumnMappings.Add("valor_total", "valor_total")
+            tableMapping.ColumnMappings.Add("id_pedido", "id_pedido")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -3557,17 +3583,17 @@ Namespace DataSet_ReportComprasTableAdapters
             Me._commandCollection = New Global.MySql.Data.MySqlClient.MySqlCommand(0) {}
             Me._commandCollection(0) = New Global.MySql.Data.MySqlClient.MySqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT        e.fornecedor, e.nota, e.data_registro, e.descricao, s.produto, s.qu"& _ 
-                "antidade, s.valor_unitario, s.valor_total"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            entrada e INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         estoque s ON e.id_pedido = s.id_pedido"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        ("& _ 
-                "e.descricao like @pedido)"
+            Me._commandCollection(0).CommandText = "SELECT        e.fornecedor, e.nota, e.data_registro, e.id_pedido, e.descricao, s."& _ 
+                "produto, s.quantidade, s.valor_unitario, s.valor_total"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            entrada "& _ 
+                "e INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         estoque s ON e.id_pedido = s.id_pedido"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"W"& _ 
+                "HERE        (e.id_pedido= @pedido)"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Dim param As Global.MySql.Data.MySqlClient.MySqlParameter = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@pedido"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.Size = 30
+            param.DbType = Global.System.Data.DbType.Int32
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
-            param.SourceColumn = "descricao"
+            param.SourceColumn = "id_pedido"
             Me._commandCollection(0).Parameters.Add(param)
         End Sub
         
@@ -3575,13 +3601,9 @@ Namespace DataSet_ReportComprasTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As DataSet_ReportCompras.DataTableEntradaDataTable, ByVal pedido As String) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As DataSet_ReportCompras.DataTableEntradaDataTable, ByVal pedido As Integer) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            If (pedido Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("pedido")
-            Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(pedido,String)
-            End If
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(pedido,Integer)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
             End If
@@ -3593,13 +3615,9 @@ Namespace DataSet_ReportComprasTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData(ByVal pedido As String) As DataSet_ReportCompras.DataTableEntradaDataTable
+        Public Overloads Overridable Function GetData(ByVal pedido As Integer) As DataSet_ReportCompras.DataTableEntradaDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            If (pedido Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("pedido")
-            Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(pedido,String)
-            End If
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(pedido,Integer)
             Dim dataTable As DataSet_ReportCompras.DataTableEntradaDataTable = New DataSet_ReportCompras.DataTableEntradaDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
