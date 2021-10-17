@@ -2010,7 +2010,7 @@ Parcela</Value>
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Venda efetuadas  por Portador</Value>
+                  <Value>Vendas  por Portador</Value>
                   <Style>
                     <FontSize>12pt</FontSize>
                     <FontWeight>Bold</FontWeight>

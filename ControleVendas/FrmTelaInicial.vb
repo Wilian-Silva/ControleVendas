@@ -457,7 +457,8 @@ Public Class FrmTelaInicial
     End Sub
 
     Private Sub BtnRelVendas_Click(sender As Object, e As EventArgs) Handles CboxRel2_01.Click
-        Dim form = New ReportVendas
+        relatorio = "Rel.Vendas"
+        Dim form = New FrmDataInicialFinal
         form.ShowDialog()
     End Sub
 
@@ -490,7 +491,8 @@ Public Class FrmTelaInicial
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles CboxRel2_02.Click
-        Dim form = New FrmRecebimentos
+        relatorio = "Rel.Recebimentos"
+        Dim form = New FrmDataInicialFinal
         form.ShowDialog()
     End Sub
 
@@ -503,12 +505,12 @@ Public Class FrmTelaInicial
     End Sub
 
     Private Sub BtnLogoff_Click(sender As Object, e As EventArgs) Handles CboxRel2_08.Click
-        Dim form = New FrmCupomVenda
+        Dim form = New FrmPesqCupom
         form.ShowDialog()
     End Sub
 
     Private Sub CboxRel1_08_Click(sender As Object, e As EventArgs) Handles CboxRel1_08.Click
-        Dim form = New FrmCupomVenda
+        Dim form = New FrmPesqCupom
         form.ShowDialog()
     End Sub
 
@@ -530,12 +532,57 @@ Public Class FrmTelaInicial
     End Sub
 
     Private Sub CtasReceberPortadorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CtasReceberPortadorToolStripMenuItem.Click
-        Dim form = New ReportVendasPortador
+        Dim form = New FrmPesqPortador
         form.ShowDialog()
     End Sub
 
     Private Sub VendasPorClienteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VendasPorClienteToolStripMenuItem.Click
-        Dim form = New FrmRelVendaCliente
+        Dim form = New FrmPesqCliente
         form.ShowDialog()
+    End Sub
+
+    Private Sub BackupDoBancoDadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BackupDoBancoDadosToolStripMenuItem.Click
+
+        If MsgBox("Deseja efetuaar bakcup do banco de dados?", vbYesNo, "Backup Banco de Dados") = vbYes Then
+
+            Try
+                Dim caminho As String
+                caminho = Application.StartupPath
+                Abrir()
+                Dim cmd As New MySqlCommand
+                cmd.Connection = con
+                Dim mb As New MySqlBackup(cmd)
+                mb.ExportToFile(caminho + "\Backup\bakcup.sql")
+
+                MsgBox("Backup efetuado com sucesso!!!", MsgBoxStyle.Information, "Backup Banco de Dados")
+            Catch ex As Exception
+                MsgBox("Erro ao fazer backup " + ex.Message)
+            End Try
+
+        End If
+
+
+    End Sub
+
+    Private Sub RestarurarBackupToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RestarurarBackupToolStripMenuItem.Click
+
+        If MsgBox("Deseja restaurar backup do banco de dados?", vbYesNo, "Backup Banco de Dados") = vbYes Then
+
+            Try
+                Dim caminho As String
+                caminho = Application.StartupPath
+                Abrir()
+                Dim cmd As New MySqlCommand
+                cmd.Connection = con
+                Dim mb As New MySqlBackup(cmd)
+                mb.ImportFromFile(caminho + "\Backup\bakcup.sql")
+
+                MsgBox("Backup restaurado com sucesso!!!", MsgBoxStyle.Information, "Backup Banco de Dados")
+            Catch ex As Exception
+                MsgBox("Erro ao fazer backup " + ex.Message)
+            End Try
+
+        End If
+
     End Sub
 End Class

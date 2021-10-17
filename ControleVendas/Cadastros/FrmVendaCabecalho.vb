@@ -117,6 +117,10 @@ Public Class FrmVendaCabecalho
         If pesquisarDuplicata = "True" Then
             GboxPesquisar.Visible = True
         End If
+
+        If cumpomPesquisar = "True" Then
+            GboxPesquisar.Visible = True
+        End If
         ListarTudo()
     End Sub
 
@@ -149,6 +153,11 @@ Public Class FrmVendaCabecalho
 
             IdDuplicata = DataGrid.CurrentRow.Cells(1).Value
             IdDuplicata2 = DataGrid.CurrentRow.Cells(0).Value
+
+            If cumpomPesquisar = "True" Then
+                nomeCliente = DataGrid.CurrentRow.Cells(7).Value
+                idVenda = DataGrid.CurrentRow.Cells(1).Value
+            End If
 
             Me.Close()
         Else

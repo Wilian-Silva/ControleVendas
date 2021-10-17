@@ -56,11 +56,11 @@ Public Class FrmLogin
 
     End Sub
 
-    Private Sub BtnSair_Click(sender As Object, e As EventArgs) Handles BtnSair.Click
-        Application.Exit()
-    End Sub
 
     Private Sub FrmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        'Panel1.Top = (Me.Height / 2) - (Panel1.Height / 2)
+        'Panel1.Left = (Me.Width / 2) - (Panel1.Width / 2)
 
     End Sub
 End Class

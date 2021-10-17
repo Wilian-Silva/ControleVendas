@@ -28,15 +28,18 @@ Partial Class FrmLogin
         Me.TxtSenha = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.BtnLogin = New System.Windows.Forms.Button()
-        Me.BtnSair = New System.Windows.Forms.Button()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Panel1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(172, 42)
+        Me.Label1.Location = New System.Drawing.Point(39, 110)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(66, 16)
         Me.Label1.TabIndex = 2
@@ -45,27 +48,27 @@ Partial Class FrmLogin
         'TxtUsuario
         '
         Me.TxtUsuario.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtUsuario.Location = New System.Drawing.Point(242, 38)
+        Me.TxtUsuario.Location = New System.Drawing.Point(37, 128)
         Me.TxtUsuario.Multiline = True
         Me.TxtUsuario.Name = "TxtUsuario"
-        Me.TxtUsuario.Size = New System.Drawing.Size(162, 27)
+        Me.TxtUsuario.Size = New System.Drawing.Size(267, 27)
         Me.TxtUsuario.TabIndex = 1
         '
         'TxtSenha
         '
         Me.TxtSenha.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtSenha.Location = New System.Drawing.Point(242, 90)
+        Me.TxtSenha.Location = New System.Drawing.Point(37, 191)
         Me.TxtSenha.Multiline = True
         Me.TxtSenha.Name = "TxtSenha"
         Me.TxtSenha.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TxtSenha.Size = New System.Drawing.Size(162, 27)
+        Me.TxtSenha.Size = New System.Drawing.Size(267, 27)
         Me.TxtSenha.TabIndex = 2
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(179, 96)
+        Me.Label2.Location = New System.Drawing.Point(40, 172)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(56, 16)
         Me.Label2.TabIndex = 2
@@ -75,55 +78,65 @@ Partial Class FrmLogin
         '
         Me.BtnLogin.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnLogin.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnLogin.Location = New System.Drawing.Point(182, 143)
+        Me.BtnLogin.Location = New System.Drawing.Point(232, 236)
         Me.BtnLogin.Name = "BtnLogin"
-        Me.BtnLogin.Size = New System.Drawing.Size(114, 36)
+        Me.BtnLogin.Size = New System.Drawing.Size(72, 36)
         Me.BtnLogin.TabIndex = 3
-        Me.BtnLogin.Text = "LOGIN"
+        Me.BtnLogin.Text = "Entrar"
         Me.BtnLogin.UseVisualStyleBackColor = True
         '
-        'BtnSair
+        'Panel1
         '
-        Me.BtnSair.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnSair.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnSair.Location = New System.Drawing.Point(314, 143)
-        Me.BtnSair.Name = "BtnSair"
-        Me.BtnSair.Size = New System.Drawing.Size(114, 36)
-        Me.BtnSair.TabIndex = 4
-        Me.BtnSair.Text = "CANCELAR"
-        Me.BtnSair.UseVisualStyleBackColor = True
+        Me.Panel1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Panel1.Controls.Add(Me.Label4)
+        Me.Panel1.Controls.Add(Me.TxtSenha)
+        Me.Panel1.Controls.Add(Me.PictureBox1)
+        Me.Panel1.Controls.Add(Me.Label2)
+        Me.Panel1.Controls.Add(Me.TxtUsuario)
+        Me.Panel1.Controls.Add(Me.BtnLogin)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Location = New System.Drawing.Point(12, 12)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(342, 295)
+        Me.Panel1.TabIndex = 7
         '
-        'Label3
+        'PictureBox1
         '
-        Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Image = CType(resources.GetObject("Label3.Image"), System.Drawing.Image)
-        Me.Label3.Location = New System.Drawing.Point(12, 38)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(134, 115)
-        Me.Label3.TabIndex = 6
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(205, 8)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(100, 85)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 9
+        Me.PictureBox1.TabStop = False
+        '
+        'Label4
+        '
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(39, 16)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(160, 72)
+        Me.Label4.TabIndex = 7
+        Me.Label4.Text = "Seja bem-vindo,"
         '
         'FrmLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(469, 215)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.BtnSair)
-        Me.Controls.Add(Me.BtnLogin)
-        Me.Controls.Add(Me.TxtSenha)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.TxtUsuario)
-        Me.Controls.Add(Me.Label1)
+        Me.ClientSize = New System.Drawing.Size(366, 328)
+        Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "FrmLogin"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Login"
+        Me.Text = "Login Control System"
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -132,6 +145,7 @@ Partial Class FrmLogin
     Friend WithEvents TxtSenha As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents BtnLogin As Button
-    Friend WithEvents BtnSair As Button
-    Friend WithEvents Label3 As Label
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Label4 As Label
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

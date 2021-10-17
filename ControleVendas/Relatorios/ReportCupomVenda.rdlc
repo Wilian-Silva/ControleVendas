@@ -138,7 +138,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox35</rd:DefaultName>
             <Top>2.09105cm</Top>
-            <Left>7.75259cm</Left>
+            <Left>6.16509cm</Left>
             <Height>0.6cm</Height>
             <Width>9.0153cm</Width>
             <Style>
@@ -167,7 +167,7 @@
                   <Width>2.5cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.21438cm</Width>
+                  <Width>4.56907cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -340,7 +340,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Center</TextAlign>
+                                <TextAlign>Left</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -522,7 +522,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Center</TextAlign>
+                                <TextAlign>Left</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -543,7 +543,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.46771cm</Height>
+                  <Height>0.54708cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -744,10 +744,10 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSetTeste</DataSetName>
-            <Top>2.72633cm</Top>
-            <Left>7.75259cm</Left>
-            <Height>1.58834cm</Height>
-            <Width>10.68218cm</Width>
+            <Top>2.69105cm</Top>
+            <Left>6.16509cm</Left>
+            <Height>1.66772cm</Height>
+            <Width>12.03687cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -2010,7 +2010,7 @@
       <Width>7.46426in</Width>
       <Page>
         <PageHeader>
-          <Height>1.47037cm</Height>
+          <Height>1.78787cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -2035,7 +2035,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox35</rd:DefaultName>
-              <Top>0.05029cm</Top>
+              <Top>0.36779cm</Top>
               <Left>0.88361cm</Left>
               <Height>1.34952cm</Height>
               <Width>17.31835cm</Width>

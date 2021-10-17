@@ -51,6 +51,9 @@ Module ModuloConexao
     Public codCliente As String
     Public nomeCliente As String
 
+    Public cumpomPesquisar As String
+    Public idVenda As String
+
     Public codFornecedor As String
     Public nomeFornecedor As String
 
@@ -80,6 +83,7 @@ Module ModuloConexao
     Public pesquisarDuplicata As String
     Public IdDuplicata As String
     Public IdPortador As String
+    Public CodPortador As String
     Public PesquisarPortador As String
 
     Public custoUntario As String

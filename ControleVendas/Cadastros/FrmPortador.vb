@@ -299,7 +299,10 @@ Public Class FrmPortador
     End Sub
 
     Private Sub BtnSelecionarItem_Click(sender As Object, e As EventArgs) Handles BtnSelecionarItem.Click
+
         IdPortador = TxtId.Text
+        CodPortador = TxtCodPortador.Text
+
         Me.Close()
     End Sub
 End Class
