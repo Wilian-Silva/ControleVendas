@@ -46,6 +46,14 @@ Public Class FrmVlrPgto
 
     Private Sub BtnOk_Click(sender As Object, e As EventArgs) Handles BtnOk.Click
 
+        Dim dbl1 As Double = 0
+        Double.TryParse(TxtSaldoTitulo.Text, dbl1)
+
+        If dbl1 < 0 Then
+            MsgBox("Valor recebido esta maior que o valor da fatura!!", MsgBoxStyle.Information, "Pagamento")
+            Exit Sub
+        End If
+
         If CbPortador.Text = "" Then
             MsgBox("Portador inválido!!", MsgBoxStyle.Information, "Portador")
             Exit Sub

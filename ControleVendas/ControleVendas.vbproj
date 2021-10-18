@@ -67,6 +67,9 @@
     <Reference Include="FastReport.Compat, Version=2021.3.0.0, Culture=neutral, PublicKeyToken=406e1f4c3c8ef97e, processorArchitecture=MSIL">
       <HintPath>..\packages\FastReport.Compat.2021.3.0\lib\net40\FastReport.Compat.dll</HintPath>
     </Reference>
+    <Reference Include="GenCode128, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\GenCode128.2.0.0\lib\netstandard2.0\GenCode128.dll</HintPath>
+    </Reference>
     <Reference Include="Google.Protobuf, Version=3.14.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Protobuf.3.14.0\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>

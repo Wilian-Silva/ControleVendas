@@ -30,6 +30,8 @@ Module ModuloConexao
 
     Public dgStatus As String
 
+    Public novoProduto As String
+
     Public relatorio As String
 
     Public ValorUntPedido As String

@@ -42,7 +42,7 @@
               <Width>2.19133cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.24894cm</Width>
+              <Width>2.98977cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -1452,7 +1452,7 @@ Recebimento</Value>
         <Top>0.31433cm</Top>
         <Left>0.79699cm</Left>
         <Height>2.06458cm</Height>
-        <Width>27.71951cm</Width>
+        <Width>28.46034cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1463,7 +1463,7 @@ Recebimento</Value>
     <Height>5.94792in</Height>
     <Style />
   </Body>
-  <Width>11.56157in</Width>
+  <Width>11.88449in</Width>
   <Page>
     <PageHeader>
       <Height>1.95792cm</Height>

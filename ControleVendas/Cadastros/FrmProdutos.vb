@@ -6,8 +6,8 @@ Public Class FrmProdutos
 
         TxtNome.Enabled = True
         TxtCodAuxiliar.Enabled = True
+        TxtPrecoCompra.Enabled = True
         TxtPrecoVenda.Enabled = True
-        TxtMargemVenda.Enabled = True
 
     End Sub
 
@@ -15,8 +15,8 @@ Public Class FrmProdutos
 
         TxtNome.Enabled = False
         TxtCodAuxiliar.Enabled = False
+        TxtPrecoCompra.Enabled = False
         TxtPrecoVenda.Enabled = False
-        TxtMargemVenda.Enabled = False
 
     End Sub
     Private Sub LimparCampos()
@@ -25,26 +25,27 @@ Public Class FrmProdutos
         TxtNome.Text = ""
         TxtCodAuxiliar.Text = ""
         TxtSaldoEstoque.Text = ""
-        TxtPrecoVenda.Text = Nothing
+        TxtPrecoCompra.Text = Nothing
         TxtMargemVenda.Text = Nothing
-        TxtLucro.Text = Nothing
+        TxtPrecoVenda.Text = Nothing
         TxtId.Text = ""
         editarProduto = ""
         TxtNome.BackColor = Color.White
+        novoProduto = ""
 
 
     End Sub
     Sub Editar_Cores()
         TxtNome.BackColor = Color.Salmon
         TxtCodAuxiliar.BackColor = Color.Salmon
+        TxtPrecoCompra.BackColor = Color.Salmon
         TxtPrecoVenda.BackColor = Color.Salmon
-        TxtMargemVenda.BackColor = Color.Salmon
     End Sub
     Sub Limpar_cores()
         TxtNome.BackColor = Color.White
         TxtCodAuxiliar.BackColor = Color.White
+        TxtPrecoCompra.BackColor = Color.White
         TxtPrecoVenda.BackColor = Color.White
-        TxtMargemVenda.BackColor = Color.White
     End Sub
     Sub Listar()
 
@@ -112,9 +113,9 @@ Public Class FrmProdutos
         TxtId.Text = DataGrid.CurrentRow.Cells(0).Value
         TxtNome.Text = DataGrid.CurrentRow.Cells(1).Value
         TxtCodAuxiliar.Text = DataGrid.CurrentRow.Cells(2).Value
-        TxtPrecoVenda.Text = DataGrid.CurrentRow.Cells(3).Value
+        TxtPrecoCompra.Text = DataGrid.CurrentRow.Cells(3).Value
         TxtMargemVenda.Text = DataGrid.CurrentRow.Cells(4).Value
-        TxtLucro.Text = DataGrid.CurrentRow.Cells(5).Value
+        TxtPrecoVenda.Text = DataGrid.CurrentRow.Cells(5).Value
         TxtSaldoEstoque.Text = DataGrid.CurrentRow.Cells(6).Value
 
     End Sub
@@ -150,6 +151,8 @@ Public Class FrmProdutos
     End Sub
     Private Sub BtnNovo_Click(sender As Object, e As EventArgs) Handles BtnNovo.Click
 
+        novoProduto = "True"
+
         LimparCampos()
         HabilitarCampos()
         TxtNome.Focus()
@@ -177,6 +180,28 @@ Public Class FrmProdutos
 
     Private Sub BtnSalvar_Click(sender As Object, e As EventArgs) Handles BtnSalvar.Click
 
+
+        Dim dbl1 As Double = 0
+        Dim dbl2 As Double = 0
+        Double.TryParse(TxtPrecoCompra.Text, dbl1)
+        Double.TryParse(TxtPrecoVenda.Text, dbl2)
+
+        If dbl1 > dbl2 Then
+            If MsgBox("Preço de compra está maior que preço de venda, deseja salvar mesmo assim?", vbYesNo, "Salvar") = vbYes Then
+
+                GoTo Line1
+            Else
+                Listar()
+
+                DesabilitarCampos()
+
+                Limpar_cores()
+                Exit Sub
+            End If
+        Else
+            GoTo Line1
+        End If
+Line1:
         If editarProduto = "Editar" And TxtId.Text <> "" Then
 
             SalvarEdicao()
@@ -221,7 +246,7 @@ Public Class FrmProdutos
                     Dim cmd As MySqlCommand
                     Dim sqls As String
 
-                    sqls = "INSERT INTO produtos (nome, cod_auxiliar, preco_compra, margem_venda, preco_venda) VALUES ('" & TxtNome.Text & "', '" & TxtCodAuxiliar.Text & "', '" & TxtPrecoVenda.Text.Replace(",", ".") & "', '" & TxtMargemVenda.Text.Replace(",", ".") & "', '" & TxtLucro.Text.Replace(",", ".") & "')"
+                    sqls = "INSERT INTO produtos (nome, cod_auxiliar, preco_compra, margem_venda, preco_venda) VALUES ('" & TxtNome.Text & "', '" & TxtCodAuxiliar.Text & "', '" & TxtPrecoCompra.Text.Replace(",", ".") & "', '" & TxtMargemVenda.Text.Replace(",", ".") & "', '" & TxtPrecoVenda.Text.Replace(",", ".") & "')"
                     cmd = New MySqlCommand(sqls, con)
                     cmd.ExecuteNonQuery()
 
@@ -257,7 +282,7 @@ Public Class FrmProdutos
             Dim cmd As MySqlCommand
             Dim sql As String
 
-            sql = "UPDATE produtos SET nome = '" & TxtNome.Text & "', cod_auxiliar = '" & TxtCodAuxiliar.Text & "', preco_compra = '" & TxtPrecoVenda.Text.Replace(",", ".") & "', margem_venda = '" & TxtMargemVenda.Text.Replace(",", ".") & "', preco_venda = '" & TxtLucro.Text.Replace(",", ".") & "' where id = '" & TxtId.Text & "'"
+            sql = "UPDATE produtos SET nome = '" & TxtNome.Text & "', cod_auxiliar = '" & TxtCodAuxiliar.Text & "', preco_compra = '" & TxtPrecoCompra.Text.Replace(",", ".") & "', margem_venda = '" & TxtMargemVenda.Text.Replace(",", ".") & "', preco_venda = '" & TxtPrecoVenda.Text.Replace(",", ".") & "' where id = '" & TxtId.Text & "'"
             cmd = New MySqlCommand(sql, con)
             cmd.ExecuteNonQuery()
 
@@ -330,21 +355,24 @@ Public Class FrmProdutos
         BuscarNome()
     End Sub
 
-    Private Sub TxtMargemVenda_TextChanged(sender As Object, e As EventArgs) Handles TxtMargemVenda.TextChanged
 
-        On Error Resume Next
-        Dim preco_venda As Integer
-        preco_venda = TxtMargemVenda.Text
-        TxtLucro.Text = (TxtPrecoVenda.Text / (1 - (preco_venda / 100)))
 
-    End Sub
+    Private Sub TxtPrecoVenda_TextChanged(sender As Object, e As EventArgs) Handles TxtPrecoCompra.TextChanged
 
-    Private Sub TxtPrecoVenda_TextChanged(sender As Object, e As EventArgs) Handles TxtPrecoVenda.TextChanged
+        If novoProduto = "True" Or editarProduto = "Editar" Then
 
-        On Error Resume Next
-        Dim preco_venda As Integer
-        preco_venda = TxtMargemVenda.Text
-        TxtLucro.Text = (TxtPrecoVenda.Text / (1 - (preco_venda / 100)))
+            Dim margem As Integer
+            Dim dbl1 As Double = 0
+            Dim dbl2 As Double = 0
+            Double.TryParse(TxtPrecoCompra.Text, dbl1)
+            Double.TryParse(TxtPrecoVenda.Text, dbl2)
+
+            margem = (dbl2 - dbl1).ToString("n")
+
+            TxtMargemVenda.Text = (margem / dbl2) * 100
+        End If
+
+
 
     End Sub
 
@@ -396,5 +424,20 @@ Public Class FrmProdutos
         Me.Close()
     End Sub
 
+    Private Sub TxtPrecoVenda_TextChanged_1(sender As Object, e As EventArgs) Handles TxtPrecoVenda.TextChanged
 
+        If novoProduto = "True" Or editarProduto = "Editar" Then
+
+            Dim margem As Integer
+            Dim dbl1 As Double = 0
+            Dim dbl2 As Double = 0
+            Double.TryParse(TxtPrecoCompra.Text, dbl1)
+            Double.TryParse(TxtPrecoVenda.Text, dbl2)
+
+            margem = (dbl2 - dbl1).ToString("n")
+
+            TxtMargemVenda.Text = (margem / dbl2) * 100
+        End If
+
+    End Sub
 End Class

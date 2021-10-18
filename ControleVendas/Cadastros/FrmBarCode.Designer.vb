@@ -25,9 +25,8 @@ Partial Class FrmBarCode
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.picBarcode = New System.Windows.Forms.PictureBox()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.ButtonGerar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.MaskedTextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -42,15 +41,18 @@ Partial Class FrmBarCode
         Me.TxtCodProd = New System.Windows.Forms.MaskedTextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.TxtCodDig = New System.Windows.Forms.MaskedTextBox()
+        Me.TxtCodBarras = New System.Windows.Forms.TextBox()
+        Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
+        Me.Button2 = New System.Windows.Forms.Button()
         CType(Me.picBarcode, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'picBarcode
         '
         Me.picBarcode.BackColor = System.Drawing.Color.White
-        Me.picBarcode.Location = New System.Drawing.Point(121, 47)
+        Me.picBarcode.Location = New System.Drawing.Point(54, 47)
         Me.picBarcode.Name = "picBarcode"
-        Me.picBarcode.Size = New System.Drawing.Size(398, 103)
+        Me.picBarcode.Size = New System.Drawing.Size(397, 60)
         Me.picBarcode.TabIndex = 0
         Me.picBarcode.TabStop = False
         '
@@ -63,34 +65,25 @@ Partial Class FrmBarCode
         Me.Button1.Text = "Salvar"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'Button2
+        'ButtonGerar
         '
-        Me.Button2.Location = New System.Drawing.Point(415, 196)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(104, 41)
-        Me.Button2.TabIndex = 3
-        Me.Button2.Text = "Criar"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.ButtonGerar.Location = New System.Drawing.Point(415, 196)
+        Me.ButtonGerar.Name = "ButtonGerar"
+        Me.ButtonGerar.Size = New System.Drawing.Size(104, 41)
+        Me.ButtonGerar.TabIndex = 3
+        Me.ButtonGerar.Text = "Criar"
+        Me.ButtonGerar.UseVisualStyleBackColor = True
         '
         'Label1
         '
         Me.Label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label1.Font = New System.Drawing.Font("Courier New", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(121, 152)
+        Me.Label1.Font = New System.Drawing.Font("Courier New", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(53, 108)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(398, 30)
+        Me.Label1.Size = New System.Drawing.Size(398, 36)
         Me.Label1.TabIndex = 4
         Me.Label1.Text = " - "
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Font = New System.Drawing.Font("Courier New", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(121, 12)
-        Me.TextBox1.Mask = "000000000000"
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(144, 29)
-        Me.TextBox1.TabIndex = 5
         '
         'Label2
         '
@@ -228,11 +221,33 @@ Partial Class FrmBarCode
         Me.TxtCodDig.TabIndex = 18
         Me.TxtCodDig.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
+        'TxtCodBarras
+        '
+        Me.TxtCodBarras.Location = New System.Drawing.Point(263, 7)
+        Me.TxtCodBarras.Multiline = True
+        Me.TxtCodBarras.Name = "TxtCodBarras"
+        Me.TxtCodBarras.Size = New System.Drawing.Size(188, 33)
+        Me.TxtCodBarras.TabIndex = 20
+        '
+        'PrintDocument1
+        '
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(169, 196)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(104, 41)
+        Me.Button2.TabIndex = 21
+        Me.Button2.Text = "Imprimir"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'FrmBarCode
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(912, 472)
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.TxtCodBarras)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.TxtCodDig)
         Me.Controls.Add(Me.Label10)
@@ -249,8 +264,7 @@ Partial Class FrmBarCode
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.picBarcode)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.ButtonGerar)
         Me.Controls.Add(Me.Button1)
         Me.Name = "FrmBarCode"
         Me.Text = "FrmBarCode"
@@ -263,9 +277,8 @@ Partial Class FrmBarCode
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
     Friend WithEvents picBarcode As PictureBox
     Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents ButtonGerar As Button
     Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox1 As MaskedTextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
@@ -280,4 +293,7 @@ Partial Class FrmBarCode
     Friend WithEvents TxtCodProd As MaskedTextBox
     Friend WithEvents Label11 As Label
     Friend WithEvents TxtCodDig As MaskedTextBox
+    Friend WithEvents TxtCodBarras As TextBox
+    Friend WithEvents PrintDocument1 As Printing.PrintDocument
+    Friend WithEvents Button2 As Button
 End Class

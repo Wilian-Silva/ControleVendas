@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FrmProdutos
     Inherits System.Windows.Forms.Form
 
     'Descartar substituições de formulário para limpar a lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,26 +20,25 @@ Partial Class FrmProdutos
     'OBSERVAÇÃO: o procedimento a seguir é exigido pelo Windows Form Designer
     'Pode ser modificado usando o Windows Form Designer.  
     'Não o modifique usando o editor de códigos.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmProdutos))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle40 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle41 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle42 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.TxtSaldoEstoque = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.TxtCodAuxiliar = New System.Windows.Forms.TextBox()
         Me.TxtId = New System.Windows.Forms.TextBox()
-        Me.TxtLucro = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.TxtPrecoVenda = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TxtNome = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TxtMargemVenda = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.TxtPrecoVenda = New System.Windows.Forms.TextBox()
+        Me.TxtPrecoCompra = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GboxProduto = New System.Windows.Forms.GroupBox()
         Me.BtnCancelar = New System.Windows.Forms.Button()
@@ -56,6 +55,7 @@ Partial Class FrmProdutos
         Me.BtnCacelarConsulta = New System.Windows.Forms.Button()
         Me.DataGrid = New System.Windows.Forms.DataGridView()
         Me.GboxPesProd = New System.Windows.Forms.GroupBox()
+        Me.TxtMargemVenda = New System.Windows.Forms.MaskedTextBox()
         Me.GroupBox3.SuspendLayout()
         Me.GboxProduto.SuspendLayout()
         CType(Me.DataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -65,18 +65,18 @@ Partial Class FrmProdutos
         'GroupBox3
         '
         Me.GroupBox3.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox3.Controls.Add(Me.TxtMargemVenda)
         Me.GroupBox3.Controls.Add(Me.TxtSaldoEstoque)
         Me.GroupBox3.Controls.Add(Me.Label7)
         Me.GroupBox3.Controls.Add(Me.TxtCodAuxiliar)
         Me.GroupBox3.Controls.Add(Me.TxtId)
-        Me.GroupBox3.Controls.Add(Me.TxtLucro)
+        Me.GroupBox3.Controls.Add(Me.Label4)
+        Me.GroupBox3.Controls.Add(Me.TxtPrecoVenda)
         Me.GroupBox3.Controls.Add(Me.Label6)
         Me.GroupBox3.Controls.Add(Me.TxtNome)
         Me.GroupBox3.Controls.Add(Me.Label2)
         Me.GroupBox3.Controls.Add(Me.Label1)
-        Me.GroupBox3.Controls.Add(Me.TxtMargemVenda)
-        Me.GroupBox3.Controls.Add(Me.Label4)
-        Me.GroupBox3.Controls.Add(Me.TxtPrecoVenda)
+        Me.GroupBox3.Controls.Add(Me.TxtPrecoCompra)
         Me.GroupBox3.Controls.Add(Me.Label3)
         Me.GroupBox3.Location = New System.Drawing.Point(26, 61)
         Me.GroupBox3.Name = "GroupBox3"
@@ -92,7 +92,7 @@ Partial Class FrmProdutos
         Me.TxtSaldoEstoque.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtSaldoEstoque.Name = "TxtSaldoEstoque"
         Me.TxtSaldoEstoque.Size = New System.Drawing.Size(35, 20)
-        Me.TxtSaldoEstoque.TabIndex = 74
+        Me.TxtSaldoEstoque.TabIndex = 6
         Me.TxtSaldoEstoque.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label7
@@ -129,22 +129,34 @@ Partial Class FrmProdutos
         Me.TxtId.TabIndex = 44
         Me.TxtId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'TxtLucro
+        'Label4
         '
-        Me.TxtLucro.BackColor = System.Drawing.Color.White
-        Me.TxtLucro.Enabled = False
-        Me.TxtLucro.Location = New System.Drawing.Point(393, 53)
-        Me.TxtLucro.Margin = New System.Windows.Forms.Padding(4)
-        Me.TxtLucro.Name = "TxtLucro"
-        Me.TxtLucro.Size = New System.Drawing.Size(60, 20)
-        Me.TxtLucro.TabIndex = 5
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
+        Me.Label4.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(350, 54)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(60, 16)
+        Me.Label4.TabIndex = 70
+        Me.Label4.Text = "% Lucro:"
+        '
+        'TxtPrecoVenda
+        '
+        Me.TxtPrecoVenda.BackColor = System.Drawing.Color.White
+        Me.TxtPrecoVenda.Enabled = False
+        Me.TxtPrecoVenda.Location = New System.Drawing.Point(286, 53)
+        Me.TxtPrecoVenda.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtPrecoVenda.Name = "TxtPrecoVenda"
+        Me.TxtPrecoVenda.Size = New System.Drawing.Size(60, 20)
+        Me.TxtPrecoVenda.TabIndex = 4
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(307, 55)
+        Me.Label6.Location = New System.Drawing.Point(200, 55)
         Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(85, 16)
@@ -186,37 +198,15 @@ Partial Class FrmProdutos
         Me.Label1.TabIndex = 66
         Me.Label1.Text = "Cód. Auxiliar"
         '
-        'TxtMargemVenda
+        'TxtPrecoCompra
         '
-        Me.TxtMargemVenda.BackColor = System.Drawing.Color.White
-        Me.TxtMargemVenda.Enabled = False
-        Me.TxtMargemVenda.Location = New System.Drawing.Point(251, 53)
-        Me.TxtMargemVenda.Margin = New System.Windows.Forms.Padding(4)
-        Me.TxtMargemVenda.Name = "TxtMargemVenda"
-        Me.TxtMargemVenda.Size = New System.Drawing.Size(40, 20)
-        Me.TxtMargemVenda.TabIndex = 4
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(189, 54)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(60, 16)
-        Me.Label4.TabIndex = 70
-        Me.Label4.Text = "% Lucro:"
-        '
-        'TxtPrecoVenda
-        '
-        Me.TxtPrecoVenda.BackColor = System.Drawing.Color.White
-        Me.TxtPrecoVenda.Enabled = False
-        Me.TxtPrecoVenda.Location = New System.Drawing.Point(119, 53)
-        Me.TxtPrecoVenda.Margin = New System.Windows.Forms.Padding(4)
-        Me.TxtPrecoVenda.Name = "TxtPrecoVenda"
-        Me.TxtPrecoVenda.Size = New System.Drawing.Size(60, 20)
-        Me.TxtPrecoVenda.TabIndex = 3
+        Me.TxtPrecoCompra.BackColor = System.Drawing.Color.White
+        Me.TxtPrecoCompra.Enabled = False
+        Me.TxtPrecoCompra.Location = New System.Drawing.Point(119, 53)
+        Me.TxtPrecoCompra.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtPrecoCompra.Name = "TxtPrecoCompra"
+        Me.TxtPrecoCompra.Size = New System.Drawing.Size(60, 20)
+        Me.TxtPrecoCompra.TabIndex = 3
         '
         'Label3
         '
@@ -459,34 +449,34 @@ Partial Class FrmProdutos
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGrid.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.DataGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDark
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle40.BackColor = System.Drawing.Color.LightGray
+        DataGridViewCellStyle40.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle40.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle40.SelectionBackColor = System.Drawing.SystemColors.ControlDark
+        DataGridViewCellStyle40.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle40.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle40
         Me.DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGrid.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle41.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle41.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle41.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle41.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle41.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle41.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGrid.DefaultCellStyle = DataGridViewCellStyle41
         Me.DataGrid.EnableHeadersVisualStyles = False
         Me.DataGrid.Location = New System.Drawing.Point(26, 156)
         Me.DataGrid.MultiSelect = False
         Me.DataGrid.Name = "DataGrid"
         Me.DataGrid.ReadOnly = True
         Me.DataGrid.RowHeadersVisible = False
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ControlLightLight
-        DataGridViewCellStyle3.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.DataGrid.RowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle42.BackColor = System.Drawing.SystemColors.ControlLightLight
+        DataGridViewCellStyle42.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.DataGrid.RowsDefaultCellStyle = DataGridViewCellStyle42
         Me.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGrid.Size = New System.Drawing.Size(570, 220)
+        Me.DataGrid.Size = New System.Drawing.Size(580, 308)
         Me.DataGrid.TabIndex = 148
         '
         'GboxPesProd
@@ -502,12 +492,20 @@ Partial Class FrmProdutos
         Me.GboxPesProd.TabIndex = 149
         Me.GboxPesProd.TabStop = False
         '
+        'TxtMargemVenda
+        '
+        Me.TxtMargemVenda.Enabled = False
+        Me.TxtMargemVenda.Location = New System.Drawing.Point(410, 52)
+        Me.TxtMargemVenda.Name = "TxtMargemVenda"
+        Me.TxtMargemVenda.Size = New System.Drawing.Size(33, 20)
+        Me.TxtMargemVenda.TabIndex = 150
+        '
         'FrmProdutos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(624, 401)
+        Me.ClientSize = New System.Drawing.Size(634, 489)
         Me.Controls.Add(Me.GboxPesProd)
         Me.Controls.Add(Me.DataGrid)
         Me.Controls.Add(Me.GroupBox3)
@@ -532,16 +530,15 @@ Partial Class FrmProdutos
     Friend WithEvents TxtNome As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents TxtMargemVenda As TextBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents TxtPrecoVenda As TextBox
+    Friend WithEvents TxtPrecoCompra As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents GboxProduto As GroupBox
     Friend WithEvents TxtId As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents TxtPesquisar As TextBox
     Friend WithEvents ToolTip As ToolTip
-    Friend WithEvents TxtLucro As TextBox
+    Friend WithEvents TxtPrecoVenda As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents DataGrid As DataGridView
     Friend WithEvents GboxPesProd As GroupBox
@@ -557,4 +554,5 @@ Partial Class FrmProdutos
     Friend WithEvents TxtCodAuxiliar As TextBox
     Friend WithEvents TxtSaldoEstoque As TextBox
     Friend WithEvents Label7 As Label
+    Friend WithEvents TxtMargemVenda As MaskedTextBox
 End Class

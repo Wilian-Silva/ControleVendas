@@ -543,11 +543,11 @@ Public Class FrmTelaInicial
 
     Private Sub BackupDoBancoDadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BackupDoBancoDadosToolStripMenuItem.Click
 
-        If MsgBox("Deseja efetuaar bakcup do banco de dados?", vbYesNo, "Backup Banco de Dados") = vbYes Then
+        If MsgBox("Deseja efetuar bakcup do banco de dados?", vbYesNo, "Backup Banco de Dados") = vbYes Then
 
             Try
                 Dim caminho As String
-                caminho = Application.StartupPath
+                caminho = Application.ExecutablePath
                 Abrir()
                 Dim cmd As New MySqlCommand
                 cmd.Connection = con
@@ -570,7 +570,7 @@ Public Class FrmTelaInicial
 
             Try
                 Dim caminho As String
-                caminho = Application.StartupPath
+                caminho = Application.ExecutablePath
                 Abrir()
                 Dim cmd As New MySqlCommand
                 cmd.Connection = con
