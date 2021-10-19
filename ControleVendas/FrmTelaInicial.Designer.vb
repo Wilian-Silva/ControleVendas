@@ -24,12 +24,12 @@ Partial Class FrmTelaInicial
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmTelaInicial))
-        Dim DataGridViewCellStyle31 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle32 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle33 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle34 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle35 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle36 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.CadastrosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CboxCad1_01 = New System.Windows.Forms.ToolStripMenuItem()
@@ -108,8 +108,8 @@ Partial Class FrmTelaInicial
         Me.Label9 = New System.Windows.Forms.Label()
         Me.DataGrid_Vencidos = New System.Windows.Forms.DataGridView()
         Me.PanelMeio = New System.Windows.Forms.Panel()
-        Me.PanelEsquerda = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.PanelEsquerda = New System.Windows.Forms.Panel()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -117,8 +117,8 @@ Partial Class FrmTelaInicial
         CType(Me.DataGrid_AVencer, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGrid_Vencidos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelMeio.SuspendLayout()
-        Me.PanelEsquerda.SuspendLayout()
         Me.Panel1.SuspendLayout()
+        Me.PanelEsquerda.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -410,9 +410,9 @@ Partial Class FrmTelaInicial
         Me.CboxRel2_08.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CboxRel2_08.Image = CType(resources.GetObject("CboxRel2_08.Image"), System.Drawing.Image)
         Me.CboxRel2_08.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.CboxRel2_08.Location = New System.Drawing.Point(3, 745)
+        Me.CboxRel2_08.Location = New System.Drawing.Point(3, 637)
         Me.CboxRel2_08.Name = "CboxRel2_08"
-        Me.CboxRel2_08.Size = New System.Drawing.Size(240, 70)
+        Me.CboxRel2_08.Size = New System.Drawing.Size(225, 60)
         Me.CboxRel2_08.TabIndex = 11
         Me.CboxRel2_08.Tag = "CboxRel1_08"
         Me.CboxRel2_08.Text = "           Recibo de Venda"
@@ -429,9 +429,9 @@ Partial Class FrmTelaInicial
         Me.CboxRel2_02.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CboxRel2_02.Image = CType(resources.GetObject("CboxRel2_02.Image"), System.Drawing.Image)
         Me.CboxRel2_02.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.CboxRel2_02.Location = New System.Drawing.Point(3, 670)
+        Me.CboxRel2_02.Location = New System.Drawing.Point(3, 574)
         Me.CboxRel2_02.Name = "CboxRel2_02"
-        Me.CboxRel2_02.Size = New System.Drawing.Size(240, 70)
+        Me.CboxRel2_02.Size = New System.Drawing.Size(225, 60)
         Me.CboxRel2_02.TabIndex = 10
         Me.CboxRel2_02.Tag = "CboxRel1_02"
         Me.CboxRel2_02.Text = "          Relatório de Recebimentos"
@@ -450,9 +450,9 @@ Partial Class FrmTelaInicial
         Me.CboxRel2_06.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CboxRel2_06.Image = CType(resources.GetObject("CboxRel2_06.Image"), System.Drawing.Image)
         Me.CboxRel2_06.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.CboxRel2_06.Location = New System.Drawing.Point(3, 521)
+        Me.CboxRel2_06.Location = New System.Drawing.Point(3, 446)
         Me.CboxRel2_06.Name = "CboxRel2_06"
-        Me.CboxRel2_06.Size = New System.Drawing.Size(240, 70)
+        Me.CboxRel2_06.Size = New System.Drawing.Size(225, 60)
         Me.CboxRel2_06.TabIndex = 8
         Me.CboxRel2_06.Tag = "CboxRel1_06"
         Me.CboxRel2_06.Text = "    Relatório Saldo Estoque"
@@ -470,9 +470,9 @@ Partial Class FrmTelaInicial
         Me.CboxMvto2_05.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CboxMvto2_05.Image = CType(resources.GetObject("CboxMvto2_05.Image"), System.Drawing.Image)
         Me.CboxMvto2_05.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.CboxMvto2_05.Location = New System.Drawing.Point(3, 447)
+        Me.CboxMvto2_05.Location = New System.Drawing.Point(3, 383)
         Me.CboxMvto2_05.Name = "CboxMvto2_05"
-        Me.CboxMvto2_05.Size = New System.Drawing.Size(240, 70)
+        Me.CboxMvto2_05.Size = New System.Drawing.Size(225, 60)
         Me.CboxMvto2_05.TabIndex = 7
         Me.CboxMvto2_05.Tag = "CboxMvto1_05"
         Me.CboxMvto2_05.Text = "        Contas a Pagar"
@@ -489,9 +489,9 @@ Partial Class FrmTelaInicial
         Me.BtnSaisSistema.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSaisSistema.Image = CType(resources.GetObject("BtnSaisSistema.Image"), System.Drawing.Image)
         Me.BtnSaisSistema.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnSaisSistema.Location = New System.Drawing.Point(3, 820)
+        Me.BtnSaisSistema.Location = New System.Drawing.Point(3, 701)
         Me.BtnSaisSistema.Name = "BtnSaisSistema"
-        Me.BtnSaisSistema.Size = New System.Drawing.Size(240, 70)
+        Me.BtnSaisSistema.Size = New System.Drawing.Size(225, 60)
         Me.BtnSaisSistema.TabIndex = 12
         Me.BtnSaisSistema.Text = "           Sair do Sistema"
         Me.BtnSaisSistema.UseCompatibleTextRendering = True
@@ -507,9 +507,9 @@ Partial Class FrmTelaInicial
         Me.CboxMvto2_04.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CboxMvto2_04.Image = CType(resources.GetObject("CboxMvto2_04.Image"), System.Drawing.Image)
         Me.CboxMvto2_04.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.CboxMvto2_04.Location = New System.Drawing.Point(3, 373)
+        Me.CboxMvto2_04.Location = New System.Drawing.Point(3, 320)
         Me.CboxMvto2_04.Name = "CboxMvto2_04"
-        Me.CboxMvto2_04.Size = New System.Drawing.Size(240, 70)
+        Me.CboxMvto2_04.Size = New System.Drawing.Size(225, 60)
         Me.CboxMvto2_04.TabIndex = 6
         Me.CboxMvto2_04.Tag = "CboxMvto1_04"
         Me.CboxMvto2_04.Text = "           Contas a Receber"
@@ -526,9 +526,9 @@ Partial Class FrmTelaInicial
         Me.CboxRel2_01.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CboxRel2_01.Image = CType(resources.GetObject("CboxRel2_01.Image"), System.Drawing.Image)
         Me.CboxRel2_01.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.CboxRel2_01.Location = New System.Drawing.Point(3, 596)
+        Me.CboxRel2_01.Location = New System.Drawing.Point(3, 510)
         Me.CboxRel2_01.Name = "CboxRel2_01"
-        Me.CboxRel2_01.Size = New System.Drawing.Size(240, 70)
+        Me.CboxRel2_01.Size = New System.Drawing.Size(225, 60)
         Me.CboxRel2_01.TabIndex = 9
         Me.CboxRel2_01.Tag = "CboxRel1_01"
         Me.CboxRel2_01.Text = "              Relatório de Vendas"
@@ -545,9 +545,9 @@ Partial Class FrmTelaInicial
         Me.CboxMvto2_03.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CboxMvto2_03.Image = CType(resources.GetObject("CboxMvto2_03.Image"), System.Drawing.Image)
         Me.CboxMvto2_03.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.CboxMvto2_03.Location = New System.Drawing.Point(3, 299)
+        Me.CboxMvto2_03.Location = New System.Drawing.Point(3, 256)
         Me.CboxMvto2_03.Name = "CboxMvto2_03"
-        Me.CboxMvto2_03.Size = New System.Drawing.Size(240, 70)
+        Me.CboxMvto2_03.Size = New System.Drawing.Size(225, 60)
         Me.CboxMvto2_03.TabIndex = 5
         Me.CboxMvto2_03.Tag = "CboxMvto1_03"
         Me.CboxMvto2_03.Text = "            Venda de Produtos"
@@ -564,9 +564,9 @@ Partial Class FrmTelaInicial
         Me.CboxMvto2_02.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CboxMvto2_02.Image = CType(resources.GetObject("CboxMvto2_02.Image"), System.Drawing.Image)
         Me.CboxMvto2_02.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.CboxMvto2_02.Location = New System.Drawing.Point(3, 225)
+        Me.CboxMvto2_02.Location = New System.Drawing.Point(3, 192)
         Me.CboxMvto2_02.Name = "CboxMvto2_02"
-        Me.CboxMvto2_02.Size = New System.Drawing.Size(240, 70)
+        Me.CboxMvto2_02.Size = New System.Drawing.Size(225, 60)
         Me.CboxMvto2_02.TabIndex = 4
         Me.CboxMvto2_02.Tag = "CboxMvto1_02"
         Me.CboxMvto2_02.Text = "   Entrada de NFe"
@@ -585,9 +585,9 @@ Partial Class FrmTelaInicial
         Me.CboxMvto2_01.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CboxMvto2_01.Image = CType(resources.GetObject("CboxMvto2_01.Image"), System.Drawing.Image)
         Me.CboxMvto2_01.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.CboxMvto2_01.Location = New System.Drawing.Point(3, 151)
+        Me.CboxMvto2_01.Location = New System.Drawing.Point(3, 129)
         Me.CboxMvto2_01.Name = "CboxMvto2_01"
-        Me.CboxMvto2_01.Size = New System.Drawing.Size(240, 70)
+        Me.CboxMvto2_01.Size = New System.Drawing.Size(225, 60)
         Me.CboxMvto2_01.TabIndex = 3
         Me.CboxMvto2_01.Tag = "CboxMvto1_01"
         Me.CboxMvto2_01.Text = "           Pedido de Compra"
@@ -604,9 +604,9 @@ Partial Class FrmTelaInicial
         Me.CboxCad2_02.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CboxCad2_02.Image = CType(resources.GetObject("CboxCad2_02.Image"), System.Drawing.Image)
         Me.CboxCad2_02.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.CboxCad2_02.Location = New System.Drawing.Point(3, 77)
+        Me.CboxCad2_02.Location = New System.Drawing.Point(3, 66)
         Me.CboxCad2_02.Name = "CboxCad2_02"
-        Me.CboxCad2_02.Size = New System.Drawing.Size(240, 70)
+        Me.CboxCad2_02.Size = New System.Drawing.Size(225, 60)
         Me.CboxCad2_02.TabIndex = 2
         Me.CboxCad2_02.Tag = "CboxCad1_02"
         Me.CboxCad2_02.Text = "            Cadastro de Cliente"
@@ -625,7 +625,7 @@ Partial Class FrmTelaInicial
         Me.CboxCad2_01.ImageAlign = System.Drawing.ContentAlignment.TopLeft
         Me.CboxCad2_01.Location = New System.Drawing.Point(3, 3)
         Me.CboxCad2_01.Name = "CboxCad2_01"
-        Me.CboxCad2_01.Size = New System.Drawing.Size(240, 70)
+        Me.CboxCad2_01.Size = New System.Drawing.Size(225, 60)
         Me.CboxCad2_01.TabIndex = 1
         Me.CboxCad2_01.Tag = "CboxCad1_01"
         Me.CboxCad2_01.Text = "Cadastro de Produtos"
@@ -818,32 +818,32 @@ Partial Class FrmTelaInicial
         Me.DataGrid_AVencer.AllowUserToResizeRows = False
         Me.DataGrid_AVencer.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.DataGrid_AVencer.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        DataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle31.BackColor = System.Drawing.Color.DarkGray
-        DataGridViewCellStyle31.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle31.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle31.SelectionBackColor = System.Drawing.Color.DarkGray
-        DataGridViewCellStyle31.SelectionForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGrid_AVencer.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle31
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkGray
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkGray
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGrid_AVencer.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGrid_AVencer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle32.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle32.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle32.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle32.SelectionBackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGrid_AVencer.DefaultCellStyle = DataGridViewCellStyle32
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGrid_AVencer.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGrid_AVencer.EnableHeadersVisualStyles = False
         Me.DataGrid_AVencer.Location = New System.Drawing.Point(209, 497)
         Me.DataGrid_AVencer.MultiSelect = False
         Me.DataGrid_AVencer.Name = "DataGrid_AVencer"
         Me.DataGrid_AVencer.ReadOnly = True
         Me.DataGrid_AVencer.RowHeadersVisible = False
-        DataGridViewCellStyle33.BackColor = System.Drawing.SystemColors.ControlLightLight
-        DataGridViewCellStyle33.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
-        Me.DataGrid_AVencer.RowsDefaultCellStyle = DataGridViewCellStyle33
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ControlLightLight
+        DataGridViewCellStyle3.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.DataGrid_AVencer.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGrid_AVencer.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGrid_AVencer.Size = New System.Drawing.Size(543, 193)
         Me.DataGrid_AVencer.TabIndex = 143
@@ -881,32 +881,32 @@ Partial Class FrmTelaInicial
         Me.DataGrid_Vencidos.AllowUserToResizeRows = False
         Me.DataGrid_Vencidos.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.DataGrid_Vencidos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        DataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle34.BackColor = System.Drawing.Color.DarkGray
-        DataGridViewCellStyle34.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle34.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle34.SelectionBackColor = System.Drawing.Color.DarkGray
-        DataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGrid_Vencidos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle34
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.DarkGray
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkGray
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGrid_Vencidos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.DataGrid_Vencidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle35.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle35.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle35.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle35.SelectionBackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGrid_Vencidos.DefaultCellStyle = DataGridViewCellStyle35
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGrid_Vencidos.DefaultCellStyle = DataGridViewCellStyle5
         Me.DataGrid_Vencidos.EnableHeadersVisualStyles = False
         Me.DataGrid_Vencidos.Location = New System.Drawing.Point(774, 498)
         Me.DataGrid_Vencidos.MultiSelect = False
         Me.DataGrid_Vencidos.Name = "DataGrid_Vencidos"
         Me.DataGrid_Vencidos.ReadOnly = True
         Me.DataGrid_Vencidos.RowHeadersVisible = False
-        DataGridViewCellStyle36.BackColor = System.Drawing.SystemColors.ControlLightLight
-        DataGridViewCellStyle36.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
-        Me.DataGrid_Vencidos.RowsDefaultCellStyle = DataGridViewCellStyle36
+        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.ControlLightLight
+        DataGridViewCellStyle6.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.DataGrid_Vencidos.RowsDefaultCellStyle = DataGridViewCellStyle6
         Me.DataGrid_Vencidos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGrid_Vencidos.Size = New System.Drawing.Size(543, 193)
         Me.DataGrid_Vencidos.TabIndex = 147
@@ -925,8 +925,20 @@ Partial Class FrmTelaInicial
         Me.PanelMeio.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelMeio.Location = New System.Drawing.Point(0, 24)
         Me.PanelMeio.Name = "PanelMeio"
-        Me.PanelMeio.Size = New System.Drawing.Size(1529, 894)
+        Me.PanelMeio.Size = New System.Drawing.Size(1529, 770)
         Me.PanelMeio.TabIndex = 148
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.Panel1.Controls.Add(Me.GroupBox2)
+        Me.Panel1.Controls.Add(Me.GroupBox4)
+        Me.Panel1.Controls.Add(Me.GroupBox3)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel1.Location = New System.Drawing.Point(1191, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(338, 770)
+        Me.Panel1.TabIndex = 148
         '
         'PanelEsquerda
         '
@@ -947,26 +959,14 @@ Partial Class FrmTelaInicial
         Me.PanelEsquerda.Dock = System.Windows.Forms.DockStyle.Left
         Me.PanelEsquerda.Location = New System.Drawing.Point(0, 0)
         Me.PanelEsquerda.Name = "PanelEsquerda"
-        Me.PanelEsquerda.Size = New System.Drawing.Size(253, 894)
+        Me.PanelEsquerda.Size = New System.Drawing.Size(253, 770)
         Me.PanelEsquerda.TabIndex = 149
-        '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.Panel1.Controls.Add(Me.GroupBox2)
-        Me.Panel1.Controls.Add(Me.GroupBox4)
-        Me.Panel1.Controls.Add(Me.GroupBox3)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel1.Location = New System.Drawing.Point(1197, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(332, 894)
-        Me.Panel1.TabIndex = 148
         '
         'FrmTelaInicial
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1529, 918)
+        Me.ClientSize = New System.Drawing.Size(1529, 794)
         Me.Controls.Add(Me.PanelMeio)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -986,8 +986,8 @@ Partial Class FrmTelaInicial
         CType(Me.DataGrid_Vencidos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelMeio.ResumeLayout(False)
         Me.PanelMeio.PerformLayout()
-        Me.PanelEsquerda.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
+        Me.PanelEsquerda.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

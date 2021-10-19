@@ -63,4 +63,20 @@ Public Class FrmLogin
         'Panel1.Left = (Me.Width / 2) - (Panel1.Width / 2)
 
     End Sub
+
+    Private Sub TxtUsuario_Enter(sender As Object, e As EventArgs) Handles TxtUsuario.Enter
+        CorTxtBox(TxtUsuario, "Am")
+    End Sub
+
+    Private Sub TxtUsuario_Leave(sender As Object, e As EventArgs) Handles TxtUsuario.Leave
+        CorTxtBox(TxtUsuario, "Br")
+    End Sub
+
+    Private Sub TxtSenha_Enter(sender As Object, e As EventArgs) Handles TxtSenha.Enter
+        CorTxtBox(TxtSenha, "Am")
+    End Sub
+
+    Private Sub TxtSenha_Leave(sender As Object, e As EventArgs) Handles TxtSenha.Leave
+        CorTxtBox(TxtSenha, "Br")
+    End Sub
 End Class

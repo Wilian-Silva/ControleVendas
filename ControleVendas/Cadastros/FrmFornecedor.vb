@@ -611,4 +611,53 @@ Line1:
             MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
         End Try
     End Sub
+
+    Private Sub TxtNome_Enter(sender As Object, e As EventArgs) Handles TxtNome.Enter
+        CorTxtBox(TxtNome, "Am")
+
+    End Sub
+
+    Private Sub TxtNome_Leave(sender As Object, e As EventArgs) Handles TxtNome.Leave
+        CorTxtBox(TxtNome, "Br")
+    End Sub
+
+    Private Sub TxtNomeFantasia_Enter(sender As Object, e As EventArgs) Handles TxtNomeFantasia.Enter
+        CorTxtBox(TxtNomeFantasia, "Am")
+    End Sub
+
+    Private Sub TxtNomeFantasia_Leave(sender As Object, e As EventArgs) Handles TxtNomeFantasia.Leave
+        CorTxtBox(TxtNomeFantasia, "Br")
+    End Sub
+
+    Private Sub TxtEndereco_MouseEnter(sender As Object, e As EventArgs) Handles TxtEndereco.MouseEnter
+        CorTxtBox(TxtEndereco, "Am")
+    End Sub
+
+    Private Sub TxtEndereco_MouseHover(sender As Object, e As EventArgs) Handles TxtEndereco.MouseHover
+        CorTxtBox(TxtEndereco, "Br")
+    End Sub
+
+    Private Sub TxtTelefone_Enter(sender As Object, e As EventArgs) Handles TxtTelefone.Enter
+        CorTxtBox(TxtTelefone, "Am")
+    End Sub
+
+    Private Sub TxtTelefone_Leave(sender As Object, e As EventArgs) Handles TxtTelefone.Leave
+        CorTxtBox(TxtTelefone, "Br")
+    End Sub
+
+    Private Sub TxtCNPJ_Enter(sender As Object, e As EventArgs) Handles TxtCNPJ.Enter
+        CorTxtBox(TxtCNPJ, "Am")
+    End Sub
+
+    Private Sub TxtCNPJ_Leave(sender As Object, e As EventArgs) Handles TxtCNPJ.Leave
+        CorTxtBox(TxtCNPJ, "Br")
+    End Sub
+
+    Private Sub TxtCPF_Enter(sender As Object, e As EventArgs) Handles TxtCPF.Enter
+        CorTxtBox(TxtCPF, "Am")
+    End Sub
+
+    Private Sub TxtCPF_Leave(sender As Object, e As EventArgs) Handles TxtCPF.Leave
+        CorTxtBox(TxtCPF, "Br")
+    End Sub
 End Class

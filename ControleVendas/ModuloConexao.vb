@@ -148,4 +148,17 @@ Module ModuloConexao
         Func_Ultimo_Dia_Mes = DateAdd("d", -1, Func_Ultimo_Dia_Mes)
     End Function
 
+    Public Function CorTxtBox(nomeCampo As Control, codCor As String)
+
+        If codCor = "Am" Then
+            nomeCampo.BackColor = Color.LightGoldenrodYellow
+        ElseIf codCor = "Br" Then
+            nomeCampo.BackColor = Color.White
+        Else
+            nomeCampo.BackColor = Color.White
+        End If
+#Disable Warning BC42105 ' A função não retorna um valor em todos os caminhos de código
+    End Function
+#Enable Warning BC42105 ' A função não retorna um valor em todos os caminhos de código
+
 End Module
