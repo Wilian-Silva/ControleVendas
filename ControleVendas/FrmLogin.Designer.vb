@@ -49,19 +49,17 @@ Partial Class FrmLogin
         '
         Me.TxtUsuario.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtUsuario.Location = New System.Drawing.Point(37, 128)
-        Me.TxtUsuario.Multiline = True
         Me.TxtUsuario.Name = "TxtUsuario"
-        Me.TxtUsuario.Size = New System.Drawing.Size(267, 27)
+        Me.TxtUsuario.Size = New System.Drawing.Size(267, 23)
         Me.TxtUsuario.TabIndex = 1
         '
         'TxtSenha
         '
         Me.TxtSenha.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtSenha.Location = New System.Drawing.Point(37, 191)
-        Me.TxtSenha.Multiline = True
         Me.TxtSenha.Name = "TxtSenha"
         Me.TxtSenha.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TxtSenha.Size = New System.Drawing.Size(267, 27)
+        Me.TxtSenha.Size = New System.Drawing.Size(267, 23)
         Me.TxtSenha.TabIndex = 2
         '
         'Label2

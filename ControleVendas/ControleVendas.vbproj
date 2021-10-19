@@ -121,6 +121,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Design" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Drawing.Common, Version=4.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Drawing.Common.5.0.2\lib\net461\System.Drawing.Common.dll</HintPath>
@@ -180,6 +181,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cadastros\FrmBackup.Designer.vb">
+      <DependentUpon>FrmBackup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastros\FrmBackup.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Cadastros\FrmBarCode.Designer.vb">
       <DependentUpon>FrmBarCode.vb</DependentUpon>
     </Compile>
@@ -232,6 +239,18 @@
       <DependentUpon>FrmPagamentoEfetuado.vb</DependentUpon>
     </Compile>
     <Compile Include="Cadastros\FrmPagamentoEfetuado.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastros\FrmPathBackup.Designer.vb">
+      <DependentUpon>FrmPathBackup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastros\FrmPathBackup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastros\FrmPathRestBackup.Designer.vb">
+      <DependentUpon>FrmPathRestBackup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastros\FrmPathRestBackup.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Cadastros\FrmPortador.Designer.vb">
@@ -566,6 +585,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Cadastros\FrmBackup.resx">
+      <DependentUpon>FrmBackup.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Cadastros\FrmBarCode.resx">
       <DependentUpon>FrmBarCode.vb</DependentUpon>
     </EmbeddedResource>
@@ -593,6 +615,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Cadastros\FrmPagamentoEfetuado.resx">
       <DependentUpon>FrmPagamentoEfetuado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastros\FrmPathBackup.resx">
+      <DependentUpon>FrmPathBackup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastros\FrmPathRestBackup.resx">
+      <DependentUpon>FrmPathRestBackup.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cadastros\FrmPortador.resx">
       <DependentUpon>FrmPortador.vb</DependentUpon>

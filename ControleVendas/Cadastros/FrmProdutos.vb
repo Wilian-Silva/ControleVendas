@@ -105,6 +105,8 @@ Public Class FrmProdutos
         DataGrid.Columns(6).Width = 80
         DataGrid.Columns(3).DefaultCellStyle.Format = "c"
         DataGrid.Columns(5).DefaultCellStyle.Format = "c"
+        DataGrid.Columns(4).DefaultCellStyle.Format = "p"
+
 
     End Sub
     Sub DadosCabecalho()
@@ -114,7 +116,7 @@ Public Class FrmProdutos
         TxtNome.Text = DataGrid.CurrentRow.Cells(1).Value
         TxtCodAuxiliar.Text = DataGrid.CurrentRow.Cells(2).Value
         TxtPrecoCompra.Text = DataGrid.CurrentRow.Cells(3).Value
-        TxtMargemVenda.Text = DataGrid.CurrentRow.Cells(4).Value
+        TxtMargemVenda.Text = Format(DataGrid.CurrentRow.Cells(4).Value, "0.00%")
         TxtPrecoVenda.Text = DataGrid.CurrentRow.Cells(5).Value
         TxtSaldoEstoque.Text = DataGrid.CurrentRow.Cells(6).Value
 
@@ -369,7 +371,7 @@ Line1:
 
             margem = (dbl2 - dbl1).ToString("n")
 
-            TxtMargemVenda.Text = (margem / dbl2) * 100
+            TxtMargemVenda.Text = (margem / dbl2)
         End If
 
 
@@ -436,7 +438,7 @@ Line1:
 
             margem = (dbl2 - dbl1).ToString("n")
 
-            TxtMargemVenda.Text = (margem / dbl2) * 100
+            TxtMargemVenda.Text = (margem / dbl2)
         End If
 
     End Sub

@@ -68,4 +68,28 @@ Public Class FrmBarCode
     Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Button2.Click
         PrintDocument1.Print()
     End Sub
+
+
+    Dim CuRWidth As Integer = Me.Width
+    Dim CuRHeight As Integer = Me.Height
+    Sub AjustarTamahoComponentes()
+
+
+        Dim RatioHeight As Double = (Me.Height - CuRHeight) / CuRHeight
+        Dim RatioWidth As Double = (Me.Width - CuRWidth) / CuRWidth
+
+        For Each Ctrl As Control In Controls
+            Ctrl.Width += Ctrl.Width * RatioWidth
+            Ctrl.Left += Ctrl.Left * RatioWidth
+            Ctrl.Top += Ctrl.Top * RatioHeight
+            Ctrl.Height += Ctrl.Height * RatioHeight
+        Next
+        CuRHeight = Me.Height
+        CuRWidth = Me.Width
+
+    End Sub
+
+    Private Sub FrmBarCode_Resize(sender As Object, e As EventArgs) Handles MyBase.Resize
+        AjustarTamahoComponentes()
+    End Sub
 End Class

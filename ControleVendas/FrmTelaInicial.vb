@@ -2,7 +2,23 @@
 
 Public Class FrmTelaInicial
 
+    Dim CuRWidth As Integer = Me.Width
+    Dim CuRHeight As Integer = Me.Height
+    Sub AjustarTamahoComponentes()
 
+        Dim RatioHeight As Double = (Me.Height - CuRHeight) / CuRHeight
+        Dim RatioWidth As Double = (Me.Width - CuRWidth) / CuRWidth
+
+        For Each Ctrl As Control In Controls
+            Ctrl.Width += Ctrl.Width * RatioWidth
+            Ctrl.Left += Ctrl.Left * RatioWidth
+            Ctrl.Top += Ctrl.Top * RatioHeight
+            Ctrl.Height += Ctrl.Height * RatioHeight
+        Next
+        CuRHeight = Me.Height
+        CuRWidth = Me.Width
+
+    End Sub
     Private Sub ProdutosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CboxCad1_01.Click
         Dim form = New FrmProdutos
         form.ShowDialog()
@@ -69,10 +85,9 @@ Public Class FrmTelaInicial
 
     Private Sub BtnSaisSistema_Click(sender As Object, e As EventArgs) Handles BtnSaisSistema.Click
 
-        If MsgBox("Deseja sair do sistema?", vbYesNo, "Logout") = vbYes Then
-            Application.Exit()
+        Dim form = New FrmBackup
+        form.ShowDialog()
 
-        End If
 
     End Sub
 
@@ -133,6 +148,8 @@ Public Class FrmTelaInicial
 
 
     End Sub
+
+
     Private Sub FrmTelaInicial_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         TotalTitulos()
@@ -152,7 +169,7 @@ Public Class FrmTelaInicial
         Dim status As String
         Dim nome As String
 
-        For Each btn In GbBtnAtalhos.Controls
+        For Each btn In PanelEsquerda.Controls 'GbBtnAtalhos.Controls
 
             nome = btn.Tag
 
@@ -543,46 +560,21 @@ Public Class FrmTelaInicial
 
     Private Sub BackupDoBancoDadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BackupDoBancoDadosToolStripMenuItem.Click
 
-        If MsgBox("Deseja efetuar bakcup do banco de dados?", vbYesNo, "Backup Banco de Dados") = vbYes Then
-
-            Try
-                Dim caminho As String
-                caminho = Application.ExecutablePath
-                Abrir()
-                Dim cmd As New MySqlCommand
-                cmd.Connection = con
-                Dim mb As New MySqlBackup(cmd)
-                mb.ExportToFile(caminho + "\Backup\bakcup.sql")
-
-                MsgBox("Backup efetuado com sucesso!!!", MsgBoxStyle.Information, "Backup Banco de Dados")
-            Catch ex As Exception
-                MsgBox("Erro ao fazer backup " + ex.Message)
-            End Try
-
-        End If
+        Dim form = New FrmPathBackup
+        form.ShowDialog()
 
 
     End Sub
 
     Private Sub RestarurarBackupToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RestarurarBackupToolStripMenuItem.Click
 
-        If MsgBox("Deseja restaurar backup do banco de dados?", vbYesNo, "Backup Banco de Dados") = vbYes Then
+        MsgBox("Cuidado: Essa rotina pode causar perda de dados!!! ", MsgBoxStyle.Exclamation, "ATENÇÃO")
 
-            Try
-                Dim caminho As String
-                caminho = Application.ExecutablePath
-                Abrir()
-                Dim cmd As New MySqlCommand
-                cmd.Connection = con
-                Dim mb As New MySqlBackup(cmd)
-                mb.ImportFromFile(caminho + "\Backup\bakcup.sql")
+        Dim form = New FrmPathRestBackup
+        form.ShowDialog()
+    End Sub
 
-                MsgBox("Backup restaurado com sucesso!!!", MsgBoxStyle.Information, "Backup Banco de Dados")
-            Catch ex As Exception
-                MsgBox("Erro ao fazer backup " + ex.Message)
-            End Try
-
-        End If
-
+    Private Sub FrmTelaInicial_Resize(sender As Object, e As EventArgs) Handles MyBase.Resize
+        'AjustarTamahoComponentes()
     End Sub
 End Class
