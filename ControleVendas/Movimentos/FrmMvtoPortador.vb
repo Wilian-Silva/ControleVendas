@@ -3,6 +3,7 @@
 Public Class FrmMvtoPortador
     Private Sub FrmMvtoPortador_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CarregarPortador()
+        CbPortador.Focus()
     End Sub
 
     Private Sub CarregarPortador()
@@ -141,5 +142,29 @@ Public Class FrmMvtoPortador
         End If
         End If
 
+    End Sub
+
+    Private Sub CbPortador_Enter(sender As Object, e As EventArgs) Handles CbPortador.Enter
+        CorTxtBox(CbPortador, "Am")
+    End Sub
+
+    Private Sub CbPortador_Leave(sender As Object, e As EventArgs) Handles CbPortador.Leave
+        CorTxtBox(CbPortador, "Br")
+    End Sub
+
+    Private Sub CbTipoMvto_Enter(sender As Object, e As EventArgs) Handles CbTipoMvto.Enter
+        CorTxtBox(CbTipoMvto, "Am")
+    End Sub
+
+    Private Sub CbTipoMvto_Leave(sender As Object, e As EventArgs) Handles CbTipoMvto.Leave
+        CorTxtBox(CbTipoMvto, "Br")
+    End Sub
+
+    Private Sub TxtValor_Enter(sender As Object, e As EventArgs) Handles TxtValor.Enter
+        CorTxtBox(TxtValor, "Am")
+    End Sub
+
+    Private Sub TxtValor_Leave(sender As Object, e As EventArgs) Handles TxtValor.Leave
+        CorTxtBox(TxtValor, "Br")
     End Sub
 End Class

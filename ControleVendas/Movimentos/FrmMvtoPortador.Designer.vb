@@ -27,6 +27,8 @@ Partial Class FrmMvtoPortador
         Me.BtnSalvar = New System.Windows.Forms.Button()
         Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.TxtMvto = New System.Windows.Forms.TextBox()
         Me.CbTipoMvto = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.CbPortador = New System.Windows.Forms.ComboBox()
@@ -37,8 +39,6 @@ Partial Class FrmMvtoPortador
         Me.DataMvto = New System.Windows.Forms.DateTimePicker()
         Me.TxtIdRegistro = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.TxtMvto = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
@@ -99,6 +99,27 @@ Partial Class FrmMvtoPortador
         Me.GroupBox3.TabIndex = 180
         Me.GroupBox3.TabStop = False
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(181, 101)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(39, 16)
+        Me.Label1.TabIndex = 186
+        Me.Label1.Text = "Mvto."
+        '
+        'TxtMvto
+        '
+        Me.TxtMvto.Enabled = False
+        Me.TxtMvto.Location = New System.Drawing.Point(225, 99)
+        Me.TxtMvto.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtMvto.Name = "TxtMvto"
+        Me.TxtMvto.Size = New System.Drawing.Size(116, 20)
+        Me.TxtMvto.TabIndex = 6
+        '
         'CbTipoMvto
         '
         Me.CbTipoMvto.FormattingEnabled = True
@@ -106,7 +127,7 @@ Partial Class FrmMvtoPortador
         Me.CbTipoMvto.Location = New System.Drawing.Point(81, 57)
         Me.CbTipoMvto.Name = "CbTipoMvto"
         Me.CbTipoMvto.Size = New System.Drawing.Size(86, 21)
-        Me.CbTipoMvto.TabIndex = 184
+        Me.CbTipoMvto.TabIndex = 3
         '
         'Label2
         '
@@ -126,7 +147,7 @@ Partial Class FrmMvtoPortador
         Me.CbPortador.Location = New System.Drawing.Point(81, 23)
         Me.CbPortador.Name = "CbPortador"
         Me.CbPortador.Size = New System.Drawing.Size(86, 21)
-        Me.CbPortador.TabIndex = 182
+        Me.CbPortador.TabIndex = 1
         '
         'Label3
         '
@@ -158,7 +179,7 @@ Partial Class FrmMvtoPortador
         Me.TxtValor.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtValor.Name = "TxtValor"
         Me.TxtValor.Size = New System.Drawing.Size(97, 20)
-        Me.TxtValor.TabIndex = 159
+        Me.TxtValor.TabIndex = 5
         '
         'Label10
         '
@@ -178,7 +199,7 @@ Partial Class FrmMvtoPortador
         Me.DataMvto.Location = New System.Drawing.Point(225, 58)
         Me.DataMvto.Name = "DataMvto"
         Me.DataMvto.Size = New System.Drawing.Size(97, 20)
-        Me.DataMvto.TabIndex = 153
+        Me.DataMvto.TabIndex = 4
         '
         'TxtIdRegistro
         '
@@ -187,7 +208,7 @@ Partial Class FrmMvtoPortador
         Me.TxtIdRegistro.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtIdRegistro.Name = "TxtIdRegistro"
         Me.TxtIdRegistro.Size = New System.Drawing.Size(44, 20)
-        Me.TxtIdRegistro.TabIndex = 129
+        Me.TxtIdRegistro.TabIndex = 2
         Me.TxtIdRegistro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label4
@@ -201,27 +222,6 @@ Partial Class FrmMvtoPortador
         Me.Label4.Size = New System.Drawing.Size(44, 16)
         Me.Label4.TabIndex = 128
         Me.Label4.Text = "Refer:"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(181, 101)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(39, 16)
-        Me.Label1.TabIndex = 186
-        Me.Label1.Text = "Mvto."
-        '
-        'TxtMvto
-        '
-        Me.TxtMvto.Enabled = False
-        Me.TxtMvto.Location = New System.Drawing.Point(225, 99)
-        Me.TxtMvto.Margin = New System.Windows.Forms.Padding(4)
-        Me.TxtMvto.Name = "TxtMvto"
-        Me.TxtMvto.Size = New System.Drawing.Size(116, 20)
-        Me.TxtMvto.TabIndex = 185
         '
         'FrmMvtoPortador
         '

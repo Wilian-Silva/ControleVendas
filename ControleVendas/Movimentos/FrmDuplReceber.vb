@@ -17,7 +17,7 @@ Public Class FrmDuplReceber
     End Sub
 
     Private Sub FrmDuplicatas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Stop
+        TxtParcela.Focus()
 
         CarregarPortador()
 
@@ -188,5 +188,37 @@ Public Class FrmDuplReceber
             TxtTotalDuplicata.BackColor = Color.Salmon
             MsgBox("Campos em branco ou vazios", MsgBoxStyle.Information, "Adicionar duplicatas")
         End If
+    End Sub
+
+    Private Sub TxtParcela_Enter(sender As Object, e As EventArgs) Handles TxtParcela.Enter
+        CorTxtBox(TxtParcela, "Am")
+    End Sub
+
+    Private Sub TxtParcela_Leave(sender As Object, e As EventArgs) Handles TxtParcela.Leave
+        CorTxtBox(TxtParcela, "Br")
+    End Sub
+
+    Private Sub TxtTotalDuplicata_Enter(sender As Object, e As EventArgs) Handles TxtTotalDuplicata.Enter
+        CorTxtBox(TxtTotalDuplicata, "Am")
+    End Sub
+
+    Private Sub TxtTotalDuplicata_Leave(sender As Object, e As EventArgs) Handles TxtTotalDuplicata.Leave
+        CorTxtBox(TxtTotalDuplicata, "Br")
+    End Sub
+
+    Private Sub CbPortador_Enter(sender As Object, e As EventArgs) Handles CbPortador.Enter
+        CorTxtBox(CbPortador, "Am")
+    End Sub
+
+    Private Sub CbPortador_Leave(sender As Object, e As EventArgs) Handles CbPortador.Leave
+        CorTxtBox(CbPortador, "Br")
+    End Sub
+
+    Private Sub TxtObs_Enter(sender As Object, e As EventArgs) Handles TxtObs.Enter
+        CorTxtBox(TxtObs, "Am")
+    End Sub
+
+    Private Sub TxtObs_Leave(sender As Object, e As EventArgs) Handles TxtObs.Leave
+        CorTxtBox(TxtObs, "Br")
     End Sub
 End Class

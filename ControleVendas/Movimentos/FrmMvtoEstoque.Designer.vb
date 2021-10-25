@@ -24,17 +24,17 @@ Partial Class FrmRelMvtoEstoque
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmRelMvtoEstoque))
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.BtnPesqProduto = New System.Windows.Forms.Button()
+        Me.CbTipoMvto = New System.Windows.Forms.ComboBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.TxtQuantidade = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.TxtCodProduto = New System.Windows.Forms.TextBox()
         Me.TxtProduto = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.CbTipoMvto = New System.Windows.Forms.ComboBox()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.BtnSalvar = New System.Windows.Forms.Button()
         Me.BtnCancelar = New System.Windows.Forms.Button()
-        Me.BtnPesqProduto = New System.Windows.Forms.Button()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -56,6 +56,41 @@ Partial Class FrmRelMvtoEstoque
         Me.GroupBox3.TabIndex = 148
         Me.GroupBox3.TabStop = False
         '
+        'BtnPesqProduto
+        '
+        Me.BtnPesqProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.BtnPesqProduto.FlatAppearance.BorderSize = 0
+        Me.BtnPesqProduto.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.BtnPesqProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnPesqProduto.ForeColor = System.Drawing.Color.Transparent
+        Me.BtnPesqProduto.Image = CType(resources.GetObject("BtnPesqProduto.Image"), System.Drawing.Image)
+        Me.BtnPesqProduto.Location = New System.Drawing.Point(310, 16)
+        Me.BtnPesqProduto.Name = "BtnPesqProduto"
+        Me.BtnPesqProduto.Size = New System.Drawing.Size(22, 22)
+        Me.BtnPesqProduto.TabIndex = 3
+        Me.BtnPesqProduto.UseVisualStyleBackColor = True
+        '
+        'CbTipoMvto
+        '
+        Me.CbTipoMvto.FormattingEnabled = True
+        Me.CbTipoMvto.Items.AddRange(New Object() {"Entrada", "Saída"})
+        Me.CbTipoMvto.Location = New System.Drawing.Point(95, 55)
+        Me.CbTipoMvto.Name = "CbTipoMvto"
+        Me.CbTipoMvto.Size = New System.Drawing.Size(108, 21)
+        Me.CbTipoMvto.TabIndex = 4
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(24, 56)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(68, 16)
+        Me.Label1.TabIndex = 187
+        Me.Label1.Text = "Tipo Mvto."
+        '
         'TxtQuantidade
         '
         Me.TxtQuantidade.BackColor = System.Drawing.Color.White
@@ -63,7 +98,7 @@ Partial Class FrmRelMvtoEstoque
         Me.TxtQuantidade.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtQuantidade.Name = "TxtQuantidade"
         Me.TxtQuantidade.Size = New System.Drawing.Size(43, 20)
-        Me.TxtQuantidade.TabIndex = 3
+        Me.TxtQuantidade.TabIndex = 5
         Me.TxtQuantidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label7
@@ -86,19 +121,18 @@ Partial Class FrmRelMvtoEstoque
         Me.TxtCodProduto.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtCodProduto.Name = "TxtCodProduto"
         Me.TxtCodProduto.Size = New System.Drawing.Size(30, 20)
-        Me.TxtCodProduto.TabIndex = 44
+        Me.TxtCodProduto.TabIndex = 1
         Me.TxtCodProduto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TxtProduto
         '
         Me.TxtProduto.BackColor = System.Drawing.Color.White
-        Me.TxtProduto.Enabled = False
         Me.TxtProduto.HideSelection = False
         Me.TxtProduto.Location = New System.Drawing.Point(95, 18)
         Me.TxtProduto.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtProduto.Name = "TxtProduto"
         Me.TxtProduto.Size = New System.Drawing.Size(208, 20)
-        Me.TxtProduto.TabIndex = 1
+        Me.TxtProduto.TabIndex = 2
         '
         'Label2
         '
@@ -111,27 +145,6 @@ Partial Class FrmRelMvtoEstoque
         Me.Label2.Size = New System.Drawing.Size(57, 16)
         Me.Label2.TabIndex = 64
         Me.Label2.Text = "Produto:"
-        '
-        'CbTipoMvto
-        '
-        Me.CbTipoMvto.FormattingEnabled = True
-        Me.CbTipoMvto.Items.AddRange(New Object() {"Entrada", "Saída"})
-        Me.CbTipoMvto.Location = New System.Drawing.Point(95, 55)
-        Me.CbTipoMvto.Name = "CbTipoMvto"
-        Me.CbTipoMvto.Size = New System.Drawing.Size(108, 21)
-        Me.CbTipoMvto.TabIndex = 2
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(24, 56)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(68, 16)
-        Me.Label1.TabIndex = 187
-        Me.Label1.Text = "Tipo Mvto."
         '
         'GroupBox1
         '
@@ -168,21 +181,7 @@ Partial Class FrmRelMvtoEstoque
         Me.BtnCancelar.Text = "Cancelar"
         Me.BtnCancelar.UseVisualStyleBackColor = True
         '
-        'BtnPesqProduto
-        '
-        Me.BtnPesqProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.BtnPesqProduto.FlatAppearance.BorderSize = 0
-        Me.BtnPesqProduto.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.BtnPesqProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnPesqProduto.ForeColor = System.Drawing.Color.Transparent
-        Me.BtnPesqProduto.Image = CType(resources.GetObject("BtnPesqProduto.Image"), System.Drawing.Image)
-        Me.BtnPesqProduto.Location = New System.Drawing.Point(310, 16)
-        Me.BtnPesqProduto.Name = "BtnPesqProduto"
-        Me.BtnPesqProduto.Size = New System.Drawing.Size(22, 22)
-        Me.BtnPesqProduto.TabIndex = 1
-        Me.BtnPesqProduto.UseVisualStyleBackColor = True
-        '
-        'FrmMvtoEstoque
+        'FrmRelMvtoEstoque
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -192,7 +191,7 @@ Partial Class FrmRelMvtoEstoque
         Me.Controls.Add(Me.GroupBox3)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Name = "FrmMvtoEstoque"
+        Me.Name = "FrmRelMvtoEstoque"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Movimentos no Estoque"
         Me.GroupBox3.ResumeLayout(False)

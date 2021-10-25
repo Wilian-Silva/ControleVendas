@@ -102,7 +102,7 @@ Partial Class FrmVlrReceb
         Me.CbPortador.Location = New System.Drawing.Point(112, 97)
         Me.CbPortador.Name = "CbPortador"
         Me.CbPortador.Size = New System.Drawing.Size(86, 21)
-        Me.CbPortador.TabIndex = 180
+        Me.CbPortador.TabIndex = 8
         '
         'Label8
         '
@@ -374,7 +374,7 @@ Partial Class FrmVlrReceb
         Me.BtnSalvar.Location = New System.Drawing.Point(28, 14)
         Me.BtnSalvar.Name = "BtnSalvar"
         Me.BtnSalvar.Size = New System.Drawing.Size(70, 30)
-        Me.BtnSalvar.TabIndex = 168
+        Me.BtnSalvar.TabIndex = 9
         Me.BtnSalvar.TabStop = False
         Me.BtnSalvar.Text = "Salvar"
         Me.BtnSalvar.UseVisualStyleBackColor = True
@@ -386,7 +386,7 @@ Partial Class FrmVlrReceb
         Me.BtnCancelar.Location = New System.Drawing.Point(115, 14)
         Me.BtnCancelar.Name = "BtnCancelar"
         Me.BtnCancelar.Size = New System.Drawing.Size(70, 30)
-        Me.BtnCancelar.TabIndex = 167
+        Me.BtnCancelar.TabIndex = 10
         Me.BtnCancelar.Text = "Cancelar"
         Me.BtnCancelar.UseVisualStyleBackColor = True
         '

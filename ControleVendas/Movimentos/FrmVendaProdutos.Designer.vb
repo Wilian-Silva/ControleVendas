@@ -116,7 +116,7 @@ Partial Class FrmVendaProdutos
         Me.BtnCarregar.Location = New System.Drawing.Point(161, 8)
         Me.BtnCarregar.Name = "BtnCarregar"
         Me.BtnCarregar.Size = New System.Drawing.Size(35, 35)
-        Me.BtnCarregar.TabIndex = 163
+        Me.BtnCarregar.TabIndex = 99
         Me.BtnCarregar.TabStop = False
         Me.ToolTip.SetToolTip(Me.BtnCarregar, "Atualizar")
         Me.BtnCarregar.UseVisualStyleBackColor = True
@@ -128,7 +128,7 @@ Partial Class FrmVendaProdutos
         Me.BtnIncluirItem_venda.Location = New System.Drawing.Point(202, 13)
         Me.BtnIncluirItem_venda.Name = "BtnIncluirItem_venda"
         Me.BtnIncluirItem_venda.Size = New System.Drawing.Size(99, 30)
-        Me.BtnIncluirItem_venda.TabIndex = 175
+        Me.BtnIncluirItem_venda.TabIndex = 13
         Me.BtnIncluirItem_venda.Text = "Incluir"
         Me.ToolTip.SetToolTip(Me.BtnIncluirItem_venda, "Inlcuir item a venda")
         Me.BtnIncluirItem_venda.UseVisualStyleBackColor = True
@@ -144,7 +144,7 @@ Partial Class FrmVendaProdutos
         Me.BtnPesqPedido.Location = New System.Drawing.Point(12, 12)
         Me.BtnPesqPedido.Name = "BtnPesqPedido"
         Me.BtnPesqPedido.Size = New System.Drawing.Size(30, 30)
-        Me.BtnPesqPedido.TabIndex = 140
+        Me.BtnPesqPedido.TabIndex = 99
         Me.ToolTip.SetToolTip(Me.BtnPesqPedido, "Pesquisar venda")
         Me.BtnPesqPedido.UseVisualStyleBackColor = True
         '
@@ -155,7 +155,7 @@ Partial Class FrmVendaProdutos
         Me.BtnOk.Location = New System.Drawing.Point(6, 13)
         Me.BtnOk.Name = "BtnOk"
         Me.BtnOk.Size = New System.Drawing.Size(99, 30)
-        Me.BtnOk.TabIndex = 173
+        Me.BtnOk.TabIndex = 11
         Me.BtnOk.Text = "OK"
         Me.ToolTip.SetToolTip(Me.BtnOk, "Adicionar item")
         Me.BtnOk.UseVisualStyleBackColor = True
@@ -192,7 +192,7 @@ Partial Class FrmVendaProdutos
         Me.BtnAnterior.Location = New System.Drawing.Point(48, 13)
         Me.BtnAnterior.Name = "BtnAnterior"
         Me.BtnAnterior.Size = New System.Drawing.Size(30, 30)
-        Me.BtnAnterior.TabIndex = 141
+        Me.BtnAnterior.TabIndex = 99
         Me.ToolTip.SetToolTip(Me.BtnAnterior, "Anterior")
         Me.BtnAnterior.UseVisualStyleBackColor = True
         '
@@ -203,7 +203,7 @@ Partial Class FrmVendaProdutos
         Me.BtnExcluirItem_venda.Location = New System.Drawing.Point(104, 13)
         Me.BtnExcluirItem_venda.Name = "BtnExcluirItem_venda"
         Me.BtnExcluirItem_venda.Size = New System.Drawing.Size(99, 30)
-        Me.BtnExcluirItem_venda.TabIndex = 172
+        Me.BtnExcluirItem_venda.TabIndex = 12
         Me.BtnExcluirItem_venda.Text = "Eliminar"
         Me.ToolTip.SetToolTip(Me.BtnExcluirItem_venda, "Eliminar item da venda")
         Me.BtnExcluirItem_venda.UseVisualStyleBackColor = True
@@ -223,7 +223,7 @@ Partial Class FrmVendaProdutos
         Me.BtnCacelar.Location = New System.Drawing.Point(519, 9)
         Me.BtnCacelar.Name = "BtnCacelar"
         Me.BtnCacelar.Size = New System.Drawing.Size(35, 35)
-        Me.BtnCacelar.TabIndex = 169
+        Me.BtnCacelar.TabIndex = 99
         Me.BtnCacelar.TabStop = False
         Me.ToolTip.SetToolTip(Me.BtnCacelar, "Cancelar")
         Me.BtnCacelar.UseVisualStyleBackColor = True
@@ -243,7 +243,7 @@ Partial Class FrmVendaProdutos
         Me.BtnLimpar.Location = New System.Drawing.Point(475, 9)
         Me.BtnLimpar.Name = "BtnLimpar"
         Me.BtnLimpar.Size = New System.Drawing.Size(35, 35)
-        Me.BtnLimpar.TabIndex = 168
+        Me.BtnLimpar.TabIndex = 99
         Me.BtnLimpar.TabStop = False
         Me.ToolTip.SetToolTip(Me.BtnLimpar, "Limpar registros")
         Me.BtnLimpar.UseVisualStyleBackColor = True
@@ -263,7 +263,7 @@ Partial Class FrmVendaProdutos
         Me.BtnSalvar.Location = New System.Drawing.Point(561, 10)
         Me.BtnSalvar.Name = "BtnSalvar"
         Me.BtnSalvar.Size = New System.Drawing.Size(35, 35)
-        Me.BtnSalvar.TabIndex = 166
+        Me.BtnSalvar.TabIndex = 99
         Me.BtnSalvar.TabStop = False
         Me.ToolTip.SetToolTip(Me.BtnSalvar, "Salvar ")
         Me.BtnSalvar.UseVisualStyleBackColor = True
@@ -283,7 +283,7 @@ Partial Class FrmVendaProdutos
         Me.BtnSair.Location = New System.Drawing.Point(642, 9)
         Me.BtnSair.Name = "BtnSair"
         Me.BtnSair.Size = New System.Drawing.Size(35, 35)
-        Me.BtnSair.TabIndex = 165
+        Me.BtnSair.TabIndex = 99
         Me.BtnSair.TabStop = False
         Me.ToolTip.SetToolTip(Me.BtnSair, "Sair")
         Me.BtnSair.UseVisualStyleBackColor = True
@@ -303,7 +303,7 @@ Partial Class FrmVendaProdutos
         Me.BtnExcluir.Location = New System.Drawing.Point(604, 8)
         Me.BtnExcluir.Name = "BtnExcluir"
         Me.BtnExcluir.Size = New System.Drawing.Size(35, 35)
-        Me.BtnExcluir.TabIndex = 164
+        Me.BtnExcluir.TabIndex = 99
         Me.BtnExcluir.TabStop = False
         Me.ToolTip.SetToolTip(Me.BtnExcluir, "Excluir ")
         Me.BtnExcluir.UseVisualStyleBackColor = True
@@ -368,7 +368,7 @@ Partial Class FrmVendaProdutos
         Me.BtnPesqProduto.Location = New System.Drawing.Point(323, 49)
         Me.BtnPesqProduto.Name = "BtnPesqProduto"
         Me.BtnPesqProduto.Size = New System.Drawing.Size(22, 22)
-        Me.BtnPesqProduto.TabIndex = 136
+        Me.BtnPesqProduto.TabIndex = 7
         Me.ToolTip.SetToolTip(Me.BtnPesqProduto, "Consultar Produto")
         Me.BtnPesqProduto.UseVisualStyleBackColor = True
         '
@@ -384,7 +384,7 @@ Partial Class FrmVendaProdutos
         Me.BtnPesqCliente.Location = New System.Drawing.Point(650, 16)
         Me.BtnPesqCliente.Name = "BtnPesqCliente"
         Me.BtnPesqCliente.Size = New System.Drawing.Size(22, 22)
-        Me.BtnPesqCliente.TabIndex = 140
+        Me.BtnPesqCliente.TabIndex = 4
         Me.ToolTip.SetToolTip(Me.BtnPesqCliente, "Consultar Fornecedor")
         Me.BtnPesqCliente.UseVisualStyleBackColor = True
         '
@@ -403,7 +403,7 @@ Partial Class FrmVendaProdutos
         Me.BtnNova_venda.Location = New System.Drawing.Point(434, 10)
         Me.BtnNova_venda.Name = "BtnNova_venda"
         Me.BtnNova_venda.Size = New System.Drawing.Size(35, 35)
-        Me.BtnNova_venda.TabIndex = 170
+        Me.BtnNova_venda.TabIndex = 99
         Me.BtnNova_venda.TabStop = False
         Me.ToolTip.SetToolTip(Me.BtnNova_venda, "Adicionar nova venda")
         Me.BtnNova_venda.UseVisualStyleBackColor = False
@@ -436,7 +436,7 @@ Partial Class FrmVendaProdutos
         Me.TxtPesquisar.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtPesquisar.Name = "TxtPesquisar"
         Me.TxtPesquisar.Size = New System.Drawing.Size(27, 20)
-        Me.TxtPesquisar.TabIndex = 172
+        Me.TxtPesquisar.TabIndex = 99
         Me.TxtPesquisar.Visible = False
         '
         'TxtSaldoEstoque
@@ -447,7 +447,7 @@ Partial Class FrmVendaProdutos
         Me.TxtSaldoEstoque.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtSaldoEstoque.Name = "TxtSaldoEstoque"
         Me.TxtSaldoEstoque.Size = New System.Drawing.Size(32, 20)
-        Me.TxtSaldoEstoque.TabIndex = 171
+        Me.TxtSaldoEstoque.TabIndex = 99
         Me.TxtSaldoEstoque.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.TxtSaldoEstoque.Visible = False
         '
@@ -666,7 +666,7 @@ Partial Class FrmVendaProdutos
         Me.TxtValorUnit.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtValorUnit.Name = "TxtValorUnit"
         Me.TxtValorUnit.Size = New System.Drawing.Size(59, 20)
-        Me.TxtValorUnit.TabIndex = 7
+        Me.TxtValorUnit.TabIndex = 9
         '
         'TxtQuantidade
         '
@@ -676,7 +676,7 @@ Partial Class FrmVendaProdutos
         Me.TxtQuantidade.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtQuantidade.Name = "TxtQuantidade"
         Me.TxtQuantidade.Size = New System.Drawing.Size(32, 20)
-        Me.TxtQuantidade.TabIndex = 6
+        Me.TxtQuantidade.TabIndex = 8
         Me.TxtQuantidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label5
@@ -711,7 +711,7 @@ Partial Class FrmVendaProdutos
         Me.TxtValorTotal.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtValorTotal.Name = "TxtValorTotal"
         Me.TxtValorTotal.Size = New System.Drawing.Size(63, 20)
-        Me.TxtValorTotal.TabIndex = 8
+        Me.TxtValorTotal.TabIndex = 10
         '
         'Label1
         '
@@ -733,7 +733,7 @@ Partial Class FrmVendaProdutos
         Me.TxtProduto.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtProduto.Name = "TxtProduto"
         Me.TxtProduto.Size = New System.Drawing.Size(199, 20)
-        Me.TxtProduto.TabIndex = 3
+        Me.TxtProduto.TabIndex = 6
         '
         'DataVenda
         '
@@ -776,7 +776,7 @@ Partial Class FrmVendaProdutos
         Me.TxtCodProduto.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtCodProduto.Name = "TxtCodProduto"
         Me.TxtCodProduto.Size = New System.Drawing.Size(41, 20)
-        Me.TxtCodProduto.TabIndex = 137
+        Me.TxtCodProduto.TabIndex = 5
         Me.TxtCodProduto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TxtCliente
@@ -787,7 +787,7 @@ Partial Class FrmVendaProdutos
         Me.TxtCliente.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtCliente.Name = "TxtCliente"
         Me.TxtCliente.Size = New System.Drawing.Size(135, 20)
-        Me.TxtCliente.TabIndex = 4
+        Me.TxtCliente.TabIndex = 3
         '
         'Label7
         '
@@ -808,7 +808,7 @@ Partial Class FrmVendaProdutos
         Me.TxtIdRegistro.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtIdRegistro.Name = "TxtIdRegistro"
         Me.TxtIdRegistro.Size = New System.Drawing.Size(40, 20)
-        Me.TxtIdRegistro.TabIndex = 129
+        Me.TxtIdRegistro.TabIndex = 99
         Me.TxtIdRegistro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label10
@@ -830,7 +830,7 @@ Partial Class FrmVendaProdutos
         Me.TxtItem.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtItem.Name = "TxtItem"
         Me.TxtItem.Size = New System.Drawing.Size(40, 20)
-        Me.TxtItem.TabIndex = 139
+        Me.TxtItem.TabIndex = 99
         Me.TxtItem.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TxtCodCliente
@@ -841,7 +841,7 @@ Partial Class FrmVendaProdutos
         Me.TxtCodCliente.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtCodCliente.Name = "TxtCodCliente"
         Me.TxtCodCliente.Size = New System.Drawing.Size(41, 20)
-        Me.TxtCodCliente.TabIndex = 141
+        Me.TxtCodCliente.TabIndex = 2
         Me.TxtCodCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'GroupBox3

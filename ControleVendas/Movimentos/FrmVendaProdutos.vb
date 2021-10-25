@@ -1666,6 +1666,7 @@ Line1:
 
             TxtItem.Text = 1
             novaVenda = "True"
+            DataVenda.Focus()
         End If
     End Sub
 
@@ -1674,5 +1675,37 @@ Line1:
             Pesquisar_venda()
         End If
 
+    End Sub
+
+    Private Sub TxtCliente_Enter(sender As Object, e As EventArgs) Handles TxtCliente.Enter
+        CorTxtBox(TxtCliente, "Am")
+    End Sub
+
+    Private Sub TxtCliente_Leave(sender As Object, e As EventArgs) Handles TxtCliente.Leave
+        CorTxtBox(TxtCliente, "Br")
+    End Sub
+
+    Private Sub TxtProduto_Enter(sender As Object, e As EventArgs) Handles TxtProduto.Enter
+        CorTxtBox(TxtProduto, "Am")
+    End Sub
+
+    Private Sub TxtProduto_Leave(sender As Object, e As EventArgs) Handles TxtProduto.Leave
+        CorTxtBox(TxtProduto, "Br")
+    End Sub
+
+    Private Sub TxtQuantidade_Enter(sender As Object, e As EventArgs) Handles TxtQuantidade.Enter
+        CorTxtBox(TxtQuantidade, "Am")
+    End Sub
+
+    Private Sub TxtQuantidade_Leave(sender As Object, e As EventArgs) Handles TxtQuantidade.Leave
+        CorTxtBox(TxtQuantidade, "Br")
+    End Sub
+
+    Private Sub TxtValorUnit_Enter(sender As Object, e As EventArgs) Handles TxtValorUnit.Enter
+        CorTxtBox(TxtValorUnit, "Am")
+    End Sub
+
+    Private Sub TxtValorUnit_Leave(sender As Object, e As EventArgs) Handles TxtValorUnit.Leave
+        CorTxtBox(TxtValorUnit, "Br")
     End Sub
 End Class

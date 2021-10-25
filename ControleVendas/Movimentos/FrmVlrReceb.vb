@@ -161,4 +161,36 @@ Public Class FrmVlrReceb
             MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
         End Try
     End Sub
+
+    Private Sub TxtValorPago_Enter(sender As Object, e As EventArgs) Handles TxtValorPago.Enter
+        CorTxtBox(TxtValorPago, "Am")
+    End Sub
+
+    Private Sub TxtValorPago_Leave(sender As Object, e As EventArgs) Handles TxtValorPago.Leave
+        CorTxtBox(TxtValorPago, "Br")
+    End Sub
+
+    Private Sub TxtMultasJuros_Enter(sender As Object, e As EventArgs) Handles TxtMultasJuros.Enter
+        CorTxtBox(TxtMultasJuros, "Am")
+    End Sub
+
+    Private Sub TxtMultasJuros_Leave(sender As Object, e As EventArgs) Handles TxtMultasJuros.Leave
+        CorTxtBox(TxtMultasJuros, "Br")
+    End Sub
+
+    Private Sub TxtDescontos_Enter(sender As Object, e As EventArgs) Handles TxtDescontos.Enter
+        CorTxtBox(TxtDescontos, "Am")
+    End Sub
+
+    Private Sub TxtDescontos_Leave(sender As Object, e As EventArgs) Handles TxtDescontos.Leave
+        CorTxtBox(TxtDescontos, "Br")
+    End Sub
+
+    Private Sub CbPortador_Enter(sender As Object, e As EventArgs) Handles CbPortador.Enter
+        CorTxtBox(CbPortador, "Am")
+    End Sub
+
+    Private Sub CbPortador_Leave(sender As Object, e As EventArgs) Handles CbPortador.Leave
+        CorTxtBox(CbPortador, "Br")
+    End Sub
 End Class

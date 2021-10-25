@@ -104,6 +104,31 @@ Public Class FrmRelMvtoEstoque
     End Sub
 
     Private Sub FrmMvtoEstoque_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        BtnPesqProduto.Focus()
+
+        TxtProduto.Focus()
+    End Sub
+
+    Private Sub TxtProduto_Enter(sender As Object, e As EventArgs) Handles TxtProduto.Enter
+        CorTxtBox(TxtProduto, "Am")
+    End Sub
+
+    Private Sub TxtProduto_Leave(sender As Object, e As EventArgs) Handles TxtProduto.Leave
+        CorTxtBox(TxtProduto, "Br")
+    End Sub
+
+    Private Sub CbTipoMvto_Enter(sender As Object, e As EventArgs) Handles CbTipoMvto.Enter
+        CorTxtBox(CbTipoMvto, "Am")
+    End Sub
+
+    Private Sub CbTipoMvto_Leave(sender As Object, e As EventArgs) Handles CbTipoMvto.Leave
+        CorTxtBox(CbTipoMvto, "Br")
+    End Sub
+
+    Private Sub TxtQuantidade_Enter(sender As Object, e As EventArgs) Handles TxtQuantidade.Enter
+        CorTxtBox(TxtQuantidade, "Am")
+    End Sub
+
+    Private Sub TxtQuantidade_Leave(sender As Object, e As EventArgs) Handles TxtQuantidade.Leave
+        CorTxtBox(TxtQuantidade, "Br")
     End Sub
 End Class
