@@ -56,7 +56,7 @@ Partial Class FrmDuplicatas
         Me.TxtParcela.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtParcela.Name = "TxtParcela"
         Me.TxtParcela.Size = New System.Drawing.Size(45, 20)
-        Me.TxtParcela.TabIndex = 131
+        Me.TxtParcela.TabIndex = 1
         Me.TxtParcela.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label7
@@ -90,7 +90,7 @@ Partial Class FrmDuplicatas
         Me.TxtNotaFiscal.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtNotaFiscal.Name = "TxtNotaFiscal"
         Me.TxtNotaFiscal.Size = New System.Drawing.Size(97, 20)
-        Me.TxtNotaFiscal.TabIndex = 132
+        Me.TxtNotaFiscal.TabIndex = 3
         '
         'Label1
         '
@@ -111,7 +111,7 @@ Partial Class FrmDuplicatas
         Me.DataEmissao.Location = New System.Drawing.Point(133, 71)
         Me.DataEmissao.Name = "DataEmissao"
         Me.DataEmissao.Size = New System.Drawing.Size(97, 20)
-        Me.DataEmissao.TabIndex = 134
+        Me.DataEmissao.TabIndex = 5
         '
         'Label3
         '
@@ -131,7 +131,7 @@ Partial Class FrmDuplicatas
         Me.DataVencimento.Location = New System.Drawing.Point(134, 105)
         Me.DataVencimento.Name = "DataVencimento"
         Me.DataVencimento.Size = New System.Drawing.Size(97, 20)
-        Me.DataVencimento.TabIndex = 136
+        Me.DataVencimento.TabIndex = 6
         '
         'Label4
         '
@@ -151,7 +151,7 @@ Partial Class FrmDuplicatas
         Me.TxtTotalDuplicata.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtTotalDuplicata.Name = "TxtTotalDuplicata"
         Me.TxtTotalDuplicata.Size = New System.Drawing.Size(96, 20)
-        Me.TxtTotalDuplicata.TabIndex = 138
+        Me.TxtTotalDuplicata.TabIndex = 8
         '
         'CbQtdDias
         '
@@ -160,7 +160,7 @@ Partial Class FrmDuplicatas
         Me.CbQtdDias.Location = New System.Drawing.Point(305, 104)
         Me.CbQtdDias.Name = "CbQtdDias"
         Me.CbQtdDias.Size = New System.Drawing.Size(57, 21)
-        Me.CbQtdDias.TabIndex = 159
+        Me.CbQtdDias.TabIndex = 7
         '
         'Label5
         '
@@ -193,7 +193,7 @@ Partial Class FrmDuplicatas
         Me.TxtObs.Multiline = True
         Me.TxtObs.Name = "TxtObs"
         Me.TxtObs.Size = New System.Drawing.Size(283, 45)
-        Me.TxtObs.TabIndex = 161
+        Me.TxtObs.TabIndex = 9
         '
         'BtnOk
         '
@@ -265,7 +265,7 @@ Partial Class FrmDuplicatas
         Me.TxtIdFornecedor.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtIdFornecedor.Name = "TxtIdFornecedor"
         Me.TxtIdFornecedor.Size = New System.Drawing.Size(45, 20)
-        Me.TxtIdFornecedor.TabIndex = 165
+        Me.TxtIdFornecedor.TabIndex = 4
         Me.TxtIdFornecedor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label8
@@ -287,7 +287,7 @@ Partial Class FrmDuplicatas
         Me.TxtIdREg.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtIdREg.Name = "TxtIdREg"
         Me.TxtIdREg.Size = New System.Drawing.Size(45, 20)
-        Me.TxtIdREg.TabIndex = 163
+        Me.TxtIdREg.TabIndex = 2
         Me.TxtIdREg.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'GroupBox1

@@ -1035,4 +1035,52 @@ Line1:
 
 
     End Sub
+
+    Private Sub TxtPedido_Enter(sender As Object, e As EventArgs) Handles TxtPedido.Enter
+        CorTxtBox(TxtPedido, "Am")
+    End Sub
+
+    Private Sub TxtPedido_Leave(sender As Object, e As EventArgs) Handles TxtPedido.Leave
+        CorTxtBox(TxtPedido, "Br")
+    End Sub
+
+    Private Sub DataPed_Enter(sender As Object, e As EventArgs) Handles DataPed.Enter
+        CorTxtBox(DataPed, "Am")
+    End Sub
+
+    Private Sub DataPed_Leave(sender As Object, e As EventArgs) Handles DataPed.Leave
+        CorTxtBox(DataPed, "Br")
+    End Sub
+
+    Private Sub TxtFornecedor_Enter(sender As Object, e As EventArgs) Handles TxtFornecedor.Enter
+        CorTxtBox(TxtFornecedor, "Am")
+    End Sub
+
+    Private Sub TxtFornecedor_Leave(sender As Object, e As EventArgs) Handles TxtFornecedor.Leave
+        CorTxtBox(TxtFornecedor, "Br")
+    End Sub
+
+    Private Sub TxtProduto_Enter(sender As Object, e As EventArgs) Handles TxtProduto.Enter
+        CorTxtBox(TxtProduto, "Am")
+    End Sub
+
+    Private Sub TxtProduto_Leave(sender As Object, e As EventArgs) Handles TxtProduto.Leave
+        CorTxtBox(TxtProduto, "Br")
+    End Sub
+
+    Private Sub TxtQuantidade_Enter(sender As Object, e As EventArgs) Handles TxtQuantidade.Enter
+        CorTxtBox(TxtQuantidade, "Am")
+    End Sub
+
+    Private Sub TxtQuantidade_Leave(sender As Object, e As EventArgs) Handles TxtQuantidade.Leave
+        CorTxtBox(TxtQuantidade, "Br")
+    End Sub
+
+    Private Sub TxtValorUnit_Enter(sender As Object, e As EventArgs) Handles TxtValorUnit.Enter
+        CorTxtBox(TxtValorUnit, "Am")
+    End Sub
+
+    Private Sub TxtValorUnit_Leave(sender As Object, e As EventArgs) Handles TxtValorUnit.Leave
+        CorTxtBox(TxtValorUnit, "Br")
+    End Sub
 End Class

@@ -153,11 +153,12 @@ Public Class FrmProdutos
     End Sub
     Private Sub BtnNovo_Click(sender As Object, e As EventArgs) Handles BtnNovo.Click
 
-        novoProduto = "True"
+
 
         LimparCampos()
         HabilitarCampos()
         TxtNome.Focus()
+        novoProduto = "True"
 
 
     End Sub
@@ -427,7 +428,7 @@ Line1:
     End Sub
 
     Private Sub TxtPrecoVenda_TextChanged_1(sender As Object, e As EventArgs) Handles TxtPrecoVenda.TextChanged
-
+        'Stop
         If novoProduto = "True" Or editarProduto = "Editar" Then
 
             Dim margem As Integer

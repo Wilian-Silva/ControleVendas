@@ -6,6 +6,7 @@ Public Class FrmEntrada
     Dim maximo As Integer
     Private Sub FrmEntrada_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ListarUltimaNota()
+
     End Sub
     Private Sub BtnPesqPedido_Click(sender As Object, e As EventArgs) Handles BtnPesqPedido.Click
 
@@ -40,6 +41,7 @@ Public Class FrmEntrada
     End Sub
     Sub HabilitarCampos()
 
+        TxtDescPed.Enabled = True
         TxtNotaFiscal.Enabled = True
         BtnPesqPedido.Enabled = True
         DataEmissao.Enabled = True
@@ -51,6 +53,7 @@ Public Class FrmEntrada
         TxtNotaFiscal.Enabled = False
         BtnPesqPedido.Enabled = False
         DataEmissao.Enabled = False
+        TxtDescPed.Enabled = False
 
         BtnEditar.Enabled = True
         BtnAtualizar.Enabled = True
@@ -547,6 +550,8 @@ Public Class FrmEntrada
 
     Private Sub BtnNovo_Click(sender As Object, e As EventArgs) Handles BtnNovo.Click
 
+
+
         LimparCampos()
 
         HabilitarCampos()
@@ -555,7 +560,7 @@ Public Class FrmEntrada
 
         novaEntrada = "True"
 
-
+        TxtNotaFiscal.Focus()
     End Sub
     Sub SalvarStatusPedido()
         Abrir()
@@ -1143,5 +1148,21 @@ Line1:
 
         Dim form = New FrmNotasEntrada
         form.ShowDialog()
+    End Sub
+
+    Private Sub TxtNotaFiscal_Enter(sender As Object, e As EventArgs) Handles TxtNotaFiscal.Enter
+        CorTxtBox(TxtNotaFiscal, "Am")
+    End Sub
+
+    Private Sub TxtNotaFiscal_Leave(sender As Object, e As EventArgs) Handles TxtNotaFiscal.Leave
+        CorTxtBox(TxtNotaFiscal, "Br")
+    End Sub
+
+    Private Sub TxtDescPed_Enter(sender As Object, e As EventArgs) Handles TxtDescPed.Enter
+        CorTxtBox(TxtDescPed, "Am")
+    End Sub
+
+    Private Sub TxtDescPed_Leave(sender As Object, e As EventArgs) Handles TxtDescPed.Leave
+        CorTxtBox(TxtDescPed, "Br")
     End Sub
 End Class

@@ -210,7 +210,7 @@ Partial Class FrmAddItemPedido
         Me.BtnPesqProduto.Location = New System.Drawing.Point(358, 102)
         Me.BtnPesqProduto.Name = "BtnPesqProduto"
         Me.BtnPesqProduto.Size = New System.Drawing.Size(22, 22)
-        Me.BtnPesqProduto.TabIndex = 136
+        Me.BtnPesqProduto.TabIndex = 2
         Me.BtnPesqProduto.UseVisualStyleBackColor = True
         '
         'Label2
@@ -259,12 +259,11 @@ Partial Class FrmAddItemPedido
         'TxtProduto
         '
         Me.TxtProduto.BackColor = System.Drawing.Color.White
-        Me.TxtProduto.Enabled = False
         Me.TxtProduto.Location = New System.Drawing.Point(144, 103)
         Me.TxtProduto.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtProduto.Name = "TxtProduto"
         Me.TxtProduto.Size = New System.Drawing.Size(207, 20)
-        Me.TxtProduto.TabIndex = 3
+        Me.TxtProduto.TabIndex = 1
         '
         'Label1
         '
@@ -319,7 +318,7 @@ Partial Class FrmAddItemPedido
         Me.TxtQuantidade.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtQuantidade.Name = "TxtQuantidade"
         Me.TxtQuantidade.Size = New System.Drawing.Size(42, 20)
-        Me.TxtQuantidade.TabIndex = 6
+        Me.TxtQuantidade.TabIndex = 3
         Me.TxtQuantidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TxtValorUnit
@@ -329,7 +328,7 @@ Partial Class FrmAddItemPedido
         Me.TxtValorUnit.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtValorUnit.Name = "TxtValorUnit"
         Me.TxtValorUnit.Size = New System.Drawing.Size(59, 20)
-        Me.TxtValorUnit.TabIndex = 7
+        Me.TxtValorUnit.TabIndex = 4
         '
         'Label4
         '
