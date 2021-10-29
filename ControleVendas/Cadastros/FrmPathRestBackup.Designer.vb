@@ -28,15 +28,11 @@ Partial Class FrmPathRestBackup
         Me.Label6 = New System.Windows.Forms.Label()
         Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.BtnBackup = New System.Windows.Forms.Button()
-        Me.TxtCaminhoBackup = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
-        Me.BtnCaminhoBakcup = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -74,7 +70,7 @@ Partial Class FrmPathRestBackup
         '
         'BtnCancelar
         '
-        Me.BtnCancelar.Location = New System.Drawing.Point(322, 174)
+        Me.BtnCancelar.Location = New System.Drawing.Point(322, 170)
         Me.BtnCancelar.Name = "BtnCancelar"
         Me.BtnCancelar.Size = New System.Drawing.Size(130, 45)
         Me.BtnCancelar.TabIndex = 154
@@ -84,38 +80,16 @@ Partial Class FrmPathRestBackup
         'BtnBackup
         '
         Me.BtnBackup.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnBackup.Location = New System.Drawing.Point(138, 174)
+        Me.BtnBackup.Location = New System.Drawing.Point(138, 170)
         Me.BtnBackup.Name = "BtnBackup"
         Me.BtnBackup.Size = New System.Drawing.Size(160, 45)
         Me.BtnBackup.TabIndex = 153
         Me.BtnBackup.Text = "Restaurar Backup"
         Me.BtnBackup.UseVisualStyleBackColor = True
         '
-        'TxtCaminhoBackup
-        '
-        Me.TxtCaminhoBackup.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.TxtCaminhoBackup.Location = New System.Drawing.Point(12, 137)
-        Me.TxtCaminhoBackup.Name = "TxtCaminhoBackup"
-        Me.TxtCaminhoBackup.Size = New System.Drawing.Size(566, 20)
-        Me.TxtCaminhoBackup.TabIndex = 151
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(13, 109)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(210, 25)
-        Me.Label7.TabIndex = 150
-        Me.Label7.Text = "Destino do Backup"
-        '
-        'OpenFileDialog1
-        '
-        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
-        '
         'ProgressBar1
         '
-        Me.ProgressBar1.Location = New System.Drawing.Point(12, 247)
+        Me.ProgressBar1.Location = New System.Drawing.Point(18, 130)
         Me.ProgressBar1.Name = "ProgressBar1"
         Me.ProgressBar1.Size = New System.Drawing.Size(566, 23)
         Me.ProgressBar1.Step = 5
@@ -128,7 +102,7 @@ Partial Class FrmPathRestBackup
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.ForestGreen
-        Me.Label2.Location = New System.Drawing.Point(186, 227)
+        Me.Label2.Location = New System.Drawing.Point(192, 110)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(248, 16)
         Me.Label2.TabIndex = 157
@@ -137,51 +111,38 @@ Partial Class FrmPathRestBackup
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(580, 253)
+        Me.Label3.Location = New System.Drawing.Point(586, 136)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(43, 13)
         Me.Label3.TabIndex = 158
         Me.Label3.Text = "            "
         '
-        'BackgroundWorker1
-        '
-        Me.BackgroundWorker1.WorkerSupportsCancellation = True
-        '
-        'BtnCaminhoBakcup
-        '
-        Me.BtnCaminhoBakcup.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnCaminhoBakcup.Location = New System.Drawing.Point(578, 136)
-        Me.BtnCaminhoBakcup.Name = "BtnCaminhoBakcup"
-        Me.BtnCaminhoBakcup.Size = New System.Drawing.Size(27, 22)
-        Me.BtnCaminhoBakcup.TabIndex = 159
-        Me.BtnCaminhoBakcup.Text = "..."
-        Me.BtnCaminhoBakcup.UseVisualStyleBackColor = True
-        '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(15, 229)
+        Me.Label4.Location = New System.Drawing.Point(21, 112)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(43, 13)
         Me.Label4.TabIndex = 160
         Me.Label4.Text = "            "
+        '
+        'BackgroundWorker1
+        '
+        Me.BackgroundWorker1.WorkerSupportsCancellation = True
         '
         'FrmPathRestBackup
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(647, 281)
+        Me.ClientSize = New System.Drawing.Size(647, 233)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.BtnCaminhoBakcup)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.ProgressBar1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.BtnCancelar)
         Me.Controls.Add(Me.BtnBackup)
-        Me.Controls.Add(Me.TxtCaminhoBackup)
-        Me.Controls.Add(Me.Label7)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
@@ -200,13 +161,9 @@ Partial Class FrmPathRestBackup
     Friend WithEvents Label6 As Label
     Friend WithEvents BtnCancelar As Button
     Friend WithEvents BtnBackup As Button
-    Friend WithEvents TxtCaminhoBackup As TextBox
-    Friend WithEvents Label7 As Label
-    Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents ProgressBar1 As ProgressBar
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
-    Friend WithEvents BtnCaminhoBakcup As Button
     Friend WithEvents Label4 As Label
+    Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
 End Class

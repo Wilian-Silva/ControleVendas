@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FrmBackup
     Inherits System.Windows.Forms.Form
 
     'Descartar substituições de formulário para limpar a lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class FrmBackup
     'OBSERVAÇÃO: o procedimento a seguir é exigido pelo Windows Form Designer
     'Pode ser modificado usando o Windows Form Designer.  
     'Não o modifique usando o editor de códigos.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmBackup))
         Me.Label1 = New System.Windows.Forms.Label()
@@ -30,13 +30,13 @@ Partial Class FrmBackup
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.TxtCaminhoBackup = New System.Windows.Forms.TextBox()
         Me.BtnBackup = New System.Windows.Forms.Button()
         Me.BtnCancelar = New System.Windows.Forms.Button()
-        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
-        Me.BtnCaminhoBakcup = New System.Windows.Forms.Button()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
+        Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -117,28 +117,10 @@ Partial Class FrmBackup
         Me.Label2.TabIndex = 1
         Me.Label2.Text = resources.GetString("Label2.Text")
         '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(12, 330)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(210, 25)
-        Me.Label7.TabIndex = 2
-        Me.Label7.Text = "Destino do Backup"
-        '
-        'TxtCaminhoBackup
-        '
-        Me.TxtCaminhoBackup.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.TxtCaminhoBackup.Location = New System.Drawing.Point(17, 358)
-        Me.TxtCaminhoBackup.Name = "TxtCaminhoBackup"
-        Me.TxtCaminhoBackup.Size = New System.Drawing.Size(566, 20)
-        Me.TxtCaminhoBackup.TabIndex = 3
-        '
         'BtnBackup
         '
         Me.BtnBackup.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnBackup.Location = New System.Drawing.Point(155, 395)
+        Me.BtnBackup.Location = New System.Drawing.Point(134, 385)
         Me.BtnBackup.Name = "BtnBackup"
         Me.BtnBackup.Size = New System.Drawing.Size(160, 45)
         Me.BtnBackup.TabIndex = 138
@@ -147,38 +129,68 @@ Partial Class FrmBackup
         '
         'BtnCancelar
         '
-        Me.BtnCancelar.Location = New System.Drawing.Point(339, 395)
+        Me.BtnCancelar.Location = New System.Drawing.Point(318, 385)
         Me.BtnCancelar.Name = "BtnCancelar"
         Me.BtnCancelar.Size = New System.Drawing.Size(130, 45)
         Me.BtnCancelar.TabIndex = 139
         Me.BtnCancelar.Text = "Cancelar"
         Me.BtnCancelar.UseVisualStyleBackColor = True
         '
-        'OpenFileDialog1
+        'Label7
         '
-        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(15, 334)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(43, 13)
+        Me.Label7.TabIndex = 164
+        Me.Label7.Text = "            "
         '
-        'BtnCaminhoBakcup
+        'Label8
         '
-        Me.BtnCaminhoBakcup.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnCaminhoBakcup.Location = New System.Drawing.Point(583, 357)
-        Me.BtnCaminhoBakcup.Name = "BtnCaminhoBakcup"
-        Me.BtnCaminhoBakcup.Size = New System.Drawing.Size(27, 22)
-        Me.BtnCaminhoBakcup.TabIndex = 160
-        Me.BtnCaminhoBakcup.Text = "..."
-        Me.BtnCaminhoBakcup.UseVisualStyleBackColor = True
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(580, 358)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(43, 13)
+        Me.Label8.TabIndex = 163
+        Me.Label8.Text = "            "
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.ForestGreen
+        Me.Label9.Location = New System.Drawing.Point(186, 332)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(248, 16)
+        Me.Label9.TabIndex = 162
+        Me.Label9.Text = "                                                            "
+        '
+        'ProgressBar1
+        '
+        Me.ProgressBar1.Location = New System.Drawing.Point(12, 352)
+        Me.ProgressBar1.Name = "ProgressBar1"
+        Me.ProgressBar1.Size = New System.Drawing.Size(566, 23)
+        Me.ProgressBar1.Step = 5
+        Me.ProgressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee
+        Me.ProgressBar1.TabIndex = 161
+        Me.ProgressBar1.Visible = False
+        '
+        'BackgroundWorker1
+        '
+        Me.BackgroundWorker1.WorkerSupportsCancellation = True
         '
         'FrmBackup
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(651, 461)
-        Me.Controls.Add(Me.BtnCaminhoBakcup)
+        Me.ClientSize = New System.Drawing.Size(651, 460)
+        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.ProgressBar1)
         Me.Controls.Add(Me.BtnCancelar)
         Me.Controls.Add(Me.BtnBackup)
-        Me.Controls.Add(Me.TxtCaminhoBackup)
-        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -201,11 +213,11 @@ Partial Class FrmBackup
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents Label7 As Label
-    Friend WithEvents TxtCaminhoBackup As TextBox
     Friend WithEvents BtnBackup As Button
     Friend WithEvents BtnCancelar As Button
-    Friend WithEvents OpenFileDialog1 As OpenFileDialog
-    Friend WithEvents FolderBrowserDialog1 As FolderBrowserDialog
-    Friend WithEvents BtnCaminhoBakcup As Button
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label9 As Label
+    Friend WithEvents ProgressBar1 As ProgressBar
+    Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
 End Class

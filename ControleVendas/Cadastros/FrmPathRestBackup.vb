@@ -1,7 +1,9 @@
 ﻿Imports System.ComponentModel
+Imports System.IO
 Imports MySql.Data.MySqlClient
 
 Public Class FrmPathRestBackup
+    Dim caminho2 As String
     Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
 
         If BackgroundWorker1.IsBusy Then
@@ -16,19 +18,13 @@ Public Class FrmPathRestBackup
 
     End Sub
 
-    Private Sub BtnCaminhoBakcup_Click(sender As Object, e As EventArgs) Handles BtnCaminhoBakcup.Click
-
-        OpenFileDialog1.Filter = "sql files | *.sql"
-        OpenFileDialog1.FileName = ""
-        If OpenFileDialog1.ShowDialog() = DialogResult.OK Then
-            TxtCaminhoBackup.Text = OpenFileDialog1.FileName
-        End If
-
-    End Sub
-
     Private Sub BtnBackup_Click(sender As Object, e As EventArgs) Handles BtnBackup.Click
 
-        If TxtCaminhoBackup.Text <> "" Then
+        Dim openFileDialog1 As New OpenFileDialog
+        openFileDialog1.Filter = "Ficheiros sql (*.sql)|*.sql"
+
+        If openFileDialog1.ShowDialog() = Windows.Forms.DialogResult.OK Then
+            caminho2 = openFileDialog1.FileName
 
             If MsgBox("Deseja restaurar backup do banco de dados?", vbYesNo, "Backup Banco de Dados") = vbYes Then
 
@@ -38,40 +34,16 @@ Public Class FrmPathRestBackup
                     ProgressBar1.Style = ProgressBarStyle.Marquee
                     ProgressBar1.MarqueeAnimationSpeed = 4
                     Label4.Text = "Processando..."
-
                     BackgroundWorker1.RunWorkerAsync()
 
                 End If
 
             End If
+
         Else
-            MsgBox("Arquivo não selecionado!!!", MsgBoxStyle.Information, "Backup Banco de Dados")
-
+            MsgBox("Restauração de Backup cancelada.", MsgBoxStyle.Information)
         End If
 
-    End Sub
-
-
-    Private Sub RestaurarBackup()
-        If MsgBox("Deseja restaurar backup do banco de dados?", vbYesNo, "Backup Banco de Dados") = vbYes Then
-
-            Try
-                Dim caminho As String
-                caminho = TxtCaminhoBackup.Text
-                Abrir()
-                Dim cmd As New MySqlCommand
-                cmd.Connection = con
-                Dim mb As New MySqlBackup(cmd)
-                mb.ImportFromFile(caminho)
-
-                MsgBox("Backup restaurado com sucesso!!!", MsgBoxStyle.Information, "Backup Banco de Dados")
-
-                Me.Close()
-            Catch ex As Exception
-                MsgBox("Erro ao fazer backup " + ex.Message)
-            End Try
-
-        End If
     End Sub
 
     Private Sub FrmPathRestBackup_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
@@ -83,25 +55,33 @@ Public Class FrmPathRestBackup
         BackgroundWorker1.WorkerSupportsCancellation = True
 
         Try
-            Dim caminho As String
-            caminho = TxtCaminhoBackup.Text
-            Abrir()
-            Dim cmd As New MySqlCommand
-            cmd.Connection = con
-            Dim mb As New MySqlBackup(cmd)
-            mb.ImportFromFile(caminho)
+            Dim caminhodump As String
+            caminhodump = Application.StartupPath
+
+            Dim myProcess As New Process()
+            myProcess.StartInfo.CreateNoWindow = True
+            myProcess.StartInfo.FileName = "cmd.exe"
+            myProcess.StartInfo.UseShellExecute = False
+            myProcess.StartInfo.WorkingDirectory = "c:\"
+            myProcess.StartInfo.RedirectStandardInput = True
+            myProcess.StartInfo.RedirectStandardOutput = True
+            myProcess.Start()
+            Dim myStreamWriter As StreamWriter = myProcess.StandardInput
+            Dim mystreamreader As StreamReader = myProcess.StandardOutput
+            myStreamWriter.WriteLine(caminhodump & "\mysql.exe --host=localhost --user=root --password=  controle_vendas < " & caminho2 & " ")
+
+            myStreamWriter.Close()
+            myProcess.WaitForExit()
+            myProcess.Close()
+
         Catch ex As Exception
-            MsgBox("Erro ao fazer backup " + ex.Message)
+
+            MsgBox("Erro ao restaurar a base de dados.", MsgBoxStyle.Critical, "Erro")
+
         End Try
-
-
-
     End Sub
 
-
     Private Sub BackgroundWorker1_RunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs) Handles BackgroundWorker1.RunWorkerCompleted
-
-
 
         ProgressBar1.Style = ProgressBarStyle.Blocks
         ProgressBar1.Value = 100
@@ -110,6 +90,5 @@ Public Class FrmPathRestBackup
         Label2.Text = "Backup restaurado com sucesso!!!"
 
     End Sub
-
 
 End Class
