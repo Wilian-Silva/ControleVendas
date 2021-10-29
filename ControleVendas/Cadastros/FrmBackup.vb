@@ -1,8 +1,11 @@
-﻿Imports MySql.Data.MySqlClient
+﻿
+
+
+Imports MySql.Data.MySqlClient
 
 Public Class FrmBackup
     Private Sub BtnBackup_Click(sender As Object, e As EventArgs) Handles BtnBackup.Click
-
+        '    Stop
         If MsgBox("Deseja efetuar bakcup do banco de dados?", vbYesNo, "Backup Banco de Dados") = vbYes Then
 
             Try
@@ -43,12 +46,7 @@ Public Class FrmBackup
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
 
-
-
-
-    End Sub
 
     Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
 
@@ -58,4 +56,5 @@ Public Class FrmBackup
 
 
     End Sub
+
 End Class

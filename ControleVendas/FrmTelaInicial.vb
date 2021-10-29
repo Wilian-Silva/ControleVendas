@@ -100,28 +100,29 @@ Public Class FrmTelaInicial
     End Sub
 
     Sub FormatarGridTelaIncial()
-        DataGrid_AVencer.Columns(0).HeaderText = "Cliente"
-        DataGrid_AVencer.Columns(1).HeaderText = "Nº Venda"
-        DataGrid_AVencer.Columns(2).HeaderText = "Parcela"
-        DataGrid_AVencer.Columns(3).HeaderText = "Vencimento"
-        DataGrid_AVencer.Columns(4).HeaderText = "Valor Parcela"
-        DataGrid_AVencer.Columns(5).HeaderText = "Saldo Parcela"
-        DataGrid_AVencer.Columns(6).HeaderText = "Observação"
-        DataGrid_AVencer.Columns(4).DefaultCellStyle.Format = "c"
-        DataGrid_AVencer.Columns(5).DefaultCellStyle.Format = "c"
-        DataGrid_AVencer.Columns(0).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft
-        DataGrid_AVencer.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-        DataGrid_AVencer.Columns(1).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
-        DataGrid_AVencer.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-        DataGrid_AVencer.Columns(2).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
-        DataGrid_AVencer.Columns(0).Width = 122
-        DataGrid_AVencer.Columns(2).Width = 50
-        DataGrid_AVencer.Columns(1).Width = 50
+        DataGrid_APagar.Columns(0).HeaderText = "Fornecedor"
+        DataGrid_APagar.Columns(1).HeaderText = "NF"
+        DataGrid_APagar.Columns(2).HeaderText = "Parcela"
+        DataGrid_APagar.Columns(3).HeaderText = "Vencimento"
+        DataGrid_APagar.Columns(4).HeaderText = "Valor Parcela"
+        DataGrid_APagar.Columns(5).HeaderText = "Saldo Parcela"
+        DataGrid_APagar.Columns(6).HeaderText = "Observação"
+        DataGrid_APagar.Columns(4).DefaultCellStyle.Format = "c"
+        DataGrid_APagar.Columns(5).DefaultCellStyle.Format = "c"
+        DataGrid_APagar.Columns(0).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGrid_APagar.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGrid_APagar.Columns(1).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGrid_APagar.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGrid_APagar.Columns(2).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
 
-        DataGrid_AVencer.Columns(3).Width = 75
-        DataGrid_AVencer.Columns(4).Width = 75
-        DataGrid_AVencer.Columns(5).Width = 75
-        DataGrid_AVencer.Columns(6).Width = 200
+        DataGrid_APagar.Columns(0).Width = 122
+        DataGrid_APagar.Columns(2).Width = 50
+        DataGrid_APagar.Columns(1).Width = 80
+
+        DataGrid_APagar.Columns(3).Width = 75
+        DataGrid_APagar.Columns(4).Width = 75
+        DataGrid_APagar.Columns(5).Width = 75
+        DataGrid_APagar.Columns(6).Width = 200
 
 
         DataGrid_Vencidos.Columns(0).HeaderText = "Cliente"
@@ -138,6 +139,7 @@ Public Class FrmTelaInicial
         DataGrid_Vencidos.Columns(1).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid_Vencidos.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid_Vencidos.Columns(2).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+
         DataGrid_Vencidos.Columns(0).Width = 122
         DataGrid_Vencidos.Columns(2).Width = 50
         DataGrid_Vencidos.Columns(1).Width = 50
@@ -173,7 +175,7 @@ Public Class FrmTelaInicial
 
         If ApplicationDeployment.IsNetworkDeployed Then
             myVersion = ApplicationDeployment.CurrentDeployment.CurrentVersion
-            LblVersao.Text = String.Concat("Versão:", myVersion)
+            LblVersao.Text = String.Concat("Versão: ", myVersion)
         End If
 
     End Sub
@@ -304,7 +306,7 @@ Public Class FrmTelaInicial
         End Try
     End Sub
     Sub TotalTitulos()
-
+        'Stop
         Abrir()
         Try
             Dim data As Date
@@ -323,12 +325,12 @@ Public Class FrmTelaInicial
             Dim dt As New DataTable
 
 
-            sql = "SELECT cliente, id_venda, parcela, data_vencimento, valor_parcela, saldo_duplicata, observacao FROM duplicatas_receber WHERE data_vencimento  >= '" & data2 & "' and data_vencimento <= '" & dataFormatada & "' and saldo_duplicata >0 "
+            sql = "SELECT f.nome_fantasia, d.documento, d.parcela, d.data_vencimento, d.valor_parcela, d.saldo_duplicata, d.observacao FROM duplicatas as d inner join fornecedor as f on d.cod_fornecedor = f.id  WHERE d.data_vencimento  <= '" & data2 & "' and d.saldo_duplicata >0 "
             cmd = New MySqlCommand(sql, con)
             cmd.ExecuteNonQuery()
             da = New MySqlDataAdapter(sql, con)
             da.Fill(dt)
-            DataGrid_AVencer.DataSource = dt
+            DataGrid_APagar.DataSource = dt
 
             'CONSULTA DE TITULOS A VENCER EM -30 DIAS
             Dim cmd1 As MySqlCommand
@@ -359,7 +361,7 @@ Public Class FrmTelaInicial
         Dim linha2 As DataGridViewRow
         Dim valor As Decimal
         Dim valor2 As Decimal
-        For Each linha In DataGrid_AVencer.Rows
+        For Each linha In DataGrid_APagar.Rows
             valor += linha.Cells(4).Value
         Next
         LblAVencer.Text = valor
@@ -607,10 +609,10 @@ Public Class FrmTelaInicial
             Try
                 info = AD.CheckForDetailedUpdate()
             Catch dde As DeploymentDownloadException
-                MessageBox.Show("The new version of the application cannot be downloaded at this time. " + ControlChars.Lf & ControlChars.Lf & "Please check your network connection, or try again later. Error: " + dde.Message)
+                MessageBox.Show("A nova versão do sistema não pode ser baixada agora. " + ControlChars.Lf & ControlChars.Lf & "Por favor, verifique sua conexão ou tente novamente mais tarde. Error: " + dde.Message)
                 Return
             Catch ioe As InvalidOperationException
-                MessageBox.Show("This application cannot be updated. It is likely not a ClickOnce application. Error: " & ioe.Message)
+                MessageBox.Show("O sistema não pode ser atualizado. Provavelmente não é um aplicação ClickOnce. Error: " & ioe.Message)
                 Return
             End Try
 
@@ -618,34 +620,35 @@ Public Class FrmTelaInicial
                 Dim doUpdate As Boolean = True
 
                 If (Not info.IsUpdateRequired) Then
-                    Dim dr As DialogResult = MessageBox.Show("An update is available. Would you like to update the application now?", "Update Available", MessageBoxButtons.OKCancel)
+                    Dim dr As DialogResult = MessageBox.Show("Uma nova atualiação está diponível. Deseja fazer atualizção do sistema agora?", "Atualização dispnível", MessageBoxButtons.OKCancel)
                     If (Not System.Windows.Forms.DialogResult.OK = dr) Then
                         doUpdate = False
                     End If
                 Else
                     ' Display a message that the app MUST reboot. Display the minimum required version.
-                    MessageBox.Show("This application has detected a mandatory update from your current " &
+                    MessageBox.Show("O sistema identificou uma atualização obrigtória para a sua atual versão " &
                         "version to version " & info.MinimumRequiredVersion.ToString() &
-                        ". The application will now install the update and restart.",
-                        "Update Available", MessageBoxButtons.OK,
+                        ". O Sistema irá instalar a atualização e reiniciar.",
+                        "Atualização dispnível", MessageBoxButtons.OK,
                         MessageBoxIcon.Information)
                 End If
 
                 If (doUpdate) Then
                     Try
                         AD.Update()
-                        MessageBox.Show("The application has been upgraded, and will now restart.")
+                        MessageBox.Show("O sistema foi atualizado e será reiniciado.")
                         Application.Restart()
                     Catch dde As DeploymentDownloadException
-                        MessageBox.Show("Cannot install the latest version of the application. " & ControlChars.Lf & ControlChars.Lf & "Please check your network connection, or try again later.")
+                        MessageBox.Show("Não foi possível instalar a última versão do sistema. " & ControlChars.Lf & ControlChars.Lf & "Por favor, verifique sua conexão ou tente novamente mais tarde.")
                         Return
                     End Try
                 End If
             End If
-        Else
-            MessageBox.Show("There is no new version!!")
+
         End If
 
 
     End Sub
+
+
 End Class

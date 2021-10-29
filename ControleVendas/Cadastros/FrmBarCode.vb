@@ -1,4 +1,4 @@
-﻿Imports BarcodeLib
+﻿
 Imports GenCode128
 Public Class FrmBarCode
 
