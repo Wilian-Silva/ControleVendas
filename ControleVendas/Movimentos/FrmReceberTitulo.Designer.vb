@@ -34,6 +34,9 @@ Partial Class FrmReceberTitulo
         Me.Label12 = New System.Windows.Forms.Label()
         Me.TxtSaldoTitulo = New System.Windows.Forms.TextBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.TxtPortador = New System.Windows.Forms.TextBox()
         Me.TxtObeservacao = New System.Windows.Forms.TextBox()
         Me.TxtRegRecebimento = New System.Windows.Forms.TextBox()
         Me.LblRegPgto = New System.Windows.Forms.Label()
@@ -71,9 +74,6 @@ Partial Class FrmReceberTitulo
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.TxtValorParcela = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.TxtPortador = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         Me.GboxPesProd.SuspendLayout()
@@ -195,6 +195,39 @@ Partial Class FrmReceberTitulo
         Me.GroupBox5.TabIndex = 164
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Inf. Comp."
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
+        Me.Label5.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(29, 61)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(65, 13)
+        Me.Label5.TabIndex = 150
+        Me.Label5.Text = "Observação"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
+        Me.Label4.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(10, 19)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(57, 16)
+        Me.Label4.TabIndex = 149
+        Me.Label4.Text = "Portador"
+        '
+        'TxtPortador
+        '
+        Me.TxtPortador.Enabled = False
+        Me.TxtPortador.Location = New System.Drawing.Point(75, 18)
+        Me.TxtPortador.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtPortador.Name = "TxtPortador"
+        Me.TxtPortador.Size = New System.Drawing.Size(130, 20)
+        Me.TxtPortador.TabIndex = 148
         '
         'TxtObeservacao
         '
@@ -653,39 +686,6 @@ Partial Class FrmReceberTitulo
         Me.TxtValorParcela.Name = "TxtValorParcela"
         Me.TxtValorParcela.Size = New System.Drawing.Size(80, 20)
         Me.TxtValorParcela.TabIndex = 144
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(44, 20)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(57, 16)
-        Me.Label4.TabIndex = 149
-        Me.Label4.Text = "Portador"
-        '
-        'TxtPortador
-        '
-        Me.TxtPortador.Enabled = False
-        Me.TxtPortador.Location = New System.Drawing.Point(109, 18)
-        Me.TxtPortador.Margin = New System.Windows.Forms.Padding(4)
-        Me.TxtPortador.Name = "TxtPortador"
-        Me.TxtPortador.Size = New System.Drawing.Size(96, 20)
-        Me.TxtPortador.TabIndex = 148
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(29, 61)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(65, 13)
-        Me.Label5.TabIndex = 150
-        Me.Label5.Text = "Observação"
         '
         'FrmReceberTitulo
         '

@@ -24,6 +24,10 @@ Partial Class FrmPesqPortador
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmPesqPortador))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.DataInicio = New System.Windows.Forms.DateTimePicker()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.DataFim = New System.Windows.Forms.DateTimePicker()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TxtIdPortador = New System.Windows.Forms.TextBox()
         Me.BtnPesquisarNota = New System.Windows.Forms.Button()
@@ -31,10 +35,6 @@ Partial Class FrmPesqPortador
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.BtnGerar = New System.Windows.Forms.Button()
         Me.BtnCancelar = New System.Windows.Forms.Button()
-        Me.DataInicio = New System.Windows.Forms.DateTimePicker()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.DataFim = New System.Windows.Forms.DateTimePicker()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -56,6 +56,46 @@ Partial Class FrmPesqPortador
         Me.GroupBox1.TabIndex = 179
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Pesquisar Portador"
+        '
+        'DataInicio
+        '
+        Me.DataInicio.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DataInicio.Location = New System.Drawing.Point(80, 69)
+        Me.DataInicio.Name = "DataInicio"
+        Me.DataInicio.Size = New System.Drawing.Size(97, 20)
+        Me.DataInicio.TabIndex = 187
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.BackColor = System.Drawing.Color.Transparent
+        Me.Label10.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(13, 73)
+        Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(64, 13)
+        Me.Label10.TabIndex = 188
+        Me.Label10.Text = "Data Inicial:"
+        '
+        'DataFim
+        '
+        Me.DataFim.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DataFim.Location = New System.Drawing.Point(249, 69)
+        Me.DataFim.Name = "DataFim"
+        Me.DataFim.Size = New System.Drawing.Size(97, 20)
+        Me.DataFim.TabIndex = 189
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
+        Me.Label5.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(187, 73)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(59, 13)
+        Me.Label5.TabIndex = 190
+        Me.Label5.Text = "Data Final:"
         '
         'Label2
         '
@@ -138,46 +178,6 @@ Partial Class FrmPesqPortador
         Me.BtnCancelar.TabIndex = 167
         Me.BtnCancelar.Text = "Cancelar"
         Me.BtnCancelar.UseVisualStyleBackColor = True
-        '
-        'DataInicio
-        '
-        Me.DataInicio.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DataInicio.Location = New System.Drawing.Point(80, 69)
-        Me.DataInicio.Name = "DataInicio"
-        Me.DataInicio.Size = New System.Drawing.Size(97, 20)
-        Me.DataInicio.TabIndex = 187
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.BackColor = System.Drawing.Color.Transparent
-        Me.Label10.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(13, 73)
-        Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(64, 13)
-        Me.Label10.TabIndex = 188
-        Me.Label10.Text = "Data Inicial:"
-        '
-        'DataFim
-        '
-        Me.DataFim.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DataFim.Location = New System.Drawing.Point(249, 69)
-        Me.DataFim.Name = "DataFim"
-        Me.DataFim.Size = New System.Drawing.Size(97, 20)
-        Me.DataFim.TabIndex = 189
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(187, 73)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(59, 13)
-        Me.Label5.TabIndex = 190
-        Me.Label5.Text = "Data Final:"
         '
         'FrmPesqPortador
         '

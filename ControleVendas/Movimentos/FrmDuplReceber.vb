@@ -19,7 +19,7 @@ Public Class FrmDuplReceber
     Private Sub FrmDuplicatas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TxtParcela.Focus()
 
-        CarregarPortador()
+
 
         Dim linhaPed As Integer
 
@@ -69,31 +69,7 @@ Public Class FrmDuplReceber
         End If
 
     End Sub
-    Private Sub CarregarPortador()
-        Try
-            Abrir()
 
-            Dim sql As String
-            Dim dt As New DataTable
-            Dim da As MySqlDataAdapter
-
-            sql = "SELECT * FROM portador order by nome asc"
-            da = New MySqlDataAdapter(sql, con)
-            da.Fill(dt)
-
-            If dt.Rows.Count > 0 Then
-                CbPortador.ValueMember = "id"
-                CbPortador.DisplayMember = "nome"
-                CbPortador.DataSource = dt
-            Else
-                CbPortador.Text = ""
-
-            End If
-
-        Catch ex As Exception
-            MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
-        End Try
-    End Sub
     Private Sub BtnOk_Click(sender As Object, e As EventArgs) Handles BtnOk.Click
 
         TxtParcela.BackColor = Color.White
@@ -114,11 +90,11 @@ Public Class FrmDuplReceber
 
                 bsd.DataSource = Table1DuplicatasReceber
 
-                Table1DuplicatasReceber.Rows.Add("", TxtParcela.Text, TxtNum_venda.Text, DataEmissao.Value.ToShortDateString, DataVencimento.Value.ToShortDateString, TxtTotalDuplicata.Text, TxtObs.Text, CbPortador.SelectedValue)
+                Table1DuplicatasReceber.Rows.Add("", TxtParcela.Text, TxtNum_venda.Text, DataEmissao.Value.ToShortDateString, DataVencimento.Value.ToShortDateString, TxtTotalDuplicata.Text, TxtObs.Text, TxtIdportador.Text)
                 Me.Close()
 
             Else
-                Table1DuplicatasReceber.Rows.Add("", TxtParcela.Text, TxtNum_venda.Text, DataEmissao.Value.ToShortDateString, DataVencimento.Value.ToShortDateString, TxtTotalDuplicata.Text, TxtObs.Text, CbPortador.SelectedValue)
+                Table1DuplicatasReceber.Rows.Add("", TxtParcela.Text, TxtNum_venda.Text, DataEmissao.Value.ToShortDateString, DataVencimento.Value.ToShortDateString, TxtTotalDuplicata.Text, TxtObs.Text, TxtIdportador.Text)
 
                 Me.Close()
             End If
@@ -150,7 +126,7 @@ Public Class FrmDuplReceber
 
                     vencimento1 = DataVencimento.Value.ToString("yyyy-MM-dd")
 
-                    sqls1 = "UPDATE duplicatas_receber SET data_vencimento = '" & vencimento1 & "', valor_parcela = '" & TxtTotalDuplicata.Text.Replace(",", ".") & "', observacao = '" & TxtObs.Text & "' , saldo_duplicata = '" & TxtTotalDuplicata.Text.Replace(",", ".") & "' , id_portador = '" & CbPortador.SelectedValue & "' WHERE id = '" & TxtId_Reg.Text & "'"
+                    sqls1 = "UPDATE duplicatas_receber SET data_vencimento = '" & vencimento1 & "', valor_parcela = '" & TxtTotalDuplicata.Text.Replace(",", ".") & "', observacao = '" & TxtObs.Text & "' , saldo_duplicata = '" & TxtTotalDuplicata.Text.Replace(",", ".") & "' , id_portador = '" & TxtIdportador.Text & "' WHERE id = '" & TxtId_Reg.Text & "'"
                     cmd1 = New MySqlCommand(sqls1, con)
                     cmd1.ExecuteNonQuery()
 
@@ -168,7 +144,7 @@ Public Class FrmDuplReceber
                     emissao = DataEmissao.Value.ToString("yyyy-MM-dd")
                     vencimento = DataVencimento.Value.ToString("yyyy-MM-dd")
 
-                    sqls = "INSERT INTO duplicatas_receber (parcela, id_venda, data_venda, data_vencimento, valor_parcela, observacao, cod_cliente, cliente, saldo_duplicata, id_portador) VALUES ('" & TxtParcela.Text & "','" & TxtNum_venda.Text & "',  '" & emissao & "','" & vencimento & "', '" & TxtTotalDuplicata.Text.Replace(",", ".") & "', '" & TxtObs.Text & "' ,'" & TxtIdCliente.Text & "', '" & TxtCliente.Text & "', '" & TxtTotalDuplicata.Text.Replace(",", ".") & "', '" & CbPortador.SelectedValue & "')"
+                    sqls = "INSERT INTO duplicatas_receber (parcela, id_venda, data_venda, data_vencimento, valor_parcela, observacao, cod_cliente, cliente, saldo_duplicata, id_portador) VALUES ('" & TxtParcela.Text & "','" & TxtNum_venda.Text & "',  '" & emissao & "','" & vencimento & "', '" & TxtTotalDuplicata.Text.Replace(",", ".") & "', '" & TxtObs.Text & "' ,'" & TxtIdCliente.Text & "', '" & TxtCliente.Text & "', '" & TxtTotalDuplicata.Text.Replace(",", ".") & "', '" & TxtIdportador.Text & "')"
                     cmd = New MySqlCommand(sqls, con)
                     cmd.ExecuteNonQuery()
 
@@ -206,11 +182,11 @@ Public Class FrmDuplReceber
         CorTxtBox(TxtTotalDuplicata, "Br")
     End Sub
 
-    Private Sub CbPortador_Enter(sender As Object, e As EventArgs) Handles CbPortador.Enter
+    Private Sub CbPortador_Enter(sender As Object, e As EventArgs)
         CorTxtBox(CbPortador, "Am")
     End Sub
 
-    Private Sub CbPortador_Leave(sender As Object, e As EventArgs) Handles CbPortador.Leave
+    Private Sub CbPortador_Leave(sender As Object, e As EventArgs)
         CorTxtBox(CbPortador, "Br")
     End Sub
 
@@ -220,5 +196,16 @@ Public Class FrmDuplReceber
 
     Private Sub TxtObs_Leave(sender As Object, e As EventArgs) Handles TxtObs.Leave
         CorTxtBox(TxtObs, "Br")
+    End Sub
+
+    Private Sub BtnPortador_Click(sender As Object, e As EventArgs) Handles BtnPortador.Click
+        PesquisarPortador = "True"
+        Dim frm As New FrmPortador
+        frm.ShowDialog()
+    End Sub
+
+    Private Sub FrmDuplReceber_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
+        TxtIdportador.Text = IdPortador
+        CbPortador.Text = CodPortador
     End Sub
 End Class

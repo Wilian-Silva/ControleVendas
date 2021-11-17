@@ -66,10 +66,12 @@ Partial Class FrmVlrPgto
         Me.Label17 = New System.Windows.Forms.Label()
         Me.TxtRefEntrada = New System.Windows.Forms.TextBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.CbPortador = New System.Windows.Forms.ComboBox()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.TxtStatusTitulo = New System.Windows.Forms.TextBox()
+        Me.CbPortador = New System.Windows.Forms.TextBox()
+        Me.TxtIdportador = New System.Windows.Forms.TextBox()
+        Me.BtnPortador = New System.Windows.Forms.Button()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -224,7 +226,7 @@ Partial Class FrmVlrPgto
         Me.Label9.AutoSize = True
         Me.Label9.BackColor = System.Drawing.Color.Transparent
         Me.Label9.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(271, 17)
+        Me.Label9.Location = New System.Drawing.Point(311, 17)
         Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(88, 16)
@@ -234,7 +236,7 @@ Partial Class FrmVlrPgto
         'TxtValorOriginal
         '
         Me.TxtValorOriginal.Enabled = False
-        Me.TxtValorOriginal.Location = New System.Drawing.Point(360, 16)
+        Me.TxtValorOriginal.Location = New System.Drawing.Point(400, 15)
         Me.TxtValorOriginal.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtValorOriginal.Name = "TxtValorOriginal"
         Me.TxtValorOriginal.Size = New System.Drawing.Size(82, 20)
@@ -248,7 +250,7 @@ Partial Class FrmVlrPgto
         Me.GroupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.GroupBox1.Location = New System.Drawing.Point(252, 344)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(220, 52)
+        Me.GroupBox1.Size = New System.Drawing.Size(292, 52)
         Me.GroupBox1.TabIndex = 172
         Me.GroupBox1.TabStop = False
         '
@@ -256,9 +258,9 @@ Partial Class FrmVlrPgto
         '
         Me.BtnOk.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnOk.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.BtnOk.Location = New System.Drawing.Point(28, 14)
+        Me.BtnOk.Location = New System.Drawing.Point(49, 16)
         Me.BtnOk.Name = "BtnOk"
-        Me.BtnOk.Size = New System.Drawing.Size(70, 30)
+        Me.BtnOk.Size = New System.Drawing.Size(80, 30)
         Me.BtnOk.TabIndex = 9
         Me.BtnOk.TabStop = False
         Me.BtnOk.Text = "Salvar"
@@ -268,9 +270,9 @@ Partial Class FrmVlrPgto
         '
         Me.BtnCancelar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.BtnCancelar.Location = New System.Drawing.Point(115, 14)
+        Me.BtnCancelar.Location = New System.Drawing.Point(145, 16)
         Me.BtnCancelar.Name = "BtnCancelar"
-        Me.BtnCancelar.Size = New System.Drawing.Size(70, 30)
+        Me.BtnCancelar.Size = New System.Drawing.Size(80, 30)
         Me.BtnCancelar.TabIndex = 10
         Me.BtnCancelar.Text = "Cancelar"
         Me.BtnCancelar.UseVisualStyleBackColor = True
@@ -301,7 +303,7 @@ Partial Class FrmVlrPgto
         Me.GroupBox3.Controls.Add(Me.TxtNotaFiscal)
         Me.GroupBox3.Location = New System.Drawing.Point(12, 11)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(460, 163)
+        Me.GroupBox3.Size = New System.Drawing.Size(532, 163)
         Me.GroupBox3.TabIndex = 173
         Me.GroupBox3.TabStop = False
         '
@@ -320,7 +322,7 @@ Partial Class FrmVlrPgto
         Me.Label6.AutoSize = True
         Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(250, 132)
+        Me.Label6.Location = New System.Drawing.Point(305, 132)
         Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(91, 16)
@@ -330,7 +332,7 @@ Partial Class FrmVlrPgto
         'TxtSaldoAbertoParcela
         '
         Me.TxtSaldoAbertoParcela.Enabled = False
-        Me.TxtSaldoAbertoParcela.Location = New System.Drawing.Point(345, 130)
+        Me.TxtSaldoAbertoParcela.Location = New System.Drawing.Point(400, 130)
         Me.TxtSaldoAbertoParcela.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtSaldoAbertoParcela.Name = "TxtSaldoAbertoParcela"
         Me.TxtSaldoAbertoParcela.Size = New System.Drawing.Size(97, 20)
@@ -353,7 +355,7 @@ Partial Class FrmVlrPgto
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(264, 102)
+        Me.Label5.Location = New System.Drawing.Point(319, 102)
         Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(80, 16)
@@ -364,7 +366,7 @@ Partial Class FrmVlrPgto
         '
         Me.DataVencimento.Enabled = False
         Me.DataVencimento.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DataVencimento.Location = New System.Drawing.Point(345, 100)
+        Me.DataVencimento.Location = New System.Drawing.Point(400, 100)
         Me.DataVencimento.Name = "DataVencimento"
         Me.DataVencimento.Size = New System.Drawing.Size(97, 20)
         Me.DataVencimento.TabIndex = 155
@@ -488,7 +490,7 @@ Partial Class FrmVlrPgto
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(137, 17)
+        Me.Label2.Location = New System.Drawing.Point(188, 17)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(45, 16)
@@ -498,7 +500,7 @@ Partial Class FrmVlrPgto
         'TxtNotaFiscal
         '
         Me.TxtNotaFiscal.Enabled = False
-        Me.TxtNotaFiscal.Location = New System.Drawing.Point(185, 15)
+        Me.TxtNotaFiscal.Location = New System.Drawing.Point(236, 15)
         Me.TxtNotaFiscal.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtNotaFiscal.Name = "TxtNotaFiscal"
         Me.TxtNotaFiscal.Size = New System.Drawing.Size(67, 20)
@@ -508,7 +510,7 @@ Partial Class FrmVlrPgto
         'TxtRegPagamento
         '
         Me.TxtRegPagamento.Enabled = False
-        Me.TxtRegPagamento.Location = New System.Drawing.Point(107, 53)
+        Me.TxtRegPagamento.Location = New System.Drawing.Point(102, 53)
         Me.TxtRegPagamento.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtRegPagamento.Name = "TxtRegPagamento"
         Me.TxtRegPagamento.Size = New System.Drawing.Size(44, 20)
@@ -520,7 +522,7 @@ Partial Class FrmVlrPgto
         Me.Label18.AutoSize = True
         Me.Label18.BackColor = System.Drawing.Color.Transparent
         Me.Label18.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.Location = New System.Drawing.Point(7, 54)
+        Me.Label18.Location = New System.Drawing.Point(2, 54)
         Me.Label18.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(97, 16)
@@ -532,7 +534,7 @@ Partial Class FrmVlrPgto
         Me.Label17.AutoSize = True
         Me.Label17.BackColor = System.Drawing.Color.Transparent
         Me.Label17.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(13, 21)
+        Me.Label17.Location = New System.Drawing.Point(8, 21)
         Me.Label17.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(92, 16)
@@ -542,7 +544,7 @@ Partial Class FrmVlrPgto
         'TxtRefEntrada
         '
         Me.TxtRefEntrada.Enabled = False
-        Me.TxtRefEntrada.Location = New System.Drawing.Point(108, 20)
+        Me.TxtRefEntrada.Location = New System.Drawing.Point(103, 20)
         Me.TxtRefEntrada.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtRefEntrada.Name = "TxtRefEntrada"
         Me.TxtRefEntrada.Size = New System.Drawing.Size(43, 20)
@@ -553,6 +555,8 @@ Partial Class FrmVlrPgto
         '
         Me.GroupBox4.BackColor = System.Drawing.Color.WhiteSmoke
         Me.GroupBox4.Controls.Add(Me.CbPortador)
+        Me.GroupBox4.Controls.Add(Me.TxtIdportador)
+        Me.GroupBox4.Controls.Add(Me.BtnPortador)
         Me.GroupBox4.Controls.Add(Me.Label19)
         Me.GroupBox4.Controls.Add(Me.Label16)
         Me.GroupBox4.Controls.Add(Me.TxtStatusTitulo)
@@ -563,24 +567,16 @@ Partial Class FrmVlrPgto
         Me.GroupBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.GroupBox4.Location = New System.Drawing.Point(252, 180)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(220, 158)
+        Me.GroupBox4.Size = New System.Drawing.Size(292, 158)
         Me.GroupBox4.TabIndex = 176
         Me.GroupBox4.TabStop = False
-        '
-        'CbPortador
-        '
-        Me.CbPortador.FormattingEnabled = True
-        Me.CbPortador.Location = New System.Drawing.Point(105, 121)
-        Me.CbPortador.Name = "CbPortador"
-        Me.CbPortador.Size = New System.Drawing.Size(109, 21)
-        Me.CbPortador.TabIndex = 8
         '
         'Label19
         '
         Me.Label19.AutoSize = True
         Me.Label19.BackColor = System.Drawing.Color.Transparent
         Me.Label19.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.Location = New System.Drawing.Point(39, 122)
+        Me.Label19.Location = New System.Drawing.Point(34, 122)
         Me.Label19.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(62, 16)
@@ -592,7 +588,7 @@ Partial Class FrmVlrPgto
         Me.Label16.AutoSize = True
         Me.Label16.BackColor = System.Drawing.Color.Transparent
         Me.Label16.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(40, 88)
+        Me.Label16.Location = New System.Drawing.Point(35, 88)
         Me.Label16.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(62, 16)
@@ -602,18 +598,51 @@ Partial Class FrmVlrPgto
         'TxtStatusTitulo
         '
         Me.TxtStatusTitulo.Enabled = False
-        Me.TxtStatusTitulo.Location = New System.Drawing.Point(106, 87)
+        Me.TxtStatusTitulo.Location = New System.Drawing.Point(101, 87)
         Me.TxtStatusTitulo.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtStatusTitulo.Name = "TxtStatusTitulo"
         Me.TxtStatusTitulo.Size = New System.Drawing.Size(82, 20)
         Me.TxtStatusTitulo.TabIndex = 176
+        '
+        'CbPortador
+        '
+        Me.CbPortador.Enabled = False
+        Me.CbPortador.Location = New System.Drawing.Point(130, 121)
+        Me.CbPortador.Margin = New System.Windows.Forms.Padding(4)
+        Me.CbPortador.Multiline = True
+        Me.CbPortador.Name = "CbPortador"
+        Me.CbPortador.Size = New System.Drawing.Size(129, 21)
+        Me.CbPortador.TabIndex = 185
+        '
+        'TxtIdportador
+        '
+        Me.TxtIdportador.Enabled = False
+        Me.TxtIdportador.Location = New System.Drawing.Point(100, 121)
+        Me.TxtIdportador.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtIdportador.Multiline = True
+        Me.TxtIdportador.Name = "TxtIdportador"
+        Me.TxtIdportador.Size = New System.Drawing.Size(29, 21)
+        Me.TxtIdportador.TabIndex = 184
+        Me.TxtIdportador.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'BtnPortador
+        '
+        Me.BtnPortador.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.BtnPortador.Location = New System.Drawing.Point(259, 120)
+        Me.BtnPortador.Name = "BtnPortador"
+        Me.BtnPortador.Size = New System.Drawing.Size(25, 23)
+        Me.BtnPortador.TabIndex = 183
+        Me.BtnPortador.Text = "..."
+        Me.BtnPortador.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.BtnPortador.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.BtnPortador.UseVisualStyleBackColor = True
         '
         'FrmVlrPgto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(484, 413)
+        Me.ClientSize = New System.Drawing.Size(556, 413)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox1)
@@ -679,6 +708,8 @@ Partial Class FrmVlrPgto
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents Label16 As Label
     Friend WithEvents TxtStatusTitulo As TextBox
-    Friend WithEvents CbPortador As ComboBox
     Friend WithEvents Label19 As Label
+    Friend WithEvents CbPortador As TextBox
+    Friend WithEvents TxtIdportador As TextBox
+    Friend WithEvents BtnPortador As Button
 End Class

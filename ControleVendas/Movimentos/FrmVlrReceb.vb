@@ -84,7 +84,7 @@ Public Class FrmVlrReceb
                 & " '" & TxtNomeCliente.Text & "','" & TxtNotaFiscal.Text & "','" & TxtValorOriginal.Text.Replace(",", ".") & "', " _
                 & "  '" & TxtParcela.Text & "','" & TxtValorParcela.Text.Replace(",", ".") & "', '" & TxtValorPago.Text.Replace(",", ".") & "', " _
                 & " '" & TxtSaldoTitulo.Text.Replace(",", ".") & "','" & TxtMultasJuros.Text.Replace(",", ".") & "', '" & TxtDescontos.Text.Replace(",", ".") & "', " _
-                & " '" & TxtTotalPago.Text.Replace(",", ".") & "', '" & data1 & "', '" & data2 & "',  '" & data3 & "', '" & TxtStatusTitulo.Text & "', '" & CbPortador.Text & "', '" & CbPortador.SelectedValue & "') "
+                & " '" & TxtTotalPago.Text.Replace(",", ".") & "', '" & data1 & "', '" & data2 & "',  '" & data3 & "', '" & TxtStatusTitulo.Text & "', '" & CbPortador.Text & "', '" & TxtIdportador.Text & "') "
 
 
                 cmd = New MySqlCommand(sql, con)
@@ -125,7 +125,7 @@ Public Class FrmVlrReceb
             data3 = DataPgto.Value.ToString("yyyy-MM-dd")
             tipoMov = "Entrada"
 
-            sql1 = "INSERT INTO mvto_portador (id_portador, nome, tipo, data, valor, id_duplicata, pagador_recebedor) VALUES ( '" & CbPortador.SelectedValue & "','" & CbPortador.Text & "','" & tipoMov & "', '" & data3 & "','" & TxtTotalPago.Text.Replace(",", ".") & "','" & TxtIdDuplicata.Text & "', '" & TxtNomeCliente.Text & "' )"
+            sql1 = "INSERT INTO mvto_portador (id_portador, nome, tipo, data, valor, id_duplicata, pagador_recebedor) VALUES ( '" & TxtIdportador.Text & "','" & CbPortador.Text & "','" & tipoMov & "', '" & data3 & "','" & TxtTotalPago.Text.Replace(",", ".") & "','" & TxtIdDuplicata.Text & "', '" & TxtNomeCliente.Text & "' )"
             cmd1 = New MySqlCommand(sql1, con)
             cmd1.ExecuteNonQuery()
 
@@ -133,34 +133,8 @@ Public Class FrmVlrReceb
             MsgBox("Erro ao salvar mvto portador!!" + ex.Message)
         End Try
     End Sub
-    Private Sub FrmVlrReceb_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        CarregarPortador()
-    End Sub
-    Private Sub CarregarPortador()
-        Try
-            Abrir()
 
-            Dim sql As String
-            Dim dt As New DataTable
-            Dim da As MySqlDataAdapter
 
-            sql = "SELECT * FROM portador order by nome asc"
-            da = New MySqlDataAdapter(sql, con)
-            da.Fill(dt)
-
-            If dt.Rows.Count > 0 Then
-                CbPortador.ValueMember = "id"
-                CbPortador.DisplayMember = "nome"
-                CbPortador.DataSource = dt
-            Else
-                CbPortador.Text = ""
-
-            End If
-
-        Catch ex As Exception
-            MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
-        End Try
-    End Sub
 
     Private Sub TxtValorPago_Enter(sender As Object, e As EventArgs) Handles TxtValorPago.Enter
         CorTxtBox(TxtValorPago, "Am")
@@ -186,11 +160,23 @@ Public Class FrmVlrReceb
         CorTxtBox(TxtDescontos, "Br")
     End Sub
 
-    Private Sub CbPortador_Enter(sender As Object, e As EventArgs) Handles CbPortador.Enter
+    Private Sub CbPortador_Enter(sender As Object, e As EventArgs)
         CorTxtBox(CbPortador, "Am")
     End Sub
 
-    Private Sub CbPortador_Leave(sender As Object, e As EventArgs) Handles CbPortador.Leave
+    Private Sub CbPortador_Leave(sender As Object, e As EventArgs)
         CorTxtBox(CbPortador, "Br")
+    End Sub
+
+    Private Sub BtnPortador_Click(sender As Object, e As EventArgs) Handles BtnPortador.Click
+
+        PesquisarPortador = "True"
+        Dim frm As New FrmPortador
+        frm.ShowDialog()
+    End Sub
+
+    Private Sub FrmVlrReceb_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
+        TxtIdportador.Text = IdPortador
+        CbPortador.Text = CodPortador
     End Sub
 End Class

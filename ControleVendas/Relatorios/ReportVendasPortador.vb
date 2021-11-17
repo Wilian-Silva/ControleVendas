@@ -12,8 +12,6 @@
 
     Private Sub ReportVendasPortador_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Abrir_Relatorio()
-        IdPortador = ""
-        CodPortador = ""
-        PesquisarPortador = ""
+
     End Sub
 End Class

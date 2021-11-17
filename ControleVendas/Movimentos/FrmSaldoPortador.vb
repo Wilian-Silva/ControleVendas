@@ -1,6 +1,12 @@
 ﻿Imports MySql.Data.MySqlClient
 
+
+
+
 Public Class FrmSaldoPortador
+    Dim TotalSaldoAnterior As Double
+    Dim TotalSaldoEntrada As Double
+    Dim TotalSaldoSaida As Double
     Private Sub FrmSaldoPortador_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim data1 As Date
         Dim data2 As Date
@@ -72,16 +78,7 @@ Public Class FrmSaldoPortador
 
     Sub SaldoFinal()
 
-        Dim dbl1 As Double = 0
-        Dim dbl2 As Double = 0
-        Dim dbl3 As Double = 0
-
-        Double.TryParse(TxtSaldoAnterior.Text, dbl1)
-        Double.TryParse(TxtTotalEntradas.Text, dbl2)
-        Double.TryParse(TxtTotalSaidas.Text, dbl3)
-
-        TxtSaldoFinal.Text = (dbl1 + dbl2 - dbl3).ToString("n")
-
+        TxtSaldoFinal.Text = Format((TotalSaldoAnterior + TotalSaldoEntrada - TotalSaldoSaida), "R$ #,###0.00")
     End Sub
     Sub TotalEntrada()
 
@@ -94,7 +91,8 @@ Public Class FrmSaldoPortador
                 total += DataGrid.Rows(i).Cells(5).Value
             End If
         Next
-        TxtTotalEntradas.Text = total
+        TotalSaldoEntrada = total
+        TxtTotalEntradas.Text = Format(total, "R$ #,###0.00")
 
     End Sub
 
@@ -109,7 +107,8 @@ Public Class FrmSaldoPortador
                 total += DataGrid.Rows(i).Cells(5).Value
             End If
         Next
-        TxtTotalSaidas.Text = total
+        TotalSaldoSaida = total
+        TxtTotalSaidas.Text = Format(total, "R$ #,###0.00")
 
     End Sub
     Sub SaldoAnterior()
@@ -136,7 +135,8 @@ Public Class FrmSaldoPortador
             reader.Read()
 
             If Not IsDBNull(reader("valor")) Then
-                TxtSaldoAnterior.Text = reader("Valor")
+                TxtSaldoAnterior.Text = Format(reader("Valor"), "R$ #,###0.00")
+                TotalSaldoAnterior = reader("Valor")
                 reader.Close()
             Else
                 reader.Close()
@@ -207,6 +207,7 @@ Public Class FrmSaldoPortador
         DataGrid.Columns(3).Width = 80
         'DataGrid.Columns(2).Width = 135
         DataGrid.Columns(6).Width = 50
+        DataGrid.Columns(7).Width = 150
 
         DataGrid.Columns(5).DefaultCellStyle.Format = "c"
 

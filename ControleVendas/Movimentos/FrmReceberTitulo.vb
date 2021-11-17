@@ -3,6 +3,7 @@
 Public Class FrmReceberTitulo
 
 
+
     Dim proximo As Integer
     Dim anterior As Integer
     Dim maximo As Integer
@@ -14,7 +15,7 @@ Public Class FrmReceberTitulo
 
             Exit Sub
         End If
-        If MsgBox("Deseja baixar do título " & TxtId_duplicata.Text & " Parcela " & TxtParcela.Text & "?", vbYesNo, "Recebimento") = vbYes Then
+        If MsgBox("Deseja baixar do título " & Txt_venda.Text & " Parcela " & TxtParcela.Text & "?", vbYesNo, "Recebimento") = vbYes Then
 
             Dim form = New FrmVlrReceb()
 
@@ -33,7 +34,6 @@ Public Class FrmReceberTitulo
             form.TxtStatusTitulo.Text = TxtStatusTitulo.Text
             form.TxtValorPago.Text = TxtSaldoTitulo.Text
 
-
             form.ShowDialog()
         End If
 
@@ -44,15 +44,21 @@ Public Class FrmReceberTitulo
     End Sub
 
     Private Sub FrmPagarTitulo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        CarregarDadosTitulo()
+
+        If PesqTituloTelaIncial = "True" Then
+
+            CarregarDadosTitulo()
+        Else
+            Ultimo_Titulo()
+            CarregarDadosTitulo()
+        End If
+
 
     End Sub
 
-    Private Sub CarregarDadosTitulo()
-        'Stop
-        Dim idVenda As Integer
-        Dim idDuplicata As Integer
+    Sub Ultimo_Titulo()
         Try
+            ' Stop
             Abrir()
 
             'BUSCANDO DADOS NA TBL DUPLICATAS
@@ -60,6 +66,32 @@ Public Class FrmReceberTitulo
             Dim reader As MySqlDataReader
             Dim sql As String
             sql = "SELECT * FROM duplicatas_receber WHERE id=(SELECT MAX(id) FROM duplicatas_receber) "
+            cmd = New MySqlCommand(sql, con)
+            reader = cmd.ExecuteReader
+            If reader.Read = True Then
+                PesqTituloidVenda = reader("id_venda")
+                PesqidDuplicata = reader("id")
+                reader.Close()
+            Else
+                reader.Close()
+            End If
+
+        Catch ex As Exception
+            MsgBox("Erro: " + ex.Message)
+        End Try
+    End Sub
+
+    Private Sub CarregarDadosTitulo()
+
+
+        Try
+            Abrir()
+
+            'BUSCANDO DADOS NA TBL DUPLICATAS
+            Dim cmd As MySqlCommand
+            Dim reader As MySqlDataReader
+            Dim sql As String
+            sql = "SELECT * FROM duplicatas_receber WHERE id= '" & PesqidDuplicata & "' "
             cmd = New MySqlCommand(sql, con)
             reader = cmd.ExecuteReader
             If reader.Read = True Then
@@ -73,9 +105,6 @@ Public Class FrmReceberTitulo
                 DataEmissao.Text = reader("data_venda")
                 DataVencimento.Text = reader("data_vencimento")
                 TxtObeservacao.Text = reader("observacao")
-
-                idVenda = reader("id_venda")
-                idDuplicata = reader("id")
                 reader.Close()
             Else
                 reader.Close()
@@ -85,7 +114,7 @@ Public Class FrmReceberTitulo
             Dim cmd2 As MySqlCommand
             Dim reader2 As MySqlDataReader
             Dim sql2 As String
-            sql2 = "SELECT * FROM venda_cabecalho WHERE id_venda= '" & idVenda & "' "
+            sql2 = "SELECT * FROM venda_cabecalho WHERE id_venda= '" & PesqTituloidVenda & "' "
             cmd2 = New MySqlCommand(sql2, con)
             reader2 = cmd2.ExecuteReader
             If reader2.Read = True Then
@@ -102,7 +131,7 @@ Public Class FrmReceberTitulo
             Dim cmd3 As MySqlCommand
             Dim reader3 As MySqlDataReader
             Dim sql3 As String
-            sql3 = "Select MAX(id) As id , SUM(valor_pago) As valor_pago , SUM(juros_multa) As juros_multa , SUM(descontos) As descontos, SUM(total_pago) As total_pago, data_pagamento, MAX(status_nota) As status_nota, portador FROM mvto_recebimentos WHERE id_duplicata = '" & idDuplicata & "' "
+            sql3 = "Select MAX(id) As id , SUM(valor_pago) As valor_pago , SUM(juros_multa) As juros_multa , SUM(descontos) As descontos, SUM(total_pago) As total_pago, data_pagamento, MAX(status_nota) As status_nota, portador FROM mvto_recebimentos WHERE id_duplicata = '" & PesqidDuplicata & "' "
             cmd3 = New MySqlCommand(sql3, con)
             reader3 = cmd3.ExecuteReader
 
@@ -717,5 +746,8 @@ Line1:
 
     Private Sub FrmPagarTitulo_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         pesquisarDuplicata = ""
+        PesqTituloTelaIncial = ""
+        PesqTituloidVenda = 0
+        PesqidDuplicata = 0
     End Sub
 End Class

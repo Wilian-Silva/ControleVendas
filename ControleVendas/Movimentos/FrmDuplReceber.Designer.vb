@@ -30,7 +30,6 @@ Partial Class FrmDuplReceber
         Me.TxtId_Reg = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.CbPortador = New System.Windows.Forms.ComboBox()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.TxtCliente = New System.Windows.Forms.TextBox()
         Me.TxtParcela = New System.Windows.Forms.TextBox()
@@ -49,6 +48,9 @@ Partial Class FrmDuplReceber
         Me.BtnOk = New System.Windows.Forms.Button()
         Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.CbPortador = New System.Windows.Forms.TextBox()
+        Me.TxtIdportador = New System.Windows.Forms.TextBox()
+        Me.BtnPortador = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -125,6 +127,8 @@ Partial Class FrmDuplReceber
         Me.Panel1.BackColor = System.Drawing.Color.Gainsboro
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Panel1.Controls.Add(Me.CbPortador)
+        Me.Panel1.Controls.Add(Me.TxtIdportador)
+        Me.Panel1.Controls.Add(Me.BtnPortador)
         Me.Panel1.Controls.Add(Me.Label19)
         Me.Panel1.Controls.Add(Me.TxtCliente)
         Me.Panel1.Controls.Add(Me.Label9)
@@ -147,23 +151,15 @@ Partial Class FrmDuplReceber
         Me.Panel1.Controls.Add(Me.TxtTotalDuplicata)
         Me.Panel1.Location = New System.Drawing.Point(16, 11)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(469, 233)
+        Me.Panel1.Size = New System.Drawing.Size(501, 233)
         Me.Panel1.TabIndex = 172
-        '
-        'CbPortador
-        '
-        Me.CbPortador.FormattingEnabled = True
-        Me.CbPortador.Location = New System.Drawing.Point(307, 138)
-        Me.CbPortador.Name = "CbPortador"
-        Me.CbPortador.Size = New System.Drawing.Size(133, 21)
-        Me.CbPortador.TabIndex = 184
         '
         'Label19
         '
         Me.Label19.AutoSize = True
         Me.Label19.BackColor = System.Drawing.Color.Transparent
         Me.Label19.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.Location = New System.Drawing.Point(238, 139)
+        Me.Label19.Location = New System.Drawing.Point(233, 139)
         Me.Label19.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(62, 16)
@@ -176,7 +172,7 @@ Partial Class FrmDuplReceber
         Me.TxtCliente.Location = New System.Drawing.Point(294, 41)
         Me.TxtCliente.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtCliente.Name = "TxtCliente"
-        Me.TxtCliente.Size = New System.Drawing.Size(123, 20)
+        Me.TxtCliente.Size = New System.Drawing.Size(164, 20)
         Me.TxtCliente.TabIndex = 167
         '
         'TxtParcela
@@ -216,7 +212,7 @@ Partial Class FrmDuplReceber
         Me.TxtObs.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtObs.Multiline = True
         Me.TxtObs.Name = "TxtObs"
-        Me.TxtObs.Size = New System.Drawing.Size(306, 45)
+        Me.TxtObs.Size = New System.Drawing.Size(346, 45)
         Me.TxtObs.TabIndex = 161
         '
         'DataEmissao
@@ -256,7 +252,7 @@ Partial Class FrmDuplReceber
         '
         Me.CbQtdDias.FormattingEnabled = True
         Me.CbQtdDias.Items.AddRange(New Object() {"15", "30", "60", "90", "120", "160"})
-        Me.CbQtdDias.Location = New System.Drawing.Point(305, 104)
+        Me.CbQtdDias.Location = New System.Drawing.Point(300, 104)
         Me.CbQtdDias.Name = "CbQtdDias"
         Me.CbQtdDias.Size = New System.Drawing.Size(57, 21)
         Me.CbQtdDias.TabIndex = 159
@@ -274,7 +270,7 @@ Partial Class FrmDuplReceber
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(267, 106)
+        Me.Label5.Location = New System.Drawing.Point(262, 106)
         Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(37, 16)
@@ -346,15 +342,48 @@ Partial Class FrmDuplReceber
         Me.GroupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.GroupBox1.Location = New System.Drawing.Point(16, 245)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(469, 52)
+        Me.GroupBox1.Size = New System.Drawing.Size(501, 52)
         Me.GroupBox1.TabIndex = 173
         Me.GroupBox1.TabStop = False
+        '
+        'CbPortador
+        '
+        Me.CbPortador.Enabled = False
+        Me.CbPortador.Location = New System.Drawing.Point(329, 137)
+        Me.CbPortador.Margin = New System.Windows.Forms.Padding(4)
+        Me.CbPortador.Multiline = True
+        Me.CbPortador.Name = "CbPortador"
+        Me.CbPortador.Size = New System.Drawing.Size(129, 21)
+        Me.CbPortador.TabIndex = 187
+        '
+        'TxtIdportador
+        '
+        Me.TxtIdportador.Enabled = False
+        Me.TxtIdportador.Location = New System.Drawing.Point(299, 137)
+        Me.TxtIdportador.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtIdportador.Multiline = True
+        Me.TxtIdportador.Name = "TxtIdportador"
+        Me.TxtIdportador.Size = New System.Drawing.Size(29, 21)
+        Me.TxtIdportador.TabIndex = 186
+        Me.TxtIdportador.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'BtnPortador
+        '
+        Me.BtnPortador.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.BtnPortador.Location = New System.Drawing.Point(458, 136)
+        Me.BtnPortador.Name = "BtnPortador"
+        Me.BtnPortador.Size = New System.Drawing.Size(25, 23)
+        Me.BtnPortador.TabIndex = 185
+        Me.BtnPortador.Text = "..."
+        Me.BtnPortador.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.BtnPortador.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.BtnPortador.UseVisualStyleBackColor = True
         '
         'FrmDuplReceber
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(501, 308)
+        Me.ClientSize = New System.Drawing.Size(529, 308)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -394,6 +423,8 @@ Partial Class FrmDuplReceber
     Friend WithEvents BtnCancelar As Button
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents TxtCliente As TextBox
-    Friend WithEvents CbPortador As ComboBox
     Friend WithEvents Label19 As Label
+    Friend WithEvents CbPortador As TextBox
+    Friend WithEvents TxtIdportador As TextBox
+    Friend WithEvents BtnPortador As Button
 End Class

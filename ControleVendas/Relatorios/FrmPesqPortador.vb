@@ -46,4 +46,10 @@
         DataFim.Value = Ultimo_Dia_Mes
 
     End Sub
+
+    Private Sub FrmPesqPortador_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        IdPortador = ""
+        CodPortador = ""
+        PesquisarPortador = ""
+    End Sub
 End Class

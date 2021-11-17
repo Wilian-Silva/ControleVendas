@@ -81,7 +81,7 @@ Public Class FrmVlrPgto
                     & " '" & TxtNomeFornecedor.Text & "','" & TxtNotaFiscal.Text & "','" & TxtValorOriginal.Text.Replace(",", ".") & "', '" & TxtCodPedido.Text & "', " _
                     & " '" & TxtDescPed.Text & "', '" & TxtParcela.Text & "','" & TxtValorParcela.Text.Replace(",", ".") & "', '" & TxtValorPago.Text.Replace(",", ".") & "', " _
                     & " '" & TxtSaldoTitulo.Text.Replace(",", ".") & "','" & TxtMultasJuros.Text.Replace(",", ".") & "', '" & TxtDescontos.Text.Replace(",", ".") & "', " _
-                    & " '" & TxtTotalPago.Text.Replace(",", ".") & "', '" & data1 & "', '" & data2 & "',  '" & data3 & "', '" & TxtStatusTitulo.Text & "', '" & TxtRefEntrada.Text & "', '" & CbPortador.Text & "', '" & CbPortador.SelectedValue & "') "
+                    & " '" & TxtTotalPago.Text.Replace(",", ".") & "', '" & data1 & "', '" & data2 & "',  '" & data3 & "', '" & TxtStatusTitulo.Text & "', '" & TxtRefEntrada.Text & "', '" & CbPortador.Text & "', '" & TxtIdportador.Text & "') "
 
 
                 'sql = "INSERT INTO mvto_pagamentos (id_duplicata, cod_fornecedor, fornecedor, titulo, total_titulo, cod_pedido, descricao_pedido, parcela, valor_parcela, valor_pago, valor_saldo, juros_multa, descontos, total_pago, data_emissao, data_vencimento, data_pagamento, saldo_nota, status_nota, id_entrada) VALUES ( '" & TxtIdRegistro.Text & "', '" & TxtCodFornecedor.Text & "',  '" & TxtNomeFornecedor.Text & "','" & TxtNotaFiscal.Text & "','" & TxtValorOriginal.Text.Replace(",", ".") & "', '" & TxtCodPedido.Text & "', '" & TxtDescPed.Text & "', '" & TxtParcela.Text & "','" & TxtValorParcela.Text.Replace(",", ".") & "', '" & TxtValorPago.Text.Replace(",", ".") & "', '" & TxtSaldoAbertoParcela.Text.Replace(",", ".") & "','" & TxtMultasJuros.Text.Replace(",", ".") & "', '" & TxtDescontos.Text.Replace(",", ".") & "', '" & TxtTotalPago.Text.Replace(",", ".") & "', '" & data1 & "', '" & data2 & "',  '" & data3 & "', '" & TxtStatusTitulo.Text & "', '" & TxtRefEntrada.Text & "') "
@@ -124,7 +124,7 @@ Public Class FrmVlrPgto
             data3 = DataPgto.Value.ToString("yyyy-MM-dd")
             tipoMov = "Saída"
 
-            sql1 = "INSERT INTO mvto_portador (id_portador, nome, tipo, data, valor, id_duplicata, pagador_recebedor) VALUES ( '" & CbPortador.SelectedValue & "','" & CbPortador.Text & "','" & tipoMov & "', '" & data3 & "','" & TxtTotalPago.Text.Replace(",", ".") & "', '" & TxtIdRegistro.Text & "' , '" & TxtNomeFornecedor.Text & "')"
+            sql1 = "INSERT INTO mvto_portador (id_portador, nome, tipo, data, valor, id_duplicata, pagador_recebedor) VALUES ( '" & TxtIdportador.Text & "','" & CbPortador.Text & "','" & tipoMov & "', '" & data3 & "','" & TxtTotalPago.Text.Replace(",", ".") & "', '" & TxtIdRegistro.Text & "' , '" & TxtNomeFornecedor.Text & "')"
             cmd1 = New MySqlCommand(sql1, con)
             cmd1.ExecuteNonQuery()
 
@@ -133,34 +133,6 @@ Public Class FrmVlrPgto
         End Try
     End Sub
 
-    Private Sub FrmVlrPgto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        CarregarPortador()
-    End Sub
-    Private Sub CarregarPortador()
-        Try
-            Abrir()
-
-            Dim sql As String
-            Dim dt As New DataTable
-            Dim da As MySqlDataAdapter
-
-            sql = "SELECT * FROM portador order by nome asc"
-            da = New MySqlDataAdapter(sql, con)
-            da.Fill(dt)
-
-            If dt.Rows.Count > 0 Then
-                CbPortador.ValueMember = "id"
-                CbPortador.DisplayMember = "nome"
-                CbPortador.DataSource = dt
-            Else
-                CbPortador.Text = ""
-
-            End If
-
-        Catch ex As Exception
-            MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
-        End Try
-    End Sub
 
     Private Sub TxtValorPago_Enter(sender As Object, e As EventArgs) Handles TxtValorPago.Enter
         CorTxtBox(TxtValorPago, "Am")
@@ -186,12 +158,23 @@ Public Class FrmVlrPgto
         CorTxtBox(TxtDescontos, "Br")
     End Sub
 
-    Private Sub CbPortador_Enter(sender As Object, e As EventArgs) Handles CbPortador.Enter
+    Private Sub CbPortador_Enter(sender As Object, e As EventArgs)
         CorTxtBox(CbPortador, "Am")
     End Sub
 
-    Private Sub CbPortador_Leave(sender As Object, e As EventArgs) Handles CbPortador.Leave
+    Private Sub CbPortador_Leave(sender As Object, e As EventArgs)
         CorTxtBox(CbPortador, "Br")
+    End Sub
+
+    Private Sub BtnPortador_Click(sender As Object, e As EventArgs) Handles BtnPortador.Click
+        PesquisarPortador = "True"
+        Dim frm As New FrmPortador
+        frm.ShowDialog()
+    End Sub
+
+    Private Sub FrmVlrPgto_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
+        TxtIdportador.Text = IdPortador
+        CbPortador.Text = CodPortador
     End Sub
 End Class
 

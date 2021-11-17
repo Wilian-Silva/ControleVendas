@@ -127,27 +127,36 @@ Public Class FrmTelaInicial
 
         DataGrid_Vencidos.Columns(0).HeaderText = "Cliente"
         DataGrid_Vencidos.Columns(1).HeaderText = "Nº Venda"
-        DataGrid_Vencidos.Columns(2).HeaderText = "Parcela"
+        DataGrid_Vencidos.Columns(2).HeaderText = "Duplicata"
         DataGrid_Vencidos.Columns(3).HeaderText = "Vencimento"
-        DataGrid_Vencidos.Columns(4).HeaderText = "Valor Parcela"
-        DataGrid_Vencidos.Columns(5).HeaderText = "Saldo Parcela"
-        DataGrid_Vencidos.Columns(6).HeaderText = "Observação"
-        DataGrid_Vencidos.Columns(4).DefaultCellStyle.Format = "c"
+        DataGrid_Vencidos.Columns(4).HeaderText = "Parcela"
+        DataGrid_Vencidos.Columns(5).HeaderText = "Valor Parcela"
+        DataGrid_Vencidos.Columns(6).HeaderText = "Saldo Parcela"
+        DataGrid_Vencidos.Columns(7).HeaderText = "Observação"
         DataGrid_Vencidos.Columns(5).DefaultCellStyle.Format = "c"
+        DataGrid_Vencidos.Columns(6).DefaultCellStyle.Format = "c"
+
         DataGrid_Vencidos.Columns(0).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft
         DataGrid_Vencidos.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid_Vencidos.Columns(1).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid_Vencidos.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid_Vencidos.Columns(2).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
 
+        DataGrid_Vencidos.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGrid_Vencidos.Columns(4).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+
+        DataGrid_Vencidos.Columns(5).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGrid_Vencidos.Columns(6).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+
         DataGrid_Vencidos.Columns(0).Width = 122
         DataGrid_Vencidos.Columns(2).Width = 50
         DataGrid_Vencidos.Columns(1).Width = 50
 
         DataGrid_Vencidos.Columns(3).Width = 75
-        DataGrid_Vencidos.Columns(4).Width = 75
         DataGrid_Vencidos.Columns(5).Width = 75
-        DataGrid_Vencidos.Columns(6).Width = 200
+        DataGrid_Vencidos.Columns(4).Width = 45
+        DataGrid_Vencidos.Columns(6).Width = 75
+        DataGrid_Vencidos.Columns(7).Width = 250
 
 
     End Sub
@@ -159,9 +168,9 @@ Public Class FrmTelaInicial
 
         FormatarGridTelaIncial()
 
-        CarregarAcessos()
+        'CarregarAcessos()
 
-        CarergarAcessoAtalhos()
+        ' CarergarAcessoAtalhos()
 
         VersaoSistema()
 
@@ -342,7 +351,7 @@ Public Class FrmTelaInicial
             data0 = Date.Now().AddDays(-30)
             dataFormatada2 = data0.ToString("yyyy-MM-dd")
 
-            sql1 = "SELECT cliente, id_venda, parcela, data_vencimento, valor_parcela, saldo_duplicata, observacao FROM duplicatas_receber WHERE data_vencimento  <= '" & data2 & "' and saldo_duplicata >0 "
+            sql1 = "SELECT cliente, id_venda, id, data_vencimento, parcela, valor_parcela, saldo_duplicata, observacao FROM duplicatas_receber WHERE data_vencimento  <= '" & data2 & "' and saldo_duplicata >0 "
             cmd1 = New MySqlCommand(sql1, con)
             cmd1.ExecuteNonQuery()
             da1 = New MySqlDataAdapter(sql1, con)
@@ -368,7 +377,7 @@ Public Class FrmTelaInicial
         LblAVencer.Text = Format(valor, "R$ 00.00")
         ' MsgBox(valor)
         For Each linha2 In DataGrid_Vencidos.Rows
-            valor2 += linha2.Cells(4).Value
+            valor2 += linha2.Cells(5).Value
         Next
 
         LblVencidos.Text = valor2
@@ -650,5 +659,13 @@ Public Class FrmTelaInicial
 
     End Sub
 
+    Private Sub DataGrid_Vencidos_DoubleClick(sender As Object, e As EventArgs) Handles DataGrid_Vencidos.DoubleClick
+
+        PesqTituloTelaIncial = "True"
+        PesqTituloidVenda = DataGrid_Vencidos.CurrentRow.Cells(1).Value
+        PesqidDuplicata = DataGrid_Vencidos.CurrentRow.Cells(2).Value
+        Dim form = New FrmReceberTitulo
+        form.ShowDialog()
+    End Sub
 
 End Class

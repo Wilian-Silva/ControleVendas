@@ -48,7 +48,7 @@ Public Class FrmPathBackup
         BackgroundWorker1.WorkerSupportsCancellation = True
         Try
             Dim caminhodump As String
-            caminhodump = Application.StartupPath
+            caminhodump = Application.StartupPath & "\Recursos"
             Dim ProcessProperties As New ProcessStartInfo
             ProcessProperties.FileName = caminhodump & "\mysqldump.exe"
             ProcessProperties.Arguments = "--user=root --password= --host=localhost --databases controle_vendas > -r " & caminho1 & " "

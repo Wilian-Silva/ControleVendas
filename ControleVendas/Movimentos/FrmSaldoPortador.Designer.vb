@@ -24,10 +24,11 @@ Partial Class FrmSaldoPortador
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmSaldoPortador))
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GboxEditar = New System.Windows.Forms.GroupBox()
+        Me.TxtIdRegistro = New System.Windows.Forms.TextBox()
         Me.BtnSair = New System.Windows.Forms.Button()
         Me.BtnEditar = New System.Windows.Forms.Button()
         Me.BtnNovo = New System.Windows.Forms.Button()
@@ -51,7 +52,6 @@ Partial Class FrmSaldoPortador
         Me.Label10 = New System.Windows.Forms.Label()
         Me.DataInicio = New System.Windows.Forms.DateTimePicker()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
-        Me.TxtIdRegistro = New System.Windows.Forms.TextBox()
         Me.GboxEditar.SuspendLayout()
         CType(Me.DataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -68,9 +68,20 @@ Partial Class FrmSaldoPortador
         Me.GboxEditar.Controls.Add(Me.BtnExcluir)
         Me.GboxEditar.Location = New System.Drawing.Point(23, 4)
         Me.GboxEditar.Name = "GboxEditar"
-        Me.GboxEditar.Size = New System.Drawing.Size(628, 50)
+        Me.GboxEditar.Size = New System.Drawing.Size(679, 50)
         Me.GboxEditar.TabIndex = 153
         Me.GboxEditar.TabStop = False
+        '
+        'TxtIdRegistro
+        '
+        Me.TxtIdRegistro.Enabled = False
+        Me.TxtIdRegistro.Location = New System.Drawing.Point(113, 18)
+        Me.TxtIdRegistro.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtIdRegistro.Name = "TxtIdRegistro"
+        Me.TxtIdRegistro.Size = New System.Drawing.Size(44, 20)
+        Me.TxtIdRegistro.TabIndex = 158
+        Me.TxtIdRegistro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TxtIdRegistro.Visible = False
         '
         'BtnSair
         '
@@ -84,7 +95,7 @@ Partial Class FrmSaldoPortador
         Me.BtnSair.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSair.ForeColor = System.Drawing.Color.Transparent
         Me.BtnSair.Image = CType(resources.GetObject("BtnSair.Image"), System.Drawing.Image)
-        Me.BtnSair.Location = New System.Drawing.Point(576, 10)
+        Me.BtnSair.Location = New System.Drawing.Point(638, 10)
         Me.BtnSair.Name = "BtnSair"
         Me.BtnSair.Size = New System.Drawing.Size(35, 35)
         Me.BtnSair.TabIndex = 154
@@ -105,7 +116,7 @@ Partial Class FrmSaldoPortador
         Me.BtnEditar.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnEditar.ForeColor = System.Drawing.Color.Transparent
         Me.BtnEditar.Image = CType(resources.GetObject("BtnEditar.Image"), System.Drawing.Image)
-        Me.BtnEditar.Location = New System.Drawing.Point(494, 9)
+        Me.BtnEditar.Location = New System.Drawing.Point(556, 9)
         Me.BtnEditar.Name = "BtnEditar"
         Me.BtnEditar.Size = New System.Drawing.Size(35, 35)
         Me.BtnEditar.TabIndex = 157
@@ -147,7 +158,7 @@ Partial Class FrmSaldoPortador
         Me.BtnExcluir.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnExcluir.ForeColor = System.Drawing.Color.Transparent
         Me.BtnExcluir.Image = CType(resources.GetObject("BtnExcluir.Image"), System.Drawing.Image)
-        Me.BtnExcluir.Location = New System.Drawing.Point(535, 9)
+        Me.BtnExcluir.Location = New System.Drawing.Point(597, 9)
         Me.BtnExcluir.Name = "BtnExcluir"
         Me.BtnExcluir.Size = New System.Drawing.Size(35, 35)
         Me.BtnExcluir.TabIndex = 153
@@ -163,34 +174,34 @@ Partial Class FrmSaldoPortador
         Me.DataGrid.AllowUserToResizeRows = False
         Me.DataGrid.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.DataGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.LightGray
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.ControlDark
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.LightGray
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ControlDark
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGrid.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGrid.DefaultCellStyle = DataGridViewCellStyle5
         Me.DataGrid.EnableHeadersVisualStyles = False
         Me.DataGrid.Location = New System.Drawing.Point(23, 111)
         Me.DataGrid.MultiSelect = False
         Me.DataGrid.Name = "DataGrid"
         Me.DataGrid.ReadOnly = True
         Me.DataGrid.RowHeadersVisible = False
-        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.ControlLightLight
-        DataGridViewCellStyle9.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.DataGrid.RowsDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.ControlLightLight
+        DataGridViewCellStyle6.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.DataGrid.RowsDefaultCellStyle = DataGridViewCellStyle6
         Me.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGrid.Size = New System.Drawing.Size(628, 206)
+        Me.DataGrid.Size = New System.Drawing.Size(679, 299)
         Me.DataGrid.TabIndex = 154
         '
         'GroupBox1
@@ -205,9 +216,9 @@ Partial Class FrmSaldoPortador
         Me.GroupBox1.Controls.Add(Me.TxtSaldoAnterior)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.GroupBox1.Location = New System.Drawing.Point(23, 318)
+        Me.GroupBox1.Location = New System.Drawing.Point(22, 416)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(628, 50)
+        Me.GroupBox1.Size = New System.Drawing.Size(680, 50)
         Me.GroupBox1.TabIndex = 180
         Me.GroupBox1.TabStop = False
         '
@@ -215,10 +226,10 @@ Partial Class FrmSaldoPortador
         '
         Me.TxtSaldoFinal.Enabled = False
         Me.TxtSaldoFinal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtSaldoFinal.Location = New System.Drawing.Point(538, 18)
+        Me.TxtSaldoFinal.Location = New System.Drawing.Point(577, 18)
         Me.TxtSaldoFinal.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtSaldoFinal.Name = "TxtSaldoFinal"
-        Me.TxtSaldoFinal.Size = New System.Drawing.Size(65, 20)
+        Me.TxtSaldoFinal.Size = New System.Drawing.Size(97, 20)
         Me.TxtSaldoFinal.TabIndex = 137
         '
         'Label3
@@ -226,7 +237,7 @@ Partial Class FrmSaldoPortador
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(475, 21)
+        Me.Label3.Location = New System.Drawing.Point(516, 21)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(62, 13)
@@ -236,10 +247,10 @@ Partial Class FrmSaldoPortador
         'TxtTotalSaidas
         '
         Me.TxtTotalSaidas.Enabled = False
-        Me.TxtTotalSaidas.Location = New System.Drawing.Point(374, 18)
+        Me.TxtTotalSaidas.Location = New System.Drawing.Point(399, 18)
         Me.TxtTotalSaidas.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtTotalSaidas.Name = "TxtTotalSaidas"
-        Me.TxtTotalSaidas.Size = New System.Drawing.Size(65, 20)
+        Me.TxtTotalSaidas.Size = New System.Drawing.Size(98, 20)
         Me.TxtTotalSaidas.TabIndex = 135
         '
         'Label2
@@ -247,7 +258,7 @@ Partial Class FrmSaldoPortador
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(330, 21)
+        Me.Label2.Location = New System.Drawing.Point(358, 21)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(42, 13)
@@ -257,10 +268,10 @@ Partial Class FrmSaldoPortador
         'TxtTotalEntradas
         '
         Me.TxtTotalEntradas.Enabled = False
-        Me.TxtTotalEntradas.Location = New System.Drawing.Point(245, 18)
+        Me.TxtTotalEntradas.Location = New System.Drawing.Point(261, 18)
         Me.TxtTotalEntradas.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtTotalEntradas.Name = "TxtTotalEntradas"
-        Me.TxtTotalEntradas.Size = New System.Drawing.Size(65, 20)
+        Me.TxtTotalEntradas.Size = New System.Drawing.Size(89, 20)
         Me.TxtTotalEntradas.TabIndex = 133
         '
         'Label1
@@ -268,7 +279,7 @@ Partial Class FrmSaldoPortador
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(189, 20)
+        Me.Label1.Location = New System.Drawing.Point(205, 20)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(54, 13)
@@ -281,7 +292,7 @@ Partial Class FrmSaldoPortador
         Me.TxtSaldoAnterior.Location = New System.Drawing.Point(92, 18)
         Me.TxtSaldoAnterior.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtSaldoAnterior.Name = "TxtSaldoAnterior"
-        Me.TxtSaldoAnterior.Size = New System.Drawing.Size(65, 20)
+        Me.TxtSaldoAnterior.Size = New System.Drawing.Size(90, 20)
         Me.TxtSaldoAnterior.TabIndex = 131
         '
         'Label4
@@ -308,7 +319,7 @@ Partial Class FrmSaldoPortador
         Me.GboxPesProd.Controls.Add(Me.DataInicio)
         Me.GboxPesProd.Location = New System.Drawing.Point(22, 55)
         Me.GboxPesProd.Name = "GboxPesProd"
-        Me.GboxPesProd.Size = New System.Drawing.Size(629, 50)
+        Me.GboxPesProd.Size = New System.Drawing.Size(680, 50)
         Me.GboxPesProd.TabIndex = 181
         Me.GboxPesProd.TabStop = False
         Me.GboxPesProd.Text = "Pesquisar"
@@ -318,7 +329,7 @@ Partial Class FrmSaldoPortador
         Me.CbPortador.FormattingEnabled = True
         Me.CbPortador.Location = New System.Drawing.Point(75, 19)
         Me.CbPortador.Name = "CbPortador"
-        Me.CbPortador.Size = New System.Drawing.Size(86, 21)
+        Me.CbPortador.Size = New System.Drawing.Size(147, 21)
         Me.CbPortador.TabIndex = 182
         '
         'Label8
@@ -358,7 +369,7 @@ Partial Class FrmSaldoPortador
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(361, 23)
+        Me.Label5.Location = New System.Drawing.Point(407, 23)
         Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(59, 13)
@@ -368,7 +379,7 @@ Partial Class FrmSaldoPortador
         'DataFim
         '
         Me.DataFim.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DataFim.Location = New System.Drawing.Point(423, 19)
+        Me.DataFim.Location = New System.Drawing.Point(469, 19)
         Me.DataFim.Name = "DataFim"
         Me.DataFim.Size = New System.Drawing.Size(97, 20)
         Me.DataFim.TabIndex = 157
@@ -378,7 +389,7 @@ Partial Class FrmSaldoPortador
         Me.Label10.AutoSize = True
         Me.Label10.BackColor = System.Drawing.Color.Transparent
         Me.Label10.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(183, 23)
+        Me.Label10.Location = New System.Drawing.Point(229, 23)
         Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(64, 13)
@@ -388,28 +399,17 @@ Partial Class FrmSaldoPortador
         'DataInicio
         '
         Me.DataInicio.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DataInicio.Location = New System.Drawing.Point(250, 19)
+        Me.DataInicio.Location = New System.Drawing.Point(296, 19)
         Me.DataInicio.Name = "DataInicio"
         Me.DataInicio.Size = New System.Drawing.Size(97, 20)
         Me.DataInicio.TabIndex = 155
-        '
-        'TxtIdRegistro
-        '
-        Me.TxtIdRegistro.Enabled = False
-        Me.TxtIdRegistro.Location = New System.Drawing.Point(113, 18)
-        Me.TxtIdRegistro.Margin = New System.Windows.Forms.Padding(4)
-        Me.TxtIdRegistro.Name = "TxtIdRegistro"
-        Me.TxtIdRegistro.Size = New System.Drawing.Size(44, 20)
-        Me.TxtIdRegistro.TabIndex = 158
-        Me.TxtIdRegistro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TxtIdRegistro.Visible = False
         '
         'FrmSaldoPortador
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(670, 385)
+        Me.ClientSize = New System.Drawing.Size(722, 478)
         Me.Controls.Add(Me.GboxPesProd)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.DataGrid)

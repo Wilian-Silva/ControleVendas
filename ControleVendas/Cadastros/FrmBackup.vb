@@ -22,7 +22,6 @@ Public Class FrmBackup
 
             End If
 
-
         Else
             MsgBox("Backup cancelado.", MsgBoxStyle.Information)
         End If
@@ -53,12 +52,14 @@ Public Class FrmBackup
         BackgroundWorker1.WorkerSupportsCancellation = True
         Try
             Dim caminhodump As String
-            caminhodump = Application.StartupPath
+            caminhodump = Application.StartupPath & "\Recursos"
             Dim ProcessProperties As New ProcessStartInfo
             ProcessProperties.FileName = caminhodump & "\mysqldump.exe"
             ProcessProperties.Arguments = "--user=root --password= --host=localhost --databases controle_vendas > -r " & caminho1 & " "
             ProcessProperties.WindowStyle = ProcessWindowStyle.Hidden
             Dim myProcess As Process = Process.Start(ProcessProperties)
+
+
 
         Catch ex As Exception
 

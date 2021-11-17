@@ -103,6 +103,11 @@ Module ModuloConexao
     Public dataFinal As Date
 
 
+    Public PesqTituloTelaIncial As String
+    Public PesqTituloidVenda As Integer
+    Public PesqidDuplicata As Integer
+
+
 
     Public Sub LimparVariaveisGlobais()
 
