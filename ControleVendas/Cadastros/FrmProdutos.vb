@@ -102,7 +102,7 @@ Public Class FrmProdutos
         DataGrid.Columns(3).Width = 85
         DataGrid.Columns(5).Width = 85
         DataGrid.Columns(4).Width = 60
-        DataGrid.Columns(6).Width = 80
+        DataGrid.Columns(6).Width = 70
         DataGrid.Columns(3).DefaultCellStyle.Format = "c"
         DataGrid.Columns(5).DefaultCellStyle.Format = "c"
         DataGrid.Columns(4).DefaultCellStyle.Format = "p"

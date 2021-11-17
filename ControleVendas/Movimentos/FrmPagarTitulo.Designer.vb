@@ -27,7 +27,9 @@ Partial Class FrmPagarTitulo
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.TxtTotalTitulo = New System.Windows.Forms.TextBox()
+        Me.Label16 = New System.Windows.Forms.Label()
         Me.TxtDescPed = New System.Windows.Forms.TextBox()
+        Me.TxtStatusTitulo = New System.Windows.Forms.TextBox()
         Me.TxtCodPedido = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.TxtIdRegistro = New System.Windows.Forms.TextBox()
@@ -60,10 +62,10 @@ Partial Class FrmPagarTitulo
         Me.Label15 = New System.Windows.Forms.Label()
         Me.TxtJurosMultas = New System.Windows.Forms.TextBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.TxtPortador = New System.Windows.Forms.TextBox()
         Me.TxtRegPagamento = New System.Windows.Forms.TextBox()
         Me.LblRegPgto = New System.Windows.Forms.Label()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.TxtStatusTitulo = New System.Windows.Forms.TextBox()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.TxtRefEntrada = New System.Windows.Forms.TextBox()
         Me.BtnBaixarTitulo = New System.Windows.Forms.Button()
@@ -75,8 +77,6 @@ Partial Class FrmPagarTitulo
         Me.BtnCarregar = New System.Windows.Forms.Button()
         Me.BtnAnterior = New System.Windows.Forms.Button()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.TxtPortador = New System.Windows.Forms.TextBox()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -104,7 +104,7 @@ Partial Class FrmPagarTitulo
         Me.GroupBox3.Controls.Add(Me.TxtNotaFiscal)
         Me.GroupBox3.Location = New System.Drawing.Point(16, 60)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(497, 86)
+        Me.GroupBox3.Size = New System.Drawing.Size(534, 86)
         Me.GroupBox3.TabIndex = 127
         Me.GroupBox3.TabStop = False
         '
@@ -126,22 +126,43 @@ Partial Class FrmPagarTitulo
         Me.TxtTotalTitulo.Location = New System.Drawing.Point(56, 49)
         Me.TxtTotalTitulo.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtTotalTitulo.Name = "TxtTotalTitulo"
-        Me.TxtTotalTitulo.Size = New System.Drawing.Size(68, 20)
+        Me.TxtTotalTitulo.Size = New System.Drawing.Size(81, 20)
         Me.TxtTotalTitulo.TabIndex = 151
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.BackColor = System.Drawing.Color.Transparent
+        Me.Label16.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.Location = New System.Drawing.Point(377, 52)
+        Me.Label16.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(62, 16)
+        Me.Label16.TabIndex = 147
+        Me.Label16.Text = "Situação:"
         '
         'TxtDescPed
         '
         Me.TxtDescPed.Enabled = False
-        Me.TxtDescPed.Location = New System.Drawing.Point(223, 49)
+        Me.TxtDescPed.Location = New System.Drawing.Point(257, 49)
         Me.TxtDescPed.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtDescPed.Name = "TxtDescPed"
         Me.TxtDescPed.Size = New System.Drawing.Size(111, 20)
         Me.TxtDescPed.TabIndex = 150
         '
+        'TxtStatusTitulo
+        '
+        Me.TxtStatusTitulo.Enabled = False
+        Me.TxtStatusTitulo.Location = New System.Drawing.Point(441, 50)
+        Me.TxtStatusTitulo.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtStatusTitulo.Name = "TxtStatusTitulo"
+        Me.TxtStatusTitulo.Size = New System.Drawing.Size(76, 20)
+        Me.TxtStatusTitulo.TabIndex = 146
+        '
         'TxtCodPedido
         '
         Me.TxtCodPedido.Enabled = False
-        Me.TxtCodPedido.Location = New System.Drawing.Point(190, 49)
+        Me.TxtCodPedido.Location = New System.Drawing.Point(224, 49)
         Me.TxtCodPedido.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtCodPedido.Name = "TxtCodPedido"
         Me.TxtCodPedido.Size = New System.Drawing.Size(32, 20)
@@ -152,7 +173,7 @@ Partial Class FrmPagarTitulo
         Me.Label8.AutoSize = True
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(135, 50)
+        Me.Label8.Location = New System.Drawing.Point(169, 50)
         Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(51, 16)
@@ -162,7 +183,7 @@ Partial Class FrmPagarTitulo
         'TxtIdRegistro
         '
         Me.TxtIdRegistro.Enabled = False
-        Me.TxtIdRegistro.Location = New System.Drawing.Point(439, 17)
+        Me.TxtIdRegistro.Location = New System.Drawing.Point(473, 17)
         Me.TxtIdRegistro.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtIdRegistro.Name = "TxtIdRegistro"
         Me.TxtIdRegistro.Size = New System.Drawing.Size(44, 20)
@@ -173,7 +194,7 @@ Partial Class FrmPagarTitulo
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(392, 19)
+        Me.Label4.Location = New System.Drawing.Point(426, 19)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(44, 16)
@@ -183,7 +204,7 @@ Partial Class FrmPagarTitulo
         'TxtNomeFornecedor
         '
         Me.TxtNomeFornecedor.Enabled = False
-        Me.TxtNomeFornecedor.Location = New System.Drawing.Point(198, 17)
+        Me.TxtNomeFornecedor.Location = New System.Drawing.Point(232, 17)
         Me.TxtNomeFornecedor.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtNomeFornecedor.Name = "TxtNomeFornecedor"
         Me.TxtNomeFornecedor.Size = New System.Drawing.Size(180, 20)
@@ -192,7 +213,7 @@ Partial Class FrmPagarTitulo
         'TxtCodFornecedor
         '
         Me.TxtCodFornecedor.Enabled = False
-        Me.TxtCodFornecedor.Location = New System.Drawing.Point(165, 17)
+        Me.TxtCodFornecedor.Location = New System.Drawing.Point(199, 17)
         Me.TxtCodFornecedor.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtCodFornecedor.Name = "TxtCodFornecedor"
         Me.TxtCodFornecedor.Size = New System.Drawing.Size(32, 20)
@@ -203,7 +224,7 @@ Partial Class FrmPagarTitulo
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(111, 19)
+        Me.Label3.Location = New System.Drawing.Point(145, 19)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(51, 16)
@@ -228,7 +249,7 @@ Partial Class FrmPagarTitulo
         Me.TxtNotaFiscal.Location = New System.Drawing.Point(56, 17)
         Me.TxtNotaFiscal.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtNotaFiscal.Name = "TxtNotaFiscal"
-        Me.TxtNotaFiscal.Size = New System.Drawing.Size(50, 20)
+        Me.TxtNotaFiscal.Size = New System.Drawing.Size(81, 20)
         Me.TxtNotaFiscal.TabIndex = 97
         '
         'TxtParcela
@@ -251,7 +272,7 @@ Partial Class FrmPagarTitulo
         Me.GroupBox1.Controls.Add(Me.DataEmissao)
         Me.GroupBox1.Location = New System.Drawing.Point(16, 274)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(237, 123)
+        Me.GroupBox1.Size = New System.Drawing.Size(256, 123)
         Me.GroupBox1.TabIndex = 128
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datas"
@@ -261,7 +282,7 @@ Partial Class FrmPagarTitulo
         Me.LblDataPagamento.AutoSize = True
         Me.LblDataPagamento.BackColor = System.Drawing.Color.Transparent
         Me.LblDataPagamento.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblDataPagamento.Location = New System.Drawing.Point(12, 87)
+        Me.LblDataPagamento.Location = New System.Drawing.Point(19, 87)
         Me.LblDataPagamento.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LblDataPagamento.Name = "LblDataPagamento"
         Me.LblDataPagamento.Size = New System.Drawing.Size(85, 16)
@@ -273,7 +294,7 @@ Partial Class FrmPagarTitulo
         '
         Me.DataPagamento.Enabled = False
         Me.DataPagamento.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DataPagamento.Location = New System.Drawing.Point(100, 86)
+        Me.DataPagamento.Location = New System.Drawing.Point(107, 86)
         Me.DataPagamento.Name = "DataPagamento"
         Me.DataPagamento.Size = New System.Drawing.Size(97, 20)
         Me.DataPagamento.TabIndex = 146
@@ -284,7 +305,7 @@ Partial Class FrmPagarTitulo
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(16, 54)
+        Me.Label1.Location = New System.Drawing.Point(23, 54)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(80, 16)
@@ -295,7 +316,7 @@ Partial Class FrmPagarTitulo
         '
         Me.DataVencimento.Enabled = False
         Me.DataVencimento.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DataVencimento.Location = New System.Drawing.Point(100, 53)
+        Me.DataVencimento.Location = New System.Drawing.Point(107, 53)
         Me.DataVencimento.Name = "DataVencimento"
         Me.DataVencimento.Size = New System.Drawing.Size(97, 20)
         Me.DataVencimento.TabIndex = 144
@@ -305,7 +326,7 @@ Partial Class FrmPagarTitulo
         Me.Label10.AutoSize = True
         Me.Label10.BackColor = System.Drawing.Color.Transparent
         Me.Label10.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(42, 24)
+        Me.Label10.Location = New System.Drawing.Point(49, 24)
         Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(54, 16)
@@ -316,7 +337,7 @@ Partial Class FrmPagarTitulo
         '
         Me.DataEmissao.Enabled = False
         Me.DataEmissao.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DataEmissao.Location = New System.Drawing.Point(100, 22)
+        Me.DataEmissao.Location = New System.Drawing.Point(107, 22)
         Me.DataEmissao.Name = "DataEmissao"
         Me.DataEmissao.Size = New System.Drawing.Size(97, 20)
         Me.DataEmissao.TabIndex = 124
@@ -333,7 +354,7 @@ Partial Class FrmPagarTitulo
         Me.GroupBox2.Controls.Add(Me.TxtValorParcela)
         Me.GroupBox2.Location = New System.Drawing.Point(16, 149)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(237, 123)
+        Me.GroupBox2.Size = New System.Drawing.Size(256, 123)
         Me.GroupBox2.TabIndex = 129
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Valores"
@@ -410,9 +431,9 @@ Partial Class FrmPagarTitulo
         Me.GroupBox4.Controls.Add(Me.TxtDescontos)
         Me.GroupBox4.Controls.Add(Me.Label15)
         Me.GroupBox4.Controls.Add(Me.TxtJurosMultas)
-        Me.GroupBox4.Location = New System.Drawing.Point(275, 149)
+        Me.GroupBox4.Location = New System.Drawing.Point(297, 149)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(237, 123)
+        Me.GroupBox4.Size = New System.Drawing.Size(253, 123)
         Me.GroupBox4.TabIndex = 130
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Despesas Financeiras"
@@ -422,7 +443,7 @@ Partial Class FrmPagarTitulo
         Me.Label13.AutoSize = True
         Me.Label13.BackColor = System.Drawing.Color.Transparent
         Me.Label13.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(33, 86)
+        Me.Label13.Location = New System.Drawing.Point(43, 86)
         Me.Label13.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(74, 16)
@@ -432,7 +453,7 @@ Partial Class FrmPagarTitulo
         'TxtTotalPago
         '
         Me.TxtTotalPago.Enabled = False
-        Me.TxtTotalPago.Location = New System.Drawing.Point(108, 84)
+        Me.TxtTotalPago.Location = New System.Drawing.Point(118, 84)
         Me.TxtTotalPago.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtTotalPago.Name = "TxtTotalPago"
         Me.TxtTotalPago.Size = New System.Drawing.Size(97, 20)
@@ -443,7 +464,7 @@ Partial Class FrmPagarTitulo
         Me.Label14.AutoSize = True
         Me.Label14.BackColor = System.Drawing.Color.Transparent
         Me.Label14.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(35, 55)
+        Me.Label14.Location = New System.Drawing.Point(45, 55)
         Me.Label14.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(71, 16)
@@ -453,7 +474,7 @@ Partial Class FrmPagarTitulo
         'TxtDescontos
         '
         Me.TxtDescontos.Enabled = False
-        Me.TxtDescontos.Location = New System.Drawing.Point(108, 53)
+        Me.TxtDescontos.Location = New System.Drawing.Point(118, 53)
         Me.TxtDescontos.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtDescontos.Name = "TxtDescontos"
         Me.TxtDescontos.Size = New System.Drawing.Size(97, 20)
@@ -464,7 +485,7 @@ Partial Class FrmPagarTitulo
         Me.Label15.AutoSize = True
         Me.Label15.BackColor = System.Drawing.Color.Transparent
         Me.Label15.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(26, 26)
+        Me.Label15.Location = New System.Drawing.Point(36, 26)
         Me.Label15.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(80, 16)
@@ -474,7 +495,7 @@ Partial Class FrmPagarTitulo
         'TxtJurosMultas
         '
         Me.TxtJurosMultas.Enabled = False
-        Me.TxtJurosMultas.Location = New System.Drawing.Point(108, 24)
+        Me.TxtJurosMultas.Location = New System.Drawing.Point(118, 24)
         Me.TxtJurosMultas.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtJurosMultas.Name = "TxtJurosMultas"
         Me.TxtJurosMultas.Size = New System.Drawing.Size(97, 20)
@@ -489,16 +510,37 @@ Partial Class FrmPagarTitulo
         Me.GroupBox5.Controls.Add(Me.LblRegPgto)
         Me.GroupBox5.Controls.Add(Me.Label17)
         Me.GroupBox5.Controls.Add(Me.TxtRefEntrada)
-        Me.GroupBox5.Location = New System.Drawing.Point(275, 275)
+        Me.GroupBox5.Location = New System.Drawing.Point(297, 275)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(237, 123)
+        Me.GroupBox5.Size = New System.Drawing.Size(253, 123)
         Me.GroupBox5.TabIndex = 131
         Me.GroupBox5.TabStop = False
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
+        Me.Label5.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(54, 21)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(62, 16)
+        Me.Label5.TabIndex = 151
+        Me.Label5.Text = "Portador:"
+        '
+        'TxtPortador
+        '
+        Me.TxtPortador.Enabled = False
+        Me.TxtPortador.Location = New System.Drawing.Point(118, 19)
+        Me.TxtPortador.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtPortador.Name = "TxtPortador"
+        Me.TxtPortador.Size = New System.Drawing.Size(97, 20)
+        Me.TxtPortador.TabIndex = 150
         '
         'TxtRegPagamento
         '
         Me.TxtRegPagamento.Enabled = False
-        Me.TxtRegPagamento.Location = New System.Drawing.Point(108, 85)
+        Me.TxtRegPagamento.Location = New System.Drawing.Point(118, 85)
         Me.TxtRegPagamento.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtRegPagamento.Name = "TxtRegPagamento"
         Me.TxtRegPagamento.Size = New System.Drawing.Size(44, 20)
@@ -511,7 +553,7 @@ Partial Class FrmPagarTitulo
         Me.LblRegPgto.AutoSize = True
         Me.LblRegPgto.BackColor = System.Drawing.Color.Transparent
         Me.LblRegPgto.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblRegPgto.Location = New System.Drawing.Point(25, 86)
+        Me.LblRegPgto.Location = New System.Drawing.Point(35, 86)
         Me.LblRegPgto.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LblRegPgto.Name = "LblRegPgto"
         Me.LblRegPgto.Size = New System.Drawing.Size(78, 16)
@@ -519,33 +561,12 @@ Partial Class FrmPagarTitulo
         Me.LblRegPgto.Text = "Último Pgto:"
         Me.LblRegPgto.Visible = False
         '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.BackColor = System.Drawing.Color.Transparent
-        Me.Label16.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(343, 52)
-        Me.Label16.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(62, 16)
-        Me.Label16.TabIndex = 147
-        Me.Label16.Text = "Situação:"
-        '
-        'TxtStatusTitulo
-        '
-        Me.TxtStatusTitulo.Enabled = False
-        Me.TxtStatusTitulo.Location = New System.Drawing.Point(407, 50)
-        Me.TxtStatusTitulo.Margin = New System.Windows.Forms.Padding(4)
-        Me.TxtStatusTitulo.Name = "TxtStatusTitulo"
-        Me.TxtStatusTitulo.Size = New System.Drawing.Size(76, 20)
-        Me.TxtStatusTitulo.TabIndex = 146
-        '
         'Label17
         '
         Me.Label17.AutoSize = True
         Me.Label17.BackColor = System.Drawing.Color.Transparent
         Me.Label17.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(15, 53)
+        Me.Label17.Location = New System.Drawing.Point(25, 53)
         Me.Label17.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(92, 16)
@@ -555,7 +576,7 @@ Partial Class FrmPagarTitulo
         'TxtRefEntrada
         '
         Me.TxtRefEntrada.Enabled = False
-        Me.TxtRefEntrada.Location = New System.Drawing.Point(108, 52)
+        Me.TxtRefEntrada.Location = New System.Drawing.Point(118, 52)
         Me.TxtRefEntrada.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtRefEntrada.Name = "TxtRefEntrada"
         Me.TxtRefEntrada.Size = New System.Drawing.Size(43, 20)
@@ -594,7 +615,7 @@ Partial Class FrmPagarTitulo
         Me.BtnSair.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSair.ForeColor = System.Drawing.Color.Transparent
         Me.BtnSair.Image = CType(resources.GetObject("BtnSair.Image"), System.Drawing.Image)
-        Me.BtnSair.Location = New System.Drawing.Point(448, 10)
+        Me.BtnSair.Location = New System.Drawing.Point(482, 9)
         Me.BtnSair.Name = "BtnSair"
         Me.BtnSair.Size = New System.Drawing.Size(35, 35)
         Me.BtnSair.TabIndex = 161
@@ -614,7 +635,7 @@ Partial Class FrmPagarTitulo
         Me.GboxPesProd.Controls.Add(Me.BtnSair)
         Me.GboxPesProd.Location = New System.Drawing.Point(16, 8)
         Me.GboxPesProd.Name = "GboxPesProd"
-        Me.GboxPesProd.Size = New System.Drawing.Size(496, 50)
+        Me.GboxPesProd.Size = New System.Drawing.Size(534, 50)
         Me.GboxPesProd.TabIndex = 159
         Me.GboxPesProd.TabStop = False
         '
@@ -698,33 +719,12 @@ Partial Class FrmPagarTitulo
         Me.ToolTip.SetToolTip(Me.BtnAnterior, "Anterior")
         Me.BtnAnterior.UseVisualStyleBackColor = True
         '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(44, 21)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(62, 16)
-        Me.Label5.TabIndex = 151
-        Me.Label5.Text = "Portador:"
-        '
-        'TxtPortador
-        '
-        Me.TxtPortador.Enabled = False
-        Me.TxtPortador.Location = New System.Drawing.Point(108, 19)
-        Me.TxtPortador.Margin = New System.Windows.Forms.Padding(4)
-        Me.TxtPortador.Name = "TxtPortador"
-        Me.TxtPortador.Size = New System.Drawing.Size(97, 20)
-        Me.TxtPortador.TabIndex = 150
-        '
         'FrmPagarTitulo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(531, 419)
+        Me.ClientSize = New System.Drawing.Size(564, 419)
         Me.Controls.Add(Me.GboxPesProd)
         Me.Controls.Add(Me.GroupBox5)
         Me.Controls.Add(Me.GroupBox4)

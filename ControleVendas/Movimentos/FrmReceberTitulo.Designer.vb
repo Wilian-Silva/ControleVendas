@@ -34,6 +34,8 @@ Partial Class FrmReceberTitulo
         Me.Label12 = New System.Windows.Forms.Label()
         Me.TxtSaldoTitulo = New System.Windows.Forms.TextBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.TxtAdto = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TxtPortador = New System.Windows.Forms.TextBox()
@@ -74,6 +76,7 @@ Partial Class FrmReceberTitulo
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.TxtValorParcela = New System.Windows.Forms.TextBox()
+        Me.TxtIdPortador = New System.Windows.Forms.TextBox()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         Me.GboxPesProd.SuspendLayout()
@@ -185,6 +188,9 @@ Partial Class FrmReceberTitulo
         'GroupBox5
         '
         Me.GroupBox5.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox5.Controls.Add(Me.TxtIdPortador)
+        Me.GroupBox5.Controls.Add(Me.Label6)
+        Me.GroupBox5.Controls.Add(Me.TxtAdto)
         Me.GroupBox5.Controls.Add(Me.Label5)
         Me.GroupBox5.Controls.Add(Me.Label4)
         Me.GroupBox5.Controls.Add(Me.TxtPortador)
@@ -196,12 +202,33 @@ Partial Class FrmReceberTitulo
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Inf. Comp."
         '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
+        Me.Label6.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(3, 19)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(92, 16)
+        Me.Label6.TabIndex = 153
+        Me.Label6.Text = "Adiantamento:"
+        '
+        'TxtAdto
+        '
+        Me.TxtAdto.Enabled = False
+        Me.TxtAdto.Location = New System.Drawing.Point(98, 17)
+        Me.TxtAdto.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtAdto.Name = "TxtAdto"
+        Me.TxtAdto.Size = New System.Drawing.Size(126, 20)
+        Me.TxtAdto.TabIndex = 152
+        '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(29, 61)
+        Me.Label5.Location = New System.Drawing.Point(29, 69)
         Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(65, 13)
@@ -213,30 +240,30 @@ Partial Class FrmReceberTitulo
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(10, 19)
+        Me.Label4.Location = New System.Drawing.Point(34, 42)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(57, 16)
+        Me.Label4.Size = New System.Drawing.Size(62, 16)
         Me.Label4.TabIndex = 149
-        Me.Label4.Text = "Portador"
+        Me.Label4.Text = "Portador:"
         '
         'TxtPortador
         '
         Me.TxtPortador.Enabled = False
-        Me.TxtPortador.Location = New System.Drawing.Point(75, 18)
+        Me.TxtPortador.Location = New System.Drawing.Point(124, 42)
         Me.TxtPortador.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtPortador.Name = "TxtPortador"
-        Me.TxtPortador.Size = New System.Drawing.Size(130, 20)
+        Me.TxtPortador.Size = New System.Drawing.Size(100, 20)
         Me.TxtPortador.TabIndex = 148
         '
         'TxtObeservacao
         '
         Me.TxtObeservacao.Enabled = False
-        Me.TxtObeservacao.Location = New System.Drawing.Point(29, 77)
+        Me.TxtObeservacao.Location = New System.Drawing.Point(29, 86)
         Me.TxtObeservacao.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtObeservacao.Multiline = True
         Me.TxtObeservacao.Name = "TxtObeservacao"
-        Me.TxtObeservacao.Size = New System.Drawing.Size(176, 39)
+        Me.TxtObeservacao.Size = New System.Drawing.Size(176, 30)
         Me.TxtObeservacao.TabIndex = 145
         '
         'TxtRegRecebimento
@@ -687,6 +714,15 @@ Partial Class FrmReceberTitulo
         Me.TxtValorParcela.Size = New System.Drawing.Size(80, 20)
         Me.TxtValorParcela.TabIndex = 144
         '
+        'TxtIdPortador
+        '
+        Me.TxtIdPortador.Enabled = False
+        Me.TxtIdPortador.Location = New System.Drawing.Point(98, 42)
+        Me.TxtIdPortador.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtIdPortador.Name = "TxtIdPortador"
+        Me.TxtIdPortador.Size = New System.Drawing.Size(26, 20)
+        Me.TxtIdPortador.TabIndex = 154
+        '
         'FrmReceberTitulo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -771,4 +807,7 @@ Partial Class FrmReceberTitulo
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents TxtPortador As TextBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents TxtAdto As TextBox
+    Friend WithEvents TxtIdPortador As TextBox
 End Class

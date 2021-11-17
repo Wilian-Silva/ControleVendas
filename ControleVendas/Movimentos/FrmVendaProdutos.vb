@@ -479,7 +479,7 @@ Public Class FrmVendaProdutos
             Next
 
         Catch ex As Exception
-            MsgBox("Erro ao Salvar!!" + ex.Message)
+            MsgBox("Erro ao SalvarEstoque_CustoItem!!" + ex.Message)
         End Try
     End Sub
     Private Sub SalvarSaldoItem()
@@ -526,7 +526,7 @@ Public Class FrmVendaProdutos
             Next
 
         Catch ex As Exception
-            MsgBox("Erro ao Salvar!!" + ex.Message)
+            MsgBox("Erro ao SalvarSaldoItem!!" + ex.Message)
         End Try
 
 
@@ -621,21 +621,24 @@ Public Class FrmVendaProdutos
 
             Dim cmdp As MySqlCommand
             Dim sql As String
-
+            Dim totalrecebido As String = 0
 
             data = DataVenda.Value.ToString("yyyy-MM-dd")
-            sql = "INSERT INTO venda_cabecalho (id_venda, data_venda, cod_cliente, cliente, valor_total, saldo_venda) VALUES ('" & TxtIdRegistro.Text & "', '" & data & "', '" & TxtCodCliente.Text & "','" & TxtCliente.Text & "', '" & TxtTotalVenda.Text.Replace(",", ".") & "', '" & TxtTotalVenda.Text.Replace(",", ".") & "' )"
+            sql = "INSERT INTO venda_cabecalho (id_venda, data_venda, cod_cliente, cliente, valor_total, saldo_venda, valor_recebido) VALUES ('" & TxtIdRegistro.Text & "', '" & data & "', '" & TxtCodCliente.Text & "','" & TxtCliente.Text & "', '" & TxtTotalVenda.Text.Replace(",", ".") & "', '" & TxtTotalVenda.Text.Replace(",", ".") & "','" & totalrecebido.Replace(",", ".") & "' )"
             cmdp = New MySqlCommand(sql, con)
             cmdp.ExecuteNonQuery()
 
         Catch ex As Exception
-            MsgBox("Erro ao Salvar!!" + ex.Message)
+            MsgBox("Erro ao SalvarNovaVenda!!" + ex.Message)
         End Try
 
 
     End Sub
 
     Sub SalvarDuplicata()
+
+
+
         'Stop
         Try
             For i = 0 To DataGridDuplicatas.RowCount - 1
@@ -653,13 +656,14 @@ Public Class FrmVendaProdutos
                     .Parameters.AddWithValue("@observacao", DataGridDuplicatas.Rows(i).Cells(6).Value.ToString)
                     .Parameters.AddWithValue("@saldo_duplicata", CDbl(DataGridDuplicatas.Rows(i).Cells(5).Value.ToString))
                     .Parameters.AddWithValue("@id_portador", CInt(DataGridDuplicatas.Rows(i).Cells(7).Value.ToString))
+
                     cmd.ExecuteNonQuery()
                 End With
 
             Next
 
         Catch ex As Exception
-            MsgBox("Erro ao Salvar!!" + ex.Message)
+            MsgBox("Erro ao SalvarDuplicata!!" + ex.Message)
         End Try
 
     End Sub

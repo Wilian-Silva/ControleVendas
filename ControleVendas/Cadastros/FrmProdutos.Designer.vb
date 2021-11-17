@@ -80,26 +80,26 @@ Partial Class FrmProdutos
         Me.GroupBox3.Controls.Add(Me.Label3)
         Me.GroupBox3.Location = New System.Drawing.Point(26, 61)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(570, 86)
+        Me.GroupBox3.Size = New System.Drawing.Size(721, 86)
         Me.GroupBox3.TabIndex = 147
         Me.GroupBox3.TabStop = False
         '
         'TxtMargemVenda
         '
         Me.TxtMargemVenda.Enabled = False
-        Me.TxtMargemVenda.Location = New System.Drawing.Point(410, 52)
+        Me.TxtMargemVenda.Location = New System.Drawing.Point(466, 51)
         Me.TxtMargemVenda.Name = "TxtMargemVenda"
-        Me.TxtMargemVenda.Size = New System.Drawing.Size(43, 20)
+        Me.TxtMargemVenda.Size = New System.Drawing.Size(67, 20)
         Me.TxtMargemVenda.TabIndex = 150
         '
         'TxtSaldoEstoque
         '
         Me.TxtSaldoEstoque.BackColor = System.Drawing.Color.White
         Me.TxtSaldoEstoque.Enabled = False
-        Me.TxtSaldoEstoque.Location = New System.Drawing.Point(521, 53)
+        Me.TxtSaldoEstoque.Location = New System.Drawing.Point(620, 50)
         Me.TxtSaldoEstoque.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtSaldoEstoque.Name = "TxtSaldoEstoque"
-        Me.TxtSaldoEstoque.Size = New System.Drawing.Size(35, 20)
+        Me.TxtSaldoEstoque.Size = New System.Drawing.Size(75, 20)
         Me.TxtSaldoEstoque.TabIndex = 6
         Me.TxtSaldoEstoque.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -108,7 +108,7 @@ Partial Class FrmProdutos
         Me.Label7.AutoSize = True
         Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(460, 55)
+        Me.Label7.Location = New System.Drawing.Point(559, 52)
         Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(57, 16)
@@ -120,10 +120,10 @@ Partial Class FrmProdutos
         Me.TxtCodAuxiliar.BackColor = System.Drawing.Color.White
         Me.TxtCodAuxiliar.Enabled = False
         Me.TxtCodAuxiliar.HideSelection = False
-        Me.TxtCodAuxiliar.Location = New System.Drawing.Point(462, 18)
+        Me.TxtCodAuxiliar.Location = New System.Drawing.Point(564, 18)
         Me.TxtCodAuxiliar.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtCodAuxiliar.Name = "TxtCodAuxiliar"
-        Me.TxtCodAuxiliar.Size = New System.Drawing.Size(94, 20)
+        Me.TxtCodAuxiliar.Size = New System.Drawing.Size(131, 20)
         Me.TxtCodAuxiliar.TabIndex = 73
         '
         'TxtId
@@ -142,7 +142,7 @@ Partial Class FrmProdutos
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(350, 54)
+        Me.Label4.Location = New System.Drawing.Point(406, 53)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(60, 16)
@@ -153,10 +153,10 @@ Partial Class FrmProdutos
         '
         Me.TxtPrecoVenda.BackColor = System.Drawing.Color.White
         Me.TxtPrecoVenda.Enabled = False
-        Me.TxtPrecoVenda.Location = New System.Drawing.Point(286, 53)
+        Me.TxtPrecoVenda.Location = New System.Drawing.Point(297, 52)
         Me.TxtPrecoVenda.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtPrecoVenda.Name = "TxtPrecoVenda"
-        Me.TxtPrecoVenda.Size = New System.Drawing.Size(60, 20)
+        Me.TxtPrecoVenda.Size = New System.Drawing.Size(71, 20)
         Me.TxtPrecoVenda.TabIndex = 4
         '
         'Label6
@@ -164,7 +164,7 @@ Partial Class FrmProdutos
         Me.Label6.AutoSize = True
         Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(200, 55)
+        Me.Label6.Location = New System.Drawing.Point(209, 54)
         Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(85, 16)
@@ -199,7 +199,7 @@ Partial Class FrmProdutos
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(379, 20)
+        Me.Label1.Location = New System.Drawing.Point(481, 20)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(80, 16)
@@ -213,7 +213,7 @@ Partial Class FrmProdutos
         Me.TxtPrecoCompra.Location = New System.Drawing.Point(119, 53)
         Me.TxtPrecoCompra.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtPrecoCompra.Name = "TxtPrecoCompra"
-        Me.TxtPrecoCompra.Size = New System.Drawing.Size(60, 20)
+        Me.TxtPrecoCompra.Size = New System.Drawing.Size(82, 20)
         Me.TxtPrecoCompra.TabIndex = 3
         '
         'Label3
@@ -238,9 +238,9 @@ Partial Class FrmProdutos
         Me.GboxProduto.Controls.Add(Me.BtnLimpar)
         Me.GboxProduto.Controls.Add(Me.BtnSalvar)
         Me.GboxProduto.Controls.Add(Me.BtnEditar)
-        Me.GboxProduto.Location = New System.Drawing.Point(302, 8)
+        Me.GboxProduto.Location = New System.Drawing.Point(421, 9)
         Me.GboxProduto.Name = "GboxProduto"
-        Me.GboxProduto.Size = New System.Drawing.Size(296, 50)
+        Me.GboxProduto.Size = New System.Drawing.Size(326, 50)
         Me.GboxProduto.TabIndex = 146
         Me.GboxProduto.TabStop = False
         '
@@ -256,7 +256,7 @@ Partial Class FrmProdutos
         Me.BtnCancelar.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnCancelar.ForeColor = System.Drawing.Color.Transparent
         Me.BtnCancelar.Image = CType(resources.GetObject("BtnCancelar.Image"), System.Drawing.Image)
-        Me.BtnCancelar.Location = New System.Drawing.Point(130, 10)
+        Me.BtnCancelar.Location = New System.Drawing.Point(159, 10)
         Me.BtnCancelar.Name = "BtnCancelar"
         Me.BtnCancelar.Size = New System.Drawing.Size(35, 35)
         Me.BtnCancelar.TabIndex = 155
@@ -276,7 +276,7 @@ Partial Class FrmProdutos
         Me.BtnNovo.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnNovo.ForeColor = System.Drawing.Color.Transparent
         Me.BtnNovo.Image = CType(resources.GetObject("BtnNovo.Image"), System.Drawing.Image)
-        Me.BtnNovo.Location = New System.Drawing.Point(10, 10)
+        Me.BtnNovo.Location = New System.Drawing.Point(39, 10)
         Me.BtnNovo.Name = "BtnNovo"
         Me.BtnNovo.Size = New System.Drawing.Size(35, 35)
         Me.BtnNovo.TabIndex = 151
@@ -296,7 +296,7 @@ Partial Class FrmProdutos
         Me.BtnSair.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSair.ForeColor = System.Drawing.Color.Transparent
         Me.BtnSair.Image = CType(resources.GetObject("BtnSair.Image"), System.Drawing.Image)
-        Me.BtnSair.Location = New System.Drawing.Point(248, 9)
+        Me.BtnSair.Location = New System.Drawing.Point(277, 9)
         Me.BtnSair.Name = "BtnSair"
         Me.BtnSair.Size = New System.Drawing.Size(35, 35)
         Me.BtnSair.TabIndex = 154
@@ -316,7 +316,7 @@ Partial Class FrmProdutos
         Me.BtnExcluir.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnExcluir.ForeColor = System.Drawing.Color.Transparent
         Me.BtnExcluir.Image = CType(resources.GetObject("BtnExcluir.Image"), System.Drawing.Image)
-        Me.BtnExcluir.Location = New System.Drawing.Point(208, 10)
+        Me.BtnExcluir.Location = New System.Drawing.Point(237, 10)
         Me.BtnExcluir.Name = "BtnExcluir"
         Me.BtnExcluir.Size = New System.Drawing.Size(35, 35)
         Me.BtnExcluir.TabIndex = 153
@@ -336,7 +336,7 @@ Partial Class FrmProdutos
         Me.BtnLimpar.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnLimpar.ForeColor = System.Drawing.Color.Transparent
         Me.BtnLimpar.Image = CType(resources.GetObject("BtnLimpar.Image"), System.Drawing.Image)
-        Me.BtnLimpar.Location = New System.Drawing.Point(91, 10)
+        Me.BtnLimpar.Location = New System.Drawing.Point(120, 10)
         Me.BtnLimpar.Name = "BtnLimpar"
         Me.BtnLimpar.Size = New System.Drawing.Size(35, 35)
         Me.BtnLimpar.TabIndex = 152
@@ -356,7 +356,7 @@ Partial Class FrmProdutos
         Me.BtnSalvar.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSalvar.ForeColor = System.Drawing.Color.Transparent
         Me.BtnSalvar.Image = CType(resources.GetObject("BtnSalvar.Image"), System.Drawing.Image)
-        Me.BtnSalvar.Location = New System.Drawing.Point(169, 10)
+        Me.BtnSalvar.Location = New System.Drawing.Point(198, 10)
         Me.BtnSalvar.Name = "BtnSalvar"
         Me.BtnSalvar.Size = New System.Drawing.Size(35, 35)
         Me.BtnSalvar.TabIndex = 151
@@ -376,7 +376,7 @@ Partial Class FrmProdutos
         Me.BtnEditar.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnEditar.ForeColor = System.Drawing.Color.Transparent
         Me.BtnEditar.Image = CType(resources.GetObject("BtnEditar.Image"), System.Drawing.Image)
-        Me.BtnEditar.Location = New System.Drawing.Point(52, 10)
+        Me.BtnEditar.Location = New System.Drawing.Point(81, 10)
         Me.BtnEditar.Name = "BtnEditar"
         Me.BtnEditar.Size = New System.Drawing.Size(35, 35)
         Me.BtnEditar.TabIndex = 150
@@ -401,7 +401,7 @@ Partial Class FrmProdutos
         Me.TxtPesquisar.Location = New System.Drawing.Point(80, 19)
         Me.TxtPesquisar.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtPesquisar.Name = "TxtPesquisar"
-        Me.TxtPesquisar.Size = New System.Drawing.Size(93, 20)
+        Me.TxtPesquisar.Size = New System.Drawing.Size(165, 20)
         Me.TxtPesquisar.TabIndex = 111
         '
         'BtnSelecionarItem
@@ -416,7 +416,7 @@ Partial Class FrmProdutos
         Me.BtnSelecionarItem.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSelecionarItem.ForeColor = System.Drawing.Color.Transparent
         Me.BtnSelecionarItem.Image = CType(resources.GetObject("BtnSelecionarItem.Image"), System.Drawing.Image)
-        Me.BtnSelecionarItem.Location = New System.Drawing.Point(187, 10)
+        Me.BtnSelecionarItem.Location = New System.Drawing.Point(270, 8)
         Me.BtnSelecionarItem.Name = "BtnSelecionarItem"
         Me.BtnSelecionarItem.Size = New System.Drawing.Size(35, 35)
         Me.BtnSelecionarItem.TabIndex = 150
@@ -437,7 +437,7 @@ Partial Class FrmProdutos
         Me.BtnCacelarConsulta.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnCacelarConsulta.ForeColor = System.Drawing.Color.Transparent
         Me.BtnCacelarConsulta.Image = CType(resources.GetObject("BtnCacelarConsulta.Image"), System.Drawing.Image)
-        Me.BtnCacelarConsulta.Location = New System.Drawing.Point(227, 11)
+        Me.BtnCacelarConsulta.Location = New System.Drawing.Point(310, 9)
         Me.BtnCacelarConsulta.Name = "BtnCacelarConsulta"
         Me.BtnCacelarConsulta.Size = New System.Drawing.Size(35, 35)
         Me.BtnCacelarConsulta.TabIndex = 151
@@ -484,7 +484,7 @@ Partial Class FrmProdutos
         DataGridViewCellStyle3.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
         Me.DataGrid.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGrid.Size = New System.Drawing.Size(580, 308)
+        Me.DataGrid.Size = New System.Drawing.Size(721, 308)
         Me.DataGrid.TabIndex = 148
         '
         'GboxPesProd
@@ -496,7 +496,7 @@ Partial Class FrmProdutos
         Me.GboxPesProd.Controls.Add(Me.TxtPesquisar)
         Me.GboxPesProd.Location = New System.Drawing.Point(27, 8)
         Me.GboxPesProd.Name = "GboxPesProd"
-        Me.GboxPesProd.Size = New System.Drawing.Size(269, 50)
+        Me.GboxPesProd.Size = New System.Drawing.Size(367, 50)
         Me.GboxPesProd.TabIndex = 149
         Me.GboxPesProd.TabStop = False
         '
@@ -505,7 +505,7 @@ Partial Class FrmProdutos
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(634, 489)
+        Me.ClientSize = New System.Drawing.Size(775, 489)
         Me.Controls.Add(Me.GboxPesProd)
         Me.Controls.Add(Me.DataGrid)
         Me.Controls.Add(Me.GroupBox3)

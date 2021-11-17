@@ -72,39 +72,46 @@ Public Class FrmDuplReceber
 
     Private Sub BtnOk_Click(sender As Object, e As EventArgs) Handles BtnOk.Click
 
+
         TxtParcela.BackColor = Color.White
         TxtTotalDuplicata.BackColor = Color.White
         TxtNum_venda.BackColor = Color.White
+        CbPortador.BackColor = Color.White
 
-        If TxtParcela.Text <> "" And TxtTotalDuplicata.Text <> "" And TxtNum_venda.Text <> "" Then
+        If TxtParcela.Text <> "" And TxtTotalDuplicata.Text <> "" And TxtNum_venda.Text <> "" And TxtIdportador.Text <> "" Then
 
-            If Table1DuplicatasReceber.Columns.Count < 1 Then
-                Table1DuplicatasReceber.Columns.Add("Id. Dup.")
-                Table1DuplicatasReceber.Columns.Add("Parcela")
-                Table1DuplicatasReceber.Columns.Add("Documento")
-                Table1DuplicatasReceber.Columns.Add("Data Emissão")
-                Table1DuplicatasReceber.Columns.Add("Data Vencimento")
-                Table1DuplicatasReceber.Columns.Add("Valor Parcela")
-                Table1DuplicatasReceber.Columns.Add("Observação")
-                Table1DuplicatasReceber.Columns.Add("Id Portador")
+                If Table1DuplicatasReceber.Columns.Count < 1 Then
+                    Table1DuplicatasReceber.Columns.Add("Id. Dup.")
+                    Table1DuplicatasReceber.Columns.Add("Parcela")
+                    Table1DuplicatasReceber.Columns.Add("Documento")
+                    Table1DuplicatasReceber.Columns.Add("Data Emissão")
+                    Table1DuplicatasReceber.Columns.Add("Data Vencimento")
+                    Table1DuplicatasReceber.Columns.Add("Valor Parcela")
+                    Table1DuplicatasReceber.Columns.Add("Observação")
+                    Table1DuplicatasReceber.Columns.Add("Id Portador")
 
-                bsd.DataSource = Table1DuplicatasReceber
+                    bsd.DataSource = Table1DuplicatasReceber
 
-                Table1DuplicatasReceber.Rows.Add("", TxtParcela.Text, TxtNum_venda.Text, DataEmissao.Value.ToShortDateString, DataVencimento.Value.ToShortDateString, TxtTotalDuplicata.Text, TxtObs.Text, TxtIdportador.Text)
-                Me.Close()
+                    Table1DuplicatasReceber.Rows.Add("", TxtParcela.Text, TxtNum_venda.Text, DataEmissao.Value.ToShortDateString, DataVencimento.Value.ToShortDateString, TxtTotalDuplicata.Text, TxtObs.Text, TxtIdportador.Text)
+                    Me.Close()
 
+                Else
+                    Table1DuplicatasReceber.Rows.Add("", TxtParcela.Text, TxtNum_venda.Text, DataEmissao.Value.ToShortDateString, DataVencimento.Value.ToShortDateString, TxtTotalDuplicata.Text, TxtObs.Text, TxtIdportador.Text)
+
+                    Me.Close()
+                End If
             Else
-                Table1DuplicatasReceber.Rows.Add("", TxtParcela.Text, TxtNum_venda.Text, DataEmissao.Value.ToShortDateString, DataVencimento.Value.ToShortDateString, TxtTotalDuplicata.Text, TxtObs.Text, TxtIdportador.Text)
-
-                Me.Close()
-            End If
-        Else
 
             TxtParcela.BackColor = Color.Salmon
             TxtNum_venda.BackColor = Color.Salmon
             TxtTotalDuplicata.BackColor = Color.Salmon
+            CbPortador.BackColor = Color.Salmon
             MsgBox("Campos em branco ou vazios", MsgBoxStyle.Information, "Adicionar duplicatas")
-        End If
+            End If
+
+
+
+
 
     End Sub
 

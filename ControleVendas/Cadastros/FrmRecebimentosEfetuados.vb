@@ -87,6 +87,8 @@ Public Class FrmRecebimentosEfetuados
         'DataGrid.Columns(16).HeaderText = "Status Nota"
         DataGrid.Columns(17).HeaderText = "Portador"
         ' DataGrid.Columns(18).HeaderText = "IdPortador"
+        DataGrid.Columns(19).HeaderText = "Adto"
+        'DataGrid.Columns(20).HeaderText = "Comp. Adto"
 
         DataGrid.Columns(0).Width = 50
         DataGrid.Columns(2).Width = 50
@@ -97,6 +99,8 @@ Public Class FrmRecebimentosEfetuados
         'DataGrid.Columns(8).Width = 50
         'DataGrid.Columns(5).Width = 100
         'DataGrid.Columns(18).Width = 90
+        DataGrid.Columns(19).Width = 90
+        ' DataGrid.Columns(20).Width = 90
 
         DataGrid.Columns(0).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
@@ -123,6 +127,8 @@ Public Class FrmRecebimentosEfetuados
         DataGrid.Columns(10).DefaultCellStyle.Format = "c"
         DataGrid.Columns(11).DefaultCellStyle.Format = "c"
         DataGrid.Columns(12).DefaultCellStyle.Format = "c"
+        DataGrid.Columns(19).DefaultCellStyle.Format = "c"
+        'DataGrid.Columns(20).DefaultCellStyle.Format = "c"
 
     End Sub
 
@@ -216,12 +222,17 @@ Public Class FrmRecebimentosEfetuados
 
                     Excluir_mvto_portador()
 
+                    Excluir_tbl_adto()
+
                     TxtIdReg.Text = ""
                     TxtIdRegDup.Text = ""
                     TxtNota.Text = ""
                     TxtParcela.Text = ""
                     TxtValorPago.Text = ""
                     TxtValorParcela.Text = ""
+                    TxtCliente.Text = ""
+                    TxtTotaVenda.Text = ""
+                    TxtPortador.Text = ""
 
 
                     ListarTudo()
@@ -240,6 +251,23 @@ Public Class FrmRecebimentosEfetuados
         End If
 
     End Sub
+
+    Sub Excluir_tbl_adto()
+        Try
+            Abrir()
+
+            'ATUALIZAR MVTO PORTADOR
+            Dim cmd1 As MySqlCommand
+            Dim sql1 As String
+
+            sql1 = "DELETE FROM tbl_adto WHERE id_mvto_recebimentos =  '" & TxtIdReg.Text & "' "
+            cmd1 = New MySqlCommand(sql1, con)
+            cmd1.ExecuteNonQuery()
+
+        Catch ex As Exception
+            MsgBox("Erro ao Excluir_tbl_adto!!" + ex.Message)
+        End Try
+    End Sub
     Sub Excluir_mvto_portador()
         Try
             Abrir()
@@ -250,7 +278,7 @@ Public Class FrmRecebimentosEfetuados
             Dim tipoMov As String
             tipoMov = "Entrada"
 
-            sql1 = "DELETE FROM mvto_portador WHERE tipo = '" & tipoMov & "' and id_duplicata =  '" & TxtIdRegDup.Text & "' "
+            sql1 = "DELETE FROM mvto_portador WHERE tipo = '" & tipoMov & "' and id_mvto_recebimentos =  '" & TxtIdReg.Text & "' "
             cmd1 = New MySqlCommand(sql1, con)
             cmd1.ExecuteNonQuery()
 

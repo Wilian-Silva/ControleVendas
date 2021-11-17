@@ -137,7 +137,7 @@ Partial Class FrmRecebimentosEfetuados
         DataGridViewCellStyle3.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
         Me.DataGrid.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGrid.Size = New System.Drawing.Size(598, 229)
+        Me.DataGrid.Size = New System.Drawing.Size(791, 336)
         Me.DataGrid.TabIndex = 157
         '
         'GBoxExluir
@@ -162,7 +162,7 @@ Partial Class FrmRecebimentosEfetuados
         Me.GBoxExluir.Controls.Add(Me.LblId)
         Me.GBoxExluir.Location = New System.Drawing.Point(21, 58)
         Me.GBoxExluir.Name = "GBoxExluir"
-        Me.GBoxExluir.Size = New System.Drawing.Size(598, 83)
+        Me.GBoxExluir.Size = New System.Drawing.Size(791, 83)
         Me.GBoxExluir.TabIndex = 164
         Me.GBoxExluir.TabStop = False
         Me.GBoxExluir.Text = "Dados do Recebimento"
@@ -170,7 +170,7 @@ Partial Class FrmRecebimentosEfetuados
         'TxtPortador
         '
         Me.TxtPortador.Enabled = False
-        Me.TxtPortador.Location = New System.Drawing.Point(505, 51)
+        Me.TxtPortador.Location = New System.Drawing.Point(666, 51)
         Me.TxtPortador.Name = "TxtPortador"
         Me.TxtPortador.Size = New System.Drawing.Size(77, 20)
         Me.TxtPortador.TabIndex = 181
@@ -179,7 +179,7 @@ Partial Class FrmRecebimentosEfetuados
         '
         Me.Label8.AutoSize = True
         Me.Label8.BackColor = System.Drawing.Color.Transparent
-        Me.Label8.Location = New System.Drawing.Point(454, 55)
+        Me.Label8.Location = New System.Drawing.Point(615, 55)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(47, 13)
         Me.Label8.TabIndex = 182
@@ -188,7 +188,7 @@ Partial Class FrmRecebimentosEfetuados
         'TxtCliente
         '
         Me.TxtCliente.Enabled = False
-        Me.TxtCliente.Location = New System.Drawing.Point(54, 20)
+        Me.TxtCliente.Location = New System.Drawing.Point(162, 89)
         Me.TxtCliente.Name = "TxtCliente"
         Me.TxtCliente.Size = New System.Drawing.Size(149, 20)
         Me.TxtCliente.TabIndex = 179
@@ -206,7 +206,7 @@ Partial Class FrmRecebimentosEfetuados
         'TxtTotaVenda
         '
         Me.TxtTotaVenda.Enabled = False
-        Me.TxtTotaVenda.Location = New System.Drawing.Point(505, 20)
+        Me.TxtTotaVenda.Location = New System.Drawing.Point(666, 19)
         Me.TxtTotaVenda.Name = "TxtTotaVenda"
         Me.TxtTotaVenda.Size = New System.Drawing.Size(77, 20)
         Me.TxtTotaVenda.TabIndex = 177
@@ -215,7 +215,7 @@ Partial Class FrmRecebimentosEfetuados
         '
         Me.Label6.AutoSize = True
         Me.Label6.BackColor = System.Drawing.Color.Transparent
-        Me.Label6.Location = New System.Drawing.Point(438, 22)
+        Me.Label6.Location = New System.Drawing.Point(599, 21)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(65, 13)
         Me.Label6.TabIndex = 178
@@ -226,13 +226,13 @@ Partial Class FrmRecebimentosEfetuados
         Me.TxtValorParcela.Enabled = False
         Me.TxtValorParcela.Location = New System.Drawing.Point(85, 51)
         Me.TxtValorParcela.Name = "TxtValorParcela"
-        Me.TxtValorParcela.Size = New System.Drawing.Size(88, 20)
+        Me.TxtValorParcela.Size = New System.Drawing.Size(118, 20)
         Me.TxtValorParcela.TabIndex = 175
         '
         'TxtValorPago
         '
         Me.TxtValorPago.Enabled = False
-        Me.TxtValorPago.Location = New System.Drawing.Point(343, 51)
+        Me.TxtValorPago.Location = New System.Drawing.Point(457, 48)
         Me.TxtValorPago.Name = "TxtValorPago"
         Me.TxtValorPago.Size = New System.Drawing.Size(77, 20)
         Me.TxtValorPago.TabIndex = 173
@@ -241,7 +241,7 @@ Partial Class FrmRecebimentosEfetuados
         '
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Location = New System.Drawing.Point(292, 54)
+        Me.Label4.Location = New System.Drawing.Point(406, 51)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(50, 13)
         Me.Label4.TabIndex = 174
@@ -269,9 +269,9 @@ Partial Class FrmRecebimentosEfetuados
         'TxtNota
         '
         Me.TxtNota.Enabled = False
-        Me.TxtNota.Location = New System.Drawing.Point(376, 20)
+        Me.TxtNota.Location = New System.Drawing.Point(457, 16)
         Me.TxtNota.Name = "TxtNota"
-        Me.TxtNota.Size = New System.Drawing.Size(44, 20)
+        Me.TxtNota.Size = New System.Drawing.Size(77, 20)
         Me.TxtNota.TabIndex = 169
         Me.TxtNota.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -279,7 +279,7 @@ Partial Class FrmRecebimentosEfetuados
         '
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Location = New System.Drawing.Point(330, 23)
+        Me.Label2.Location = New System.Drawing.Point(411, 19)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(45, 13)
         Me.Label2.TabIndex = 170
@@ -288,9 +288,9 @@ Partial Class FrmRecebimentosEfetuados
         'TxtIdRegDup
         '
         Me.TxtIdRegDup.Enabled = False
-        Me.TxtIdRegDup.Location = New System.Drawing.Point(278, 20)
+        Me.TxtIdRegDup.Location = New System.Drawing.Point(312, 16)
         Me.TxtIdRegDup.Name = "TxtIdRegDup"
-        Me.TxtIdRegDup.Size = New System.Drawing.Size(30, 20)
+        Me.TxtIdRegDup.Size = New System.Drawing.Size(60, 20)
         Me.TxtIdRegDup.TabIndex = 167
         Me.TxtIdRegDup.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -298,7 +298,7 @@ Partial Class FrmRecebimentosEfetuados
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Location = New System.Drawing.Point(233, 23)
+        Me.Label1.Location = New System.Drawing.Point(267, 19)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(44, 13)
         Me.Label1.TabIndex = 168
@@ -307,9 +307,9 @@ Partial Class FrmRecebimentosEfetuados
         'TxtIdReg
         '
         Me.TxtIdReg.Enabled = False
-        Me.TxtIdReg.Location = New System.Drawing.Point(236, 51)
+        Me.TxtIdReg.Location = New System.Drawing.Point(312, 51)
         Me.TxtIdReg.Name = "TxtIdReg"
-        Me.TxtIdReg.Size = New System.Drawing.Size(30, 20)
+        Me.TxtIdReg.Size = New System.Drawing.Size(60, 20)
         Me.TxtIdReg.TabIndex = 149
         Me.TxtIdReg.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -317,7 +317,7 @@ Partial Class FrmRecebimentosEfetuados
         '
         Me.LblId.AutoSize = True
         Me.LblId.BackColor = System.Drawing.Color.Transparent
-        Me.LblId.Location = New System.Drawing.Point(190, 55)
+        Me.LblId.Location = New System.Drawing.Point(266, 55)
         Me.LblId.Name = "LblId"
         Me.LblId.Size = New System.Drawing.Size(45, 13)
         Me.LblId.TabIndex = 150
@@ -382,7 +382,7 @@ Partial Class FrmRecebimentosEfetuados
         Me.GroupBox3.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox3.Controls.Add(Me.BtnSair)
         Me.GroupBox3.Controls.Add(Me.BtnExcluir)
-        Me.GroupBox3.Location = New System.Drawing.Point(529, 7)
+        Me.GroupBox3.Location = New System.Drawing.Point(722, 12)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(90, 50)
         Me.GroupBox3.TabIndex = 165
@@ -393,7 +393,7 @@ Partial Class FrmRecebimentosEfetuados
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(643, 406)
+        Me.ClientSize = New System.Drawing.Size(835, 510)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GBoxExluir)
         Me.Controls.Add(Me.GboxPesProd)
