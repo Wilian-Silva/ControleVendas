@@ -32,10 +32,10 @@
     <ProductName>Controle_Vendas</ProductName>
     <PublisherName>ControlSystem</PublisherName>
     <SuiteName>SystemGroup</SuiteName>
-    <MinimumRequiredVersion>1.0.0.5</MinimumRequiredVersion>
+    <MinimumRequiredVersion>1.0.0.14</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>13</ApplicationRevision>
+    <ApplicationRevision>14</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -84,7 +84,7 @@
     <ManifestKeyFile>ControleVendas_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <GenerateManifests>false</GenerateManifests>
+    <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>true</SignManifests>
@@ -244,6 +244,12 @@
     <Compile Include="Cadastros\FrmFornecedor.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Cadastros\FrmMvtoAdto.Designer.vb">
+      <DependentUpon>FrmMvtoAdto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastros\FrmMvtoAdto.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Cadastros\FrmNivel1.Designer.vb">
       <DependentUpon>FrmNivel1.vb</DependentUpon>
     </Compile>
@@ -381,6 +387,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DatasetResultadoPeriodo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetTotalAdto.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetTotalAdto.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSet_ReportCompras.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -605,6 +616,12 @@
     <Compile Include="Relatorios\FrmTituloVencidos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Relatorios\FrmTotalAdtos.Designer.vb">
+      <DependentUpon>FrmTotalAdtos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\FrmTotalAdtos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Relatorios\ReportVendas.Designer.vb">
       <DependentUpon>ReportVendas.vb</DependentUpon>
     </Compile>
@@ -636,6 +653,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Cadastros\FrmFornecedor.resx">
       <DependentUpon>FrmFornecedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastros\FrmMvtoAdto.resx">
+      <DependentUpon>FrmMvtoAdto.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cadastros\FrmNivel1.resx">
       <DependentUpon>FrmNivel1.vb</DependentUpon>
@@ -781,6 +801,10 @@
     <EmbeddedResource Include="Relatorios\FrmTituloVencidos.resx">
       <DependentUpon>FrmTituloVencidos.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\FrmTotalAdtos.resx">
+      <DependentUpon>FrmTotalAdtos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\ReportTotalAdto.rdlc" />
     <EmbeddedResource Include="Relatorios\ReportArPortador.rdlc" />
     <EmbeddedResource Include="Relatorios\ReportCompras.rdlc" />
     <EmbeddedResource Include="Relatorios\ReportContasPagar.rdlc" />
@@ -900,6 +924,17 @@
     </None>
     <None Include="DatasetResultadoPeriodo.xss">
       <DependentUpon>DatasetResultadoPeriodo.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetTotalAdto.xsc">
+      <DependentUpon>DataSetTotalAdto.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetTotalAdto.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetTotalAdto.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetTotalAdto.xss">
+      <DependentUpon>DataSetTotalAdto.xsd</DependentUpon>
     </None>
     <None Include="DataSet_ReportCompras.xsc">
       <DependentUpon>DataSet_ReportCompras.xsd</DependentUpon>

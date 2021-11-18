@@ -168,9 +168,9 @@ Public Class FrmTelaInicial
 
         FormatarGridTelaIncial()
 
-        'CarregarAcessos()
+        CarregarAcessos()
 
-        ' CarergarAcessoAtalhos()
+        CarergarAcessoAtalhos()
 
         VersaoSistema()
 
@@ -668,4 +668,14 @@ Public Class FrmTelaInicial
         form.ShowDialog()
     End Sub
 
+    Private Sub SaldoDeAdiantamentosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaldoDeAdiantamentosToolStripMenuItem.Click
+        Dim form = New FrmTotalAdtos
+        form.ShowDialog()
+    End Sub
+
+    Private Sub AdiantamentosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AdiantamentosToolStripMenuItem.Click
+        Dim form = New FrmMvtoAdto
+        form.ShowDialog()
+
+    End Sub
 End Class
