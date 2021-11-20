@@ -141,7 +141,7 @@ Public Class FrmLucroNfe
             Dim da As MySqlDataAdapter
 
             sql = "SELECT * FROM TBL_RETIRADAS " _
-                & " WHERE ID_ENTRADA =  '" & TxtIdNfeEntrada.Text & "' " _
+                & " WHERE ID_ENTRADA_NFE =  '" & TxtIdNfeEntrada.Text & "' " _
                 & " ORDER BY ID "
 
             da = New MySqlDataAdapter(sql, con)
@@ -276,5 +276,9 @@ Public Class FrmLucroNfe
 
     Private Sub BtnSair_Click(sender As Object, e As EventArgs) Handles BtnSair.Click
         Me.Close()
+    End Sub
+
+    Private Sub FrmLucroNfe_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class

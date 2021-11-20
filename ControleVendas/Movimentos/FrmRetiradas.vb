@@ -157,4 +157,9 @@ Public Class FrmRetiradas
         pesquisarNotaEntrada = ""
         PesquisarPortador = ""
     End Sub
+
+    Private Sub BtnPesqPedido_Click(sender As Object, e As EventArgs) Handles BtnPesqPedido.Click
+        Dim frm As New FrmLucroRetirar
+        frm.ShowDialog()
+    End Sub
 End Class

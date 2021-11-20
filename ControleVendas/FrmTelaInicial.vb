@@ -164,17 +164,67 @@ Public Class FrmTelaInicial
 
     Private Sub FrmTelaInicial_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        Listar_LucroResgatar()
+
         TotalTitulos()
 
         FormatarGridTelaIncial()
 
-        ' CarregarAcessos()
+        CarregarAcessos()
 
-        'CarergarAcessoAtalhos()
+        CarergarAcessoAtalhos()
 
         VersaoSistema()
 
         LblUsuario.Text = nomeFuncionario
+
+    End Sub
+    Sub Listar_LucroResgatar()
+        Try
+            'Stop
+            Abrir()
+
+            Dim sql As String
+            Dim dt As New DataTable
+            Dim da As MySqlDataAdapter
+            Dim saldoRetirar As Decimal
+
+            sql = "Select id_entrada, documento, sum(valor_parcela) As Total_Entrada, coalesce((select sum(total_pago) from mvto_recebimentos where id_nfe = id_entrada),0) Total_Recebido, " _
+            & "coalesce((select sum(valor_retirada) from tbl_retiradas where id_entrada_nfe= id_entrada),0) Total_Retiradas From duplicatas Group By documento order by id_entrada desc"
+
+            da = New MySqlDataAdapter(sql, con)
+            da.Fill(dt)
+            DataGrid.DataSource = dt
+
+
+            dt.Columns.Add("Lucro a Retirar")
+            For i = 0 To DataGrid.Rows.Count - 1
+
+                saldoRetirar = (Convert.ToDouble(DataGrid.Rows(i).Cells(3).Value) - Convert.ToDouble(DataGrid.Rows(i).Cells(4).Value) - (Convert.ToDouble(DataGrid.Rows(i).Cells(2).Value)))
+                DataGrid.Rows(i).Cells(5).Value = Format(saldoRetirar, "R$ #,###0.00")
+            Next
+
+
+            Total_A_Regastar()
+
+        Catch ex As Exception
+            MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
+        End Try
+
+
+    End Sub
+
+
+    Sub Total_A_Regastar()
+        On Error Resume Next
+        Dim total As Decimal = 0
+        For i = 0 To DataGrid.Rows.Count - 1
+            If DataGrid.Rows(i).Cells(5).Value > 0 Then
+                total += DataGrid.Rows(i).Cells(5).Value
+            End If
+
+        Next
+        LblLucro.Text = Format(total, "R$ #,###0.00")
 
     End Sub
 
@@ -459,6 +509,7 @@ Public Class FrmTelaInicial
 
 
     Private Sub FrmTelaInicial_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
+        Listar_LucroResgatar()
         TotalTitulos()
         TOTAL()
     End Sub
@@ -691,6 +742,11 @@ Public Class FrmTelaInicial
 
     Private Sub ExcluirRetiradasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExcluirRetiradasToolStripMenuItem.Click
         Dim form = New FrmExcluirRetirada
+        form.ShowDialog()
+    End Sub
+
+    Private Sub LucroToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LucroToolStripMenuItem.Click
+        Dim form = New FrmLucroRetirar
         form.ShowDialog()
     End Sub
 End Class

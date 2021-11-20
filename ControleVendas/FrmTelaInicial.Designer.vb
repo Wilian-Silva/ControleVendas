@@ -30,6 +30,9 @@ Partial Class FrmTelaInicial
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.CadastrosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CboxCad1_01 = New System.Windows.Forms.ToolStripMenuItem()
@@ -47,6 +50,7 @@ Partial Class FrmTelaInicial
         Me.CboxCons1_07 = New System.Windows.Forms.ToolStripMenuItem()
         Me.AdiantamentosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LucroProNfeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LucroToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MovimentaçõesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CboxMvto1_01 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CboxMvto1_02 = New System.Windows.Forms.ToolStripMenuItem()
@@ -60,6 +64,7 @@ Partial Class FrmTelaInicial
         Me.CboxExcluir1_01 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CboxExcluir1_03 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CboxExcluir1_05 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ExcluirRetiradasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RelatoriosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CboxRel1_01 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CboxRel1_02 = New System.Windows.Forms.ToolStripMenuItem()
@@ -116,7 +121,10 @@ Partial Class FrmTelaInicial
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.DataGrid_Vencidos = New System.Windows.Forms.DataGridView()
-        Me.ExcluirRetiradasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DataGrid = New System.Windows.Forms.DataGridView()
+        Me.LblLucro = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.DataGrid_APagar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelEsquerda.SuspendLayout()
@@ -126,6 +134,7 @@ Partial Class FrmTelaInicial
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.DataGrid_Vencidos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -177,7 +186,7 @@ Partial Class FrmTelaInicial
         '
         'ConsultasToolStripMenuItem
         '
-        Me.ConsultasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CboxCons1_01, Me.CboxCons1_02, Me.CboxCons1_03, Me.CboxCons1_04, Me.CboxCons1_05, Me.CboxCons1_06, Me.CboxCons1_07, Me.AdiantamentosToolStripMenuItem, Me.LucroProNfeToolStripMenuItem})
+        Me.ConsultasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CboxCons1_01, Me.CboxCons1_02, Me.CboxCons1_03, Me.CboxCons1_04, Me.CboxCons1_05, Me.CboxCons1_06, Me.CboxCons1_07, Me.AdiantamentosToolStripMenuItem, Me.LucroProNfeToolStripMenuItem, Me.LucroToolStripMenuItem})
         Me.ConsultasToolStripMenuItem.Image = CType(resources.GetObject("ConsultasToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ConsultasToolStripMenuItem.Name = "ConsultasToolStripMenuItem"
         Me.ConsultasToolStripMenuItem.Size = New System.Drawing.Size(87, 20)
@@ -236,6 +245,12 @@ Partial Class FrmTelaInicial
         Me.LucroProNfeToolStripMenuItem.Name = "LucroProNfeToolStripMenuItem"
         Me.LucroProNfeToolStripMenuItem.Size = New System.Drawing.Size(219, 22)
         Me.LucroProNfeToolStripMenuItem.Text = "Lucro P/Nfe"
+        '
+        'LucroToolStripMenuItem
+        '
+        Me.LucroToolStripMenuItem.Name = "LucroToolStripMenuItem"
+        Me.LucroToolStripMenuItem.Size = New System.Drawing.Size(219, 22)
+        Me.LucroToolStripMenuItem.Text = "Resumo Reb/Pgto Nfe"
         '
         'MovimentaçõesToolStripMenuItem
         '
@@ -318,6 +333,12 @@ Partial Class FrmTelaInicial
         Me.CboxExcluir1_05.Name = "CboxExcluir1_05"
         Me.CboxExcluir1_05.Size = New System.Drawing.Size(222, 22)
         Me.CboxExcluir1_05.Text = "Excluir Receb de Cliente"
+        '
+        'ExcluirRetiradasToolStripMenuItem
+        '
+        Me.ExcluirRetiradasToolStripMenuItem.Name = "ExcluirRetiradasToolStripMenuItem"
+        Me.ExcluirRetiradasToolStripMenuItem.Size = New System.Drawing.Size(222, 22)
+        Me.ExcluirRetiradasToolStripMenuItem.Text = "Excluir Retiradas"
         '
         'RelatoriosToolStripMenuItem
         '
@@ -753,7 +774,7 @@ Partial Class FrmTelaInicial
         Me.GroupBox1.Controls.Add(Me.LblVersao)
         Me.GroupBox1.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.Color.DimGray
-        Me.GroupBox1.Location = New System.Drawing.Point(22, 563)
+        Me.GroupBox1.Location = New System.Drawing.Point(22, 623)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(303, 79)
         Me.GroupBox1.TabIndex = 7
@@ -830,6 +851,9 @@ Partial Class FrmTelaInicial
         'GroupBox4
         '
         Me.GroupBox4.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.GroupBox4.Controls.Add(Me.LblLucro)
+        Me.GroupBox4.Controls.Add(Me.Label11)
+        Me.GroupBox4.Controls.Add(Me.Label12)
         Me.GroupBox4.Controls.Add(Me.LblVencidos)
         Me.GroupBox4.Controls.Add(Me.LblAVencer)
         Me.GroupBox4.Controls.Add(Me.Label6)
@@ -840,7 +864,7 @@ Partial Class FrmTelaInicial
         Me.GroupBox4.ForeColor = System.Drawing.Color.DimGray
         Me.GroupBox4.Location = New System.Drawing.Point(14, 361)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(315, 187)
+        Me.GroupBox4.Size = New System.Drawing.Size(315, 256)
         Me.GroupBox4.TabIndex = 6
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Quadro de Informações"
@@ -1005,11 +1029,77 @@ Partial Class FrmTelaInicial
         Me.DataGrid_Vencidos.Size = New System.Drawing.Size(665, 283)
         Me.DataGrid_Vencidos.TabIndex = 152
         '
-        'ExcluirRetiradasToolStripMenuItem
+        'DataGrid
         '
-        Me.ExcluirRetiradasToolStripMenuItem.Name = "ExcluirRetiradasToolStripMenuItem"
-        Me.ExcluirRetiradasToolStripMenuItem.Size = New System.Drawing.Size(222, 22)
-        Me.ExcluirRetiradasToolStripMenuItem.Text = "Excluir Retiradas"
+        Me.DataGrid.AllowUserToAddRows = False
+        Me.DataGrid.AllowUserToDeleteRows = False
+        Me.DataGrid.AllowUserToResizeColumns = False
+        Me.DataGrid.AllowUserToResizeRows = False
+        Me.DataGrid.BackgroundColor = System.Drawing.Color.WhiteSmoke
+        Me.DataGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.LightGray
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.ControlDark
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
+        Me.DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGrid.DefaultCellStyle = DataGridViewCellStyle8
+        Me.DataGrid.EnableHeadersVisualStyles = False
+        Me.DataGrid.Location = New System.Drawing.Point(942, 67)
+        Me.DataGrid.MultiSelect = False
+        Me.DataGrid.Name = "DataGrid"
+        Me.DataGrid.ReadOnly = True
+        Me.DataGrid.RowHeadersVisible = False
+        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.ControlLightLight
+        DataGridViewCellStyle9.Padding = New System.Windows.Forms.Padding(3, 0, 0, 0)
+        Me.DataGrid.RowsDefaultCellStyle = DataGridViewCellStyle9
+        Me.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DataGrid.Size = New System.Drawing.Size(203, 92)
+        Me.DataGrid.TabIndex = 153
+        Me.DataGrid.Visible = False
+        '
+        'LblLucro
+        '
+        Me.LblLucro.AutoSize = True
+        Me.LblLucro.Font = New System.Drawing.Font("Tahoma", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblLucro.ForeColor = System.Drawing.Color.DimGray
+        Me.LblLucro.Location = New System.Drawing.Point(139, 204)
+        Me.LblLucro.Name = "LblLucro"
+        Me.LblLucro.Size = New System.Drawing.Size(34, 25)
+        Me.LblLucro.TabIndex = 10
+        Me.LblLucro.Text = " - "
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Tahoma", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.Color.DimGray
+        Me.Label11.Location = New System.Drawing.Point(11, 204)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(120, 25)
+        Me.Label11.TabIndex = 9
+        Me.Label11.Text = "Valor Total:"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Tahoma", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.ForeColor = System.Drawing.Color.DimGray
+        Me.Label12.Location = New System.Drawing.Point(8, 176)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(192, 25)
+        Me.Label12.TabIndex = 8
+        Me.Label12.Text = "Lucro a resgatar:"
         '
         'FrmTelaInicial
         '
@@ -1018,6 +1108,7 @@ Partial Class FrmTelaInicial
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1529, 788)
+        Me.Controls.Add(Me.DataGrid)
         Me.Controls.Add(Me.DataGrid_Vencidos)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label8)
@@ -1043,6 +1134,7 @@ Partial Class FrmTelaInicial
         Me.GroupBox4.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         CType(Me.DataGrid_Vencidos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGrid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1135,4 +1227,9 @@ Partial Class FrmTelaInicial
     Friend WithEvents LucroProNfeToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RetiradaDeLucrosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ExcluirRetiradasToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents LucroToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents DataGrid As DataGridView
+    Friend WithEvents LblLucro As Label
+    Friend WithEvents Label11 As Label
+    Friend WithEvents Label12 As Label
 End Class

@@ -390,6 +390,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetCupomVenda.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSetLucrosRealizar.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetLucrosRealizar.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetRecebimentos.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -572,6 +577,12 @@
       <DependentUpon>FrmDataInicialFinal.vb</DependentUpon>
     </Compile>
     <Compile Include="Relatorios\FrmDataInicialFinal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\FrmLucroRetirar.Designer.vb">
+      <DependentUpon>FrmLucroRetirar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\FrmLucroRetirar.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Relatorios\FrmMvtoEstoque.Designer.vb">
@@ -804,6 +815,9 @@
     <EmbeddedResource Include="Relatorios\FrmDataInicialFinal.resx">
       <DependentUpon>FrmDataInicialFinal.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\FrmLucroRetirar.resx">
+      <DependentUpon>FrmLucroRetirar.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\FrmMvtoEstoque.resx">
       <DependentUpon>FrmMvtoEstoque.vb</DependentUpon>
     </EmbeddedResource>
@@ -840,6 +854,7 @@
     <EmbeddedResource Include="Relatorios\FrmTotalAdtos.resx">
       <DependentUpon>FrmTotalAdtos.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\ReportLucroRetirar.rdlc" />
     <EmbeddedResource Include="Relatorios\ReportTotalAdto.rdlc" />
     <EmbeddedResource Include="Relatorios\ReportArPortador.rdlc" />
     <EmbeddedResource Include="Relatorios\ReportCompras.rdlc" />
@@ -938,6 +953,17 @@
     </None>
     <None Include="DataSetCupomVenda.xss">
       <DependentUpon>DataSetCupomVenda.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetLucrosRealizar.xsc">
+      <DependentUpon>DataSetLucrosRealizar.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetLucrosRealizar.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetLucrosRealizar.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetLucrosRealizar.xss">
+      <DependentUpon>DataSetLucrosRealizar.xsd</DependentUpon>
     </None>
     <None Include="DataSetRecebimentos.xsc">
       <DependentUpon>DataSetRecebimentos.xsd</DependentUpon>
