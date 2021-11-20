@@ -88,7 +88,8 @@ Public Class FrmRecebimentosEfetuados
         DataGrid.Columns(17).HeaderText = "Portador"
         ' DataGrid.Columns(18).HeaderText = "IdPortador"
         DataGrid.Columns(19).HeaderText = "Adto"
-        'DataGrid.Columns(20).HeaderText = "Comp. Adto"
+        DataGrid.Columns(20).HeaderText = "Id Entrada"
+        DataGrid.Columns(21).HeaderText = "Nota Entrada"
 
         DataGrid.Columns(0).Width = 50
         DataGrid.Columns(2).Width = 50
@@ -100,7 +101,9 @@ Public Class FrmRecebimentosEfetuados
         'DataGrid.Columns(5).Width = 100
         'DataGrid.Columns(18).Width = 90
         DataGrid.Columns(19).Width = 90
-        ' DataGrid.Columns(20).Width = 90
+
+        DataGrid.Columns(20).Width = 90
+        DataGrid.Columns(21).Width = 90
 
         DataGrid.Columns(0).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
@@ -219,7 +222,6 @@ Public Class FrmRecebimentosEfetuados
                     cmd1 = New MySqlCommand(sql1, con)
                     cmd1.ExecuteNonQuery()
 
-
                     Excluir_mvto_portador()
 
                     Excluir_tbl_adto()
@@ -233,7 +235,6 @@ Public Class FrmRecebimentosEfetuados
                     TxtCliente.Text = ""
                     TxtTotaVenda.Text = ""
                     TxtPortador.Text = ""
-
 
                     ListarTudo()
 
@@ -254,8 +255,6 @@ Public Class FrmRecebimentosEfetuados
 
     Sub Excluir_tbl_adto()
         Try
-            Abrir()
-
             'ATUALIZAR MVTO PORTADOR
             Dim cmd1 As MySqlCommand
             Dim sql1 As String

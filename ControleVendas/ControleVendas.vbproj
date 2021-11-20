@@ -32,10 +32,10 @@
     <ProductName>Controle_Vendas</ProductName>
     <PublisherName>ControlSystem</PublisherName>
     <SuiteName>SystemGroup</SuiteName>
-    <MinimumRequiredVersion>1.0.0.14</MinimumRequiredVersion>
+    <MinimumRequiredVersion>1.0.0.15</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>14</ApplicationRevision>
+    <ApplicationRevision>16</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -84,7 +84,7 @@
     <ManifestKeyFile>ControleVendas_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <GenerateManifests>true</GenerateManifests>
+    <GenerateManifests>false</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>true</SignManifests>
@@ -238,10 +238,22 @@
     <Compile Include="Cadastros\FrmClientes.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Cadastros\FrmEntradas.Designer.vb">
+      <DependentUpon>FrmEntradas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastros\FrmEntradas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Cadastros\FrmFornecedor.Designer.vb">
       <DependentUpon>FrmFornecedor.vb</DependentUpon>
     </Compile>
     <Compile Include="Cadastros\FrmFornecedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastros\FrmLucroNfe.Designer.vb">
+      <DependentUpon>FrmLucroNfe.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastros\FrmLucroNfe.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Cadastros\FrmMvtoAdto.Designer.vb">
@@ -449,6 +461,12 @@
     <Compile Include="Movimentos\FrmDuplReceber.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Movimentos\FrmExcluirRetirada.Designer.vb">
+      <DependentUpon>FrmExcluirRetirada.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentos\FrmExcluirRetirada.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Movimentos\FrmMvtoEstoque.Designer.vb">
       <DependentUpon>FrmMvtoEstoque.vb</DependentUpon>
     </Compile>
@@ -459,6 +477,12 @@
       <DependentUpon>FrmMvtoPortador.vb</DependentUpon>
     </Compile>
     <Compile Include="Movimentos\FrmMvtoPortador.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentos\FrmRetiradas.Designer.vb">
+      <DependentUpon>FrmRetiradas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentos\FrmRetiradas.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Movimentos\FrmSaldoPortador.Designer.vb">
@@ -651,8 +675,14 @@
       <DependentUpon>FrmClientes.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Cadastros\FrmEntradas.resx">
+      <DependentUpon>FrmEntradas.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Cadastros\FrmFornecedor.resx">
       <DependentUpon>FrmFornecedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastros\FrmLucroNfe.resx">
+      <DependentUpon>FrmLucroNfe.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cadastros\FrmMvtoAdto.resx">
       <DependentUpon>FrmMvtoAdto.vb</DependentUpon>
@@ -720,11 +750,17 @@
     <EmbeddedResource Include="Movimentos\FrmDuplReceber.resx">
       <DependentUpon>FrmDuplReceber.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Movimentos\FrmExcluirRetirada.resx">
+      <DependentUpon>FrmExcluirRetirada.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Movimentos\FrmMvtoEstoque.resx">
       <DependentUpon>FrmMvtoEstoque.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Movimentos\FrmMvtoPortador.resx">
       <DependentUpon>FrmMvtoPortador.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentos\FrmRetiradas.resx">
+      <DependentUpon>FrmRetiradas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Movimentos\FrmSaldoPortador.resx">
       <DependentUpon>FrmSaldoPortador.vb</DependentUpon>

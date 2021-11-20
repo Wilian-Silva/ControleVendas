@@ -102,15 +102,21 @@ Module ModuloConexao
     Public dataInicial As Date
     Public dataFinal As Date
 
-
     Public PesqTituloTelaIncial As String
     Public PesqTituloidVenda As Integer
     Public PesqidDuplicata As Integer
+
+    Public pesquisarNotaEntrada As String
+    Public nfeNotaEntrada As String
+    Public nfeIdNotaEntrada As String
+    Public nfeFornecedor As String
 
 
 
     Public Sub LimparVariaveisGlobais()
 
+        nfeNotaEntrada = ""
+        nfeIdNotaEntrada = ""
         PedidoRelCompra = "'"
         editarMvtoPortador = ""
         saldoEstoque = Nothing

@@ -57,6 +57,8 @@ Partial Class FrmVlrReceb
         Me.Label13 = New System.Windows.Forms.Label()
         Me.DataPgto = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.TxtCompAdto = New System.Windows.Forms.TextBox()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.TxtAdto = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -69,8 +71,9 @@ Partial Class FrmVlrReceb
         Me.TxtValorPago = New System.Windows.Forms.TextBox()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.TxtMultasJuros = New System.Windows.Forms.TextBox()
-        Me.Label19 = New System.Windows.Forms.Label()
-        Me.TxtCompAdto = New System.Windows.Forms.TextBox()
+        Me.TxtIdNfeEntrada = New System.Windows.Forms.TextBox()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.TxtNfeEntrada = New System.Windows.Forms.TextBox()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -89,6 +92,9 @@ Partial Class FrmVlrReceb
         'GroupBox4
         '
         Me.GroupBox4.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.GroupBox4.Controls.Add(Me.TxtIdNfeEntrada)
+        Me.GroupBox4.Controls.Add(Me.Label20)
+        Me.GroupBox4.Controls.Add(Me.TxtNfeEntrada)
         Me.GroupBox4.Controls.Add(Me.CbPortador)
         Me.GroupBox4.Controls.Add(Me.TxtIdportador)
         Me.GroupBox4.Controls.Add(Me.BtnPortador)
@@ -100,14 +106,14 @@ Partial Class FrmVlrReceb
         Me.GroupBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.GroupBox4.Location = New System.Drawing.Point(240, 183)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(292, 123)
+        Me.GroupBox4.Size = New System.Drawing.Size(292, 154)
         Me.GroupBox4.TabIndex = 180
         Me.GroupBox4.TabStop = False
         '
         'CbPortador
         '
         Me.CbPortador.Enabled = False
-        Me.CbPortador.Location = New System.Drawing.Point(129, 78)
+        Me.CbPortador.Location = New System.Drawing.Point(129, 109)
         Me.CbPortador.Margin = New System.Windows.Forms.Padding(4)
         Me.CbPortador.Multiline = True
         Me.CbPortador.Name = "CbPortador"
@@ -117,7 +123,7 @@ Partial Class FrmVlrReceb
         'TxtIdportador
         '
         Me.TxtIdportador.Enabled = False
-        Me.TxtIdportador.Location = New System.Drawing.Point(99, 78)
+        Me.TxtIdportador.Location = New System.Drawing.Point(99, 109)
         Me.TxtIdportador.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtIdportador.Multiline = True
         Me.TxtIdportador.Name = "TxtIdportador"
@@ -128,7 +134,7 @@ Partial Class FrmVlrReceb
         'BtnPortador
         '
         Me.BtnPortador.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.BtnPortador.Location = New System.Drawing.Point(258, 77)
+        Me.BtnPortador.Location = New System.Drawing.Point(258, 108)
         Me.BtnPortador.Name = "BtnPortador"
         Me.BtnPortador.Size = New System.Drawing.Size(25, 23)
         Me.BtnPortador.TabIndex = 180
@@ -142,7 +148,7 @@ Partial Class FrmVlrReceb
         Me.Label8.AutoSize = True
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(38, 79)
+        Me.Label8.Location = New System.Drawing.Point(38, 110)
         Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(62, 16)
@@ -480,6 +486,28 @@ Partial Class FrmVlrReceb
         Me.GroupBox2.TabIndex = 177
         Me.GroupBox2.TabStop = False
         '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.BackColor = System.Drawing.Color.Transparent
+        Me.Label19.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.Location = New System.Drawing.Point(22, 49)
+        Me.Label19.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(75, 16)
+        Me.Label19.TabIndex = 153
+        Me.Label19.Text = "Adto Comp."
+        '
+        'TxtCompAdto
+        '
+        Me.TxtCompAdto.Enabled = False
+        Me.TxtCompAdto.Location = New System.Drawing.Point(101, 47)
+        Me.TxtCompAdto.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtCompAdto.Name = "TxtCompAdto"
+        Me.TxtCompAdto.Size = New System.Drawing.Size(100, 20)
+        Me.TxtCompAdto.TabIndex = 152
+        Me.TxtCompAdto.Text = "0"
+        '
         'Label17
         '
         Me.Label17.AutoSize = True
@@ -606,27 +634,38 @@ Partial Class FrmVlrReceb
         Me.TxtMultasJuros.TabIndex = 5
         Me.TxtMultasJuros.Text = "0"
         '
-        'Label19
+        'TxtIdNfeEntrada
         '
-        Me.Label19.AutoSize = True
-        Me.Label19.BackColor = System.Drawing.Color.Transparent
-        Me.Label19.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.Location = New System.Drawing.Point(22, 49)
-        Me.Label19.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(75, 16)
-        Me.Label19.TabIndex = 153
-        Me.Label19.Text = "Adto Comp."
+        Me.TxtIdNfeEntrada.BackColor = System.Drawing.SystemColors.Window
+        Me.TxtIdNfeEntrada.Enabled = False
+        Me.TxtIdNfeEntrada.Location = New System.Drawing.Point(99, 77)
+        Me.TxtIdNfeEntrada.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtIdNfeEntrada.Name = "TxtIdNfeEntrada"
+        Me.TxtIdNfeEntrada.Size = New System.Drawing.Size(45, 20)
+        Me.TxtIdNfeEntrada.TabIndex = 185
+        Me.TxtIdNfeEntrada.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'TxtCompAdto
+        'Label20
         '
-        Me.TxtCompAdto.Enabled = False
-        Me.TxtCompAdto.Location = New System.Drawing.Point(101, 47)
-        Me.TxtCompAdto.Margin = New System.Windows.Forms.Padding(4)
-        Me.TxtCompAdto.Name = "TxtCompAdto"
-        Me.TxtCompAdto.Size = New System.Drawing.Size(100, 20)
-        Me.TxtCompAdto.TabIndex = 152
-        Me.TxtCompAdto.Text = "0"
+        Me.Label20.AutoSize = True
+        Me.Label20.BackColor = System.Drawing.Color.Transparent
+        Me.Label20.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.Location = New System.Drawing.Point(63, 78)
+        Me.Label20.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(32, 16)
+        Me.Label20.TabIndex = 184
+        Me.Label20.Text = "Nfe:"
+        '
+        'TxtNfeEntrada
+        '
+        Me.TxtNfeEntrada.BackColor = System.Drawing.SystemColors.Window
+        Me.TxtNfeEntrada.Enabled = False
+        Me.TxtNfeEntrada.Location = New System.Drawing.Point(145, 77)
+        Me.TxtNfeEntrada.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtNfeEntrada.Name = "TxtNfeEntrada"
+        Me.TxtNfeEntrada.Size = New System.Drawing.Size(112, 20)
+        Me.TxtNfeEntrada.TabIndex = 183
         '
         'FrmVlrReceb
         '
@@ -703,4 +742,7 @@ Partial Class FrmVlrReceb
     Friend WithEvents TxtAdto As TextBox
     Friend WithEvents Label19 As Label
     Friend WithEvents TxtCompAdto As TextBox
+    Friend WithEvents TxtIdNfeEntrada As TextBox
+    Friend WithEvents Label20 As Label
+    Friend WithEvents TxtNfeEntrada As TextBox
 End Class

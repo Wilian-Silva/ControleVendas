@@ -100,13 +100,16 @@ Public Class FrmSaldoPortador
 
         On Error Resume Next
         Dim total As Decimal = 0
+
         For i = 0 To DataGrid.Rows.Count - 1
 
-            If DataGrid.Rows(i).Cells(3).Value = "Saída" Then
+            If DataGrid.Rows(i).Cells(3).Value = "Saída" Or DataGrid.Rows(i).Cells(3).Value = "Retirada" Then
 
                 total += DataGrid.Rows(i).Cells(5).Value
             End If
         Next
+
+
         TotalSaldoSaida = total
         TxtTotalSaidas.Text = Format(total, "R$ #,###0.00")
 
@@ -115,37 +118,92 @@ Public Class FrmSaldoPortador
         'Stop
         Dim data1 As String
         Dim tipoEnt As String
+        Dim tipoSaiRet As String
+        Dim tipoSai As String
         Dim portador As String
+
+        Dim entradaAnterior As Double
+        Dim saidaAnterior As Double
+        Dim saidaAnteriorRetirada As Double
+
 
         data1 = DataInicio.Value.ToString("yyyy-MM-dd")
         tipoEnt = "Entrada"
+        tipoSai = "Saída"
+        tipoSaiRet = "Retirada"
         portador = CbPortador.SelectedValue
 
-        'BUSCAR INFORMAÇÕES DA TABELA E MOSTRAR NO DATAGRID
+
         Try
             Abrir()
 
-            Dim sql As String
-            Dim cmd As MySqlCommand
-            Dim reader As MySqlDataReader
+            'SALDO ANTERIOR ENTRADA
+            Dim sqle As String
+            Dim cmde As MySqlCommand
+            Dim readere As MySqlDataReader
 
-            sql = "SELECT SUM(valor) as valor  FROM mvto_portador  WHERE id_portador =  '" & portador & "' AND data < '" & data1 & "' AND tipo= '" & tipoEnt & "' "
-            cmd = New MySqlCommand(sql, con)
-            reader = cmd.ExecuteReader
-            reader.Read()
+            sqle = "SELECT SUM(valor) as valor  FROM mvto_portador  WHERE id_portador =  '" & portador & "' AND data < '" & data1 & "' AND tipo= '" & tipoEnt & "' "
+            cmde = New MySqlCommand(sqle, con)
+            readere = cmde.ExecuteReader
+            readere.Read()
 
-            If Not IsDBNull(reader("valor")) Then
-                TxtSaldoAnterior.Text = Format(reader("Valor"), "R$ #,###0.00")
-                TotalSaldoAnterior = reader("Valor")
-                reader.Close()
+            If Not IsDBNull(readere("valor")) Then
+
+                entradaAnterior = readere("Valor")
+                readere.Close()
             Else
-                reader.Close()
-                TxtSaldoAnterior.Text = 0
+                readere.Close()
+                entradaAnterior = 0
+            End If
+
+
+            'SALDO ANTERIOR SAIDA
+            Dim sqls As String
+            Dim cmds As MySqlCommand
+            Dim readers As MySqlDataReader
+
+            sqls = "SELECT SUM(valor) as valor  FROM mvto_portador  WHERE id_portador =  '" & portador & "' AND data < '" & data1 & "' AND tipo= '" & tipoSai & "' "
+            cmds = New MySqlCommand(sqls, con)
+            readers = cmds.ExecuteReader
+            readers.Read()
+
+            If Not IsDBNull(readers("valor")) Then
+
+                saidaAnterior = readers("Valor")
+                readers.Close()
+            Else
+                readers.Close()
+                saidaAnterior = 0
+            End If
+
+            'SALDO ANTERIOR SAIDA - RETIRADA
+            Dim sqlsr As String
+            Dim cmdsr As MySqlCommand
+            Dim readersr As MySqlDataReader
+
+            sqlsr = "SELECT SUM(valor) as valor  FROM mvto_portador  WHERE id_portador =  '" & portador & "' AND data < '" & data1 & "' AND tipo= '" & tipoSaiRet & "' "
+            cmdsr = New MySqlCommand(sqlsr, con)
+            readersr = cmdsr.ExecuteReader
+            readersr.Read()
+
+            If Not IsDBNull(readersr("valor")) Then
+
+                saidaAnteriorRetirada = readersr("Valor")
+                readersr.Close()
+            Else
+                readersr.Close()
+                saidaAnteriorRetirada = 0
             End If
 
         Catch ex As Exception
             MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
         End Try
+
+        TotalSaldoAnterior = entradaAnterior - saidaAnterior - saidaAnteriorRetirada
+
+        TxtSaldoAnterior.Text = Format(TotalSaldoAnterior, "R$ #,###0.00")
+
+
     End Sub
 
 
@@ -181,7 +239,7 @@ Public Class FrmSaldoPortador
     End Sub
 
     Private Sub FormatarGrid()
-        'DataGrid.Columns(6).Visible = False
+
 
         DataGrid.Columns(0).HeaderText = "Reg"
         DataGrid.Columns(1).HeaderText = "Cód. Portador"
@@ -191,6 +249,9 @@ Public Class FrmSaldoPortador
         DataGrid.Columns(5).HeaderText = "Valor"
         DataGrid.Columns(6).HeaderText = "Nº Duplicata"
         DataGrid.Columns(7).HeaderText = "Descrição"
+        DataGrid.Columns(8).Visible = False
+        DataGrid.Columns(9).Visible = False
+        DataGrid.Columns(10).Visible = False
 
 
         DataGrid.Columns(0).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
@@ -206,7 +267,7 @@ Public Class FrmSaldoPortador
         DataGrid.Columns(1).Width = 50
         DataGrid.Columns(3).Width = 80
         'DataGrid.Columns(2).Width = 135
-        DataGrid.Columns(6).Width = 50
+        DataGrid.Columns(6).Width = 100
         DataGrid.Columns(7).Width = 150
 
         DataGrid.Columns(5).DefaultCellStyle.Format = "c"

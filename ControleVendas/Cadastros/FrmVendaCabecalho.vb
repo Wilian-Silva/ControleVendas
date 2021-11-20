@@ -1,6 +1,22 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class FrmVendaCabecalho
+
+    Private Sub FrmNotasEntrada_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'Stop
+        If pesquisarDuplicata = "True" Then
+            GboxPesquisar.Visible = True
+            Listar_Duplicas_Receber()
+            Exit Sub
+
+        End If
+
+        If cumpomPesquisar = "True" Then
+            GboxPesquisar.Visible = True
+        End If
+
+        ListarTudo()
+    End Sub
     Sub ListarTudo()
         Try
             'Abrir()
@@ -22,7 +38,27 @@ Public Class FrmVendaCabecalho
 
 
     End Sub
+    Sub Listar_Duplicas_Receber()
+        Try
+            'Abrir()
 
+            Dim sql As String
+            Dim dt As New DataTable
+            Dim da As MySqlDataAdapter
+
+            sql = "SELECT id, id_venda, parcela , valor_parcela, data_venda, data_vencimento, cod_cliente, cliente, saldo_duplicata, observacao  FROM duplicatas_receber WHERE saldo_duplicata > 0 order by id_venda desc"
+            da = New MySqlDataAdapter(sql, con)
+            da.Fill(dt)
+            DataGrid.DataSource = dt
+
+            FormatarGrid()
+
+        Catch ex As Exception
+            MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
+        End Try
+
+
+    End Sub
     Sub FiltroDataGrid()
 
 
@@ -35,6 +71,48 @@ Public Class FrmVendaCabecalho
             Dim da As MySqlDataAdapter
 
             sql = "SELECT id, id_venda, parcela , valor_parcela, data_venda, data_vencimento, cod_cliente, cliente, saldo_duplicata, observacao  FROM duplicatas_receber order by id_venda desc"
+            da = New MySqlDataAdapter(sql, con)
+            da.Fill(dt)
+            DataGrid.DataSource = dt
+
+            FormatarGrid()
+
+            If RbPedido.Checked = True Then
+
+                dt.DefaultView.RowFilter = "cod_cliente = " & TxtPesquisa.Text
+                DataGrid.DataSource = dt
+            End If
+
+            If RbFornecedor.Checked = True Then
+                dt.DefaultView.RowFilter = "cliente LIKE " & "'%" & TxtPesquisa.Text & "%'"
+                DataGrid.DataSource = dt
+            End If
+
+            If RbVenda.Checked = True Then
+                If TxtPesquisa.Text <> "" Then
+                    dt.DefaultView.RowFilter = "id_venda = " & TxtPesquisa.Text
+                    DataGrid.DataSource = dt
+                End If
+            End If
+
+
+        Catch ex As Exception
+            MsgBox("Erro ao Mostrar os dados no grid!! ---- " + ex.Message)
+        End Try
+
+    End Sub
+    Sub FiltroDataGrid_DuplicatasAbertas()
+
+
+        'BUSCAR INFORMAÇÕES DA TABELA E MOSTRAR NO DATAGRID
+        Try
+            'Abrir()
+
+            Dim sql As String
+            Dim dt As New DataTable
+            Dim da As MySqlDataAdapter
+
+            sql = "SELECT id, id_venda, parcela , valor_parcela, data_venda, data_vencimento, cod_cliente, cliente, saldo_duplicata, observacao  FROM duplicatas_receber  WHERE saldo_duplicata > 0  order by id_venda desc"
             da = New MySqlDataAdapter(sql, con)
             da.Fill(dt)
             DataGrid.DataSource = dt
@@ -112,17 +190,7 @@ Public Class FrmVendaCabecalho
         Me.Close()
     End Sub
 
-    Private Sub FrmNotasEntrada_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        If pesquisarDuplicata = "True" Then
-            GboxPesquisar.Visible = True
-        End If
-
-        If cumpomPesquisar = "True" Then
-            GboxPesquisar.Visible = True
-        End If
-        ListarTudo()
-    End Sub
 
     Private Sub DataGrid_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGrid.CellClick
         If e.RowIndex > -1 Then
@@ -138,7 +206,16 @@ Public Class FrmVendaCabecalho
 
     Private Sub TxtPesquisa_TextChanged(sender As Object, e As EventArgs) Handles TxtPesquisa.TextChanged
 
-        FiltroDataGrid()
+        If pesquisarDuplicata = "True" Then
+
+            FiltroDataGrid_DuplicatasAbertas()
+        Else
+
+            FiltroDataGrid()
+
+        End If
+
+
 
     End Sub
 

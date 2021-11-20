@@ -621,7 +621,7 @@ Line1:
 
     End Sub
 
-    Private Sub BtnCarregar_Click(sender As Object, e As EventArgs) Handles BtnCarregar.Click
+    Sub Atualizar_Pagina()
         Try
 
             'BUSCANDO DADOS NA TBL DUPLICATAS
@@ -705,6 +705,9 @@ Line1:
             MsgBox("Erro ao carregar dados!! ---- " + ex.Message)
         End Try
     End Sub
+    Private Sub BtnCarregar_Click(sender As Object, e As EventArgs) Handles BtnCarregar.Click
+        Atualizar_Pagina()
+    End Sub
 
     Private Sub BtnPesquisar_Click(sender As Object, e As EventArgs) Handles BtnPesquisar.Click
 
@@ -726,6 +729,8 @@ Line1:
 
                 Exit Sub
             End If
+        Else
+            Atualizar_Pagina()
         End If
 
     End Sub

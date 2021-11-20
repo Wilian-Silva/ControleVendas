@@ -34,6 +34,7 @@ Partial Class FrmReceberTitulo
         Me.Label12 = New System.Windows.Forms.Label()
         Me.TxtSaldoTitulo = New System.Windows.Forms.TextBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.TxtIdPortador = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TxtAdto = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -76,7 +77,9 @@ Partial Class FrmReceberTitulo
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.TxtValorParcela = New System.Windows.Forms.TextBox()
-        Me.TxtIdPortador = New System.Windows.Forms.TextBox()
+        Me.TxtIdNfeEntrada = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.TxtNfeEntrada = New System.Windows.Forms.TextBox()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         Me.GboxPesProd.SuspendLayout()
@@ -94,7 +97,7 @@ Partial Class FrmReceberTitulo
         Me.GroupBox4.Controls.Add(Me.TxtDescontos)
         Me.GroupBox4.Controls.Add(Me.Label15)
         Me.GroupBox4.Controls.Add(Me.TxtJurosMultas)
-        Me.GroupBox4.Location = New System.Drawing.Point(263, 142)
+        Me.GroupBox4.Location = New System.Drawing.Point(263, 179)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(237, 123)
         Me.GroupBox4.TabIndex = 163
@@ -195,12 +198,21 @@ Partial Class FrmReceberTitulo
         Me.GroupBox5.Controls.Add(Me.Label4)
         Me.GroupBox5.Controls.Add(Me.TxtPortador)
         Me.GroupBox5.Controls.Add(Me.TxtObeservacao)
-        Me.GroupBox5.Location = New System.Drawing.Point(263, 271)
+        Me.GroupBox5.Location = New System.Drawing.Point(263, 308)
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Size = New System.Drawing.Size(237, 123)
         Me.GroupBox5.TabIndex = 164
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Inf. Comp."
+        '
+        'TxtIdPortador
+        '
+        Me.TxtIdPortador.Enabled = False
+        Me.TxtIdPortador.Location = New System.Drawing.Point(98, 42)
+        Me.TxtIdPortador.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtIdPortador.Name = "TxtIdPortador"
+        Me.TxtIdPortador.Size = New System.Drawing.Size(26, 20)
+        Me.TxtIdPortador.TabIndex = 154
         '
         'Label6
         '
@@ -502,6 +514,9 @@ Partial Class FrmReceberTitulo
         'GroupBox3
         '
         Me.GroupBox3.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox3.Controls.Add(Me.TxtIdNfeEntrada)
+        Me.GroupBox3.Controls.Add(Me.Label7)
+        Me.GroupBox3.Controls.Add(Me.TxtNfeEntrada)
         Me.GroupBox3.Controls.Add(Me.TxtRegRecebimento)
         Me.GroupBox3.Controls.Add(Me.LblRegPgto)
         Me.GroupBox3.Controls.Add(Me.Label19)
@@ -517,7 +532,7 @@ Partial Class FrmReceberTitulo
         Me.GroupBox3.Controls.Add(Me.Label2)
         Me.GroupBox3.Location = New System.Drawing.Point(17, 56)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(483, 80)
+        Me.GroupBox3.Size = New System.Drawing.Size(483, 117)
         Me.GroupBox3.TabIndex = 160
         Me.GroupBox3.TabStop = False
         '
@@ -588,12 +603,12 @@ Partial Class FrmReceberTitulo
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(11, 51)
+        Me.Label2.Location = New System.Drawing.Point(8, 51)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(62, 16)
+        Me.Label2.Size = New System.Drawing.Size(67, 16)
         Me.Label2.TabIndex = 98
-        Me.Label2.Text = "Nº Venda"
+        Me.Label2.Text = "Nº Venda:"
         '
         'GroupBox1
         '
@@ -604,7 +619,7 @@ Partial Class FrmReceberTitulo
         Me.GroupBox1.Controls.Add(Me.DataVencimento)
         Me.GroupBox1.Controls.Add(Me.Label10)
         Me.GroupBox1.Controls.Add(Me.DataEmissao)
-        Me.GroupBox1.Location = New System.Drawing.Point(17, 271)
+        Me.GroupBox1.Location = New System.Drawing.Point(17, 308)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(237, 123)
         Me.GroupBox1.TabIndex = 161
@@ -686,7 +701,7 @@ Partial Class FrmReceberTitulo
         Me.GroupBox2.Controls.Add(Me.TxtValorPago)
         Me.GroupBox2.Controls.Add(Me.Label9)
         Me.GroupBox2.Controls.Add(Me.TxtValorParcela)
-        Me.GroupBox2.Location = New System.Drawing.Point(17, 142)
+        Me.GroupBox2.Location = New System.Drawing.Point(17, 179)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(237, 123)
         Me.GroupBox2.TabIndex = 162
@@ -714,21 +729,45 @@ Partial Class FrmReceberTitulo
         Me.TxtValorParcela.Size = New System.Drawing.Size(80, 20)
         Me.TxtValorParcela.TabIndex = 144
         '
-        'TxtIdPortador
+        'TxtIdNfeEntrada
         '
-        Me.TxtIdPortador.Enabled = False
-        Me.TxtIdPortador.Location = New System.Drawing.Point(98, 42)
-        Me.TxtIdPortador.Margin = New System.Windows.Forms.Padding(4)
-        Me.TxtIdPortador.Name = "TxtIdPortador"
-        Me.TxtIdPortador.Size = New System.Drawing.Size(26, 20)
-        Me.TxtIdPortador.TabIndex = 154
+        Me.TxtIdNfeEntrada.BackColor = System.Drawing.SystemColors.Window
+        Me.TxtIdNfeEntrada.Enabled = False
+        Me.TxtIdNfeEntrada.Location = New System.Drawing.Point(76, 80)
+        Me.TxtIdNfeEntrada.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtIdNfeEntrada.Name = "TxtIdNfeEntrada"
+        Me.TxtIdNfeEntrada.Size = New System.Drawing.Size(43, 20)
+        Me.TxtIdNfeEntrada.TabIndex = 155
+        Me.TxtIdNfeEntrada.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.Transparent
+        Me.Label7.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(40, 81)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(32, 16)
+        Me.Label7.TabIndex = 154
+        Me.Label7.Text = "Nfe:"
+        '
+        'TxtNfeEntrada
+        '
+        Me.TxtNfeEntrada.BackColor = System.Drawing.SystemColors.Window
+        Me.TxtNfeEntrada.Enabled = False
+        Me.TxtNfeEntrada.Location = New System.Drawing.Point(119, 80)
+        Me.TxtNfeEntrada.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtNfeEntrada.Name = "TxtNfeEntrada"
+        Me.TxtNfeEntrada.Size = New System.Drawing.Size(118, 20)
+        Me.TxtNfeEntrada.TabIndex = 153
         '
         'FrmReceberTitulo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(521, 407)
+        Me.ClientSize = New System.Drawing.Size(521, 442)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.GroupBox5)
         Me.Controls.Add(Me.GboxPesProd)
@@ -810,4 +849,7 @@ Partial Class FrmReceberTitulo
     Friend WithEvents Label6 As Label
     Friend WithEvents TxtAdto As TextBox
     Friend WithEvents TxtIdPortador As TextBox
+    Friend WithEvents TxtIdNfeEntrada As TextBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents TxtNfeEntrada As TextBox
 End Class

@@ -73,10 +73,10 @@ Public Class FrmReceberTitulo
             form.TxtIdDuplicata.Text = TxtId_duplicata.Text
             form.TxtRegPagamento.Text = TxtRegRecebimento.Text
             form.TxtStatusTitulo.Text = TxtStatusTitulo.Text
-
             form.TxtIdportador.Text = TxtIdPortador.Text
             form.CbPortador.Text = TxtPortador.Text
-
+            form.TxtIdNfeEntrada.Text = TxtIdNfeEntrada.Text
+            form.TxtNfeEntrada.Text = TxtNfeEntrada.Text
 
             form.TxtValorPago.Text = CDbl(TxtSaldoTitulo.Text) - CDbl(TotalAdto)
 
@@ -137,7 +137,9 @@ Public Class FrmReceberTitulo
             Dim cmd As MySqlCommand
             Dim reader As MySqlDataReader
             Dim sql As String
-            sql = "SELECT  d.id_venda, d.id, d.cod_cliente, d.cliente, d.parcela, d.valor_parcela, d.saldo_duplicata, d.data_venda, d.data_vencimento, d.observacao, d.id_portador, p.nome FROM duplicatas_receber as d INNER JOIN portador as p ON d.id_portador = p.id WHERE d.id= '" & PesqidDuplicata & "' "
+            sql = "SELECT  d.id_venda, d.id, d.cod_cliente, d.cliente, d.parcela, d.valor_parcela, d.saldo_duplicata, d.data_venda, d.data_vencimento, d.observacao, d.id_portador, p.nome, v.id_nfe, v.nfe " _
+            & "FROM duplicatas_receber as d INNER JOIN portador as p ON d.id_portador = p.id INNER JOIN venda as v ON d.id_venda = v.id_venda WHERE d.id= '" & PesqidDuplicata & "' "
+
             cmd = New MySqlCommand(sql, con)
             reader = cmd.ExecuteReader
             If reader.Read = True Then
@@ -153,6 +155,10 @@ Public Class FrmReceberTitulo
                 TxtObeservacao.Text = reader("observacao")
                 TxtIdPortador.Text = reader("id_portador")
                 TxtPortador.Text = reader("nome")
+
+                TxtIdNfeEntrada.Text = reader("id_nfe")
+                TxtNfeEntrada.Text = reader("nfe")
+
                 reader.Close()
             Else
                 reader.Close()
@@ -403,7 +409,8 @@ Line1:
             Dim cmd As MySqlCommand
             Dim reader As MySqlDataReader
             Dim sql As String
-            sql = "SELECT  d.id_venda, d.id, d.cod_cliente, d.cliente, d.parcela, d.valor_parcela, d.saldo_duplicata, d.data_venda, d.data_vencimento, d.observacao, d.id_portador, p.nome  FROM duplicatas_receber as d INNER JOIN portador as p ON d.id_portador = p.id WHERE d.id=  '" & anterior & "' "
+            sql = "SELECT  d.id_venda, d.id, d.cod_cliente, d.cliente, d.parcela, d.valor_parcela, d.saldo_duplicata, d.data_venda, d.data_vencimento, d.observacao, d.id_portador, p.nome, v.id_nfe, v.nfe " _
+            & "FROM duplicatas_receber as d INNER JOIN portador as p ON d.id_portador = p.id INNER JOIN venda as v ON d.id_venda = v.id_venda WHERE d.id=  '" & anterior & "' "
             cmd = New MySqlCommand(sql, con)
             reader = cmd.ExecuteReader
             If reader.Read = True Then
@@ -419,6 +426,8 @@ Line1:
                 TxtObeservacao.Text = reader("observacao")
                 TxtIdPortador.Text = reader("id_portador")
                 TxtPortador.Text = reader("nome")
+                TxtIdNfeEntrada.Text = reader("id_nfe")
+                TxtNfeEntrada.Text = reader("nfe")
                 idVenda = reader("id_venda")
                 idDuplicata = reader("id")
                 reader.Close()
@@ -587,7 +596,8 @@ Line1:
             Dim cmd As MySqlCommand
             Dim reader As MySqlDataReader
             Dim sql As String
-            sql = "SELECT  d.id_venda, d.id, d.cod_cliente, d.cliente, d.parcela, d.valor_parcela, d.saldo_duplicata, d.data_venda, d.data_vencimento, d.observacao, d.id_portador, p.nome FROM duplicatas_receber as d INNER JOIN portador as p ON d.id_portador = p.id WHERE d.id= '" & proximo & "' "
+            sql = "SELECT  d.id_venda, d.id, d.cod_cliente, d.cliente, d.parcela, d.valor_parcela, d.saldo_duplicata, d.data_venda, d.data_vencimento, d.observacao, d.id_portador, p.nome, v.id_nfe, v.nfe " _
+            & "FROM duplicatas_receber as d INNER JOIN portador as p ON d.id_portador = p.id INNER JOIN venda as v ON d.id_venda = v.id_venda WHERE d.id= '" & proximo & "' "
             cmd = New MySqlCommand(sql, con)
             reader = cmd.ExecuteReader
             If reader.Read = True Then
@@ -603,6 +613,8 @@ Line1:
                 TxtObeservacao.Text = reader("observacao")
                 TxtIdPortador.Text = reader("id_portador")
                 TxtPortador.Text = reader("nome")
+                TxtIdNfeEntrada.Text = reader("id_nfe")
+                TxtNfeEntrada.Text = reader("nfe")
                 idVenda = reader("id_venda")
                 idDuplicata = reader("id")
                 reader.Close()

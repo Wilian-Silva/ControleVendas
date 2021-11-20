@@ -94,7 +94,7 @@ Public Class FrmPagamentoEfetuado
 
         DataGrid.Columns(0).Width = 50
         DataGrid.Columns(2).Width = 50
-        DataGrid.Columns(4).Width = 50
+        DataGrid.Columns(4).Width = 100
         DataGrid.Columns(3).Width = 150
         DataGrid.Columns(6).Width = 50
         DataGrid.Columns(7).Width = 150
@@ -252,10 +252,12 @@ Public Class FrmPagamentoEfetuado
         End If
 
     End Sub
+
+
     Sub Excluir_mvto_portador()
         'Stop
         Try
-            Abrir()
+
 
             'ATUALIZAR MVTO PORTADOR
             Dim cmd1 As MySqlCommand
@@ -263,7 +265,7 @@ Public Class FrmPagamentoEfetuado
             Dim tipoMov As String
             tipoMov = "Saída"
 
-            sql1 = "DELETE FROM mvto_portador WHERE tipo = '" & tipoMov & "' and id_duplicata =  '" & TxtIdRegDup.Text & "' "
+            sql1 = "DELETE FROM mvto_portador WHERE tipo = '" & tipoMov & "' and id_mvto_pagamentos =  '" & TxtIdReg.Text & "' "
             cmd1 = New MySqlCommand(sql1, con)
             cmd1.ExecuteNonQuery()
 

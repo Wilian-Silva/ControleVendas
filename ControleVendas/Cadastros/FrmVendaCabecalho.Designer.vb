@@ -128,7 +128,7 @@ Partial Class FrmVendaCabecalho
         DataGridViewCellStyle3.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
         Me.DataGrid.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGrid.Size = New System.Drawing.Size(530, 209)
+        Me.DataGrid.Size = New System.Drawing.Size(833, 296)
         Me.DataGrid.TabIndex = 153
         '
         'GboxExluir
@@ -144,7 +144,7 @@ Partial Class FrmVendaCabecalho
         Me.GboxExluir.Controls.Add(Me.LblId)
         Me.GboxExluir.Location = New System.Drawing.Point(22, 55)
         Me.GboxExluir.Name = "GboxExluir"
-        Me.GboxExluir.Size = New System.Drawing.Size(530, 50)
+        Me.GboxExluir.Size = New System.Drawing.Size(833, 50)
         Me.GboxExluir.TabIndex = 154
         Me.GboxExluir.TabStop = False
         Me.GboxExluir.Text = "Dados da Venda"
@@ -152,16 +152,16 @@ Partial Class FrmVendaCabecalho
         'TxtCliente
         '
         Me.TxtCliente.Enabled = False
-        Me.TxtCliente.Location = New System.Drawing.Point(249, 20)
+        Me.TxtCliente.Location = New System.Drawing.Point(402, 19)
         Me.TxtCliente.Name = "TxtCliente"
-        Me.TxtCliente.Size = New System.Drawing.Size(119, 20)
+        Me.TxtCliente.Size = New System.Drawing.Size(181, 20)
         Me.TxtCliente.TabIndex = 167
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Location = New System.Drawing.Point(206, 23)
+        Me.Label3.Location = New System.Drawing.Point(359, 22)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(39, 13)
         Me.Label3.TabIndex = 168
@@ -170,7 +170,7 @@ Partial Class FrmVendaCabecalho
         'TxtSaldo_venda
         '
         Me.TxtSaldo_venda.Enabled = False
-        Me.TxtSaldo_venda.Location = New System.Drawing.Point(426, 20)
+        Me.TxtSaldo_venda.Location = New System.Drawing.Point(719, 16)
         Me.TxtSaldo_venda.Name = "TxtSaldo_venda"
         Me.TxtSaldo_venda.Size = New System.Drawing.Size(76, 20)
         Me.TxtSaldo_venda.TabIndex = 165
@@ -178,9 +178,9 @@ Partial Class FrmVendaCabecalho
         'TxtParcela
         '
         Me.TxtParcela.Enabled = False
-        Me.TxtParcela.Location = New System.Drawing.Point(159, 19)
+        Me.TxtParcela.Location = New System.Drawing.Point(240, 19)
         Me.TxtParcela.Name = "TxtParcela"
-        Me.TxtParcela.Size = New System.Drawing.Size(34, 20)
+        Me.TxtParcela.Size = New System.Drawing.Size(77, 20)
         Me.TxtParcela.TabIndex = 147
         Me.TxtParcela.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -188,7 +188,7 @@ Partial Class FrmVendaCabecalho
         '
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Location = New System.Drawing.Point(389, 23)
+        Me.Label4.Location = New System.Drawing.Point(682, 19)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(37, 13)
         Me.Label4.TabIndex = 166
@@ -198,7 +198,7 @@ Partial Class FrmVendaCabecalho
         '
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Location = New System.Drawing.Point(113, 22)
+        Me.Label5.Location = New System.Drawing.Point(194, 22)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(43, 13)
         Me.Label5.TabIndex = 148
@@ -209,7 +209,7 @@ Partial Class FrmVendaCabecalho
         Me.TxtRegVenda.Enabled = False
         Me.TxtRegVenda.Location = New System.Drawing.Point(66, 20)
         Me.TxtRegVenda.Name = "TxtRegVenda"
-        Me.TxtRegVenda.Size = New System.Drawing.Size(34, 20)
+        Me.TxtRegVenda.Size = New System.Drawing.Size(80, 20)
         Me.TxtRegVenda.TabIndex = 145
         Me.TxtRegVenda.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -232,7 +232,7 @@ Partial Class FrmVendaCabecalho
         Me.GboxPesProd.Controls.Add(Me.RbPedido)
         Me.GboxPesProd.Location = New System.Drawing.Point(22, 4)
         Me.GboxPesProd.Name = "GboxPesProd"
-        Me.GboxPesProd.Size = New System.Drawing.Size(384, 50)
+        Me.GboxPesProd.Size = New System.Drawing.Size(517, 50)
         Me.GboxPesProd.TabIndex = 167
         Me.GboxPesProd.TabStop = False
         Me.GboxPesProd.Text = "Pesquisar"
@@ -240,7 +240,7 @@ Partial Class FrmVendaCabecalho
         'RbVenda
         '
         Me.RbVenda.AutoSize = True
-        Me.RbVenda.Location = New System.Drawing.Point(189, 19)
+        Me.RbVenda.Location = New System.Drawing.Point(221, 19)
         Me.RbVenda.Name = "RbVenda"
         Me.RbVenda.Size = New System.Drawing.Size(71, 17)
         Me.RbVenda.TabIndex = 161
@@ -249,31 +249,31 @@ Partial Class FrmVendaCabecalho
         '
         'TxtPesquisa
         '
-        Me.TxtPesquisa.Location = New System.Drawing.Point(266, 18)
+        Me.TxtPesquisa.Location = New System.Drawing.Point(325, 18)
         Me.TxtPesquisa.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtPesquisa.Name = "TxtPesquisa"
-        Me.TxtPesquisa.Size = New System.Drawing.Size(102, 20)
+        Me.TxtPesquisa.Size = New System.Drawing.Size(177, 20)
         Me.TxtPesquisa.TabIndex = 160
         '
         'RbFornecedor
         '
         Me.RbFornecedor.AutoSize = True
-        Me.RbFornecedor.Location = New System.Drawing.Point(95, 20)
+        Me.RbFornecedor.Checked = True
+        Me.RbFornecedor.Location = New System.Drawing.Point(114, 20)
         Me.RbFornecedor.Name = "RbFornecedor"
         Me.RbFornecedor.Size = New System.Drawing.Size(88, 17)
         Me.RbFornecedor.TabIndex = 158
+        Me.RbFornecedor.TabStop = True
         Me.RbFornecedor.Text = "Nome Cliente"
         Me.RbFornecedor.UseVisualStyleBackColor = True
         '
         'RbPedido
         '
         Me.RbPedido.AutoSize = True
-        Me.RbPedido.Checked = True
         Me.RbPedido.Location = New System.Drawing.Point(7, 20)
         Me.RbPedido.Name = "RbPedido"
         Me.RbPedido.Size = New System.Drawing.Size(82, 17)
         Me.RbPedido.TabIndex = 157
-        Me.RbPedido.TabStop = True
         Me.RbPedido.Text = "Cód. Cliente"
         Me.RbPedido.UseVisualStyleBackColor = True
         '
@@ -282,7 +282,7 @@ Partial Class FrmVendaCabecalho
         Me.GboxPesquisar.BackColor = System.Drawing.Color.Transparent
         Me.GboxPesquisar.Controls.Add(Me.BtnCacelarConsulta)
         Me.GboxPesquisar.Controls.Add(Me.BtnSelecionarItem)
-        Me.GboxPesquisar.Location = New System.Drawing.Point(414, 4)
+        Me.GboxPesquisar.Location = New System.Drawing.Point(545, 4)
         Me.GboxPesquisar.Name = "GboxPesquisar"
         Me.GboxPesquisar.Size = New System.Drawing.Size(79, 50)
         Me.GboxPesquisar.TabIndex = 166
@@ -301,7 +301,7 @@ Partial Class FrmVendaCabecalho
         Me.BtnSair.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSair.ForeColor = System.Drawing.Color.Transparent
         Me.BtnSair.Image = CType(resources.GetObject("BtnSair.Image"), System.Drawing.Image)
-        Me.BtnSair.Location = New System.Drawing.Point(508, 15)
+        Me.BtnSair.Location = New System.Drawing.Point(820, 19)
         Me.BtnSair.Name = "BtnSair"
         Me.BtnSair.Size = New System.Drawing.Size(35, 35)
         Me.BtnSair.TabIndex = 166
@@ -313,7 +313,7 @@ Partial Class FrmVendaCabecalho
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(571, 342)
+        Me.ClientSize = New System.Drawing.Size(878, 419)
         Me.Controls.Add(Me.BtnSair)
         Me.Controls.Add(Me.GboxPesProd)
         Me.Controls.Add(Me.GboxPesquisar)

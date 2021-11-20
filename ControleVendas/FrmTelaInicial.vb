@@ -168,9 +168,9 @@ Public Class FrmTelaInicial
 
         FormatarGridTelaIncial()
 
-        CarregarAcessos()
+        ' CarregarAcessos()
 
-        CarergarAcessoAtalhos()
+        'CarergarAcessoAtalhos()
 
         VersaoSistema()
 
@@ -677,5 +677,20 @@ Public Class FrmTelaInicial
         Dim form = New FrmMvtoAdto
         form.ShowDialog()
 
+    End Sub
+
+    Private Sub LucroProNfeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LucroProNfeToolStripMenuItem.Click
+        Dim form = New FrmLucroNfe
+        form.ShowDialog()
+    End Sub
+
+    Private Sub RetiradaDeLucrosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RetiradaDeLucrosToolStripMenuItem.Click
+        Dim form = New FrmRetiradas
+        form.ShowDialog()
+    End Sub
+
+    Private Sub ExcluirRetiradasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExcluirRetiradasToolStripMenuItem.Click
+        Dim form = New FrmExcluirRetirada
+        form.ShowDialog()
     End Sub
 End Class

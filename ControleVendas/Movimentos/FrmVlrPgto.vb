@@ -1,6 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class FrmVlrPgto
+    Dim IdMvtoPgto As Integer
     Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
         Me.Close()
     End Sub
@@ -92,24 +93,55 @@ Public Class FrmVlrPgto
                 'ATUALIZAR SALDO NA TABELA DUPLICATAS
                 Dim cmd1 As MySqlCommand
                 Dim sql1 As String
-                sql1 = "UPDATE duplicatas SET saldo_duplicata = '" & TxtSaldoTitulo.Text & "' WHERE id = '" & TxtIdRegistro.Text & "' "
+                sql1 = "UPDATE duplicatas SET saldo_duplicata = '" & TxtSaldoTitulo.Text.Replace(",", ".") & "' WHERE id = '" & TxtIdRegistro.Text & "' "
                 cmd1 = New MySqlCommand(sql1, con)
                 cmd1.ExecuteNonQuery()
 
+                Consultar_Id_mvto_pagamentos()
+
                 Salvar_mvto_portador()
+
 
                 MsgBox("Registro salvo com Sucesso!!", MsgBoxStyle.Information, "Salvar Pagamento")
 
                 Me.Close()
 
             Catch ex As Exception
-                MsgBox("Erro ao editar!!" + ex.Message)
+                MsgBox("Erro ao editar BtnOk !!" + ex.Message)
             End Try
 
 
 
         End If
     End Sub
+    Sub Consultar_Id_mvto_pagamentos()
+
+        Try
+            Dim cmd3 As MySqlCommand
+            Dim reader3 As MySqlDataReader
+            Dim sql3 As String
+
+            sql3 = "Select MAX(id) as id FROM mvto_pagamentos "
+            cmd3 = New MySqlCommand(sql3, con)
+            reader3 = cmd3.ExecuteReader
+            reader3.Read()
+            If Not IsDBNull(reader3("id")) Then
+
+                IdMvtoPgto = reader3("id")
+                reader3.Close()
+
+            Else
+                reader3.Close()
+
+            End If
+
+        Catch ex As Exception
+            MsgBox("Erro ao Consultar_Id_mvto_pagamentos!!" + ex.Message)
+        End Try
+
+    End Sub
+
+
     Sub Salvar_mvto_portador()
 
         Try
@@ -124,7 +156,7 @@ Public Class FrmVlrPgto
             data3 = DataPgto.Value.ToString("yyyy-MM-dd")
             tipoMov = "Saída"
 
-            sql1 = "INSERT INTO mvto_portador (id_portador, nome, tipo, data, valor, id_duplicata, pagador_recebedor) VALUES ( '" & TxtIdportador.Text & "','" & CbPortador.Text & "','" & tipoMov & "', '" & data3 & "','" & TxtTotalPago.Text.Replace(",", ".") & "', '" & TxtIdRegistro.Text & "' , '" & TxtNomeFornecedor.Text & "')"
+            sql1 = "INSERT INTO mvto_portador (id_portador, nome, tipo, data, valor, id_duplicata, pagador_recebedor, id_mvto_pagamentos) VALUES ( '" & TxtIdportador.Text & "','" & CbPortador.Text & "','" & tipoMov & "', '" & data3 & "','" & TxtTotalPago.Text.Replace(",", ".") & "', '" & TxtIdRegistro.Text & "' , '" & TxtNomeFornecedor.Text & "', '" & IdMvtoPgto & "' )"
             cmd1 = New MySqlCommand(sql1, con)
             cmd1.ExecuteNonQuery()
 

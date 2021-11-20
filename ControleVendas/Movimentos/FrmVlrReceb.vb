@@ -95,11 +95,11 @@ Public Class FrmVlrReceb
 
                 sql = "INSERT INTO mvto_recebimentos (id_duplicata, cod_cliente, cliente, id_venda, valor_total, parcela, " _
                 & "valor_parcela, valor_pago, valor_saldo, juros_multa, descontos, total_pago, data_emissao," _
-                & "data_vencimento, data_pagamento, status_nota, portador, id_portador, adto) VALUES ( '" & TxtIdDuplicata.Text & "','" & TxtCodCliente.Text & "', " _
+                & "data_vencimento, data_pagamento, status_nota, portador, id_portador, adto, id_nfe, nfe) VALUES ( '" & TxtIdDuplicata.Text & "','" & TxtCodCliente.Text & "', " _
                 & " '" & TxtNomeCliente.Text & "','" & TxtNotaFiscal.Text & "','" & TxtValorOriginal.Text.Replace(",", ".") & "', " _
                 & "  '" & TxtParcela.Text & "','" & TxtValorParcela.Text.Replace(",", ".") & "', '" & TxtValorPago.Text.Replace(",", ".") & "', " _
                 & " '" & TxtSaldoTitulo.Text.Replace(",", ".") & "','" & TxtMultasJuros.Text.Replace(",", ".") & "', '" & TxtDescontos.Text.Replace(",", ".") & "', " _
-                & " '" & TxtTotalPago.Text.Replace(",", ".") & "', '" & data1 & "', '" & data2 & "',  '" & data3 & "', '" & TxtStatusTitulo.Text & "', '" & CbPortador.Text & "', '" & TxtIdportador.Text & "', '" & CompAdto.Replace(",", ".") & "') "
+                & " '" & TxtTotalPago.Text.Replace(",", ".") & "', '" & data1 & "', '" & data2 & "',  '" & data3 & "', '" & TxtStatusTitulo.Text & "', '" & CbPortador.Text & "', '" & TxtIdportador.Text & "', '" & CompAdto.Replace(",", ".") & "', '" & TxtIdNfeEntrada.Text & "', '" & TxtNfeEntrada.Text & "') "
 
 
                 cmd = New MySqlCommand(sql, con)
@@ -116,6 +116,7 @@ Public Class FrmVlrReceb
 
                 Salvar_mvto_portador()
 
+
                 If TxtAdto.Text < 0 Or TxtCompAdto.Text > 0 Then
                     Salvar_adto()
                 End If
@@ -130,27 +131,30 @@ Public Class FrmVlrReceb
 
         End If
     End Sub
+
     Sub Consultar_Id_mvto_recebimentos()
 
-        Dim cliente As String
-        Dim cmd3 As MySqlCommand
-        Dim reader3 As MySqlDataReader
-        Dim sql3 As String
-        cliente = TxtCodCliente.Text
+        Try
+            Dim cmd3 As MySqlCommand
+            Dim reader3 As MySqlDataReader
+            Dim sql3 As String
+            sql3 = "Select MAX(id) as id FROM mvto_recebimentos "
+            cmd3 = New MySqlCommand(sql3, con)
+            reader3 = cmd3.ExecuteReader
+            reader3.Read()
+            If Not IsDBNull(reader3("id")) Then
 
-        sql3 = "Select MAX(id) as id FROM mvto_recebimentos "
-        cmd3 = New MySqlCommand(sql3, con)
-        reader3 = cmd3.ExecuteReader
-        reader3.Read()
-        If Not IsDBNull(reader3("id")) Then
+                IdMvtoReceb = reader3("id")
+                reader3.Close()
 
-            IdMvtoReceb = reader3("id")
-            reader3.Close()
+            Else
+                reader3.Close()
 
-        Else
-            reader3.Close()
+            End If
+        Catch ex As Exception
+            MsgBox("Erro ao Consultar_Id_mvto_recebimentos!!" + ex.Message)
+        End Try
 
-        End If
 
     End Sub
     Sub Salvar_adto()

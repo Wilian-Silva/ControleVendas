@@ -22,6 +22,7 @@ Public Class FrmVendaProdutos
         TxtValorUnit.Enabled = True
         BtnPesqCliente.Enabled = True
         BtnPesqProduto.Enabled = True
+        BtnNotaEntrada.Enabled = True
         TxtProduto.ReadOnly = True
         TxtCliente.ReadOnly = True
         TxtProduto.Enabled = True
@@ -51,6 +52,7 @@ Public Class FrmVendaProdutos
         BtnPesqCliente.Enabled = False
         BtnPesqProduto.Enabled = False
         TxtProduto.Enabled = False
+        BtnNotaEntrada.Enabled = False
 
         TxtProduto.ReadOnly = True
         TxtCliente.ReadOnly = True
@@ -84,6 +86,10 @@ Public Class FrmVendaProdutos
         TxtSaldoEstoque.Text = ""
         dgStatus = ""
 
+        TxtIdNfeEntrada.Text = ""
+        TxtNfeEntrada.Text = ""
+
+
     End Sub
 
     Private Sub LimparCampossemdg()
@@ -107,6 +113,7 @@ Public Class FrmVendaProdutos
         TxtQuantidade.BackColor = Color.Salmon
         TxtValorUnit.BackColor = Color.Salmon
         TxtCliente.BackColor = Color.Salmon
+        TxtNfeEntrada.BackColor = Color.Salmon
 
     End Sub
     Sub Limpar_cores()
@@ -114,6 +121,7 @@ Public Class FrmVendaProdutos
         TxtProduto.BackColor = Color.White
         TxtQuantidade.BackColor = Color.White
         TxtValorUnit.BackColor = Color.White
+        TxtNfeEntrada.BackColor = Color.White
 
     End Sub
     Private Sub FormatarGrid()
@@ -130,6 +138,8 @@ Public Class FrmVendaProdutos
         DataGrid.Columns(8).HeaderText = "Qtd."
         DataGrid.Columns(9).HeaderText = "Vlr. Unit."
         DataGrid.Columns(10).HeaderText = "Valor Total"
+        DataGrid.Columns(11).HeaderText = "Id NFe"
+        DataGrid.Columns(12).HeaderText = "Nº NFe"
 
         DataGrid.Columns(0).Width = 1
         DataGrid.Columns(1).Width = 50
@@ -140,6 +150,9 @@ Public Class FrmVendaProdutos
         DataGrid.Columns(7).Width = 250
         DataGrid.Columns(8).Width = 40
         DataGrid.Columns(9).Width = 80
+
+        DataGrid.Columns(11).Width = 50
+        DataGrid.Columns(12).Width = 100
 
         DataGrid.Columns(1).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid.Columns(1).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
@@ -155,6 +168,9 @@ Public Class FrmVendaProdutos
 
         DataGrid.Columns(8).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
         DataGrid.Columns(8).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+
+        DataGrid.Columns(11).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGrid.Columns(11).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
 
         DataGrid.Columns(9).HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
 
@@ -174,6 +190,9 @@ Public Class FrmVendaProdutos
         TxtQuantidade.Text = DataGrid.CurrentRow.Cells(8).Value
         TxtValorUnit.Text = DataGrid.CurrentRow.Cells(9).Value
         TxtValorTotal.Text = DataGrid.CurrentRow.Cells(10).Value
+
+        TxtIdNfeEntrada.Text = DataGrid.CurrentRow.Cells(11).Value
+        TxtNfeEntrada.Text = DataGrid.CurrentRow.Cells(12).Value
     End Sub
     Sub ListarUltimaVenda()
         ' Stop
@@ -191,6 +210,7 @@ Public Class FrmVendaProdutos
 
             If (ultima.Read()) Then
                 maximo = ultima("id_venda")
+
                 ultima.Close()
             Else
                 ultima.Close()
@@ -212,7 +232,7 @@ Public Class FrmVendaProdutos
 
             FormatarGrid()
 
-            If DataGrid.Rows.Count > 0 Then
+            If DataGrid.SelectedRows.Count = 1 Then
                 DadosCabecalho()
             End If
 
@@ -599,7 +619,7 @@ Public Class FrmVendaProdutos
 
             For i = 0 To DataGrid.RowCount - 1
 
-                sqls = "INSERT INTO venda (id_venda, item, data_venda, cod_cliente, cliente, cod_produto, produto, quantidade, valor_unitario, valor_total ) VALUES (@id_venda, @item, '" & data & "', @cod_cliente, @cliente, @cod_produto, @produto, @quantidade, @valor_unitario, @valor_total)"
+                sqls = "INSERT INTO venda (id_venda, item, data_venda, cod_cliente, cliente, cod_produto, produto, quantidade, valor_unitario, valor_total, id_nfe, nfe ) VALUES (@id_venda, @item, '" & data & "', @cod_cliente, @cliente, @cod_produto, @produto, @quantidade, @valor_unitario, @valor_total , '" & TxtIdNfeEntrada.Text & "', '" & TxtNfeEntrada.Text & "')"
                 cmd = New MySqlCommand(sqls, con)
                 With cmd
                     .Parameters.AddWithValue("@id_venda", CInt(DataGrid.Rows(i).Cells(1).Value.ToString))
@@ -819,7 +839,7 @@ Public Class FrmVendaProdutos
 
             Limpar_cores()
 
-            If TxtCodCliente.Text <> "" And TxtCodProduto.Text <> "" And TxtQuantidade.Text <> "" And TxtValorUnit.Text <> "" Then
+            If TxtCodCliente.Text <> "" And TxtCodProduto.Text <> "" And TxtQuantidade.Text <> "" And TxtValorUnit.Text <> "" And TxtIdNfeEntrada.Text <> "" Then
 
 
                 Dim totalUsado As Integer
@@ -1027,6 +1047,12 @@ Public Class FrmVendaProdutos
 
         If pesquisarDuplicata = "True" Then
             TxtPesquisar.Text = IdDuplicata
+        End If
+
+        If pesquisarNotaEntrada = "True" Then
+            TxtIdNfeEntrada.Text = nfeIdNotaEntrada
+            TxtNfeEntrada.Text = nfeNotaEntrada
+
         End If
     End Sub
     Public Sub TotalNfe_TotalDuplicatas()
@@ -1711,5 +1737,11 @@ Line1:
 
     Private Sub TxtValorUnit_Leave(sender As Object, e As EventArgs) Handles TxtValorUnit.Leave
         CorTxtBox(TxtValorUnit, "Br")
+    End Sub
+
+    Private Sub BtnNotaEntrada_Click(sender As Object, e As EventArgs) Handles BtnNotaEntrada.Click
+        pesquisarNotaEntrada = "True"
+        Dim frm As New FrmEntradas
+        frm.ShowDialog()
     End Sub
 End Class

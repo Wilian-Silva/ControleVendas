@@ -45,6 +45,8 @@ Partial Class FrmTelaInicial
         Me.CboxCons1_05 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CboxCons1_06 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CboxCons1_07 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AdiantamentosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LucroProNfeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MovimentaçõesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CboxMvto1_01 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CboxMvto1_02 = New System.Windows.Forms.ToolStripMenuItem()
@@ -53,6 +55,7 @@ Partial Class FrmTelaInicial
         Me.CboxMvto1_05 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CboxMvto1_06 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CboxMvto1_07 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RetiradaDeLucrosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExclusõesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CboxExcluir1_01 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CboxExcluir1_03 = New System.Windows.Forms.ToolStripMenuItem()
@@ -113,7 +116,7 @@ Partial Class FrmTelaInicial
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.DataGrid_Vencidos = New System.Windows.Forms.DataGridView()
-        Me.AdiantamentosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ExcluirRetiradasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.DataGrid_APagar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelEsquerda.SuspendLayout()
@@ -174,7 +177,7 @@ Partial Class FrmTelaInicial
         '
         'ConsultasToolStripMenuItem
         '
-        Me.ConsultasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CboxCons1_01, Me.CboxCons1_02, Me.CboxCons1_03, Me.CboxCons1_04, Me.CboxCons1_05, Me.CboxCons1_06, Me.CboxCons1_07, Me.AdiantamentosToolStripMenuItem})
+        Me.ConsultasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CboxCons1_01, Me.CboxCons1_02, Me.CboxCons1_03, Me.CboxCons1_04, Me.CboxCons1_05, Me.CboxCons1_06, Me.CboxCons1_07, Me.AdiantamentosToolStripMenuItem, Me.LucroProNfeToolStripMenuItem})
         Me.ConsultasToolStripMenuItem.Image = CType(resources.GetObject("ConsultasToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ConsultasToolStripMenuItem.Name = "ConsultasToolStripMenuItem"
         Me.ConsultasToolStripMenuItem.Size = New System.Drawing.Size(87, 20)
@@ -222,9 +225,21 @@ Partial Class FrmTelaInicial
         Me.CboxCons1_07.Size = New System.Drawing.Size(219, 22)
         Me.CboxCons1_07.Text = "Saldo Portador"
         '
+        'AdiantamentosToolStripMenuItem
+        '
+        Me.AdiantamentosToolStripMenuItem.Name = "AdiantamentosToolStripMenuItem"
+        Me.AdiantamentosToolStripMenuItem.Size = New System.Drawing.Size(219, 22)
+        Me.AdiantamentosToolStripMenuItem.Text = "Adiantamentos"
+        '
+        'LucroProNfeToolStripMenuItem
+        '
+        Me.LucroProNfeToolStripMenuItem.Name = "LucroProNfeToolStripMenuItem"
+        Me.LucroProNfeToolStripMenuItem.Size = New System.Drawing.Size(219, 22)
+        Me.LucroProNfeToolStripMenuItem.Text = "Lucro P/Nfe"
+        '
         'MovimentaçõesToolStripMenuItem
         '
-        Me.MovimentaçõesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CboxMvto1_01, Me.CboxMvto1_02, Me.CboxMvto1_03, Me.CboxMvto1_04, Me.CboxMvto1_05, Me.CboxMvto1_06, Me.CboxMvto1_07})
+        Me.MovimentaçõesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CboxMvto1_01, Me.CboxMvto1_02, Me.CboxMvto1_03, Me.CboxMvto1_04, Me.CboxMvto1_05, Me.CboxMvto1_06, Me.CboxMvto1_07, Me.RetiradaDeLucrosToolStripMenuItem})
         Me.MovimentaçõesToolStripMenuItem.Image = CType(resources.GetObject("MovimentaçõesToolStripMenuItem.Image"), System.Drawing.Image)
         Me.MovimentaçõesToolStripMenuItem.Name = "MovimentaçõesToolStripMenuItem"
         Me.MovimentaçõesToolStripMenuItem.Size = New System.Drawing.Size(120, 20)
@@ -272,9 +287,15 @@ Partial Class FrmTelaInicial
         Me.CboxMvto1_07.Size = New System.Drawing.Size(214, 22)
         Me.CboxMvto1_07.Text = "Movimentos Estoque"
         '
+        'RetiradaDeLucrosToolStripMenuItem
+        '
+        Me.RetiradaDeLucrosToolStripMenuItem.Name = "RetiradaDeLucrosToolStripMenuItem"
+        Me.RetiradaDeLucrosToolStripMenuItem.Size = New System.Drawing.Size(214, 22)
+        Me.RetiradaDeLucrosToolStripMenuItem.Text = "Retirada de Lucros"
+        '
         'ExclusõesToolStripMenuItem
         '
-        Me.ExclusõesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CboxExcluir1_01, Me.CboxExcluir1_03, Me.CboxExcluir1_05})
+        Me.ExclusõesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CboxExcluir1_01, Me.CboxExcluir1_03, Me.CboxExcluir1_05, Me.ExcluirRetiradasToolStripMenuItem})
         Me.ExclusõesToolStripMenuItem.Image = CType(resources.GetObject("ExclusõesToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ExclusõesToolStripMenuItem.Name = "ExclusõesToolStripMenuItem"
         Me.ExclusõesToolStripMenuItem.Size = New System.Drawing.Size(86, 20)
@@ -283,19 +304,19 @@ Partial Class FrmTelaInicial
         'CboxExcluir1_01
         '
         Me.CboxExcluir1_01.Name = "CboxExcluir1_01"
-        Me.CboxExcluir1_01.Size = New System.Drawing.Size(216, 22)
+        Me.CboxExcluir1_01.Size = New System.Drawing.Size(222, 22)
         Me.CboxExcluir1_01.Text = "Excluir Pedido de Compra"
         '
         'CboxExcluir1_03
         '
         Me.CboxExcluir1_03.Name = "CboxExcluir1_03"
-        Me.CboxExcluir1_03.Size = New System.Drawing.Size(216, 22)
-        Me.CboxExcluir1_03.Text = "Excluir Pagto de Forncedor"
+        Me.CboxExcluir1_03.Size = New System.Drawing.Size(222, 22)
+        Me.CboxExcluir1_03.Text = "Excluir Pagto de Fornecedor"
         '
         'CboxExcluir1_05
         '
         Me.CboxExcluir1_05.Name = "CboxExcluir1_05"
-        Me.CboxExcluir1_05.Size = New System.Drawing.Size(216, 22)
+        Me.CboxExcluir1_05.Size = New System.Drawing.Size(222, 22)
         Me.CboxExcluir1_05.Text = "Excluir Receb de Cliente"
         '
         'RelatoriosToolStripMenuItem
@@ -984,11 +1005,11 @@ Partial Class FrmTelaInicial
         Me.DataGrid_Vencidos.Size = New System.Drawing.Size(665, 283)
         Me.DataGrid_Vencidos.TabIndex = 152
         '
-        'AdiantamentosToolStripMenuItem
+        'ExcluirRetiradasToolStripMenuItem
         '
-        Me.AdiantamentosToolStripMenuItem.Name = "AdiantamentosToolStripMenuItem"
-        Me.AdiantamentosToolStripMenuItem.Size = New System.Drawing.Size(219, 22)
-        Me.AdiantamentosToolStripMenuItem.Text = "Adiantamentos"
+        Me.ExcluirRetiradasToolStripMenuItem.Name = "ExcluirRetiradasToolStripMenuItem"
+        Me.ExcluirRetiradasToolStripMenuItem.Size = New System.Drawing.Size(222, 22)
+        Me.ExcluirRetiradasToolStripMenuItem.Text = "Excluir Retiradas"
         '
         'FrmTelaInicial
         '
@@ -1111,4 +1132,7 @@ Partial Class FrmTelaInicial
     Friend WithEvents DataGrid_Vencidos As DataGridView
     Friend WithEvents SaldoDeAdiantamentosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AdiantamentosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents LucroProNfeToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents RetiradaDeLucrosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ExcluirRetiradasToolStripMenuItem As ToolStripMenuItem
 End Class
