@@ -914,6 +914,7 @@ Public Class FrmVendaProdutos
                     BtnPesqCliente.Enabled = False
                     TxtCliente.Enabled = False
                     DataVenda.Enabled = False
+                    BtnNotaEntrada.Enabled = False
 
                     LimparCamposAddItemPedido()
 
