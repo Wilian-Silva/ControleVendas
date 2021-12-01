@@ -24,6 +24,8 @@ Module ModuloConexao
     Public bs As New BindingSource() 'Tabela duplicatas a pagar
     Public bsd As New BindingSource() 'Tabela duplicatas a receber
 
+    Public novoportador As String
+
     Public Table1Duplicatas As New DataTable("MyTable")
 
     Public Table1DuplicatasReceber As New DataTable("MyTable")

@@ -31,6 +31,7 @@ Public Class FrmPortador
         TxtCodPortador.Text = ""
         editarCliente = ""
         IdPortador = ""
+        novoportador = ""
     End Sub
     Sub DadosCabecalho()
 
@@ -104,10 +105,15 @@ Public Class FrmPortador
     End Sub
     Private Sub BtnNovo_Click(sender As Object, e As EventArgs) Handles BtnNovo.Click
 
-        HabilitarCampos()
-        LimparCampos()
-        TxtCodPortador.Focus()
+        If MsgBox("Deseja incluir outro portador?", vbYesNo, "Incluir Portador") = vbYes Then
 
+            HabilitarCampos()
+            LimparCampos()
+            TxtCodPortador.Focus()
+            novoportador = "True"
+        Else
+            Exit Sub
+        End If
     End Sub
 
 
@@ -129,41 +135,53 @@ Public Class FrmPortador
 
         Else
 
-            Try
-                Abrir()
-                Limpar_cores()
-                If TxtNome.Text <> "" And TxtCodPortador.Text <> "" Then
-                    'PROGRAMANDO INSERÇÃO DE REGISTRO NO BANCO
-
-                    Dim cmd As MySqlCommand
-                    Dim sqls As String
-
-                    Dim data As String
-                    data = Now().ToString("yyyy-MM-dd")
-
-                    sqls = "INSERT INTO portador (nome, descricao) VALUES ('" & TxtCodPortador.Text & "', '" & TxtNome.Text & "')"
-                    cmd = New MySqlCommand(sqls, con)
-                    cmd.ExecuteNonQuery()
-
-                    Listar()
-
-                    DesabilitarCampos()
-
-                    DadosCabecalho()
-
-                    MsgBox("Cadastro salvo com Sucesso!!", MsgBoxStyle.Information, "Salvar")
+            If novoportador = "True" Then
 
 
-                Else
-                    Editar_Cores()
+                Try
+                    Abrir()
+                    Limpar_cores()
+                    If TxtNome.Text <> "" And TxtCodPortador.Text <> "" Then
+                        'PROGRAMANDO INSERÇÃO DE REGISTRO NO BANCO
 
-                    MsgBox("Campos vazios!!", MsgBoxStyle.Information, "Dados inválidos")
-                    TxtNome.Focus()
-                End If
+                        'VALIDAR SE 
 
-            Catch ex As Exception
-                MsgBox("Erro ao Salvar!!" + ex.Message)
-            End Try
+                        Dim cmd As MySqlCommand
+                        Dim sqls As String
+
+                        Dim data As String
+                        data = Now().ToString("yyyy-MM-dd")
+
+                        sqls = "INSERT INTO portador (nome, descricao) VALUES ('" & TxtCodPortador.Text & "', '" & TxtNome.Text & "')"
+                        cmd = New MySqlCommand(sqls, con)
+                        cmd.ExecuteNonQuery()
+
+                        Listar()
+
+                        DesabilitarCampos()
+
+                        DadosCabecalho()
+
+                        MsgBox("Cadastro salvo com Sucesso!!", MsgBoxStyle.Information, "Salvar")
+
+
+                    Else
+                        Editar_Cores()
+
+                        MsgBox("Campos vazios!!", MsgBoxStyle.Information, "Dados inválidos")
+                        TxtNome.Focus()
+                    End If
+
+                Catch ex As Exception
+                    MsgBox("Erro ao Salvar!!" + ex.Message)
+                End Try
+
+
+            Else
+                Exit Sub
+            End If
+
+
 
         End If
 
@@ -201,7 +219,7 @@ Public Class FrmPortador
         Dim reader As MySqlDataReader
         Dim sql1 As String
 
-        sql1 = "SELECT * FROM mvto_pagamentos where portador = '" & TxtCodPortador.Text & "' "
+        sql1 = "SELECT * FROM mvto_portador where id_portador = '" & TxtId.Text & "' "
         cmd1 = New MySqlCommand(sql1, con)
         reader = cmd1.ExecuteReader
 
@@ -213,26 +231,6 @@ Public Class FrmPortador
         Else
             reader.Close()
         End If
-
-
-
-        Dim cmd2 As MySqlCommand
-        Dim reader2 As MySqlDataReader
-        Dim sql2 As String
-
-        sql2 = "SELECT * FROM mvto_recebimentos where portador = '" & TxtCodPortador.Text & "' "
-        cmd2 = New MySqlCommand(sql2, con)
-        reader2 = cmd2.ExecuteReader
-
-        If reader2.Read = True Then
-            MsgBox("Cadastro não pode ser excluido, portador já possui movimentação!!", MsgBoxStyle.Information, "Exclusão")
-            reader2.Close()
-            Exit Sub
-        Else
-            reader2.Close()
-        End If
-
-
 
 
         If TxtCodPortador.Text <> "" Then
