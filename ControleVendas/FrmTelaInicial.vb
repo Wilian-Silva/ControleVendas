@@ -749,4 +749,9 @@ Public Class FrmTelaInicial
         Dim form = New FrmLucroRetirar
         form.ShowDialog()
     End Sub
+
+    Private Sub InventárioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InventárioToolStripMenuItem.Click
+        Dim form = New FrmInventario
+        form.ShowDialog()
+    End Sub
 End Class

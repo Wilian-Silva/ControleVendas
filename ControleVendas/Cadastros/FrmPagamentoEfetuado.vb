@@ -258,7 +258,6 @@ Public Class FrmPagamentoEfetuado
         'Stop
         Try
 
-
             'ATUALIZAR MVTO PORTADOR
             Dim cmd1 As MySqlCommand
             Dim sql1 As String

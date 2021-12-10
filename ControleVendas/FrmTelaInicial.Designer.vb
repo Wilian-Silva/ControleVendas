@@ -109,6 +109,9 @@ Partial Class FrmTelaInicial
         Me.LblData = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.LblLucro = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.LblVencidos = New System.Windows.Forms.Label()
         Me.LblAVencer = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -122,9 +125,7 @@ Partial Class FrmTelaInicial
         Me.Label9 = New System.Windows.Forms.Label()
         Me.DataGrid_Vencidos = New System.Windows.Forms.DataGridView()
         Me.DataGrid = New System.Windows.Forms.DataGridView()
-        Me.LblLucro = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
+        Me.InventárioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.DataGrid_APagar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelEsquerda.SuspendLayout()
@@ -254,7 +255,7 @@ Partial Class FrmTelaInicial
         '
         'MovimentaçõesToolStripMenuItem
         '
-        Me.MovimentaçõesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CboxMvto1_01, Me.CboxMvto1_02, Me.CboxMvto1_03, Me.CboxMvto1_04, Me.CboxMvto1_05, Me.CboxMvto1_06, Me.CboxMvto1_07, Me.RetiradaDeLucrosToolStripMenuItem})
+        Me.MovimentaçõesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CboxMvto1_01, Me.CboxMvto1_02, Me.CboxMvto1_03, Me.CboxMvto1_04, Me.CboxMvto1_05, Me.CboxMvto1_06, Me.CboxMvto1_07, Me.RetiradaDeLucrosToolStripMenuItem, Me.InventárioToolStripMenuItem})
         Me.MovimentaçõesToolStripMenuItem.Image = CType(resources.GetObject("MovimentaçõesToolStripMenuItem.Image"), System.Drawing.Image)
         Me.MovimentaçõesToolStripMenuItem.Name = "MovimentaçõesToolStripMenuItem"
         Me.MovimentaçõesToolStripMenuItem.Size = New System.Drawing.Size(120, 20)
@@ -869,6 +870,39 @@ Partial Class FrmTelaInicial
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Quadro de Informações"
         '
+        'LblLucro
+        '
+        Me.LblLucro.AutoSize = True
+        Me.LblLucro.Font = New System.Drawing.Font("Tahoma", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblLucro.ForeColor = System.Drawing.Color.DimGray
+        Me.LblLucro.Location = New System.Drawing.Point(139, 204)
+        Me.LblLucro.Name = "LblLucro"
+        Me.LblLucro.Size = New System.Drawing.Size(34, 25)
+        Me.LblLucro.TabIndex = 10
+        Me.LblLucro.Text = " - "
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Tahoma", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.Color.DimGray
+        Me.Label11.Location = New System.Drawing.Point(11, 204)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(120, 25)
+        Me.Label11.TabIndex = 9
+        Me.Label11.Text = "Valor Total:"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Tahoma", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.ForeColor = System.Drawing.Color.DimGray
+        Me.Label12.Location = New System.Drawing.Point(8, 176)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(192, 25)
+        Me.Label12.TabIndex = 8
+        Me.Label12.Text = "Lucro a resgatar:"
+        '
         'LblVencidos
         '
         Me.LblVencidos.AutoSize = True
@@ -1068,38 +1102,11 @@ Partial Class FrmTelaInicial
         Me.DataGrid.TabIndex = 153
         Me.DataGrid.Visible = False
         '
-        'LblLucro
+        'InventárioToolStripMenuItem
         '
-        Me.LblLucro.AutoSize = True
-        Me.LblLucro.Font = New System.Drawing.Font("Tahoma", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblLucro.ForeColor = System.Drawing.Color.DimGray
-        Me.LblLucro.Location = New System.Drawing.Point(139, 204)
-        Me.LblLucro.Name = "LblLucro"
-        Me.LblLucro.Size = New System.Drawing.Size(34, 25)
-        Me.LblLucro.TabIndex = 10
-        Me.LblLucro.Text = " - "
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Tahoma", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.Color.DimGray
-        Me.Label11.Location = New System.Drawing.Point(11, 204)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(120, 25)
-        Me.Label11.TabIndex = 9
-        Me.Label11.Text = "Valor Total:"
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Tahoma", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.ForeColor = System.Drawing.Color.DimGray
-        Me.Label12.Location = New System.Drawing.Point(8, 176)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(192, 25)
-        Me.Label12.TabIndex = 8
-        Me.Label12.Text = "Lucro a resgatar:"
+        Me.InventárioToolStripMenuItem.Name = "InventárioToolStripMenuItem"
+        Me.InventárioToolStripMenuItem.Size = New System.Drawing.Size(214, 22)
+        Me.InventárioToolStripMenuItem.Text = "Inventário"
         '
         'FrmTelaInicial
         '
@@ -1232,4 +1239,5 @@ Partial Class FrmTelaInicial
     Friend WithEvents LblLucro As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents Label12 As Label
+    Friend WithEvents InventárioToolStripMenuItem As ToolStripMenuItem
 End Class

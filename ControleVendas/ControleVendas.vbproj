@@ -84,7 +84,7 @@
     <ManifestKeyFile>ControleVendas_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <GenerateManifests>true</GenerateManifests>
+    <GenerateManifests>false</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>true</SignManifests>
@@ -473,6 +473,18 @@
     <Compile Include="Movimentos\FrmExcluirRetirada.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Movimentos\FrmInventario.Designer.vb">
+      <DependentUpon>FrmInventario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentos\FrmInventario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimentos\FrmListasInventario.Designer.vb">
+      <DependentUpon>FrmListasInventario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Movimentos\FrmListasInventario.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Movimentos\FrmMvtoEstoque.Designer.vb">
       <DependentUpon>FrmMvtoEstoque.vb</DependentUpon>
     </Compile>
@@ -764,6 +776,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Movimentos\FrmExcluirRetirada.resx">
       <DependentUpon>FrmExcluirRetirada.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentos\FrmInventario.resx">
+      <DependentUpon>FrmInventario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimentos\FrmListasInventario.resx">
+      <DependentUpon>FrmListasInventario.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Movimentos\FrmMvtoEstoque.resx">
       <DependentUpon>FrmMvtoEstoque.vb</DependentUpon>

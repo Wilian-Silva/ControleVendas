@@ -1458,7 +1458,7 @@ Line1:
 
         Dim linhaPed As Integer
 
-        If MsgBox("Deseja excluir novo item  na venda " + TxtIdRegistro.Text + "?", vbYesNo, "Venda") = vbYes Then
+        If MsgBox("Deseja incluir novo item  na venda " + TxtIdRegistro.Text + "?", vbYesNo, "Venda") = vbYes Then
             Try
                 Abrir()
                 Dim cmdp As MySqlCommand
@@ -1492,6 +1492,8 @@ Line1:
             form.TxtCodCliente.Text = TxtCodCliente.Text
             form.TxtCliente.Text = TxtCliente.Text
             form.DataVenda.Value = DataVenda.Value
+            form.TxtIdNfeEntrada.Text = TxtIdNfeEntrada.Text
+            form.TxtNfeEntrada.Text = TxtNfeEntrada.Text
 
 
             form.ShowDialog()

@@ -20,6 +20,16 @@ Module ModuloConexao
         End If
     End Sub
 
+    Public Sub Permitir_Numeros(sender As Object, e As KeyPressEventArgs)
+        If Not IsNumeric(e.KeyChar) And Asc(e.KeyChar) <> 8 And Asc(e.KeyChar) <> 44 Then
+            e.Handled = True
+        End If
+    End Sub
+    Public pesqListaInvetario As String
+    Public listaInvet As String
+    Public nomeLista As String
+    Public dataInvent As String
+
     'DECLAÇÃO DE VARIAVEIS GLOBAIS
     Public bs As New BindingSource() 'Tabela duplicatas a pagar
     Public bsd As New BindingSource() 'Tabela duplicatas a receber

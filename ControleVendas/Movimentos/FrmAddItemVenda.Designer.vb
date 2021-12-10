@@ -47,9 +47,12 @@ Partial Class FrmAddItemVenda
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.DataVenda = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.TxtIdNfeEntrada = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.TxtNfeEntrada = New System.Windows.Forms.TextBox()
+        Me.TxtSaldoEstoque = New System.Windows.Forms.TextBox()
         Me.BtnPesqProduto = New System.Windows.Forms.Button()
         Me.TxtQtdOriginal = New System.Windows.Forms.TextBox()
-        Me.TxtSaldoEstoque = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
@@ -82,7 +85,7 @@ Partial Class FrmAddItemVenda
         '
         Me.TxtCodCliente.BackColor = System.Drawing.Color.White
         Me.TxtCodCliente.Enabled = False
-        Me.TxtCodCliente.Location = New System.Drawing.Point(102, 62)
+        Me.TxtCodCliente.Location = New System.Drawing.Point(102, 89)
         Me.TxtCodCliente.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtCodCliente.Name = "TxtCodCliente"
         Me.TxtCodCliente.Size = New System.Drawing.Size(41, 20)
@@ -92,7 +95,7 @@ Partial Class FrmAddItemVenda
         'TxtItem
         '
         Me.TxtItem.Enabled = False
-        Me.TxtItem.Location = New System.Drawing.Point(189, 23)
+        Me.TxtItem.Location = New System.Drawing.Point(189, 50)
         Me.TxtItem.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtItem.Name = "TxtItem"
         Me.TxtItem.Size = New System.Drawing.Size(40, 20)
@@ -104,7 +107,7 @@ Partial Class FrmAddItemVenda
         Me.Label10.AutoSize = True
         Me.Label10.BackColor = System.Drawing.Color.Transparent
         Me.Label10.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(152, 25)
+        Me.Label10.Location = New System.Drawing.Point(152, 52)
         Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(34, 16)
@@ -114,7 +117,7 @@ Partial Class FrmAddItemVenda
         'TxtIdRegistro
         '
         Me.TxtIdRegistro.Enabled = False
-        Me.TxtIdRegistro.Location = New System.Drawing.Point(101, 23)
+        Me.TxtIdRegistro.Location = New System.Drawing.Point(101, 50)
         Me.TxtIdRegistro.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtIdRegistro.Name = "TxtIdRegistro"
         Me.TxtIdRegistro.Size = New System.Drawing.Size(45, 20)
@@ -126,7 +129,7 @@ Partial Class FrmAddItemVenda
         Me.Label7.AutoSize = True
         Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(29, 25)
+        Me.Label7.Location = New System.Drawing.Point(29, 52)
         Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(62, 16)
@@ -137,7 +140,7 @@ Partial Class FrmAddItemVenda
         '
         Me.TxtCliente.BackColor = System.Drawing.Color.White
         Me.TxtCliente.Enabled = False
-        Me.TxtCliente.Location = New System.Drawing.Point(144, 62)
+        Me.TxtCliente.Location = New System.Drawing.Point(144, 89)
         Me.TxtCliente.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtCliente.Name = "TxtCliente"
         Me.TxtCliente.Size = New System.Drawing.Size(207, 20)
@@ -147,7 +150,7 @@ Partial Class FrmAddItemVenda
         '
         Me.TxtCodProduto.BackColor = System.Drawing.Color.White
         Me.TxtCodProduto.Enabled = False
-        Me.TxtCodProduto.Location = New System.Drawing.Point(102, 103)
+        Me.TxtCodProduto.Location = New System.Drawing.Point(102, 130)
         Me.TxtCodProduto.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtCodProduto.Name = "TxtCodProduto"
         Me.TxtCodProduto.Size = New System.Drawing.Size(41, 20)
@@ -159,7 +162,7 @@ Partial Class FrmAddItemVenda
         Me.Label8.AutoSize = True
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(23, 64)
+        Me.Label8.Location = New System.Drawing.Point(23, 91)
         Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(52, 16)
@@ -171,7 +174,7 @@ Partial Class FrmAddItemVenda
         Me.Label12.AutoSize = True
         Me.Label12.BackColor = System.Drawing.Color.Transparent
         Me.Label12.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(289, 27)
+        Me.Label12.Location = New System.Drawing.Point(289, 54)
         Me.Label12.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(90, 16)
@@ -182,7 +185,7 @@ Partial Class FrmAddItemVenda
         '
         Me.TxtProduto.BackColor = System.Drawing.Color.White
         Me.TxtProduto.Enabled = False
-        Me.TxtProduto.Location = New System.Drawing.Point(144, 103)
+        Me.TxtProduto.Location = New System.Drawing.Point(144, 130)
         Me.TxtProduto.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtProduto.Name = "TxtProduto"
         Me.TxtProduto.Size = New System.Drawing.Size(207, 20)
@@ -193,7 +196,7 @@ Partial Class FrmAddItemVenda
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(14, 105)
+        Me.Label1.Location = New System.Drawing.Point(14, 132)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(88, 16)
@@ -204,7 +207,7 @@ Partial Class FrmAddItemVenda
         '
         Me.TxtValorTotal.BackColor = System.Drawing.Color.White
         Me.TxtValorTotal.Enabled = False
-        Me.TxtValorTotal.Location = New System.Drawing.Point(401, 145)
+        Me.TxtValorTotal.Location = New System.Drawing.Point(401, 172)
         Me.TxtValorTotal.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtValorTotal.Name = "TxtValorTotal"
         Me.TxtValorTotal.Size = New System.Drawing.Size(83, 20)
@@ -215,7 +218,7 @@ Partial Class FrmAddItemVenda
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(66, 149)
+        Me.Label3.Location = New System.Drawing.Point(66, 176)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(32, 16)
@@ -227,7 +230,7 @@ Partial Class FrmAddItemVenda
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(321, 147)
+        Me.Label5.Location = New System.Drawing.Point(321, 174)
         Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(76, 16)
@@ -237,7 +240,7 @@ Partial Class FrmAddItemVenda
         'TxtQuantidade
         '
         Me.TxtQuantidade.BackColor = System.Drawing.Color.White
-        Me.TxtQuantidade.Location = New System.Drawing.Point(101, 147)
+        Me.TxtQuantidade.Location = New System.Drawing.Point(101, 174)
         Me.TxtQuantidade.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtQuantidade.Name = "TxtQuantidade"
         Me.TxtQuantidade.Size = New System.Drawing.Size(42, 20)
@@ -247,7 +250,7 @@ Partial Class FrmAddItemVenda
         'TxtValorUnit
         '
         Me.TxtValorUnit.BackColor = System.Drawing.Color.White
-        Me.TxtValorUnit.Location = New System.Drawing.Point(236, 145)
+        Me.TxtValorUnit.Location = New System.Drawing.Point(236, 172)
         Me.TxtValorUnit.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtValorUnit.Name = "TxtValorUnit"
         Me.TxtValorUnit.Size = New System.Drawing.Size(59, 20)
@@ -258,7 +261,7 @@ Partial Class FrmAddItemVenda
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(176, 147)
+        Me.Label4.Location = New System.Drawing.Point(176, 174)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(58, 16)
@@ -270,7 +273,7 @@ Partial Class FrmAddItemVenda
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox1.Controls.Add(Me.BtnSalvar)
         Me.GroupBox1.Controls.Add(Me.BtnCancelar)
-        Me.GroupBox1.Location = New System.Drawing.Point(19, 210)
+        Me.GroupBox1.Location = New System.Drawing.Point(19, 237)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(513, 63)
         Me.GroupBox1.TabIndex = 164
@@ -280,7 +283,7 @@ Partial Class FrmAddItemVenda
         '
         Me.DataVenda.Enabled = False
         Me.DataVenda.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DataVenda.Location = New System.Drawing.Point(381, 25)
+        Me.DataVenda.Location = New System.Drawing.Point(381, 52)
         Me.DataVenda.Name = "DataVenda"
         Me.DataVenda.Size = New System.Drawing.Size(103, 20)
         Me.DataVenda.TabIndex = 1
@@ -288,6 +291,9 @@ Partial Class FrmAddItemVenda
         'GroupBox3
         '
         Me.GroupBox3.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox3.Controls.Add(Me.TxtIdNfeEntrada)
+        Me.GroupBox3.Controls.Add(Me.Label9)
+        Me.GroupBox3.Controls.Add(Me.TxtNfeEntrada)
         Me.GroupBox3.Controls.Add(Me.TxtSaldoEstoque)
         Me.GroupBox3.Controls.Add(Me.BtnPesqProduto)
         Me.GroupBox3.Controls.Add(Me.TxtQtdOriginal)
@@ -311,9 +317,54 @@ Partial Class FrmAddItemVenda
         Me.GroupBox3.Controls.Add(Me.Label4)
         Me.GroupBox3.Location = New System.Drawing.Point(19, 14)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(513, 195)
+        Me.GroupBox3.Size = New System.Drawing.Size(513, 220)
         Me.GroupBox3.TabIndex = 163
         Me.GroupBox3.TabStop = False
+        '
+        'TxtIdNfeEntrada
+        '
+        Me.TxtIdNfeEntrada.BackColor = System.Drawing.Color.White
+        Me.TxtIdNfeEntrada.Enabled = False
+        Me.TxtIdNfeEntrada.Location = New System.Drawing.Point(104, 16)
+        Me.TxtIdNfeEntrada.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtIdNfeEntrada.Name = "TxtIdNfeEntrada"
+        Me.TxtIdNfeEntrada.Size = New System.Drawing.Size(34, 20)
+        Me.TxtIdNfeEntrada.TabIndex = 175
+        Me.TxtIdNfeEntrada.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.BackColor = System.Drawing.Color.Transparent
+        Me.Label9.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(23, 16)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(80, 16)
+        Me.Label9.TabIndex = 174
+        Me.Label9.Text = "Nfe Entrada:"
+        '
+        'TxtNfeEntrada
+        '
+        Me.TxtNfeEntrada.BackColor = System.Drawing.Color.White
+        Me.TxtNfeEntrada.Enabled = False
+        Me.TxtNfeEntrada.Location = New System.Drawing.Point(139, 16)
+        Me.TxtNfeEntrada.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtNfeEntrada.Name = "TxtNfeEntrada"
+        Me.TxtNfeEntrada.Size = New System.Drawing.Size(165, 20)
+        Me.TxtNfeEntrada.TabIndex = 173
+        '
+        'TxtSaldoEstoque
+        '
+        Me.TxtSaldoEstoque.BackColor = System.Drawing.Color.White
+        Me.TxtSaldoEstoque.Enabled = False
+        Me.TxtSaldoEstoque.Location = New System.Drawing.Point(442, 91)
+        Me.TxtSaldoEstoque.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtSaldoEstoque.Name = "TxtSaldoEstoque"
+        Me.TxtSaldoEstoque.Size = New System.Drawing.Size(32, 20)
+        Me.TxtSaldoEstoque.TabIndex = 172
+        Me.TxtSaldoEstoque.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TxtSaldoEstoque.Visible = False
         '
         'BtnPesqProduto
         '
@@ -323,7 +374,7 @@ Partial Class FrmAddItemVenda
         Me.BtnPesqProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnPesqProduto.ForeColor = System.Drawing.Color.Transparent
         Me.BtnPesqProduto.Image = CType(resources.GetObject("BtnPesqProduto.Image"), System.Drawing.Image)
-        Me.BtnPesqProduto.Location = New System.Drawing.Point(354, 101)
+        Me.BtnPesqProduto.Location = New System.Drawing.Point(354, 128)
         Me.BtnPesqProduto.Name = "BtnPesqProduto"
         Me.BtnPesqProduto.Size = New System.Drawing.Size(22, 22)
         Me.BtnPesqProduto.TabIndex = 143
@@ -332,7 +383,7 @@ Partial Class FrmAddItemVenda
         'TxtQtdOriginal
         '
         Me.TxtQtdOriginal.BackColor = System.Drawing.Color.White
-        Me.TxtQtdOriginal.Location = New System.Drawing.Point(442, 105)
+        Me.TxtQtdOriginal.Location = New System.Drawing.Point(442, 132)
         Me.TxtQtdOriginal.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtQtdOriginal.Name = "TxtQtdOriginal"
         Me.TxtQtdOriginal.Size = New System.Drawing.Size(42, 20)
@@ -340,24 +391,12 @@ Partial Class FrmAddItemVenda
         Me.TxtQtdOriginal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.TxtQtdOriginal.Visible = False
         '
-        'TxtSaldoEstoque
-        '
-        Me.TxtSaldoEstoque.BackColor = System.Drawing.Color.White
-        Me.TxtSaldoEstoque.Enabled = False
-        Me.TxtSaldoEstoque.Location = New System.Drawing.Point(442, 64)
-        Me.TxtSaldoEstoque.Margin = New System.Windows.Forms.Padding(4)
-        Me.TxtSaldoEstoque.Name = "TxtSaldoEstoque"
-        Me.TxtSaldoEstoque.Size = New System.Drawing.Size(32, 20)
-        Me.TxtSaldoEstoque.TabIndex = 172
-        Me.TxtSaldoEstoque.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TxtSaldoEstoque.Visible = False
-        '
         'FrmAddItemVenda
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(550, 287)
+        Me.ClientSize = New System.Drawing.Size(550, 308)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.GroupBox3)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -399,4 +438,7 @@ Partial Class FrmAddItemVenda
     Friend WithEvents TxtQtdOriginal As TextBox
     Friend WithEvents BtnPesqProduto As Button
     Friend WithEvents TxtSaldoEstoque As TextBox
+    Friend WithEvents TxtIdNfeEntrada As TextBox
+    Friend WithEvents Label9 As Label
+    Friend WithEvents TxtNfeEntrada As TextBox
 End Class

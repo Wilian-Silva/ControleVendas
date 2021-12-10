@@ -41,9 +41,14 @@ Public Class FrmAddItemVenda
     End Sub
 
     Private Sub BtnSalvar_Click(sender As Object, e As EventArgs) Handles BtnSalvar.Click
-        'Stop
+        ' Stop
+        Dim dbl1 As Double = 0
+        Dim dbl2 As Double = 0
 
-        If TxtQuantidade.Text > TxtSaldoEstoque.Text Then
+        Double.TryParse(TxtQuantidade.Text, dbl1)
+        Double.TryParse(TxtSaldoEstoque.Text, dbl2)
+
+        If dbl1 > dbl2 Then
 
             MsgBox("Saldo em estoque insuficiente!", MsgBoxStyle.Information, "Saldo estoque")
 
@@ -177,8 +182,8 @@ Public Class FrmAddItemVenda
             data1 = DataVenda.Value.ToString("yyyy-MM-dd")
 
 
-            sql = "INSERT INTO venda (id_venda, item, data_venda, cod_cliente, cliente, cod_produto, produto, quantidade, valor_unitario, valor_total) " _
-                & " VALUES ('" & TxtIdRegistro.Text & "', '" & TxtItem.Text & "', '" & data1 & "','" & TxtCodCliente.Text & "','" & TxtCliente.Text & "','" & TxtCodProduto.Text & "','" & TxtProduto.Text & "','" & TxtQuantidade.Text & "','" & TxtValorUnit.Text.Replace(",", ".") & "' ,'" & TxtValorTotal.Text.Replace(",", ".") & "')"
+            sql = "INSERT INTO venda (id_venda, item, data_venda, cod_cliente, cliente, cod_produto, produto, quantidade, valor_unitario, valor_total, id_nfe, nfe) " _
+                & " VALUES ('" & TxtIdRegistro.Text & "', '" & TxtItem.Text & "', '" & data1 & "','" & TxtCodCliente.Text & "','" & TxtCliente.Text & "','" & TxtCodProduto.Text & "','" & TxtProduto.Text & "','" & TxtQuantidade.Text & "','" & TxtValorUnit.Text.Replace(",", ".") & "' ,'" & TxtValorTotal.Text.Replace(",", ".") & "', '" & TxtIdNfeEntrada.Text & "', '" & TxtNfeEntrada.Text & "')"
             cmd = New MySqlCommand(sql, con)
             cmd.ExecuteNonQuery()
         Catch ex As Exception
