@@ -3,7 +3,7 @@ Imports MySql.Data.MySqlClient
 
 Public Class FrmInventario
     Private Sub FrmInventario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        Panel1.Height = 0
     End Sub
 
     Sub Listar()
@@ -104,6 +104,8 @@ Public Class FrmInventario
                 DataGrid.Rows(i).Cells(9).Style.Font = New Font("Arial", 10, FontStyle.Bold)
             End If
         Next
+        Panel1.Height = 80
+
     End Sub
 
     Private Sub BtnInventario_Click(sender As Object, e As EventArgs) Handles BtnInventario.Click

@@ -31,26 +31,35 @@ Partial Class FrmInventario
         Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.DataGrid = New System.Windows.Forms.DataGridView()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.BtnInventario = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.BtnExcluirLista = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.BtnAtualizarestqoue = New System.Windows.Forms.Button()
+        Me.Btnconferncia = New System.Windows.Forms.Button()
+        Me.BtnSalvarContagem = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DataInventario = New System.Windows.Forms.DateTimePicker()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TxtDescricao = New System.Windows.Forms.TextBox()
         Me.TxtCodInventario = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.BtnInventario = New System.Windows.Forms.Button()
         Me.DataGridCopy = New System.Windows.Forms.DataGridView()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.BtnExcluirLista = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.BtnAtualizarestqoue = New System.Windows.Forms.Button()
-        Me.Btnconferncia = New System.Windows.Forms.Button()
-        Me.BtnSalvarContagem = New System.Windows.Forms.Button()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
         CType(Me.DataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridCopy, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'DataGrid
@@ -89,8 +98,85 @@ Partial Class FrmInventario
         DataGridViewCellStyle9.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
         Me.DataGrid.RowsDefaultCellStyle = DataGridViewCellStyle9
         Me.DataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
-        Me.DataGrid.Size = New System.Drawing.Size(841, 622)
+        Me.DataGrid.Size = New System.Drawing.Size(841, 542)
         Me.DataGrid.TabIndex = 149
+        '
+        'BtnInventario
+        '
+        Me.BtnInventario.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnInventario.Location = New System.Drawing.Point(347, 19)
+        Me.BtnInventario.Name = "BtnInventario"
+        Me.BtnInventario.Size = New System.Drawing.Size(150, 28)
+        Me.BtnInventario.TabIndex = 158
+        Me.BtnInventario.Text = "GERAR NOVA LISTA"
+        Me.ToolTip.SetToolTip(Me.BtnInventario, "Gerar nova lista de inventário")
+        Me.BtnInventario.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Location = New System.Drawing.Point(503, 92)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(150, 28)
+        Me.Button2.TabIndex = 161
+        Me.Button2.Text = "GERAR DIFERENÇAS"
+        Me.ToolTip.SetToolTip(Me.Button2, "Comparar saldo atual em estoque com contagem fisica")
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'BtnExcluirLista
+        '
+        Me.BtnExcluirLista.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnExcluirLista.Location = New System.Drawing.Point(503, 53)
+        Me.BtnExcluirLista.Name = "BtnExcluirLista"
+        Me.BtnExcluirLista.Size = New System.Drawing.Size(150, 28)
+        Me.BtnExcluirLista.TabIndex = 163
+        Me.BtnExcluirLista.Text = "EXCLUIR LISTA"
+        Me.ToolTip.SetToolTip(Me.BtnExcluirLista, "Excluir lista de inventário")
+        Me.BtnExcluirLista.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(347, 53)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(150, 28)
+        Me.Button1.TabIndex = 164
+        Me.Button1.Text = "PESQUISAR LISTA"
+        Me.ToolTip.SetToolTip(Me.Button1, "`Pesquisar lista de inventário")
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'BtnAtualizarestqoue
+        '
+        Me.BtnAtualizarestqoue.Font = New System.Drawing.Font("Segoe UI", 8.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnAtualizarestqoue.Location = New System.Drawing.Point(672, 19)
+        Me.BtnAtualizarestqoue.Name = "BtnAtualizarestqoue"
+        Me.BtnAtualizarestqoue.Size = New System.Drawing.Size(144, 60)
+        Me.BtnAtualizarestqoue.TabIndex = 165
+        Me.BtnAtualizarestqoue.Text = "ATUALIZAR SALDO ESTOQUE "
+        Me.ToolTip.SetToolTip(Me.BtnAtualizarestqoue, "Atualizar estoque com os saldos da contagem")
+        Me.BtnAtualizarestqoue.UseVisualStyleBackColor = True
+        '
+        'Btnconferncia
+        '
+        Me.Btnconferncia.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btnconferncia.Location = New System.Drawing.Point(672, 92)
+        Me.Btnconferncia.Name = "Btnconferncia"
+        Me.Btnconferncia.Size = New System.Drawing.Size(144, 28)
+        Me.Btnconferncia.TabIndex = 166
+        Me.Btnconferncia.Text = "GERAR CONFERENCIA"
+        Me.ToolTip.SetToolTip(Me.Btnconferncia, "Compara a lista digitado com o saldo em estoque")
+        Me.Btnconferncia.UseVisualStyleBackColor = True
+        '
+        'BtnSalvarContagem
+        '
+        Me.BtnSalvarContagem.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnSalvarContagem.Location = New System.Drawing.Point(503, 21)
+        Me.BtnSalvarContagem.Name = "BtnSalvarContagem"
+        Me.BtnSalvarContagem.Size = New System.Drawing.Size(150, 28)
+        Me.BtnSalvarContagem.TabIndex = 167
+        Me.BtnSalvarContagem.Text = "SALVAR CONTAGEM "
+        Me.ToolTip.SetToolTip(Me.BtnSalvarContagem, "Salvar lista com contagem parcial")
+        Me.BtnSalvarContagem.UseVisualStyleBackColor = True
         '
         'Label1
         '
@@ -155,17 +241,6 @@ Partial Class FrmInventario
         Me.Label8.TabIndex = 156
         Me.Label8.Text = "Nº Inventário:"
         '
-        'BtnInventario
-        '
-        Me.BtnInventario.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnInventario.Location = New System.Drawing.Point(347, 19)
-        Me.BtnInventario.Name = "BtnInventario"
-        Me.BtnInventario.Size = New System.Drawing.Size(150, 28)
-        Me.BtnInventario.TabIndex = 158
-        Me.BtnInventario.Text = "GERAR NOVA LISTA"
-        Me.ToolTip.SetToolTip(Me.BtnInventario, "Gerar nova lista de inventário")
-        Me.BtnInventario.UseVisualStyleBackColor = True
-        '
         'DataGridCopy
         '
         Me.DataGridCopy.AllowUserToAddRows = False
@@ -208,28 +283,6 @@ Partial Class FrmInventario
         Me.DataGridCopy.TabIndex = 159
         Me.DataGridCopy.Visible = False
         '
-        'Button2
-        '
-        Me.Button2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(503, 92)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(150, 28)
-        Me.Button2.TabIndex = 161
-        Me.Button2.Text = "GERAR DIFERENÇAS"
-        Me.ToolTip.SetToolTip(Me.Button2, "Comparar saldo atual em estoque com contagem fisica")
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'BtnExcluirLista
-        '
-        Me.BtnExcluirLista.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnExcluirLista.Location = New System.Drawing.Point(503, 53)
-        Me.BtnExcluirLista.Name = "BtnExcluirLista"
-        Me.BtnExcluirLista.Size = New System.Drawing.Size(150, 28)
-        Me.BtnExcluirLista.TabIndex = 163
-        Me.BtnExcluirLista.Text = "EXCLUIR LISTA"
-        Me.ToolTip.SetToolTip(Me.BtnExcluirLista, "Excluir lista de inventário")
-        Me.BtnExcluirLista.UseVisualStyleBackColor = True
-        '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.BtnSalvarContagem)
@@ -259,53 +312,94 @@ Partial Class FrmInventario
         Me.GroupBox2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupBox2.Location = New System.Drawing.Point(0, 128)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(847, 641)
+        Me.GroupBox2.Size = New System.Drawing.Size(847, 561)
         Me.GroupBox2.TabIndex = 165
         Me.GroupBox2.TabStop = False
         '
-        'Button1
+        'Panel1
         '
-        Me.Button1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(347, 53)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(150, 28)
-        Me.Button1.TabIndex = 164
-        Me.Button1.Text = "PESQUISAR LISTA"
-        Me.ToolTip.SetToolTip(Me.Button1, "`Pesquisar lista de inventário")
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Panel1.Controls.Add(Me.Label6)
+        Me.Panel1.Controls.Add(Me.Label5)
+        Me.Panel1.Controls.Add(Me.Label4)
+        Me.Panel1.Controls.Add(Me.TextBox3)
+        Me.Panel1.Controls.Add(Me.TextBox2)
+        Me.Panel1.Controls.Add(Me.TextBox1)
+        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel1.Location = New System.Drawing.Point(0, 689)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(847, 80)
+        Me.Panel1.TabIndex = 166
         '
-        'BtnAtualizarestqoue
+        'Label3
         '
-        Me.BtnAtualizarestqoue.Font = New System.Drawing.Font("Segoe UI", 8.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnAtualizarestqoue.Location = New System.Drawing.Point(672, 19)
-        Me.BtnAtualizarestqoue.Name = "BtnAtualizarestqoue"
-        Me.BtnAtualizarestqoue.Size = New System.Drawing.Size(144, 60)
-        Me.BtnAtualizarestqoue.TabIndex = 165
-        Me.BtnAtualizarestqoue.Text = "ATUALIZAR SALDO ESTOQUE "
-        Me.ToolTip.SetToolTip(Me.BtnAtualizarestqoue, "Atualizar estoque com os saldos da contagem")
-        Me.BtnAtualizarestqoue.UseVisualStyleBackColor = True
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(3, 3)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(841, 25)
+        Me.Label3.TabIndex = 0
+        Me.Label3.Text = "LEGENDA"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Btnconferncia
+        'TextBox1
         '
-        Me.Btnconferncia.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Btnconferncia.Location = New System.Drawing.Point(672, 92)
-        Me.Btnconferncia.Name = "Btnconferncia"
-        Me.Btnconferncia.Size = New System.Drawing.Size(144, 28)
-        Me.Btnconferncia.TabIndex = 166
-        Me.Btnconferncia.Text = "GERAR CONFERENCIA"
-        Me.ToolTip.SetToolTip(Me.Btnconferncia, "Compara a lista digitado com o saldo em estoque")
-        Me.Btnconferncia.UseVisualStyleBackColor = True
+        Me.TextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(101, Byte), Integer), CType(CType(250, Byte), Integer))
+        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox1.Location = New System.Drawing.Point(565, 32)
+        Me.TextBox1.Multiline = True
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(20, 20)
+        Me.TextBox1.TabIndex = 1
         '
-        'BtnSalvarContagem
+        'TextBox2
         '
-        Me.BtnSalvarContagem.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnSalvarContagem.Location = New System.Drawing.Point(503, 21)
-        Me.BtnSalvarContagem.Name = "BtnSalvarContagem"
-        Me.BtnSalvarContagem.Size = New System.Drawing.Size(150, 28)
-        Me.BtnSalvarContagem.TabIndex = 167
-        Me.BtnSalvarContagem.Text = "SALVAR CONTAGEM "
-        Me.ToolTip.SetToolTip(Me.BtnSalvarContagem, "Salvar lista com contagem parcial")
-        Me.BtnSalvarContagem.UseVisualStyleBackColor = True
+        Me.TextBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox2.Location = New System.Drawing.Point(272, 31)
+        Me.TextBox2.Multiline = True
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(20, 20)
+        Me.TextBox2.TabIndex = 2
+        '
+        'TextBox3
+        '
+        Me.TextBox3.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(203, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.TextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox3.Location = New System.Drawing.Point(14, 32)
+        Me.TextBox3.Multiline = True
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(20, 20)
+        Me.TextBox3.TabIndex = 3
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(587, 33)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(255, 17)
+        Me.Label4.TabIndex = 4
+        Me.Label4.Text = "Contagem maior que o saldo do sistema"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(295, 32)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(260, 17)
+        Me.Label5.TabIndex = 5
+        Me.Label5.Text = "Contagem menor que o saldo do sistema"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(36, 32)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(229, 17)
+        Me.Label6.TabIndex = 6
+        Me.Label6.Text = "Contagem igual ao saldo do sistema"
         '
         'FrmInventario
         '
@@ -314,16 +408,19 @@ Partial Class FrmInventario
         Me.ClientSize = New System.Drawing.Size(847, 769)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.Panel1)
         Me.MinimizeBox = False
         Me.Name = "FrmInventario"
         Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Invenatário"
+        Me.Text = "Inventário"
         CType(Me.DataGrid, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridCopy, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -346,4 +443,12 @@ Partial Class FrmInventario
     Friend WithEvents BtnAtualizarestqoue As Button
     Friend WithEvents Btnconferncia As Button
     Friend WithEvents BtnSalvarContagem As Button
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Label3 As Label
 End Class
