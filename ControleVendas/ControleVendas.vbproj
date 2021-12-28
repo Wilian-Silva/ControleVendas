@@ -32,10 +32,10 @@
     <ProductName>Controle_Vendas</ProductName>
     <PublisherName>ControlSystem</PublisherName>
     <SuiteName>SystemGroup</SuiteName>
-    <MinimumRequiredVersion>1.0.0.21</MinimumRequiredVersion>
+    <MinimumRequiredVersion>1.0.0.24</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>22</ApplicationRevision>
+    <ApplicationRevision>25</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -84,7 +84,7 @@
     <ManifestKeyFile>ControleVendas_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <GenerateManifests>false</GenerateManifests>
+    <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>true</SignManifests>

@@ -60,6 +60,9 @@ Partial Class FrmReceberTitulo
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.TxtValorPago = New System.Windows.Forms.TextBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.TxtIdNfeEntrada = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.TxtNfeEntrada = New System.Windows.Forms.TextBox()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.TxtTotalTitulo = New System.Windows.Forms.TextBox()
         Me.TxtNomeCliente = New System.Windows.Forms.TextBox()
@@ -77,9 +80,6 @@ Partial Class FrmReceberTitulo
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.TxtValorParcela = New System.Windows.Forms.TextBox()
-        Me.TxtIdNfeEntrada = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.TxtNfeEntrada = New System.Windows.Forms.TextBox()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         Me.GboxPesProd.SuspendLayout()
@@ -427,10 +427,10 @@ Partial Class FrmReceberTitulo
         '
         'TxtIdPesquisar
         '
-        Me.TxtIdPesquisar.Location = New System.Drawing.Point(144, 20)
+        Me.TxtIdPesquisar.Location = New System.Drawing.Point(133, 16)
         Me.TxtIdPesquisar.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtIdPesquisar.Name = "TxtIdPesquisar"
-        Me.TxtIdPesquisar.Size = New System.Drawing.Size(28, 20)
+        Me.TxtIdPesquisar.Size = New System.Drawing.Size(56, 20)
         Me.TxtIdPesquisar.TabIndex = 163
         Me.TxtIdPesquisar.Visible = False
         '
@@ -535,6 +535,39 @@ Partial Class FrmReceberTitulo
         Me.GroupBox3.Size = New System.Drawing.Size(483, 117)
         Me.GroupBox3.TabIndex = 160
         Me.GroupBox3.TabStop = False
+        '
+        'TxtIdNfeEntrada
+        '
+        Me.TxtIdNfeEntrada.BackColor = System.Drawing.SystemColors.Window
+        Me.TxtIdNfeEntrada.Enabled = False
+        Me.TxtIdNfeEntrada.Location = New System.Drawing.Point(76, 80)
+        Me.TxtIdNfeEntrada.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtIdNfeEntrada.Name = "TxtIdNfeEntrada"
+        Me.TxtIdNfeEntrada.Size = New System.Drawing.Size(43, 20)
+        Me.TxtIdNfeEntrada.TabIndex = 155
+        Me.TxtIdNfeEntrada.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.Transparent
+        Me.Label7.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(40, 81)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(32, 16)
+        Me.Label7.TabIndex = 154
+        Me.Label7.Text = "Nfe:"
+        '
+        'TxtNfeEntrada
+        '
+        Me.TxtNfeEntrada.BackColor = System.Drawing.SystemColors.Window
+        Me.TxtNfeEntrada.Enabled = False
+        Me.TxtNfeEntrada.Location = New System.Drawing.Point(119, 80)
+        Me.TxtNfeEntrada.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtNfeEntrada.Name = "TxtNfeEntrada"
+        Me.TxtNfeEntrada.Size = New System.Drawing.Size(118, 20)
+        Me.TxtNfeEntrada.TabIndex = 153
         '
         'Label19
         '
@@ -728,39 +761,6 @@ Partial Class FrmReceberTitulo
         Me.TxtValorParcela.Name = "TxtValorParcela"
         Me.TxtValorParcela.Size = New System.Drawing.Size(80, 20)
         Me.TxtValorParcela.TabIndex = 144
-        '
-        'TxtIdNfeEntrada
-        '
-        Me.TxtIdNfeEntrada.BackColor = System.Drawing.SystemColors.Window
-        Me.TxtIdNfeEntrada.Enabled = False
-        Me.TxtIdNfeEntrada.Location = New System.Drawing.Point(76, 80)
-        Me.TxtIdNfeEntrada.Margin = New System.Windows.Forms.Padding(4)
-        Me.TxtIdNfeEntrada.Name = "TxtIdNfeEntrada"
-        Me.TxtIdNfeEntrada.Size = New System.Drawing.Size(43, 20)
-        Me.TxtIdNfeEntrada.TabIndex = 155
-        Me.TxtIdNfeEntrada.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.BackColor = System.Drawing.Color.Transparent
-        Me.Label7.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(40, 81)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(32, 16)
-        Me.Label7.TabIndex = 154
-        Me.Label7.Text = "Nfe:"
-        '
-        'TxtNfeEntrada
-        '
-        Me.TxtNfeEntrada.BackColor = System.Drawing.SystemColors.Window
-        Me.TxtNfeEntrada.Enabled = False
-        Me.TxtNfeEntrada.Location = New System.Drawing.Point(119, 80)
-        Me.TxtNfeEntrada.Margin = New System.Windows.Forms.Padding(4)
-        Me.TxtNfeEntrada.Name = "TxtNfeEntrada"
-        Me.TxtNfeEntrada.Size = New System.Drawing.Size(118, 20)
-        Me.TxtNfeEntrada.TabIndex = 153
         '
         'FrmReceberTitulo
         '

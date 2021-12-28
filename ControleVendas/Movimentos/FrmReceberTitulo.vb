@@ -252,7 +252,8 @@ Public Class FrmReceberTitulo
             Dim cmd As MySqlCommand
             Dim reader As MySqlDataReader
             Dim sql As String
-            sql = "SELECT  d.id_venda, d.id, d.cod_cliente, d.cliente, d.parcela, d.valor_parcela, d.saldo_duplicata, d.data_venda, d.data_vencimento, d.observacao, d.id_portador, p.nome FROM duplicatas_receber as d INNER JOIN portador as p ON d.id_portador = p.id WHERE d.id= '" & TxtIdPesquisar.Text & "'"
+            sql = "SELECT  d.id_venda, d.id, d.cod_cliente, d.cliente, d.parcela, d.valor_parcela, d.saldo_duplicata, d.data_venda, d.data_vencimento, d.observacao, d.id_portador, p.nome, v.id_nfe, v.nfe " _
+            & "FROM duplicatas_receber as d INNER JOIN portador as p ON d.id_portador = p.id INNER JOIN venda as v ON d.id_venda = v.id_venda WHERE d.id= '" & TxtIdPesquisar.Text & "' "
             cmd = New MySqlCommand(sql, con)
             reader = cmd.ExecuteReader
             If reader.Read = True Then
@@ -270,7 +271,11 @@ Public Class FrmReceberTitulo
                 TxtPortador.Text = reader("nome")
                 idVenda = reader("id_venda")
                 idDuplicata = reader("id")
+                TxtIdNfeEntrada.Text = reader("id_nfe")
+                TxtNfeEntrada.Text = reader("nfe")
                 reader.Close()
+
+
             Else
                 reader.Close()
             End If
